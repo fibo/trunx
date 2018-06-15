@@ -1,4 +1,4 @@
-import Button from './src/elements/Button'
+import Button from './elements/Button'
 
 export default {
   Button
