@@ -4,9 +4,14 @@
   "description": "super Saiyan react components",
   "main": "index.js",
   "scripts": {
+    "lint": "standard --fix",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
+    "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fibo/trunx.git"
@@ -25,5 +30,18 @@
   "bugs": {
     "url": "https://github.com/fibo/trunx/issues"
   },
-  "homepage": "http://g14n.info/trunx"
+  "homepage": "http://g14n.info/trunx",
+  "devDependencies": {
+    "@storybook/react": "^3.4.7",
+    "babel-core": "^6.26.3",
+    "bulma": "^0.7.1",
+    "node-sass": "^4.9.0",
+    "pre-commit": "^1.2.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "standard": "^11.0.1"
+  },
+  "dependencies": {
+    "classname": "0.0.0"
+  }
 }
