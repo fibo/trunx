@@ -1,7 +1,9 @@
 import { configure } from '@storybook/react'
 
+import 'bulma/css/bulma.css'
+
 function loadStories () {
-  require('../src/elements/Button/Button.stories.js')
+  require('../src/elements/stories.js')
 }
 
 configure(loadStories, module)
