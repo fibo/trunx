@@ -9,3 +9,9 @@ Start *storybook*
 ```bash
 npm run storybook
 ```
+
+Build
+
+```bash
+npm run babel
+```
