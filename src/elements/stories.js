@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
-import Button from './Button'
+import Button from './Button.jsx'
 
 storiesOf('elements/Button', module)
   .add('basics', () => (
