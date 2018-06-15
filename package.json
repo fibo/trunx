@@ -1,0 +1,29 @@
+{
+  "name": "trunx",
+  "version": "0.0.0",
+  "description": "super Saiyan react components",
+  "main": "index.js",
+  "scripts": {
+    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibo/trunx.git"
+  },
+  "keywords": [
+    "react",
+    "bulma",
+    "component",
+    "components"
+  ],
+  "author": {
+    "name": "Gianluca Casati",
+    "url": "http://g14n.info"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fibo/trunx/issues"
+  },
+  "homepage": "http://g14n.info/trunx"
+}
