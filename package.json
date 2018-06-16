@@ -35,6 +35,9 @@
     "url": "https://github.com/fibo/trunx/issues"
   },
   "homepage": "http://g14n.info/trunx",
+  "peerDependencies": {
+    "react": "16.x"
+  },
   "devDependencies": {
     "@storybook/addon-options": "^3.4.7",
     "@storybook/react": "^3.4.7",
