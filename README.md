@@ -16,4 +16,10 @@ Build
 npm run babel
 ```
 
+Publish storybook
+
+```bash
+npm run deploy-storybook
+```
+
 [Bulma]: https://bulma.io "Bulma CSS framework"

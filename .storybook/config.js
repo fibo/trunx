@@ -4,11 +4,11 @@ import { setOptions } from '@storybook/addon-options'
 
 import 'bulma/css/bulma.css'
 
-import { name, homepage } from '../package.json'
+import { name } from '../package.json'
 
 setOptions({
   name,
-  url: homepage
+  url: `https://npmjs.org/package/${name}`
 })
 
 function loadStories () {
