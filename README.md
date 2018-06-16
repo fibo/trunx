@@ -1,6 +1,6 @@
 # trunx
 
-> super Saiyan react components
+> super Saiyan react components, son of awesome [Bulma]
 
 ## Development
 
@@ -15,3 +15,5 @@ Build
 ```bash
 npm run babel
 ```
+
+[Bulma]: https://bulma.io "Bulma CSS framework"
