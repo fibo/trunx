@@ -1,7 +1,7 @@
 {
   "name": "trunx",
   "version": "0.0.0",
-  "description": "super Saiyan react components",
+  "description": "super Saiyan react components, son of awesome Bulma",
   "main": "index.js",
   "scripts": {
     "babel": "babel --ignore stories.js src -d .",
