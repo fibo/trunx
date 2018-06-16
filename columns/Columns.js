@@ -14,31 +14,27 @@ var _classname2 = _interopRequireDefault(_classname);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-class Notification extends _react.Component {
+class Columns extends _react.Component {
   render() {
     const {
-      isDanger,
-      isLink,
-      isInfo,
-      isPrimary,
-      isSuccess,
-      isWarning
+      isDesktop,
+      isGapeless,
+      isMobile,
+      isMultiline
     } = this.props;
 
     return _react2.default.createElement(
       'div',
       {
-        className: (0, _classname2.default)(['notification'], {
-          'is-danger': isDanger,
-          'is-link': isLink,
-          'is-info': isInfo,
-          'is-primary': isPrimary,
-          'is-success': isSuccess,
-          'is-warning': isWarning
+        className: (0, _classname2.default)(['column'], {
+          'is-desktop': isDesktop,
+          'is-gapelesss': isGapeless,
+          'is-mobile': isMobile,
+          'is-multiline': isMultiline
         })
       },
       this.props.children
     );
   }
 }
-exports.default = Notification;
+exports.default = Columns;
