@@ -50,14 +50,14 @@ export default class Button extends Component {
     })
 
     return href ? (
-      <button
-        className={className}
-      >{this.props.children}</button>
-    ) : (
       <a
         className={className}
         href={href}
       >{this.props.children}</a>
+    ) : (
+      <button
+        className={className}
+      >{this.props.children}</button>
     )
   }
 }
