@@ -13,7 +13,7 @@ export default class Columns extends Component {
 
     return (
       <div
-        className={classname(['column'], {
+        className={classname(['columns'], {
           'is-desktop': isDesktop,
           'is-gapelesss': isGapeless,
           'is-mobile': isMobile,
