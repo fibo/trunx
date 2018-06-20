@@ -6,6 +6,12 @@ import Columns from './columns/Columns'
 // Components
 
 import Modal from './components/Modal'
+import ModalCard from './components/ModalCard'
+import ModalCardBody from './components/ModalCardBody'
+import ModalCardFoot from './components/ModalCardFoot'
+import ModalCardHead from './components/ModalCardHead'
+import ModalClose from './components/ModalClose'
+import ModalContent from './components/ModalContent'
 
 // Elements
 
@@ -21,6 +27,12 @@ export {
   Columns,
   Delete,
   Modal,
+  ModalCard,
+  ModalCardBody,
+  ModalCardFoot,
+  ModalCardHead,
+  ModalClose,
+  ModalContent,
   Notification,
   Subtitle,
   Title
