@@ -16,7 +16,7 @@ var ModalCardHead = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalCardHead.prototype.render = function () {
-        return (React.createElement("header", { className: "modal-card-head" }, "this.props.children"));
+        return (React.createElement("header", { className: "modal-card-head" }, this.props.children));
     };
     return ModalCardHead;
 }(React.Component));

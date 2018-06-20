@@ -42,7 +42,7 @@ var Column = (function (_super) {
             'is-one-quarter': isOneQuarter,
             'is-three-fifths': isThreeFifths,
             'is-three-quarters': isThreeQuarters,
-            'is-two-quarters': isTwoQuarters
+            'is-two-quarters': isTwoQuarters,
         });
         return (React.createElement("div", { className: className }, this.props.children));
     };
