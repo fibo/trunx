@@ -1,80 +1,50 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _classname = require('classname');
-
-var _classname2 = _interopRequireDefault(_classname);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-class Column extends _react.Component {
-  render() {
-    const {
-      is2,
-      is3,
-      is4,
-      is5,
-      is6,
-      is7,
-      is8,
-      is9,
-      is10,
-      is11,
-      isFourFifths,
-      isHalf,
-      isNarrow,
-      isNarrowDesktop,
-      isNarrowMobile,
-      isNarrowTablet,
-      isNarrowTouch,
-      isNarrowWidescreen,
-      isNarrowFullhd,
-      isOneFifth,
-      isOneQuarter,
-      isThreeFifths,
-      isThreeQuarters,
-      isTwoQuarters
-    } = this.props;
-
-    return _react2.default.createElement(
-      'div',
-      {
-        className: (0, _classname2.default)(['column'], {
-          'is-2': is2,
-          'is-3': is3,
-          'is-4': is4,
-          'is-5': is5,
-          'is-6': is6,
-          'is-7': is7,
-          'is-8': is8,
-          'is-9': is9,
-          'is-10': is10,
-          'is-11': is11,
-          'is-four-fifths': isFourFifths,
-          'is-half': isHalf,
-          'is-narrow': isNarrow,
-          'is-narrow-desktop': isNarrowDesktop,
-          'is-narrow-mobile': isNarrowMobile,
-          'is-narrow-tablet': isNarrowTablet,
-          'is-narrow-touch': isNarrowTouch,
-          'is-narrow-widescreen': isNarrowWidescreen,
-          'is-narrow-fullhd': isNarrowFullhd,
-          'is-one-fifth': isOneFifth,
-          'is-one-quarter': isOneQuarter,
-          'is-three-fifths': isThreeFifths,
-          'is-three-quarters': isThreeQuarters,
-          'is-two-quarters': isTwoQuarters
-        })
-      },
-      this.props.children
-    );
-  }
-}
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = require("react");
+var classname_1 = require("classname");
+var Column = (function (_super) {
+    __extends(Column, _super);
+    function Column() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Column.prototype.render = function () {
+        var _a = this.props, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6, is7 = _a.is7, is8 = _a.is8, is9 = _a.is9, is10 = _a.is10, is11 = _a.is11, isFourFifths = _a.isFourFifths, isHalf = _a.isHalf, isNarrow = _a.isNarrow, isNarrowDesktop = _a.isNarrowDesktop, isNarrowMobile = _a.isNarrowMobile, isNarrowTablet = _a.isNarrowTablet, isNarrowTouch = _a.isNarrowTouch, isNarrowWidescreen = _a.isNarrowWidescreen, isNarrowFullhd = _a.isNarrowFullhd, isOneFifth = _a.isOneFifth, isOneQuarter = _a.isOneQuarter, isThreeFifths = _a.isThreeFifths, isThreeQuarters = _a.isThreeQuarters, isTwoQuarters = _a.isTwoQuarters;
+        return (react_1.default.createElement("div", { className: classname_1.default(['column'], {
+                'is-2': is2,
+                'is-3': is3,
+                'is-4': is4,
+                'is-5': is5,
+                'is-6': is6,
+                'is-7': is7,
+                'is-8': is8,
+                'is-9': is9,
+                'is-10': is10,
+                'is-11': is11,
+                'is-four-fifths': isFourFifths,
+                'is-half': isHalf,
+                'is-narrow': isNarrow,
+                'is-narrow-desktop': isNarrowDesktop,
+                'is-narrow-mobile': isNarrowMobile,
+                'is-narrow-tablet': isNarrowTablet,
+                'is-narrow-touch': isNarrowTouch,
+                'is-narrow-widescreen': isNarrowWidescreen,
+                'is-narrow-fullhd': isNarrowFullhd,
+                'is-one-fifth': isOneFifth,
+                'is-one-quarter': isOneQuarter,
+                'is-three-fifths': isThreeFifths,
+                'is-three-quarters': isThreeQuarters,
+                'is-two-quarters': isTwoQuarters
+            }) }, this.props.children));
+    };
+    return Column;
+}(react_1.Component));
 exports.default = Column;

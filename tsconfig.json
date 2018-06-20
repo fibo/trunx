@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "charset": "utf8",
+    "jsx": "react",
+    "module": "commonjs",
+    "noImplicitUseStrict": true,
+    "outDir": ".",
+    "removeComments": true,
+    "sourceMap": false,
+    "strictNullChecks": true,
+    "target": "es5"
+  },
+  "exclude": [
+    "**/stories"
+  ],
+  "include": [
+    "./src/**/*"
+  ]
+}
