@@ -9,8 +9,8 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = require("react");
-var classname_1 = require("classname");
+var classname = require("classname");
+var React = require("react");
 var Notification = (function (_super) {
     __extends(Notification, _super);
     function Notification() {
@@ -18,15 +18,16 @@ var Notification = (function (_super) {
     }
     Notification.prototype.render = function () {
         var _a = this.props, isDanger = _a.isDanger, isLink = _a.isLink, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isWarning = _a.isWarning;
-        return (react_1.default.createElement("div", { className: classname_1.default(['notification'], {
-                'is-danger': isDanger,
-                'is-link': isLink,
-                'is-info': isInfo,
-                'is-primary': isPrimary,
-                'is-success': isSuccess,
-                'is-warning': isWarning
-            }) }, this.props.children));
+        var className = classname(['notification'], {
+            'is-danger': isDanger,
+            'is-info': isInfo,
+            'is-link': isLink,
+            'is-primary': isPrimary,
+            'is-success': isSuccess,
+            'is-warning': isWarning
+        });
+        return (React.createElement("div", { className: className }, this.props.children));
     };
     return Notification;
-}(react_1.Component));
+}(React.Component));
 exports.default = Notification;

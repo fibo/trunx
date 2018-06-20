@@ -9,15 +9,15 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = require("react");
+var React = require("react");
 var Subtitle = (function (_super) {
     __extends(Subtitle, _super);
     function Subtitle() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Subtitle.prototype.render = function () {
-        return (react_1.default.createElement("p", { className: 'subtitle' }, "this.props.children"));
+        return (React.createElement("p", { className: "subtitle" }, this.props.children));
     };
     return Subtitle;
-}(react_1.Component));
+}(React.Component));
 exports.default = Subtitle;
