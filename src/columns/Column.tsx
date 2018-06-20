@@ -39,8 +39,10 @@ export default class Column extends React.Component {
       'is-7': is7,
       'is-8': is8,
       'is-9': is9,
+      /* tslint:disable object-literal-sort-keys */
       'is-10': is10,
       'is-11': is11,
+      /* tslint:enable object-literal-sort-keys */
       'is-four-fifths': isFourFifths,
       'is-half': isHalf,
       'is-narrow': isNarrow,
