@@ -16,7 +16,7 @@ var ModalCardFoot = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalCardFoot.prototype.render = function () {
-        return (React.createElement("footer", { className: "modal-card-foot" }, "this.props.children"));
+        return (React.createElement("footer", { className: "modal-card-foot" }, this.props.children));
     };
     return ModalCardFoot;
 }(React.Component));

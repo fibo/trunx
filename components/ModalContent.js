@@ -16,7 +16,7 @@ var ModalContent = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalContent.prototype.render = function () {
-        return (React.createElement("div", { className: "modal-content" }, "this.props.children"));
+        return (React.createElement("div", { className: "modal-content" }, this.props.children));
     };
     return ModalContent;
 }(React.Component));

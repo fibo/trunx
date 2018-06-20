@@ -1,9 +1,33 @@
-import React, { Component } from 'react'
+import * as classname from 'classname'
+import * as React from 'react'
 
-import classname from 'classname'
+interface Props {
+  href?: string
+  isActive?: boolean
+  isBlack?: boolean
+  isDanger?: boolean
+  isDark?: boolean
+  isDisabled?: boolean
+  isFocused?: boolean
+  isLarge?: boolean
+  isLight?: boolean
+  isLink?: boolean
+  isInfo?: boolean
+  isInverted?: boolean
+  isLoading?: boolean
+  isOutlined?: boolean
+  isPrimary?: boolean
+  isRounded?: boolean
+  isStatic?: boolean
+  isSuccess?: boolean
+  isText?: boolean
+  isWarning?: boolean
+  isWhite?: boolean
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
+}
 
-export default class Button extends Component {
-  render () {
+export default class Button extends React.Component<Props> {
+  public render() {
     const {
       href,
       isActive,
@@ -26,7 +50,7 @@ export default class Button extends Component {
       isText,
       isWarning,
       isWhite,
-      onClick
+      onClick,
     } = this.props
 
     const className = classname(['button'], {
@@ -36,11 +60,11 @@ export default class Button extends Component {
       'is-dark': isDark,
       'is-disabled': isDisabled,
       'is-focused': isFocused,
+      'is-info': isInfo,
+      'is-inverted': isInverted,
       'is-large': isLarge,
       'is-light': isLight,
       'is-link': isLink,
-      'is-info': isInfo,
-      'is-inverted': isInverted,
       'is-loading': isLoading,
       'is-outlined': isOutlined,
       'is-primary': isPrimary,
@@ -49,19 +73,23 @@ export default class Button extends Component {
       'is-success': isSuccess,
       'is-text': isText,
       'is-warning': isWarning,
-      'is-white': isWhite
+      'is-white': isWhite,
     })
 
     return href ? (
       <a
         className={className}
         href={href}
-      >{this.props.children}</a>
+      >
+        {this.props.children}
+      </a>
     ) : (
       <button
         className={className}
         onClick={onClick}
-      >{this.props.children}</button>
+      >
+        {this.props.children}
+      </button>
     )
   }
 }
