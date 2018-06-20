@@ -1,7 +1,34 @@
 import * as classname from 'classname'
 import * as React from 'react'
 
-export default class Column extends React.Component {
+interface Props {
+  is2?: boolean
+  is3?: boolean
+  is4?: boolean
+  is5?: boolean
+  is6?: boolean
+  is7?: boolean
+  is8?: boolean
+  is9?: boolean
+  is10?: boolean
+  is11?: boolean
+  isFourFifths?: boolean
+  isHalf?: boolean
+  isNarrow?: boolean
+  isNarrowDesktop?: boolean
+  isNarrowMobile?: boolean
+  isNarrowTablet?: boolean
+  isNarrowTouch?: boolean
+  isNarrowWidescreen?: boolean
+  isNarrowFullhd?: boolean
+  isOneFifth?: boolean
+  isOneQuarter?: boolean
+  isThreeFifths?: boolean
+  isThreeQuarters?: boolean
+  isTwoQuarters?: boolean
+}
+
+export default class Column extends React.Component<Props> {
   public render() {
     const {
       is2,
@@ -60,8 +87,7 @@ export default class Column extends React.Component {
     })
 
     return (
-      <div
-      >{this.props.children}</div>
+      <div className={className}>{this.props.children}</div>
     )
   }
 }

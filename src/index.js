@@ -3,6 +3,10 @@
 import Column from './columns/Column'
 import Columns from './columns/Columns'
 
+// Components
+
+import Modal from './components/Modal'
+
 // Elements
 
 import Button from './elements/Button'
@@ -16,6 +20,7 @@ export {
   Column,
   Columns,
   Delete,
+  Modal,
   Notification,
   Subtitle,
   Title
