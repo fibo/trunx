@@ -16,7 +16,7 @@ var ModalCard = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalCard.prototype.render = function () {
-        return (React.createElement("div", { className: "modal-card" }, "this.props.children"));
+        return (React.createElement("div", { className: "modal-card" }, this.props.children));
     };
     return ModalCard;
 }(React.Component));
