@@ -11,7 +11,9 @@ export default class ModalClose extends React.Component<Props> {
       isLarge
     } = this.props
 
-    const className = classname(['modal-close'], { 'is-large': isLarge })
+    const className = classname(['modal-close'], {
+      'is-large': isLarge,
+    })
 
     return (
       <button

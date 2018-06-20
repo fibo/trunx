@@ -54,7 +54,7 @@ export default class Column extends React.Component<Props> {
       isOneQuarter,
       isThreeFifths,
       isThreeQuarters,
-      isTwoQuarters
+      isTwoQuarters,
     } = this.props
 
     const className = classname(['column'], {
@@ -83,7 +83,7 @@ export default class Column extends React.Component<Props> {
       'is-one-quarter': isOneQuarter,
       'is-three-fifths': isThreeFifths,
       'is-three-quarters': isThreeQuarters,
-      'is-two-quarters': isTwoQuarters
+      'is-two-quarters': isTwoQuarters,
     })
 
     return (

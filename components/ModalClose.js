@@ -18,7 +18,9 @@ var ModalClose = (function (_super) {
     }
     ModalClose.prototype.render = function () {
         var isLarge = this.props.isLarge;
-        var className = classname(['modal-close'], { 'is-large': isLarge });
+        var className = classname(['modal-close'], {
+            'is-large': isLarge,
+        });
         return (React.createElement("button", { "aria-label": "close", className: className }));
     };
     return ModalClose;
