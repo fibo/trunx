@@ -10,6 +10,7 @@
     "lint:src": "cd src && standard --fix",
     "lint:storybook": "cd .storybook && standard --fix",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
+    "typescript": "tsc --project .",
     "storybook": "start-storybook -p 9001 -c .storybook",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -39,22 +40,20 @@
     "react": "16.x"
   },
   "devDependencies": {
+    "awesome-typescript-loader": "^5.1.1",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "@storybook/addon-options": "^3.4.7",
     "@storybook/react": "^3.4.7",
     "@storybook/storybook-deployer": "^2.3.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
     "bulma": "^0.7.1",
     "node-sass": "^4.9.0",
     "npm-run-all": "^4.1.2",
     "pre-commit": "^1.2.2",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "standard": "^11.0.1"
+    "react-dom": "^16.4.1"
   },
   "dependencies": {
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
-    "classname": "0.0.0"
+    "classname": "0.0.0",
+    "typescript": "^2.9.2"
   }
 }
