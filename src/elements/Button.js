@@ -12,6 +12,7 @@ export default class Button extends Component {
       isDark,
       isDisabled,
       isFocused,
+      isLarge,
       isLight,
       isLink,
       isInfo,
@@ -24,7 +25,8 @@ export default class Button extends Component {
       isSuccess,
       isText,
       isWarning,
-      isWhite
+      isWhite,
+      onClick
     } = this.props
 
     const className = classname(['button'], {
@@ -34,6 +36,7 @@ export default class Button extends Component {
       'is-dark': isDark,
       'is-disabled': isDisabled,
       'is-focused': isFocused,
+      'is-large': isLarge,
       'is-light': isLight,
       'is-link': isLink,
       'is-info': isInfo,
@@ -57,6 +60,7 @@ export default class Button extends Component {
     ) : (
       <button
         className={className}
+        onClick={onClick}
       >{this.props.children}</button>
     )
   }
