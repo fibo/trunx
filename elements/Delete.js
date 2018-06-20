@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var react_1 = require("react");
+var React = require("react");
 var Delete = (function (_super) {
     __extends(Delete, _super);
     function Delete() {
@@ -17,11 +17,8 @@ var Delete = (function (_super) {
     }
     Delete.prototype.render = function () {
         var onClick = this.props.onClick;
-        return (react_1.default.createElement("button", { className: 'delete', onClick: onClick }));
+        return (React.createElement("button", { className: "delete", onClick: onClick }));
     };
     return Delete;
-}(react_1.Component));
+}(React.Component));
 exports.default = Delete;
-Delete.defaultProps = {
-    onClick: Function.prototype
-};
