@@ -10,14 +10,14 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var Title = (function (_super) {
-    __extends(Title, _super);
-    function Title() {
+var ModalCardFoot = (function (_super) {
+    __extends(ModalCardFoot, _super);
+    function ModalCardFoot() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Title.prototype.render = function () {
-        return (React.createElement("p", { className: "title" }, "this.props.children"));
+    ModalCardFoot.prototype.render = function () {
+        return (React.createElement("footer", { className: "modal-card-foot" }, "this.props.children"));
     };
-    return Title;
+    return ModalCardFoot;
 }(React.Component));
-exports.default = Title;
+exports.default = ModalCardFoot;

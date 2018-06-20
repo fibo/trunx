@@ -9,15 +9,18 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+var classname = require("classname");
 var React = require("react");
-var Title = (function (_super) {
-    __extends(Title, _super);
-    function Title() {
+var ModalClose = (function (_super) {
+    __extends(ModalClose, _super);
+    function ModalClose() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Title.prototype.render = function () {
-        return (React.createElement("p", { className: "title" }, "this.props.children"));
+    ModalClose.prototype.render = function () {
+        var isLarge = this.props.isLarge;
+        var className = classname(['modal-close'], { 'is-large': isLarge });
+        return (React.createElement("button", { "aria-label": "close", className: className }));
     };
-    return Title;
+    return ModalClose;
 }(React.Component));
-exports.default = Title;
+exports.default = ModalClose;
