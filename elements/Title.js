@@ -16,7 +16,7 @@ var Title = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Title.prototype.render = function () {
-        return (React.createElement("p", { className: "title" }, "this.props.children"));
+        return (React.createElement("p", { className: "title" }, this.props.children));
     };
     return Title;
 }(React.Component));
