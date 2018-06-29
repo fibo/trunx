@@ -3,8 +3,8 @@ import React, { Component, Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Button from '../elements/Button'
+import Delete from '../elements/Delete'
 import Modal from './Modal'
-import ModalCard from './ModalCard'
 
 class ModalCardExample extends Component {
   constructor (props) {
@@ -28,11 +28,25 @@ class ModalCardExample extends Component {
           onClick={() => {
             this.setState({ modalIsActive: true })
           }}
-        >
-          Launch example modal
-        </Button>
+        >Launch example modal</Button>
         <Modal isActive={modalIsActive}>
-          <ModalCard />
+          <Modal.Card>
+            <Modal.Card.Head>
+              <Modal.Card.Title>Modal title</Modal.Card.Title>
+              <Delete
+                onClick={() => {
+                  this.setState({ modalIsActive: false })
+                }}
+              />
+            </Modal.Card.Head>
+            <Modal.Card.Body>
+              body
+            </Modal.Card.Body>
+            <Modal.Card.Foot>
+              <Button>Cancel</Button>
+              <Button isSuccess>Save changes</Button>
+            </Modal.Card.Foot>
+          </Modal.Card>
         </Modal>
       </Fragment>
     )

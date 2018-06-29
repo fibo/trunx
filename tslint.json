@@ -6,6 +6,7 @@
     "semicolon": [true, "never"],
     "trailing-comma": false,
   // override tslint-react rules here
-    "jsx-wrap-multiline": false
+    "jsx-wrap-multiline": false,
+    "max-classes-per-file": false
   }
 }
