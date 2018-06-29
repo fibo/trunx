@@ -5,6 +5,10 @@ interface ModalProps {
   isActive?: boolean
 }
 
+interface ModalBackgroundProps {
+  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void
+}
+
 interface ModalCloseProps {
   isLarge?: boolean
 }
@@ -45,6 +49,21 @@ class ModalCardTitle extends React.Component {
       <p className="modal-card-title">
         {this.props.children}
       </p>
+    )
+  }
+}
+
+class ModalBackground extends React.Component<ModalBackgroundProps> {
+  public render() {
+    const {
+      onClick
+    } = this.props
+
+    return (
+      <div
+        className="modal-background"
+        onClick={onClick}
+      />
     )
   }
 }
@@ -94,6 +113,7 @@ class ModalContent extends React.Component {
 }
 
 export default class Modal extends React.Component<ModalProps> {
+  public static Background = ModalBackground
   public static Card = ModalCard
   public static Close = ModalClose
   public static Content = ModalContent
@@ -109,7 +129,6 @@ export default class Modal extends React.Component<ModalProps> {
 
     return (
       <div className={className}>
-        <div className="modal-background" />
         {this.props.children}
       </div>
     )

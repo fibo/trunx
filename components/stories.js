@@ -21,22 +21,26 @@ var ModalCardExample = (function (_super) {
         _this.state = {
             modalIsActive: false
         };
+        _this.closeModal = _this.closeModal.bind(_this);
+        _this.openModal = _this.openModal.bind(_this);
         return _this;
     }
+    ModalCardExample.prototype.closeModal = function () {
+        this.setState({ modalIsActive: false });
+    };
+    ModalCardExample.prototype.openModal = function () {
+        this.setState({ modalIsActive: true });
+    };
     ModalCardExample.prototype.render = function () {
-        var _this = this;
         var modalIsActive = this.state.modalIsActive;
         return (react_1.default.createElement(react_1.Fragment, null,
-            react_1.default.createElement(Button_1.default, { isLarge: true, isPrimary: true, onClick: function () {
-                    _this.setState({ modalIsActive: true });
-                } }, "Launch example modal"),
+            react_1.default.createElement(Button_1.default, { isLarge: true, isPrimary: true, onClick: this.openModal }, "Launch example modal"),
             react_1.default.createElement(Modal_1.default, { isActive: modalIsActive },
+                react_1.default.createElement(Modal_1.default.Background, { onClick: this.closeModal }),
                 react_1.default.createElement(Modal_1.default.Card, null,
                     react_1.default.createElement(Modal_1.default.Card.Head, null,
                         react_1.default.createElement(Modal_1.default.Card.Title, null, "Modal title"),
-                        react_1.default.createElement(Delete_1.default, { onClick: function () {
-                                _this.setState({ modalIsActive: false });
-                            } })),
+                        react_1.default.createElement(Delete_1.default, { onClick: this.closeModal })),
                     react_1.default.createElement(Modal_1.default.Card.Body, null, "body"),
                     react_1.default.createElement(Modal_1.default.Card.Foot, null,
                         react_1.default.createElement(Button_1.default, null, "Cancel"),
