@@ -51,6 +51,17 @@ var ModalCardTitle = (function (_super) {
     };
     return ModalCardTitle;
 }(React.Component));
+var ModalBackground = (function (_super) {
+    __extends(ModalBackground, _super);
+    function ModalBackground() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    ModalBackground.prototype.render = function () {
+        var onClick = this.props.onClick;
+        return (React.createElement("div", { className: "modal-background", onClick: onClick }));
+    };
+    return ModalBackground;
+}(React.Component));
 var ModalCard = (function (_super) {
     __extends(ModalCard, _super);
     function ModalCard() {
@@ -99,10 +110,9 @@ var Modal = (function (_super) {
         var className = classname(['modal'], {
             'is-active': isActive,
         });
-        return (React.createElement("div", { className: className },
-            React.createElement("div", { className: "modal-background" }),
-            this.props.children));
+        return (React.createElement("div", { className: className }, this.props.children));
     };
+    Modal.Background = ModalBackground;
     Modal.Card = ModalCard;
     Modal.Close = ModalClose;
     Modal.Content = ModalContent;
