@@ -4,7 +4,6 @@
   "description": "super Saiyan react components, son of awesome Bulma",
   "main": "index.js",
   "scripts": {
-    "babel": "babel --ignore stories.js src -d .",
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "run-p lint:*",
     "lint:src-js": "cd src && standard --fix",
@@ -47,7 +46,6 @@
     "@types/react": "^16.4.1",
     "@types/react-dom": "^16.0.6",
     "awesome-typescript-loader": "^5.1.1",
-    "babel-core": "^6.26.3",
     "bulma": "^0.7.1",
     "dot-editorconfig": "^1.1.0",
     "node-sass": "^4.9.0",
