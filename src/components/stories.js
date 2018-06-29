@@ -13,6 +13,17 @@ class ModalCardExample extends Component {
     this.state = {
       modalIsActive: false
     }
+
+    this.closeModal = this.closeModal.bind(this)
+    this.openModal = this.openModal.bind(this)
+  }
+
+  closeModal () {
+    this.setState({ modalIsActive: false })
+  }
+
+  openModal () {
+    this.setState({ modalIsActive: true })
   }
 
   render () {
@@ -25,19 +36,15 @@ class ModalCardExample extends Component {
         <Button
           isLarge
           isPrimary
-          onClick={() => {
-            this.setState({ modalIsActive: true })
-          }}
+          onClick={this.openModal}
         >Launch example modal</Button>
         <Modal isActive={modalIsActive}>
+          <Modal.Background onClick={this.closeModal} />
           <Modal.Card>
             <Modal.Card.Head>
               <Modal.Card.Title>Modal title</Modal.Card.Title>
-              <Delete
-                onClick={() => {
-                  this.setState({ modalIsActive: false })
-                }}
-              />
+
+              <Delete onClick={this.closeModal} />
             </Modal.Card.Head>
             <Modal.Card.Body>
               body
