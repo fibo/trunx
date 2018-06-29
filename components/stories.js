@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var react_1 = require("react");
 var react_2 = require("@storybook/react");
 var Button_1 = require("../elements/Button");
+var Delete_1 = require("../elements/Delete");
 var Modal_1 = require("./Modal");
-var ModalCard_1 = require("./ModalCard");
 var ModalCardExample = (function (_super) {
     __extends(ModalCardExample, _super);
     function ModalCardExample(props) {
@@ -31,7 +31,16 @@ var ModalCardExample = (function (_super) {
                     _this.setState({ modalIsActive: true });
                 } }, "Launch example modal"),
             react_1.default.createElement(Modal_1.default, { isActive: modalIsActive },
-                react_1.default.createElement(ModalCard_1.default, null))));
+                react_1.default.createElement(Modal_1.default.Card, null,
+                    react_1.default.createElement(Modal_1.default.Card.Head, null,
+                        react_1.default.createElement(Modal_1.default.Card.Title, null, "Modal title"),
+                        react_1.default.createElement(Delete_1.default, { onClick: function () {
+                                _this.setState({ modalIsActive: false });
+                            } })),
+                    react_1.default.createElement(Modal_1.default.Card.Body, null, "body"),
+                    react_1.default.createElement(Modal_1.default.Card.Foot, null,
+                        react_1.default.createElement(Button_1.default, null, "Cancel"),
+                        react_1.default.createElement(Button_1.default, { isSuccess: true }, "Save changes"))))));
     };
     return ModalCardExample;
 }(react_1.Component));
