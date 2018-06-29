@@ -10,7 +10,8 @@ interface ModalBackgroundProps {
 }
 
 interface ModalCloseProps {
-  isLarge?: boolean
+  isLarge?: boolean,
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 class ModalCardBody extends React.Component {
@@ -86,7 +87,8 @@ class ModalCard extends React.Component {
 class ModalClose extends React.Component<ModalCloseProps> {
   public render() {
     const {
-      isLarge
+      isLarge,
+      onClick
     } = this.props
 
     const className = classname(['modal-close'], {
@@ -97,6 +99,7 @@ class ModalClose extends React.Component<ModalCloseProps> {
       <button
         aria-label="close"
         className={className}
+        onClick={onClick}
       />
     )
   }
