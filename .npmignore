@@ -1,1 +1,5 @@
+.editorconfig
+.storybook
 src
+tsconfig.json
+tslint.json
