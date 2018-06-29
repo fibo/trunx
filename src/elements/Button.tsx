@@ -2,6 +2,7 @@ import * as classname from 'classname'
 import * as React from 'react'
 
 interface Props {
+  disabled?: boolean
   href?: string
   isActive?: boolean
   isBlack?: boolean
@@ -29,6 +30,7 @@ interface Props {
 export default class Button extends React.Component<Props> {
   public render() {
     const {
+      disabled,
       href,
       isActive,
       isBlack,
@@ -51,6 +53,7 @@ export default class Button extends React.Component<Props> {
       isWarning,
       isWhite,
       onClick,
+      ...props
     } = this.props
 
     const className = classname(['button'], {
@@ -80,13 +83,16 @@ export default class Button extends React.Component<Props> {
       <a
         className={className}
         href={href}
+        {...props}
       >
         {this.props.children}
       </a>
     ) : (
       <button
         className={className}
+        disabled={disabled}
         onClick={onClick}
+        {...props}
       >
         {this.props.children}
       </button>
