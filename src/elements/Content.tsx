@@ -5,16 +5,14 @@ interface Props {
   isLarge?: boolean
   isMedium?: boolean
   isSmall?: boolean
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
-export default class Delete extends React.Component<Props> {
+export default class Content extends React.Component<Props> {
   public render() {
     const {
       isLarge,
       isMedium,
-      isSmall,
-      onClick
+      isSmall
     } = this.props
 
     const className = classname(['content'], {
@@ -24,7 +22,7 @@ export default class Delete extends React.Component<Props> {
     })
 
     return (
-      <button className="delete" onClick={onClick}/>
+      <div className={className}>{this.props.children}</div>
     )
   }
 }

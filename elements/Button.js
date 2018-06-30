@@ -34,7 +34,7 @@ var Button = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Button.prototype.render = function () {
-        var _a = this.props, disabled = _a.disabled, href = _a.href, isActive = _a.isActive, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isDisabled = _a.isDisabled, isFocused = _a.isFocused, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isInfo = _a.isInfo, isInverted = _a.isInverted, isLoading = _a.isLoading, isOutlined = _a.isOutlined, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isStatic = _a.isStatic, isSuccess = _a.isSuccess, isText = _a.isText, isWarning = _a.isWarning, isWhite = _a.isWhite, onClick = _a.onClick, props = __rest(_a, ["disabled", "href", "isActive", "isBlack", "isDanger", "isDark", "isDisabled", "isFocused", "isLarge", "isLight", "isLink", "isInfo", "isInverted", "isLoading", "isOutlined", "isPrimary", "isRounded", "isStatic", "isSuccess", "isText", "isWarning", "isWhite", "onClick"]);
+        var _a = this.props, disabled = _a.disabled, href = _a.href, isActive = _a.isActive, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isDisabled = _a.isDisabled, isFocused = _a.isFocused, isInfo = _a.isInfo, isInverted = _a.isInverted, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isLoading = _a.isLoading, isMedium = _a.isMedium, isOutlined = _a.isOutlined, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isStatic = _a.isStatic, isSuccess = _a.isSuccess, isText = _a.isText, isWarning = _a.isWarning, isWhite = _a.isWhite, onClick = _a.onClick, props = __rest(_a, ["disabled", "href", "isActive", "isBlack", "isDanger", "isDark", "isDisabled", "isFocused", "isInfo", "isInverted", "isLarge", "isLight", "isLink", "isLoading", "isMedium", "isOutlined", "isPrimary", "isRounded", "isSmall", "isStatic", "isSuccess", "isText", "isWarning", "isWhite", "onClick"]);
         var className = classname(['button'], {
             'is-active': isActive,
             'is-black': isBlack,
@@ -48,9 +48,11 @@ var Button = (function (_super) {
             'is-light': isLight,
             'is-link': isLink,
             'is-loading': isLoading,
+            'is-medium': isMedium,
             'is-outlined': isOutlined,
             'is-primary': isPrimary,
             'is-rounded': isRounded,
+            'is-small': isSmall,
             'is-static': isStatic,
             'is-success': isSuccess,
             'is-text': isText,
