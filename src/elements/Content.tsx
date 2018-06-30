@@ -15,6 +15,9 @@ export default class Content extends React.Component<Props> {
   public render() {
     const {
       hasTextCentered,
+      hasTextJustified,
+      hasTextLeft,
+      hasTextRight,
       isLarge,
       isMedium,
       isSmall
