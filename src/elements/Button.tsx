@@ -10,15 +10,17 @@ interface Props {
   isDark?: boolean
   isDisabled?: boolean
   isFocused?: boolean
+  isInfo?: boolean
+  isInverted?: boolean
   isLarge?: boolean
   isLight?: boolean
   isLink?: boolean
-  isInfo?: boolean
-  isInverted?: boolean
   isLoading?: boolean
+  isMedium?: boolean
   isOutlined?: boolean
   isPrimary?: boolean
   isRounded?: boolean
+  isSmall?: boolean
   isStatic?: boolean
   isSuccess?: boolean
   isText?: boolean
@@ -38,15 +40,17 @@ export default class Button extends React.Component<Props> {
       isDark,
       isDisabled,
       isFocused,
+      isInfo,
+      isInverted,
       isLarge,
       isLight,
       isLink,
-      isInfo,
-      isInverted,
       isLoading,
+      isMedium,
       isOutlined,
       isPrimary,
       isRounded,
+      isSmall,
       isStatic,
       isSuccess,
       isText,
@@ -69,9 +73,11 @@ export default class Button extends React.Component<Props> {
       'is-light': isLight,
       'is-link': isLink,
       'is-loading': isLoading,
+      'is-medium': isMedium,
       'is-outlined': isOutlined,
       'is-primary': isPrimary,
       'is-rounded': isRounded,
+      'is-small': isSmall,
       'is-static': isStatic,
       'is-success': isSuccess,
       'is-text': isText,

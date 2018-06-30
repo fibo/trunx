@@ -9,22 +9,15 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
 var React = require("react");
-var Delete = (function (_super) {
-    __extends(Delete, _super);
-    function Delete() {
+var Box = (function (_super) {
+    __extends(Box, _super);
+    function Box() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Delete.prototype.render = function () {
-        var _a = this.props, isLarge = _a.isLarge, isMedium = _a.isMedium, isSmall = _a.isSmall, onClick = _a.onClick;
-        var className = classname(['content'], {
-            'is-large': isLarge,
-            'is-medium': isMedium,
-            'is-small': isSmall
-        });
-        return (React.createElement("button", { className: "delete", onClick: onClick }));
+    Box.prototype.render = function () {
+        return (React.createElement("div", { className: "box" }, this.props.children));
     };
-    return Delete;
+    return Box;
 }(React.Component));
-exports.default = Delete;
+exports.default = Box;
