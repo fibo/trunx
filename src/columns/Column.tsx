@@ -25,7 +25,9 @@ interface Props {
   isOneQuarter?: boolean
   isThreeFifths?: boolean
   isThreeQuarters?: boolean
+  isTwoFifths?: boolean
   isTwoQuarters?: boolean
+  isTwoThirds?: boolean
 }
 
 export default class Column extends React.Component<Props> {
@@ -54,7 +56,9 @@ export default class Column extends React.Component<Props> {
       isOneQuarter,
       isThreeFifths,
       isThreeQuarters,
+      isTwoFifths,
       isTwoQuarters,
+      isTwoThirds,
     } = this.props
 
     const className = classname(['column'], {
@@ -83,7 +87,9 @@ export default class Column extends React.Component<Props> {
       'is-one-quarter': isOneQuarter,
       'is-three-fifths': isThreeFifths,
       'is-three-quarters': isThreeQuarters,
+      'is-two-fifths': isTwoFifths,
       'is-two-quarters': isTwoQuarters,
+      'is-two-thirds': isTwoThirds,
     })
 
     return (
