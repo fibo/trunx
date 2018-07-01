@@ -10,7 +10,7 @@ See components storybook [here](http://g14n.info/trunx).
 
 **NOTA BENE**: this package is at an early stage development.
 
-[React] v16 is required as a peer dependency. With [npm] do
+[React] v16 is required as a peer dependency. With [npm](https://www.npmjs.com/) do
 
 ```bash
 npm install react
