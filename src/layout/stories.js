@@ -5,7 +5,10 @@ import { storiesOf } from '@storybook/react'
 import Container from './Container'
 import Content from '../elements/Content'
 import Footer from './Footer'
+import Hero from './Hero'
 import Notification from '../elements/Notification'
+import Title from '../elements/Title'
+import Subtitle from '../elements/Subtitle'
 
 storiesOf('Layout', module)
   .add('Container', () => (
@@ -35,11 +38,86 @@ storiesOf('Layout', module)
       </Container>
     </Fragment>
   ))
+  .add('Hero', () => (
+    <Fragment>
+      <Hero>
+        <Hero.Body>
+          <Container>
+            <Title>Hero title</Title>
+            <Subtitle>Hero subtitle</Subtitle>
+          </Container>
+        </Hero.Body>
+      </Hero>
+
+      <Hero isPrimary>
+        <Hero.Body>
+          <Container>
+            <Title>isPrimary title</Title>
+            <Subtitle>isPrimary subtitle</Subtitle>
+          </Container>
+        </Hero.Body>
+      </Hero>
+
+      <Hero isInfo>
+        <Hero.Body>
+          <Container>
+            <Title>isInfo title</Title>
+            <Subtitle>isInfo subtitle</Subtitle>
+          </Container>
+        </Hero.Body>
+      </Hero>
+
+      <Hero isSuccess>
+        <Hero.Body>
+          <Container>
+            <Title>isSuccess title</Title>
+            <Subtitle>isSuccess subtitle</Subtitle>
+          </Container>
+        </Hero.Body>
+      </Hero>
+
+      <Hero isWarning>
+        <Hero.Body>
+          <Container>
+            <Title>Warning title</Title>
+            <Subtitle>Warning subtitle</Subtitle>
+          </Container>
+        </Hero.Body>
+      </Hero>
+
+      <Hero isDanger>
+        <Hero.Body>
+          <Container>
+            <Title>Danger title</Title>
+            <Subtitle>Danger subtitle</Subtitle>
+          </Container>
+        </Hero.Body>
+      </Hero>
+
+      <Hero isLight>
+        <Hero.Body>
+          <Container>
+            <Title>isLight title</Title>
+            <Subtitle>isLight subtitle</Subtitle>
+          </Container>
+        </Hero.Body>
+      </Hero>
+
+      <Hero isDark>
+        <Hero.Body>
+          <Container>
+            <Title>Dark title</Title>
+            <Subtitle>Dark subtitle</Subtitle>
+          </Container>
+        </Hero.Body>
+      </Hero>
+    </Fragment>
+  ))
   .add('Footer', () => (
     <Footer>
       <Content hasTextCentered>
         <p>
-          <strong>Bulma</strong> by <a href='https://jgthms.com'>Jeremy Thomas</a>. The source code is licensed <a href='http://opensource.org/licenses/mit-license.php'>MIT</a>. The website content is licensed <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>CC BY NC SA 4.0</a>.
+          <strong>Trunx</strong> by <a href='http://g14n.info'>Gianluca Casati</a>. The source code is licensed <a href='http://g14n.info/mit-license'>MIT</a>.
         </p>
       </Content>
     </Footer>
