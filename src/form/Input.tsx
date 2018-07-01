@@ -2,60 +2,43 @@ import * as classname from 'classname'
 import * as React from 'react'
 
 interface Props {
-  isBlack?: boolean
   isDanger?: boolean
-  isDark?: boolean
-  isInfo?: boolean
+  isInfo?: boolean,
   isLarge?: boolean
-  isLight?: boolean
-  isLink?: boolean
   isMedium?: boolean
   isPrimary?: boolean
-  isRounded?: boolean
   isSmall?: boolean
   isSuccess?: boolean
   isWarning?: boolean
-  isWhite?: boolean
 }
 
-export default class Tag extends React.Component<Props> {
+export default class Input extends React.Component<Props> {
   public render() {
     const {
-      isBlack,
       isDanger,
-      isDark,
       isInfo,
       isLarge,
-      isLight,
-      isLink,
       isMedium,
       isPrimary,
-      isRounded,
       isSmall,
       isSuccess,
       isWarning,
-      isWhite,
+      ...props
     } = this.props
 
-    const className = classname(['tag'], {
-      'is-black': isBlack,
+    const className = classname(['input'], {
       'is-danger': isDanger,
-      'is-dark': isDark,
       'is-info': isInfo,
       'is-large': isLarge,
-      'is-light': isLight,
-      'is-link': isLink,
       'is-medium': isMedium,
       'is-primary': isPrimary,
-      'is-rounded': isRounded,
       'is-small': isSmall,
       'is-success': isSuccess,
-      'is-warning': isWarning,
-      'is-white': isWhite,
+      'is-warning': isWarning
     })
 
     return (
-      <span className={className}>{this.props.children}</span>
+      <input className={className} {...props}/>
     )
   }
 }
