@@ -9,6 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+var classname = require("classname");
 var React = require("react");
 var Subtitle = (function (_super) {
     __extends(Subtitle, _super);
@@ -16,7 +17,21 @@ var Subtitle = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Subtitle.prototype.render = function () {
-        return (React.createElement("p", { className: "subtitle" }, this.props.children));
+        var _a = this.props, is1 = _a.is1, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6;
+        var className = classname(['subtitle'], {
+            'is-1': is1,
+            'is-2': is2,
+            'is-3': is3,
+            'is-4': is4,
+            'is-5': is5,
+            'is-6': is6,
+        });
+        if (is1 || is2 || is3 || is4 || is5 || is6) {
+            return (React.createElement("h1", { className: className }, this.props.children));
+        }
+        else {
+            return (React.createElement("p", { className: "subtitle" }, this.props.children));
+        }
     };
     return Subtitle;
 }(React.Component));
