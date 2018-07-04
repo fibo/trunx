@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Button from '../elements/Button'
+import ClassicNavbar from './ClassicNavbar'
 import Delete from '../elements/Delete'
 import Navbar from './Navbar'
 import Modal from './Modal'
@@ -76,4 +77,18 @@ storiesOf('Components', module)
         <Navbar.Burger />
       </Navbar.Brand>
     </Navbar>
+  ))
+
+storiesOf('Components/Navbar', module)
+  .add('Classic navbar', () => (
+    <ClassicNavbar
+      brand={() => (
+        <Navbar.Item
+          href='https://g14n.info/trunx'
+        >Trunx</Navbar.Item>
+      )}
+    >
+      <Navbar.Start />
+      <Navbar.End />
+    </ClassicNavbar>
   ))
