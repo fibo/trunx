@@ -6,6 +6,7 @@ import * as Columns from './columns/Columns'
 // Components
 
 import * as Modal from './components/Modal'
+import * as Navbar from './components/Navbar'
 
 // Elements
 
@@ -21,6 +22,7 @@ export {
   Columns,
   Delete,
   Modal,
+  Navbar,
   Notification,
   Subtitle,
   Title
