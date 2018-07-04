@@ -5,6 +5,7 @@ import * as Columns from './columns/Columns'
 
 // Components
 
+import * as ClassicNavbar from './components/ClassicNavbar'
 import * as Modal from './components/Modal'
 import * as Navbar from './components/Navbar'
 
@@ -18,6 +19,7 @@ import * as Title from './elements/Title'
 
 export {
   Button,
+  ClassicNavbar,
   Column,
   Columns,
   Delete,
