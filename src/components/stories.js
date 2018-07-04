@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react'
 
 import Button from '../elements/Button'
 import Delete from '../elements/Delete'
+import Navbar from './Navbar'
 import Modal from './Modal'
 
 class ModalCardExample extends Component {
@@ -63,4 +64,16 @@ class ModalCardExample extends Component {
 storiesOf('Components/Modal', module)
   .add('Modal card', () => (
     <ModalCardExample />
+  ))
+
+storiesOf('Components', module)
+  .add('Navbar', () => (
+    <Navbar>
+      <Navbar.Brand>
+        <Navbar.Item
+          href='https://g14n.info/trunx'
+        >Trunx</Navbar.Item>
+        <Navbar.Burger />
+      </Navbar.Brand>
+    </Navbar>
   ))
