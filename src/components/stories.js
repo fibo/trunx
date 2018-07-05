@@ -89,6 +89,9 @@ storiesOf('Components/Navbar', module)
       )}
     >
       <Navbar.Start />
-      <Navbar.End />
+      <Navbar.End>
+        <Navbar.Item>Foo</Navbar.Item>
+        <Navbar.Item>Bar</Navbar.Item>
+      </Navbar.End>
     </ClassicNavbar>
   ))
