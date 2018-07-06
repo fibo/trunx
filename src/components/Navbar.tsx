@@ -10,6 +10,7 @@ interface NavbarProps {
 
 interface NavbarBurgerProps {
   isActive?: boolean
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
 interface NavbarItemProps {
@@ -35,6 +36,7 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
   public render() {
     const {
       isActive,
+      onClick,
     } = this.props
 
     const className = classname(['navbar-burger'], {
@@ -47,6 +49,7 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
         role="button"
         aria-label="menu"
         aria-expanded={isActive ? 'true' : 'false'}
+        onClick={onClick}
       >
         <span aria-hidden="true"/>
         <span aria-hidden="true"/>
