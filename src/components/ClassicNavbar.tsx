@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import * as Navbar from './Navbar'
+import Navbar from './Navbar'
 
 interface Props {
   brand: () => React.Component
@@ -24,25 +24,19 @@ export default class ClassicNavbar extends React.Component<Props, State> {
       isActive,
     } = this.state
 
-    //  return (
-    //    <Navbar>
-    //      <Navbar.Brand>
-    //        {brand()}
-    //        <Navbar.Burger
-    //          isActive={isActive}
-    //          onClick={this.toggle}
-    //        />
-    //      </Navbar.Brand>
-    //      <Navbar.Menu isActive={isActive}>
-    //        {this.props.children}
-    //      </Navbar.Menu>
-    //    </Navbar>
-    //  )
-
     return (
-      <Navbar.Menu>
-        ok
-      </Navbar.Menu>
+      <Navbar>
+        <Navbar.Brand>
+          {brand()}
+          <Navbar.Burger
+            isActive={isActive}
+            onClick={this.toggle}
+          />
+        </Navbar.Brand>
+        <Navbar.Menu isActive={isActive}>
+          {this.props.children}
+        </Navbar.Menu>
+      </Navbar>
     )
   }
 

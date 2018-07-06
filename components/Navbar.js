@@ -44,11 +44,11 @@ var NavbarBurger = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarBurger.prototype.render = function () {
-        var isActive = this.props.isActive;
+        var _a = this.props, isActive = _a.isActive, onClick = _a.onClick;
         var className = classname(['navbar-burger'], {
             'is-active': isActive,
         });
-        return (React.createElement("a", { className: className, role: "button", "aria-label": "menu", "aria-expanded": isActive ? 'true' : 'false' },
+        return (React.createElement("a", { className: className, role: "button", "aria-label": "menu", "aria-expanded": isActive ? 'true' : 'false', onClick: onClick },
             React.createElement("span", { "aria-hidden": "true" }),
             React.createElement("span", { "aria-hidden": "true" }),
             React.createElement("span", { "aria-hidden": "true" })));

@@ -10,7 +10,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var Navbar = require("./Navbar");
+var Navbar_1 = require("./Navbar");
 var initialState = {
     isActive: false
 };
@@ -27,7 +27,11 @@ var ClassicNavbar = (function (_super) {
     ClassicNavbar.prototype.render = function () {
         var brand = this.props.brand;
         var isActive = this.state.isActive;
-        return (React.createElement(Navbar.Menu, null, "ok"));
+        return (React.createElement(Navbar_1.default, null,
+            React.createElement(Navbar_1.default.Brand, null,
+                brand(),
+                React.createElement(Navbar_1.default.Burger, { isActive: isActive, onClick: this.toggle })),
+            React.createElement(Navbar_1.default.Menu, { isActive: isActive }, this.props.children)));
     };
     return ClassicNavbar;
 }(React.Component));
