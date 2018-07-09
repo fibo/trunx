@@ -4,8 +4,8 @@ import { storiesOf } from '@storybook/react'
 
 import Button from '../elements/Button'
 import Checkbox from './Checkbox'
-import Control from './Control'
-import Field from './Field'
+import Control from '../elements/Control'
+import Field from '../elements/Field'
 import Input from './Input'
 
 storiesOf('Form/General', module)

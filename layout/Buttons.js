@@ -9,23 +9,15 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
 var React = require("react");
-var Field = (function (_super) {
-    __extends(Field, _super);
-    function Field() {
+var Buttons = (function (_super) {
+    __extends(Buttons, _super);
+    function Buttons() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Field.prototype.render = function () {
-        var _a = this.props, hasAddons = _a.hasAddons, hasAddonsCentered = _a.hasAddonsCentered, label = _a.label;
-        var className = classname(['field'], {
-            'has-addons': hasAddons,
-            'has-addons-centered': hasAddonsCentered
-        });
-        return (React.createElement("div", { className: className },
-            label && React.createElement("label", { className: "label" }, label),
-            this.props.children));
+    Buttons.prototype.render = function () {
+        return (React.createElement("div", { className: "buttons" }, this.props.children));
     };
-    return Field;
+    return Buttons;
 }(React.Component));
-exports.default = Field;
+exports.default = Buttons;

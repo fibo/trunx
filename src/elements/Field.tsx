@@ -4,6 +4,8 @@ import * as React from 'react'
 interface Props {
   hasAddons?: boolean
   hasAddonsCentered?: boolean
+  isGrouped?: boolean
+  isGroupedMultiline?: boolean
   label?: string
 }
 
@@ -12,12 +14,16 @@ export default class Field extends React.Component<Props> {
     const {
       hasAddons,
       hasAddonsCentered,
-      label
+      isGrouped,
+      isGroupedMultiline,
+      label,
     } = this.props
 
     const className = classname(['field'], {
       'has-addons': hasAddons,
-      'has-addons-centered': hasAddonsCentered
+      'has-addons-centered': hasAddonsCentered,
+      'is-grouped': isGrouped,
+      'is-grouped-multiline': isGroupedMultiline,
     })
 
     return (

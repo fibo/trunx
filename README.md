@@ -1,4 +1,4 @@
-# trunx
+# Trunx
 
 > super Saiyan react components, son of awesome [Bulma]
 
