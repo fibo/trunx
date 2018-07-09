@@ -53,6 +53,11 @@ npm run deploy-storybook
 
 [MIT](http://g14n.info/mit-license)
 
+## Credits
+
+Tons of kudos to [Bulma] author!
+Trunks png comes from [kisspng](https://www.kisspng.com/png-trunks-gohan-goku-goten-bulma-1996965/).
+
 [Bulma]: https://bulma.io "Bulma CSS framework"
 [Go7]: https://go7.li "Go7 Url shortener"
 [React]: https://facebook.github.io/react/ "React"
