@@ -15,6 +15,7 @@ import * as Button from './elements/Button'
 import * as Delete from './elements/Delete'
 import * as Notification from './elements/Notification'
 import * as Subtitle from './elements/Subtitle'
+import * as Table from './elements/Table'
 import * as Title from './elements/Title'
 
 // Layout
