@@ -7,8 +7,9 @@ import Content from '../elements/Content'
 import Footer from './Footer'
 import Hero from './Hero'
 import Notification from '../elements/Notification'
-import Title from '../elements/Title'
+import Section from './Section'
 import Subtitle from '../elements/Subtitle'
+import Title from '../elements/Title'
 
 storiesOf('Layout', module)
   .add('Container', () => (
@@ -112,6 +113,14 @@ storiesOf('Layout', module)
         </Hero.Body>
       </Hero>
     </Fragment>
+  ))
+  .add('Section', () => (
+    <Section>
+      <Container>
+        <Title>Section</Title>
+        <Subtitle>A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading</Subtitle>
+      </Container>
+    </Section>
   ))
   .add('Footer', () => (
     <Footer>

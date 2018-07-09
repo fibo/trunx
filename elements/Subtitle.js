@@ -26,11 +26,23 @@ var Subtitle = (function (_super) {
             'is-5': is5,
             'is-6': is6,
         });
-        if (is1 || is2 || is3 || is4 || is5 || is6) {
-            return (React.createElement("h1", { className: className }, this.props.children));
+        if (is2) {
+            return (React.createElement("h2", { className: className }, this.props.children));
+        }
+        else if (is3) {
+            return (React.createElement("h3", { className: className }, this.props.children));
+        }
+        else if (is4) {
+            return (React.createElement("h4", { className: className }, this.props.children));
+        }
+        else if (is5) {
+            return (React.createElement("h5", { className: className }, this.props.children));
+        }
+        else if (is6) {
+            return (React.createElement("h6", { className: className }, this.props.children));
         }
         else {
-            return (React.createElement("p", { className: "subtitle" }, this.props.children));
+            return (React.createElement("p", { className: className }, this.props.children));
         }
     };
     return Subtitle;
