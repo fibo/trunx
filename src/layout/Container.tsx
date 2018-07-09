@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default class Container extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       isFluid,
       isFullhd,

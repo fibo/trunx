@@ -15,7 +15,7 @@ interface ModalCloseProps {
 }
 
 class ModalCardBody extends React.Component {
-  public render() {
+  render() {
     return (
       <section className="modal-card-body">
         {this.props.children}
@@ -25,7 +25,7 @@ class ModalCardBody extends React.Component {
 }
 
 class ModalCardFoot extends React.Component {
-  public render() {
+  render() {
     return (
       <footer className="modal-card-foot">
         {this.props.children}
@@ -35,7 +35,7 @@ class ModalCardFoot extends React.Component {
 }
 
 class ModalCardHead extends React.Component {
-  public render() {
+  render() {
     return (
       <header className="modal-card-head">
         {this.props.children}
@@ -45,7 +45,7 @@ class ModalCardHead extends React.Component {
 }
 
 class ModalCardTitle extends React.Component {
-  public render() {
+  render() {
     return (
       <p className="modal-card-title">
         {this.props.children}
@@ -55,7 +55,7 @@ class ModalCardTitle extends React.Component {
 }
 
 class ModalBackground extends React.Component<ModalBackgroundProps> {
-  public render() {
+  render() {
     const {
       onClick
     } = this.props
@@ -70,12 +70,12 @@ class ModalBackground extends React.Component<ModalBackgroundProps> {
 }
 
 class ModalCard extends React.Component {
-  public static Body = ModalCardBody
-  public static Foot = ModalCardFoot
-  public static Head = ModalCardHead
-  public static Title = ModalCardTitle
+  static Body = ModalCardBody
+  static Foot = ModalCardFoot
+  static Head = ModalCardHead
+  static Title = ModalCardTitle
 
-  public render() {
+  render() {
     return (
       <div className="modal-card">
         {this.props.children}
@@ -85,7 +85,7 @@ class ModalCard extends React.Component {
 }
 
 class ModalClose extends React.Component<ModalCloseProps> {
-  public render() {
+  render() {
     const {
       isLarge,
       onClick
@@ -106,7 +106,7 @@ class ModalClose extends React.Component<ModalCloseProps> {
 }
 
 class ModalContent extends React.Component {
-  public render() {
+  render() {
     return (
       <div className="modal-content">
         {this.props.children}
@@ -116,12 +116,12 @@ class ModalContent extends React.Component {
 }
 
 export default class Modal extends React.Component<ModalProps> {
-  public static Background = ModalBackground
-  public static Card = ModalCard
-  public static Close = ModalClose
-  public static Content = ModalContent
+  static Background = ModalBackground
+  static Card = ModalCard
+  static Close = ModalClose
+  static Content = ModalContent
 
-  public render() {
+  render() {
     const {
       isActive
     } = this.props

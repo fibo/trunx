@@ -5,7 +5,7 @@ interface Props {
 }
 
 export default class Checkbox extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       disabled
     } = this.props

@@ -10,7 +10,7 @@ interface TableProps {
 }
 
 export default class Table extends React.Component<TableProps> {
-  public render() {
+  render() {
     const {
       isBordered,
       isFullwidth,

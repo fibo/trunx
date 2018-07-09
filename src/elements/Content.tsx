@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default class Content extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       hasTextCentered,
       hasTextJustified,

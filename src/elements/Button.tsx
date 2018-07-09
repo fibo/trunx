@@ -30,7 +30,7 @@ interface Props {
 }
 
 export default class Button extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       disabled,
       href,

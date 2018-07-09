@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default class Field extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       hasAddons,
       hasAddonsCentered,
