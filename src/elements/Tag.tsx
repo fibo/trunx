@@ -2,6 +2,7 @@ import * as classname from 'classname'
 import * as React from 'react'
 
 interface Props {
+  href?: string
   isBlack?: boolean
   isDanger?: boolean
   isDark?: boolean
@@ -21,6 +22,7 @@ interface Props {
 export default class Tag extends React.Component<Props> {
   render() {
     const {
+      href,
       isBlack,
       isDanger,
       isDark,
@@ -35,6 +37,7 @@ export default class Tag extends React.Component<Props> {
       isSuccess,
       isWarning,
       isWhite,
+      ...props
     } = this.props
 
     const className = classname(['tag'], {
@@ -54,7 +57,15 @@ export default class Tag extends React.Component<Props> {
       'is-white': isWhite,
     })
 
-    return (
+    return href ? (
+      <a
+        className={className}
+        href={href}
+        {...props}
+      >
+        {this.props.children}
+      </a>
+    ) : (
       <span className={className}>{this.props.children}</span>
     )
   }
