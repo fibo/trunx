@@ -16,7 +16,7 @@ interface Props {
 }
 
 export default class Progress extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       isDanger,
       isInfo,

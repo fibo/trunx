@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default class Columns extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       isDesktop,
       isGapeless,

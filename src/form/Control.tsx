@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default class Control extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       hasIconsLeft,
       hasIconsRight,

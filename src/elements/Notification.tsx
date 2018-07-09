@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default class Notification extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       isDanger,
       isLink,

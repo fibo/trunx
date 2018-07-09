@@ -13,9 +13,9 @@ const initialState = {
 type State = Readonly<typeof initialState>
 
 export default class ClassicNavbar extends React.Component<Props, State> {
-  public readonly state: State = initialState
+  readonly state: State = initialState
 
-  public render() {
+  render() {
     const {
       brand,
     } = this.props

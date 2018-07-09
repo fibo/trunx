@@ -15,7 +15,7 @@ interface HeroProps {
 }
 
 class HeroBody extends React.Component {
-  public render() {
+  render() {
     return (
       <div className="hero-body">{this.props.children}</div>
     )
@@ -23,9 +23,9 @@ class HeroBody extends React.Component {
 }
 
 export default class Hero extends React.Component<HeroProps> {
-  public static Body = HeroBody
+  static Body = HeroBody
 
-  public render() {
+  render() {
     const {
       isDanger,
       isDark,

@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default class Subtitle extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       is1,
       is2,
