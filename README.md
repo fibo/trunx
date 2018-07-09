@@ -2,13 +2,13 @@
 
 > super Saiyan react components, son of awesome [Bulma]
 
-## Components
+![trunx](./assets/trunks.png)
 
-See components storybook [here](http://g14n.info/trunx).
+## Documentation
+
+Please see *components storybook*: [click here](http://g14n.info/trunx).
 
 ## Installation
-
-**NOTA BENE**: this package is at an early stage development.
 
 [React] v16 is required as a peer dependency. With [npm](https://www.npmjs.com/) do
 

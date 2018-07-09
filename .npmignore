@@ -1,5 +1,6 @@
 .editorconfig
 .storybook
+assets
 src
 tsconfig.json
 tslint.json
