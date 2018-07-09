@@ -2,7 +2,7 @@
 
 > super Saiyan react components, son of awesome [Bulma]
 
-<img src="./assets/trunks.png" width="105" height="290"/>
+<img src="./assets/trunks.png" height="290"/>
 
 ## Documentation
 
