@@ -17,6 +17,13 @@ import * as Notification from './elements/Notification'
 import * as Subtitle from './elements/Subtitle'
 import * as Title from './elements/Title'
 
+// Layout
+
+import * as Container from './layout/Container'
+import * as Footer from './layout/Footer'
+import * as Hero from './layout/Hero'
+import * as Section from './layout/Section'
+
 export {
   Button,
   ClassicNavbar,
