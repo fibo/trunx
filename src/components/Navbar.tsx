@@ -25,7 +25,7 @@ interface NavbarMenuProps {
 }
 
 class NavbarBrand extends React.Component {
-  public render() {
+  render() {
     return (
       <div className="navbar-brand">{this.props.children}</div>
     )
@@ -33,7 +33,7 @@ class NavbarBrand extends React.Component {
 }
 
 class NavbarBurger extends React.Component<NavbarBurgerProps> {
-  public render() {
+  render() {
     const {
       isActive,
       onClick,
@@ -60,7 +60,7 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
 }
 
 class NavbarDropdown extends React.Component {
-  public render() {
+  render() {
     return (
       <div className="navbar-dropdown">{this.props.children}</div>
     )
@@ -68,7 +68,7 @@ class NavbarDropdown extends React.Component {
 }
 
 class NavbarEnd extends React.Component {
-  public render() {
+  render() {
     return (
       <div className="navbar-end">{this.props.children}</div>
     )
@@ -76,7 +76,7 @@ class NavbarEnd extends React.Component {
 }
 
 class NavbarItem extends React.Component<NavbarItemProps> {
-  public render() {
+  render() {
     const {
       hasDropdown,
       href,
@@ -106,7 +106,7 @@ class NavbarItem extends React.Component<NavbarItemProps> {
 }
 
 class NavbarLink extends React.Component {
-  public render() {
+  render() {
     return (
       <a className="navbar-link">{this.props.children}</a>
     )
@@ -114,7 +114,7 @@ class NavbarLink extends React.Component {
 }
 
 class NavbarMenu extends React.Component<NavbarMenuProps> {
-  public render() {
+  render() {
     const {
       isActive
     } = this.props
@@ -130,7 +130,7 @@ class NavbarMenu extends React.Component<NavbarMenuProps> {
 }
 
 class NavbarStart extends React.Component {
-  public render() {
+  render() {
     return (
       <div className="navbar-start">{this.props.children}</div>
     )
@@ -138,16 +138,16 @@ class NavbarStart extends React.Component {
 }
 
 export default class Navbar extends React.Component<NavbarProps> {
-  public static Brand = NavbarBrand
-  public static Burger = NavbarBurger
-  public static Dropdown = NavbarDropdown
-  public static End = NavbarEnd
-  public static Item = NavbarItem
-  public static Link = NavbarLink
-  public static Menu = NavbarMenu
-  public static Start = NavbarStart
+  static Brand = NavbarBrand
+  static Burger = NavbarBurger
+  static Dropdown = NavbarDropdown
+  static End = NavbarEnd
+  static Item = NavbarItem
+  static Link = NavbarLink
+  static Menu = NavbarMenu
+  static Start = NavbarStart
 
-  public render() {
+  render() {
     const {
       isFixedBottom,
       isFixedTop,

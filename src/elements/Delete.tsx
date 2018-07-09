@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default class Delete extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       isLarge,
       isMedium,

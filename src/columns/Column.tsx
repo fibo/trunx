@@ -31,7 +31,7 @@ interface Props {
 }
 
 export default class Column extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       is2,
       is3,

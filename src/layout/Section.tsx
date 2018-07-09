@@ -7,7 +7,7 @@ interface Props {
 }
 
 export default class Section extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       isLarge,
       isMedium,

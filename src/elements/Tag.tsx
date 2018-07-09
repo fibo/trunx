@@ -19,7 +19,7 @@ interface Props {
 }
 
 export default class Tag extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       isBlack,
       isDanger,

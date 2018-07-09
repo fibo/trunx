@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default class Input extends React.Component<Props> {
-  public render() {
+  render() {
     const {
       isDanger,
       isInfo,
