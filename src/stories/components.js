@@ -2,11 +2,11 @@ import React, { Component, Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import Button from '../elements/Button'
-import ClassicNavbar from '../components/ClassicNavbar'
-import Delete from '../elements/Delete'
-import Navbar from '../components/Navbar'
-import Modal from '../components/Modal'
+import Button from '../component/Button'
+import ClassicNavbar from '../component/ClassicNavbar'
+import Delete from '../component/Delete'
+import Navbar from '../component/Navbar'
+import Modal from '../component/Modal'
 
 class ModalCardExample extends Component {
   constructor (props) {

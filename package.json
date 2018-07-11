@@ -2,7 +2,7 @@
   "name": "trunx",
   "version": "0.4.0",
   "description": "super Saiyan react components, son of awesome Bulma",
-  "main": "index.js",
+  "main": "component/index.js",
   "scripts": {
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "run-p lint:*",
