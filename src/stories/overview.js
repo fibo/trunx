@@ -53,14 +53,14 @@ storiesOf('Overview', module)
         <p>
            To import components, the following syntaxes are supported.
 
-           <ul>
-             <li>
-               <code>{"import { Button } from 'trunx'"}</code>
-             </li>
-             <li>
-               <code>{"const Button = require('trunx/component/Button')"}</code>
-             </li>
-           </ul>
+          <ul>
+            <li>
+              <code>{"import { Button } from 'trunx'"}</code>
+            </li>
+            <li>
+              <code>{"const Button = require('trunx/component/Button')"}</code>
+            </li>
+          </ul>
         </p>
       </Content>
     </Container>
