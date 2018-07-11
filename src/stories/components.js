@@ -3,10 +3,10 @@ import React, { Component, Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Button from '../elements/Button'
-import ClassicNavbar from './ClassicNavbar'
+import ClassicNavbar from '../components/ClassicNavbar'
 import Delete from '../elements/Delete'
-import Navbar from './Navbar'
-import Modal from './Modal'
+import Navbar from '../components/Navbar'
+import Modal from '../components/Modal'
 
 class ModalCardExample extends Component {
   constructor (props) {

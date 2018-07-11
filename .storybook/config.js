@@ -12,11 +12,11 @@ setOptions({
 })
 
 function loadStories () {
-  require('../src/columns/stories.js')
-  require('../src/components/stories.js')
-  require('../src/elements/stories.js')
-  require('../src/form/stories.js')
-  require('../src/layout/stories.js')
+  require('../src/stories/columns.js')
+  require('../src/stories/components.js')
+  require('../src/stories/elements.js')
+  require('../src/stories/form.js')
+  require('../src/stories/layout.js')
 }
 
 configure(loadStories, module)

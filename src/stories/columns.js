@@ -2,8 +2,8 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import Column from './Column'
-import Columns from './Columns'
+import Column from '../columns/Column'
+import Columns from '../columns/Columns'
 import Container from '../layout/Container'
 import Content from '../elements/Content'
 import Notification from '../elements/Notification'

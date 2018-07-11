@@ -3,10 +3,10 @@ import React, { Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Button from '../elements/Button'
-import Checkbox from './Checkbox'
+import Checkbox from '../form/Checkbox'
 import Control from '../elements/Control'
 import Field from '../elements/Field'
-import Input from './Input'
+import Input from '../form/Input'
 
 storiesOf('Form/General', module)
   .add('Form control', () => (
