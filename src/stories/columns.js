@@ -2,13 +2,13 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import Column from '../columns/Column'
-import Columns from '../columns/Columns'
-import Container from '../layout/Container'
-import Content from '../elements/Content'
-import Notification from '../elements/Notification'
-import Subtitle from '../elements/Subtitle'
-import Title from '../elements/Title'
+import Column from '../component/Column'
+import Columns from '../component/Columns'
+import Container from '../component/Container'
+import Content from '../component/Content'
+import Notification from '../component/Notification'
+import Subtitle from '../component/Subtitle'
+import Title from '../component/Title'
 
 storiesOf('Columns', module)
   .add('Basics', () => (
