@@ -2,12 +2,12 @@ import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
 
-import Container from './Container'
+import Container from '../layout/Container'
 import Content from '../elements/Content'
-import Footer from './Footer'
-import Hero from './Hero'
+import Footer from '../layout/Footer'
+import Hero from '../layout/Hero'
 import Notification from '../elements/Notification'
-import Section from './Section'
+import Section from '../layout/Section'
 import Subtitle from '../elements/Subtitle'
 import Title from '../elements/Title'
 
