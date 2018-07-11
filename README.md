@@ -8,15 +8,6 @@
 
 Please see *components storybook*: [click here](http://g14n.info/trunx).
 
-## Installation
-
-[React] v16 is required as a peer dependency. With [npm](https://www.npmjs.com/) do
-
-```bash
-npm install react
-npm install trunx
-```
-
 ## Motivation
 
 I really like [Bulma] CSS framework and I am using it to build an URL

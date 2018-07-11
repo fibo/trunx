@@ -12,6 +12,7 @@ setOptions({
 })
 
 function loadStories () {
+  require('../src/stories/overview.js')
   require('../src/stories/columns.js')
   require('../src/stories/components.js')
   require('../src/stories/elements.js')
