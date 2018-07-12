@@ -14,16 +14,20 @@ storiesOf('Columns', module)
   .add('Basics', () => (
     <Container>
       <Content>
-        <Title>
+        <Title is2>
           Columns powered by Flexbox
         </Title>
+
         <Subtitle>
           A simple way to build responsive columns
         </Subtitle>
+
         <p>
           Building a <b>columns layout</b> with Trunx is very simple:
+
           <ol>
             <li>Add a <code>Columns</code> component as container.</li>
+
             <li>Add as many <code>Column</code> components as children.</li>
           </ol>
 
@@ -52,9 +56,10 @@ storiesOf('Columns', module)
   .add('Sizes', () => (
     <Container>
       <Content>
-        <Title>
+        <Title is2>
           Column sizes
         </Title>
+
         <Subtitle>
           Define the <b>size</b> of each column <b>individually</b>
         </Subtitle>
@@ -81,6 +86,7 @@ storiesOf('Columns', module)
             <li><code>isOneFifth</code></li>
           </ul>
         </p>
+
         <Columns>
           <Column isFourFifths>
             <Notification isPrimary><code>isFourFifths</code></Notification>
@@ -158,9 +164,10 @@ storiesOf('Columns', module)
   .add('Responsiveness', () => (
     <Container>
       <Content>
-        <Title>
+        <Title is2>
           Columns responsiveness
         </Title>
+
         <Subtitle>
           Handle <b>different</b> column layouts for each <b>breakpoint</b>
         </Subtitle>

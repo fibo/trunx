@@ -3,10 +3,16 @@ import React, { Component, Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Button from '../component/Button'
+import Container from '../component/Container'
+import Content from '../component/Content'
 import ClassicNavbar from '../component/ClassicNavbar'
 import Delete from '../component/Delete'
 import Navbar from '../component/Navbar'
 import Modal from '../component/Modal'
+import Subtitle from '../component/Subtitle'
+import Title from '../component/Title'
+
+import Meta from './Meta'
 
 class ModalCardExample extends Component {
   constructor (props) {
@@ -62,36 +68,127 @@ class ModalCardExample extends Component {
   }
 }
 
-storiesOf('Components/Modal', module)
-  .add('Modal card', () => (
-    <ModalCardExample />
-  ))
-
 storiesOf('Components', module)
-  .add('Navbar', () => (
-    <Navbar>
-      <Navbar.Brand>
-        <Navbar.Item
-          href='https://g14n.info/trunx'
-        >Trunx</Navbar.Item>
-        <Navbar.Burger />
-      </Navbar.Brand>
-    </Navbar>
-  ))
+  .add('Modal', () => (
+    <Container>
+      <Content>
+        <Title is2>
+          Modal
+        </Title>
 
-storiesOf('Components/Navbar', module)
-  .add('Classic navbar', () => (
-    <ClassicNavbar
-      brand={() => (
-        <Navbar.Item
-          href='https://g14n.info/trunx'
-        >Trunx</Navbar.Item>
-      )}
-    >
-      <Navbar.Start />
-      <Navbar.End>
-        <Navbar.Item>Foo</Navbar.Item>
-        <Navbar.Item>Bar</Navbar.Item>
-      </Navbar.End>
-    </ClassicNavbar>
+        <Subtitle>
+          A classic <b>modal</b> overlay, in which you can include <em>any</em> content you want
+        </Subtitle>
+
+        <Meta />
+
+        <hr />
+
+        <p>
+          The modal structure is very simple:
+        </p>
+
+        <ul>
+          <li>
+            <code>modal</code>: the main container
+            <ul>
+              <li>
+                <code>modal-background</code>: a transparent overlay that can act as a click target to close the modal
+              </li>
+
+              <li>
+                <code>modal-content</code>: a horizontally and vertically centered container, with a maximum width of 640px, in which you can include any content
+              </li>
+
+              <li>
+                <code>modal-close</code>: a simple cross located in the top right corner
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <ModalCardExample />
+      </Content>
+    </Container>
+  ))
+  .add('Navbar', () => (
+    <Container>
+      <Content>
+        <Title is2>
+          Navbar
+        </Title>
+
+        <Subtitle>
+          A responsive horizontal <b>navbar</b> that can support images, links, buttons, and dropdowns
+        </Subtitle>
+
+        <Meta />
+
+        <hr />
+
+        <p>
+          The <code>navbar</code> component is a responsive and versatile horizontal navigation bar with the following structure:
+        </p>
+
+        <ul>
+          <li>
+            <code>navbar</code>: the main container
+            <ul>
+              <li />
+
+              <li />
+            </ul>
+          </li>
+        </ul>
+
+        <hr />
+
+        <Title>Classic Navbar</Title>
+
+        <p>
+          Probably you need the <b>classic navbar</b> on top, with a classic hamburger icon. You can use a <code>ClassicNavbar</code> component.
+        </p>
+
+        <ClassicNavbar
+          brand={() => (
+            <Navbar.Item
+              href='https://g14n.info/trunx'
+            >Trunx</Navbar.Item>
+          )}
+        >
+          <Navbar.Start />
+          <Navbar.End>
+            <Navbar.Item>Foo</Navbar.Item>
+            <Navbar.Item>Bar</Navbar.Item>
+          </Navbar.End>
+        </ClassicNavbar>
+
+        <hr />
+
+        <Title>Navbar brand</Title>
+
+        <p>
+          The navbar-brand is the left side of the navbar. It can contain:
+        </p>
+
+        <ul>
+          <li>
+            a number of <code>navbar-item</code>
+          </li>
+
+          <li>
+            the <code>navbar-burger</code> as last child
+          </li>
+        </ul>
+
+        <Navbar>
+          <Navbar.Brand>
+            <Navbar.Item
+              href='https://g14n.info/trunx'
+            >Trunx</Navbar.Item>
+            <Navbar.Burger />
+          </Navbar.Brand>
+        </Navbar>
+      </Content>
+    </Container>
   ))
