@@ -14,10 +14,10 @@ setOptions({
 function loadStories () {
   require('../src/stories/overview.js')
   require('../src/stories/columns.js')
-  require('../src/stories/components.js')
-  require('../src/stories/elements.js')
-  require('../src/stories/form.js')
   require('../src/stories/layout.js')
+  require('../src/stories/form.js')
+  require('../src/stories/elements.js')
+  require('../src/stories/components.js')
 }
 
 configure(loadStories, module)
