@@ -14,9 +14,9 @@ export default class Code extends Component {
     } = this.props
 
     return (
-        <SyntaxHighlighter style={coy} {...props}>
-          {children}
-        </SyntaxHighlighter>
+      <SyntaxHighlighter style={coy} {...props}>
+        {children}
+      </SyntaxHighlighter>
 
     )
   }

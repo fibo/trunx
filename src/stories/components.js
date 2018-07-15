@@ -165,7 +165,7 @@ storiesOf('Components', module)
         </ClassicNavbar>
 
         <Code language='jsx'>
-{`<ClassicNavbar
+          {`<ClassicNavbar
   brand={() => (
     <Navbar.Item
       href='https://g14n.info/trunx'
@@ -217,7 +217,7 @@ storiesOf('Components', module)
         </Navbar>
 
         <Code language='jsx'>
-{`<Navbar>
+          {`<Navbar>
   <Navbar.Brand>
     <Navbar.Item
       href='https://g14n.info/trunx'

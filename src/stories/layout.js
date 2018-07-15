@@ -82,7 +82,7 @@ storiesOf('Layout', module)
         </Container>
 
         <Code language='jsx'>
-{`<Container>
+          {`<Container>
   <Notification>
     This container is <strong>centered</strong> on desktop.
   </Notification>
@@ -104,7 +104,7 @@ storiesOf('Layout', module)
         </Container>
 
         <Code language='jsx'>
-{`<Container isFluid>
+          {`<Container isFluid>
   <Notification>
     This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any viewport size.
   </Notification>
@@ -126,7 +126,7 @@ storiesOf('Layout', module)
         </Container>
 
         <Code language='jsx'>
-{`<Container isWidescreen>
+          {`<Container isWidescreen>
   <Notification>
   This container is <strong>fullwidth</strong> <em>until</em> the <code>$widescreen</code> breakpoint.
   </Notification>
@@ -140,7 +140,7 @@ storiesOf('Layout', module)
         </Container>
 
         <Code language='jsx'>
-{`<Container isFullhd>
+          {`<Container isFullhd>
   <Notification>
   This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint.
   </Notification>
@@ -198,7 +198,7 @@ storiesOf('Layout', module)
         </Hero>
 
         <Code language='jsx'>
-{`<Hero>
+          {`<Hero>
   <Hero.Body>
     <Container>
       <Title>Hero title</Title>
@@ -226,7 +226,7 @@ storiesOf('Layout', module)
         </Hero>
 
         <Code language='jsx'>
-{`<Hero isPrimary>
+          {`<Hero isPrimary>
   <Hero.Body>
     <Container>
       <Title>isPrimary title</Title>
@@ -317,7 +317,7 @@ storiesOf('Layout', module)
         </Section>
 
         <Code language='jsx'>
-{`<Section>
+          {`<Section>
   <Container>
     <Title>Section</Title>
     <Subtitle>A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading</Subtitle>
@@ -350,7 +350,7 @@ storiesOf('Layout', module)
         </Footer>
 
         <Code language='jsx'>
-{`<Footer>
+          {`<Footer>
   <Content hasTextCentered>
     <p>
       <strong>Trunx</strong> by <a href='http://g14n.info'>Gianluca Casati</a>. The source code is licensed <a href='http://g14n.info/mit-license'>MIT</a>.
