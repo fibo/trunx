@@ -56,7 +56,7 @@ storiesOf('Columns', module)
         </Columns>
 
         <Code language='jsx'>
-{`<Columns>
+          {`<Columns>
   <Column>
     <Notification>First Column</Notification>
   </Column>
@@ -183,7 +183,7 @@ storiesOf('Columns', module)
         </Columns>
 
         <Code language='jsx'>
-{`<Columns>
+          {`<Columns>
   <Column isFourFifths>
     <Notification><code>isFourFifths</code></Notification>
   </Column>
@@ -294,7 +294,7 @@ storiesOf('Columns', module)
         </Columns>
 
         <Code language='jsx'>
-{`<Columns isMobile>
+          {`<Columns isMobile>
   <Column>
     <Notification>1</Notification>
   </Column>
@@ -330,7 +330,7 @@ storiesOf('Columns', module)
         </Columns>
 
         <Code language='jsx'>
-{`<Columns isDesktop>
+          {`<Columns isDesktop>
   <Column>
     <Notification>1</Notification>
   </Column>

@@ -21,7 +21,7 @@ storiesOf('Overview', module)
         </p>
 
         <Code>
-{`npm install react
+          {`npm install react
 npm install trunx`}
         </Code>
 
