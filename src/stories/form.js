@@ -36,8 +36,7 @@ storiesOf('Form', module)
           The following form controls <b>components</b> are supported:
         </p>
 
-        <ul>
-        </ul>
+        <ul />
 
         <p>
           Each of them should be wrapped in a <Code>Control</Code> component.
@@ -64,7 +63,7 @@ When combining several controls in a <b>form</b>, use the <Code>Field</Code> com
 
             <Field label='Email'>
               <Control>
-                <Input isDanger type='email' placeHolder='Email input' value='hello@'/>
+                <Input isDanger type='email' placeHolder='Email input' value='hello@' />
 
                 <Help isDanger>
                   This email is invalid
@@ -75,7 +74,7 @@ When combining several controls in a <b>form</b>, use the <Code>Field</Code> com
             <Field>
               <Control>
                 <Checkbox>
-                  I agree to the <a href="#">terms and conditions</a>
+                  I agree to the <a href='#'>terms and conditions</a>
                 </Checkbox>
               </Control>
             </Field>
@@ -93,7 +92,7 @@ When combining several controls in a <b>form</b>, use the <Code>Field</Code> com
 
           <Column isHalf>
             <Code language='jsx'>
-{`<Field label='Name'>
+              {`<Field label='Name'>
   <Control>
     <Input type='text' placeHolder='Text input' />
   </Control>
@@ -245,7 +244,7 @@ When combining several controls in a <b>form</b>, use the <Code>Field</Code> com
 
           <Column isHalf>
             <Code language='jsx'>
-{`<Field>
+              {`<Field>
   <Control>
     <Input isPrimary type='text' placeHolder='Primary input' />
   </Control>

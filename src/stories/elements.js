@@ -88,7 +88,7 @@ storiesOf('Elements', module)
 
           <Column isHalf>
             <Code language='jsx'>
- {`<Button isWhite>White</Button>
+              {`<Button isWhite>White</Button>
  <Button isLight>Light</Button>
  <Button isDark>Dark</Button>
  <Button isBlack>Black</Button>
@@ -109,7 +109,7 @@ storiesOf('Elements', module)
 
           <Column isHalf>
             <Code language='jsx'>
-{`<Button isPrimary>Primary</Button>
+              {`<Button isPrimary>Primary</Button>
 <Button isLink>Link</Button>
 <Button isInfo>Info</Button>
 <Button isSuccess>Success</Button>
@@ -131,7 +131,7 @@ storiesOf('Elements', module)
 
           <Column isHalf>
             <Code language='jsx'>
- {`<Button isSmall>Small</Button>
+              {`<Button isSmall>Small</Button>
  <Button isNormal>Normal</Button>
  <Button isMedium>Medium</Button>
  <Button isLarge>Large</Button>`}
@@ -171,7 +171,7 @@ storiesOf('Elements', module)
 
           <Column isHalf>
             <Code language='jsx'>
-{`<Notification>
+              {`<Notification>
     <Delete />
 
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
@@ -220,7 +220,7 @@ storiesOf('Elements', module)
 
           <Column isHalf>
             <Code language='jsx'>
-{`<Notification isPrimary>
+              {`<Notification isPrimary>
   <Delete />
 
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
@@ -250,7 +250,7 @@ storiesOf('Elements', module)
 
   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
 </Notification>`}
-</Code>
+            </Code>
           </Column>
         </Columns>
       </Content>
