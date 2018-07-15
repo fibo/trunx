@@ -130,6 +130,24 @@ var Navbar = (function (_super) {
     function Navbar() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
+    Navbar.prototype.componentDidMount = function () {
+        var _a = this.props, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop;
+        if (isFixedTop) {
+            document.body.classList.add('has-navbar-fixed-top');
+        }
+        else if (isFixedBottom) {
+            document.body.classList.add('has-navbar-fixed-bottom');
+        }
+    };
+    Navbar.prototype.componentWillUnmount = function () {
+        var _a = this.props, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop;
+        if (isFixedBottom) {
+            document.body.classList.remove('has-navbar-fixed-bottom');
+        }
+        else if (isFixedTop) {
+            document.body.classList.remove('has-navbar-fixed-top');
+        }
+    };
     Navbar.prototype.render = function () {
         var _a = this.props, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, props = __rest(_a, ["isFixedBottom", "isFixedTop", "isTransparent", "isUnselectable"]);
         var className = classname(['navbar'], {
