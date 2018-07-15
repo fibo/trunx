@@ -11,6 +11,7 @@ import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
 import Title from '../component/Title'
 
+import Code from './Code'
 import Meta from './Meta'
 
 storiesOf('Layout', module)
@@ -80,6 +81,14 @@ storiesOf('Layout', module)
           </Notification>
         </Container>
 
+        <Code language='jsx'>
+{`<Container>
+  <Notification>
+    This container is <strong>centered</strong> on desktop.
+  </Notification>
+</Container>`}
+        </Code>
+
         <Title>
           Fluid container
         </Title>
@@ -93,6 +102,14 @@ storiesOf('Layout', module)
             This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any viewport size.
           </Notification>
         </Container>
+
+        <Code language='jsx'>
+{`<Container isFluid>
+  <Notification>
+    This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any viewport size.
+  </Notification>
+</Container>`}
+        </Code>
 
         <Title>
           Breakpoint containers
@@ -108,11 +125,27 @@ storiesOf('Layout', module)
           </Notification>
         </Container>
 
+        <Code language='jsx'>
+{`<Container isWidescreen>
+  <Notification>
+  This container is <strong>fullwidth</strong> <em>until</em> the <code>$widescreen</code> breakpoint.
+  </Notification>
+</Container>`}
+        </Code>
+
         <Container isFullhd>
           <Notification>
           This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint.
           </Notification>
         </Container>
+
+        <Code language='jsx'>
+{`<Container isFullhd>
+  <Notification>
+  This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint.
+  </Notification>
+</Container>`}
+        </Code>
 
       </Content>
     </Container>
@@ -164,6 +197,17 @@ storiesOf('Layout', module)
           </Hero.Body>
         </Hero>
 
+        <Code language='jsx'>
+{`<Hero>
+  <Hero.Body>
+    <Container>
+      <Title>Hero title</Title>
+      <Subtitle>Hero subtitle</Subtitle>
+    </Container>
+  </Hero.Body>
+</Hero>`}
+        </Code>
+
         <Title>
           Colors
         </Title>
@@ -180,6 +224,17 @@ storiesOf('Layout', module)
             </Container>
           </Hero.Body>
         </Hero>
+
+        <Code language='jsx'>
+{`<Hero isPrimary>
+  <Hero.Body>
+    <Container>
+      <Title>isPrimary title</Title>
+      <Subtitle>isPrimary subtitle</Subtitle>
+    </Container>
+  </Hero.Body>
+</Hero>`}
+        </Code>
 
         <Hero isInfo>
           <Hero.Body>
@@ -261,6 +316,15 @@ storiesOf('Layout', module)
           </Container>
         </Section>
 
+        <Code language='jsx'>
+{`<Section>
+  <Container>
+    <Title>Section</Title>
+    <Subtitle>A simple container to divide your page into <strong>sections</strong>, like the one you're currently reading</Subtitle>
+  </Container>
+</Section>`}
+        </Code>
+
       </Content>
     </Container>
   ))
@@ -284,6 +348,17 @@ storiesOf('Layout', module)
             </p>
           </Content>
         </Footer>
+
+        <Code language='jsx'>
+{`<Footer>
+  <Content hasTextCentered>
+    <p>
+      <strong>Trunx</strong> by <a href='http://g14n.info'>Gianluca Casati</a>. The source code is licensed <a href='http://g14n.info/mit-license'>MIT</a>.
+    </p>
+  </Content>
+</Footer>`}
+        </Code>
+
       </Content>
     </Container>
   ))

@@ -6,6 +6,8 @@ import Container from '../component/Container'
 import Content from '../component/Content'
 import Title from '../component/Title'
 
+import Code from './Code'
+
 storiesOf('Overview', module)
   .add('Getting started', () => (
     <Container>
@@ -16,15 +18,12 @@ storiesOf('Overview', module)
 
         <p>
           Use <b>npm</b> to install Trunx package. React v16 is required as a peer dependency.
-
-          <pre>
-            <code>
-              npm install react<br />
-              npm install trunx
-            </code>
-          </pre>
-
         </p>
+
+        <Code>
+{`npm install react
+npm install trunx`}
+        </Code>
 
         <hr />
 
@@ -38,39 +37,37 @@ storiesOf('Overview', module)
 
         <p>
           Use the HTML5 doctype
-
-          <pre>
-            <code>{'<!DOCTYPE html>'}</code>
-          </pre>
         </p>
+
+        <Code>
+          {'<!DOCTYPE html>'}
+        </Code>
 
         <p>
           Add the responsive viewport meta tag
-
-          <pre>
-            <code>
-              {'<meta name="viewport" content="width=device-width, initial-scale=1">'}
-            </code>
-          </pre>
         </p>
+
+        <Code>
+          {'<meta name="viewport" content="width=device-width, initial-scale=1">'}
+        </Code>
 
         <p>
            To import components, the following syntaxes are supported.
-
-          <ul>
-            <li>
-              <code>
-                {"import { Button } from 'trunx'"}
-              </code>
-            </li>
-
-            <li>
-              <code>
-                {"const Button = require('trunx/component/Button')"}
-              </code>
-            </li>
-          </ul>
         </p>
+
+        <ul>
+          <li>
+            <Code>
+              {"import { Button } from 'trunx'"}
+            </Code>
+          </li>
+
+          <li>
+            <Code>
+              {"const Button = require('trunx/component/Button')"}
+            </Code>
+          </li>
+        </ul>
 
         <Title>
           How it works
@@ -78,29 +75,27 @@ storiesOf('Overview', module)
 
         <p>
           Trunx React components wrap Bulma CSS classes. For instance, this JSX code
-
-          <pre>
-            <code>
-              {'<Button isPrimary isLarge>Push me</Button>'}
-            </code>
-          </pre>
-
-        is equivalent to
-
-          <pre>
-            <code>
-              {'<button className="is-primary is-large">Push me</button>'}
-            </code>
-          </pre>
-
-        Note that you can still use Bulma directly if some feature or HTML tag is not implemented by Trunx, for example
-
-          <pre>
-            <code>
-              {'you are <strong class="has-text-success">successful</strong>'}
-            </code>
-          </pre>
         </p>
+
+        <Code language='jsx'>
+          {'<Button isPrimary isLarge>Push me</Button>'}
+        </Code>
+
+        <p>
+          is equivalent to
+        </p>
+
+        <Code language='jsx'>
+          {'<button className="is-primary is-large">Push me</button>'}
+        </Code>
+
+        <p>
+          Note that you can still use Bulma directly if some feature or HTML tag is not implemented by Trunx, for example
+        </p>
+
+        <Code language='jsx'>
+          {'You are <strong class="has-text-success">successful</strong>!'}
+        </Code>
       </Content>
     </Container>
   ))

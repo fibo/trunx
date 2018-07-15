@@ -10,6 +10,8 @@ import Notification from '../component/Notification'
 import Subtitle from '../component/Subtitle'
 import Title from '../component/Title'
 
+import Code from './Code'
+
 storiesOf('Columns', module)
   .add('Basics', () => (
     <Container>
@@ -24,13 +26,15 @@ storiesOf('Columns', module)
 
         <p>
           Building a <b>columns layout</b> with Trunx is very simple:
+        </p>
 
-          <ol>
-            <li>Add a <code>Columns</code> component as container.</li>
+        <ol>
+          <li>Add a <code>Columns</code> component as container.</li>
 
-            <li>Add as many <code>Column</code> components as children.</li>
-          </ol>
+          <li>Add as many <code>Column</code> components as children.</li>
+        </ol>
 
+        <p>
           Each column will have an <b>equal width</b>, no matter the number of columns.
         </p>
 
@@ -50,6 +54,23 @@ storiesOf('Columns', module)
             <Notification isPrimary>Fourth Column</Notification>
           </Column>
         </Columns>
+
+        <Code language='jsx'>
+{`<Columns>
+  <Column>
+    <Notification>First Column</Notification>
+  </Column>
+  <Column>
+    <Notification>Second Column</Notification>
+  </Column>
+  <Column>
+    <Notification>Third Column</Notification>
+  </Column>
+  <Column>
+    <Notification>Fourth Column</Notification>
+  </Column>
+</Columns>`}
+        </Code>
       </Content>
     </Container>
   ))
@@ -68,24 +89,26 @@ storiesOf('Columns', module)
 
         <p>
           If you want to change the <b>size</b> of a single column, you can use one of the following props:
-
-          <ul>
-            <li><code>isThreeQuarters</code></li>
-            <li><code>isTwoThirds</code></li>
-            <li><code>isHalf</code></li>
-            <li><code>isOneThird</code></li>
-            <li><code>isOneQuarter</code></li>
-          </ul>
-
-          You can also use the following multiples of 20% as well:
-
-          <ul>
-            <li><code>isFourFifths</code></li>
-            <li><code>isThreeFifths</code></li>
-            <li><code>isTwoFifths</code></li>
-            <li><code>isOneFifth</code></li>
-          </ul>
         </p>
+
+        <ul>
+          <li><code>isThreeQuarters</code></li>
+          <li><code>isTwoThirds</code></li>
+          <li><code>isHalf</code></li>
+          <li><code>isOneThird</code></li>
+          <li><code>isOneQuarter</code></li>
+        </ul>
+
+        <p>
+          You can also use the following multiples of 20% as well:
+        </p>
+
+        <ul>
+          <li><code>isFourFifths</code></li>
+          <li><code>isThreeFifths</code></li>
+          <li><code>isTwoFifths</code></li>
+          <li><code>isOneFifth</code></li>
+        </ul>
 
         <Columns>
           <Column isFourFifths>
@@ -158,6 +181,80 @@ storiesOf('Columns', module)
           <Column>Auto</Column>
           <Column>Auto</Column>
         </Columns>
+
+        <Code language='jsx'>
+{`<Columns>
+  <Column isFourFifths>
+    <Notification><code>isFourFifths</code></Notification>
+  </Column>
+  <Column>Auto</Column>
+  <Column>Auto</Column>
+</Columns>
+
+<Columns>
+  <Column isThreeQuarters>
+    <Notification><code>isThreeQuarters</code></Notification>
+  </Column>
+  <Column>Auto</Column>
+  <Column>Auto</Column>
+</Columns>
+
+<Columns>
+  <Column isTwoThirds>
+    <Notification><code>isTwoThirds</code></Notification>
+  </Column>
+  <Column>Auto</Column>
+  <Column>Auto</Column>
+</Columns>
+
+<Columns>
+  <Column isThreeFifths>
+    <Notification><code>isThreeFifths</code></Notification>
+  </Column>
+  <Column>Auto</Column>
+  <Column>Auto</Column>
+</Columns>
+
+<Columns>
+  <Column isHalf>
+    <Notification><code>isHalf</code></Notification>
+  </Column>
+  <Column>Auto</Column>
+  <Column>Auto</Column>
+</Columns>
+
+<Columns>
+  <Column isTwoFifths>
+    <Notification><code>isTwoFifths</code></Notification>
+  </Column>
+  <Column>Auto</Column>
+  <Column>Auto</Column>
+</Columns>
+
+<Columns>
+  <Column isOneThird>
+    <Notification><code>isOneThird</code></Notification>
+  </Column>
+  <Column>Auto</Column>
+  <Column>Auto</Column>
+</Columns>
+
+<Columns>
+  <Column isOneQuarter>
+    <Notification><code>isOneQuarter</code></Notification>
+  </Column>
+  <Column>Auto</Column>
+  <Column>Auto</Column>
+</Columns>
+
+<Columns>
+  <Column isOneFifth>
+    <Notification><code>isOneFifth</code></Notification>
+  </Column>
+  <Column>Auto</Column>
+  <Column>Auto</Column>
+</Columns>`}
+        </Code>
       </Content>
     </Container>
   ))
@@ -196,6 +293,27 @@ storiesOf('Columns', module)
           </Column>
         </Columns>
 
+        <Code language='jsx'>
+{`<Columns isMobile>
+  <Column>
+    <Notification>1</Notification>
+  </Column>
+  <Column>
+    <Notification>2</Notification>
+  </Column>
+  <Column>
+    <Notification>3</Notification>
+  </Column>
+  <Column>
+    <Notification>4</Notification>
+  </Column>
+</Columns>`}
+        </Code>
+
+        <p>
+          If you <em>only</em> want columns on <b>desktop</b> upwards, just use the <code>isDesktop</code> prop to the <code>Columns</code> component:
+        </p>
+
         <Columns isDesktop>
           <Column>
             <Notification isPrimary>1</Notification>
@@ -210,6 +328,23 @@ storiesOf('Columns', module)
             <Notification isPrimary>4</Notification>
           </Column>
         </Columns>
+
+        <Code language='jsx'>
+{`<Columns isDesktop>
+  <Column>
+    <Notification>1</Notification>
+  </Column>
+  <Column>
+    <Notification>2</Notification>
+  </Column>
+  <Column>
+    <Notification>3</Notification>
+  </Column>
+  <Column>
+    <Notification>4</Notification>
+  </Column>
+</Columns>`}
+        </Code>
       </Content>
     </Container>
   ))
