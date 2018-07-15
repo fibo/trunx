@@ -25,11 +25,11 @@ var ClassicNavbar = (function (_super) {
         return _this;
     }
     ClassicNavbar.prototype.render = function () {
-        var brand = this.props.brand;
+        var _a = this.props, brand = _a.brand, isFixedTop = _a.isFixedTop;
         var isActive = this.state.isActive;
-        return (React.createElement(Navbar_1.default, null,
+        return (React.createElement(Navbar_1.default, { "aria-label": "main navigation", isFixedTop: isFixedTop },
             React.createElement(Navbar_1.default.Brand, null,
-                brand(),
+                brand && brand(),
                 React.createElement(Navbar_1.default.Burger, { isActive: isActive, onClick: this.toggle })),
             React.createElement(Navbar_1.default.Menu, { isActive: isActive }, this.props.children)));
     };
