@@ -3,7 +3,8 @@ import * as React from 'react'
 import Navbar from './Navbar'
 
 interface Props {
-  brand: () => React.Component
+  brand?: () => React.Component
+  isFixedTop?: boolean
 }
 
 const initialState = {
@@ -18,6 +19,7 @@ export default class ClassicNavbar extends React.Component<Props, State> {
   render() {
     const {
       brand,
+      isFixedTop,
     } = this.props
 
     const {
@@ -25,9 +27,9 @@ export default class ClassicNavbar extends React.Component<Props, State> {
     } = this.state
 
     return (
-      <Navbar>
+      <Navbar aria-label="main navigation" isFixedTop={isFixedTop}>
         <Navbar.Brand>
-          {brand()}
+          {brand && brand()}
           <Navbar.Burger
             isActive={isActive}
             onClick={this.toggle}
