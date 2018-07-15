@@ -4,6 +4,12 @@
 
 <img src="./assets/trunks.png" height="290"/>
 
+## Status
+
+This package is at an early stage development.
+Almost half of Bulma features are wrapped and documented,
+few helpers and custom components are already implemented.
+
 ## Documentation
 
 Please see *components storybook*: [click here](http://g14n.info/trunx).

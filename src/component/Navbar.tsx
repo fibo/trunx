@@ -147,7 +147,7 @@ export default class Navbar extends React.Component<NavbarProps> {
   static Menu = NavbarMenu
   static Start = NavbarStart
 
-  componentDidMount () {
+  componentDidMount() {
     const {
       isFixedBottom,
       isFixedTop,
@@ -160,7 +160,7 @@ export default class Navbar extends React.Component<NavbarProps> {
     }
   }
 
-  componentWillUnmount () {
+  componentWillUnmount() {
     const {
       isFixedBottom,
       isFixedTop,

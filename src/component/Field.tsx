@@ -29,6 +29,7 @@ export default class Field extends React.Component<Props> {
     return (
       <div className={className}>
         {label && <label className="label">{label}</label>}
+
         {this.props.children}
       </div>
     )

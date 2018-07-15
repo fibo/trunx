@@ -12,6 +12,7 @@ import Modal from '../component/Modal'
 import Subtitle from '../component/Subtitle'
 import Title from '../component/Title'
 
+import Code from './Code'
 import Meta from './Meta'
 
 class ModalCardExample extends Component {
@@ -163,6 +164,22 @@ storiesOf('Components', module)
           </Navbar.End>
         </ClassicNavbar>
 
+        <Code language='jsx'>
+{`<ClassicNavbar
+  brand={() => (
+    <Navbar.Item
+      href='https://g14n.info/trunx'
+    >Trunx</Navbar.Item>
+  )}
+>
+  <Navbar.Start />
+  <Navbar.End>
+    <Navbar.Item>Foo</Navbar.Item>
+    <Navbar.Item>Bar</Navbar.Item>
+  </Navbar.End>
+</ClassicNavbar>`}
+        </Code>
+
         <hr />
 
         <Title>Navbar brand</Title>
@@ -189,6 +206,26 @@ storiesOf('Components', module)
             <Navbar.Burger />
           </Navbar.Brand>
         </Navbar>
+
+        <Navbar>
+          <Navbar.Brand>
+            <Navbar.Item
+              href='https://g14n.info/trunx'
+            >Trunx</Navbar.Item>
+            <Navbar.Burger />
+          </Navbar.Brand>
+        </Navbar>
+
+        <Code language='jsx'>
+{`<Navbar>
+  <Navbar.Brand>
+    <Navbar.Item
+      href='https://g14n.info/trunx'
+    >Trunx</Navbar.Item>
+    <Navbar.Burger />
+  </Navbar.Brand>
+</Navbar>`}
+        </Code>
       </Content>
     </Container>
   ))
