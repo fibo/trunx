@@ -147,6 +147,32 @@ export default class Navbar extends React.Component<NavbarProps> {
   static Menu = NavbarMenu
   static Start = NavbarStart
 
+  componentDidMount () {
+    const {
+      isFixedBottom,
+      isFixedTop,
+    } = this.props
+
+    if (isFixedTop) {
+      document.body.classList.add('has-navbar-fixed-top')
+    } else if (isFixedBottom) {
+      document.body.classList.add('has-navbar-fixed-bottom')
+    }
+  }
+
+  componentWillUnmount () {
+    const {
+      isFixedBottom,
+      isFixedTop,
+    } = this.props
+
+    if (isFixedBottom) {
+      document.body.classList.remove('has-navbar-fixed-bottom')
+    } else if (isFixedTop) {
+      document.body.classList.remove('has-navbar-fixed-top')
+    }
+  }
+
   render() {
     const {
       isFixedBottom,
