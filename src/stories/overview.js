@@ -8,6 +8,7 @@ import Title from '../component/Title'
 import Section from '../component/Section'
 
 import Code from './Code'
+import indent from './indent'
 
 storiesOf('Overview', module)
   .add('Getting started', () => (
@@ -23,8 +24,10 @@ storiesOf('Overview', module)
           </p>
 
           <Code>
-            {`npm install react
-  npm install trunx`}
+            {indent`
+              npm install react
+              npm install trunx
+            `}
           </Code>
 
           <hr />
@@ -42,7 +45,9 @@ storiesOf('Overview', module)
           </p>
 
           <Code>
-            {'<!DOCTYPE html>'}
+            {indent`
+              <!DOCTYPE html>
+            `}
           </Code>
 
           <p>
@@ -50,7 +55,9 @@ storiesOf('Overview', module)
           </p>
 
           <Code>
-            {'<meta name="viewport" content="width=device-width, initial-scale=1">'}
+            {indent`
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+            `}
           </Code>
 
           <p>
@@ -60,13 +67,17 @@ storiesOf('Overview', module)
           <ul>
             <li>
               <Code>
-                {"import { Button } from 'trunx'"}
+                {indent`
+                  import { Button } from 'trunx'
+                `}
               </Code>
             </li>
 
             <li>
               <Code>
-                {"const Button = require('trunx/component/Button')"}
+                {indent`
+                  const Button = require('trunx/component/Button')
+                `}
               </Code>
             </li>
           </ul>
@@ -80,7 +91,9 @@ storiesOf('Overview', module)
           </p>
 
           <Code language='jsx'>
-            {'<Button isPrimary isLarge>Push me</Button>'}
+            {indent`
+              <Button isPrimary isLarge>Push me</Button>
+            `}
           </Code>
 
           <p>
@@ -88,7 +101,9 @@ storiesOf('Overview', module)
           </p>
 
           <Code language='jsx'>
-            {'<button className="is-primary is-large">Push me</button>'}
+            {indent`
+              <button className="is-primary is-large">Push me</button>
+            `}
           </Code>
 
           <p>
@@ -96,7 +111,9 @@ storiesOf('Overview', module)
           </p>
 
           <Code language='jsx'>
-            {'You are <strong class="has-text-success">successful</strong>!'}
+            {indent`
+              You are <strong class="has-text-success">successful</strong>!
+            `}
           </Code>
         </Content>
       </Container>

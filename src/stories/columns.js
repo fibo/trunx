@@ -12,6 +12,7 @@ import Subtitle from '../component/Subtitle'
 import Title from '../component/Title'
 
 import Code from './Code'
+import indent from './indent'
 
 storiesOf('Columns', module)
   .add('Basics', () => (
@@ -58,20 +59,22 @@ storiesOf('Columns', module)
           </Columns>
 
           <Code language='jsx'>
-            {`<Columns>
-  <Column>
-    <Notification>First Column</Notification>
-  </Column>
-  <Column>
-    <Notification>Second Column</Notification>
-  </Column>
-  <Column>
-    <Notification>Third Column</Notification>
-  </Column>
-  <Column>
-    <Notification>Fourth Column</Notification>
-  </Column>
-</Columns>`}
+            {indent`
+              <Columns>
+                <Column>
+                  <Notification>First Column</Notification>
+                </Column>
+                <Column>
+                  <Notification>Second Column</Notification>
+                </Column>
+                <Column>
+                  <Notification>Third Column</Notification>
+                </Column>
+                <Column>
+                  <Notification>Fourth Column</Notification>
+                </Column>
+              </Columns>
+            `}
           </Code>
         </Content>
       </Container>
@@ -187,77 +190,79 @@ storiesOf('Columns', module)
           </Columns>
 
           <Code language='jsx'>
-            {`<Columns>
-  <Column isFourFifths>
-    <Notification><code>isFourFifths</code></Notification>
-  </Column>
-  <Column>Auto</Column>
-  <Column>Auto</Column>
-</Columns>
+            {indent`
+              <Columns>
+                <Column isFourFifths>
+                  <Notification><code>isFourFifths</code></Notification>
+                </Column>
+                <Column>Auto</Column>
+                <Column>Auto</Column>
+              </Columns>
 
-<Columns>
-  <Column isThreeQuarters>
-    <Notification><code>isThreeQuarters</code></Notification>
-  </Column>
-  <Column>Auto</Column>
-  <Column>Auto</Column>
-</Columns>
+              <Columns>
+                <Column isThreeQuarters>
+                  <Notification><code>isThreeQuarters</code></Notification>
+                </Column>
+                <Column>Auto</Column>
+                <Column>Auto</Column>
+              </Columns>
 
-<Columns>
-  <Column isTwoThirds>
-    <Notification><code>isTwoThirds</code></Notification>
-  </Column>
-  <Column>Auto</Column>
-  <Column>Auto</Column>
-</Columns>
+              <Columns>
+                <Column isTwoThirds>
+                  <Notification><code>isTwoThirds</code></Notification>
+                </Column>
+                <Column>Auto</Column>
+                <Column>Auto</Column>
+              </Columns>
 
-<Columns>
-  <Column isThreeFifths>
-    <Notification><code>isThreeFifths</code></Notification>
-  </Column>
-  <Column>Auto</Column>
-  <Column>Auto</Column>
-</Columns>
+              <Columns>
+                <Column isThreeFifths>
+                  <Notification><code>isThreeFifths</code></Notification>
+                </Column>
+                <Column>Auto</Column>
+                <Column>Auto</Column>
+              </Columns>
 
-<Columns>
-  <Column isHalf>
-    <Notification><code>isHalf</code></Notification>
-  </Column>
-  <Column>Auto</Column>
-  <Column>Auto</Column>
-</Columns>
+              <Columns>
+                <Column isHalf>
+                  <Notification><code>isHalf</code></Notification>
+                </Column>
+                <Column>Auto</Column>
+                <Column>Auto</Column>
+              </Columns>
 
-<Columns>
-  <Column isTwoFifths>
-    <Notification><code>isTwoFifths</code></Notification>
-  </Column>
-  <Column>Auto</Column>
-  <Column>Auto</Column>
-</Columns>
+              <Columns>
+                <Column isTwoFifths>
+                  <Notification><code>isTwoFifths</code></Notification>
+                </Column>
+                <Column>Auto</Column>
+                <Column>Auto</Column>
+              </Columns>
 
-<Columns>
-  <Column isOneThird>
-    <Notification><code>isOneThird</code></Notification>
-  </Column>
-  <Column>Auto</Column>
-  <Column>Auto</Column>
-</Columns>
+              <Columns>
+                <Column isOneThird>
+                  <Notification><code>isOneThird</code></Notification>
+                </Column>
+                <Column>Auto</Column>
+                <Column>Auto</Column>
+              </Columns>
 
-<Columns>
-  <Column isOneQuarter>
-    <Notification><code>isOneQuarter</code></Notification>
-  </Column>
-  <Column>Auto</Column>
-  <Column>Auto</Column>
-</Columns>
+              <Columns>
+                <Column isOneQuarter>
+                  <Notification><code>isOneQuarter</code></Notification>
+                </Column>
+                <Column>Auto</Column>
+                <Column>Auto</Column>
+              </Columns>
 
-<Columns>
-  <Column isOneFifth>
-    <Notification><code>isOneFifth</code></Notification>
-  </Column>
-  <Column>Auto</Column>
-  <Column>Auto</Column>
-</Columns>`}
+              <Columns>
+                <Column isOneFifth>
+                  <Notification><code>isOneFifth</code></Notification>
+                </Column>
+                <Column>Auto</Column>
+                <Column>Auto</Column>
+              </Columns>
+            `}
           </Code>
         </Content>
       </Container>
@@ -300,20 +305,22 @@ storiesOf('Columns', module)
           </Columns>
 
           <Code language='jsx'>
-            {`<Columns isMobile>
-  <Column>
-    <Notification>1</Notification>
-  </Column>
-  <Column>
-    <Notification>2</Notification>
-  </Column>
-  <Column>
-    <Notification>3</Notification>
-  </Column>
-  <Column>
-    <Notification>4</Notification>
-  </Column>
-</Columns>`}
+            {indent`
+              <Columns isMobile>
+                <Column>
+                  <Notification>1</Notification>
+                </Column>
+                <Column>
+                  <Notification>2</Notification>
+                </Column>
+                <Column>
+                  <Notification>3</Notification>
+                </Column>
+                <Column>
+                  <Notification>4</Notification>
+                </Column>
+              </Columns>
+            `}
           </Code>
 
           <p>
@@ -336,20 +343,22 @@ storiesOf('Columns', module)
           </Columns>
 
           <Code language='jsx'>
-            {`<Columns isDesktop>
-  <Column>
-    <Notification>1</Notification>
-  </Column>
-  <Column>
-    <Notification>2</Notification>
-  </Column>
-  <Column>
-    <Notification>3</Notification>
-  </Column>
-  <Column>
-    <Notification>4</Notification>
-  </Column>
-</Columns>`}
+            {indent`
+              <Columns isDesktop>
+                <Column>
+                  <Notification>1</Notification>
+                </Column>
+                <Column>
+                  <Notification>2</Notification>
+                </Column>
+                <Column>
+                  <Notification>3</Notification>
+                </Column>
+                <Column>
+                  <Notification>4</Notification>
+                </Column>
+              </Columns>
+            `}
           </Code>
         </Content>
       </Container>

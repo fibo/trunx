@@ -16,6 +16,7 @@ import Tag from '../component/Tag'
 import Title from '../component/Title'
 
 import Code from './Code'
+import indent from './indent'
 import Meta from './Meta'
 
 storiesOf('Elements', module)
@@ -72,7 +73,9 @@ storiesOf('Elements', module)
 
             <Column isHalf>
               <Code language='jsx'>
-                {`<Button>Button</Button>`}
+                {indent`
+                  <Button>Button</Button>
+                `}
               </Code>
             </Column>
           </Columns>
@@ -92,11 +95,13 @@ storiesOf('Elements', module)
 
             <Column isHalf>
               <Code language='jsx'>
-                {`<Button isWhite>White</Button>
-<Button isLight>Light</Button>
-<Button isDark>Dark</Button>
-<Button isBlack>Black</Button>
-<Button isText>Text</Button>`}
+                {indent`
+                  <Button isWhite>White</Button>
+                  <Button isLight>Light</Button>
+                  <Button isDark>Dark</Button>
+                  <Button isBlack>Black</Button>
+                  <Button isText>Text</Button>
+                `}
               </Code>
             </Column>
           </Columns>
@@ -113,12 +118,14 @@ storiesOf('Elements', module)
 
             <Column isHalf>
               <Code language='jsx'>
-                {`<Button isPrimary>Primary</Button>
-<Button isLink>Link</Button>
-<Button isInfo>Info</Button>
-<Button isSuccess>Success</Button>
-<Button isWarning>Warning</Button>
-<Button isDanger>Danger</Button>`}
+                {indent`
+                  <Button isPrimary>Primary</Button>
+                  <Button isLink>Link</Button>
+                  <Button isInfo>Info</Button>
+                  <Button isSuccess>Success</Button>
+                  <Button isWarning>Warning</Button>
+                  <Button isDanger>Danger</Button>
+                `}
               </Code>
             </Column>
           </Columns>
@@ -135,10 +142,12 @@ storiesOf('Elements', module)
 
             <Column isHalf>
               <Code language='jsx'>
-                {`<Button isSmall>Small</Button>
-<Button isNormal>Normal</Button>
-<Button isMedium>Medium</Button>
-<Button isLarge>Large</Button>`}
+                {indent`
+                  <Button isSmall>Small</Button>
+                  <Button isNormal>Normal</Button>
+                  <Button isMedium>Medium</Button>
+                  <Button isLarge>Large</Button>
+                `}
               </Code>
             </Column>
           </Columns>
@@ -177,11 +186,13 @@ storiesOf('Elements', module)
 
             <Column isHalf>
               <Code language='jsx'>
-                {`<Notification>
-  <Delete />
+                {indent`
+                  <Notification>
+                    <Delete />
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
-</Notification>`}
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
+                  </Notification>
+                `}
               </Code>
             </Column>
           </Columns>
@@ -226,36 +237,38 @@ storiesOf('Elements', module)
 
             <Column isHalf>
               <Code language='jsx'>
-                {`<Notification isPrimary>
-  <Delete />
+                {indent`
+                  <Notification isPrimary>
+                    <Delete />
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
-</Notification>
-<Notification isLink>
-  <Delete />
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
+                  </Notification>
+                  <Notification isLink>
+                    <Delete />
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
-</Notification>
-<Notification isInfo>
-  <Delete />
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
+                  </Notification>
+                  <Notification isInfo>
+                    <Delete />
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
-</Notification>
-<Notification isSuccess>
-  <Delete />
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
+                  </Notification>
+                  <Notification isSuccess>
+                    <Delete />
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
-</Notification>
-<Notification isWarning>
-  <Delete />
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
+                  </Notification>
+                  <Notification isWarning>
+                    <Delete />
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
-</Notification>
-<Notification isDanger>
-  <Delete />
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
+                  </Notification>
+                  <Notification isDanger>
+                    <Delete />
 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
-</Notification>`}
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
+                  </Notification>
+                `}
               </Code>
             </Column>
           </Columns>
