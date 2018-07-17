@@ -12,6 +12,7 @@ import Control from '../component/Control'
 import Field from '../component/Field'
 import Help from '../component/Help'
 import Input from '../component/Input'
+import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
 import Title from '../component/Title'
 
@@ -20,79 +21,80 @@ import Meta from './Meta'
 
 storiesOf('Form', module)
   .add('General', () => (
-    <Container>
-      <Content>
-        <Title is2>
-          Form controls
-        </Title>
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Form controls
+          </Title>
 
-        <Subtitle>
-          All generic <b>form controls</b>, designed for consistency
-        </Subtitle>
+          <Subtitle>
+            All generic <b>form controls</b>, designed for consistency
+          </Subtitle>
 
-        <hr />
+          <hr />
 
-        <p>
-          The following form controls <b>components</b> are supported:
-        </p>
+          <p>
+            The following form controls <b>components</b> are supported:
+          </p>
 
-        <ul />
+          <ul />
 
-        <p>
-          Each of them should be wrapped in a <Code>Control</Code> component.
-When combining several controls in a <b>form</b>, use the <Code>Field</Code> component as a <b>container</b>, to keep the spacing consistent.
-        </p>
+          <p>
+            Each of them should be wrapped in a <Code>Control</Code> component.
+  When combining several controls in a <b>form</b>, use the <Code>Field</Code> component as a <b>container</b>, to keep the spacing consistent.
+          </p>
 
-        <Columns>
-          <Column isHalf>
-            <Field label='Name'>
-              <Control>
-                <Input type='text' placeHolder='Text input' />
-              </Control>
-            </Field>
+          <Columns>
+            <Column isHalf>
+              <Field label='Name'>
+                <Control>
+                  <Input type='text' placeHolder='Text input' />
+                </Control>
+              </Field>
 
-            <Field label='Username'>
-              <Control>
-                <Input isSuccess type='text' placeHolder='Text input' value='trunx' />
+              <Field label='Username'>
+                <Control>
+                  <Input isSuccess type='text' placeHolder='Text input' value='trunx' />
 
-                <Help isSuccess>
-                  This username is available
-                </Help>
-              </Control>
-            </Field>
+                  <Help isSuccess>
+                    This username is available
+                  </Help>
+                </Control>
+              </Field>
 
-            <Field label='Email'>
-              <Control>
-                <Input isDanger type='email' placeHolder='Email input' value='hello@' />
+              <Field label='Email'>
+                <Control>
+                  <Input isDanger type='email' placeHolder='Email input' value='hello@' />
 
-                <Help isDanger>
-                  This email is invalid
-                </Help>
-              </Control>
-            </Field>
+                  <Help isDanger>
+                    This email is invalid
+                  </Help>
+                </Control>
+              </Field>
 
-            <Field>
-              <Control>
-                <Checkbox>
-                  I agree to the <a href='#'>terms and conditions</a>
-                </Checkbox>
-              </Control>
-            </Field>
+              <Field>
+                <Control>
+                  <Checkbox>
+                    I agree to the <a href='#'>terms and conditions</a>
+                  </Checkbox>
+                </Control>
+              </Field>
 
-            <Field isGrouped>
-              <Control>
-                <Button isLink>Submit</Button>
-              </Control>
+              <Field isGrouped>
+                <Control>
+                  <Button isLink>Submit</Button>
+                </Control>
 
-              <Control>
-                <Button isText>Cancel</Button>
-              </Control>
-            </Field>
-          </Column>
+                <Control>
+                  <Button isText>Cancel</Button>
+                </Control>
+              </Field>
+            </Column>
 
-          <Column isHalf>
-            <Code language='jsx'>
-              {`<Field label='Name'>
+            <Column isHalf>
+              <Code language='jsx'>
+                {`<Field label='Name'>
   <Control>
     <Input type='text' placeHolder='Text input' />
   </Control>
@@ -135,12 +137,13 @@ When combining several controls in a <b>form</b>, use the <Code>Field</Code> com
     <Button isText>Cancel</Button>
   </Control>
 </Field>`}
-            </Code>
-          </Column>
-        </Columns>
+              </Code>
+            </Column>
+          </Columns>
 
-      </Content>
-    </Container>
+        </Content>
+      </Container>
+    </Section>
   ))
   .add('Input', () => (
     <Container>
