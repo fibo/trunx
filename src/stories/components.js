@@ -9,6 +9,7 @@ import ClassicNavbar from '../component/ClassicNavbar'
 import Delete from '../component/Delete'
 import Navbar from '../component/Navbar'
 import Modal from '../component/Modal'
+import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
 import Title from '../component/Title'
 
@@ -71,101 +72,104 @@ class ModalCardExample extends Component {
 
 storiesOf('Components', module)
   .add('Modal', () => (
-    <Container>
-      <Content>
-        <Title is2>
-          Modal
-        </Title>
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Modal
+          </Title>
 
-        <Subtitle>
-          A classic <b>modal</b> overlay, in which you can include <em>any</em> content you want
-        </Subtitle>
+          <Subtitle>
+            A classic <b>modal</b> overlay, in which you can include <em>any</em> content you want
+          </Subtitle>
 
-        <Meta />
+          <Meta />
 
-        <hr />
+          <hr />
 
-        <p>
-          The modal structure is very simple:
-        </p>
+          <p>
+            The modal structure is very simple:
+          </p>
 
-        <ul>
-          <li>
-            <code>modal</code>: the main container
-            <ul>
-              <li>
-                <code>modal-background</code>: a transparent overlay that can act as a click target to close the modal
-              </li>
+          <ul>
+            <li>
+              <code>modal</code>: the main container
+              <ul>
+                <li>
+                  <code>modal-background</code>: a transparent overlay that can act as a click target to close the modal
+                </li>
 
-              <li>
-                <code>modal-content</code>: a horizontally and vertically centered container, with a maximum width of 640px, in which you can include any content
-              </li>
+                <li>
+                  <code>modal-content</code>: a horizontally and vertically centered container, with a maximum width of 640px, in which you can include any content
+                </li>
 
-              <li>
-                <code>modal-close</code>: a simple cross located in the top right corner
-              </li>
-            </ul>
-          </li>
-        </ul>
+                <li>
+                  <code>modal-close</code>: a simple cross located in the top right corner
+                </li>
+              </ul>
+            </li>
+          </ul>
 
-        <ModalCardExample />
-      </Content>
-    </Container>
+          <ModalCardExample />
+        </Content>
+      </Container>
+    </Section>
   ))
   .add('Navbar', () => (
-    <Container>
-      <Content>
-        <Title is2>
-          Navbar
-        </Title>
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Navbar
+          </Title>
 
-        <Subtitle>
-          A responsive horizontal <b>navbar</b> that can support images, links, buttons, and dropdowns
-        </Subtitle>
+          <Subtitle>
+            A responsive horizontal <b>navbar</b> that can support images, links, buttons, and dropdowns
+          </Subtitle>
 
-        <Meta />
+          <Meta />
 
-        <hr />
+          <hr />
 
-        <p>
-          The <code>navbar</code> component is a responsive and versatile horizontal navigation bar with the following structure:
-        </p>
+          <p>
+            The <code>navbar</code> component is a responsive and versatile horizontal navigation bar with the following structure:
+          </p>
 
-        <ul>
-          <li>
-            <code>navbar</code>: the main container
-            <ul>
-              <li />
+          <ul>
+            <li>
+              <code>navbar</code>: the main container
+              <ul>
+                <li />
 
-              <li />
-            </ul>
-          </li>
-        </ul>
+                <li />
+              </ul>
+            </li>
+          </ul>
 
-        <hr />
+          <hr />
 
-        <Title>Classic Navbar</Title>
+          <Title>Classic Navbar</Title>
 
-        <p>
-          Probably you need the <b>classic navbar</b> on top, with a classic hamburger icon. You can use a <code>ClassicNavbar</code> component.
-        </p>
+          <p>
+            Probably you need the <b>classic navbar</b> on top, with a classic hamburger icon. You can use a <code>ClassicNavbar</code> component.
+          </p>
 
-        <ClassicNavbar
-          brand={() => (
-            <Navbar.Item
-              href='https://g14n.info/trunx'
-            >Trunx</Navbar.Item>
-          )}
-        >
-          <Navbar.Start />
-          <Navbar.End>
-            <Navbar.Item>Foo</Navbar.Item>
-            <Navbar.Item>Bar</Navbar.Item>
-          </Navbar.End>
-        </ClassicNavbar>
+          <ClassicNavbar
+            brand={() => (
+              <Navbar.Item
+                href='https://g14n.info/trunx'
+              >Trunx</Navbar.Item>
+            )}
+          >
+            <Navbar.Start />
+            <Navbar.End>
+              <Navbar.Item>Foo</Navbar.Item>
+              <Navbar.Item>Bar</Navbar.Item>
+            </Navbar.End>
+          </ClassicNavbar>
 
-        <Code language='jsx'>
-          {`<ClassicNavbar
+          <Code language='jsx'>
+            {`<ClassicNavbar
   brand={() => (
     <Navbar.Item
       href='https://g14n.info/trunx'
@@ -178,46 +182,46 @@ storiesOf('Components', module)
     <Navbar.Item>Bar</Navbar.Item>
   </Navbar.End>
 </ClassicNavbar>`}
-        </Code>
+          </Code>
 
-        <hr />
+          <hr />
 
-        <Title>Navbar brand</Title>
+          <Title>Navbar brand</Title>
 
-        <p>
-          The navbar-brand is the left side of the navbar. It can contain:
-        </p>
+          <p>
+            The navbar-brand is the left side of the navbar. It can contain:
+          </p>
 
-        <ul>
-          <li>
-            a number of <code>navbar-item</code>
-          </li>
+          <ul>
+            <li>
+              a number of <code>navbar-item</code>
+            </li>
 
-          <li>
-            the <code>navbar-burger</code> as last child
-          </li>
-        </ul>
+            <li>
+              the <code>navbar-burger</code> as last child
+            </li>
+          </ul>
 
-        <Navbar>
-          <Navbar.Brand>
-            <Navbar.Item
-              href='https://g14n.info/trunx'
-            >Trunx</Navbar.Item>
-            <Navbar.Burger />
-          </Navbar.Brand>
-        </Navbar>
+          <Navbar>
+            <Navbar.Brand>
+              <Navbar.Item
+                href='https://g14n.info/trunx'
+              >Trunx</Navbar.Item>
+              <Navbar.Burger />
+            </Navbar.Brand>
+          </Navbar>
 
-        <Navbar>
-          <Navbar.Brand>
-            <Navbar.Item
-              href='https://g14n.info/trunx'
-            >Trunx</Navbar.Item>
-            <Navbar.Burger />
-          </Navbar.Brand>
-        </Navbar>
+          <Navbar>
+            <Navbar.Brand>
+              <Navbar.Item
+                href='https://g14n.info/trunx'
+              >Trunx</Navbar.Item>
+              <Navbar.Burger />
+            </Navbar.Brand>
+          </Navbar>
 
-        <Code language='jsx'>
-          {`<Navbar>
+          <Code language='jsx'>
+            {`<Navbar>
   <Navbar.Brand>
     <Navbar.Item
       href='https://g14n.info/trunx'
@@ -225,7 +229,8 @@ storiesOf('Components', module)
     <Navbar.Burger />
   </Navbar.Brand>
 </Navbar>`}
-        </Code>
-      </Content>
-    </Container>
+          </Code>
+        </Content>
+      </Container>
+    </Section>
   ))
