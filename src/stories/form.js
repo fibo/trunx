@@ -17,6 +17,7 @@ import Subtitle from '../component/Subtitle'
 import Title from '../component/Title'
 
 import Code from './Code'
+import indent from './indent'
 import Meta from './Meta'
 
 storiesOf('Form', module)
@@ -94,49 +95,51 @@ storiesOf('Form', module)
 
             <Column isHalf>
               <Code language='jsx'>
-                {`<Field label='Name'>
-  <Control>
-    <Input type='text' placeHolder='Text input' />
-  </Control>
-</Field>
+                {indent`
+                  <Field label='Name'>
+                    <Control>
+                      <Input type='text' placeHolder='Text input' />
+                    </Control>
+                  </Field>
 
-<Field label='Username'>
-  <Control>
-    <Input isSuccess type='text' placeHolder='Text input' value='trunx' />
+                  <Field label='Username'>
+                    <Control>
+                      <Input isSuccess type='text' placeHolder='Text input' value='trunx' />
 
-    <Help isSuccess>
-      This username is available
-    </Help>
-  </Control>
-</Field>
+                      <Help isSuccess>
+                        This username is available
+                      </Help>
+                    </Control>
+                  </Field>
 
-<Field label='Email'>
-  <Control>
-    <Input isDanger type='email' placeHolder='Email input' value='hello@'/>
+                  <Field label='Email'>
+                    <Control>
+                      <Input isDanger type='email' placeHolder='Email input' value='hello@'/>
 
-    <Help isDanger>
-      This email is invalid
-    </Help>
-  </Control>
-</Field>
+                      <Help isDanger>
+                        This email is invalid
+                      </Help>
+                    </Control>
+                  </Field>
 
-<Field>
-  <Control>
-    <Checkbox>
-      I agree to the <a href="#">terms and conditions</a>
-    </Checkbox>
-  </Control>
-</Field>
+                  <Field>
+                    <Control>
+                      <Checkbox>
+                        I agree to the <a href="#">terms and conditions</a>
+                      </Checkbox>
+                    </Control>
+                  </Field>
 
-<Field isGrouped>
-  <Control>
-    <Button isLink>Submit</Button>
-  </Control>
+                  <Field isGrouped>
+                    <Control>
+                      <Button isLink>Submit</Button>
+                    </Control>
 
-  <Control>
-    <Button isText>Cancel</Button>
-  </Control>
-</Field>`}
+                    <Control>
+                      <Button isText>Cancel</Button>
+                    </Control>
+                  </Field>
+                `}
               </Code>
             </Column>
           </Columns>
@@ -247,35 +250,37 @@ storiesOf('Form', module)
 
           <Column isHalf>
             <Code language='jsx'>
-              {`<Field>
-  <Control>
-    <Input isPrimary type='text' placeHolder='Primary input' />
-  </Control>
-</Field>
+              {indent`
+                <Field>
+                  <Control>
+                    <Input isPrimary type='text' placeHolder='Primary input' />
+                  </Control>
+                </Field>
 
-<Field>
-  <Control>
-    <Input isInfo type='text' placeHolder='Info input' />
-  </Control>
-</Field>
+                <Field>
+                  <Control>
+                    <Input isInfo type='text' placeHolder='Info input' />
+                  </Control>
+                </Field>
 
-<Field>
-  <Control>
-    <Input isSuccess type='text' placeHolder='Success input' />
-  </Control>
-</Field>
+                <Field>
+                  <Control>
+                    <Input isSuccess type='text' placeHolder='Success input' />
+                  </Control>
+                </Field>
 
-<Field>
-  <Control>
-    <Input isWarning type='text' placeHolder='Warning input' />
-  </Control>
-</Field>
+                <Field>
+                  <Control>
+                    <Input isWarning type='text' placeHolder='Warning input' />
+                  </Control>
+                </Field>
 
-<Field>
-  <Control>
-    <Input isDanger type='text' placeHolder='Danger input' />
-  </Control>
-</Field>`}
+                <Field>
+                  <Control>
+                    <Input isDanger type='text' placeHolder='Danger input' />
+                  </Control>
+                </Field>
+              `}
             </Code>
           </Column>
         </Columns>
@@ -308,7 +313,9 @@ storiesOf('Form', module)
 
           <Column isHalf>
             <Code language='jsx'>
-              {`<Checkbox>Remember me</Checkbox>`}
+              {indent`
+                <Checkbox>Remember me</Checkbox>
+              `}
             </Code>
           </Column>
         </Columns>
@@ -328,7 +335,9 @@ storiesOf('Form', module)
 
           <Column isHalf>
             <Code language='jsx'>
-              {`<Checkbox disabled>Save my preferences</Checkbox>`}
+              {indent`
+                <Checkbox disabled>Save my preferences</Checkbox>
+              `}
             </Code>
           </Column>
         </Columns>
