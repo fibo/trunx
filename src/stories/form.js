@@ -42,8 +42,8 @@ storiesOf('Form', module)
           <ul />
 
           <p>
-            Each of them should be wrapped in a <Code>Control</Code> component.
-  When combining several controls in a <b>form</b>, use the <Code>Field</Code> component as a <b>container</b>, to keep the spacing consistent.
+            Each of them should be wrapped in a <code>Control</code> component.
+  When combining several controls in a <b>form</b>, use the <code>Field</code> component as a <b>container</b>, to keep the spacing consistent.
           </p>
 
           <Columns>
