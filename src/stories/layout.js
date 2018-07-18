@@ -3,18 +3,23 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Button from '../component/Button'
+import Checkbox from '../component/Checkbox'
 import Container from '../component/Container'
 import Content from '../component/Content'
 import Control from '../component/Control'
+import Delete from '../component/Delete'
 import Field from '../component/Field'
 import Footer from '../component/Footer'
 import Heading from '../component/Heading'
 import Hero from '../component/Hero'
+import Image from '../component/Image'
 import Input from '../component/Input'
 import Level from '../component/Level'
+import Media from '../component/Media'
 import Notification from '../component/Notification'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
+import Textarea from '../component/Textarea'
 import Title from '../component/Title'
 
 import Code from './Code'
@@ -344,6 +349,132 @@ storiesOf('Layout', module)
               <Title>789</Title>
             </Level.Item>
           </Level>
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Hero', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Media Object
+          </Title>
+
+          <Subtitle>
+            The famous <b>media object</b> prevalent in social media interfaces, but useful in any context
+          </Subtitle>
+
+          <hr />
+
+          <p>
+            The <a href='http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code'>media object</a> is a UI element perfect for repeatable and nestable content.
+          </p>
+
+          <Media>
+            <Media.Left>
+              <Image is64x64 src='http://via.placeholder.com/128x128.png' />
+            </Media.Left>
+
+            <Media.Content>
+              <Content />
+            </Media.Content>
+
+            <Media.Right>
+              <Delete />
+            </Media.Right>
+          </Media>
+
+          <Code language='jsx'>
+            {indent`
+              <Media>
+                <Media.Left>
+                  <Image is64x64 src='http://via.placeholder.com/128x128.png' />
+                </Media.Left>
+
+                <Media.Content>
+                  <Content>
+                  </Content>
+                </Media.Content>
+
+                <Media.Right>
+                  <Delete />
+                </Media.Right>
+              </Media>
+            `}
+          </Code>
+
+          <p>
+            You can include <em>any</em> other Trunx component, like inputs, textareas, icons, buttons... or even a <b>nav bar</b>.
+          </p>
+
+          <Media>
+            <Media.Left>
+              <Image is64x64 src='http://via.placeholder.com/128x128.png' />
+            </Media.Left>
+
+            <Media.Content>
+              <Field>
+                <Control>
+                  <Textarea placeHolder='Add a comment' />
+                </Control>
+              </Field>
+
+              <Level>
+                <Level.Left>
+                  <Level.Item>
+                    <Button isInfo>Submit</Button>
+                  </Level.Item>
+                </Level.Left>
+
+                <Level.Right>
+                  <Level.Item>
+                    <Checkbox>Press enter to submit</Checkbox>
+                  </Level.Item>
+                </Level.Right>
+              </Level>
+            </Media.Content>
+
+            <Media.Right>
+              <Delete />
+            </Media.Right>
+          </Media>
+
+          <Code language='jsx'>
+            {indent`
+              <Media>
+                <Media.Left>
+                  <Image is64x64 src='http://via.placeholder.com/128x128.png' />
+                </Media.Left>
+
+                <Media.Content>
+                  <Field>
+                    <Control>
+                      <Textarea placeHolder='Add a comment' />
+                    </Control>
+                  </Field>
+
+                  <Level>
+                    <Level.Left>
+                      <Level.Item>
+                        <Button isInfo>Submit</Button>
+                      </Level.Item>
+                    </Level.Left>
+
+                    <Level.Right>
+                      <Level.Item>
+                        <Checkbox>Press enter to submit</Checkbox>
+                      </Level.Item>
+                    </Level.Right>
+                  </Level>
+                </Media.Content>
+
+                <Media.Right>
+                  <Delete />
+                </Media.Right>
+              </Media>
+            `}
+          </Code>
         </Content>
       </Container>
     </Section>
