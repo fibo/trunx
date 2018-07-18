@@ -49,3 +49,5 @@ var Media = require("./component/Media");
 exports.Media = Media;
 var Section = require("./component/Section");
 exports.Section = Section;
+var Tile = require("./component/Tile");
+exports.Tile = Tile;

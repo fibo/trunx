@@ -20,6 +20,7 @@ import Notification from '../component/Notification'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
 import Textarea from '../component/Textarea'
+import Tile from '../component/Tile'
 import Title from '../component/Title'
 
 import Code from './Code'
@@ -698,6 +699,40 @@ storiesOf('Layout', module)
                   </p>
                 </Content>
               </Footer>
+            `}
+          </Code>
+
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Tiles', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Tiles powered by Flexbox
+          </Title>
+
+          <Subtitle>
+            A <b>single tile</b> element to build 2-dimensional Metro-like, Pinterest-like, or whatever-you-like grids
+          </Subtitle>
+
+          <hr />
+
+          <p>
+            To build intricate 2-dimensional layouts, you only need a <b>single element</b>: the <code>Tile</code>:
+          </p>
+
+          <Tile>
+            The magical tile element!
+          </Tile>
+
+          <Code language='jsx'>
+            {indent`
+              <Tile>
+                The magical tile element!
+              </Tile>
             `}
           </Code>
 

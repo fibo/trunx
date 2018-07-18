@@ -40,6 +40,7 @@ import * as Hero from './component/Hero'
 import * as Level from './component/Level'
 import * as Media from './component/Media'
 import * as Section from './component/Section'
+import * as Tile from './component/Tile'
 
 export {
   Button,
@@ -66,5 +67,6 @@ export {
   Tag,
   Tags,
   Textarea,
+  Tile,
   Title,
 }
