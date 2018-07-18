@@ -18,6 +18,7 @@ export default class Checkbox extends React.Component<Props> {
           disabled={disabled}
           type="checkbox"
         />
+        {' '/* adding a space looks better*/}
         {this.props.children}
       </label>
     )
