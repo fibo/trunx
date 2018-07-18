@@ -28,6 +28,8 @@ import * as Buttons from './component/Buttons'
 import * as Container from './component/Container'
 import * as Footer from './component/Footer'
 import * as Hero from './component/Hero'
+import * as Level from './component/Level'
+import * as Media from './component/Media'
 import * as Section from './component/Section'
 
 export {
