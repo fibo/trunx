@@ -25,18 +25,14 @@ class MediaRight extends React.Component {
   }
 }
 
-export default class Media extends React.Component<MediaProps> {
+export default class Media extends React.Component {
   static Content = MediaContent
   static Left = MediaLeft
   static Right = MediaRight
 
   render() {
-    const {
-      isMobile,
-    } = this.props
-
     return (
-      <article className={className}>{this.props.children}</article>
+      <article className="media">{this.props.children}</article>
     )
   }
 }
