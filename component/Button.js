@@ -34,7 +34,7 @@ var Button = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Button.prototype.render = function () {
-        var _a = this.props, disabled = _a.disabled, href = _a.href, isActive = _a.isActive, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isDisabled = _a.isDisabled, isFocused = _a.isFocused, isInfo = _a.isInfo, isInverted = _a.isInverted, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isLoading = _a.isLoading, isMedium = _a.isMedium, isOutlined = _a.isOutlined, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isStatic = _a.isStatic, isSuccess = _a.isSuccess, isText = _a.isText, isWarning = _a.isWarning, isWhite = _a.isWhite, onClick = _a.onClick, props = __rest(_a, ["disabled", "href", "isActive", "isBlack", "isDanger", "isDark", "isDisabled", "isFocused", "isInfo", "isInverted", "isLarge", "isLight", "isLink", "isLoading", "isMedium", "isOutlined", "isPrimary", "isRounded", "isSmall", "isStatic", "isSuccess", "isText", "isWarning", "isWhite", "onClick"]);
+        var _a = this.props, disabled = _a.disabled, href = _a.href, isActive = _a.isActive, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isDisabled = _a.isDisabled, isFocused = _a.isFocused, isFullwidth = _a.isFullwidth, isInfo = _a.isInfo, isInverted = _a.isInverted, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isLoading = _a.isLoading, isMedium = _a.isMedium, isNormal = _a.isNormal, isOutlined = _a.isOutlined, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isStatic = _a.isStatic, isSuccess = _a.isSuccess, isText = _a.isText, isWarning = _a.isWarning, isWhite = _a.isWhite, onClick = _a.onClick, type = _a.type, props = __rest(_a, ["disabled", "href", "isActive", "isBlack", "isDanger", "isDark", "isDisabled", "isFocused", "isFullwidth", "isInfo", "isInverted", "isLarge", "isLight", "isLink", "isLoading", "isMedium", "isNormal", "isOutlined", "isPrimary", "isRounded", "isSmall", "isStatic", "isSuccess", "isText", "isWarning", "isWhite", "onClick", "type"]);
         var className = classname(['button'], {
             'is-active': isActive,
             'is-black': isBlack,
@@ -42,6 +42,7 @@ var Button = (function (_super) {
             'is-dark': isDark,
             'is-disabled': isDisabled,
             'is-focused': isFocused,
+            'is-fullwidth': isFullwidth,
             'is-info': isInfo,
             'is-inverted': isInverted,
             'is-large': isLarge,
@@ -49,6 +50,7 @@ var Button = (function (_super) {
             'is-link': isLink,
             'is-loading': isLoading,
             'is-medium': isMedium,
+            'is-normal': isNormal,
             'is-outlined': isOutlined,
             'is-primary': isPrimary,
             'is-rounded': isRounded,
@@ -59,7 +61,13 @@ var Button = (function (_super) {
             'is-warning': isWarning,
             'is-white': isWhite,
         });
-        return href ? (React.createElement("a", __assign({ className: className, href: href }, props), this.props.children)) : (React.createElement("button", __assign({ className: className, disabled: disabled, onClick: onClick }, props), this.props.children));
+        if (href) {
+            return (React.createElement("a", __assign({ className: className, href: href }, props), this.props.children));
+        }
+        if (type) {
+            return (React.createElement("input", __assign({ className: className, type: type }, props)));
+        }
+        return (React.createElement("button", __assign({ className: className, disabled: disabled, onClick: onClick }, props), this.props.children));
     };
     return Button;
 }(React.Component));
