@@ -33,7 +33,7 @@ storiesOf('Overview', module)
 
           <hr />
 
-          <Title>
+          <Title is4>
             HTML code requirements
           </Title>
 
@@ -111,7 +111,7 @@ storiesOf('Overview', module)
             </li>
           </ul>
 
-          <Title>
+          <Title is4>
             How it works
           </Title>
 

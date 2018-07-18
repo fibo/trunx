@@ -98,7 +98,7 @@ storiesOf('Layout', module)
             `}
           </Code>
 
-          <Title>
+          <Title is4>
             Fluid container
           </Title>
 
@@ -122,7 +122,7 @@ storiesOf('Layout', module)
             `}
           </Code>
 
-          <Title>
+          <Title is4>
             Breakpoint containers
           </Title>
 
@@ -366,7 +366,7 @@ storiesOf('Layout', module)
             `}
           </Code>
 
-          <Title>
+          <Title is4>
             Colors
           </Title>
 

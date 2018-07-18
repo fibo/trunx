@@ -149,7 +149,9 @@ storiesOf('Components', module)
 
           <hr />
 
-          <Title>Classic Navbar</Title>
+          <Title is4>
+            Classic Navbar
+          </Title>
 
           <p>
             Probably you need the <b>classic navbar</b> on top, with a classic hamburger icon. You can use a <code>ClassicNavbar</code> component.
@@ -189,7 +191,9 @@ storiesOf('Components', module)
 
           <hr />
 
-          <Title>Navbar brand</Title>
+          <Title is4>
+            Navbar brand
+          </Title>
 
           <p>
             The navbar-brand is the left side of the navbar. It can contain:
