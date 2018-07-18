@@ -8,20 +8,24 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var Checkbox = (function (_super) {
-    __extends(Checkbox, _super);
-    function Checkbox() {
+var Textarea = (function (_super) {
+    __extends(Textarea, _super);
+    function Textarea() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Checkbox.prototype.render = function () {
-        var disabled = this.props.disabled;
-        return (React.createElement("label", { className: "checkbox" },
-            React.createElement("input", { disabled: disabled, type: "checkbox" }),
-            ' ',
-            this.props.children));
+    Textarea.prototype.render = function () {
+        return (React.createElement("textarea", __assign({ className: "textarea" }, this.props)));
     };
-    return Checkbox;
+    return Textarea;
 }(React.Component));
-exports.default = Checkbox;
+exports.default = Textarea;

@@ -6,11 +6,14 @@ interface LevelProps {
 }
 
 interface LevelItemProps {
-  isMobile?: boolean
+  hasTextCentered?: boolean
 }
 
 class LevelItem extends React.Component<LevelItemProps> {
   render() {
+    const {
+      hasTextCentered
+    } = this.props
 
     const className = classname(['level-item'], {
       'has-text-centered': hasTextCentered,
