@@ -84,6 +84,26 @@ storiesOf('Overview', module)
               <pre>
                 <code>
                   {indent`
+                    import Button from 'trunx/component/Button'
+                  `}
+                </code>
+              </pre>
+            </li>
+
+            <li>
+              <pre>
+                <code>
+                  {indent`
+                    const { Button } = require('trunx')
+                  `}
+                </code>
+              </pre>
+            </li>
+
+            <li>
+              <pre>
+                <code>
+                  {indent`
                     const Button = require('trunx/component/Button')
                   `}
                 </code>
