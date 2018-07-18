@@ -214,15 +214,6 @@ storiesOf('Components', module)
             </Navbar.Brand>
           </Navbar>
 
-          <Navbar>
-            <Navbar.Brand>
-              <Navbar.Item
-                href='https://g14n.info/trunx'
-              >Trunx</Navbar.Item>
-              <Navbar.Burger />
-            </Navbar.Brand>
-          </Navbar>
-
           <Code language='jsx'>
             {indent`
               <Navbar>
