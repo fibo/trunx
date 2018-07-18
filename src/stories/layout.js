@@ -8,6 +8,7 @@ import Content from '../component/Content'
 import Control from '../component/Control'
 import Field from '../component/Field'
 import Footer from '../component/Footer'
+import Heading from '../component/Heading'
 import Hero from '../component/Hero'
 import Input from '../component/Input'
 import Level from '../component/Level'
@@ -301,6 +302,48 @@ storiesOf('Layout', module)
               </Level>
             `}
           </Code>
+
+          <Title is4>
+            Centered level
+          </Title>
+
+          <p>
+            If you want a <b>centered level</b>, you can use as many <code>Level.Item</code> as you want, as long as they are <b>direct</b> children of the <code>Level</code> component.
+          </p>
+
+          <Title is4>
+            Mobile level
+          </Title>
+
+          <p>
+            By default, for space concerns, the level is vertical on mobile. If you want the level to be horizontal on mobile as well, add the <code>isMobile</code> prop on the <code>Level</code> component.
+          </p>
+
+          <Level isMobile>
+            <Level.Item hasTextCentered>
+              <Heading>Tweets</Heading>
+
+              <Title>3,456</Title>
+            </Level.Item>
+
+            <Level.Item hasTextCentered>
+              <Heading>Following</Heading>
+
+              <Title>123</Title>
+            </Level.Item>
+
+            <Level.Item hasTextCentered>
+              <Heading>Followers</Heading>
+
+              <Title>456K</Title>
+            </Level.Item>
+
+            <Level.Item hasTextCentered>
+              <Heading>Likes</Heading>
+
+              <Title>789</Title>
+            </Level.Item>
+          </Level>
         </Content>
       </Container>
     </Section>
