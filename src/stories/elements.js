@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react'
 
 import Box from '../component/Box'
 import Button from '../component/Button'
+import Buttons from '../component/Buttons'
 import Column from '../component/Column'
 import Columns from '../component/Columns'
 import Container from '../component/Container'
@@ -88,21 +89,25 @@ storiesOf('Elements', module)
 
           <Columns>
             <Column isHalf>
-              <Button isWhite>White</Button>
-              <Button isLight>Light</Button>
-              <Button isDark>Dark</Button>
-              <Button isBlack>Black</Button>
-              <Button isText>Text</Button>
+              <Buttons>
+                <Button isWhite>White</Button>
+                <Button isLight>Light</Button>
+                <Button isDark>Dark</Button>
+                <Button isBlack>Black</Button>
+                <Button isText>Text</Button>
+              </Buttons>
             </Column>
 
             <Column isHalf>
               <Code language='jsx'>
                 {indent`
-                  <Button isWhite>White</Button>
-                  <Button isLight>Light</Button>
-                  <Button isDark>Dark</Button>
-                  <Button isBlack>Black</Button>
-                  <Button isText>Text</Button>
+                  <Buttons>
+                    <Button isWhite>White</Button>
+                    <Button isLight>Light</Button>
+                    <Button isDark>Dark</Button>
+                    <Button isBlack>Black</Button>
+                    <Button isText>Text</Button>
+                  </Buttons>
                 `}
               </Code>
             </Column>
@@ -110,23 +115,27 @@ storiesOf('Elements', module)
 
           <Columns>
             <Column isHalf>
-              <Button isPrimary>Primary</Button>
-              <Button isLink>Link</Button>
-              <Button isInfo>Info</Button>
-              <Button isSuccess>Success</Button>
-              <Button isWarning>Warning</Button>
-              <Button isDanger>Danger</Button>
+              <Buttons>
+                <Button isPrimary>Primary</Button>
+                <Button isLink>Link</Button>
+                <Button isInfo>Info</Button>
+                <Button isSuccess>Success</Button>
+                <Button isWarning>Warning</Button>
+                <Button isDanger>Danger</Button>
+              </Buttons>
             </Column>
 
             <Column isHalf>
               <Code language='jsx'>
                 {indent`
-                  <Button isPrimary>Primary</Button>
-                  <Button isLink>Link</Button>
-                  <Button isInfo>Info</Button>
-                  <Button isSuccess>Success</Button>
-                  <Button isWarning>Warning</Button>
-                  <Button isDanger>Danger</Button>
+                  <Buttons>
+                    <Button isPrimary>Primary</Button>
+                    <Button isLink>Link</Button>
+                    <Button isInfo>Info</Button>
+                    <Button isSuccess>Success</Button>
+                    <Button isWarning>Warning</Button>
+                    <Button isDanger>Danger</Button>
+                  </Buttons>
                 `}
               </Code>
             </Column>
@@ -138,19 +147,23 @@ storiesOf('Elements', module)
 
           <Columns>
             <Column isHalf>
-              <Button isSmall>Small</Button>
-              <Button isNormal>Normal</Button>
-              <Button isMedium>Medium</Button>
-              <Button isLarge>Large</Button>
+              <Buttons>
+                <Button isSmall>Small</Button>
+                <Button isNormal>Normal</Button>
+                <Button isMedium>Medium</Button>
+                <Button isLarge>Large</Button>
+              </Buttons>
             </Column>
 
             <Column isHalf>
               <Code language='jsx'>
                 {indent`
-                  <Button isSmall>Small</Button>
-                  <Button isNormal>Normal</Button>
-                  <Button isMedium>Medium</Button>
-                  <Button isLarge>Large</Button>
+                  <Buttons>
+                    <Button isSmall>Small</Button>
+                    <Button isNormal>Normal</Button>
+                    <Button isMedium>Medium</Button>
+                    <Button isLarge>Large</Button>
+                  </Buttons>
                 `}
               </Code>
             </Column>
