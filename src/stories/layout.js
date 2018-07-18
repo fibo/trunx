@@ -2,10 +2,15 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
+import Button from '../component/Button'
 import Container from '../component/Container'
 import Content from '../component/Content'
+import Control from '../component/Control'
+import Field from '../component/Field'
 import Footer from '../component/Footer'
 import Hero from '../component/Hero'
+import Input from '../component/Input'
+import Level from '../component/Level'
 import Notification from '../component/Notification'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
@@ -157,6 +162,145 @@ storiesOf('Layout', module)
             `}
           </Code>
 
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Container', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Level
+          </Title>
+
+          <Subtitle>
+            A multi-purpose <b>horizontal level</b>, which can contain almost any other element
+          </Subtitle>
+
+          <hr />
+
+          <p>
+            The <b>structure</b> of a level is the following:
+          </p>
+
+          <ul>
+            <li>
+              <code>Level</code>: main container
+
+              <ul>
+                <li>
+                  <code>Level.Left</code> for the left side
+                </li>
+
+                <li>
+                  <code>Level.Right</code> for the right side
+
+                  <ul>
+                    <li>
+                      <code>Level.Left</code> for the left side
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <p>
+            In a <code>Level.Item</code>, you can then insert almost <em>anything</em> you want: a title, a button, a text input, or just simple text. No matter what elements you put inside a Trunx <code>Level</code>, they will always be <b>vertically centered</b>.
+          </p>
+
+          <Level>
+            <Level.Left>
+              <Level.Item>
+                <Subtitle is5>
+                  <strong>123</strong> posts
+                </Subtitle>
+              </Level.Item>
+
+              <Level.Item>
+                <Field hasAddons>
+                  <Control>
+                    <Input type='text' placeHolder='Find a post' />
+                  </Control>
+
+                  <Control>
+                    <Button>Search</Button>
+                  </Control>
+                </Field>
+              </Level.Item>
+            </Level.Left>
+
+            <Level.Right>
+              <Level.Item>
+                <strong>All</strong>
+              </Level.Item>
+
+              <Level.Item>
+                <a>Published</a>
+              </Level.Item>
+
+              <Level.Item>
+                <a>Drafts</a>
+              </Level.Item>
+
+              <Level.Item>
+                <a>Deleted</a>
+              </Level.Item>
+
+              <Level.Item>
+                <Button isSuccess>New</Button>
+              </Level.Item>
+            </Level.Right>
+          </Level>
+
+          <Code language='jsx'>
+            {indent`
+              <Level>
+                <Level.Left>
+                  <Level.Item>
+                    <Subtitle is5>
+                      <strong>123</strong> posts
+                    </Subtitle>
+                  </Level.Item>
+
+                  <Level.Item>
+                    <Field hasAddons>
+                      <Control>
+                        <Input type='text' placeHolder='Find a post'>
+                      </Control>
+
+                      <Control>
+                        <Button>Search</Button>
+                      </Control>
+                    </Field>
+                  </Level.Item>
+                </Level.Left>
+
+                <Level.Right>
+                  <Level.Item>
+                    <strong>All</strong>
+                  </Level.Item>
+
+                  <Level.Item>
+                    <a>Published</a>
+                  </Level.Item>
+
+                  <Level.Item>
+                    <a>Drafts</a>
+                  </Level.Item>
+
+                  <Level.Item>
+                    <a>Deleted</a>
+                  </Level.Item>
+
+                  <Level.Item>
+                    <Button isSuccess>New</Button>
+                  </Level.Item>
+                </Level.Right>
+              </Level>
+            `}
+          </Code>
         </Content>
       </Container>
     </Section>
