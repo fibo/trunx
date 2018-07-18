@@ -149,198 +149,202 @@ storiesOf('Form', module)
     </Section>
   ))
   .add('Input', () => (
-    <Container>
-      <Content>
-        <Title is2>
-          Input
-        </Title>
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Input
+          </Title>
 
-        <Subtitle>
-           The <b>text input</b> and its variations
-        </Subtitle>
+          <Subtitle>
+            The <b>text input</b> and its variations
+          </Subtitle>
 
-        <Meta colors sizes />
+          <Meta colors sizes />
 
-        <hr />
+          <hr />
 
-        <p>
-          The following <b>modifiers</b> are supported:
-        </p>
+          <p>
+            The following <b>modifiers</b> are supported:
+          </p>
 
-        <ul>
-          <li>
-            color
-          </li>
+          <ul>
+            <li>
+              color
+            </li>
 
-          <li>
-            size
-          </li>
+            <li>
+              size
+            </li>
 
-          <li>
-            state
-          </li>
-        </ul>
+            <li>
+              state
+            </li>
+          </ul>
 
-        <p>
-          The following <b>type props</b> are supported:
-        </p>
+          <p>
+            The following <b>type props</b> are supported:
+          </p>
 
-        <ul>
-          <li>
-            <code>
-              {'type="text"'}
-            </code>
-          </li>
+          <ul>
+            <li>
+              <code>
+                {'type="text"'}
+              </code>
+            </li>
 
-          <li>
-            <code>
-              {'type="password"'}
-            </code>
-          </li>
+            <li>
+              <code>
+                {'type="password"'}
+              </code>
+            </li>
 
-          <li>
-            <code>
-              {'type="email"'}
-            </code>
-          </li>
+            <li>
+              <code>
+                {'type="email"'}
+              </code>
+            </li>
 
-          <li>
-            <code>
-              {'type="tel"'}
-            </code>
-          </li>
-        </ul>
+            <li>
+              <code>
+                {'type="tel"'}
+              </code>
+            </li>
+          </ul>
 
-        <Title is4>
-          Colors
-        </Title>
+          <Title is4>
+            Colors
+          </Title>
 
-        <Columns>
-          <Column isHalf>
-            <Field>
-              <Control>
-                <Input isPrimary type='text' placeHolder='Primary input' />
-              </Control>
-            </Field>
+          <Columns>
+            <Column isHalf>
+              <Field>
+                <Control>
+                  <Input isPrimary type='text' placeHolder='Primary input' />
+                </Control>
+              </Field>
 
-            <Field>
-              <Control>
-                <Input isInfo type='text' placeHolder='Info input' />
-              </Control>
-            </Field>
+              <Field>
+                <Control>
+                  <Input isInfo type='text' placeHolder='Info input' />
+                </Control>
+              </Field>
 
-            <Field>
-              <Control>
-                <Input isSuccess type='text' placeHolder='Success input' />
-              </Control>
-            </Field>
+              <Field>
+                <Control>
+                  <Input isSuccess type='text' placeHolder='Success input' />
+                </Control>
+              </Field>
 
-            <Field>
-              <Control>
-                <Input isWarning type='text' placeHolder='Warning input' />
-              </Control>
-            </Field>
+              <Field>
+                <Control>
+                  <Input isWarning type='text' placeHolder='Warning input' />
+                </Control>
+              </Field>
 
-            <Field>
-              <Control>
-                <Input isDanger type='text' placeHolder='Danger input' />
-              </Control>
-            </Field>
-          </Column>
+              <Field>
+                <Control>
+                  <Input isDanger type='text' placeHolder='Danger input' />
+                </Control>
+              </Field>
+            </Column>
 
-          <Column isHalf>
-            <Code language='jsx'>
-              {indent`
-                <Field>
-                  <Control>
-                    <Input isPrimary type='text' placeHolder='Primary input' />
-                  </Control>
-                </Field>
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <Control>
+                      <Input isPrimary type='text' placeHolder='Primary input' />
+                    </Control>
+                  </Field>
 
-                <Field>
-                  <Control>
-                    <Input isInfo type='text' placeHolder='Info input' />
-                  </Control>
-                </Field>
+                  <Field>
+                    <Control>
+                      <Input isInfo type='text' placeHolder='Info input' />
+                    </Control>
+                  </Field>
 
-                <Field>
-                  <Control>
-                    <Input isSuccess type='text' placeHolder='Success input' />
-                  </Control>
-                </Field>
+                  <Field>
+                    <Control>
+                      <Input isSuccess type='text' placeHolder='Success input' />
+                    </Control>
+                  </Field>
 
-                <Field>
-                  <Control>
-                    <Input isWarning type='text' placeHolder='Warning input' />
-                  </Control>
-                </Field>
+                  <Field>
+                    <Control>
+                      <Input isWarning type='text' placeHolder='Warning input' />
+                    </Control>
+                  </Field>
 
-                <Field>
-                  <Control>
-                    <Input isDanger type='text' placeHolder='Danger input' />
-                  </Control>
-                </Field>
-              `}
-            </Code>
-          </Column>
-        </Columns>
-      </Content>
-    </Container>
+                  <Field>
+                    <Control>
+                      <Input isDanger type='text' placeHolder='Danger input' />
+                    </Control>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+        </Content>
+      </Container>
+    </Section>
   ))
   .add('Checkbox', () => (
-    <Container>
-      <Content>
-        <Title is2>
-          Checkbox
-        </Title>
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Checkbox
+          </Title>
 
-        <Subtitle>
-          The 2-state <b>checkbox</b> in its native format
-        </Subtitle>
+          <Subtitle>
+            The 2-state <b>checkbox</b> in its native format
+          </Subtitle>
 
-        <Meta />
+          <Meta />
 
-        <hr />
+          <hr />
 
-        <p>
-          The <code>Checkbox</code> component is a simple wrapper around the <code>{'<input type="checkbox">'}</code> HTML element. It is intentionally not styled, to preserve cross-browser compatibility and the user experience.
-        </p>
+          <p>
+            The <code>Checkbox</code> component is a simple wrapper around the <code>{'<input type="checkbox">'}</code> HTML element. It is intentionally not styled, to preserve cross-browser compatibility and the user experience.
+          </p>
 
-        <Columns>
-          <Column isHalf>
-            <Checkbox>Remember me</Checkbox>
-          </Column>
+          <Columns>
+            <Column isHalf>
+              <Checkbox>Remember me</Checkbox>
+            </Column>
 
-          <Column isHalf>
-            <Code language='jsx'>
-              {indent`
-                <Checkbox>Remember me</Checkbox>
-              `}
-            </Code>
-          </Column>
-        </Columns>
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Checkbox>Remember me</Checkbox>
+                `}
+              </Code>
+            </Column>
+          </Columns>
 
-        <Checkbox>
-          I agree to the <a href='#'>terms and conditions</a>
-        </Checkbox>
+          <Checkbox>
+            I agree to the <a href='#'>terms and conditions</a>
+          </Checkbox>
 
-        <p>
-          You can add <b>links</b> to your checkbox, or even <b>disable</b> it.
-        </p>
+          <p>
+            You can add <b>links</b> to your checkbox, or even <b>disable</b> it.
+          </p>
 
-        <Columns>
-          <Column isHalf>
-            <Checkbox disabled>Save my preferences</Checkbox>
-          </Column>
+          <Columns>
+            <Column isHalf>
+              <Checkbox disabled>Save my preferences</Checkbox>
+            </Column>
 
-          <Column isHalf>
-            <Code language='jsx'>
-              {indent`
-                <Checkbox disabled>Save my preferences</Checkbox>
-              `}
-            </Code>
-          </Column>
-        </Columns>
-      </Content>
-    </Container>
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Checkbox disabled>Save my preferences</Checkbox>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+        </Content>
+      </Container>
+    </Section>
   ))
