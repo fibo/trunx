@@ -12,6 +12,7 @@ import * as Navbar from './component/Navbar'
 // Elements
 
 import * as Button from './component/Button'
+import * as Checkbox from './component/Checkbox'
 import * as Control from './component/Control'
 import * as Delete from './component/Delete'
 import * as Field from './component/Field'
@@ -21,6 +22,7 @@ import * as Subtitle from './component/Subtitle'
 import * as Table from './component/Table'
 import * as Tag from './component/Tag'
 import * as Tags from './component/Tags'
+import * as Textarea from './component/Textarea'
 import * as Title from './component/Title'
 
 // Layout
@@ -36,6 +38,7 @@ import * as Section from './component/Section'
 export {
   Button,
   Buttons,
+  Checkbox,
   ClassicNavbar,
   Column,
   Columns,
@@ -45,6 +48,9 @@ export {
   Field,
   Footer,
   Hero,
+  Image,
+  Level,
+  Media,
   Modal,
   Navbar,
   Notification,
@@ -53,5 +59,6 @@ export {
   Table,
   Tag,
   Tags,
+  Textarea,
   Title,
 }
