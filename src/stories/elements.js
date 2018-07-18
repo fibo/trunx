@@ -82,7 +82,9 @@ storiesOf('Elements', module)
 
           <hr />
 
-          <Title>Colors</Title>
+          <Title is4>
+            Colors
+          </Title>
 
           <Columns>
             <Column isHalf>
@@ -130,7 +132,9 @@ storiesOf('Elements', module)
             </Column>
           </Columns>
 
-          <Title>Sizes</Title>
+          <Title is4>
+            Sizes
+          </Title>
 
           <Columns>
             <Column isHalf>
@@ -199,7 +203,9 @@ storiesOf('Elements', module)
 
           <hr />
 
-          <Title>Colors</Title>
+          <Title is4>
+            Colors
+          </Title>
 
           <Columns>
             <Column isHalf>
@@ -300,7 +306,7 @@ storiesOf('Elements', module)
 
           <hr />
 
-          <Title>
+          <Title is4>
             Colors
           </Title>
 

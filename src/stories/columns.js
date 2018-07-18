@@ -282,7 +282,9 @@ storiesOf('Columns', module)
 
           <hr />
 
-          <Title is4>Mobile columns</Title>
+          <Title is4>
+            Mobile columns
+          </Title>
 
           <p>
             By default, columns are only activated from <b>tablet</b> onwards. This means columns are stacked on top of each other on <b>mobile</b>.
