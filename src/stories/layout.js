@@ -172,7 +172,7 @@ storiesOf('Layout', module)
       </Container>
     </Section>
   ))
-  .add('Container', () => (
+  .add('Level', () => (
     <Section>
       <Container>
         <Content>
@@ -353,7 +353,7 @@ storiesOf('Layout', module)
       </Container>
     </Section>
   ))
-  .add('Hero', () => (
+  .add('Media Object', () => (
     <Section>
       <Container>
         <Content>
