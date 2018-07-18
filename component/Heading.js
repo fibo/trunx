@@ -10,18 +10,14 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = require("react");
-var Checkbox = (function (_super) {
-    __extends(Checkbox, _super);
-    function Checkbox() {
+var Heading = (function (_super) {
+    __extends(Heading, _super);
+    function Heading() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Checkbox.prototype.render = function () {
-        var disabled = this.props.disabled;
-        return (React.createElement("label", { className: "checkbox" },
-            React.createElement("input", { disabled: disabled, type: "checkbox" }),
-            ' ',
-            this.props.children));
+    Heading.prototype.render = function () {
+        return (React.createElement("p", { className: "heading" }, this.props.children));
     };
-    return Checkbox;
+    return Heading;
 }(React.Component));
-exports.default = Checkbox;
+exports.default = Heading;

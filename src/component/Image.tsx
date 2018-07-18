@@ -13,7 +13,7 @@ interface Props {
   /* tslint:enable object-literal-sort-keys */
 }
 
-export default class Image extends React.Component {
+export default class Image extends React.Component<Props> {
   render() {
     const {
       is16x16,
