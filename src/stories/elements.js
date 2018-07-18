@@ -81,6 +81,65 @@ storiesOf('Elements', module)
             </Column>
           </Columns>
 
+          <p>
+            The <code>Button</code> component will render as
+          </p>
+
+          <ul>
+            <li>
+              <code>{'<a>'}</code> anchor links, if there is an <code>href</code> prop
+            </li>
+
+            <li>
+              <code>{'<button>'}</code> form buttons
+            </li>
+
+            <li>
+              If there is a <code>type</code> prop:
+
+              <ul>
+                <li>
+                  <code>{'<input type="submit">'}</code> submit inputs
+                </li>
+
+                <li>
+                  <code>{'<input type="reset">'}</code> reset inputs
+                </li>
+              </ul>
+            </li>
+
+          </ul>
+
+          <Columns>
+            <Column isHalf>
+              <Buttons>
+                <Button href='#'>Anchor</Button>
+
+                <Button>Button</Button>
+
+                <Button type='submit' defaultValue='Submit input' />
+
+                <Button type='reset' defaultValue='Reset input' />
+              </Buttons>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Buttons>
+                    <Button href='#'>Anchor</Button>
+
+                    <Button>Button</Button>
+
+                    <Button type='submit' defaultValue='Submit input' />
+
+                    <Button type='reset' defaultValue='Reset input' />
+                  </Buttons>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
           <hr />
 
           <Title is4>
@@ -163,6 +222,34 @@ storiesOf('Elements', module)
                     <Button isNormal>Normal</Button>
                     <Button isMedium>Medium</Button>
                     <Button isLarge>Large</Button>
+                  </Buttons>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Title is4>
+            Displays
+          </Title>
+
+          <Columns>
+            <Column isHalf>
+              <Buttons>
+                <Button isSmall isFullwidth>Small</Button>
+                <Button isNormal isFullwidth>Normal</Button>
+                <Button isMedium isFullwidth>Medium</Button>
+                <Button isLarge isFullwidth>Large</Button>
+              </Buttons>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Buttons>
+                    <Button isSmall isFullwidth>Small</Button>
+                    <Button isNormal isFullwidth>Normal</Button>
+                    <Button isMedium isFullwidth>Medium</Button>
+                    <Button isLarge isFullwidth>Large</Button>
                   </Buttons>
                 `}
               </Code>

@@ -10,6 +10,7 @@ interface Props {
   isDark?: boolean
   isDisabled?: boolean
   isFocused?: boolean
+  isFullwidth?: boolean
   isInfo?: boolean
   isInverted?: boolean
   isLarge?: boolean
@@ -17,6 +18,7 @@ interface Props {
   isLink?: boolean
   isLoading?: boolean
   isMedium?: boolean
+  isNormal?: boolean
   isOutlined?: boolean
   isPrimary?: boolean
   isRounded?: boolean
@@ -27,6 +29,7 @@ interface Props {
   isWarning?: boolean
   isWhite?: boolean
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
+  type?: 'reset' | 'submit'
 }
 
 export default class Button extends React.Component<Props> {
@@ -40,6 +43,7 @@ export default class Button extends React.Component<Props> {
       isDark,
       isDisabled,
       isFocused,
+      isFullwidth,
       isInfo,
       isInverted,
       isLarge,
@@ -47,6 +51,7 @@ export default class Button extends React.Component<Props> {
       isLink,
       isLoading,
       isMedium,
+      isNormal,
       isOutlined,
       isPrimary,
       isRounded,
@@ -57,6 +62,7 @@ export default class Button extends React.Component<Props> {
       isWarning,
       isWhite,
       onClick,
+      type,
       ...props
     } = this.props
 
@@ -67,6 +73,7 @@ export default class Button extends React.Component<Props> {
       'is-dark': isDark,
       'is-disabled': isDisabled,
       'is-focused': isFocused,
+      'is-fullwidth': isFullwidth,
       'is-info': isInfo,
       'is-inverted': isInverted,
       'is-large': isLarge,
@@ -74,6 +81,7 @@ export default class Button extends React.Component<Props> {
       'is-link': isLink,
       'is-loading': isLoading,
       'is-medium': isMedium,
+      'is-normal': isNormal,
       'is-outlined': isOutlined,
       'is-primary': isPrimary,
       'is-rounded': isRounded,
@@ -85,15 +93,29 @@ export default class Button extends React.Component<Props> {
       'is-white': isWhite,
     })
 
-    return href ? (
-      <a
-        className={className}
-        href={href}
-        {...props}
-      >
-        {this.props.children}
-      </a>
-    ) : (
+    if (href) {
+      return (
+        <a
+          className={className}
+          href={href}
+          {...props}
+        >
+          {this.props.children}
+        </a>
+      )
+    }
+
+    if (type) {
+      return (
+        <input
+          className={className}
+          type={type}
+          {...props}
+        />
+      )
+    }
+
+    return (
       <button
         className={className}
         disabled={disabled}
