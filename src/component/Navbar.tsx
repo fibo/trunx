@@ -100,7 +100,12 @@ class NavbarItem extends React.Component<NavbarItemProps> {
         {this.props.children}
       </a>
     ) : (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={className}
+        {...props}
+      >
+        {this.props.children}
+      </div>
     )
   }
 }
