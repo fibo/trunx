@@ -1,6 +1,10 @@
 import * as classname from 'classname'
 import * as React from 'react'
 
+interface CardHeaderIconProps {
+  href?: string
+}
+
 class CardContent extends React.Component {
   render() {
     return (
@@ -17,7 +21,7 @@ class CardFooter extends React.Component {
   }
 }
 
-class CardHeaderIcon extends React.Component {
+class CardHeaderIcon extends React.Component<CardHeaderIconProps> {
   render() {
     const {
       href,

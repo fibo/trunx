@@ -17,14 +17,14 @@ export default class Delete extends React.Component<Props> {
       onClick
     } = this.props
 
-    const className = classname(['content'], {
+    const className = classname(['delete'], {
       'is-large': isLarge,
       'is-medium': isMedium,
       'is-small': isSmall
     })
 
     return (
-      <button className="delete" onClick={onClick}/>
+      <button className={className} onClick={onClick}/>
     )
   }
 }

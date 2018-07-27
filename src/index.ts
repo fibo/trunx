@@ -20,6 +20,7 @@ import * as Delete from './component/Delete'
 import * as Field from './component/Field'
 import * as Heading from './component/Heading'
 import * as Help from './component/Help'
+import * as Icon from './component/Icon'
 import * as Image from './component/Image'
 import * as Input from './component/Input'
 import * as Notification from './component/Notification'
@@ -57,6 +58,7 @@ export {
   Field,
   Footer,
   Hero,
+  Icon,
   Image,
   Level,
   Media,

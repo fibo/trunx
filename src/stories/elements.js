@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { storiesOf } from '@storybook/react'
+import solidIcon from 'fa-svg-icon/solid'
 
 import Box from '../component/Box'
 import Button from '../component/Button'
@@ -10,6 +11,7 @@ import Columns from '../component/Columns'
 import Container from '../component/Container'
 import Content from '../component/Content'
 import Delete from '../component/Delete'
+import Icon from '../component/Icon'
 import Notification from '../component/Notification'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
@@ -255,6 +257,130 @@ storiesOf('Elements', module)
               </Code>
             </Column>
           </Columns>
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Content', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Content
+          </Title>
+
+          <Subtitle>
+            A single class to handle <b>WYSIWYG</b> generated content, where only <b>HTML tags</b> are available
+          </Subtitle>
+
+          <Meta sizes />
+
+          <hr />
+
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Delete', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Delete
+          </Title>
+
+          <Subtitle>
+            A versatile <b>delete</b> cross
+          </Subtitle>
+
+          <Meta sizes />
+
+          <hr />
+
+          <p>
+            The <code>Delete</code> component is a stand-alone element that can be used in different contexts.
+          </p>
+
+          <Columns>
+            <Column isHalf>
+              <Delete />
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Delete />
+                `}
+              </Code>
+            </Column>
+          </Columns>
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Icon', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Icon
+          </Title>
+
+          <Subtitle>
+            Trunx is compatible with <b>all icon font libraries</b>: <a href='https://fontawesome.com/'>Font Awesome 5</a>, <a href='http://fontawesome.io/'>Font Awesome 4</a>, <a href='https://materialdesignicons.com/'>Material Design Icons</a>, <a href='https://useiconic.com/open'>Open Iconic</a>, <a href='https://ionicons.com/'>Ionicons</a> etc.
+          </Subtitle>
+
+          <Meta colors sizes />
+
+          <hr />
+
+          <p>
+            The <code>Icon</code> component is a container for any type of <b>icon font</b>.
+          </p>
+
+          <Columns>
+            <Column isHalf>
+              <Icon>
+                <Icon.Svg
+                  d={solidIcon.home[1]}
+                  size='1em'
+                  viewBox={solidIcon.home[0]}
+                />
+              </Icon>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Icon>
+                    <Icon.Svg
+                      d={solidIcon.home[1]}
+                      size='1em'
+                      viewBox={solidIcon.home[0]}
+                    />
+                  </Icon>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Image', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Image
+          </Title>
+
+          <Subtitle />
+
+          <Meta colors sizes />
+
+          <hr />
+
         </Content>
       </Container>
     </Section>
