@@ -5,6 +5,7 @@ import * as Columns from './component/Columns'
 
 // Components
 
+import * as Card from './component/Card'
 import * as ClassicNavbar from './component/ClassicNavbar'
 import * as Modal from './component/Modal'
 import * as Navbar from './component/Navbar'
@@ -45,6 +46,7 @@ import * as Tile from './component/Tile'
 export {
   Button,
   Buttons,
+  Card,
   Checkbox,
   ClassicNavbar,
   Column,

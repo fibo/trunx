@@ -87,7 +87,7 @@ var NavbarItem = (function (_super) {
             'is-active': isActive,
             'is-hoverable': isHoverable,
         });
-        return href ? (React.createElement("a", __assign({ className: className, href: href }, props), this.props.children)) : (React.createElement("div", { className: className }, this.props.children));
+        return href ? (React.createElement("a", __assign({ className: className, href: href }, props), this.props.children)) : (React.createElement("div", __assign({ className: className }, props), this.props.children));
     };
     return NavbarItem;
 }(React.Component));

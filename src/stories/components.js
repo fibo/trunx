@@ -72,6 +72,31 @@ class ModalCardExample extends Component {
 }
 
 storiesOf('Components', module)
+  .add('Card', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Card
+          </Title>
+
+          <Subtitle>
+            An all-around flexible and composable component
+          </Subtitle>
+
+          <Meta />
+
+          <hr />
+
+          <p>
+            The <b>card</b> component comprises several elements that you can mix and match:
+          </p>
+
+          <ul />
+        </Content>
+      </Container>
+    </Section>
+  ))
   .add('Modal', () => (
     <Section>
       <Container>
