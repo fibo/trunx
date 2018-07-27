@@ -24,7 +24,7 @@ export default class Delete extends React.Component<Props> {
     })
 
     return (
-      <button className={className} onClick={onClick}/>
+      <button aria-label="delete" className={className} onClick={onClick}/>
     )
   }
 }
