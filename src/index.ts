@@ -7,6 +7,7 @@ import * as Columns from './component/Columns'
 
 import * as Card from './component/Card'
 import * as ClassicNavbar from './component/ClassicNavbar'
+import * as Message from './component/Message'
 import * as Modal from './component/Modal'
 import * as Navbar from './component/Navbar'
 
@@ -62,6 +63,7 @@ export {
   Image,
   Level,
   Media,
+  Message,
   Modal,
   Navbar,
   Notification,

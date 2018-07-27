@@ -8,7 +8,7 @@ interface CardHeaderIconProps {
 class CardContent extends React.Component {
   render() {
     return (
-      <div className="card-content">this.props.children</div>
+      <div className="card-content">{this.props.children}</div>
     )
   }
 }
@@ -16,7 +16,7 @@ class CardContent extends React.Component {
 class CardFooter extends React.Component {
   render() {
     return (
-      <footer className="card-footer">this.props.children</footer>
+      <footer className="card-footer">{this.props.children}</footer>
     )
   }
 }
@@ -35,7 +35,7 @@ class CardHeaderIcon extends React.Component<CardHeaderIconProps> {
           href={href}
           {...props}
         >
-          this.props.children
+          {this.props.children}
         </a>
       )
     } else {
@@ -44,7 +44,7 @@ class CardHeaderIcon extends React.Component<CardHeaderIconProps> {
           className="card-header-icon"
           {...props}
         >
-          this.props.children
+          {this.props.children}
         </div>
       )
     }
@@ -54,7 +54,7 @@ class CardHeaderIcon extends React.Component<CardHeaderIconProps> {
 class CardHeaderTitle extends React.Component {
   render() {
     return (
-      <p className="card-header-title">this.props.children</p>
+      <p className="card-header-title">{this.props.children}</p>
     )
   }
 }
@@ -65,7 +65,7 @@ class CardHeader extends React.Component {
 
   render() {
     return (
-      <header className="card-header">this.props.children</header>
+      <header className="card-header">{this.props.children}</header>
     )
   }
 }
@@ -73,7 +73,7 @@ class CardHeader extends React.Component {
 class CardImage extends React.Component {
   render() {
     return (
-      <div className="card-image">this.props.children</div>
+      <div className="card-image">{this.props.children}</div>
     )
   }
 }
@@ -86,7 +86,7 @@ export default class Card extends React.Component {
 
   render() {
     return (
-      <div className="card">this.props.children</div>
+      <div className="card">{this.props.children}</div>
     )
   }
 }

@@ -18,12 +18,12 @@ var Delete = (function (_super) {
     }
     Delete.prototype.render = function () {
         var _a = this.props, isLarge = _a.isLarge, isMedium = _a.isMedium, isSmall = _a.isSmall, onClick = _a.onClick;
-        var className = classname(['content'], {
+        var className = classname(['delete'], {
             'is-large': isLarge,
             'is-medium': isMedium,
             'is-small': isSmall
         });
-        return (React.createElement("button", { className: "delete", onClick: onClick }));
+        return (React.createElement("button", { "aria-label": "delete", className: className, onClick: onClick }));
     };
     return Delete;
 }(React.Component));
