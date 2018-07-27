@@ -3,11 +3,14 @@ import React, { Component, Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 
 import Button from '../component/Button'
+import Column from '../component/Column'
+import Columns from '../component/Columns'
 import Container from '../component/Container'
 import Content from '../component/Content'
 import ClassicNavbar from '../component/ClassicNavbar'
 import Delete from '../component/Delete'
 import Navbar from '../component/Navbar'
+import Message from '../component/Message'
 import Modal from '../component/Modal'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
@@ -93,6 +96,59 @@ storiesOf('Components', module)
           </p>
 
           <ul />
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Message', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Message
+          </Title>
+
+          <Subtitle>
+            Colored <b>message</b> blocks, to emphasize part of your page
+          </Subtitle>
+
+          <Meta colors sizes />
+
+          <hr />
+
+          <Columns>
+            <Column isHalf>
+              <Message>
+                <Message.Header>
+                  <p>Hello World</p>
+
+                  <Delete />
+                </Message.Header>
+
+                <Message.Body>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                </Message.Body>
+              </Message>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Message>
+                    <Message.Header>
+                      <p>Hello World</p>
+
+                      <Delete />
+                    </Message.Header>
+
+                    <Message.Body>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+                    </Message.Body>
+                  </Message>
+                `}
+              </Code>
+            </Column>
+          </Columns>
         </Content>
       </Container>
     </Section>
