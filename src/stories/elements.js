@@ -336,16 +336,52 @@ storiesOf('Elements', module)
 
           <p>
             The <code>Icon</code> component is a container for any type of <b>icon font</b>.
+            If you want to import icons in the classic way, please refer to <a href='https://bulma.io/documentation/elements/icon/'>Icon section in official Bulma documentation</a>.
+            You will be able to use a code like the following:
+          </p>
+
+          <Code language='jsx'>
+            {indent`
+              <Icon>
+                <i className="fas fa-home"></i>
+              </Icon>
+            `}
+          </Code>
+
+          <p>
+            If you think that <b>free</b> Font AWesome 5 is enough and you would like SVG icons React components,
+            then you can choose this approach described in this documentation page.
+            Install <a href='http://g14n.info/fa-svg-icon/'>fa-svg-icon</a> package: it provides free Font-Awesome SVG icons.
+          </p>
+
+          <pre>
+            <code>
+              {indent`
+                npm install fa-svg-icon
+              `}
+            </code>
+          </pre>
+
+          <p>
+            Just as an example, import <b>solid</b> icons only.
+            Note that also <b>brands</b> and <b>regular</b> icons are available.
+            To save even more bytes in your build you could also import a single icon.
+          </p>
+
+          <Code language='jsx'>
+            {indent`
+              import solidIcon from 'fa-svg-icon/solid'
+            `}
+          </Code>
+
+          <p>
+            Now you can create all free SVG Font Awesome 5 icons with a snippet like the following.
           </p>
 
           <Columns>
             <Column isHalf>
               <Icon>
-                <Icon.Svg
-                  d={solidIcon.home[1]}
-                  size='1em'
-                  viewBox={solidIcon.home[0]}
-                />
+                <Icon.Svg icon={solidIcon.home} />
               </Icon>
             </Column>
 
@@ -353,11 +389,114 @@ storiesOf('Elements', module)
               <Code language='jsx'>
                 {indent`
                   <Icon>
-                    <Icon.Svg
-                      d={solidIcon.home[1]}
-                      size='1em'
-                      viewBox={solidIcon.home[0]}
-                    />
+                    <Icon.Svg icon={solidIcon.home} />
+                  </Icon>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <p>
+            By default, the <code>Icon</code> component will take up exactly 1.5rem x 1.5rem. The icon itself is sized accordingly to the icon library you're using. For example, Font Awesome 5 icons will <b>inherit</b> the font size.
+          </p>
+
+          <hr />
+
+          <Title is4>
+            Colors
+          </Title>
+
+          <p>
+            Since icon fonts are simply <b>text</b>, you can use the text color modifiers to change the icon's color.
+          </p>
+
+          <Columns>
+            <Column isHalf>
+              <Icon hasTextInfo>
+                <Icon.Svg icon={solidIcon.infoCircle} />
+              </Icon>
+
+              <Icon hasTextSuccess>
+                <Icon.Svg icon={solidIcon.checkSquare} />
+              </Icon>
+
+              <Icon hasTextWarning>
+                <Icon.Svg icon={solidIcon.exclamationTriangle} />
+              </Icon>
+
+              <Icon hasTextDanger>
+                <Icon.Svg icon={solidIcon.ban} />
+              </Icon>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Icon hasTextInfo>
+                    <Icon.Svg icon={solidIcon.infoCircle} />
+                  </Icon>
+
+                  <Icon hasTextSuccess>
+                    <Icon.Svg icon={solidIcon.checkSquare} />
+                  </Icon>
+
+                  <Icon hasTextWarning>
+                    <Icon.Svg icon={solidIcon.exclamationTriangle} />
+                  </Icon>
+
+                  <Icon hasTextDanger>
+                    <Icon.Svg icon={solidIcon.ban} />
+                  </Icon>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Title is4>
+            Sizes
+          </Title>
+
+          <p>
+            The <code>Icon</code> component comes in <b>4 sizes</b>.
+            The <code>Icon.Svg</code> component has a <code>size</code> prop which defaults to <code>1em</code>.
+          </p>
+
+          <Columns>
+            <Column isHalf>
+              <Icon isSmall>
+                <Icon.Svg icon={solidIcon.home} />
+              </Icon>
+
+              <Icon>
+                <Icon.Svg icon={solidIcon.home} />
+              </Icon>
+
+              <Icon isMedium>
+                <Icon.Svg icon={solidIcon.home} size='2em' />
+              </Icon>
+
+              <Icon isLarge>
+                <Icon.Svg icon={solidIcon.home} size='3em' />
+              </Icon>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Icon isSmall>
+                    <Icon.Svg icon={solidIcon.home} />
+                  </Icon>
+
+                  <Icon>
+                    <Icon.Svg icon={solidIcon.home} />
+                  </Icon>
+
+                  <Icon isMedium>
+                    <Icon.Svg icon={solidIcon.home} size='2em' />
+                  </Icon>
+
+                  <Icon isLarge>
+                    <Icon.Svg icon={solidIcon.home} size='3em' />
                   </Icon>
                 `}
               </Code>
