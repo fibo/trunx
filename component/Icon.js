@@ -17,9 +17,12 @@ var IconSvg = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     IconSvg.prototype.render = function () {
-        var _a = this.props, d = _a.d, size = _a.size, viewBox = _a.viewBox;
-        return (React.createElement("svg", { "aria-hidden": "true", height: size, role: "img", viewBox: viewBox, width: size, xmlns: "http://www.w3.org/2000/svg" },
-            React.createElement("path", { fill: "currentColor", d: d })));
+        var _a = this.props, icon = _a.icon, size = _a.size;
+        return (React.createElement("svg", { "aria-hidden": "true", height: size, role: "img", viewBox: icon.viewBox, width: size, xmlns: "http://www.w3.org/2000/svg" },
+            React.createElement("path", { fill: "currentColor", d: icon.d })));
+    };
+    IconSvg.defaultProps = {
+        size: '1em'
     };
     return IconSvg;
 }(React.Component));

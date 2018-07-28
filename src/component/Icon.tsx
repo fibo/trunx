@@ -12,17 +12,22 @@ interface IconProps {
 }
 
 interface IconSvgProps {
-  d: string
+  icon: {
+    d: string
+    viewBox: string
+  }
   size: string
-  viewBox: string
 }
 
 class IconSvg extends React.Component<IconSvgProps> {
+  static defaultProps = {
+    size: '1em'
+  }
+
   render() {
     const {
-      d,
+      icon,
       size,
-      viewBox,
     } = this.props
 
     return (
@@ -30,18 +35,19 @@ class IconSvg extends React.Component<IconSvgProps> {
         aria-hidden="true"
         height={size}
         role="img"
-        viewBox={viewBox}
+        viewBox={icon.viewBox}
         width={size}
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           fill="currentColor"
-          d={d}
+          d={icon.d}
         />
       </svg>
     )
   }
 }
+
 export default class Icon extends React.Component<IconProps> {
   static Svg = IconSvg
 
