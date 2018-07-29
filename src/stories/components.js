@@ -14,6 +14,7 @@ import Message from '../component/Message'
 import Modal from '../component/Modal'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
+import Tabs from '../component/Tabs'
 import Title from '../component/Title'
 
 import Code from './Code'
@@ -309,6 +310,54 @@ storiesOf('Components', module)
                   <Navbar.Burger />
                 </Navbar.Brand>
               </Navbar>
+            `}
+          </Code>
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Tabs', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Tabs
+          </Title>
+
+          <Subtitle>
+            Simple responsive horizontal navigation <b>tabs</b>, with different styles
+          </Subtitle>
+
+          <Meta sizes />
+
+          <hr />
+
+          <p>
+            The <code>Tabs</code> component contains a <code>Tabs.Item</code> components.
+            The default style has a single border at the bottom.
+          </p>
+
+          <Tabs>
+            <Tabs.Item isActive>Pictures</Tabs.Item>
+
+            <Tabs.Item>Music</Tabs.Item>
+
+            <Tabs.Item>Videos</Tabs.Item>
+
+            <Tabs.Item>Documents</Tabs.Item>
+          </Tabs>
+
+          <Code language='jsx'>
+            {indent`
+              <Tabs>
+                <Tabs.Item isActive>Pictures</Tabs.Item>
+
+                <Tabs.Item>Music</Tabs.Item>
+
+                <Tabs.Item>Videos</Tabs.Item>
+
+                <Tabs.Item>Documents</Tabs.Item>
+              </Tabs>
             `}
           </Code>
         </Content>
