@@ -31,6 +31,22 @@ storiesOf('Overview', module)
             </code>
           </pre>
 
+          <p>
+            It is also required to add Bulma CSS. You can use a CDN, see <a href='https://bulma.io/documentation/'>Bulma documentation</a> or a custom Bulma theme, checkout <a href='https://jenil.github.io/bulmaswatch/'>Bulmaswatch</a> but the good new is that it is easy to customize your Bulma build to create your own theme.
+          </p>
+
+          <p>
+            Install Bulma and Sass using npm.
+          </p>
+
+          <pre>
+            <code>
+              {indent`
+                npm install bulma
+                npm install node-sass
+              `}
+            </code>
+          </pre>
           <hr />
 
           <Title is4>
