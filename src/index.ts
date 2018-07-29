@@ -10,6 +10,7 @@ import * as ClassicNavbar from './component/ClassicNavbar'
 import * as Message from './component/Message'
 import * as Modal from './component/Modal'
 import * as Navbar from './component/Navbar'
+import * as Tabs from './component/Tabs'
 
 // Elements
 
@@ -71,6 +72,7 @@ export {
   Subtitle,
   Table,
   Tag,
+  Tabs,
   Tags,
   Textarea,
   Tile,
