@@ -658,14 +658,11 @@ storiesOf('Layout', module)
           </ul>
 
           <Hero isPrimary isMedium>
-            <Hero.Head>
-            </Hero.Head>
+            <Hero.Head />
 
-            <Hero.Body>
-            </Hero.Body>
+            <Hero.Body />
 
-            <Hero.Foot>
-            </Hero.Foot>
+            <Hero.Foot />
           </Hero>
 
           <Code language='jsx'>
