@@ -6,9 +6,9 @@
   "scripts": {
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "run-p lint:*",
-    "lint:src-js": "cd src && standard --fix",
+    "lint:src-js": "cd src && standard",
     "lint:src-ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
-    "lint:storybook": "cd .storybook && standard --fix",
+    "lint:storybook": "cd .storybook && standard",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "typescript": "tsc --project .",
     "storybook": "start-storybook -p 9001 -c .storybook",
