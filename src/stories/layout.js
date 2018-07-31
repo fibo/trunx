@@ -624,6 +624,64 @@ storiesOf('Layout', module)
               </Container>
             </Hero.Body>
           </Hero>
+
+          <Title is4>
+            Full height hero
+          </Title>
+
+          <Subtitle is6>
+            And vertically centered
+          </Subtitle>
+
+          <p>
+            You can split the hero in <b>3 vertical parts</b>:
+          </p>
+
+          <ul>
+            <li>
+              <code>Hero</code>
+
+              <ul>
+                <li>
+                  <code>Hero.Head</code> (always at the top)
+                </li>
+
+                <li>
+                  <code>Hero.Body</code> (always vertically centered)
+                </li>
+
+                <li>
+                  <code>Hero.Foot</code> (always at the bottom)
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <Hero isPrimary isMedium>
+            <Hero.Head>
+            </Hero.Head>
+
+            <Hero.Body>
+            </Hero.Body>
+
+            <Hero.Foot>
+            </Hero.Foot>
+          </Hero>
+
+          <Code language='jsx'>
+            {indent`
+              <Hero isPrimary isMedium>
+                <Hero.Head>
+                </Hero.Head>
+
+                <Hero.Body>
+                </Hero.Body>
+
+                <Hero.Foot>
+                </Hero.Foot>
+              </Hero>
+            `}
+          </Code>
         </Content>
       </Container>
     </Section>
