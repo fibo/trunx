@@ -11,6 +11,7 @@ import Columns from '../component/Columns'
 import Container from '../component/Container'
 import Content from '../component/Content'
 import Delete from '../component/Delete'
+import Field from '../component/Field'
 import Icon from '../component/Icon'
 import Notification from '../component/Notification'
 import Section from '../component/Section'
@@ -685,18 +686,30 @@ storiesOf('Elements', module)
           </Title>
 
           <Subtitle>
-            Small tag labels to insert anywhere
+            Small <b>tag labels</b> to insert anywhere
           </Subtitle>
 
           <Meta colors sizes />
 
           <hr />
 
-          <p>
-            By default, a <b>tag</b> is a 1.5rem high label.
-          </p>
+          <Columns>
+            <Column is4>
+              By default, a <b>tag</b> is a 1.5rem high label.
+            </Column>
 
-          <Tag>Tag label</Tag>
+            <Column is2>
+              <Tag>Tag label</Tag>
+            </Column>
+
+            <Column is6>
+              <Code language='jsx'>
+                {indent`
+                  <Tag>Tag label</Tag>
+                `}
+              </Code>
+            </Column>
+          </Columns>
 
           <hr />
 
@@ -704,21 +717,99 @@ storiesOf('Elements', module)
             Colors
           </Title>
 
-          <p>
-            Like with buttons, there are <b>10 different</b> <b>colors</b> available.
-          </p>
+          <Columns>
+            <Column is4>
+              Like with buttons, there are <b>10 different</b> <b>colors</b> available.
+            </Column>
 
-          <Tag isBlack>Black</Tag>
-          <Tag isDark>Dark</Tag>
-          <Tag isLight>Light</Tag>
-          <Tag isWhite>White</Tag>
-          <Tag isPrimary>Primary</Tag>
-          <Tag isLink>Link</Tag>
-          <Tag isInfo>Info</Tag>
-          <Tag isSuccess>Success</Tag>
-          <Tag isWarning>Warning</Tag>
-          <Tag isDanger>Danger</Tag>
+            <Column is2>
+              <Field>
+                <Tag isBlack>Black</Tag>
+              </Field>
 
+              <Field>
+                <Tag isDark>Dark</Tag>
+              </Field>
+
+              <Field>
+                <Tag isLight>Light</Tag>
+              </Field>
+
+              <Field>
+                <Tag isWhite>White</Tag>
+              </Field>
+
+              <Field>
+                <Tag isPrimary>Primary</Tag>
+              </Field>
+
+              <Field>
+                <Tag isLink>Link</Tag>
+              </Field>
+
+              <Field>
+                <Tag isInfo>Info</Tag>
+              </Field>
+
+              <Field>
+                <Tag isSuccess>Success</Tag>
+              </Field>
+
+              <Field>
+                <Tag isWarning>Warning</Tag>
+              </Field>
+
+              <Field>
+                <Tag isDanger>Danger</Tag>
+              </Field>
+            </Column>
+
+            <Column is6>
+              <Code language='jsx'>
+                {indent`
+                  <Tag isBlack>Black</Tag>
+                  <Tag isDark>Dark</Tag>
+                  <Tag isLight>Light</Tag>
+                  <Tag isWhite>White</Tag>
+                  <Tag isPrimary>Primary</Tag>
+                  <Tag isLink>Link</Tag>
+                  <Tag isInfo>Info</Tag>
+                  <Tag isSuccess>Success</Tag>
+                  <Tag isWarning>Warning</Tag>
+                  <Tag isDanger>Danger</Tag>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Title is4>
+            Sizes
+          </Title>
+
+          <Columns>
+            <Column is4>
+              And <b>2 additional</b> sizes
+            </Column>
+
+            <Column is2>
+              <Field>
+                <Tag isPrimary isMedium>Medium</Tag>
+              </Field>
+
+              <Field>
+                <Tag isInfo isLarge>Large</Tag>
+              </Field>
+            </Column>
+
+            <Column is6>
+              <Code language='jsx'>
+                {indent`
+                  <Tag isPrimary isMedium>Medium</Tag>
+                  <Tag isInfo isLarge>Large</Tag>
+                `}
+              </Code>
+            </Column>
+          </Columns>
         </Content>
       </Container>
     </Section>
