@@ -21,6 +21,26 @@ var HeroBody = (function (_super) {
     };
     return HeroBody;
 }(React.Component));
+var HeroFoot = (function (_super) {
+    __extends(HeroFoot, _super);
+    function HeroFoot() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    HeroFoot.prototype.render = function () {
+        return (React.createElement("div", { className: "hero-foot" }, this.props.children));
+    };
+    return HeroFoot;
+}(React.Component));
+var HeroHead = (function (_super) {
+    __extends(HeroHead, _super);
+    function HeroHead() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    HeroHead.prototype.render = function () {
+        return (React.createElement("div", { className: "hero-head" }, this.props.children));
+    };
+    return HeroHead;
+}(React.Component));
 var Hero = (function (_super) {
     __extends(Hero, _super);
     function Hero() {
@@ -41,6 +61,8 @@ var Hero = (function (_super) {
         return (React.createElement("section", { className: className }, this.props.children));
     };
     Hero.Body = HeroBody;
+    Hero.Foot = HeroFoot;
+    Hero.Head = HeroHead;
     return Hero;
 }(React.Component));
 exports.default = Hero;
