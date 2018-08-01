@@ -19,6 +19,7 @@ import Media from '../component/Media'
 import Notification from '../component/Notification'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
+// import Tabs from '../component/Tabs'
 import Textarea from '../component/Textarea'
 import Tile from '../component/Tile'
 import Title from '../component/Title'
@@ -658,25 +659,22 @@ storiesOf('Layout', module)
           </ul>
 
           <Hero isPrimary isMedium>
-            <Hero.Head />
-
-            <Hero.Body />
-
-            <Hero.Foot />
+            <Hero.Body>
+              <Container hasTextCentered>
+                <Title>Title</Title>
+                <Subtitle>Subtitle</Subtitle>
+              </Container>
+            </Hero.Body>
           </Hero>
 
           <Code language='jsx'>
             {indent`
-              <Hero isPrimary isMedium>
-                <Hero.Head>
-                </Hero.Head>
-
-                <Hero.Body>
-                </Hero.Body>
-
-                <Hero.Foot>
-                </Hero.Foot>
-              </Hero>
+              <Hero.Body>
+                <Container hasTextCentered>
+                  <Title>Title</Title>
+                  <Subtitle>Subtitle</Subtitle>
+                </Container>
+              </Hero.Body>
             `}
           </Code>
         </Content>

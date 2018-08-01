@@ -45,8 +45,47 @@ class TabsItem extends React.Component<TabsItemProps> {
   }
 }
 
+/*
+class TabsNav extends React.Component<TabsProps> {
+  render() {
+    const {
+      isBoxed,
+      isCentered,
+      isFullwidth,
+      isLarge,
+      isMedium,
+      isRight,
+      isSmall,
+      isToggle,
+      isToggleRounded,
+    } = this.props
+
+    const className = classname(['tabs'], {
+      'is-boxed': isBoxed,
+      'is-centered': isCentered,
+      'is-fullwidth': isFullwidth,
+      'is-large': isLarge,
+      'is-medium': isMedium,
+      'is-right': isRight,
+      'is-small': isSmall,
+      'is-toggle': isToggle,
+      'is-toggle-rounded': isToggleRounded,
+    })
+
+    return (
+      <nav className={className}>
+        <div className="container">
+          <ul>{this.props.children}</ul>
+        </div>
+      </nav>
+    )
+  }
+}
+*/
+
 export default class Tabs extends React.Component<TabsProps> {
   static Item = TabsItem
+  // static Nav = TabsNav
 
   render() {
     const {
