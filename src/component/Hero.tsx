@@ -62,6 +62,7 @@ export default class Hero extends React.Component<HeroProps> {
       'is-dark': isDark,
       'is-fullheight': isFullheight,
       'is-info': isInfo,
+      'is-large': isLarge,
       'is-medium': isMedium,
       'is-primary': isPrimary,
       'is-success': isSuccess,

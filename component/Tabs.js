@@ -32,6 +32,30 @@ var TabsItem = (function (_super) {
     };
     return TabsItem;
 }(React.Component));
+var TabsNav = (function (_super) {
+    __extends(TabsNav, _super);
+    function TabsNav() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    TabsNav.prototype.render = function () {
+        var _a = this.props, isBoxed = _a.isBoxed, isCentered = _a.isCentered, isFullwidth = _a.isFullwidth, isLarge = _a.isLarge, isMedium = _a.isMedium, isRight = _a.isRight, isSmall = _a.isSmall, isToggle = _a.isToggle, isToggleRounded = _a.isToggleRounded;
+        var className = classname(['tabs'], {
+            'is-boxed': isBoxed,
+            'is-centered': isCentered,
+            'is-fullwidth': isFullwidth,
+            'is-large': isLarge,
+            'is-medium': isMedium,
+            'is-right': isRight,
+            'is-small': isSmall,
+            'is-toggle': isToggle,
+            'is-toggle-rounded': isToggleRounded,
+        });
+        return (React.createElement("nav", { className: className },
+            React.createElement("div", { className: "container" },
+                React.createElement("ul", null, this.props.children))));
+    };
+    return TabsNav;
+}(React.Component));
 var Tabs = (function (_super) {
     __extends(Tabs, _super);
     function Tabs() {
@@ -54,6 +78,7 @@ var Tabs = (function (_super) {
             React.createElement("ul", null, this.props.children)));
     };
     Tabs.Item = TabsItem;
+    Tabs.Nav = TabsNav;
     return Tabs;
 }(React.Component));
 exports.default = Tabs;
