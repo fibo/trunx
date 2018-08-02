@@ -46,6 +46,7 @@ export default class Hero extends React.Component<HeroProps> {
 
   render() {
     const {
+      isBold,
       isDanger,
       isDark,
       isFullheight,
@@ -58,6 +59,7 @@ export default class Hero extends React.Component<HeroProps> {
     } = this.props
 
     const className = classname(['hero'], {
+      'is-bold': isBold,
       'is-danger': isDanger,
       'is-dark': isDark,
       'is-fullheight': isFullheight,
