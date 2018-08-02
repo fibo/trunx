@@ -384,13 +384,11 @@ storiesOf('Elements', module)
             Install <a href='http://g14n.info/fa-svg-icon/'>fa-svg-icon</a> package: it provides free Font-Awesome SVG icons.
           </p>
 
-          <pre>
-            <code>
-              {indent`
-                npm install fa-svg-icon
-              `}
-            </code>
-          </pre>
+          <Code language='bash'>
+            {indent`
+              npm install fa-svg-icon
+            `}
+          </Code>
 
           <p>
             Just as an example, import <b>solid</b> icons only.
