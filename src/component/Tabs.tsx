@@ -45,7 +45,6 @@ class TabsItem extends React.Component<TabsItemProps> {
   }
 }
 
-/*
 class TabsNav extends React.Component<TabsProps> {
   render() {
     const {
@@ -81,11 +80,10 @@ class TabsNav extends React.Component<TabsProps> {
     )
   }
 }
-*/
 
 export default class Tabs extends React.Component<TabsProps> {
   static Item = TabsItem
-  // static Nav = TabsNav
+  static Nav = TabsNav
 
   render() {
     const {
