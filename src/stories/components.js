@@ -1,15 +1,20 @@
 import React, { Component, Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
+import solidIcon from 'fa-svg-icon/solid'
 
 import Button from '../component/Button'
+import Card from '../component/Card'
 import Column from '../component/Column'
 import Columns from '../component/Columns'
 import Container from '../component/Container'
 import Content from '../component/Content'
 import ClassicNavbar from '../component/ClassicNavbar'
 import Delete from '../component/Delete'
+import Icon from '../component/Icon'
+import Image from '../component/Image'
 import Navbar from '../component/Navbar'
+import Media from '../component/Media'
 import Message from '../component/Message'
 import Modal from '../component/Modal'
 import Section from '../component/Section'
@@ -96,7 +101,237 @@ storiesOf('Components', module)
             The <b>card</b> component comprises several elements that you can mix and match:
           </p>
 
-          <ul />
+          <ul>
+            <li>
+              <code>Card</code>: the main container
+
+              <ul>
+                <li>
+                  <code>Card.Header</code>: a horizontal bar with a shadow
+
+                  <ul>
+                    <li>
+                      <code>Card.Title</code>: a left-aligned bold text
+                    </li>
+
+                    <li>
+                      <code>Card.Icon</code>: a placeholder for an icon
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <code>Card.Image</code>: a fullwidth container for a responsive image
+                </li>
+
+                <li>
+                  <code>Card.Content</code>: a multi-purpose container for <em>any</em> other element
+                </li>
+
+                <li>
+                  <code>Card.Footer</code>: a horizontal list of controls
+
+                  <ul>
+                    <li>
+                      <code>Card.Footer.Item</code>: a repeatable list item
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <Columns>
+            <Column isOneThird>
+              <Card>
+                <Card.Image is4by3>
+                  <img src='https://bulma.io/images/placeholders/1280x960.png' alt='Placeholder image' />
+                </Card.Image>
+
+                <Card.Content>
+                  <Media>
+                    <Media.Left>
+                      <Image
+                        alt='Placeholder image'
+                        is48x48
+                        src='https://bulma.io/images/placeholders/96x96.png'
+                      />
+                    </Media.Left>
+
+                    <Media.Content>
+                      <Title is4>John Smith</Title>
+                      <Subtitle is6>@johnsmith</Subtitle>
+                    </Media.Content>
+                  </Media>
+
+                  <Content>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href='#'>#css</a> <a href='#'>#responsive</a>
+                    <br />
+                    <time dateTime='2016-1-1'>11:09 PM - 1 Jan 2016</time>
+                  </Content>
+                </Card.Content>
+              </Card>
+            </Column>
+
+            <Column isTwoThirds>
+              <Code language='jsx'>
+                {indent`
+                  <Card>
+                    <Card.Image is4by3>
+                      <img src='https://bulma.io/images/placeholders/1280x960.png' alt='Placeholder image' />
+                    </Card.Image>
+
+                    <Card.Content>
+                      <Media>
+                        <Media.Left>
+                          <Image is48x48>
+                            <img src='https://bulma.io/images/placeholders/96x96.png' alt='Placeholder image' />
+                          </Image>
+                        </Media.Left>
+
+                        <Media.Content>
+                          <Title is4>John Smith</Title>
+                          <Subtitle is6>@johnsmith</Subtitle>
+                        </Media.Content>
+                      </Media>
+
+                      <Content>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                        <a href='#'>#css</a> <a href='#'>#responsive</a>
+                        <br />
+                        <time dateTime='2016-1-1'>11:09 PM - 1 Jan 2016</time>
+                      </Content>
+                    </Card.Content>
+                  </Card>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Columns>
+            <Column isOneThird>
+              <Card>
+                <Card.Header>
+                  <Card.Header.Title>Component</Card.Header.Title>
+                  <Card.Header.Icon aria-label='more-options'>
+                    <Icon>
+                      <Icon.Svg icon={solidIcon.angleDown} />
+                    </Icon>
+                  </Card.Header.Icon>
+                </Card.Header>
+
+                <Card.Content>
+                  <Content>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                    <a href='#'>#css</a> <a href='#'>#responsive</a>
+                    <br />
+                    <time dateTime='2016-1-1'>11:09 PM - 1 Jan 2016</time>
+                  </Content>
+                </Card.Content>
+
+                <Card.Footer>
+                  <Card.Footer.Item href='#'>Save</Card.Footer.Item>
+
+                  <Card.Footer.Item href='#'>Edit</Card.Footer.Item>
+
+                  <Card.Footer.Item href='#'>Delete</Card.Footer.Item>
+                </Card.Footer>
+              </Card>
+            </Column>
+
+            <Column isTwoThirds>
+              <Code language='jsx'>
+                {indent`
+                  <Card>
+                    <Card.Header>
+                      <Card.Header.Title>Component</Card.Header.Title>
+                      <Card.Header.Icon aria-label='more-options'>
+                        <Icon>
+                          <Icon.Svg icon={solidIcon.angleDown} />
+                        </Icon>
+                      </Card.Header.Icon>
+                    </Card.Header>
+
+                    <Card.Content>
+                      <Content>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                        <a href='#'>#css</a> <a href='#'>#responsive</a>
+                        <br />
+                        <time dateTime='2016-1-1'>11:09 PM - 1 Jan 2016</time>
+                      </Content>
+                    </Card.Content>
+
+                    <Card.Footer>
+                      <Card.Footer.Item href='#'>Save</Card.Footer.Item>
+
+                      <Card.Footer.Item href='#'>Edit</Card.Footer.Item>
+
+                      <Card.Footer.Item href='#'>Delete</Card.Footer.Item>
+                    </Card.Footer>
+                  </Card>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Columns>
+            <Column isOneThird>
+              <Card>
+                <Card.Content>
+                  <Title>
+                    “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
+                  </Title>
+
+                  <Subtitle>Jeff Atwood</Subtitle>
+                </Card.Content>
+
+                <Card.Footer>
+                  <Card.Footer.Item href='#'>
+                    <span>View on <a href='https://twitter.com/codinghorror/status/506010907021828096'>Twitter</a></span>
+                  </Card.Footer.Item>
+
+                  <Card.Footer.Item href='#'>
+                    <span>Share on <a href='#'>Facebook</a></span>
+                  </Card.Footer.Item>
+                </Card.Footer>
+              </Card>
+            </Column>
+
+            <Column isTwoThirds>
+              <Code language='jsx'>
+                {indent`
+                  <Card>
+                    <Card.Content>
+                      <Title>
+                        “There are two hard things in computer science: cache invalidation, naming things, and off-by-one errors.”
+                      </Title>
+
+                      <Subtitle>Jeff Atwood</Subtitle>
+                    </Card.Content>
+
+                    <Card.Footer>
+                      <Card.Footer.Item href='#'>
+                        <span>View on <a href='https://twitter.com/codinghorror/status/506010907021828096'>Twitter</a></span>
+                      </Card.Footer.Item>
+
+                      <Card.Footer.Item href='#'>
+                        <span>Share on <a href='#'>Facebook</a></span>
+                      </Card.Footer.Item>
+                    </Card.Footer>
+                  </Card>
+                `}
+              </Code>
+            </Column>
+          </Columns>
         </Content>
       </Container>
     </Section>
@@ -215,16 +450,59 @@ storiesOf('Components', module)
           <hr />
 
           <p>
-            The <code>navbar</code> component is a responsive and versatile horizontal navigation bar with the following structure:
+            The <code>Navbar</code> component is a responsive and versatile horizontal navigation bar with the following structure:
           </p>
 
           <ul>
             <li>
-              <code>navbar</code>: the main container
-              <ul>
-                <li />
+              <code>Navbar</code>: the <b>main</b> container
 
-                <li />
+              <ul>
+                <li>
+                  <code>Navbar.Brand</code>: the <b>left side</b>, <strong className='has-text-success'>always visible</strong>, which usually contains the logo and optionally some links or icons
+
+                  <ul>
+                    <li>
+                      <code>Navbar.Burger</code>: the <b>hamburger</b> icon, which toggles the navbar menu on touch devices
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <code>Navbar.Menu</code>: the <b>right side</b>, hidden on touch devices, visible on desktop
+
+                  <ul>
+                    <li>
+                      <code>Navbar.Start</code>: the <b>left part</b> of the menu, which appears next to the navbar brand on desktop
+                    </li>
+
+                    <li>
+                      <code>Navbar.End</code>: the <b>right part</b> of the menu, which appears at the end of the navbar
+
+                      <ul>
+                        <li>
+                          <code>Navbar.Item</code>: each <b>single item</b> of the navbar, which can either be an <code>a</code> or a <code>div</code>
+
+                          <ul>
+                            <li>
+                              <code>Navbar.Link</code>: a <b>link</b> as the sibling of a dropdown, with an arrow
+                            </li>
+
+                            <li>
+                              <code>Navbar.Dropdown</code>: the <b>dropdown menu</b>, which can include navbar items and dividers
+
+                              <ul>
+                                <li>
+                                  <code>Navbar.Divider</code>: a <b>horizontal line</b> to separate navbar items
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
               </ul>
             </li>
           </ul>

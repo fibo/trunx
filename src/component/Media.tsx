@@ -12,7 +12,7 @@ class MediaContent extends React.Component {
 class MediaLeft extends React.Component {
   render() {
     return (
-      <figure className="media-left">{this.props.children}</figure>
+      <div className="media-left">{this.props.children}</div>
     )
   }
 }
@@ -32,7 +32,7 @@ export default class Media extends React.Component {
 
   render() {
     return (
-      <article className="media">{this.props.children}</article>
+      <div className="media">{this.props.children}</div>
     )
   }
 }

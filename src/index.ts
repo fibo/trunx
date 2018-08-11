@@ -56,6 +56,7 @@ export {
   Column,
   Columns,
   Container,
+  Content,
   Control,
   Delete,
   Field,
