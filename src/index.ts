@@ -47,6 +47,7 @@ import Section from './component/Section'
 import Tile from './component/Tile'
 
 export {
+  Box,
   Button,
   Buttons,
   Card,
@@ -59,15 +60,19 @@ export {
   Delete,
   Field,
   Footer,
+  Heading,
+  Help,
   Hero,
   Icon,
   Image,
+  Input,
   Level,
   Media,
   Message,
   Modal,
   Navbar,
   Notification,
+  Progress,
   Section,
   Subtitle,
   Table,
