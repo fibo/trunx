@@ -58,7 +58,7 @@ var Image = (function (_super) {
             'is-128x128': is128x128,
             'is-square': isSquare,
         });
-        return (React.createElement("p", { className: className },
+        return (React.createElement("figure", { className: className },
             React.createElement("img", __assign({}, props))));
     };
     return Image;

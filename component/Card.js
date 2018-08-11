@@ -26,6 +26,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+var classname = require("classname");
 var React = require("react");
 var CardContent = (function (_super) {
     __extends(CardContent, _super);
@@ -37,6 +38,22 @@ var CardContent = (function (_super) {
     };
     return CardContent;
 }(React.Component));
+var CardFooterItem = (function (_super) {
+    __extends(CardFooterItem, _super);
+    function CardFooterItem() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    CardFooterItem.prototype.render = function () {
+        var href = this.props.href;
+        if (href) {
+            return (React.createElement("a", { className: "card-footer-item", href: href }, this.props.children));
+        }
+        else {
+            return (React.createElement("div", { className: "card-footer-item" }, this.props.children));
+        }
+    };
+    return CardFooterItem;
+}(React.Component));
 var CardFooter = (function (_super) {
     __extends(CardFooter, _super);
     function CardFooter() {
@@ -45,6 +62,7 @@ var CardFooter = (function (_super) {
     CardFooter.prototype.render = function () {
         return (React.createElement("footer", { className: "card-footer" }, this.props.children));
     };
+    CardFooter.Item = CardFooterItem;
     return CardFooter;
 }(React.Component));
 var CardHeaderIcon = (function (_super) {
@@ -69,7 +87,11 @@ var CardHeaderTitle = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardHeaderTitle.prototype.render = function () {
-        return (React.createElement("p", { className: "card-header-title" }, this.props.children));
+        var isCentered = this.props.isCentered;
+        var className = classname('card-header-title', {
+            'is-centered': isCentered,
+        });
+        return (React.createElement("div", { className: className }, this.props.children));
     };
     return CardHeaderTitle;
 }(React.Component));

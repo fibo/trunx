@@ -85,9 +85,9 @@ export default class Image extends React.Component<Props> {
     })
 
     return (
-      <p className={className}>
+      <figure className={className}>
         <img {...props} />
-      </p>
+      </figure>
     )
   }
 }
