@@ -26,7 +26,7 @@ var MediaLeft = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     MediaLeft.prototype.render = function () {
-        return (React.createElement("figure", { className: "media-left" }, this.props.children));
+        return (React.createElement("div", { className: "media-left" }, this.props.children));
     };
     return MediaLeft;
 }(React.Component));
@@ -46,7 +46,7 @@ var Media = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Media.prototype.render = function () {
-        return (React.createElement("article", { className: "media" }, this.props.children));
+        return (React.createElement("div", { className: "media" }, this.props.children));
     };
     Media.Content = MediaContent;
     Media.Left = MediaLeft;
