@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface TabsProps {
@@ -59,7 +59,7 @@ class TabsNav extends React.Component<TabsProps> {
       isToggleRounded,
     } = this.props
 
-    const className = classname(['tabs'], {
+    const className = classnames('tabs', {
       'is-boxed': isBoxed,
       'is-centered': isCentered,
       'is-fullwidth': isFullwidth,
@@ -98,7 +98,7 @@ export default class Tabs extends React.Component<TabsProps> {
       isToggleRounded,
     } = this.props
 
-    const className = classname(['tabs'], {
+    const className = classnames('tabs', {
       'is-boxed': isBoxed,
       'is-centered': isCentered,
       'is-fullwidth': isFullwidth,

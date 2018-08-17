@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface CardFooterItemProps {
@@ -94,7 +94,7 @@ class CardHeaderTitle extends React.Component<CardHeaderTitleProps> {
       isCentered,
     } = this.props
 
-    const className = classname('card-header-title', {
+    const className = classnames('card-header-title', {
       'is-centered': isCentered,
     })
 

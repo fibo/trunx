@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Container = (function (_super) {
     __extends(Container, _super);
@@ -18,7 +18,7 @@ var Container = (function (_super) {
     }
     Container.prototype.render = function () {
         var _a = this.props, isFluid = _a.isFluid, isFullhd = _a.isFullhd, isWidescreen = _a.isWidescreen;
-        var className = classname(['container'], {
+        var className = classnames('container', {
             'is-fluid': isFluid,
             'is-fullhd': isFullhd,
             'is-widescreen': isWidescreen,

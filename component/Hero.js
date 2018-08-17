@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var HeroBody = (function (_super) {
     __extends(HeroBody, _super);
@@ -48,7 +48,7 @@ var Hero = (function (_super) {
     }
     Hero.prototype.render = function () {
         var _a = this.props, isBold = _a.isBold, isDanger = _a.isDanger, isDark = _a.isDark, isFullheight = _a.isFullheight, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isWarning = _a.isWarning;
-        var className = classname(['hero'], {
+        var className = classnames('hero', {
             'is-bold': isBold,
             'is-danger': isDanger,
             'is-dark': isDark,

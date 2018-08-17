@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Columns = (function (_super) {
     __extends(Columns, _super);
@@ -18,7 +18,7 @@ var Columns = (function (_super) {
     }
     Columns.prototype.render = function () {
         var _a = this.props, isDesktop = _a.isDesktop, isGapeless = _a.isGapeless, isMobile = _a.isMobile, isMultiline = _a.isMultiline;
-        var className = classname(['columns'], {
+        var className = classnames('columns', {
             'is-desktop': isDesktop,
             'is-gapelesss': isGapeless,
             'is-mobile': isMobile,

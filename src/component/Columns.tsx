@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface Props {
@@ -17,7 +17,7 @@ export default class Columns extends React.Component<Props> {
       isMultiline
     } = this.props
 
-    const className = classname(['columns'], {
+    const className = classnames('columns', {
       'is-desktop': isDesktop,
       'is-gapelesss': isGapeless,
       'is-mobile': isMobile,

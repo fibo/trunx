@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface Props {
@@ -19,7 +19,7 @@ export default class Help extends React.Component<Props> {
       isWarning
     } = this.props
 
-    const className = classname(['help'], {
+    const className = classnames('help', {
       'is-danger': isDanger,
       'is-info': isInfo,
       'is-primary': isPrimary,

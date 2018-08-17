@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var TabsItem = (function (_super) {
     __extends(TabsItem, _super);
@@ -39,7 +39,7 @@ var TabsNav = (function (_super) {
     }
     TabsNav.prototype.render = function () {
         var _a = this.props, isBoxed = _a.isBoxed, isCentered = _a.isCentered, isFullwidth = _a.isFullwidth, isLarge = _a.isLarge, isMedium = _a.isMedium, isRight = _a.isRight, isSmall = _a.isSmall, isToggle = _a.isToggle, isToggleRounded = _a.isToggleRounded;
-        var className = classname(['tabs'], {
+        var className = classnames('tabs', {
             'is-boxed': isBoxed,
             'is-centered': isCentered,
             'is-fullwidth': isFullwidth,
@@ -63,7 +63,7 @@ var Tabs = (function (_super) {
     }
     Tabs.prototype.render = function () {
         var _a = this.props, isBoxed = _a.isBoxed, isCentered = _a.isCentered, isFullwidth = _a.isFullwidth, isLarge = _a.isLarge, isMedium = _a.isMedium, isRight = _a.isRight, isSmall = _a.isSmall, isToggle = _a.isToggle, isToggleRounded = _a.isToggleRounded;
-        var className = classname(['tabs'], {
+        var className = classnames('tabs', {
             'is-boxed': isBoxed,
             'is-centered': isCentered,
             'is-fullwidth': isFullwidth,

@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Tags = (function (_super) {
     __extends(Tags, _super);
@@ -18,7 +18,7 @@ var Tags = (function (_super) {
     }
     Tags.prototype.render = function () {
         var hasAddons = this.props.hasAddons;
-        var className = classname(['tags'], {
+        var className = classnames('tags', {
             'has-addons': hasAddons,
         });
         return (React.createElement("div", { className: className }, this.props.children));

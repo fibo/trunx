@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface Props {
@@ -31,7 +31,7 @@ export default class Progress extends React.Component<Props> {
       value
     } = this.props
 
-    const className = classname(['tag'], {
+    const className = classnames('tag', {
       'is-danger': isDanger,
       'is-info': isInfo,
       'is-large': isLarge,

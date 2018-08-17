@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Table = (function (_super) {
     __extends(Table, _super);
@@ -18,7 +18,7 @@ var Table = (function (_super) {
     }
     Table.prototype.render = function () {
         var _a = this.props, isBordered = _a.isBordered, isFullwidth = _a.isFullwidth, isHoverable = _a.isHoverable, isNarrow = _a.isNarrow, isStriped = _a.isStriped;
-        var className = classname(['table'], {
+        var className = classnames('table', {
             'is-bordered': isBordered,
             'is-fullwidth': isFullwidth,
             'is-hoverable': isHoverable,

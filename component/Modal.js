@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var ModalCardBody = (function (_super) {
     __extends(ModalCardBody, _super);
@@ -83,7 +83,7 @@ var ModalClose = (function (_super) {
     }
     ModalClose.prototype.render = function () {
         var _a = this.props, isLarge = _a.isLarge, onClick = _a.onClick;
-        var className = classname(['modal-close'], {
+        var className = classnames('modal-close', {
             'is-large': isLarge,
         });
         return (React.createElement("button", { "aria-label": "close", className: className, onClick: onClick }));
@@ -107,7 +107,7 @@ var Modal = (function (_super) {
     }
     Modal.prototype.render = function () {
         var isActive = this.props.isActive;
-        var className = classname(['modal'], {
+        var className = classnames('modal', {
             'is-active': isActive,
         });
         return (React.createElement("div", { className: className }, this.props.children));
