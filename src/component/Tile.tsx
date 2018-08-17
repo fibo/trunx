@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface Props {
@@ -15,7 +15,7 @@ export default class Tile extends React.Component<Props> {
       isParent,
     } = this.props
 
-    const className = classname(['tile'], {
+    const className = classnames('tile', {
       'is-ancestor': isAncestor,
       'is-child': isChild,
       'is-parent': isParent,

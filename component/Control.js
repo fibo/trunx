@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Control = (function (_super) {
     __extends(Control, _super);
@@ -18,7 +18,7 @@ var Control = (function (_super) {
     }
     Control.prototype.render = function () {
         var _a = this.props, hasIconsLeft = _a.hasIconsLeft, hasIconsRight = _a.hasIconsRight, isExpanded = _a.isExpanded;
-        var className = classname(['control'], {
+        var className = classnames('control', {
             'has-icons-left': hasIconsLeft,
             'has-icons-right': hasIconsRight,
             'is-expanded': isExpanded

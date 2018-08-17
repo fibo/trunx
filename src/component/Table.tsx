@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface TableProps {
@@ -19,7 +19,7 @@ export default class Table extends React.Component<TableProps> {
       isStriped,
     } = this.props
 
-    const className = classname(['table'], {
+    const className = classnames('table', {
       'is-bordered': isBordered,
       'is-fullwidth': isFullwidth,
       'is-hoverable': isHoverable,

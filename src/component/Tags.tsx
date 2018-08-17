@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface Props {
@@ -11,7 +11,7 @@ export default class Tags extends React.Component<Props> {
       hasAddons,
     } = this.props
 
-    const className = classname(['tags'], {
+    const className = classnames('tags', {
       'has-addons': hasAddons,
     })
 

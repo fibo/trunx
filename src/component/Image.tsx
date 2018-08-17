@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface Props {
@@ -58,7 +58,7 @@ export default class Image extends React.Component<Props> {
       ...props
     } = this.props
 
-    const className = classname(['image'], {
+    const className = classnames('image', {
       /* tslint:disable object-literal-sort-keys */
       'is-1by1': is1by1,
       'is-1by2': is1by2,

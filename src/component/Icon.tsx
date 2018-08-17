@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface IconProps {
@@ -62,7 +62,7 @@ export default class Icon extends React.Component<IconProps> {
       isSmall,
     } = this.props
 
-    const className = classname(['icon'], {
+    const className = classnames('icon', {
       'has-text-danger': hasTextDanger,
       'has-text-info': hasTextInfo,
       'has-text-success': hasTextSuccess,

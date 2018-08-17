@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface Props {
@@ -19,7 +19,7 @@ export default class Field extends React.Component<Props> {
       label,
     } = this.props
 
-    const className = classname(['field'], {
+    const className = classnames('field', {
       'has-addons': hasAddons,
       'has-addons-centered': hasAddonsCentered,
       'is-grouped': isGrouped,

@@ -8,6 +8,7 @@
   // override tslint-react rules here
     "jsx-wrap-multiline": false,
     "max-classes-per-file": false,
-    "member-access": [true, "no-public"]
+    "member-access": [true, "no-public"],
+    "no-implicit-dependencies": [true, "dev"]
   }
 }

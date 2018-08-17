@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Content = (function (_super) {
     __extends(Content, _super);
@@ -18,7 +18,7 @@ var Content = (function (_super) {
     }
     Content.prototype.render = function () {
         var _a = this.props, hasTextCentered = _a.hasTextCentered, hasTextJustified = _a.hasTextJustified, hasTextLeft = _a.hasTextLeft, hasTextRight = _a.hasTextRight, isLarge = _a.isLarge, isMedium = _a.isMedium, isSmall = _a.isSmall;
-        var className = classname(['content'], {
+        var className = classnames(['content'], {
             'has-text-centered': hasTextCentered,
             'has-text-justified': hasTextJustified,
             'has-text-left': hasTextLeft,

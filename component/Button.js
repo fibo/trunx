@@ -26,7 +26,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Button = (function (_super) {
     __extends(Button, _super);
@@ -35,7 +35,7 @@ var Button = (function (_super) {
     }
     Button.prototype.render = function () {
         var _a = this.props, disabled = _a.disabled, href = _a.href, isActive = _a.isActive, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isDisabled = _a.isDisabled, isFocused = _a.isFocused, isFullwidth = _a.isFullwidth, isInfo = _a.isInfo, isInverted = _a.isInverted, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isLoading = _a.isLoading, isMedium = _a.isMedium, isNormal = _a.isNormal, isOutlined = _a.isOutlined, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isStatic = _a.isStatic, isSuccess = _a.isSuccess, isText = _a.isText, isWarning = _a.isWarning, isWhite = _a.isWhite, onClick = _a.onClick, type = _a.type, props = __rest(_a, ["disabled", "href", "isActive", "isBlack", "isDanger", "isDark", "isDisabled", "isFocused", "isFullwidth", "isInfo", "isInverted", "isLarge", "isLight", "isLink", "isLoading", "isMedium", "isNormal", "isOutlined", "isPrimary", "isRounded", "isSmall", "isStatic", "isSuccess", "isText", "isWarning", "isWhite", "onClick", "type"]);
-        var className = classname(['button'], {
+        var className = classnames('button', {
             'is-active': isActive,
             'is-black': isBlack,
             'is-danger': isDanger,

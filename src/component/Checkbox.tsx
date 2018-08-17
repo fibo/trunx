@@ -11,14 +11,14 @@ export default class Checkbox extends React.Component<Props> {
     } = this.props
 
     return (
-      <label
-        className="checkbox"
-      >
+      <label className="checkbox">
         <input
           disabled={disabled}
           type="checkbox"
         />
+
         {' '/* adding a space looks better*/}
+
         {this.props.children}
       </label>
     )

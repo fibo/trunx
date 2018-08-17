@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface ModalProps {
@@ -91,7 +91,7 @@ class ModalClose extends React.Component<ModalCloseProps> {
       onClick
     } = this.props
 
-    const className = classname(['modal-close'], {
+    const className = classnames('modal-close', {
       'is-large': isLarge,
     })
 
@@ -126,7 +126,7 @@ export default class Modal extends React.Component<ModalProps> {
       isActive
     } = this.props
 
-    const className = classname(['modal'], {
+    const className = classnames('modal', {
       'is-active': isActive,
     })
 

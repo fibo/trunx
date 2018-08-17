@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Help = (function (_super) {
     __extends(Help, _super);
@@ -18,7 +18,7 @@ var Help = (function (_super) {
     }
     Help.prototype.render = function () {
         var _a = this.props, isDanger = _a.isDanger, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isWarning = _a.isWarning;
-        var className = classname(['help'], {
+        var className = classnames('help', {
             'is-danger': isDanger,
             'is-info': isInfo,
             'is-primary': isPrimary,

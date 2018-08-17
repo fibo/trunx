@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface HeroProps {
@@ -58,7 +58,7 @@ export default class Hero extends React.Component<HeroProps> {
       isWarning,
     } = this.props
 
-    const className = classname(['hero'], {
+    const className = classnames('hero', {
       'is-bold': isBold,
       'is-danger': isDanger,
       'is-dark': isDark,

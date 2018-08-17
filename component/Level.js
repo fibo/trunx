@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var LevelItem = (function (_super) {
     __extends(LevelItem, _super);
@@ -18,7 +18,7 @@ var LevelItem = (function (_super) {
     }
     LevelItem.prototype.render = function () {
         var hasTextCentered = this.props.hasTextCentered;
-        var className = classname(['level-item'], {
+        var className = classnames('level-item', {
             'has-text-centered': hasTextCentered,
         });
         return (React.createElement("div", { className: className }, this.props.children));
@@ -52,7 +52,7 @@ var Level = (function (_super) {
     }
     Level.prototype.render = function () {
         var isMobile = this.props.isMobile;
-        var className = classname(['level'], {
+        var className = classnames('level', {
             'is-mobile': isMobile,
         });
         return (React.createElement("nav", { className: className }, this.props.children));

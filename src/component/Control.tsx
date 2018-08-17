@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface Props {
@@ -15,7 +15,7 @@ export default class Control extends React.Component<Props> {
       isExpanded
     } = this.props
 
-    const className = classname(['control'], {
+    const className = classnames('control', {
       'has-icons-left': hasIconsLeft,
       'has-icons-right': hasIconsRight,
       'is-expanded': isExpanded
