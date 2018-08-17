@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface Props {
@@ -21,7 +21,7 @@ export default class Subtitle extends React.Component<Props> {
       is6,
     } = this.props
 
-    const className = classname(['subtitle'], {
+    const className = classnames('subtitle', {
       'is-1': is1,
       'is-2': is2,
       'is-3': is3,

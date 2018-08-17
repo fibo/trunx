@@ -26,7 +26,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var CardContent = (function (_super) {
     __extends(CardContent, _super);
@@ -88,7 +88,7 @@ var CardHeaderTitle = (function (_super) {
     }
     CardHeaderTitle.prototype.render = function () {
         var isCentered = this.props.isCentered;
-        var className = classname('card-header-title', {
+        var className = classnames('card-header-title', {
             'is-centered': isCentered,
         });
         return (React.createElement("div", { className: className }, this.props.children));

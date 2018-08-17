@@ -26,7 +26,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var NavbarBrand = (function (_super) {
     __extends(NavbarBrand, _super);
@@ -45,7 +45,7 @@ var NavbarBurger = (function (_super) {
     }
     NavbarBurger.prototype.render = function () {
         var _a = this.props, isActive = _a.isActive, onClick = _a.onClick;
-        var className = classname(['navbar-burger'], {
+        var className = classnames('navbar-burger', {
             'is-active': isActive,
         });
         return (React.createElement("a", { className: className, role: "button", "aria-label": "menu", "aria-expanded": isActive ? 'true' : 'false', onClick: onClick },
@@ -82,7 +82,7 @@ var NavbarItem = (function (_super) {
     }
     NavbarItem.prototype.render = function () {
         var _a = this.props, hasDropdown = _a.hasDropdown, href = _a.href, isActive = _a.isActive, isHoverable = _a.isHoverable, props = __rest(_a, ["hasDropdown", "href", "isActive", "isHoverable"]);
-        var className = classname(['navbar-item'], {
+        var className = classnames('navbar-item', {
             'has-dropdown': hasDropdown,
             'is-active': isActive,
             'is-hoverable': isHoverable,
@@ -108,7 +108,7 @@ var NavbarMenu = (function (_super) {
     }
     NavbarMenu.prototype.render = function () {
         var isActive = this.props.isActive;
-        var className = classname(['navbar-menu'], {
+        var className = classnames('navbar-menu', {
             'is-active': isActive,
         });
         return (React.createElement("div", { className: className }, this.props.children));
@@ -150,7 +150,7 @@ var Navbar = (function (_super) {
     };
     Navbar.prototype.render = function () {
         var _a = this.props, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, props = __rest(_a, ["isFixedBottom", "isFixedTop", "isTransparent", "isUnselectable"]);
-        var className = classname(['navbar'], {
+        var className = classnames('navbar', {
             'is-fixed-bottom': isFixedBottom,
             'is-fixed-top': isFixedTop,
             'is-transparent': isTransparent,

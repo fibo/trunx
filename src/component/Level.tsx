@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface LevelProps {
@@ -15,7 +15,7 @@ class LevelItem extends React.Component<LevelItemProps> {
       hasTextCentered
     } = this.props
 
-    const className = classname(['level-item'], {
+    const className = classnames('level-item', {
       'has-text-centered': hasTextCentered,
     })
 
@@ -51,7 +51,7 @@ export default class Level extends React.Component<LevelProps> {
       isMobile,
     } = this.props
 
-    const className = classname(['level'], {
+    const className = classnames('level', {
       'is-mobile': isMobile,
     })
 

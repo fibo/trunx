@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Field = (function (_super) {
     __extends(Field, _super);
@@ -18,7 +18,7 @@ var Field = (function (_super) {
     }
     Field.prototype.render = function () {
         var _a = this.props, hasAddons = _a.hasAddons, hasAddonsCentered = _a.hasAddonsCentered, isGrouped = _a.isGrouped, isGroupedMultiline = _a.isGroupedMultiline, label = _a.label;
-        var className = classname(['field'], {
+        var className = classnames('field', {
             'has-addons': hasAddons,
             'has-addons-centered': hasAddonsCentered,
             'is-grouped': isGrouped,

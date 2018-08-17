@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Tile = (function (_super) {
     __extends(Tile, _super);
@@ -18,7 +18,7 @@ var Tile = (function (_super) {
     }
     Tile.prototype.render = function () {
         var _a = this.props, isAncestor = _a.isAncestor, isChild = _a.isChild, isParent = _a.isParent;
-        var className = classname(['tile'], {
+        var className = classnames('tile', {
             'is-ancestor': isAncestor,
             'is-child': isChild,
             'is-parent': isParent,

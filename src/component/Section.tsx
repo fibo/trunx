@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface Props {
@@ -13,7 +13,7 @@ export default class Section extends React.Component<Props> {
       isMedium,
     } = this.props
 
-    const className = classname(['section'], {
+    const className = classnames('section', {
       'is-large': isLarge,
       'is-medium': isMedium,
     })

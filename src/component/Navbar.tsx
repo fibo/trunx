@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface NavbarProps {
@@ -39,7 +39,7 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
       onClick,
     } = this.props
 
-    const className = classname(['navbar-burger'], {
+    const className = classnames('navbar-burger', {
       'is-active': isActive,
     })
 
@@ -85,7 +85,7 @@ class NavbarItem extends React.Component<NavbarItemProps> {
       ...props
     } = this.props
 
-    const className = classname(['navbar-item'], {
+    const className = classnames('navbar-item', {
       'has-dropdown': hasDropdown,
       'is-active': isActive,
       'is-hoverable': isHoverable,
@@ -124,7 +124,7 @@ class NavbarMenu extends React.Component<NavbarMenuProps> {
       isActive
     } = this.props
 
-    const className = classname(['navbar-menu'], {
+    const className = classnames('navbar-menu', {
       'is-active': isActive,
     })
 
@@ -187,7 +187,7 @@ export default class Navbar extends React.Component<NavbarProps> {
       ...props
     } = this.props
 
-    const className = classname(['navbar'], {
+    const className = classnames('navbar', {
       'is-fixed-bottom': isFixedBottom,
       'is-fixed-top': isFixedTop,
       'is-transparent': isTransparent,

@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Delete = (function (_super) {
     __extends(Delete, _super);
@@ -18,7 +18,7 @@ var Delete = (function (_super) {
     }
     Delete.prototype.render = function () {
         var _a = this.props, isLarge = _a.isLarge, isMedium = _a.isMedium, isSmall = _a.isSmall, onClick = _a.onClick;
-        var className = classname(['delete'], {
+        var className = classnames('delete', {
             'is-large': isLarge,
             'is-medium': isMedium,
             'is-small': isSmall

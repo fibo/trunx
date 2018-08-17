@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Title = (function (_super) {
     __extends(Title, _super);
@@ -18,7 +18,7 @@ var Title = (function (_super) {
     }
     Title.prototype.render = function () {
         var _a = this.props, is1 = _a.is1, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6, isSpaced = _a.isSpaced;
-        var className = classname(['title'], {
+        var className = classnames('title', {
             'is-1': is1,
             'is-2': is2,
             'is-3': is3,

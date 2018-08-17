@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Section = (function (_super) {
     __extends(Section, _super);
@@ -18,7 +18,7 @@ var Section = (function (_super) {
     }
     Section.prototype.render = function () {
         var _a = this.props, isLarge = _a.isLarge, isMedium = _a.isMedium;
-        var className = classname(['section'], {
+        var className = classnames('section', {
             'is-large': isLarge,
             'is-medium': isMedium,
         });

@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var IconSvg = (function (_super) {
     __extends(IconSvg, _super);
@@ -33,7 +33,7 @@ var Icon = (function (_super) {
     }
     Icon.prototype.render = function () {
         var _a = this.props, hasTextDanger = _a.hasTextDanger, hasTextInfo = _a.hasTextInfo, hasTextSuccess = _a.hasTextSuccess, hasTextWarning = _a.hasTextWarning, isLarge = _a.isLarge, isMedium = _a.isMedium, isSmall = _a.isSmall;
-        var className = classname(['icon'], {
+        var className = classnames('icon', {
             'has-text-danger': hasTextDanger,
             'has-text-info': hasTextInfo,
             'has-text-success': hasTextSuccess,

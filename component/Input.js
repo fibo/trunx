@@ -26,7 +26,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Input = (function (_super) {
     __extends(Input, _super);
@@ -35,7 +35,7 @@ var Input = (function (_super) {
     }
     Input.prototype.render = function () {
         var _a = this.props, isDanger = _a.isDanger, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, props = __rest(_a, ["isDanger", "isInfo", "isLarge", "isMedium", "isPrimary", "isSmall", "isSuccess", "isWarning"]);
-        var className = classname(['input'], {
+        var className = classnames('input', {
             'is-danger': isDanger,
             'is-info': isInfo,
             'is-large': isLarge,

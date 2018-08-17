@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var classname = require("classname");
+var classnames = require("classnames");
 var React = require("react");
 var Column = (function (_super) {
     __extends(Column, _super);
@@ -18,7 +18,7 @@ var Column = (function (_super) {
     }
     Column.prototype.render = function () {
         var _a = this.props, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6, is7 = _a.is7, is8 = _a.is8, is9 = _a.is9, is10 = _a.is10, is11 = _a.is11, isFourFifths = _a.isFourFifths, isHalf = _a.isHalf, isNarrow = _a.isNarrow, isNarrowDesktop = _a.isNarrowDesktop, isNarrowMobile = _a.isNarrowMobile, isNarrowTablet = _a.isNarrowTablet, isNarrowTouch = _a.isNarrowTouch, isNarrowWidescreen = _a.isNarrowWidescreen, isNarrowFullhd = _a.isNarrowFullhd, isOneFifth = _a.isOneFifth, isOneQuarter = _a.isOneQuarter, isThreeFifths = _a.isThreeFifths, isThreeQuarters = _a.isThreeQuarters, isTwoFifths = _a.isTwoFifths, isTwoQuarters = _a.isTwoQuarters, isTwoThirds = _a.isTwoThirds;
-        var className = classname(['column'], {
+        var className = classnames(['column'], {
             'is-2': is2,
             'is-3': is3,
             'is-4': is4,

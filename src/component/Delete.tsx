@@ -1,4 +1,4 @@
-import * as classname from 'classname'
+import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface Props {
@@ -17,7 +17,7 @@ export default class Delete extends React.Component<Props> {
       onClick
     } = this.props
 
-    const className = classname(['delete'], {
+    const className = classnames('delete', {
       'is-large': isLarge,
       'is-medium': isMedium,
       'is-small': isSmall
