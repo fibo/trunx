@@ -654,6 +654,27 @@ storiesOf('Components', module)
             <Pagination.Link aria-label='Go to page 86'>86</Pagination.Link>
           </Pagination.List>
         </Pagination>
+
+        <Content>
+          <Code language='jsx'>
+            {indent`
+              <Pagination>
+                <Pagination.Previous>Previous</Pagination.Previous>
+                <Pagination.Next>Next page</Pagination.Next>
+
+                <Pagination.List>
+                  <Pagination.Link aria-label='Go to page 1'>1</Pagination.Link>
+                  <Pagination.Ellipsis />
+                  <Pagination.Link aria-label='Go to page 45'>45</Pagination.Link>
+                  <Pagination.Link isCurrent aria-label='Page 46' aria-current='page'>46</Pagination.Link>
+                  <Pagination.Link aria-label='Go to page 47'>47</Pagination.Link>
+                  <Pagination.Ellipsis />
+                  <Pagination.Link aria-label='Go to page 86'>86</Pagination.Link>
+                </Pagination.List>
+              </Pagination>
+            `}
+          </Code>
+        </Content>
       </Container>
     </Section>
   ))
