@@ -27,6 +27,8 @@ storiesOf('Columns', module)
             A simple way to build responsive columns
           </Subtitle>
 
+          <hr />
+
           <p>
             Building a <b>columns layout</b> with Trunx is very simple:
           </p>
@@ -40,8 +42,6 @@ storiesOf('Columns', module)
           <p>
             Each column will have an <b>equal width</b>, no matter the number of columns.
           </p>
-
-          <hr />
 
           <Columns>
             <Column>

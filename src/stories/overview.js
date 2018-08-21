@@ -173,6 +173,8 @@ storiesOf('Overview', module)
             `}
           </Code>
 
+          <hr />
+
           <Title is4>
             How it works
           </Title>
