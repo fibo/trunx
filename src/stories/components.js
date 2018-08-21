@@ -17,6 +17,7 @@ import Navbar from '../component/Navbar'
 import Media from '../component/Media'
 import Message from '../component/Message'
 import Modal from '../component/Modal'
+import Pagination from '../component/Pagination'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
 import Tabs from '../component/Tabs'
@@ -590,6 +591,68 @@ storiesOf('Components', module)
               </Navbar>
             `}
           </Code>
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Pagination', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Pagination
+          </Title>
+
+          <Subtitle>
+            A responsive, usable, and flexible <b>pagination</b>
+          </Subtitle>
+
+          <Meta sizes />
+
+          <hr />
+
+          <p>
+            The pagination component consists of several elements:
+          </p>
+
+          <ul>
+            <li>
+              <code>Pagination.Previous</code> and <code>Pagination.Next</code> for incremental navigation
+            </li>
+
+            <li>
+              <code>Pagination.List</code> which displays page items:
+
+              <ul>
+                <li>
+                  <code>Pagination.Link</code> for the page numbers
+                </li>
+
+                <li>
+                  <code>Pagination.Ellipsis</code> for range separators
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <p>
+            All elements are optional so you can compose your pagination as you wish.
+          </p>
+
+          <Pagination>
+            <Pagination.Previous>Previous</Pagination.Previous>
+            <Pagination.Next>Next page</Pagination.Next>
+
+            <Pagination.List>
+              <Pagination.Link aria-label='Go to page 1'>1</Pagination.Link>
+              <Pagination.Ellipsis />
+              <Pagination.Link aria-label='Go to page 45'>45</Pagination.Link>
+              <Pagination.Link isCurrent aria-label='Page 46' aria-current='page'>46</Pagination.Link>
+              <Pagination.Link aria-label='Go to page 47'>47</Pagination.Link>
+              <Pagination.Ellipsis />
+              <Pagination.Link aria-label='Go to page 86'>86</Pagination.Link>
+            </Pagination.List>
+          </Pagination>
         </Content>
       </Container>
     </Section>
