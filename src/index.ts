@@ -10,6 +10,7 @@ import ClassicNavbar from './component/ClassicNavbar'
 import Message from './component/Message'
 import Modal from './component/Modal'
 import Navbar from './component/Navbar'
+import Pagination from './component/Pagination'
 import Tabs from './component/Tabs'
 
 // Elements
@@ -73,6 +74,7 @@ export {
   Modal,
   Navbar,
   Notification,
+  Pagination,
   Progress,
   Section,
   Subtitle,
