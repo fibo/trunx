@@ -13,6 +13,7 @@ import Content from '../component/Content'
 import Delete from '../component/Delete'
 import Field from '../component/Field'
 import Icon from '../component/Icon'
+import Image from '../component/Image'
 import Notification from '../component/Notification'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
@@ -203,6 +204,8 @@ storiesOf('Elements', module)
             </Column>
           </Columns>
 
+          <hr />
+
           <Title is4>
             Sizes
           </Title>
@@ -230,6 +233,8 @@ storiesOf('Elements', module)
               </Code>
             </Column>
           </Columns>
+
+          <hr />
 
           <Title is4>
             Displays
@@ -480,6 +485,8 @@ storiesOf('Elements', module)
             </Column>
           </Columns>
 
+          <hr />
+
           <Title is4>
             Sizes
           </Title>
@@ -542,12 +549,37 @@ storiesOf('Elements', module)
             Image
           </Title>
 
-          <Subtitle />
+          <Subtitle>
+            A container for <b>responsive images</b>
+          </Subtitle>
 
-          <Meta colors sizes />
+          <Meta />
 
           <hr />
 
+          <p>
+            Because images can take a few seconds to load (or not at all), use the <code>Image</code> component to specify a <b>precisely sized</b> container so that your layout isn't broken because of image loading or image errors.
+          </p>
+
+          <Columns>
+            <Column isHalf>
+              <Image
+                is128x128
+                src='https://bulma.io/images/placeholders/128x128.png'
+              />
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Image
+                    is128x128
+                    src='https://bulma.io/images/placeholders/128x128.png'
+                  />
+                `}
+              </Code>
+            </Column>
+          </Columns>
         </Content>
       </Container>
     </Section>
@@ -779,6 +811,8 @@ storiesOf('Elements', module)
               </Code>
             </Column>
           </Columns>
+
+          <hr />
 
           <Title is4>
             Sizes

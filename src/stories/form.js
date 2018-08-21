@@ -50,13 +50,13 @@ storiesOf('Form', module)
             <Column isHalf>
               <Field label='Name'>
                 <Control>
-                  <Input type='text' placeHolder='Text input' />
+                  <Input type='text' placeholder='Text input' />
                 </Control>
               </Field>
 
               <Field label='Username'>
                 <Control>
-                  <Input isSuccess type='text' placeHolder='Text input' value='trunx' />
+                  <Input isSuccess type='text' placeholder='Text input' value='trunx' />
 
                   <Help isSuccess>
                     This username is available
@@ -66,7 +66,7 @@ storiesOf('Form', module)
 
               <Field label='Email'>
                 <Control>
-                  <Input isDanger type='email' placeHolder='Email input' value='hello@' />
+                  <Input isDanger type='email' placeholder='Email input' value='hello@' />
 
                   <Help isDanger>
                     This email is invalid
@@ -98,13 +98,13 @@ storiesOf('Form', module)
                 {indent`
                   <Field label='Name'>
                     <Control>
-                      <Input type='text' placeHolder='Text input' />
+                      <Input type='text' placeholder='Text input' />
                     </Control>
                   </Field>
 
                   <Field label='Username'>
                     <Control>
-                      <Input isSuccess type='text' placeHolder='Text input' value='trunx' />
+                      <Input isSuccess type='text' placeholder='Text input' value='trunx' />
 
                       <Help isSuccess>
                         This username is available
@@ -114,7 +114,7 @@ storiesOf('Form', module)
 
                   <Field label='Email'>
                     <Control>
-                      <Input isDanger type='email' placeHolder='Email input' value='hello@'/>
+                      <Input isDanger type='email' placeholder='Email input' value='hello@'/>
 
                       <Help isDanger>
                         This email is invalid
@@ -212,6 +212,8 @@ storiesOf('Form', module)
             </li>
           </ul>
 
+          <hr />
+
           <Title is4>
             Colors
           </Title>
@@ -220,31 +222,31 @@ storiesOf('Form', module)
             <Column isHalf>
               <Field>
                 <Control>
-                  <Input isPrimary type='text' placeHolder='Primary input' />
+                  <Input isPrimary type='text' placeholder='Primary input' />
                 </Control>
               </Field>
 
               <Field>
                 <Control>
-                  <Input isInfo type='text' placeHolder='Info input' />
+                  <Input isInfo type='text' placeholder='Info input' />
                 </Control>
               </Field>
 
               <Field>
                 <Control>
-                  <Input isSuccess type='text' placeHolder='Success input' />
+                  <Input isSuccess type='text' placeholder='Success input' />
                 </Control>
               </Field>
 
               <Field>
                 <Control>
-                  <Input isWarning type='text' placeHolder='Warning input' />
+                  <Input isWarning type='text' placeholder='Warning input' />
                 </Control>
               </Field>
 
               <Field>
                 <Control>
-                  <Input isDanger type='text' placeHolder='Danger input' />
+                  <Input isDanger type='text' placeholder='Danger input' />
                 </Control>
               </Field>
             </Column>
@@ -254,31 +256,31 @@ storiesOf('Form', module)
                 {indent`
                   <Field>
                     <Control>
-                      <Input isPrimary type='text' placeHolder='Primary input' />
+                      <Input isPrimary type='text' placeholder='Primary input' />
                     </Control>
                   </Field>
 
                   <Field>
                     <Control>
-                      <Input isInfo type='text' placeHolder='Info input' />
+                      <Input isInfo type='text' placeholder='Info input' />
                     </Control>
                   </Field>
 
                   <Field>
                     <Control>
-                      <Input isSuccess type='text' placeHolder='Success input' />
+                      <Input isSuccess type='text' placeholder='Success input' />
                     </Control>
                   </Field>
 
                   <Field>
                     <Control>
-                      <Input isWarning type='text' placeHolder='Warning input' />
+                      <Input isWarning type='text' placeholder='Warning input' />
                     </Control>
                   </Field>
 
                   <Field>
                     <Control>
-                      <Input isDanger type='text' placeHolder='Danger input' />
+                      <Input isDanger type='text' placeholder='Danger input' />
                     </Control>
                   </Field>
                 `}

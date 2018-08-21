@@ -109,6 +109,8 @@ storiesOf('Layout', module)
             `}
           </Code>
 
+          <hr />
+
           <Title is4>
             Fluid container
           </Title>
@@ -232,7 +234,7 @@ storiesOf('Layout', module)
               <Level.Item>
                 <Field hasAddons>
                   <Control>
-                    <Input type='text' placeHolder='Find a post' />
+                    <Input type='text' placeholder='Find a post' />
                   </Control>
 
                   <Control>
@@ -278,7 +280,7 @@ storiesOf('Layout', module)
                   <Level.Item>
                     <Field hasAddons>
                       <Control>
-                        <Input type='text' placeHolder='Find a post'>
+                        <Input type='text' placeholder='Find a post'>
                       </Control>
 
                       <Control>
@@ -313,6 +315,8 @@ storiesOf('Layout', module)
             `}
           </Code>
 
+          <hr />
+
           <Title is4>
             Centered level
           </Title>
@@ -320,6 +324,130 @@ storiesOf('Layout', module)
           <p>
             If you want a <b>centered level</b>, you can use as many <code>Level.Item</code> as you want, as long as they are <b>direct</b> children of the <code>Level</code> component.
           </p>
+
+          <Level>
+            <Level.Item hasTextCentered>
+              <div>
+                <Heading>Tweets</Heading>
+
+                <Title>3,456</Title>
+              </div>
+            </Level.Item>
+
+            <Level.Item hasTextCentered>
+              <div>
+                <Heading>Following</Heading>
+
+                <Title>123</Title>
+              </div>
+            </Level.Item>
+
+            <Level.Item hasTextCentered>
+              <div>
+                <Heading>Followers</Heading>
+
+                <Title>456K</Title>
+              </div>
+            </Level.Item>
+
+            <Level.Item hasTextCentered>
+              <div>
+                <Heading>Likes</Heading>
+
+                <Title>789</Title>
+              </div>
+            </Level.Item>
+          </Level>
+
+          <Code language='jsx'>
+            {indent`
+              <Level>
+                <Level.Item hasTextCentered>
+                  <div>
+                    <Heading>Tweets</Heading>
+
+                    <Title>3,456</Title>
+                  </div>
+                </Level.Item>
+
+                <Level.Item hasTextCentered>
+                  <div>
+                    <Heading>Following</Heading>
+
+                    <Title>123</Title>
+                  </div>
+                </Level.Item>
+
+                <Level.Item hasTextCentered>
+                  <div>
+                    <Heading>Followers</Heading>
+
+                    <Title>456K</Title>
+                  </div>
+                </Level.Item>
+
+                <Level.Item hasTextCentered>
+                  <div>
+                    <Heading>Likes</Heading>
+
+                    <Title>789</Title>
+                  </div>
+                </Level.Item>
+              </Level>
+            `}
+          </Code>
+
+          <hr />
+
+          <Level>
+            <Level.Item hasTextCentered>
+              <a>Home</a>
+            </Level.Item>
+
+            <Level.Item hasTextCentered>
+              <a>Menu</a>
+            </Level.Item>
+
+            <Level.Item hasTextCentered>
+              <img src='https://bulma.io/images/bulma-type.png' alt='' style={{height: '30px'}} />
+            </Level.Item>
+
+            <Level.Item hasTextCentered>
+              <a>Reservations</a>
+            </Level.Item>
+
+            <Level.Item hasTextCentered>
+              <a>Contact</a>
+            </Level.Item>
+          </Level>
+
+          <Code language='jsx'>
+            {indent`
+              <Level>
+                <Level.Item hasTextCentered>
+                  <a>Home</a>
+                </Level.Item>
+
+                <Level.Item hasTextCentered>
+                  <a>Menu</a>
+                </Level.Item>
+
+                <Level.Item hasTextCentered>
+                  <img src='https://bulma.io/images/bulma-type.png' alt='' style={{height: '30px;'}} />
+                </Level.Item>
+
+                <Level.Item hasTextCentered>
+                  <a>Reservations</a>
+                </Level.Item>
+
+                <Level.Item hasTextCentered>
+                  <a>Contact</a>
+                </Level.Item>
+              </Level>
+            `}
+          </Code>
+
+          <hr />
 
           <Title is4>
             Mobile level
@@ -331,29 +459,75 @@ storiesOf('Layout', module)
 
           <Level isMobile>
             <Level.Item hasTextCentered>
-              <Heading>Tweets</Heading>
+              <div>
+                <Heading>Tweets</Heading>
 
-              <Title>3,456</Title>
+                <Title>3,456</Title>
+              </div>
             </Level.Item>
 
             <Level.Item hasTextCentered>
-              <Heading>Following</Heading>
+              <div>
+                <Heading>Following</Heading>
 
-              <Title>123</Title>
+                <Title>123</Title>
+              </div>
             </Level.Item>
 
             <Level.Item hasTextCentered>
-              <Heading>Followers</Heading>
+              <div>
+                <Heading>Followers</Heading>
 
-              <Title>456K</Title>
+                <Title>456K</Title>
+              </div>
             </Level.Item>
 
             <Level.Item hasTextCentered>
-              <Heading>Likes</Heading>
+              <div>
+                <Heading>Likes</Heading>
 
-              <Title>789</Title>
+                <Title>789</Title>
+              </div>
             </Level.Item>
           </Level>
+
+          <Code language='jsx'>
+            {indent`
+              <Level isMobile>
+                <Level.Item hasTextCentered>
+                  <div>
+                    <Heading>Tweets</Heading>
+
+                    <Title>3,456</Title>
+                  </div>
+                </Level.Item>
+
+                <Level.Item hasTextCentered>
+                  <div>
+                    <Heading>Following</Heading>
+
+                    <Title>123</Title>
+                  </div>
+                </Level.Item>
+
+                <Level.Item hasTextCentered>
+                  <div>
+                    <Heading>Followers</Heading>
+
+                    <Title>456K</Title>
+                  </div>
+                </Level.Item>
+
+                <Level.Item hasTextCentered>
+                  <div>
+                    <Heading>Likes</Heading>
+
+                    <Title>789</Title>
+                  </div>
+                </Level.Item>
+              </Level>
+            `}
+          </Code>
         </Content>
       </Container>
     </Section>
@@ -421,7 +595,7 @@ storiesOf('Layout', module)
             <Media.Content>
               <Field>
                 <Control>
-                  <Textarea placeHolder='Add a comment' />
+                  <Textarea placeholder='Add a comment' />
                 </Control>
               </Field>
 
@@ -455,7 +629,7 @@ storiesOf('Layout', module)
                 <Media.Content>
                   <Field>
                     <Control>
-                      <Textarea placeHolder='Add a comment' />
+                      <Textarea placeholder='Add a comment' />
                     </Control>
                   </Field>
 
