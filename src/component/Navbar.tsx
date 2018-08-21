@@ -2,6 +2,7 @@ import * as classnames from 'classnames'
 import * as React from 'react'
 
 interface NavbarProps {
+  hasShadow?: boolean
   isFixedBottom?: boolean
   isFixedTop?: boolean
   isTransparent?: boolean
