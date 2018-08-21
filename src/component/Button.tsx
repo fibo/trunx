@@ -8,7 +8,6 @@ interface Props {
   isBlack?: boolean
   isDanger?: boolean
   isDark?: boolean
-  isDisabled?: boolean
   isFocused?: boolean
   isFullwidth?: boolean
   isInfo?: boolean
@@ -41,7 +40,6 @@ export default class Button extends React.Component<Props> {
       isBlack,
       isDanger,
       isDark,
-      isDisabled,
       isFocused,
       isFullwidth,
       isInfo,
@@ -71,7 +69,6 @@ export default class Button extends React.Component<Props> {
       'is-black': isBlack,
       'is-danger': isDanger,
       'is-dark': isDark,
-      'is-disabled': isDisabled,
       'is-focused': isFocused,
       'is-fullwidth': isFullwidth,
       'is-info': isInfo,
