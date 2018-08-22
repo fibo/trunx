@@ -7,6 +7,7 @@ import Columns from './component/Columns'
 
 import Card from './component/Card'
 import ClassicNavbar from './component/ClassicNavbar'
+import Menu from './component/Menu'
 import Message from './component/Message'
 import Modal from './component/Modal'
 import Navbar from './component/Navbar'
@@ -70,6 +71,7 @@ export {
   Input,
   Level,
   Media,
+  Menu,
   Message,
   Modal,
   Navbar,
