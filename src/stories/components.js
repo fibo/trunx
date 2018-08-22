@@ -13,6 +13,7 @@ import ClassicNavbar from '../component/ClassicNavbar'
 import Delete from '../component/Delete'
 import Icon from '../component/Icon'
 import Image from '../component/Image'
+import Menu from '../component/Menu'
 import Navbar from '../component/Navbar'
 import Media from '../component/Media'
 import Message from '../component/Message'
@@ -334,6 +335,114 @@ storiesOf('Components', module)
             </Column>
           </Columns>
         </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Menu', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Menu
+          </Title>
+
+          <Subtitle>
+            A simple <b>menu</b>, for any type of vertical navigation
+          </Subtitle>
+
+          <Meta />
+
+          <hr />
+
+        </Content>
+
+        <Columns>
+          <Column isNarrow>
+            <Menu>
+              <Menu.Label>General</Menu.Label>
+
+              <Menu.List>
+                <li><a>Dashboard</a></li>
+
+                <li><a>Customers</a></li>
+              </Menu.List>
+
+              <Menu.Label>Administration</Menu.Label>
+
+              <Menu.List>
+                <li><a>Team Settings</a></li>
+
+                <li>
+                  <a className='is-active'>Manage Your Team</a>
+
+                  <ul>
+                    <li><a>Members</a></li>
+                    <li><a>Plugins</a></li>
+                    <li><a>Add a member</a></li>
+                  </ul>
+                </li>
+
+                <li><a>Invitations</a></li>
+                <li><a>Cloud Storage Environment Settings</a></li>
+                <li><a>Authentication</a></li>
+              </Menu.List>
+
+              <Menu.Label>Transactions</Menu.Label>
+
+              <Menu.List>
+                <li><a>Payments</a></li>
+                <li><a>Transfers</a></li>
+                <li><a>Balance</a></li>
+              </Menu.List>
+            </Menu>
+          </Column>
+
+          <Column>
+            <Code language='jsx'>
+              {indent`
+                <Column isNarrow>
+                  <Menu>
+                    <Menu.Label>General</Menu.Label>
+
+                    <Menu.List>
+                      <li><a>Dashboard</a></li>
+
+                      <li><a>Customers</a></li>
+                    </Menu.List>
+
+                    <Menu.Label>Administration</Menu.Label>
+
+                    <Menu.List>
+                      <li><a>Team Settings</a></li>
+
+                      <li>
+                        <a className='is-active'>Manage Your Team</a>
+
+                        <ul>
+                          <li><a>Members</a></li>
+                          <li><a>Plugins</a></li>
+                          <li><a>Add a member</a></li>
+                        </ul>
+                      </li>
+
+                      <li><a>Invitations</a></li>
+                      <li><a>Cloud Storage Environment Settings</a></li>
+                      <li><a>Authentication</a></li>
+                    </Menu.List>
+
+                    <Menu.Label>Transactions</Menu.Label>
+
+                    <Menu.List>
+                      <li><a>Payments</a></li>
+                      <li><a>Transfers</a></li>
+                      <li><a>Balance</a></li>
+                    </Menu.List>
+                  </Menu>
+                </Column>
+              `}
+            </Code>
+          </Column>
+        </Columns>
       </Container>
     </Section>
   ))
