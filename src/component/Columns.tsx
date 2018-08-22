@@ -3,7 +3,7 @@ import * as React from 'react'
 
 interface Props {
   isDesktop?: boolean
-  isGapeless?: boolean
+  isGapless?: boolean
   isMobile?: boolean
   isMultiline?: boolean
 }
@@ -12,16 +12,16 @@ export default class Columns extends React.Component<Props> {
   render() {
     const {
       isDesktop,
-      isGapeless,
+      isGapless,
       isMobile,
-      isMultiline
+      isMultiline,
     } = this.props
 
     const className = classnames('columns', {
       'is-desktop': isDesktop,
-      'is-gapelesss': isGapeless,
+      'is-gapless': isGapless,
       'is-mobile': isMobile,
-      'is-multiline': isMultiline
+      'is-multiline': isMultiline,
     })
 
     return (
