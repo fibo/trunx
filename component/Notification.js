@@ -18,13 +18,13 @@ var Notification = (function (_super) {
     }
     Notification.prototype.render = function () {
         var _a = this.props, isDanger = _a.isDanger, isLink = _a.isLink, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isWarning = _a.isWarning;
-        var className = classnames('notification', {
-            'is-danger': isDanger,
-            'is-info': isInfo,
-            'is-link': isLink,
-            'is-primary': isPrimary,
-            'is-success': isSuccess,
-            'is-warning': isWarning
+        var className = classnames("notification", {
+            "is-danger": isDanger,
+            "is-info": isInfo,
+            "is-link": isLink,
+            "is-primary": isPrimary,
+            "is-success": isSuccess,
+            "is-warning": isWarning,
         });
         return (React.createElement("div", { className: className }, this.props.children));
     };

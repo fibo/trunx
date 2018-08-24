@@ -18,12 +18,12 @@ var Help = (function (_super) {
     }
     Help.prototype.render = function () {
         var _a = this.props, isDanger = _a.isDanger, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isWarning = _a.isWarning;
-        var className = classnames('help', {
-            'is-danger': isDanger,
-            'is-info': isInfo,
-            'is-primary': isPrimary,
-            'is-success': isSuccess,
-            'is-warning': isWarning
+        var className = classnames("help", {
+            "is-danger": isDanger,
+            "is-info": isInfo,
+            "is-primary": isPrimary,
+            "is-success": isSuccess,
+            "is-warning": isWarning,
         });
         return (React.createElement("p", { className: className }, this.props.children));
     };

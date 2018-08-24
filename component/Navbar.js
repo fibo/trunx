@@ -45,10 +45,10 @@ var NavbarBurger = (function (_super) {
     }
     NavbarBurger.prototype.render = function () {
         var _a = this.props, isActive = _a.isActive, onClick = _a.onClick;
-        var className = classnames('navbar-burger', {
-            'is-active': isActive,
+        var className = classnames("navbar-burger", {
+            "is-active": isActive,
         });
-        return (React.createElement("a", { className: className, role: "button", "aria-label": "menu", "aria-expanded": isActive ? 'true' : 'false', onClick: onClick },
+        return (React.createElement("a", { className: className, role: "button", "aria-label": "menu", "aria-expanded": isActive ? "true" : "false", onClick: onClick },
             React.createElement("span", { "aria-hidden": "true" }),
             React.createElement("span", { "aria-hidden": "true" }),
             React.createElement("span", { "aria-hidden": "true" })));
@@ -82,10 +82,10 @@ var NavbarItem = (function (_super) {
     }
     NavbarItem.prototype.render = function () {
         var _a = this.props, hasDropdown = _a.hasDropdown, href = _a.href, isActive = _a.isActive, isHoverable = _a.isHoverable, props = __rest(_a, ["hasDropdown", "href", "isActive", "isHoverable"]);
-        var className = classnames('navbar-item', {
-            'has-dropdown': hasDropdown,
-            'is-active': isActive,
-            'is-hoverable': isHoverable,
+        var className = classnames("navbar-item", {
+            "has-dropdown": hasDropdown,
+            "is-active": isActive,
+            "is-hoverable": isHoverable,
         });
         return href ? (React.createElement("a", __assign({ className: className, href: href }, props), this.props.children)) : (React.createElement("div", __assign({ className: className }, props), this.props.children));
     };
@@ -108,8 +108,8 @@ var NavbarMenu = (function (_super) {
     }
     NavbarMenu.prototype.render = function () {
         var isActive = this.props.isActive;
-        var className = classnames('navbar-menu', {
-            'is-active': isActive,
+        var className = classnames("navbar-menu", {
+            "is-active": isActive,
         });
         return (React.createElement("div", { className: className }, this.props.children));
     };
@@ -133,28 +133,28 @@ var Navbar = (function (_super) {
     Navbar.prototype.componentDidMount = function () {
         var _a = this.props, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop;
         if (isFixedTop) {
-            document.body.classList.add('has-navbar-fixed-top');
+            document.body.classList.add("has-navbar-fixed-top");
         }
         else if (isFixedBottom) {
-            document.body.classList.add('has-navbar-fixed-bottom');
+            document.body.classList.add("has-navbar-fixed-bottom");
         }
     };
     Navbar.prototype.componentWillUnmount = function () {
         var _a = this.props, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop;
         if (isFixedBottom) {
-            document.body.classList.remove('has-navbar-fixed-bottom');
+            document.body.classList.remove("has-navbar-fixed-bottom");
         }
         else if (isFixedTop) {
-            document.body.classList.remove('has-navbar-fixed-top');
+            document.body.classList.remove("has-navbar-fixed-top");
         }
     };
     Navbar.prototype.render = function () {
         var _a = this.props, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, props = __rest(_a, ["isFixedBottom", "isFixedTop", "isTransparent", "isUnselectable"]);
-        var className = classnames('navbar', {
-            'is-fixed-bottom': isFixedBottom,
-            'is-fixed-top': isFixedTop,
-            'is-transparent': isTransparent,
-            'is-unselectable': isUnselectable,
+        var className = classnames("navbar", {
+            "is-fixed-bottom": isFixedBottom,
+            "is-fixed-top": isFixedTop,
+            "is-transparent": isTransparent,
+            "is-unselectable": isUnselectable,
         });
         return (React.createElement("nav", __assign({ className: className }, props), this.props.children));
     };

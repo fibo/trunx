@@ -18,11 +18,11 @@ var Field = (function (_super) {
     }
     Field.prototype.render = function () {
         var _a = this.props, hasAddons = _a.hasAddons, hasAddonsCentered = _a.hasAddonsCentered, isGrouped = _a.isGrouped, isGroupedMultiline = _a.isGroupedMultiline, label = _a.label;
-        var className = classnames('field', {
-            'has-addons': hasAddons,
-            'has-addons-centered': hasAddonsCentered,
-            'is-grouped': isGrouped,
-            'is-grouped-multiline': isGroupedMultiline,
+        var className = classnames("field", {
+            "has-addons": hasAddons,
+            "has-addons-centered": hasAddonsCentered,
+            "is-grouped": isGrouped,
+            "is-grouped-multiline": isGroupedMultiline,
         });
         return (React.createElement("div", { className: className },
             label && React.createElement("label", { className: "label" }, label),

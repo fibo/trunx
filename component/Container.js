@@ -18,10 +18,10 @@ var Container = (function (_super) {
     }
     Container.prototype.render = function () {
         var _a = this.props, isFluid = _a.isFluid, isFullhd = _a.isFullhd, isWidescreen = _a.isWidescreen;
-        var className = classnames('container', {
-            'is-fluid': isFluid,
-            'is-fullhd': isFullhd,
-            'is-widescreen': isWidescreen,
+        var className = classnames("container", {
+            "is-fluid": isFluid,
+            "is-fullhd": isFullhd,
+            "is-widescreen": isWidescreen,
         });
         return (React.createElement("div", { className: className }, this.props.children));
     };

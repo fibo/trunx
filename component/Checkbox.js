@@ -19,7 +19,7 @@ var Checkbox = (function (_super) {
         var disabled = this.props.disabled;
         return (React.createElement("label", { className: "checkbox" },
             React.createElement("input", { disabled: disabled, type: "checkbox" }),
-            ' ',
+            " ",
             this.props.children));
     };
     return Checkbox;

@@ -38,17 +38,17 @@ var Message = (function (_super) {
     }
     Message.prototype.render = function () {
         var _a = this.props, isDanger = _a.isDanger, isDark = _a.isDark, isInfo = _a.isInfo, isLarge = _a.isLarge, isLink = _a.isLink, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning;
-        var className = classnames('message', {
-            'is-danger': isDanger,
-            'is-dark': isDark,
-            'is-info': isInfo,
-            'is-large': isLarge,
-            'is-link': isLink,
-            'is-medium': isMedium,
-            'is-primary': isPrimary,
-            'is-small': isSmall,
-            'is-success': isSuccess,
-            'is-warning': isWarning,
+        var className = classnames("message", {
+            "is-danger": isDanger,
+            "is-dark": isDark,
+            "is-info": isInfo,
+            "is-large": isLarge,
+            "is-link": isLink,
+            "is-medium": isMedium,
+            "is-primary": isPrimary,
+            "is-small": isSmall,
+            "is-success": isSuccess,
+            "is-warning": isWarning,
         });
         return (React.createElement("article", { className: className }, this.props.children));
     };

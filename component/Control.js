@@ -18,10 +18,10 @@ var Control = (function (_super) {
     }
     Control.prototype.render = function () {
         var _a = this.props, hasIconsLeft = _a.hasIconsLeft, hasIconsRight = _a.hasIconsRight, isExpanded = _a.isExpanded;
-        var className = classnames('control', {
-            'has-icons-left': hasIconsLeft,
-            'has-icons-right': hasIconsRight,
-            'is-expanded': isExpanded
+        var className = classnames("control", {
+            "has-icons-left": hasIconsLeft,
+            "has-icons-right": hasIconsRight,
+            "is-expanded": isExpanded
         });
         return (React.createElement("div", { className: className }, this.props.children));
     };
