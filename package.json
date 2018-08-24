@@ -9,7 +9,7 @@
     "lint:src-js": "cd src && standard",
     "lint:src-ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "lint:storybook": "cd .storybook && standard",
-    "posttypescript": "git add index.js component/; git commit -m 'transpiled'",
+    "posttypescript": "git add index* component/; git commit -m 'transpiled'",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "pretypescript": "rimraf component",
     "preversion": "npm run typescript",
