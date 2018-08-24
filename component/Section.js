@@ -18,9 +18,9 @@ var Section = (function (_super) {
     }
     Section.prototype.render = function () {
         var _a = this.props, isLarge = _a.isLarge, isMedium = _a.isMedium;
-        var className = classnames('section', {
-            'is-large': isLarge,
-            'is-medium': isMedium,
+        var className = classnames("section", {
+            "is-large": isLarge,
+            "is-medium": isMedium,
         });
         return (React.createElement("div", { className: className }, this.props.children));
     };

@@ -17,12 +17,12 @@ var Columns = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Columns.prototype.render = function () {
-        var _a = this.props, isDesktop = _a.isDesktop, isGapeless = _a.isGapeless, isMobile = _a.isMobile, isMultiline = _a.isMultiline;
-        var className = classnames('columns', {
-            'is-desktop': isDesktop,
-            'is-gapelesss': isGapeless,
-            'is-mobile': isMobile,
-            'is-multiline': isMultiline
+        var _a = this.props, isDesktop = _a.isDesktop, isGapless = _a.isGapless, isMobile = _a.isMobile, isMultiline = _a.isMultiline;
+        var className = classnames("columns", {
+            "is-desktop": isDesktop,
+            "is-gapless": isGapless,
+            "is-mobile": isMobile,
+            "is-multiline": isMultiline,
         });
         return (React.createElement("div", { className: className }, this.props.children));
     };

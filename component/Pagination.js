@@ -46,8 +46,8 @@ var PaginationLink = (function (_super) {
     }
     PaginationLink.prototype.render = function () {
         var _a = this.props, isCurrent = _a.isCurrent, props = __rest(_a, ["isCurrent"]);
-        var className = classnames('pagination-link', {
-            'is-current': isCurrent,
+        var className = classnames("pagination-link", {
+            "is-current": isCurrent,
         });
         return (React.createElement("li", null,
             React.createElement("a", __assign({ className: className }, props), this.props.children)));

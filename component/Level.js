@@ -18,8 +18,8 @@ var LevelItem = (function (_super) {
     }
     LevelItem.prototype.render = function () {
         var hasTextCentered = this.props.hasTextCentered;
-        var className = classnames('level-item', {
-            'has-text-centered': hasTextCentered,
+        var className = classnames("level-item", {
+            "has-text-centered": hasTextCentered,
         });
         return (React.createElement("div", { className: className }, this.props.children));
     };
@@ -52,8 +52,8 @@ var Level = (function (_super) {
     }
     Level.prototype.render = function () {
         var isMobile = this.props.isMobile;
-        var className = classnames('level', {
-            'is-mobile': isMobile,
+        var className = classnames("level", {
+            "is-mobile": isMobile,
         });
         return (React.createElement("nav", { className: className }, this.props.children));
     };

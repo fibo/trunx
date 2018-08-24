@@ -18,16 +18,16 @@ var Progress = (function (_super) {
     }
     Progress.prototype.render = function () {
         var _a = this.props, isDanger = _a.isDanger, isInfo = _a.isInfo, isLarge = _a.isLarge, isLink = _a.isLink, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, max = _a.max, value = _a.value;
-        var className = classnames('tag', {
-            'is-danger': isDanger,
-            'is-info': isInfo,
-            'is-large': isLarge,
-            'is-link': isLink,
-            'is-medium': isMedium,
-            'is-primary': isPrimary,
-            'is-small': isSmall,
-            'is-success': isSuccess,
-            'is-warning': isWarning
+        var className = classnames("tag", {
+            "is-danger": isDanger,
+            "is-info": isInfo,
+            "is-large": isLarge,
+            "is-link": isLink,
+            "is-medium": isMedium,
+            "is-primary": isPrimary,
+            "is-small": isSmall,
+            "is-success": isSuccess,
+            "is-warning": isWarning
         });
         return (React.createElement("progress", { className: className, max: max, value: value }, this.props.children));
     };

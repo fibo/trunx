@@ -88,8 +88,8 @@ var CardHeaderTitle = (function (_super) {
     }
     CardHeaderTitle.prototype.render = function () {
         var isCentered = this.props.isCentered;
-        var className = classnames('card-header-title', {
-            'is-centered': isCentered,
+        var className = classnames("card-header-title", {
+            "is-centered": isCentered,
         });
         return (React.createElement("div", { className: className }, this.props.children));
     };

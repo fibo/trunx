@@ -35,15 +35,15 @@ var Input = (function (_super) {
     }
     Input.prototype.render = function () {
         var _a = this.props, isDanger = _a.isDanger, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, props = __rest(_a, ["isDanger", "isInfo", "isLarge", "isMedium", "isPrimary", "isSmall", "isSuccess", "isWarning"]);
-        var className = classnames('input', {
-            'is-danger': isDanger,
-            'is-info': isInfo,
-            'is-large': isLarge,
-            'is-medium': isMedium,
-            'is-primary': isPrimary,
-            'is-small': isSmall,
-            'is-success': isSuccess,
-            'is-warning': isWarning
+        var className = classnames("input", {
+            "is-danger": isDanger,
+            "is-info": isInfo,
+            "is-large": isLarge,
+            "is-medium": isMedium,
+            "is-primary": isPrimary,
+            "is-small": isSmall,
+            "is-success": isSuccess,
+            "is-warning": isWarning
         });
         return (React.createElement("input", __assign({ className: className }, props)));
     };

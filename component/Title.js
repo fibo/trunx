@@ -18,14 +18,14 @@ var Title = (function (_super) {
     }
     Title.prototype.render = function () {
         var _a = this.props, is1 = _a.is1, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6, isSpaced = _a.isSpaced;
-        var className = classnames('title', {
-            'is-1': is1,
-            'is-2': is2,
-            'is-3': is3,
-            'is-4': is4,
-            'is-5': is5,
-            'is-6': is6,
-            'is-spaced': isSpaced,
+        var className = classnames("title", {
+            "is-1": is1,
+            "is-2": is2,
+            "is-3": is3,
+            "is-4": is4,
+            "is-5": is5,
+            "is-6": is6,
+            "is-spaced": isSpaced,
         });
         if (is1) {
             return (React.createElement("h1", { className: className }, this.props.children));
