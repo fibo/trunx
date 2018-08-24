@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface IconProps {
+interface IIconProps {
   hasTextDanger?: boolean
   hasTextInfo?: boolean
   hasTextSuccess?: boolean
@@ -11,7 +11,7 @@ interface IconProps {
   isSmall?: boolean
 }
 
-interface IconSvgProps {
+interface IIconSvgProps {
   icon: {
     d: string
     viewBox: string
@@ -19,9 +19,9 @@ interface IconSvgProps {
   size: string
 }
 
-class IconSvg extends React.Component<IconSvgProps> {
+class IconSvg extends React.Component<IIconSvgProps> {
   static defaultProps = {
-    size: '1em'
+    size: "1em"
   }
 
   render() {
@@ -48,7 +48,7 @@ class IconSvg extends React.Component<IconSvgProps> {
   }
 }
 
-export default class Icon extends React.Component<IconProps> {
+export default class Icon extends React.Component<IIconProps> {
   static Svg = IconSvg
 
   render() {
@@ -62,14 +62,14 @@ export default class Icon extends React.Component<IconProps> {
       isSmall,
     } = this.props
 
-    const className = classnames('icon', {
-      'has-text-danger': hasTextDanger,
-      'has-text-info': hasTextInfo,
-      'has-text-success': hasTextSuccess,
-      'has-text-warning': hasTextWarning,
-      'is-large': isLarge,
-      'is-medium': isMedium,
-      'is-small': isSmall,
+    const className = classnames("icon", {
+      "has-text-danger": hasTextDanger,
+      "has-text-info": hasTextInfo,
+      "has-text-success": hasTextSuccess,
+      "has-text-warning": hasTextWarning,
+      "is-large": isLarge,
+      "is-medium": isMedium,
+      "is-small": isSmall,
     })
 
     return (

@@ -1,10 +1,10 @@
-import * as React from 'react'
+import * as React from "react"
 
-interface Props {
+interface ICheckboxProps {
   disabled?: boolean
 }
 
-export default class Checkbox extends React.Component<Props> {
+export default class Checkbox extends React.Component<ICheckboxProps> {
   render() {
     const {
       disabled
@@ -17,7 +17,7 @@ export default class Checkbox extends React.Component<Props> {
           type="checkbox"
         />
 
-        {' '/* adding a space looks better*/}
+        {" "/* adding a space looks better*/}
 
         {this.props.children}
       </label>

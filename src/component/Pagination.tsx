@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface PaginationLinkProps {
+interface IPaginationLinkProps {
   isCurrent?: boolean
 }
 
@@ -15,15 +15,15 @@ class PaginationEllipsis extends React.Component {
   }
 }
 
-class PaginationLink extends React.Component<PaginationLinkProps> {
+class PaginationLink extends React.Component<IPaginationLinkProps> {
   render() {
     const {
       isCurrent,
       ...props
     } = this.props
 
-    const className = classnames('pagination-link', {
-      'is-current': isCurrent,
+    const className = classnames("pagination-link", {
+      "is-current": isCurrent,
     })
 
     return (

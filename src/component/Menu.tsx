@@ -1,5 +1,5 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
 class MenuLabel extends React.Component {
   render() {

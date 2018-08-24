@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface TileProps {
+interface ITileProps {
   is1?: boolean
   is2?: boolean
   is3?: boolean
@@ -18,7 +18,7 @@ interface TileProps {
   isVertical?: boolean
 }
 
-interface TileChildNotificationProps {
+interface ITileChildNotificationProps {
   isDanger?: boolean
   isLink?: boolean
   isInfo?: boolean
@@ -43,7 +43,7 @@ class TileChildBox extends React.Component {
   }
 }
 
-class TileChildNotification extends React.Component<TileChildNotificationProps> {
+class TileChildNotification extends React.Component<ITileChildNotificationProps> {
   render() {
     const {
       isDanger,
@@ -54,13 +54,13 @@ class TileChildNotification extends React.Component<TileChildNotificationProps> 
       isWarning,
     } = this.props
 
-    const className = classnames('tile is-child notification', {
-      'is-danger': isDanger,
-      'is-info': isInfo,
-      'is-link': isLink,
-      'is-primary': isPrimary,
-      'is-success': isSuccess,
-      'is-warning': isWarning
+    const className = classnames("tile is-child notification", {
+      "is-danger": isDanger,
+      "is-info": isInfo,
+      "is-link": isLink,
+      "is-primary": isPrimary,
+      "is-success": isSuccess,
+      "is-warning": isWarning,
     })
 
     return (
@@ -80,7 +80,7 @@ class TileChild extends React.Component {
   }
 }
 
-export default class Tile extends React.Component<TileProps> {
+export default class Tile extends React.Component<ITileProps> {
   static Ancestor = TileAncestor
   static Child = TileChild
 
@@ -102,23 +102,23 @@ export default class Tile extends React.Component<TileProps> {
       isVertical,
     } = this.props
 
-    const className = classnames('tile', {
-      'is-1': is1,
-      'is-2': is2,
-      'is-3': is3,
-      'is-4': is4,
-      'is-5': is5,
-      'is-6': is6,
-      'is-7': is7,
-      'is-8': is8,
-      'is-9': is9,
+    const className = classnames("tile", {
+      "is-1": is1,
+      "is-2": is2,
+      "is-3": is3,
+      "is-4": is4,
+      "is-5": is5,
+      "is-6": is6,
+      "is-7": is7,
+      "is-8": is8,
+      "is-9": is9,
       /* tslint:disable object-literal-sort-keys */
-      'is-10': is10,
-      'is-11': is11,
-      'is-12': is12,
+      "is-10": is10,
+      "is-11": is11,
+      "is-12": is12,
       /* tslint:enable object-literal-sort-keys */
-      'is-parent': isParent,
-      'is-vertical': isVertical,
+      "is-parent": isParent,
+      "is-vertical": isVertical,
     })
 
     return (
