@@ -9,10 +9,13 @@
     "lint:src-js": "cd src && standard",
     "lint:src-ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "lint:storybook": "cd .storybook && standard",
+    "posttypescript": "git add index.js component/; git commit -m 'transpiled'",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
-    "typescript": "tsc --project .",
-    "storybook": "start-storybook -p 9001 -c .storybook",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "pretypescript": "rimraf component",
+    "preversion": "npm run typescript",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typescript": "tsc --project .; tsc --declaration",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "pre-commit": [
     "lint"
@@ -58,6 +61,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-syntax-highlighter": "^8.0.1",
+    "rimraf": "^2.6.2",
     "standard": "^11.0.1",
     "tslint": "^5.10.0",
     "tslint-react": "^3.6.0",
