@@ -35,21 +35,21 @@ var Tag = (function (_super) {
     }
     Tag.prototype.render = function () {
         var _a = this.props, href = _a.href, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isInfo = _a.isInfo, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, isWhite = _a.isWhite, props = __rest(_a, ["href", "isBlack", "isDanger", "isDark", "isInfo", "isLarge", "isLight", "isLink", "isMedium", "isPrimary", "isRounded", "isSmall", "isSuccess", "isWarning", "isWhite"]);
-        var className = classnames('tag', {
-            'is-black': isBlack,
-            'is-danger': isDanger,
-            'is-dark': isDark,
-            'is-info': isInfo,
-            'is-large': isLarge,
-            'is-light': isLight,
-            'is-link': isLink,
-            'is-medium': isMedium,
-            'is-primary': isPrimary,
-            'is-rounded': isRounded,
-            'is-small': isSmall,
-            'is-success': isSuccess,
-            'is-warning': isWarning,
-            'is-white': isWhite,
+        var className = classnames("tag", {
+            "is-black": isBlack,
+            "is-danger": isDanger,
+            "is-dark": isDark,
+            "is-info": isInfo,
+            "is-large": isLarge,
+            "is-light": isLight,
+            "is-link": isLink,
+            "is-medium": isMedium,
+            "is-primary": isPrimary,
+            "is-rounded": isRounded,
+            "is-small": isSmall,
+            "is-success": isSuccess,
+            "is-warning": isWarning,
+            "is-white": isWhite,
         });
         return href ? (React.createElement("a", __assign({ className: className, href: href }, props), this.props.children)) : (React.createElement("span", { className: className }, this.props.children));
     };

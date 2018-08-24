@@ -18,8 +18,8 @@ var Tags = (function (_super) {
     }
     Tags.prototype.render = function () {
         var hasAddons = this.props.hasAddons;
-        var className = classnames('tags', {
-            'has-addons': hasAddons,
+        var className = classnames("tags", {
+            "has-addons": hasAddons,
         });
         return (React.createElement("div", { className: className }, this.props.children));
     };

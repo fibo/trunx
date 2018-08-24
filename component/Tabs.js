@@ -39,16 +39,16 @@ var TabsNav = (function (_super) {
     }
     TabsNav.prototype.render = function () {
         var _a = this.props, isBoxed = _a.isBoxed, isCentered = _a.isCentered, isFullwidth = _a.isFullwidth, isLarge = _a.isLarge, isMedium = _a.isMedium, isRight = _a.isRight, isSmall = _a.isSmall, isToggle = _a.isToggle, isToggleRounded = _a.isToggleRounded;
-        var className = classnames('tabs', {
-            'is-boxed': isBoxed,
-            'is-centered': isCentered,
-            'is-fullwidth': isFullwidth,
-            'is-large': isLarge,
-            'is-medium': isMedium,
-            'is-right': isRight,
-            'is-small': isSmall,
-            'is-toggle': isToggle,
-            'is-toggle-rounded': isToggleRounded,
+        var className = classnames("tabs", {
+            "is-boxed": isBoxed,
+            "is-centered": isCentered,
+            "is-fullwidth": isFullwidth,
+            "is-large": isLarge,
+            "is-medium": isMedium,
+            "is-right": isRight,
+            "is-small": isSmall,
+            "is-toggle": isToggle,
+            "is-toggle-rounded": isToggleRounded,
         });
         return (React.createElement("nav", { className: className },
             React.createElement("div", { className: "container" },
@@ -63,16 +63,16 @@ var Tabs = (function (_super) {
     }
     Tabs.prototype.render = function () {
         var _a = this.props, isBoxed = _a.isBoxed, isCentered = _a.isCentered, isFullwidth = _a.isFullwidth, isLarge = _a.isLarge, isMedium = _a.isMedium, isRight = _a.isRight, isSmall = _a.isSmall, isToggle = _a.isToggle, isToggleRounded = _a.isToggleRounded;
-        var className = classnames('tabs', {
-            'is-boxed': isBoxed,
-            'is-centered': isCentered,
-            'is-fullwidth': isFullwidth,
-            'is-large': isLarge,
-            'is-medium': isMedium,
-            'is-right': isRight,
-            'is-small': isSmall,
-            'is-toggle': isToggle,
-            'is-toggle-rounded': isToggleRounded,
+        var className = classnames("tabs", {
+            "is-boxed": isBoxed,
+            "is-centered": isCentered,
+            "is-fullwidth": isFullwidth,
+            "is-large": isLarge,
+            "is-medium": isMedium,
+            "is-right": isRight,
+            "is-small": isSmall,
+            "is-toggle": isToggle,
+            "is-toggle-rounded": isToggleRounded,
         });
         return (React.createElement("div", { className: className },
             React.createElement("ul", null, this.props.children)));

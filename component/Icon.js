@@ -22,7 +22,7 @@ var IconSvg = (function (_super) {
             React.createElement("path", { fill: "currentColor", d: icon.d })));
     };
     IconSvg.defaultProps = {
-        size: '1em'
+        size: "1em"
     };
     return IconSvg;
 }(React.Component));
@@ -33,14 +33,14 @@ var Icon = (function (_super) {
     }
     Icon.prototype.render = function () {
         var _a = this.props, hasTextDanger = _a.hasTextDanger, hasTextInfo = _a.hasTextInfo, hasTextSuccess = _a.hasTextSuccess, hasTextWarning = _a.hasTextWarning, isLarge = _a.isLarge, isMedium = _a.isMedium, isSmall = _a.isSmall;
-        var className = classnames('icon', {
-            'has-text-danger': hasTextDanger,
-            'has-text-info': hasTextInfo,
-            'has-text-success': hasTextSuccess,
-            'has-text-warning': hasTextWarning,
-            'is-large': isLarge,
-            'is-medium': isMedium,
-            'is-small': isSmall,
+        var className = classnames("icon", {
+            "has-text-danger": hasTextDanger,
+            "has-text-info": hasTextInfo,
+            "has-text-success": hasTextSuccess,
+            "has-text-warning": hasTextWarning,
+            "is-large": isLarge,
+            "is-medium": isMedium,
+            "is-small": isSmall,
         });
         return (React.createElement("span", { className: className }, this.props.children));
     };

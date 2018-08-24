@@ -48,17 +48,17 @@ var Hero = (function (_super) {
     }
     Hero.prototype.render = function () {
         var _a = this.props, isBold = _a.isBold, isDanger = _a.isDanger, isDark = _a.isDark, isFullheight = _a.isFullheight, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isWarning = _a.isWarning;
-        var className = classnames('hero', {
-            'is-bold': isBold,
-            'is-danger': isDanger,
-            'is-dark': isDark,
-            'is-fullheight': isFullheight,
-            'is-info': isInfo,
-            'is-large': isLarge,
-            'is-medium': isMedium,
-            'is-primary': isPrimary,
-            'is-success': isSuccess,
-            'is-warning': isWarning,
+        var className = classnames("hero", {
+            "is-bold": isBold,
+            "is-danger": isDanger,
+            "is-dark": isDark,
+            "is-fullheight": isFullheight,
+            "is-info": isInfo,
+            "is-large": isLarge,
+            "is-medium": isMedium,
+            "is-primary": isPrimary,
+            "is-success": isSuccess,
+            "is-warning": isWarning,
         });
         return (React.createElement("section", { className: className }, this.props.children));
     };
