@@ -1,21 +1,21 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface ISectionProps {
   isLarge?: boolean
   isMedium?: boolean
 }
 
-export default class Section extends React.Component<Props> {
+export default class Section extends React.Component<ISectionProps> {
   render() {
     const {
       isLarge,
       isMedium,
     } = this.props
 
-    const className = classnames('section', {
-      'is-large': isLarge,
-      'is-medium': isMedium,
+    const className = classnames("section", {
+      "is-large": isLarge,
+      "is-medium": isMedium,
     })
 
     return (

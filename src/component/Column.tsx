@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface IColumnProps {
   is2?: boolean
   is3?: boolean
   is4?: boolean
@@ -30,7 +30,7 @@ interface Props {
   isTwoThirds?: boolean
 }
 
-export default class Column extends React.Component<Props> {
+export default class Column extends React.Component<IColumnProps> {
   render() {
     const {
       is2,
@@ -61,35 +61,35 @@ export default class Column extends React.Component<Props> {
       isTwoThirds,
     } = this.props
 
-    const className = classnames(['column'], {
-      'is-2': is2,
-      'is-3': is3,
-      'is-4': is4,
-      'is-5': is5,
-      'is-6': is6,
-      'is-7': is7,
-      'is-8': is8,
-      'is-9': is9,
+    const className = classnames(["column"], {
+      "is-2": is2,
+      "is-3": is3,
+      "is-4": is4,
+      "is-5": is5,
+      "is-6": is6,
+      "is-7": is7,
+      "is-8": is8,
+      "is-9": is9,
       /* tslint:disable object-literal-sort-keys */
-      'is-10': is10,
-      'is-11': is11,
+      "is-10": is10,
+      "is-11": is11,
       /* tslint:enable object-literal-sort-keys */
-      'is-four-fifths': isFourFifths,
-      'is-half': isHalf,
-      'is-narrow': isNarrow,
-      'is-narrow-desktop': isNarrowDesktop,
-      'is-narrow-mobile': isNarrowMobile,
-      'is-narrow-tablet': isNarrowTablet,
-      'is-narrow-touch': isNarrowTouch,
-      'is-narrow-widescreen': isNarrowWidescreen,
-      'is-narrow-fullhd': isNarrowFullhd,
-      'is-one-fifth': isOneFifth,
-      'is-one-quarter': isOneQuarter,
-      'is-three-fifths': isThreeFifths,
-      'is-three-quarters': isThreeQuarters,
-      'is-two-fifths': isTwoFifths,
-      'is-two-quarters': isTwoQuarters,
-      'is-two-thirds': isTwoThirds,
+      "is-four-fifths": isFourFifths,
+      "is-half": isHalf,
+      "is-narrow": isNarrow,
+      "is-narrow-desktop": isNarrowDesktop,
+      "is-narrow-mobile": isNarrowMobile,
+      "is-narrow-tablet": isNarrowTablet,
+      "is-narrow-touch": isNarrowTouch,
+      "is-narrow-widescreen": isNarrowWidescreen,
+      "is-narrow-fullhd": isNarrowFullhd,
+      "is-one-fifth": isOneFifth,
+      "is-one-quarter": isOneQuarter,
+      "is-three-fifths": isThreeFifths,
+      "is-three-quarters": isThreeQuarters,
+      "is-two-fifths": isTwoFifths,
+      "is-two-quarters": isTwoQuarters,
+      "is-two-thirds": isTwoThirds,
     })
 
     return (

@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface TabsProps {
+interface ITabsProps {
   isBoxed?: boolean
   isCentered?: boolean
   isFullwidth?: boolean
@@ -13,12 +13,12 @@ interface TabsProps {
   isToggleRounded?: boolean
 }
 
-interface TabsItemProps {
+interface ITabsItemProps {
   isActive?: boolean
   onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
-class TabsItem extends React.Component<TabsItemProps> {
+class TabsItem extends React.Component<ITabsItemProps> {
   static defaultProps = {
     onClick: Function.prototype
   }
@@ -45,7 +45,7 @@ class TabsItem extends React.Component<TabsItemProps> {
   }
 }
 
-class TabsNav extends React.Component<TabsProps> {
+class TabsNav extends React.Component<ITabsProps> {
   render() {
     const {
       isBoxed,
@@ -59,16 +59,16 @@ class TabsNav extends React.Component<TabsProps> {
       isToggleRounded,
     } = this.props
 
-    const className = classnames('tabs', {
-      'is-boxed': isBoxed,
-      'is-centered': isCentered,
-      'is-fullwidth': isFullwidth,
-      'is-large': isLarge,
-      'is-medium': isMedium,
-      'is-right': isRight,
-      'is-small': isSmall,
-      'is-toggle': isToggle,
-      'is-toggle-rounded': isToggleRounded,
+    const className = classnames("tabs", {
+      "is-boxed": isBoxed,
+      "is-centered": isCentered,
+      "is-fullwidth": isFullwidth,
+      "is-large": isLarge,
+      "is-medium": isMedium,
+      "is-right": isRight,
+      "is-small": isSmall,
+      "is-toggle": isToggle,
+      "is-toggle-rounded": isToggleRounded,
     })
 
     return (
@@ -81,7 +81,7 @@ class TabsNav extends React.Component<TabsProps> {
   }
 }
 
-export default class Tabs extends React.Component<TabsProps> {
+export default class Tabs extends React.Component<ITabsProps> {
   static Item = TabsItem
   static Nav = TabsNav
 
@@ -98,16 +98,16 @@ export default class Tabs extends React.Component<TabsProps> {
       isToggleRounded,
     } = this.props
 
-    const className = classnames('tabs', {
-      'is-boxed': isBoxed,
-      'is-centered': isCentered,
-      'is-fullwidth': isFullwidth,
-      'is-large': isLarge,
-      'is-medium': isMedium,
-      'is-right': isRight,
-      'is-small': isSmall,
-      'is-toggle': isToggle,
-      'is-toggle-rounded': isToggleRounded,
+    const className = classnames("tabs", {
+      "is-boxed": isBoxed,
+      "is-centered": isCentered,
+      "is-fullwidth": isFullwidth,
+      "is-large": isLarge,
+      "is-medium": isMedium,
+      "is-right": isRight,
+      "is-small": isSmall,
+      "is-toggle": isToggle,
+      "is-toggle-rounded": isToggleRounded,
     })
 
     return (

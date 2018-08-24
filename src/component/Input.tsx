@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface IInputProps {
   isDanger?: boolean
   isInfo?: boolean,
   isLarge?: boolean
@@ -12,7 +12,7 @@ interface Props {
   isWarning?: boolean
 }
 
-export default class Input extends React.Component<Props> {
+export default class Input extends React.Component<IInputProps> {
   render() {
     const {
       isDanger,
@@ -26,15 +26,15 @@ export default class Input extends React.Component<Props> {
       ...props
     } = this.props
 
-    const className = classnames('input', {
-      'is-danger': isDanger,
-      'is-info': isInfo,
-      'is-large': isLarge,
-      'is-medium': isMedium,
-      'is-primary': isPrimary,
-      'is-small': isSmall,
-      'is-success': isSuccess,
-      'is-warning': isWarning
+    const className = classnames("input", {
+      "is-danger": isDanger,
+      "is-info": isInfo,
+      "is-large": isLarge,
+      "is-medium": isMedium,
+      "is-primary": isPrimary,
+      "is-small": isSmall,
+      "is-success": isSuccess,
+      "is-warning": isWarning
     })
 
     return (

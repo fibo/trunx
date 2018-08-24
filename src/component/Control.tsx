@@ -1,13 +1,13 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface IControlProps {
   hasIconsLeft?: boolean
   hasIconsRight?: boolean
   isExpanded?: boolean
 }
 
-export default class Control extends React.Component<Props> {
+export default class Control extends React.Component<IControlProps> {
   render() {
     const {
       hasIconsLeft,
@@ -15,10 +15,10 @@ export default class Control extends React.Component<Props> {
       isExpanded
     } = this.props
 
-    const className = classnames('control', {
-      'has-icons-left': hasIconsLeft,
-      'has-icons-right': hasIconsRight,
-      'is-expanded': isExpanded
+    const className = classnames("control", {
+      "has-icons-left": hasIconsLeft,
+      "has-icons-right": hasIconsRight,
+      "is-expanded": isExpanded
     })
 
     return (

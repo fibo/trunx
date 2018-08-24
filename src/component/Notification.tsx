@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface INotificationProps {
   isDanger?: boolean
   isLink?: boolean
   isInfo?: boolean
@@ -10,7 +10,7 @@ interface Props {
   isWarning?: boolean
 }
 
-export default class Notification extends React.Component<Props> {
+export default class Notification extends React.Component<INotificationProps> {
   render() {
     const {
       isDanger,
@@ -18,16 +18,16 @@ export default class Notification extends React.Component<Props> {
       isInfo,
       isPrimary,
       isSuccess,
-      isWarning
+      isWarning,
     } = this.props
 
-    const className = classnames('notification', {
-      'is-danger': isDanger,
-      'is-info': isInfo,
-      'is-link': isLink,
-      'is-primary': isPrimary,
-      'is-success': isSuccess,
-      'is-warning': isWarning
+    const className = classnames("notification", {
+      "is-danger": isDanger,
+      "is-info": isInfo,
+      "is-link": isLink,
+      "is-primary": isPrimary,
+      "is-success": isSuccess,
+      "is-warning": isWarning,
     })
 
     return (

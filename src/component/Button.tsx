@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface IButtonProps {
   disabled?: boolean
   href?: string
   isActive?: boolean
@@ -28,10 +28,10 @@ interface Props {
   isWarning?: boolean
   isWhite?: boolean
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
-  type?: 'reset' | 'submit'
+  type?: "reset" | "submit"
 }
 
-export default class Button extends React.Component<Props> {
+export default class Button extends React.Component<IButtonProps> {
   render() {
     const {
       disabled,
@@ -64,30 +64,30 @@ export default class Button extends React.Component<Props> {
       ...props
     } = this.props
 
-    const className = classnames('button', {
-      'is-active': isActive,
-      'is-black': isBlack,
-      'is-danger': isDanger,
-      'is-dark': isDark,
-      'is-focused': isFocused,
-      'is-fullwidth': isFullwidth,
-      'is-info': isInfo,
-      'is-inverted': isInverted,
-      'is-large': isLarge,
-      'is-light': isLight,
-      'is-link': isLink,
-      'is-loading': isLoading,
-      'is-medium': isMedium,
-      'is-normal': isNormal,
-      'is-outlined': isOutlined,
-      'is-primary': isPrimary,
-      'is-rounded': isRounded,
-      'is-small': isSmall,
-      'is-static': isStatic,
-      'is-success': isSuccess,
-      'is-text': isText,
-      'is-warning': isWarning,
-      'is-white': isWhite,
+    const className = classnames("button", {
+      "is-active": isActive,
+      "is-black": isBlack,
+      "is-danger": isDanger,
+      "is-dark": isDark,
+      "is-focused": isFocused,
+      "is-fullwidth": isFullwidth,
+      "is-info": isInfo,
+      "is-inverted": isInverted,
+      "is-large": isLarge,
+      "is-light": isLight,
+      "is-link": isLink,
+      "is-loading": isLoading,
+      "is-medium": isMedium,
+      "is-normal": isNormal,
+      "is-outlined": isOutlined,
+      "is-primary": isPrimary,
+      "is-rounded": isRounded,
+      "is-small": isSmall,
+      "is-static": isStatic,
+      "is-success": isSuccess,
+      "is-text": isText,
+      "is-warning": isWarning,
+      "is-white": isWhite,
     })
 
     if (href) {

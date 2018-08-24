@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface NavbarProps {
+interface INavbarProps {
   hasShadow?: boolean
   isFixedBottom?: boolean
   isFixedTop?: boolean
@@ -9,19 +9,19 @@ interface NavbarProps {
   isUnselectable?: boolean
 }
 
-interface NavbarBurgerProps {
+interface INavbarBurgerProps {
   isActive?: boolean
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
-interface NavbarItemProps {
+interface INavbarItemProps {
   hasDropdown?: boolean
   href?: string
   isActive?: boolean
   isHoverable?: boolean
 }
 
-interface NavbarMenuProps {
+interface INavbarMenuProps {
   isActive?: boolean
 }
 
@@ -33,15 +33,15 @@ class NavbarBrand extends React.Component {
   }
 }
 
-class NavbarBurger extends React.Component<NavbarBurgerProps> {
+class NavbarBurger extends React.Component<INavbarBurgerProps> {
   render() {
     const {
       isActive,
       onClick,
     } = this.props
 
-    const className = classnames('navbar-burger', {
-      'is-active': isActive,
+    const className = classnames("navbar-burger", {
+      "is-active": isActive,
     })
 
     return (
@@ -49,7 +49,7 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
         className={className}
         role="button"
         aria-label="menu"
-        aria-expanded={isActive ? 'true' : 'false'}
+        aria-expanded={isActive ? "true" : "false"}
         onClick={onClick}
       >
         <span aria-hidden="true"/>
@@ -76,7 +76,7 @@ class NavbarEnd extends React.Component {
   }
 }
 
-class NavbarItem extends React.Component<NavbarItemProps> {
+class NavbarItem extends React.Component<INavbarItemProps> {
   render() {
     const {
       hasDropdown,
@@ -86,10 +86,10 @@ class NavbarItem extends React.Component<NavbarItemProps> {
       ...props
     } = this.props
 
-    const className = classnames('navbar-item', {
-      'has-dropdown': hasDropdown,
-      'is-active': isActive,
-      'is-hoverable': isHoverable,
+    const className = classnames("navbar-item", {
+      "has-dropdown": hasDropdown,
+      "is-active": isActive,
+      "is-hoverable": isHoverable,
     })
 
     return href ? (
@@ -119,14 +119,14 @@ class NavbarLink extends React.Component {
   }
 }
 
-class NavbarMenu extends React.Component<NavbarMenuProps> {
+class NavbarMenu extends React.Component<INavbarMenuProps> {
   render() {
     const {
       isActive
     } = this.props
 
-    const className = classnames('navbar-menu', {
-      'is-active': isActive,
+    const className = classnames("navbar-menu", {
+      "is-active": isActive,
     })
 
     return (
@@ -143,7 +143,7 @@ class NavbarStart extends React.Component {
   }
 }
 
-export default class Navbar extends React.Component<NavbarProps> {
+export default class Navbar extends React.Component<INavbarProps> {
   static Brand = NavbarBrand
   static Burger = NavbarBurger
   static Dropdown = NavbarDropdown
@@ -160,9 +160,9 @@ export default class Navbar extends React.Component<NavbarProps> {
     } = this.props
 
     if (isFixedTop) {
-      document.body.classList.add('has-navbar-fixed-top')
+      document.body.classList.add("has-navbar-fixed-top")
     } else if (isFixedBottom) {
-      document.body.classList.add('has-navbar-fixed-bottom')
+      document.body.classList.add("has-navbar-fixed-bottom")
     }
   }
 
@@ -173,9 +173,9 @@ export default class Navbar extends React.Component<NavbarProps> {
     } = this.props
 
     if (isFixedBottom) {
-      document.body.classList.remove('has-navbar-fixed-bottom')
+      document.body.classList.remove("has-navbar-fixed-bottom")
     } else if (isFixedTop) {
-      document.body.classList.remove('has-navbar-fixed-top')
+      document.body.classList.remove("has-navbar-fixed-top")
     }
   }
 
@@ -188,11 +188,11 @@ export default class Navbar extends React.Component<NavbarProps> {
       ...props
     } = this.props
 
-    const className = classnames('navbar', {
-      'is-fixed-bottom': isFixedBottom,
-      'is-fixed-top': isFixedTop,
-      'is-transparent': isTransparent,
-      'is-unselectable': isUnselectable,
+    const className = classnames("navbar", {
+      "is-fixed-bottom": isFixedBottom,
+      "is-fixed-top": isFixedTop,
+      "is-transparent": isTransparent,
+      "is-unselectable": isUnselectable,
     })
 
     return (

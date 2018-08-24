@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface TableProps {
+interface ITableProps {
   isBordered?: boolean
   isFullwidth?: boolean
   isHoverable?: boolean
@@ -9,7 +9,7 @@ interface TableProps {
   isStriped?: boolean
 }
 
-export default class Table extends React.Component<TableProps> {
+export default class Table extends React.Component<ITableProps> {
   render() {
     const {
       isBordered,
@@ -19,12 +19,12 @@ export default class Table extends React.Component<TableProps> {
       isStriped,
     } = this.props
 
-    const className = classnames('table', {
-      'is-bordered': isBordered,
-      'is-fullwidth': isFullwidth,
-      'is-hoverable': isHoverable,
-      'is-narrow': isNarrow,
-      'is-striped': isStriped,
+    const className = classnames("table", {
+      "is-bordered": isBordered,
+      "is-fullwidth": isFullwidth,
+      "is-hoverable": isHoverable,
+      "is-narrow": isNarrow,
+      "is-striped": isStriped,
     })
 
     return (
