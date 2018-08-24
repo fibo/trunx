@@ -5,6 +5,7 @@ import Columns from './component/Columns'
 
 // Components
 
+import Breadcrumb from './component/Breadcrumb'
 import Card from './component/Card'
 import ClassicNavbar from './component/ClassicNavbar'
 import Menu from './component/Menu'
@@ -50,6 +51,7 @@ import Tile from './component/Tile'
 
 export {
   Box,
+  Breadcrumb,
   Button,
   Buttons,
   Card,
