@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface ITagProps {
   href?: string
   isBlack?: boolean
   isDanger?: boolean
@@ -19,7 +19,7 @@ interface Props {
   isWhite?: boolean
 }
 
-export default class Tag extends React.Component<Props> {
+export default class Tag extends React.Component<ITagProps> {
   render() {
     const {
       href,
@@ -40,21 +40,21 @@ export default class Tag extends React.Component<Props> {
       ...props
     } = this.props
 
-    const className = classnames('tag', {
-      'is-black': isBlack,
-      'is-danger': isDanger,
-      'is-dark': isDark,
-      'is-info': isInfo,
-      'is-large': isLarge,
-      'is-light': isLight,
-      'is-link': isLink,
-      'is-medium': isMedium,
-      'is-primary': isPrimary,
-      'is-rounded': isRounded,
-      'is-small': isSmall,
-      'is-success': isSuccess,
-      'is-warning': isWarning,
-      'is-white': isWhite,
+    const className = classnames("tag", {
+      "is-black": isBlack,
+      "is-danger": isDanger,
+      "is-dark": isDark,
+      "is-info": isInfo,
+      "is-large": isLarge,
+      "is-light": isLight,
+      "is-link": isLink,
+      "is-medium": isMedium,
+      "is-primary": isPrimary,
+      "is-rounded": isRounded,
+      "is-small": isSmall,
+      "is-success": isSuccess,
+      "is-warning": isWarning,
+      "is-white": isWhite,
     })
 
     return href ? (

@@ -1,14 +1,14 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface IColumnsProps {
   isDesktop?: boolean
   isGapless?: boolean
   isMobile?: boolean
   isMultiline?: boolean
 }
 
-export default class Columns extends React.Component<Props> {
+export default class Columns extends React.Component<IColumnsProps> {
   render() {
     const {
       isDesktop,
@@ -17,11 +17,11 @@ export default class Columns extends React.Component<Props> {
       isMultiline,
     } = this.props
 
-    const className = classnames('columns', {
-      'is-desktop': isDesktop,
-      'is-gapless': isGapless,
-      'is-mobile': isMobile,
-      'is-multiline': isMultiline,
+    const className = classnames("columns", {
+      "is-desktop": isDesktop,
+      "is-gapless": isGapless,
+      "is-mobile": isMobile,
+      "is-multiline": isMultiline,
     })
 
     return (

@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface IHelpProps {
   isDanger?: boolean
   isInfo?: boolean
   isPrimary?: boolean
@@ -9,22 +9,22 @@ interface Props {
   isWarning?: boolean
 }
 
-export default class Help extends React.Component<Props> {
+export default class Help extends React.Component<IHelpProps> {
   render() {
     const {
       isDanger,
       isInfo,
       isPrimary,
       isSuccess,
-      isWarning
+      isWarning,
     } = this.props
 
-    const className = classnames('help', {
-      'is-danger': isDanger,
-      'is-info': isInfo,
-      'is-primary': isPrimary,
-      'is-success': isSuccess,
-      'is-warning': isWarning
+    const className = classnames("help", {
+      "is-danger": isDanger,
+      "is-info": isInfo,
+      "is-primary": isPrimary,
+      "is-success": isSuccess,
+      "is-warning": isWarning,
     })
 
     return (

@@ -1,22 +1,22 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface LevelProps {
+interface ILevelProps {
   isMobile?: boolean
 }
 
-interface LevelItemProps {
+interface ILevelItemProps {
   hasTextCentered?: boolean
 }
 
-class LevelItem extends React.Component<LevelItemProps> {
+class LevelItem extends React.Component<ILevelItemProps> {
   render() {
     const {
       hasTextCentered
     } = this.props
 
-    const className = classnames('level-item', {
-      'has-text-centered': hasTextCentered,
+    const className = classnames("level-item", {
+      "has-text-centered": hasTextCentered,
     })
 
     return (
@@ -41,7 +41,7 @@ class LevelRight extends React.Component {
   }
 }
 
-export default class Level extends React.Component<LevelProps> {
+export default class Level extends React.Component<ILevelProps> {
   static Item = LevelItem
   static Left = LevelLeft
   static Right = LevelRight
@@ -51,8 +51,8 @@ export default class Level extends React.Component<LevelProps> {
       isMobile,
     } = this.props
 
-    const className = classnames('level', {
-      'is-mobile': isMobile,
+    const className = classnames("level", {
+      "is-mobile": isMobile,
     })
 
     return (

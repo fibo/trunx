@@ -1,18 +1,18 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface ITagsProps {
   hasAddons?: boolean
 }
 
-export default class Tags extends React.Component<Props> {
+export default class Tags extends React.Component<ITagsProps> {
   render() {
     const {
       hasAddons,
     } = this.props
 
-    const className = classnames('tags', {
-      'has-addons': hasAddons,
+    const className = classnames("tags", {
+      "has-addons": hasAddons,
     })
 
     return (

@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface ITitleProps {
   is1?: boolean
   is2?: boolean
   is3?: boolean
@@ -11,7 +11,7 @@ interface Props {
   isSpaced?: boolean
 }
 
-export default class Title extends React.Component<Props> {
+export default class Title extends React.Component<ITitleProps> {
   render() {
     const {
       is1,
@@ -23,14 +23,14 @@ export default class Title extends React.Component<Props> {
       isSpaced,
     } = this.props
 
-    const className = classnames('title', {
-      'is-1': is1,
-      'is-2': is2,
-      'is-3': is3,
-      'is-4': is4,
-      'is-5': is5,
-      'is-6': is6,
-      'is-spaced': isSpaced,
+    const className = classnames("title", {
+      "is-1": is1,
+      "is-2": is2,
+      "is-3": is3,
+      "is-4": is4,
+      "is-5": is5,
+      "is-6": is6,
+      "is-spaced": isSpaced,
     })
 
     if (is1) {

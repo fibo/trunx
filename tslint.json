@@ -1,11 +1,8 @@
 {
   "extends": ["tslint:latest", "tslint-react"],
   "rules": {
-    "interface-name": false,
-    "quotemark": [true, "single", "jsx-double"],
     "semicolon": [true, "never"],
     "trailing-comma": false,
-  // override tslint-react rules here
     "jsx-wrap-multiline": false,
     "max-classes-per-file": false,
     "member-access": [true, "no-public"],

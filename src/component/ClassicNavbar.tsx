@@ -1,8 +1,8 @@
-import * as React from 'react'
+import * as React from "react"
 
-import Navbar from './Navbar'
+import Navbar from "./Navbar"
 
-interface Props {
+interface IClassicNavbarProps {
   brand?: () => React.Component
   isFixedTop?: boolean
 }
@@ -11,10 +11,10 @@ const initialState = {
   isActive: false
 }
 
-type State = Readonly<typeof initialState>
+type IClassicNavbarState = Readonly<typeof initialState>
 
-export default class ClassicNavbar extends React.Component<Props, State> {
-  readonly state: State = initialState
+export default class ClassicNavbar extends React.Component<IClassicNavbarProps, IClassicNavbarState> {
+  readonly state: IClassicNavbarState = initialState
 
   render() {
     const {

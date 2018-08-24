@@ -1,15 +1,15 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface CardFooterItemProps {
+interface ICardFooterItemProps {
   href?: string
 }
 
-interface CardHeaderIconProps {
+interface ICardHeaderIconProps {
   href?: string
 }
 
-interface CardHeaderTitleProps {
+interface ICardHeaderTitleProps {
   isCentered?: boolean
 }
 
@@ -21,7 +21,7 @@ class CardContent extends React.Component {
   }
 }
 
-class CardFooterItem extends React.Component<CardFooterItemProps> {
+class CardFooterItem extends React.Component<ICardFooterItemProps> {
   render() {
     const {
       href,
@@ -58,7 +58,7 @@ class CardFooter extends React.Component {
   }
 }
 
-class CardHeaderIcon extends React.Component<CardHeaderIconProps> {
+class CardHeaderIcon extends React.Component<ICardHeaderIconProps> {
   render() {
     const {
       href,
@@ -88,14 +88,14 @@ class CardHeaderIcon extends React.Component<CardHeaderIconProps> {
   }
 }
 
-class CardHeaderTitle extends React.Component<CardHeaderTitleProps> {
+class CardHeaderTitle extends React.Component<ICardHeaderTitleProps> {
   render() {
     const {
       isCentered,
     } = this.props
 
-    const className = classnames('card-header-title', {
-      'is-centered': isCentered,
+    const className = classnames("card-header-title", {
+      "is-centered": isCentered,
     })
 
     return (

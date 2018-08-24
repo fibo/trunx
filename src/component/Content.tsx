@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface IContentProps {
   hasTextCentered?: boolean
   hasTextJustified?: boolean
   hasTextLeft?: boolean
@@ -11,7 +11,7 @@ interface Props {
   isSmall?: boolean
 }
 
-export default class Content extends React.Component<Props> {
+export default class Content extends React.Component<IContentProps> {
   render() {
     const {
       hasTextCentered,
@@ -20,17 +20,17 @@ export default class Content extends React.Component<Props> {
       hasTextRight,
       isLarge,
       isMedium,
-      isSmall
+      isSmall,
     } = this.props
 
-    const className = classnames(['content'], {
-      'has-text-centered': hasTextCentered,
-      'has-text-justified': hasTextJustified,
-      'has-text-left': hasTextLeft,
-      'has-text-right': hasTextRight,
-      'is-large': isLarge,
-      'is-medium': isMedium,
-      'is-small': isSmall
+    const className = classnames(["content"], {
+      "has-text-centered": hasTextCentered,
+      "has-text-justified": hasTextJustified,
+      "has-text-left": hasTextLeft,
+      "has-text-right": hasTextRight,
+      "is-large": isLarge,
+      "is-medium": isMedium,
+      "is-small": isSmall,
     })
 
     return (

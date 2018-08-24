@@ -1,18 +1,18 @@
-import classnames from 'classnames'
-import * as React from 'react'
+import classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface IBreadcrumbProps {
   isCentered?: boolean
 }
 
-export default class Breadcrumb extends React.Component<Props> {
+export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
   render() {
     const {
       isCentered,
     } = this.props
 
-    const className = classnames('breadcrumb', {
-      'is-centered': isCentered,
+    const className = classnames("breadcrumb", {
+      "is-centered": isCentered,
     })
 
     return (

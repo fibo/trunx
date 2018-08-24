@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface HeroProps {
+interface IHeroProps {
   isBold?: boolean
   isDanger?: boolean
   isDark?: boolean
@@ -39,7 +39,7 @@ class HeroHead extends React.Component {
   }
 }
 
-export default class Hero extends React.Component<HeroProps> {
+export default class Hero extends React.Component<IHeroProps> {
   static Body = HeroBody
   static Foot = HeroFoot
   static Head = HeroHead
@@ -58,17 +58,17 @@ export default class Hero extends React.Component<HeroProps> {
       isWarning,
     } = this.props
 
-    const className = classnames('hero', {
-      'is-bold': isBold,
-      'is-danger': isDanger,
-      'is-dark': isDark,
-      'is-fullheight': isFullheight,
-      'is-info': isInfo,
-      'is-large': isLarge,
-      'is-medium': isMedium,
-      'is-primary': isPrimary,
-      'is-success': isSuccess,
-      'is-warning': isWarning,
+    const className = classnames("hero", {
+      "is-bold": isBold,
+      "is-danger": isDanger,
+      "is-dark": isDark,
+      "is-fullheight": isFullheight,
+      "is-info": isInfo,
+      "is-large": isLarge,
+      "is-medium": isMedium,
+      "is-primary": isPrimary,
+      "is-success": isSuccess,
+      "is-warning": isWarning,
     })
 
     return (

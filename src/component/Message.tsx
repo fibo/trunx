@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface IMessageProps {
   isDanger?: boolean
   isDark?: boolean
   isInfo?: boolean
@@ -30,7 +30,7 @@ class MessageHeader extends React.Component {
   }
 }
 
-export default class Message extends React.Component<Props> {
+export default class Message extends React.Component<IMessageProps> {
   static Body = MessageBody
   static Header = MessageHeader
 
@@ -48,17 +48,17 @@ export default class Message extends React.Component<Props> {
       isWarning,
     } = this.props
 
-    const className = classnames('message', {
-      'is-danger': isDanger,
-      'is-dark': isDark,
-      'is-info': isInfo,
-      'is-large': isLarge,
-      'is-link': isLink,
-      'is-medium': isMedium,
-      'is-primary': isPrimary,
-      'is-small': isSmall,
-      'is-success': isSuccess,
-      'is-warning': isWarning,
+    const className = classnames("message", {
+      "is-danger": isDanger,
+      "is-dark": isDark,
+      "is-info": isInfo,
+      "is-large": isLarge,
+      "is-link": isLink,
+      "is-medium": isMedium,
+      "is-primary": isPrimary,
+      "is-small": isSmall,
+      "is-success": isSuccess,
+      "is-warning": isWarning,
     })
 
     return (

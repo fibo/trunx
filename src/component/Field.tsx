@@ -1,7 +1,7 @@
-import * as classnames from 'classnames'
-import * as React from 'react'
+import * as classnames from "classnames"
+import * as React from "react"
 
-interface Props {
+interface IFieldProps {
   hasAddons?: boolean
   hasAddonsCentered?: boolean
   isGrouped?: boolean
@@ -9,7 +9,7 @@ interface Props {
   label?: string
 }
 
-export default class Field extends React.Component<Props> {
+export default class Field extends React.Component<IFieldProps> {
   render() {
     const {
       hasAddons,
@@ -19,11 +19,11 @@ export default class Field extends React.Component<Props> {
       label,
     } = this.props
 
-    const className = classnames('field', {
-      'has-addons': hasAddons,
-      'has-addons-centered': hasAddonsCentered,
-      'is-grouped': isGrouped,
-      'is-grouped-multiline': isGroupedMultiline,
+    const className = classnames("field", {
+      "has-addons": hasAddons,
+      "has-addons-centered": hasAddonsCentered,
+      "is-grouped": isGrouped,
+      "is-grouped-multiline": isGroupedMultiline,
     })
 
     return (
