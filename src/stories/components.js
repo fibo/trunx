@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 import solidIcon from 'fa-svg-icon/solid'
 
+import Breadcrumb from '../component/Breadcrumb'
 import Button from '../component/Button'
 import Card from '../component/Card'
 import Column from '../component/Column'
@@ -83,6 +84,44 @@ class ModalCardExample extends Component {
 }
 
 storiesOf('Components', module)
+  .add('Breadcrumb', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Breadcrumb
+          </Title>
+
+          <Subtitle>
+            A simple <b>breadcrumb</b> component to improve your navigation experience
+          </Subtitle>
+
+          <Meta sizes />
+
+          <hr />
+
+        </Content>
+
+        <Breadcrumb>
+          <li><a href='#'>Bulma</a></li>
+          <li><a href='#'>Documentation</a></li>
+          <li><a href='#'>Components</a></li>
+          <li className='is-active'><a href='#' aria-current='page'>Breadcrumb</a></li>
+        </Breadcrumb>
+
+        <Code language='jsx'>
+          {indent`
+            <Breadcrumb>
+              <li><a href='#'>Bulma</a></li>
+              <li><a href='#'>Documentation</a></li>
+              <li><a href='#'>Components</a></li>
+              <li className='is-active'><a href='#' aria-current='page'>Breadcrumb</a></li>
+            </Breadcrumb>
+          `}
+        </Code>
+      </Container>
+    </Section>
+  ))
   .add('Card', () => (
     <Section>
       <Container>
