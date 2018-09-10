@@ -205,9 +205,13 @@ storiesOf('Overview', module)
 
           <Code language='jsx'>
             {indent`
-              You are <strong class="has-text-success">successful</strong>!
+              You are <strong className='has-text-success'>successful</strong>!
             `}
           </Code>
+
+          <p>
+            You are <strong className='has-text-success'>successful</strong>!
+          </p>
         </Content>
       </Container>
     </Section>
