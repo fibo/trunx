@@ -14,6 +14,8 @@ import Delete from '../component/Delete'
 import Field from '../component/Field'
 import Icon from '../component/Icon'
 import Image from '../component/Image'
+import Level from '../component/Level'
+import Media from '../component/Media'
 import Notification from '../component/Notification'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
@@ -46,7 +48,89 @@ storiesOf('Elements', module)
             For example, you can include a media object:
           </p>
 
-          <Box>Box</Box>
+          <Box>
+            <Media>
+              <Media.Left>
+                <Image is64x64 src='http://via.placeholder.com/128x128.png' />
+              </Media.Left>
+
+              <Media.Content>
+                <Content>
+                  <p>
+                    <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                    <br />
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                  </p>
+                </Content>
+
+                <Level isMobile>
+                  <Level.Left>
+                    <Level.Item>
+                      <Icon>
+                        <Icon.Svg icon={solidIcon.reply} />
+                      </Icon>
+                    </Level.Item>
+
+                    <Level.Item>
+                      <Icon>
+                        <Icon.Svg icon={solidIcon.retweet} />
+                      </Icon>
+                    </Level.Item>
+
+                    <Level.Item>
+                      <Icon>
+                        <Icon.Svg icon={solidIcon.heart} />
+                      </Icon>
+                    </Level.Item>
+                  </Level.Left>
+                </Level>
+              </Media.Content>
+            </Media>
+          </Box>
+
+          <Code language='jsx'>
+            {indent`
+              <Box>
+                <Media>
+                  <Media.Left>
+                    <Image is64x64 src='http://via.placeholder.com/128x128.png' />
+                  </Media.Left>
+
+                  <Media.Content>
+                    <Content>
+                      <p>
+                        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                        <br />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                      </p>
+                    </Content>
+
+                    <Level isMobile>
+                      <Level.Left>
+                        <Level.Item>
+                          <Icon>
+                            <Icon.Svg icon={solidIcon.reply} />
+                          </Icon>
+                        </Level.Item>
+
+                        <Level.Item>
+                          <Icon>
+                            <Icon.Svg icon={solidIcon.retweet} />
+                          </Icon>
+                        </Level.Item>
+
+                        <Level.Item>
+                          <Icon>
+                            <Icon.Svg icon={solidIcon.heart} />
+                          </Icon>
+                        </Level.Item>
+                      </Level.Left>
+                    </Level>
+                  </Media.Content>
+                </Media>
+              </Box>
+            `}
+          </Code>
         </Content>
       </Container>
     </Section>
