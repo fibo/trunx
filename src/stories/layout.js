@@ -2,6 +2,7 @@ import React, { Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'
 import brandsIcon from 'fa-svg-icon/brands'
+import solidIcon from 'fa-svg-icon/solid'
 
 import Button from '../component/Button'
 import Checkbox from '../component/Checkbox'
@@ -556,7 +557,35 @@ storiesOf('Layout', module)
             </Media.Left>
 
             <Media.Content>
-              <Content />
+              <Content>
+                <p>
+                  <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                  <br />
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                </p>
+              </Content>
+
+              <Level isMobile>
+                <Level.Left>
+                  <Level.Item>
+                    <Icon>
+                      <Icon.Svg icon={solidIcon.reply} />
+                    </Icon>
+                  </Level.Item>
+
+                  <Level.Item>
+                    <Icon>
+                      <Icon.Svg icon={solidIcon.retweet} />
+                    </Icon>
+                  </Level.Item>
+
+                  <Level.Item>
+                    <Icon>
+                      <Icon.Svg icon={solidIcon.heart} />
+                    </Icon>
+                  </Level.Item>
+                </Level.Left>
+              </Level>
             </Media.Content>
 
             <Media.Right>
@@ -573,7 +602,34 @@ storiesOf('Layout', module)
 
                 <Media.Content>
                   <Content>
+                    <p>
+                      <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                      <br />
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                    </p>
                   </Content>
+
+                  <Level isMobile>
+                    <Level.Left>
+                      <Level.Item>
+                        <Icon>
+                          <Icon.Svg icon={solidIcon.reply} />
+                        </Icon>
+                      </Level.Item>
+
+                      <Level.Item>
+                        <Icon>
+                          <Icon.Svg icon={solidIcon.retweet} />
+                        </Icon>
+                      </Level.Item>
+
+                      <Level.Item>
+                        <Icon>
+                          <Icon.Svg icon={solidIcon.heart} />
+                        </Icon>
+                      </Level.Item>
+                    </Level.Left>
+                  </Level>
                 </Media.Content>
 
                 <Media.Right>
