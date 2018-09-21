@@ -409,7 +409,7 @@ storiesOf('Layout', module)
             </Level.Item>
 
             <Level.Item hasTextCentered>
-              <img src='https://bulma.io/images/bulma-type.png' alt='' style={{height: '30px'}} />
+              <img src='https://bulma.io/images/bulma-type.png' alt='' style={{ height: '30px' }} />
             </Level.Item>
 
             <Level.Item hasTextCentered>
