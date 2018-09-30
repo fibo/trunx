@@ -56,7 +56,7 @@ storiesOf('Form', module)
 
               <Field label='Username'>
                 <Control>
-                  <Input isSuccess type='text' placeholder='Text input' value='trunx' />
+                  <Input isSuccess type='text' placeholder='Text input' defaultValue='trunx' />
 
                   <Help isSuccess>
                     This username is available
@@ -66,7 +66,7 @@ storiesOf('Form', module)
 
               <Field label='Email'>
                 <Control>
-                  <Input isDanger type='email' placeholder='Email input' value='hello@' />
+                  <Input isDanger type='email' placeholder='Email input' defaultValue='hello@' />
 
                   <Help isDanger>
                     This email is invalid
@@ -104,7 +104,7 @@ storiesOf('Form', module)
 
                   <Field label='Username'>
                     <Control>
-                      <Input isSuccess type='text' placeholder='Text input' value='trunx' />
+                      <Input isSuccess type='text' placeholder='Text input' defaultValue='trunx' />
 
                       <Help isSuccess>
                         This username is available
@@ -114,7 +114,7 @@ storiesOf('Form', module)
 
                   <Field label='Email'>
                     <Control>
-                      <Input isDanger type='email' placeholder='Email input' value='hello@'/>
+                      <Input isDanger type='email' placeholder='Email input' defaultValue='hello@' />
 
                       <Help isDanger>
                         This email is invalid
@@ -125,7 +125,7 @@ storiesOf('Form', module)
                   <Field>
                     <Control>
                       <Checkbox>
-                        I agree to the <a href="#">terms and conditions</a>
+                        I agree to the <a href='#'>terms and conditions</a>
                       </Checkbox>
                     </Control>
                   </Field>
@@ -287,6 +287,80 @@ storiesOf('Form', module)
               </Code>
             </Column>
           </Columns>
+
+          <hr />
+
+          <Title is4>
+            Sizes
+          </Title>
+
+          <Columns>
+            <Column isHalf>
+              <Field>
+                <Control>
+                  <Input isSmall type='text' placeholder='Small input' />
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Input type='text' placeholder='Normal input' />
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Input isMedium type='text' placeholder='Medium input' />
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Input isLarge type='text' placeholder='Large input' />
+                </Control>
+              </Field>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <Control>
+                      <Input isSmall type='text' placeholder='Small input' />
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Input type='text' placeholder='Normal input' />
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Input isMedium type='text' placeholder='Medium input' />
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Input isLarge type='text' placeholder='Large input' />
+                    </Control>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Title is4>
+            Ref
+          </Title>
+
+          <p>
+            The <code>inputRef</code> prop accepts a React ref, created with <code>React.createRef()</code>.
+          </p>
         </Content>
       </Container>
     </Section>
