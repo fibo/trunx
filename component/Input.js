@@ -40,7 +40,7 @@ var Input = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Input.prototype.render = function () {
-        var _a = this.props, isDanger = _a.isDanger, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, props = __rest(_a, ["isDanger", "isInfo", "isLarge", "isMedium", "isPrimary", "isSmall", "isSuccess", "isWarning"]);
+        var _a = this.props, inputRef = _a.inputRef, isDanger = _a.isDanger, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, type = _a.type, props = __rest(_a, ["inputRef", "isDanger", "isInfo", "isLarge", "isMedium", "isPrimary", "isSmall", "isSuccess", "isWarning", "type"]);
         var className = classnames("input", {
             "is-danger": isDanger,
             "is-info": isInfo,
@@ -49,9 +49,9 @@ var Input = (function (_super) {
             "is-primary": isPrimary,
             "is-small": isSmall,
             "is-success": isSuccess,
-            "is-warning": isWarning
+            "is-warning": isWarning,
         });
-        return (React.createElement("input", __assign({ className: className }, props)));
+        return (React.createElement("input", __assign({ className: className, ref: inputRef, type: type }, props)));
     };
     return Input;
 }(React.Component));
