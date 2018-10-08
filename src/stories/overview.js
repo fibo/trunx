@@ -20,6 +20,15 @@ storiesOf('Overview', module)
           </Title>
 
           <p>
+            <em>Trunx</em> is an open source collection of <em>React</em> components built on top of <em>Bulma</em> CSS framework.
+            GitHub repo here: <a href='https://github.com/fibo/trunx'>github.com/fibo/trunx</a>.
+          </p>
+
+          <Title is4>
+            Installation
+          </Title>
+
+          <p>
             Use <b>npm</b> to install Trunx package. React v16 is required as a peer dependency.
           </p>
 
@@ -157,7 +166,7 @@ storiesOf('Overview', module)
 
           <p>
             It is also possible to import components directly.
-            If you do not have <em>Tree shaking</em> setup in you build, the
+            If you do not have <em>Tree shaking</em> setup in your build, the
             following imports will create lighter bundles <b>out of the box</b>.
           </p>
 
