@@ -37,7 +37,13 @@ npm run storybook
 Build
 
 ```bash
-npm run babel
+npm run typescript
+```
+
+Deploy
+
+```bash
+npm version [patch|minor|major]
 ```
 
 Publish storybook
