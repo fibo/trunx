@@ -3,6 +3,10 @@
     "allowJs": false,
     "charset": "utf8",
     "jsx": "react",
+    "lib": [
+      "dom",
+      "es2015"
+    ],
     "module": "commonjs",
     "noImplicitUseStrict": true,
     "outDir": ".",
