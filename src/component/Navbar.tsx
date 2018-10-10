@@ -63,7 +63,7 @@ class NavbarBurger extends React.Component<INavbarBurgerProps> {
 class NavbarDivider extends React.Component {
   render() {
     return (
-      <hr className="navbar-dropdown" />
+      <hr className="navbar-divider" />
     )
   }
 
