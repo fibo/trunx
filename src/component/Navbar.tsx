@@ -60,6 +60,16 @@ class NavbarBurger extends React.Component<INavbarBurgerProps> {
   }
 }
 
+class NavbarDivider extends React.Component {
+  render() {
+    return (
+      <hr className="navbar-dropdown" />
+    )
+  }
+
+  shouldComponentUpdate() { return false }
+}
+
 class NavbarDropdown extends React.Component {
   render() {
     return (
@@ -146,6 +156,7 @@ class NavbarStart extends React.Component {
 export default class Navbar extends React.Component<INavbarProps> {
   static Brand = NavbarBrand
   static Burger = NavbarBurger
+  static Divider = NavbarDivider
   static Dropdown = NavbarDropdown
   static End = NavbarEnd
   static Item = NavbarItem
