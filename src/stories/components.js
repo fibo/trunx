@@ -5,6 +5,7 @@ import solidIcon from 'fa-svg-icon/solid'
 
 import Breadcrumb from '../component/Breadcrumb'
 import Button from '../component/Button'
+import Buttons from '../component/Buttons'
 import Card from '../component/Card'
 import Column from '../component/Column'
 import Columns from '../component/Columns'
@@ -658,6 +659,143 @@ storiesOf('Components', module)
 
           <hr />
 
+          <Title is4>
+            Basic Navbar
+          </Title>
+
+          <p>
+            To <b>get started quickly</b>, here is what a complete basic navbar looks like:
+          </p>
+
+          <Navbar>
+            <Navbar.Brand>
+              <Navbar.Item href='https://bulma.io'>
+                <img src='https://bulma.io/images/bulma-logo.png' width='112' height='28' />
+              </Navbar.Item>
+            </Navbar.Brand>
+
+            <Navbar.Burger />
+
+            <Navbar.Menu>
+              <Navbar.Start>
+                <Navbar.Item>
+                  Home
+                </Navbar.Item>
+
+                <Navbar.Item>
+                  Documentation
+                </Navbar.Item>
+
+                <Navbar.Item hasDropdown isHoverable>
+                  <Navbar.Link>
+                    More
+                  </Navbar.Link>
+
+                  <Navbar.Dropdown>
+                    <Navbar.Item>
+                      About
+                    </Navbar.Item>
+
+                    <Navbar.Item>
+                      Jobs
+                    </Navbar.Item>
+
+                    <Navbar.Item>
+                      Contact
+                    </Navbar.Item>
+
+                    <Navbar.Divider />
+
+                    <Navbar.Item>
+                      Report an issue
+                    </Navbar.Item>
+                  </Navbar.Dropdown>
+                </Navbar.Item>
+              </Navbar.Start>
+
+              <Navbar.End>
+                <Navbar.Item>
+                  <Buttons>
+                    <Button isPrimary>
+                      <strong>Sign up</strong>
+                    </Button>
+
+                    <Button isLight>
+                      Log in
+                    </Button>
+                  </Buttons>
+                </Navbar.Item>
+              </Navbar.End>
+            </Navbar.Menu>
+          </Navbar>
+
+          <Code language='jsx'>
+            {indent`
+              <Navbar>
+                <Navbar.Brand>
+                  <Navbar.Item href='https://bulma.io'>
+                    <img src='https://bulma.io/images/bulma-logo.png' width='112' height='28' />
+                  </Navbar.Item>
+                </Navbar.Brand>
+
+                <Navbar.Burger />
+
+                <Navbar.Menu>
+                  <Navbar.Start>
+                    <Navbar.Item>
+                      Home
+                    </Navbar.Item>
+
+                    <Navbar.Item>
+                      Documentation
+                    </Navbar.Item>
+
+                    <Navbar.Item hasDropdown isHoverable>
+                      <Navbar.Link>
+                        More
+                      </Navbar.Link>
+
+                      <Navbar.Dropdown>
+                        <Navbar.Item>
+                          About
+                        </Navbar.Item>
+
+                        <Navbar.Item>
+                          Jobs
+                        </Navbar.Item>
+
+                        <Navbar.Item>
+                          Contact
+                        </Navbar.Item>
+
+                        <Navbar.Divider />
+
+                        <Navbar.Item>
+                          Report an issue
+                        </Navbar.Item>
+                      </Navbar.Dropdown>
+                    </Navbar.Item>
+                  </Navbar.Start>
+
+                  <Navbar.End>
+                    <Navbar.Item>
+                      <Buttons>
+                        <Button isPrimary>
+                          <strong>Sign up</strong>
+                        </Button>
+
+                        <Button isLight>
+                          Log in
+                        </Button>
+                      </Buttons>
+                    </Navbar.Item>
+                  </Navbar.End>
+                </Navbar.Menu>
+              </Navbar>
+            `}
+          </Code>
+
+          <hr />
           <Title is4>
             Classic Navbar
           </Title>
