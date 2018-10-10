@@ -61,6 +61,17 @@ var NavbarBurger = (function (_super) {
     };
     return NavbarBurger;
 }(React.Component));
+var NavbarDivider = (function (_super) {
+    __extends(NavbarDivider, _super);
+    function NavbarDivider() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    NavbarDivider.prototype.render = function () {
+        return (React.createElement("hr", { className: "navbar-divider" }));
+    };
+    NavbarDivider.prototype.shouldComponentUpdate = function () { return false; };
+    return NavbarDivider;
+}(React.Component));
 var NavbarDropdown = (function (_super) {
     __extends(NavbarDropdown, _super);
     function NavbarDropdown() {
@@ -166,6 +177,7 @@ var Navbar = (function (_super) {
     };
     Navbar.Brand = NavbarBrand;
     Navbar.Burger = NavbarBurger;
+    Navbar.Divider = NavbarDivider;
     Navbar.Dropdown = NavbarDropdown;
     Navbar.End = NavbarEnd;
     Navbar.Item = NavbarItem;
