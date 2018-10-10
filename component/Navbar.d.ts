@@ -25,6 +25,10 @@ declare class NavbarBrand extends React.Component {
 declare class NavbarBurger extends React.Component<INavbarBurgerProps> {
     render(): JSX.Element;
 }
+declare class NavbarDivider extends React.Component {
+    render(): JSX.Element;
+    shouldComponentUpdate(): boolean;
+}
 declare class NavbarDropdown extends React.Component {
     render(): JSX.Element;
 }
@@ -46,6 +50,7 @@ declare class NavbarStart extends React.Component {
 export default class Navbar extends React.Component<INavbarProps> {
     static Brand: typeof NavbarBrand;
     static Burger: typeof NavbarBurger;
+    static Divider: typeof NavbarDivider;
     static Dropdown: typeof NavbarDropdown;
     static End: typeof NavbarEnd;
     static Item: typeof NavbarItem;
