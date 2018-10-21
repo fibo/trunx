@@ -21,6 +21,7 @@ interface IColumnProps {
     isNarrowFullhd?: boolean;
     isOneFifth?: boolean;
     isOneQuarter?: boolean;
+    isOneThird?: boolean;
     isThreeFifths?: boolean;
     isThreeQuarters?: boolean;
     isTwoFifths?: boolean;
