@@ -23,6 +23,7 @@ interface IColumnProps {
   isNarrowFullhd?: boolean
   isOneFifth?: boolean
   isOneQuarter?: boolean
+  isOneThird?: boolean
   isThreeFifths?: boolean
   isThreeQuarters?: boolean
   isTwoFifths?: boolean
@@ -54,6 +55,7 @@ export default class Column extends React.Component<IColumnProps> {
       isNarrowFullhd,
       isOneFifth,
       isOneQuarter,
+      isOneThird,
       isThreeFifths,
       isThreeQuarters,
       isTwoFifths,
@@ -85,6 +87,7 @@ export default class Column extends React.Component<IColumnProps> {
       "is-narrow-fullhd": isNarrowFullhd,
       "is-one-fifth": isOneFifth,
       "is-one-quarter": isOneQuarter,
+      "is-one-third": isOneThird,
       "is-three-fifths": isThreeFifths,
       "is-three-quarters": isThreeQuarters,
       "is-two-fifths": isTwoFifths,
