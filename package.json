@@ -52,7 +52,7 @@
     "awesome-typescript-loader": "^5.1.1",
     "babel-core": "^6.26.3",
     "bulma": "^0.7.1",
-    "dot-editorconfig": "^1.1.0",
+    "dot-editorconfig": "^1.1.1",
     "fa-svg-icon": "^0.3.0",
     "node-sass": "^4.9.3",
     "npm-run-all": "^4.1.2",
