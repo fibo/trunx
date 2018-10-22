@@ -38,7 +38,7 @@ class ClickToEditExample extends React.Component {
 
   onChange (event) {
     this.setState({
-      value: event.target.value.trim()
+      value: event.target.value
     })
   }
 
@@ -488,7 +488,7 @@ storiesOf('Form', module)
 
                 onChange (event) {
                   this.setState({
-                    value: event.target.value.trim()
+                    value: event.target.value
                   })
                 }
 
