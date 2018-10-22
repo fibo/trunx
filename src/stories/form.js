@@ -12,6 +12,7 @@ import Control from '../component/Control'
 import Field from '../component/Field'
 import Help from '../component/Help'
 import Input from '../component/Input'
+import Radio from '../component/Radio'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
 import Title from '../component/Title'
@@ -19,6 +20,66 @@ import Title from '../component/Title'
 import Code from './Code'
 import indent from './indent'
 import Meta from './Meta'
+
+class ClickToEditExample extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.inputRef = React.createRef()
+
+    this.state = {
+      editing: false,
+      value: 'Click to edit'
+    }
+
+    this.onChange = this.onChange.bind(this)
+    this.toggleEditing = this.toggleEditing.bind(this)
+  }
+
+  onChange (event) {
+    this.setState({
+      value: event.target.value.trim()
+    })
+  }
+
+  render () {
+    const {
+      editing,
+      value
+    } = this.state
+
+    return editing ? (
+      <Input
+        inputRef={this.inputRef}
+        isPrimary
+        onBlur={this.toggleEditing}
+        onChange={this.onChange}
+        value={value}
+      />
+    ) : (
+      <Button
+        onClick={this.toggleEditing}
+      >
+        {value === '' ? '(empty 😔)' : value}
+      </Button>
+    )
+  }
+
+  toggleEditing () {
+    const {
+      editing
+    } = this.state
+
+    this.setState({
+      editing: !editing
+    }, () => {
+      // If switching from read to edit mode, give focus to input.
+      if (!editing) {
+        this.inputRef.current.focus()
+      }
+    })
+  }
+}
 
 storiesOf('Form', module)
   .add('General', () => (
@@ -39,7 +100,39 @@ storiesOf('Form', module)
             The following form controls <b>components</b> are supported:
           </p>
 
-          <ul />
+          <ul>
+            <li>
+              <code>Input</code>
+            </li>
+
+            <li>
+              <code>Label</code>
+            </li>
+
+            <li>
+              <code>Textarea</code>
+            </li>
+
+            <li>
+              <code>Select</code>
+            </li>
+
+            <li>
+              <code>Checkbox</code>
+            </li>
+
+            <li>
+              <code>Radio</code>
+            </li>
+
+            <li>
+              <code>Button</code>
+            </li>
+
+            <li>
+              <code>Help</code>
+            </li>
+          </ul>
 
           <p>
             Each of them should be wrapped in a <code>Control</code> component.
@@ -79,6 +172,18 @@ storiesOf('Form', module)
                   <Checkbox>
                     I agree to the <a href='#'>terms and conditions</a>
                   </Checkbox>
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Radio name='question'>
+                    Yes
+                  </Radio>
+
+                  <Radio name='question'>
+                    No
+                  </Radio>
                 </Control>
               </Field>
 
@@ -361,6 +466,72 @@ storiesOf('Form', module)
           <p>
             The <code>inputRef</code> prop accepts a React ref, created with <code>React.createRef()</code>.
           </p>
+
+          <ClickToEditExample />
+
+          <Code language='jsx'>
+            {indent`
+              class ClickToEditExample extends React.Component {
+                constructor (props) {
+                  super(props)
+
+                  this.inputRef = React.createRef()
+
+                  this.state = {
+                    editing: false,
+                    value: 'Click to edit'
+                  }
+
+                  this.onChange = this.onChange.bind(this)
+                  this.toggleEditing = this.toggleEditing.bind(this)
+                }
+
+                onChange (event) {
+                  this.setState({
+                    value: event.target.value.trim()
+                  })
+                }
+
+                render () {
+                  const {
+                    editing,
+                    value
+                  } = this.state
+
+                  return editing ? (
+                    <Input
+                      inputRef={this.inputRef}
+                      isPrimary
+                      onBlur={this.toggleEditing}
+                      onChange={this.onChange}
+                      value={value}
+                    />
+                  ) : (
+                    <Button
+                      onClick={this.toggleEditing}
+                    >
+                      {value === '' ? '(empty 😔)' : value}
+                    </Button>
+                  )
+                }
+
+                toggleEditing () {
+                  const {
+                    editing
+                  } = this.state
+
+                  this.setState({
+                    editing: !editing
+                  }, () => {
+                    // If switching from read to edit mode, give focus to input.
+                    if (!editing) {
+                      this.inputRef.current.focus()
+                    }
+                  })
+                }
+              }
+            `}
+          </Code>
         </Content>
       </Container>
     </Section>
@@ -399,13 +570,27 @@ storiesOf('Form', module)
             </Column>
           </Columns>
 
-          <Checkbox>
-            I agree to the <a href='#'>terms and conditions</a>
-          </Checkbox>
-
           <p>
             You can add <b>links</b> to your checkbox, or even <b>disable</b> it.
           </p>
+
+          <Columns>
+            <Column isHalf>
+              <Checkbox>
+                I agree to the <a href='#'>terms and conditions</a>
+              </Checkbox>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Checkbox>
+                    I agree to the <a href='#'>terms and conditions</a>
+                  </Checkbox>
+                `}
+              </Code>
+            </Column>
+          </Columns>
 
           <Columns>
             <Column isHalf>
