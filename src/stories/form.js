@@ -14,7 +14,9 @@ import Help from '../component/Help'
 import Input from '../component/Input'
 import Radio from '../component/Radio'
 import Section from '../component/Section'
+import Select from '../component/Select'
 import Subtitle from '../component/Subtitle'
+import Textarea from '../component/Textarea'
 import Title from '../component/Title'
 
 import Code from './Code'
@@ -536,6 +538,594 @@ storiesOf('Form', module)
       </Container>
     </Section>
   ))
+  .add('Textarea', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Textarea
+          </Title>
+
+          <Subtitle>
+            The multiline <b>textarea</b> and its variations
+          </Subtitle>
+
+          <Meta colors sizes />
+
+          <hr />
+
+          <Columns>
+            <Column isHalf>
+              <Textarea placeholder='e.g. Hello world' />
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Textarea placeholder='e.g. Hello world' />
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <p>
+            You can set the height of the textarea using the <code>rows</code> prop which sets the homonym HTML attribute.
+          </p>
+
+          <Columns>
+            <Column isHalf>
+              <Textarea placeholder='10 lines of textarea' rows='10' />
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Textarea placeholder='10 lines of textarea' rows='10' />
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Title is4>
+            Colors
+          </Title>
+
+          <Columns>
+            <Column isHalf>
+              <Field>
+                <Control>
+                  <Textarea isPrimary placeholder='Primary textarea' />
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Textarea isInfo placeholder='Info textarea' />
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Textarea isSuccess placeholder='Success textarea' />
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Textarea isWarning placeholder='Warning textarea' />
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Textarea isDanger placeholder='Danger textarea' />
+                </Control>
+              </Field>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <Control>
+                      <Textarea isPrimary placeholder='Primary textarea' />
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Textarea isInfo placeholder='Info textarea' />
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Textarea isSuccess placeholder='Success textarea' />
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Textarea isWarning placeholder='Warning textarea' />
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Textarea isDanger placeholder='Danger textarea' />
+                    </Control>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Select', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Select
+          </Title>
+
+          <Subtitle>
+            The browser built-in <b>select dropdown</b>, styled accordingly
+          </Subtitle>
+
+          <Meta colors sizes />
+
+          <hr />
+
+          <p>
+            The following modifiers are supported:
+          </p>
+
+          <ul>
+            <li>
+              color
+            </li>
+
+            <li>
+              size
+            </li>
+
+            <li>
+              state
+            </li>
+          </ul>
+
+          <Columns>
+            <Column isHalf>
+              <Select>
+                <option>Select dropdown</option>
+                <option>With options</option>
+              </Select>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Select>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Title is4>
+            Multiple select
+          </Title>
+
+          <Columns>
+            <Column isHalf>
+              <p>
+                You can style a <b>multiple select</b> dropdown, by using the <code>isMultiple</code> prop.
+              </p>
+
+              <Select isMultiple size='8'>
+                <option value='Argentina'>Argentina</option>
+                <option value='Bolivia'>Bolivia</option>
+                <option value='Brazil'>Brazil</option>
+                <option value='Chile'>Chile</option>
+                <option value='Colombia'>Colombia</option>
+                <option value='Ecuador'>Ecuador</option>
+                <option value='Guyana'>Guyana</option>
+                <option value='Paraguay'>Paraguay</option>
+                <option value='Peru'>Peru</option>
+                <option value='Suriname'>Suriname</option>
+                <option value='Uruguay'>Uruguay</option>
+                <option value='Venezuela'>Venezuela</option>
+              </Select>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Select isMultiple size="8">
+                    <option value="Argentina">Argentina</option>
+                    <option value="Bolivia">Bolivia</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Chile">Chile</option>
+                    <option value="Colombia">Colombia</option>
+                    <option value="Ecuador">Ecuador</option>
+                    <option value="Guyana">Guyana</option>
+                    <option value="Paraguay">Paraguay</option>
+                    <option value="Peru">Peru</option>
+                    <option value="Suriname">Suriname</option>
+                    <option value="Uruguay">Uruguay</option>
+                    <option value="Venezuela">Venezuela</option>
+                  </Select>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Title is4>
+            Colors
+          </Title>
+
+          <Columns>
+            <Column isHalf>
+              <Field>
+                <Control>
+                  <Select isPrimary>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Select isInfo>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Select isSuccess>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Select isWarning>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Select isDanger>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <Control>
+                      <Select isPrimary>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Select isInfo>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Select isSuccess>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Select isWarning>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Select isDanger>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Title is4>
+            Styles
+          </Title>
+
+          <Columns>
+            <Column isHalf>
+              <Field>
+                <Control>
+                  <Select isRounded>
+                    <option>Rounded dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <Control>
+                      <Select isRounded>
+                        <option>Rounded dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Title is4>
+            Sizes
+          </Title>
+
+          <Columns>
+            <Column isHalf>
+              <Field>
+                <Control>
+                  <Select isSmall>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Select>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Select isMedium>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+
+              <Field>
+                <Control>
+                  <Select isLarge>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <Control>
+                      <Select isSmall>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Select>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Select isMedium>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Control>
+                      <Select isLarge>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Title is4>
+            States
+          </Title>
+
+          <Subtitle>Normal</Subtitle>
+
+          <Columns>
+            <Column isHalf>
+              <Field>
+                <Control>
+                  <Select>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <Control>
+                      <Select>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Subtitle>Hover</Subtitle>
+
+          <Columns>
+            <Column isHalf>
+              <Field>
+                <Control>
+                  <Select isHovered>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <Control>
+                      <Select isHovered>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Subtitle>Focus</Subtitle>
+
+          <Columns>
+            <Column isHalf>
+              <Field>
+                <Control>
+                  <Select isFocused>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <Control>
+                      <Select isFocused>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Subtitle>Loading</Subtitle>
+
+          <Columns>
+            <Column isHalf>
+              <Field>
+                <Control>
+                  <Select isLoading>
+                    <option>Select dropdown</option>
+                    <option>With options</option>
+                  </Select>
+                </Control>
+              </Field>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <Control>
+                      <Select isLoading>
+                        <option>Select dropdown</option>
+                        <option>With options</option>
+                      </Select>
+                    </Control>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+        </Content>
+      </Container>
+    </Section>
+  ))
   .add('Checkbox', () => (
     <Section>
       <Container>
@@ -609,3 +1199,69 @@ storiesOf('Form', module)
       </Container>
     </Section>
   ))
+  /*
+  .add('Radio', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Radio
+          </Title>
+
+          <Subtitle>
+            The mutually exclusive <b>radio buttons</b>in their native format
+          </Subtitle>
+
+          <Meta />
+
+          <hr />
+
+          <Columns>
+            <Column isHalf>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  code
+                `}
+              </Code>
+            </Column>
+          </Columns>
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('File upload', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            File
+          </Title>
+
+          <Subtitle>
+            A custom <b>file upload</b> input, without JavaScript
+          </Subtitle>
+
+          <Meta colors sizes />
+
+          <hr />
+
+          <Columns>
+            <Column isHalf>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  code
+                `}
+              </Code>
+            </Column>
+          </Columns>
+        </Content>
+      </Container>
+    </Section>
+  ))
+  */
