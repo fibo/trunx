@@ -1,19 +1,20 @@
 import * as React from "react";
-interface ITextareaProps {
+interface ISelectProps {
     isDanger?: boolean;
     isFocused?: boolean;
     isHovered?: boolean;
     isInfo?: boolean;
     isLarge?: boolean;
+    isLoading?: boolean;
     isMedium?: boolean;
+    isMultiple?: boolean;
     isPrimary?: boolean;
     isSmall?: boolean;
     isSuccess?: boolean;
     isWarning?: boolean;
-    placeholder?: string;
-    rows?: number;
+    size?: number;
 }
-export default class Textarea extends React.Component<ITextareaProps> {
+export default class Select extends React.Component<ISelectProps> {
     render(): JSX.Element;
 }
 export {};
