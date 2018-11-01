@@ -51,20 +51,20 @@
     "@types/react-dom": "^16.0.8",
     "awesome-typescript-loader": "^5.1.1",
     "babel-core": "^6.26.3",
-    "bulma": "^0.7.1",
+    "bulma": "^0.7.2",
     "dot-editorconfig": "^1.1.1",
     "fa-svg-icon": "^0.3.0",
     "node-sass": "^4.9.3",
     "npm-run-all": "^4.1.2",
     "pre-commit": "^1.2.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-syntax-highlighter": "^8.0.1",
     "rimraf": "^2.6.2",
     "standard": "^12.0.1",
     "tslint": "^5.11.0",
     "tslint-react": "^3.6.0",
-    "typescript": "^3.1.1"
+    "typescript": "^3.1.6"
   },
   "dependencies": {
     "classnames": "^2.2.6"
