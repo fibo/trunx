@@ -1,22 +1,23 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface ITextareaProps {
+interface ISelectProps {
   isDanger?: boolean
   isFocused?: boolean
   isHovered?: boolean
   isInfo?: boolean
   isLarge?: boolean
+  isLoading?: boolean
   isMedium?: boolean
+  isMultiple?: boolean
   isPrimary?: boolean
   isSmall?: boolean
   isSuccess?: boolean
   isWarning?: boolean
-  placeholder?: string
-  rows?: number
+  size?: number
 }
 
-export default class Textarea extends React.Component<ITextareaProps> {
+export default class Select extends React.Component<ISelectProps> {
   render() {
     const {
       isDanger,
@@ -24,22 +25,25 @@ export default class Textarea extends React.Component<ITextareaProps> {
       isHovered,
       isInfo,
       isLarge,
+      isLoading,
       isMedium,
+      isMultiple,
       isPrimary,
       isSmall,
       isSuccess,
       isWarning,
-      placeholder,
-      rows,
+      size,
     } = this.props
 
-    const className = classnames("textarea", {
+    const className = classnames("select", {
       "is-danger": isDanger,
       "is-focused": isFocused,
       "is-hovered": isHovered,
       "is-info": isInfo,
       "is-large": isLarge,
+      "is-loading": isLoading,
       "is-medium": isMedium,
+      "is-multiple": isMultiple,
       "is-primary": isPrimary,
       "is-small": isSmall,
       "is-success": isSuccess,
@@ -47,11 +51,14 @@ export default class Textarea extends React.Component<ITextareaProps> {
     })
 
     return (
-      <textarea
-        className={className}
-        placeholder={placeholder}
-        rows={rows}
-      />
+      <div className={className}>
+        <select
+          multiple={isMultiple}
+          size={size}
+        >
+          {this.props.children}
+        </select>
+      </div>
     )
   }
 }

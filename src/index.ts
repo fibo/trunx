@@ -1,54 +1,45 @@
-// Columns
-
+import Box from "./component/Box"
+import Breadcrumb from "./component/Breadcrumb"
+import Button from "./component/Button"
+import Buttons from "./component/Buttons"
+import Card from "./component/Card"
+import Checkbox from "./component/Checkbox"
+import ClassicNavbar from "./component/ClassicNavbar"
 import Column from "./component/Column"
 import Columns from "./component/Columns"
-
-// Components
-
-import Breadcrumb from "./component/Breadcrumb"
-import Card from "./component/Card"
-import ClassicNavbar from "./component/ClassicNavbar"
+import Container from "./component/Container"
+import Content from "./component/Content"
+import Control from "./component/Control"
+import Delete from "./component/Delete"
+import Field from "./component/Field"
+import File from "./component/File"
+import Footer from "./component/Footer"
+import Heading from "./component/Heading"
+import Help from "./component/Help"
+import Hero from "./component/Hero"
+import Icon from "./component/Icon"
+import Image from "./component/Image"
+import Input from "./component/Input"
+import Level from "./component/Level"
+import Media from "./component/Media"
 import Menu from "./component/Menu"
 import Message from "./component/Message"
 import Modal from "./component/Modal"
 import Navbar from "./component/Navbar"
-import Pagination from "./component/Pagination"
-import Tabs from "./component/Tabs"
-
-// Elements
-
-import Box from "./component/Box"
-import Button from "./component/Button"
-import Checkbox from "./component/Checkbox"
-import Control from "./component/Control"
-import Delete from "./component/Delete"
-import Field from "./component/Field"
-import Heading from "./component/Heading"
-import Help from "./component/Help"
-import Icon from "./component/Icon"
-import Image from "./component/Image"
-import Input from "./component/Input"
 import Notification from "./component/Notification"
+import Pagination from "./component/Pagination"
 import Progress from "./component/Progress"
 import Radio from "./component/Radio"
+import Section from "./component/Section"
+import Select from "./component/Select"
 import Subtitle from "./component/Subtitle"
 import Table from "./component/Table"
+import Tabs from "./component/Tabs"
 import Tag from "./component/Tag"
 import Tags from "./component/Tags"
 import Textarea from "./component/Textarea"
-import Title from "./component/Title"
-
-// Layout
-
-import Buttons from "./component/Buttons"
-import Container from "./component/Container"
-import Content from "./component/Content"
-import Footer from "./component/Footer"
-import Hero from "./component/Hero"
-import Level from "./component/Level"
-import Media from "./component/Media"
-import Section from "./component/Section"
 import Tile from "./component/Tile"
+import Title from "./component/Title"
 
 export {
   Box,
@@ -64,6 +55,7 @@ export {
   Content,
   Control,
   Delete,
+  File,
   Field,
   Footer,
   Heading,
@@ -82,6 +74,7 @@ export {
   Pagination,
   Progress,
   Section,
+  Select,
   Subtitle,
   Table,
   Tag,
