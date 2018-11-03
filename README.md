@@ -23,8 +23,7 @@ So, summing all, I am creating this component library. I hope you enjoy it!
 
 > Trunks (Japanese: トランクス Hepburn: Torankusu) is a fictional character in the Dragon Ball manga series created by Akira Toriyama.
 
-I remember when I was reading the comics and Trunks arrived from the future. He was really powerful and could defeat Freezer in few seconds. One of the
-best twists of the entire series, in my opinion.
+I remember when I was reading the comics and Trunks arrived from the future. He was really powerful and could defeat Frieza in few seconds. One of the best twists of the entire series, in my opinion.
 
 ## Development
 
