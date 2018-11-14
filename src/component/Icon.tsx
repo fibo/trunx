@@ -7,7 +7,9 @@ interface IIconProps {
   hasTextSuccess?: boolean
   hasTextWarning?: boolean
   isLarge?: boolean
+  isLeft?: boolean
   isMedium?: boolean
+  isRight?: boolean
   isSmall?: boolean
 }
 
@@ -58,7 +60,9 @@ export default class Icon extends React.Component<IIconProps> {
       hasTextSuccess,
       hasTextWarning,
       isLarge,
+      isLeft,
       isMedium,
+      isRight,
       isSmall,
     } = this.props
 
@@ -68,7 +72,9 @@ export default class Icon extends React.Component<IIconProps> {
       "has-text-success": hasTextSuccess,
       "has-text-warning": hasTextWarning,
       "is-large": isLarge,
+      "is-left": isLeft,
       "is-medium": isMedium,
+      "is-right": isRight,
       "is-small": isSmall,
     })
 

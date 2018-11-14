@@ -5,7 +5,9 @@ interface IIconProps {
     hasTextSuccess?: boolean;
     hasTextWarning?: boolean;
     isLarge?: boolean;
+    isLeft?: boolean;
     isMedium?: boolean;
+    isRight?: boolean;
     isSmall?: boolean;
 }
 interface IIconSvgProps {
