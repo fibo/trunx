@@ -4,9 +4,23 @@ interface IFieldProps {
     hasAddonsCentered?: boolean;
     isGrouped?: boolean;
     isGroupedMultiline?: boolean;
-    label?: string;
+    isHorizontal?: boolean;
+}
+interface IFieldLabelProps {
+    isLarge?: boolean;
+    isMedium?: boolean;
+    isNormal?: boolean;
+    isSmall?: boolean;
+}
+declare class FieldBody extends React.Component {
+    render(): JSX.Element;
+}
+declare class FieldLabel extends React.Component<IFieldLabelProps> {
+    render(): JSX.Element;
 }
 export default class Field extends React.Component<IFieldProps> {
+    static Body: typeof FieldBody;
+    static Label: typeof FieldLabel;
     render(): JSX.Element;
 }
 export {};

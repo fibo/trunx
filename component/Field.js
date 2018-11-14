@@ -14,23 +14,51 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var FieldBody = (function (_super) {
+    __extends(FieldBody, _super);
+    function FieldBody() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    FieldBody.prototype.render = function () {
+        return (React.createElement("div", { className: "field-body" }, this.props.children));
+    };
+    return FieldBody;
+}(React.Component));
+var FieldLabel = (function (_super) {
+    __extends(FieldLabel, _super);
+    function FieldLabel() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    FieldLabel.prototype.render = function () {
+        var _a = this.props, isLarge = _a.isLarge, isMedium = _a.isMedium, isNormal = _a.isNormal, isSmall = _a.isSmall;
+        var className = classnames("field-label", {
+            "is-large": isLarge,
+            "is-medium": isMedium,
+            "is-normal": isNormal,
+            "is-small": isSmall,
+        });
+        return (React.createElement("div", { className: className }, this.props.children));
+    };
+    return FieldLabel;
+}(React.Component));
 var Field = (function (_super) {
     __extends(Field, _super);
     function Field() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Field.prototype.render = function () {
-        var _a = this.props, hasAddons = _a.hasAddons, hasAddonsCentered = _a.hasAddonsCentered, isGrouped = _a.isGrouped, isGroupedMultiline = _a.isGroupedMultiline, label = _a.label;
+        var _a = this.props, hasAddons = _a.hasAddons, hasAddonsCentered = _a.hasAddonsCentered, isGrouped = _a.isGrouped, isGroupedMultiline = _a.isGroupedMultiline, isHorizontal = _a.isHorizontal;
         var className = classnames("field", {
             "has-addons": hasAddons,
             "has-addons-centered": hasAddonsCentered,
             "is-grouped": isGrouped,
             "is-grouped-multiline": isGroupedMultiline,
+            "is-horizontal": isHorizontal,
         });
-        return (React.createElement("div", { className: className },
-            label && React.createElement("label", { className: "label" }, label),
-            this.props.children));
+        return (React.createElement("div", { className: className }, this.props.children));
     };
+    Field.Body = FieldBody;
+    Field.Label = FieldLabel;
     return Field;
 }(React.Component));
 exports.default = Field;

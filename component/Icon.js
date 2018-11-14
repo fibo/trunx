@@ -35,14 +35,16 @@ var Icon = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Icon.prototype.render = function () {
-        var _a = this.props, hasTextDanger = _a.hasTextDanger, hasTextInfo = _a.hasTextInfo, hasTextSuccess = _a.hasTextSuccess, hasTextWarning = _a.hasTextWarning, isLarge = _a.isLarge, isMedium = _a.isMedium, isSmall = _a.isSmall;
+        var _a = this.props, hasTextDanger = _a.hasTextDanger, hasTextInfo = _a.hasTextInfo, hasTextSuccess = _a.hasTextSuccess, hasTextWarning = _a.hasTextWarning, isLarge = _a.isLarge, isLeft = _a.isLeft, isMedium = _a.isMedium, isRight = _a.isRight, isSmall = _a.isSmall;
         var className = classnames("icon", {
             "has-text-danger": hasTextDanger,
             "has-text-info": hasTextInfo,
             "has-text-success": hasTextSuccess,
             "has-text-warning": hasTextWarning,
             "is-large": isLarge,
+            "is-left": isLeft,
             "is-medium": isMedium,
+            "is-right": isRight,
             "is-small": isSmall,
         });
         return (React.createElement("span", { className: className }, this.props.children));
