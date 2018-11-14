@@ -20,11 +20,15 @@ var Control = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Control.prototype.render = function () {
-        var _a = this.props, hasIconsLeft = _a.hasIconsLeft, hasIconsRight = _a.hasIconsRight, isExpanded = _a.isExpanded;
+        var _a = this.props, hasIconsLeft = _a.hasIconsLeft, hasIconsRight = _a.hasIconsRight, isExpanded = _a.isExpanded, isLarge = _a.isLarge, isLoading = _a.isLoading, isMedium = _a.isMedium, isSmall = _a.isSmall;
         var className = classnames("control", {
             "has-icons-left": hasIconsLeft,
             "has-icons-right": hasIconsRight,
-            "is-expanded": isExpanded
+            "is-expanded": isExpanded,
+            "is-large": isLarge,
+            "is-loading": isLoading,
+            "is-medium": isMedium,
+            "is-small": isSmall,
         });
         return (React.createElement("div", { className: className }, this.props.children));
     };

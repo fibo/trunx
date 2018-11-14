@@ -40,18 +40,22 @@ var Input = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Input.prototype.render = function () {
-        var _a = this.props, inputRef = _a.inputRef, isDanger = _a.isDanger, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, type = _a.type, props = __rest(_a, ["inputRef", "isDanger", "isInfo", "isLarge", "isMedium", "isPrimary", "isSmall", "isSuccess", "isWarning", "type"]);
+        var _a = this.props, disabled = _a.disabled, inputRef = _a.inputRef, isDanger = _a.isDanger, isFocused = _a.isFocused, isHovered = _a.isHovered, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isStatic = _a.isStatic, isSuccess = _a.isSuccess, isWarning = _a.isWarning, readOnly = _a.readOnly, type = _a.type, props = __rest(_a, ["disabled", "inputRef", "isDanger", "isFocused", "isHovered", "isInfo", "isLarge", "isMedium", "isPrimary", "isRounded", "isSmall", "isStatic", "isSuccess", "isWarning", "readOnly", "type"]);
         var className = classnames("input", {
             "is-danger": isDanger,
+            "is-focused": isFocused,
+            "is-hovered": isHovered,
             "is-info": isInfo,
             "is-large": isLarge,
             "is-medium": isMedium,
             "is-primary": isPrimary,
+            "is-rounded": isRounded,
             "is-small": isSmall,
+            "is-static": isStatic,
             "is-success": isSuccess,
             "is-warning": isWarning,
         });
-        return (React.createElement("input", __assign({ className: className, ref: inputRef, type: type }, props)));
+        return (React.createElement("input", __assign({ className: className, disabled: disabled, readOnly: readOnly, ref: inputRef, type: type }, props)));
     };
     return Input;
 }(React.Component));
