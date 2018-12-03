@@ -84,6 +84,70 @@ class ModalCardExample extends Component {
   }
 }
 
+const NavbarExample = (props) => (
+  <Navbar {...props}>
+    <Navbar.Brand>
+      <Navbar.Item href='https://bulma.io'>
+        <img src='https://bulma.io/images/bulma-logo.png' width='112' height='28' />
+      </Navbar.Item>
+    </Navbar.Brand>
+
+    <Navbar.Burger />
+
+    <Navbar.Menu>
+      <Navbar.Start>
+        <Navbar.Item>
+          Home
+        </Navbar.Item>
+
+        <Navbar.Item>
+          Documentation
+        </Navbar.Item>
+
+        <Navbar.Item hasDropdown isHoverable>
+          <Navbar.Link>
+            More
+          </Navbar.Link>
+
+          <Navbar.Dropdown>
+            <Navbar.Item>
+              About
+            </Navbar.Item>
+
+            <Navbar.Item>
+              Jobs
+            </Navbar.Item>
+
+            <Navbar.Item>
+              Contact
+            </Navbar.Item>
+
+            <Navbar.Divider />
+
+            <Navbar.Item>
+              Report an issue
+            </Navbar.Item>
+          </Navbar.Dropdown>
+        </Navbar.Item>
+      </Navbar.Start>
+
+      <Navbar.End>
+        <Navbar.Item>
+          <Buttons>
+            <Button isPrimary>
+              Tweet
+            </Button>
+
+            <Button isLight>
+              Download
+            </Button>
+          </Buttons>
+        </Navbar.Item>
+      </Navbar.End>
+    </Navbar.Menu>
+  </Navbar>
+)
+
 storiesOf('Components', module)
   .add('Breadcrumb', () => (
     <Section>
@@ -854,47 +918,6 @@ storiesOf('Components', module)
           </Code>
 
           <hr />
-          <Title is4>
-            Classic Navbar
-          </Title>
-
-          <p>
-            Probably you need the <b>classic navbar</b> on top, with a classic hamburger icon. You can use a <code>ClassicNavbar</code> component.
-          </p>
-
-          <ClassicNavbar
-            brand={() => (
-              <Navbar.Item
-                href='https://g14n.info/trunx'
-              >Trunx</Navbar.Item>
-            )}
-          >
-            <Navbar.Start />
-            <Navbar.End>
-              <Navbar.Item>Foo</Navbar.Item>
-              <Navbar.Item>Bar</Navbar.Item>
-            </Navbar.End>
-          </ClassicNavbar>
-
-          <Code language='jsx'>
-            {indent`
-              <ClassicNavbar
-                brand={() => (
-                  <Navbar.Item
-                    href='https://g14n.info/trunx'
-                  >Trunx</Navbar.Item>
-                )}
-              >
-                <Navbar.Start />
-                <Navbar.End>
-                  <Navbar.Item>Foo</Navbar.Item>
-                  <Navbar.Item>Bar</Navbar.Item>
-                </Navbar.End>
-              </ClassicNavbar>
-            `}
-          </Code>
-
-          <hr />
 
           <Title is4>
             Navbar brand
@@ -935,6 +958,116 @@ storiesOf('Components', module)
               </Navbar>
             `}
           </Code>
+
+          <hr />
+
+          <Title is4>
+            Colors
+          </Title>
+
+          <p>
+            You can change the background color of the <code>Navbar</code> by using one of the <b>9 color modifiers</b>:
+          </p>
+
+          <ul>
+            <li>
+              <code>isPrimary</code>
+            </li>
+
+          </ul>
+
+          <Code language='jsx'>
+            {indent`
+              <Navbar isPrimary>
+                {/* navbar brand, navbar menu... */}
+              </Navbar>
+            `}
+          </Code>
+
+          <p>
+            <NavbarExample isPrimary />
+          </p>
+
+          <p>
+            <NavbarExample isLink />
+          </p>
+
+          <p>
+            <NavbarExample isInfo />
+          </p>
+
+          <p>
+            <NavbarExample isSuccess />
+          </p>
+
+          <p>
+            <NavbarExample isWarning />
+          </p>
+
+          <p>
+            <NavbarExample isDanger />
+          </p>
+
+          <p>
+            <NavbarExample isBlack />
+          </p>
+
+          <p>
+            <NavbarExample isDark />
+          </p>
+
+          <p>
+            <NavbarExample isLight />
+          </p>
+
+          <p>
+            <NavbarExample isWhite />
+          </p>
+
+          <hr />
+
+          <Title is4>
+            Classic Navbar
+          </Title>
+
+          <p>
+            Probably you need a classic <em>navbar</em> on top, with a classic <em>hamburger icon</em>. You can use a <code>ClassicNavbar</code> component.
+          </p>
+
+          <ClassicNavbar
+            brand={() => (
+              <Navbar.Item
+                href='https://g14n.info/trunx'
+              >Trunx</Navbar.Item>
+            )}
+          >
+            <Navbar.Start />
+            <Navbar.End>
+              <Navbar.Item>Foo</Navbar.Item>
+              <Navbar.Item>Bar</Navbar.Item>
+            </Navbar.End>
+          </ClassicNavbar>
+
+          <Code language='jsx'>
+            {indent`
+              <ClassicNavbar
+                brand={() => (
+                  <Navbar.Item
+                    href='https://g14n.info/trunx'
+                  >Trunx</Navbar.Item>
+                )}
+              >
+                <Navbar.Start />
+                <Navbar.End>
+                  <Navbar.Item>Foo</Navbar.Item>
+                  <Navbar.Item>Bar</Navbar.Item>
+                </Navbar.End>
+              </ClassicNavbar>
+            `}
+          </Code>
+
+          <hr />
+
         </Content>
       </Container>
     </Section>
