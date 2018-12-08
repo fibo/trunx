@@ -1199,6 +1199,62 @@ storiesOf('Components', module)
               </Tabs>
             `}
           </Code>
+
+          <Title is4>
+            Allignment
+          </Title>
+
+          <p>
+          To align the tabs list, use the <code>isCentered</code> or <code>isRight</code> props on the <code>Tabs</code> component.
+          </p>
+
+          <Tabs isCentered>
+            <Tabs.Item isActive>Pictures</Tabs.Item>
+
+            <Tabs.Item>Music</Tabs.Item>
+
+            <Tabs.Item>Videos</Tabs.Item>
+
+            <Tabs.Item>Documents</Tabs.Item>
+          </Tabs>
+
+          <Code language='jsx'>
+            {indent`
+              <Tabs isCentered>
+                <Tabs.Item isActive>Pictures</Tabs.Item>
+
+                <Tabs.Item>Music</Tabs.Item>
+
+                <Tabs.Item>Videos</Tabs.Item>
+
+                <Tabs.Item>Documents</Tabs.Item>
+              </Tabs>
+            `}
+          </Code>
+
+          <Tabs isRight>
+            <Tabs.Item isActive>Pictures</Tabs.Item>
+
+            <Tabs.Item>Music</Tabs.Item>
+
+            <Tabs.Item>Videos</Tabs.Item>
+
+            <Tabs.Item>Documents</Tabs.Item>
+          </Tabs>
+
+          <Code language='jsx'>
+            {indent`
+              <Tabs isRight>
+                <Tabs.Item isActive>Pictures</Tabs.Item>
+
+                <Tabs.Item>Music</Tabs.Item>
+
+                <Tabs.Item>Videos</Tabs.Item>
+
+                <Tabs.Item>Documents</Tabs.Item>
+              </Tabs>
+            `}
+          </Code>
         </Content>
       </Container>
     </Section>
