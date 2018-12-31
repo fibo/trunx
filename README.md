@@ -6,9 +6,7 @@
 
 ## Status
 
-This package is at an early stage development.
-Almost half of Bulma features are wrapped and documented,
-few helpers and custom components are already implemented.
+Almost all Bulma features are available and documented, few helpers and custom components are already implemented.
 
 ## Documentation
 
@@ -58,6 +56,7 @@ npm run deploy-storybook
 ## Credits
 
 Tons of kudos to [Bulma] author!
+
 Trunks png comes from [kisspng](https://www.kisspng.com/png-trunks-gohan-goku-goten-bulma-1996965/).
 
 [Bulma]: https://bulma.io "Bulma CSS framework"
