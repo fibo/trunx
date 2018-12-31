@@ -1,6 +1,6 @@
 import * as React from "react";
-import { ISizeProps } from "./modifiers";
-interface IProgressProps extends ISizeProps {
+import { IMainColorsProps, ISizeProps } from "./modifiers";
+interface IProgressProps extends IMainColorsProps, ISizeProps {
     max: number;
     value: number;
 }

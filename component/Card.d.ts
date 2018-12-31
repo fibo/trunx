@@ -2,15 +2,15 @@ import * as React from "react";
 import { ITextColorHelpersProps } from "./modifiers";
 interface ICardContentProps extends ITextColorHelpersProps {
 }
-interface ICardFooterItemProps extends ITextColorHelpersProps {
+interface ICardFooterItemProps {
     href?: string;
 }
 interface ICardFooterProps extends ITextColorHelpersProps {
 }
-interface ICardHeaderIconProps extends ITextColorHelpersProps {
+interface ICardHeaderIconProps {
     href?: string;
 }
-interface ICardHeaderTitleProps extends ITextColorHelpersProps {
+interface ICardHeaderTitleProps {
     isCentered?: boolean;
 }
 declare class CardContent extends React.Component<ICardContentProps> {

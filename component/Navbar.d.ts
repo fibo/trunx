@@ -1,5 +1,6 @@
 import * as React from "react";
-interface INavbarProps {
+import { IMainColorsProps } from "./modifiers";
+interface INavbarProps extends IMainColorsProps {
     hasShadow?: boolean;
     isBlack?: boolean;
     isDark?: boolean;

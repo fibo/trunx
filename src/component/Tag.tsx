@@ -23,10 +23,18 @@ export default class Tag extends React.Component<ITagProps> {
     const {
       href,
       isBlack,
+      isDanger,
       isDark,
+      isInfo,
+      isLarge,
       isLight,
       isLink,
+      isMedium,
+      isPrimary,
       isRounded,
+      isSmall,
+      isSuccess,
+      isWarning,
       isWhite,
       ...props
     } = this.props
@@ -40,8 +48,18 @@ export default class Tag extends React.Component<ITagProps> {
         "is-rounded": isRounded,
         "is-white": isWhite,
       },
-      mainColorsPropsToClassenames(this.props),
-      sizePropsToClassenames(this.props),
+      mainColorsPropsToClassenames({
+        isDanger,
+        isInfo,
+        isPrimary,
+        isSuccess,
+        isWarning,
+      }),
+      sizePropsToClassenames({
+        isLarge,
+        isMedium,
+        isSmall,
+      }),
     )
 
     return href ? (

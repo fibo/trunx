@@ -1,5 +1,6 @@
 import * as React from "react";
-interface ITabsProps {
+import { ISizeProps } from "./modifiers";
+interface ITabsProps extends ISizeProps {
     isBoxed?: boolean;
     isCentered?: boolean;
     isFullwidth?: boolean;

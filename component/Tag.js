@@ -41,7 +41,7 @@ var Tag = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Tag.prototype.render = function () {
-        var _a = this.props, href = _a.href, isBlack = _a.isBlack, isDark = _a.isDark, isLight = _a.isLight, isLink = _a.isLink, isRounded = _a.isRounded, isWhite = _a.isWhite, props = __rest(_a, ["href", "isBlack", "isDark", "isLight", "isLink", "isRounded", "isWhite"]);
+        var _a = this.props, href = _a.href, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isInfo = _a.isInfo, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, isWhite = _a.isWhite, props = __rest(_a, ["href", "isBlack", "isDanger", "isDark", "isInfo", "isLarge", "isLight", "isLink", "isMedium", "isPrimary", "isRounded", "isSmall", "isSuccess", "isWarning", "isWhite"]);
         var className = classnames("tag", {
             "is-black": isBlack,
             "is-dark": isDark,
@@ -49,7 +49,17 @@ var Tag = (function (_super) {
             "is-link": isLink,
             "is-rounded": isRounded,
             "is-white": isWhite,
-        }, modifiers_1.mainColorsPropsToClassenames(this.props), modifiers_1.sizePropsToClassenames(this.props));
+        }, modifiers_1.mainColorsPropsToClassenames({
+            isDanger: isDanger,
+            isInfo: isInfo,
+            isPrimary: isPrimary,
+            isSuccess: isSuccess,
+            isWarning: isWarning,
+        }), modifiers_1.sizePropsToClassenames({
+            isLarge: isLarge,
+            isMedium: isMedium,
+            isSmall: isSmall,
+        }));
         return href ? (React.createElement("a", __assign({ className: className, href: href }, props), this.props.children)) : (React.createElement("span", { className: className }, this.props.children));
     };
     return Tag;
