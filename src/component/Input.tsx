@@ -9,26 +9,22 @@ import {
 } from "./modifiers"
 
 interface IInputProps extends IMainColorsProps, ISizeProps {
-  disabled?: boolean
   inputRef?: React.RefObject<HTMLInputElement>
   isFocused?: boolean
   isHovered?: boolean
   isRounded?: boolean
   isStatic?: boolean
-  readOnly?: boolean
   type?: "email" | "password" | "tel" | "text"
 }
 
 export default class Input extends React.Component<IInputProps> {
   render() {
     const {
-      disabled,
       inputRef,
       isFocused,
       isHovered,
       isRounded,
       isStatic,
-      readOnly,
       type,
       ...props
     } = this.props
@@ -47,8 +43,6 @@ export default class Input extends React.Component<IInputProps> {
     return (
       <input
         className={className}
-        disabled={disabled}
-        readOnly={readOnly}
         ref={inputRef}
         type={type}
         {...props}
