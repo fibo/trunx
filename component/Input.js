@@ -41,14 +41,14 @@ var Input = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Input.prototype.render = function () {
-        var _a = this.props, disabled = _a.disabled, inputRef = _a.inputRef, isFocused = _a.isFocused, isHovered = _a.isHovered, isRounded = _a.isRounded, isStatic = _a.isStatic, readOnly = _a.readOnly, type = _a.type, props = __rest(_a, ["disabled", "inputRef", "isFocused", "isHovered", "isRounded", "isStatic", "readOnly", "type"]);
+        var _a = this.props, inputRef = _a.inputRef, isFocused = _a.isFocused, isHovered = _a.isHovered, isRounded = _a.isRounded, isStatic = _a.isStatic, type = _a.type, props = __rest(_a, ["inputRef", "isFocused", "isHovered", "isRounded", "isStatic", "type"]);
         var className = classnames("input", {
             "is-focused": isFocused,
             "is-hovered": isHovered,
             "is-rounded": isRounded,
             "is-static": isStatic,
         }, modifiers_1.mainColorsPropsToClassenames(this.props), modifiers_1.sizePropsToClassenames(this.props));
-        return (React.createElement("input", __assign({ className: className, disabled: disabled, readOnly: readOnly, ref: inputRef, type: type }, props)));
+        return (React.createElement("input", __assign({ className: className, ref: inputRef, type: type }, props)));
     };
     return Input;
 }(React.Component));
