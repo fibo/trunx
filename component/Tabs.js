@@ -63,7 +63,7 @@ var Tabs = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Tabs.prototype.render = function () {
-        var _a = this.props, isBoxed = _a.isBoxed, isCentered = _a.isCentered, isFullwidth = _a.isFullwidth, isRight = _a.isRight, isToggle = _a.isToggle, isToggleRounded = _a.isToggleRounded;
+        var _a = this.props, isBoxed = _a.isBoxed, isCentered = _a.isCentered, isFullwidth = _a.isFullwidth, isLarge = _a.isLarge, isMedium = _a.isMedium, isRight = _a.isRight, isSmall = _a.isSmall, isToggle = _a.isToggle, isToggleRounded = _a.isToggleRounded;
         var className = classnames("tabs", {
             "is-boxed": isBoxed,
             "is-centered": isCentered,
@@ -71,7 +71,11 @@ var Tabs = (function (_super) {
             "is-right": isRight,
             "is-toggle": isToggle,
             "is-toggle-rounded": isToggleRounded,
-        }, modifiers_1.sizePropsToClassenames(this.props));
+        }, modifiers_1.sizePropsToClassenames({
+            isLarge: isLarge,
+            isMedium: isMedium,
+            isSmall: isSmall,
+        }));
         return (React.createElement("div", { className: className },
             React.createElement("ul", null, this.props.children)));
     };

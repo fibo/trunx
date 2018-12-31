@@ -34,7 +34,7 @@ export interface ITextColorHelpersProps {
   hasTextWhiteTer?: boolean
 }
 
-export function mainColorsPropsToClassenames(props) {
+export function mainColorsPropsToClassenames(props: IMainColorsProps) {
   const {
     isDanger,
     isInfo,
@@ -52,7 +52,7 @@ export function mainColorsPropsToClassenames(props) {
   }
 }
 
-export function sizePropsToClassenames(props) {
+export function sizePropsToClassenames(props: ISizeProps) {
   const {
     isLarge,
     isMedium,
@@ -66,7 +66,7 @@ export function sizePropsToClassenames(props) {
   }
 }
 
-export function textColorHelpersPropsToClassenames(props) {
+export function textColorHelpersPropsToClassenames(props: ITextColorHelpersProps) {
   const {
     hasTextBlack,
     hasTextBlackBis,

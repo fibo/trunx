@@ -42,7 +42,7 @@ var CardContent = (function (_super) {
     }
     CardContent.prototype.render = function () {
         var className = classnames("card-content", modifiers_1.textColorHelpersPropsToClassenames(this.props));
-        return (React.createElement("div", { className: "card-content" }, this.props.children));
+        return (React.createElement("div", { className: className }, this.props.children));
     };
     return CardContent;
 }(React.Component));
@@ -53,7 +53,7 @@ var CardFooterItem = (function (_super) {
     }
     CardFooterItem.prototype.render = function () {
         var href = this.props.href;
-        var className = classnames("card-footer-item", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        var className = "card-footer-item";
         if (href) {
             return (React.createElement("a", { className: className, href: href }, this.props.children));
         }
@@ -82,7 +82,7 @@ var CardHeaderIcon = (function (_super) {
     }
     CardHeaderIcon.prototype.render = function () {
         var _a = this.props, href = _a.href, props = __rest(_a, ["href"]);
-        var className = classnames("card-header-icon", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        var className = "card-header-icon";
         if (href) {
             return (React.createElement("a", __assign({ className: className, href: href }, props), this.props.children));
         }
@@ -112,8 +112,7 @@ var CardHeader = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardHeader.prototype.render = function () {
-        var className = classnames("card-header", modifiers_1.textColorHelpersPropsToClassenames(this.props));
-        return (React.createElement("header", { className: className }, this.props.children));
+        return (React.createElement("header", { className: "card-header" }, this.props.children));
     };
     CardHeader.Icon = CardHeaderIcon;
     CardHeader.Title = CardHeaderTitle;
@@ -135,7 +134,7 @@ var Card = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Card.prototype.render = function () {
-        var className = classnames("card", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        var className = "card";
         return (React.createElement("div", { className: className }, this.props.children));
     };
     Card.Content = CardContent;

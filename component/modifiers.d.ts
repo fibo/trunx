@@ -31,36 +31,36 @@ export interface ITextColorHelpersProps {
     hasTextWhiteBis?: boolean;
     hasTextWhiteTer?: boolean;
 }
-export declare function mainColorsPropsToClassenames(props: any): {
-    "is-danger": any;
-    "is-info": any;
-    "is-primary": any;
-    "is-success": any;
-    "is-warning": any;
+export declare function mainColorsPropsToClassenames(props: IMainColorsProps): {
+    "is-danger": boolean | undefined;
+    "is-info": boolean | undefined;
+    "is-primary": boolean | undefined;
+    "is-success": boolean | undefined;
+    "is-warning": boolean | undefined;
 };
-export declare function sizePropsToClassenames(props: any): {
-    "is-large": any;
-    "is-medium": any;
-    "is-small": any;
+export declare function sizePropsToClassenames(props: ISizeProps): {
+    "is-large": boolean | undefined;
+    "is-medium": boolean | undefined;
+    "is-small": boolean | undefined;
 };
-export declare function textColorHelpersPropsToClassenames(props: any): {
-    "has-text-black": any;
-    "has-text-black-bis": any;
-    "has-text-black-ter": any;
-    "has-text-danger": any;
-    "has-text-dark": any;
-    "has-text-grey": any;
-    "has-text-grey-dark": any;
-    "has-text-grey-darker": any;
-    "has-text-grey-light": any;
-    "has-text-grey-lighter": any;
-    "has-text-info": any;
-    "has-text-light": any;
-    "has-text-link": any;
-    "has-text-primary": any;
-    "has-text-success": any;
-    "has-text-warning": any;
-    "has-text-white": any;
-    "has-text-white-bis": any;
-    "has-text-white-ter": any;
+export declare function textColorHelpersPropsToClassenames(props: ITextColorHelpersProps): {
+    "has-text-black": boolean | undefined;
+    "has-text-black-bis": boolean | undefined;
+    "has-text-black-ter": boolean | undefined;
+    "has-text-danger": boolean | undefined;
+    "has-text-dark": boolean | undefined;
+    "has-text-grey": boolean | undefined;
+    "has-text-grey-dark": boolean | undefined;
+    "has-text-grey-darker": boolean | undefined;
+    "has-text-grey-light": boolean | undefined;
+    "has-text-grey-lighter": boolean | undefined;
+    "has-text-info": boolean | undefined;
+    "has-text-light": boolean | undefined;
+    "has-text-link": boolean | undefined;
+    "has-text-primary": boolean | undefined;
+    "has-text-success": boolean | undefined;
+    "has-text-warning": boolean | undefined;
+    "has-text-white": boolean | undefined;
+    "has-text-white-bis": boolean | undefined;
+    "has-text-white-ter": boolean | undefined;
 };

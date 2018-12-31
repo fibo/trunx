@@ -21,10 +21,18 @@ export default class Input extends React.Component<IInputProps> {
   render() {
     const {
       inputRef,
+      isDanger,
       isFocused,
       isHovered,
+      isInfo,
+      isLarge,
+      isMedium,
+      isPrimary,
       isRounded,
+      isSmall,
+      isSuccess,
       isStatic,
+      isWarning,
       type,
       ...props
     } = this.props
@@ -36,8 +44,18 @@ export default class Input extends React.Component<IInputProps> {
         "is-rounded": isRounded,
         "is-static": isStatic,
       },
-      mainColorsPropsToClassenames(this.props),
-      sizePropsToClassenames(this.props),
+      mainColorsPropsToClassenames({
+        isDanger,
+        isInfo,
+        isPrimary,
+        isSuccess,
+        isWarning,
+      }),
+      sizePropsToClassenames({
+        isLarge,
+        isMedium,
+        isSmall,
+      }),
     )
 
     return (

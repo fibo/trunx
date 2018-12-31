@@ -167,7 +167,7 @@ var Navbar = (function (_super) {
         }
     };
     Navbar.prototype.render = function () {
-        var _a = this.props, isBlack = _a.isBlack, isDark = _a.isDark, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isTransparent = _a.isTransparent, isLight = _a.isLight, isUnselectable = _a.isUnselectable, isWhite = _a.isWhite, props = __rest(_a, ["isBlack", "isDark", "isFixedBottom", "isFixedTop", "isTransparent", "isLight", "isUnselectable", "isWhite"]);
+        var _a = this.props, isBlack = _a.isBlack, isDark = _a.isDark, isDanger = _a.isDanger, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isLight = _a.isLight, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, isWarning = _a.isWarning, isWhite = _a.isWhite, props = __rest(_a, ["isBlack", "isDark", "isDanger", "isFixedBottom", "isFixedTop", "isLight", "isInfo", "isPrimary", "isSuccess", "isTransparent", "isUnselectable", "isWarning", "isWhite"]);
         var className = classnames("navbar", {
             "is-black": isBlack,
             "is-dark": isDark,
@@ -177,7 +177,13 @@ var Navbar = (function (_super) {
             "is-transparent": isTransparent,
             "is-unselectable": isUnselectable,
             "is-white": isWhite,
-        }, modifiers_1.mainColorsPropsToClassenames(this.props));
+        }, modifiers_1.mainColorsPropsToClassenames({
+            isDanger: isDanger,
+            isInfo: isInfo,
+            isPrimary: isPrimary,
+            isSuccess: isSuccess,
+            isWarning: isWarning,
+        }));
         return (React.createElement("nav", __assign({ className: className }, props), this.props.children));
     };
     Navbar.Brand = NavbarBrand;

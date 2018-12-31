@@ -8,17 +8,17 @@ import {
 
 interface ICardContentProps extends ITextColorHelpersProps {}
 
-interface ICardFooterItemProps extends ITextColorHelpersProps {
+interface ICardFooterItemProps {
   href?: string
 }
 
 interface ICardFooterProps extends ITextColorHelpersProps {}
 
-interface ICardHeaderIconProps extends ITextColorHelpersProps {
+interface ICardHeaderIconProps {
   href?: string
 }
 
-interface ICardHeaderTitleProps extends ITextColorHelpersProps {
+interface ICardHeaderTitleProps {
   isCentered?: boolean
 }
 
@@ -29,7 +29,7 @@ class CardContent extends React.Component<ICardContentProps> {
     )
 
     return (
-      <div className="card-content">{this.props.children}</div>
+      <div className={className}>{this.props.children}</div>
     )
   }
 }
@@ -40,9 +40,7 @@ class CardFooterItem extends React.Component<ICardFooterItemProps> {
       href,
     } = this.props
 
-    const className = classnames("card-footer-item",
-      textColorHelpersPropsToClassenames(this.props),
-    )
+    const className = "card-footer-item"
 
     if (href) {
       return (
@@ -82,9 +80,7 @@ class CardHeaderIcon extends React.Component<ICardHeaderIconProps> {
       ...props
     } = this.props
 
-    const className = classnames("card-header-icon",
-      textColorHelpersPropsToClassenames(this.props),
-    )
+    const className = "card-header-icon"
 
     if (href) {
       return (
@@ -130,12 +126,8 @@ class CardHeader extends React.Component {
   static Title = CardHeaderTitle
 
   render() {
-    const className = classnames("card-header",
-      textColorHelpersPropsToClassenames(this.props),
-    )
-
     return (
-      <header className={className}>{this.props.children}</header>
+      <header className="card-header">{this.props.children}</header>
     )
   }
 }
@@ -155,9 +147,7 @@ export default class Card extends React.Component {
   static Image = CardImage
 
   render() {
-    const className = classnames("card",
-      textColorHelpersPropsToClassenames(this.props),
-    )
+    const className = "card"
 
     return (
       <div className={className}>{this.props.children}</div>
