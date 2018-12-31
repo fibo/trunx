@@ -205,9 +205,9 @@ storiesOf('Elements', module)
 
                 <Button>Button</Button>
 
-                <Button type='submit' defaultValue='Submit input' />
+                <Button type='submit' value='Submit input' />
 
-                <Button type='reset' defaultValue='Reset input' />
+                <Button type='reset' value='Reset input' />
               </Buttons>
             </Column>
 
@@ -219,9 +219,9 @@ storiesOf('Elements', module)
 
                     <Button>Button</Button>
 
-                    <Button type='submit' defaultValue='Submit input' />
+                    <Button type='submit' value='Submit input' />
 
-                    <Button type='reset' defaultValue='Reset input' />
+                    <Button type='reset' value='Reset input' />
                   </Buttons>
                 `}
               </Code>
