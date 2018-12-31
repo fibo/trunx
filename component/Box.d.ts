@@ -1,4 +1,8 @@
 import * as React from "react";
-export default class Box extends React.Component {
+import { ITextColorHelpersProps } from "./modifiers";
+interface IBoxProps extends ITextColorHelpersProps {
+}
+export default class Box extends React.Component<IBoxProps> {
     render(): JSX.Element;
 }
+export {};

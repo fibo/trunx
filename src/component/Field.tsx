@@ -1,6 +1,11 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
+import {
+  ISizeProps,
+  sizePropsToClassenames,
+} from "./modifiers"
+
 interface IFieldProps {
   hasAddons?: boolean
   hasAddonsCentered?: boolean
@@ -9,12 +14,7 @@ interface IFieldProps {
   isHorizontal?: boolean
 }
 
-interface IFieldLabelProps {
-  isLarge?: boolean
-  isMedium?: boolean
-  isNormal?: boolean
-  isSmall?: boolean
-}
+interface IFieldLabelProps extends ISizeProps {}
 
 class FieldBody extends React.Component {
   render() {
@@ -26,19 +26,9 @@ class FieldBody extends React.Component {
 
 class FieldLabel extends React.Component<IFieldLabelProps> {
   render() {
-    const {
-      isLarge,
-      isMedium,
-      isNormal,
-      isSmall,
-    } = this.props
-
-    const className = classnames("field-label", {
-      "is-large": isLarge,
-      "is-medium": isMedium,
-      "is-normal": isNormal,
-      "is-small": isSmall,
-    })
+    const className = classnames("field-label",
+      sizePropsToClassenames(this.props),
+    )
 
     return (
       <div className={className}>{this.props.children}</div>

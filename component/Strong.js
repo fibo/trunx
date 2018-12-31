@@ -15,16 +15,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
 var modifiers_1 = require("./modifiers");
-var Delete = (function (_super) {
-    __extends(Delete, _super);
-    function Delete() {
+var Strong = (function (_super) {
+    __extends(Strong, _super);
+    function Strong() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Delete.prototype.render = function () {
-        var onClick = this.props.onClick;
-        var className = classnames("delete", modifiers_1.sizePropsToClassenames(this.props));
-        return (React.createElement("button", { "aria-label": "delete", className: className, onClick: onClick }));
+    Strong.prototype.render = function () {
+        var className = classnames(modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        return (React.createElement("strong", { className: className }, this.props.children));
     };
-    return Delete;
+    return Strong;
 }(React.Component));
-exports.default = Delete;
+exports.default = Strong;

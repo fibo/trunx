@@ -1,21 +1,20 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface ITagProps {
+import {
+  IMainColorsProps,
+  ISizeProps,
+  mainColorsPropsToClassenames,
+  sizePropsToClassenames,
+} from "./modifiers"
+
+interface ITagProps extends IMainColorsProps, ISizeProps {
   href?: string
   isBlack?: boolean
-  isDanger?: boolean
   isDark?: boolean
-  isInfo?: boolean
-  isLarge?: boolean
   isLight?: boolean
   isLink?: boolean
-  isMedium?: boolean
-  isPrimary?: boolean
   isRounded?: boolean
-  isSmall?: boolean
-  isSuccess?: boolean
-  isWarning?: boolean
   isWhite?: boolean
 }
 
@@ -24,38 +23,26 @@ export default class Tag extends React.Component<ITagProps> {
     const {
       href,
       isBlack,
-      isDanger,
       isDark,
-      isInfo,
-      isLarge,
       isLight,
       isLink,
-      isMedium,
-      isPrimary,
       isRounded,
-      isSmall,
-      isSuccess,
-      isWarning,
       isWhite,
       ...props
     } = this.props
 
-    const className = classnames("tag", {
-      "is-black": isBlack,
-      "is-danger": isDanger,
-      "is-dark": isDark,
-      "is-info": isInfo,
-      "is-large": isLarge,
-      "is-light": isLight,
-      "is-link": isLink,
-      "is-medium": isMedium,
-      "is-primary": isPrimary,
-      "is-rounded": isRounded,
-      "is-small": isSmall,
-      "is-success": isSuccess,
-      "is-warning": isWarning,
-      "is-white": isWhite,
-    })
+    const className = classnames("tag",
+      {
+        "is-black": isBlack,
+        "is-dark": isDark,
+        "is-light": isLight,
+        "is-link": isLink,
+        "is-rounded": isRounded,
+        "is-white": isWhite,
+      },
+      mainColorsPropsToClassenames(this.props),
+      sizePropsToClassenames(this.props),
+    )
 
     return href ? (
       <a

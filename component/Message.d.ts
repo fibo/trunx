@@ -1,15 +1,8 @@
 import * as React from "react";
-interface IMessageProps {
-    isDanger?: boolean;
+import { IMainColorsProps, ISizeProps } from "./modifiers";
+interface IMessageProps extends IMainColorsProps, ISizeProps {
     isDark?: boolean;
-    isInfo?: boolean;
-    isLarge?: boolean;
     isLink?: boolean;
-    isMedium?: boolean;
-    isPrimary?: boolean;
-    isSmall?: boolean;
-    isSuccess?: boolean;
-    isWarning?: boolean;
 }
 declare class MessageBody extends React.Component {
     render(): JSX.Element;

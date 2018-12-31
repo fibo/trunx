@@ -1,27 +1,24 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface IDeleteProps {
-  isLarge?: boolean
-  isMedium?: boolean
-  isSmall?: boolean
+import {
+  ISizeProps,
+  sizePropsToClassenames,
+} from "./modifiers"
+
+interface IDeleteProps extends ISizeProps {
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
 }
 
 export default class Delete extends React.Component<IDeleteProps> {
   render() {
     const {
-      isLarge,
-      isMedium,
-      isSmall,
       onClick,
     } = this.props
 
-    const className = classnames("delete", {
-      "is-large": isLarge,
-      "is-medium": isMedium,
-      "is-small": isSmall,
-    })
+    const className = classnames("delete",
+      sizePropsToClassenames(this.props),
+    )
 
     return (
       <button aria-label="delete" className={className} onClick={onClick}/>

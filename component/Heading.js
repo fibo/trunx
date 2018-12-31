@@ -12,15 +12,18 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+var classnames = require("classnames");
 var React = require("react");
-var Heading = (function (_super) {
-    __extends(Heading, _super);
-    function Heading() {
+var modifiers_1 = require("./modifiers");
+var Footer = (function (_super) {
+    __extends(Footer, _super);
+    function Footer() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Heading.prototype.render = function () {
-        return (React.createElement("p", { className: "heading" }, this.props.children));
+    Footer.prototype.render = function () {
+        var className = classnames("heading", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        return (React.createElement("p", { className: className }, this.props.children));
     };
-    return Heading;
+    return Footer;
 }(React.Component));
-exports.default = Heading;
+exports.default = Footer;

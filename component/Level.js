@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var LevelItem = (function (_super) {
     __extends(LevelItem, _super);
     function LevelItem() {
@@ -23,7 +24,7 @@ var LevelItem = (function (_super) {
         var hasTextCentered = this.props.hasTextCentered;
         var className = classnames("level-item", {
             "has-text-centered": hasTextCentered,
-        });
+        }, modifiers_1.textColorHelpersPropsToClassenames(this.props));
         return (React.createElement("div", { className: className }, this.props.children));
     };
     return LevelItem;
@@ -34,7 +35,8 @@ var LevelLeft = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     LevelLeft.prototype.render = function () {
-        return (React.createElement("div", { className: "level-left" }, this.props.children));
+        var className = classnames("level-left", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        return (React.createElement("div", { className: className }, this.props.children));
     };
     return LevelLeft;
 }(React.Component));
@@ -44,7 +46,8 @@ var LevelRight = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     LevelRight.prototype.render = function () {
-        return (React.createElement("div", { className: "level-right" }, this.props.children));
+        var className = classnames("level-right", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        return (React.createElement("div", { className: className }, this.props.children));
     };
     return LevelRight;
 }(React.Component));
@@ -57,7 +60,7 @@ var Level = (function (_super) {
         var isMobile = this.props.isMobile;
         var className = classnames("level", {
             "is-mobile": isMobile,
-        });
+        }, modifiers_1.textColorHelpersPropsToClassenames(this.props));
         return (React.createElement("nav", { className: className }, this.props.children));
     };
     Level.Item = LevelItem;

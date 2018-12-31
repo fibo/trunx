@@ -13,6 +13,7 @@ setOptions({
 
 function loadStories () {
   require('../src/stories/overview.js')
+  require('../src/stories/modifiers.js')
   require('../src/stories/columns.js')
   require('../src/stories/layout.js')
   require('../src/stories/form.js')

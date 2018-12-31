@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var IconSvg = (function (_super) {
     __extends(IconSvg, _super);
     function IconSvg() {
@@ -35,18 +36,15 @@ var Icon = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Icon.prototype.render = function () {
-        var _a = this.props, hasTextDanger = _a.hasTextDanger, hasTextInfo = _a.hasTextInfo, hasTextSuccess = _a.hasTextSuccess, hasTextWarning = _a.hasTextWarning, isLarge = _a.isLarge, isLeft = _a.isLeft, isMedium = _a.isMedium, isRight = _a.isRight, isSmall = _a.isSmall;
+        var _a = this.props, hasTextDanger = _a.hasTextDanger, hasTextInfo = _a.hasTextInfo, hasTextSuccess = _a.hasTextSuccess, hasTextWarning = _a.hasTextWarning, isLeft = _a.isLeft, isRight = _a.isRight;
         var className = classnames("icon", {
             "has-text-danger": hasTextDanger,
             "has-text-info": hasTextInfo,
             "has-text-success": hasTextSuccess,
             "has-text-warning": hasTextWarning,
-            "is-large": isLarge,
             "is-left": isLeft,
-            "is-medium": isMedium,
             "is-right": isRight,
-            "is-small": isSmall,
-        });
+        }, modifiers_1.sizePropsToClassenames(this.props));
         return (React.createElement("span", { className: className }, this.props.children));
     };
     Icon.Svg = IconSvg;

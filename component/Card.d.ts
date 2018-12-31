@@ -1,20 +1,25 @@
 import * as React from "react";
-interface ICardFooterItemProps {
+import { ITextColorHelpersProps } from "./modifiers";
+interface ICardContentProps extends ITextColorHelpersProps {
+}
+interface ICardFooterItemProps extends ITextColorHelpersProps {
     href?: string;
 }
-interface ICardHeaderIconProps {
+interface ICardFooterProps extends ITextColorHelpersProps {
+}
+interface ICardHeaderIconProps extends ITextColorHelpersProps {
     href?: string;
 }
-interface ICardHeaderTitleProps {
+interface ICardHeaderTitleProps extends ITextColorHelpersProps {
     isCentered?: boolean;
 }
-declare class CardContent extends React.Component {
+declare class CardContent extends React.Component<ICardContentProps> {
     render(): JSX.Element;
 }
 declare class CardFooterItem extends React.Component<ICardFooterItemProps> {
     render(): JSX.Element;
 }
-declare class CardFooter extends React.Component {
+declare class CardFooter extends React.Component<ICardFooterProps> {
     static Item: typeof CardFooterItem;
     render(): JSX.Element;
 }

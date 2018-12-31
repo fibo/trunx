@@ -1,17 +1,10 @@
 import * as React from "react";
-interface ISelectProps {
-    isDanger?: boolean;
+import { IMainColorsProps, ISizeProps } from "./modifiers";
+interface ISelectProps extends IMainColorsProps, ISizeProps {
     isFocused?: boolean;
     isHovered?: boolean;
-    isInfo?: boolean;
-    isLarge?: boolean;
     isLoading?: boolean;
-    isMedium?: boolean;
     isMultiple?: boolean;
-    isPrimary?: boolean;
-    isSmall?: boolean;
-    isSuccess?: boolean;
-    isWarning?: boolean;
     size?: number;
 }
 export default class Select extends React.Component<ISelectProps> {

@@ -1,6 +1,11 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
+import {
+  IMainColorsProps,
+  mainColorsPropsToClassenames,
+} from "./modifiers"
+
 interface ITileProps {
   is1?: boolean
   is2?: boolean
@@ -18,13 +23,7 @@ interface ITileProps {
   isVertical?: boolean
 }
 
-interface ITileChildNotificationProps {
-  isDanger?: boolean
-  isLink?: boolean
-  isInfo?: boolean
-  isPrimary?: boolean
-  isSuccess?: boolean
-  isWarning?: boolean
+interface ITileChildNotificationProps extends IMainColorsProps {
 }
 
 class TileAncestor extends React.Component {
@@ -45,23 +44,10 @@ class TileChildBox extends React.Component {
 
 class TileChildNotification extends React.Component<ITileChildNotificationProps> {
   render() {
-    const {
-      isDanger,
-      isLink,
-      isInfo,
-      isPrimary,
-      isSuccess,
-      isWarning,
-    } = this.props
 
-    const className = classnames("tile is-child notification", {
-      "is-danger": isDanger,
-      "is-info": isInfo,
-      "is-link": isLink,
-      "is-primary": isPrimary,
-      "is-success": isSuccess,
-      "is-warning": isWarning,
-    })
+    const className = classnames("tile is-child notification",
+      mainColorsPropsToClassenames(this.props),
+    )
 
     return (
       <article className={className}>{this.props.children}</article>

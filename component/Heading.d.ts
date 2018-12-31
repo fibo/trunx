@@ -1,4 +1,8 @@
 import * as React from "react";
-export default class Heading extends React.Component {
+import { ITextColorHelpersProps } from "./modifiers";
+interface IHeadingProps extends ITextColorHelpersProps {
+}
+export default class Footer extends React.Component<IHeadingProps> {
     render(): JSX.Element;
 }
+export {};

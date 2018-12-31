@@ -1,16 +1,14 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface IProgressProps {
-  isDanger?: boolean
-  isInfo?: boolean
-  isLarge?: boolean
-  isLink?: boolean
-  isMedium?: boolean
-  isPrimary?: boolean
-  isSmall?: boolean
-  isSuccess?: boolean
-  isWarning?: boolean
+import {
+  IMainColorsProps,
+  ISizeProps,
+  mainColorsPropsToClassenames,
+  sizePropsToClassenames,
+} from "./modifiers"
+
+interface IProgressProps extends ISizeProps {
   max: number
   value: number
 }
@@ -18,30 +16,14 @@ interface IProgressProps {
 export default class Progress extends React.Component<IProgressProps> {
   render() {
     const {
-      isDanger,
-      isInfo,
-      isLarge,
-      isLink,
-      isMedium,
-      isPrimary,
-      isSmall,
-      isSuccess,
-      isWarning,
       max,
       value,
     } = this.props
 
-    const className = classnames("tag", {
-      "is-danger": isDanger,
-      "is-info": isInfo,
-      "is-large": isLarge,
-      "is-link": isLink,
-      "is-medium": isMedium,
-      "is-primary": isPrimary,
-      "is-small": isSmall,
-      "is-success": isSuccess,
-      "is-warning": isWarning
-    })
+    const className = classnames("tag",
+      mainColorsPropsToClassenames(this.props),
+      sizePropsToClassenames(this.props),
+    )
 
     return (
       <progress

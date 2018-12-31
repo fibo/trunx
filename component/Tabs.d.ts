@@ -3,10 +3,7 @@ interface ITabsProps {
     isBoxed?: boolean;
     isCentered?: boolean;
     isFullwidth?: boolean;
-    isLarge?: boolean;
-    isMedium?: boolean;
     isRight?: boolean;
-    isSmall?: boolean;
     isToggle?: boolean;
     isToggleRounded?: boolean;
 }

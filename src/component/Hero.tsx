@@ -1,18 +1,18 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface IHeroProps {
+import {
+  IMainColorsProps,
+  mainColorsPropsToClassenames,
+} from "./modifiers"
+
+interface IHeroProps extends IMainColorsProps {
   isBold?: boolean
-  isDanger?: boolean
   isDark?: boolean
   isFullheight?: boolean
-  isInfo?: boolean
   isLarge?: boolean
   isLight?: boolean
   isMedium?: boolean
-  isPrimary?: boolean
-  isSuccess?: boolean
-  isWarning?: boolean
 }
 
 class HeroBody extends React.Component {
@@ -47,29 +47,22 @@ export default class Hero extends React.Component<IHeroProps> {
   render() {
     const {
       isBold,
-      isDanger,
       isDark,
       isFullheight,
-      isInfo,
       isLarge,
       isMedium,
-      isPrimary,
-      isSuccess,
-      isWarning,
     } = this.props
 
-    const className = classnames("hero", {
-      "is-bold": isBold,
-      "is-danger": isDanger,
-      "is-dark": isDark,
-      "is-fullheight": isFullheight,
-      "is-info": isInfo,
-      "is-large": isLarge,
-      "is-medium": isMedium,
-      "is-primary": isPrimary,
-      "is-success": isSuccess,
-      "is-warning": isWarning,
-    })
+    const className = classnames("hero",
+      {
+        "is-bold": isBold,
+        "is-dark": isDark,
+        "is-fullheight": isFullheight,
+        "is-large": isLarge,
+        "is-medium": isMedium,
+      },
+      mainColorsPropsToClassenames(this.props),
+    )
 
     return (
       <section className={className}>{this.props.children}</section>

@@ -6,6 +6,7 @@ import Container from '../component/Container'
 import Content from '../component/Content'
 import Title from '../component/Title'
 import Section from '../component/Section'
+import Strong from '../component/Strong'
 
 import indent from './indent'
 import Code from './Code'
@@ -219,7 +220,17 @@ storiesOf('Overview', module)
           </Code>
 
           <p>
-            You are <strong className='has-text-success'>successful</strong>!
+            Actually, there is a <code>Strong</code> component in this case
+          </p>
+
+          <Code language='jsx'>
+            {indent`
+              You are <Strong hasTextSuccess>successful</Strong>!
+            `}
+          </Code>
+
+          <p>
+            You are <Strong hasTextSuccess>successful</Strong>!
           </p>
         </Content>
       </Container>

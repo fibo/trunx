@@ -1,14 +1,12 @@
 import * as React from "react";
-interface IIconProps {
+import { ISizeProps } from "./modifiers";
+interface IIconProps extends ISizeProps {
     hasTextDanger?: boolean;
     hasTextInfo?: boolean;
     hasTextSuccess?: boolean;
     hasTextWarning?: boolean;
-    isLarge?: boolean;
     isLeft?: boolean;
-    isMedium?: boolean;
     isRight?: boolean;
-    isSmall?: boolean;
 }
 interface IIconSvgProps {
     icon: {

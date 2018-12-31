@@ -1,12 +1,10 @@
 import * as React from "react";
-interface IControlProps {
+import { ISizeProps } from "./modifiers";
+interface IControlProps extends ISizeProps {
     hasIconsLeft?: boolean;
     hasIconsRight?: boolean;
     isExpanded?: boolean;
-    isLarge?: boolean;
     isLoading?: boolean;
-    isMedium?: boolean;
-    isSmall?: boolean;
 }
 export default class Control extends React.Component<IControlProps> {
     render(): JSX.Element;

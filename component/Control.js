@@ -14,22 +14,20 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var Control = (function (_super) {
     __extends(Control, _super);
     function Control() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Control.prototype.render = function () {
-        var _a = this.props, hasIconsLeft = _a.hasIconsLeft, hasIconsRight = _a.hasIconsRight, isExpanded = _a.isExpanded, isLarge = _a.isLarge, isLoading = _a.isLoading, isMedium = _a.isMedium, isSmall = _a.isSmall;
+        var _a = this.props, hasIconsLeft = _a.hasIconsLeft, hasIconsRight = _a.hasIconsRight, isExpanded = _a.isExpanded, isLoading = _a.isLoading;
         var className = classnames("control", {
             "has-icons-left": hasIconsLeft,
             "has-icons-right": hasIconsRight,
             "is-expanded": isExpanded,
-            "is-large": isLarge,
             "is-loading": isLoading,
-            "is-medium": isMedium,
-            "is-small": isSmall,
-        });
+        }, modifiers_1.sizePropsToClassenames(this.props));
         return (React.createElement("div", { className: className }, this.props.children));
     };
     return Control;
