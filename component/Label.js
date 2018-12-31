@@ -12,14 +12,17 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var Label = (function (_super) {
     __extends(Label, _super);
     function Label() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Label.prototype.render = function () {
-        return (React.createElement("label", { className: "label" }, this.props.children));
+        var className = classnames("label", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        return (React.createElement("label", { className: className }, this.props.children));
     };
     return Label;
 }(React.Component));

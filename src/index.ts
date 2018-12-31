@@ -33,6 +33,7 @@ import Progress from "./component/Progress"
 import Radio from "./component/Radio"
 import Section from "./component/Section"
 import Select from "./component/Select"
+import Strong from "./component/Strong"
 import Subtitle from "./component/Subtitle"
 import Table from "./component/Table"
 import Tabs from "./component/Tabs"
@@ -76,6 +77,7 @@ export {
   Progress,
   Section,
   Select,
+  Strong,
   Subtitle,
   Table,
   Tag,

@@ -1,10 +1,6 @@
 import * as React from "react";
-interface IHelpProps {
-    isDanger?: boolean;
-    isInfo?: boolean;
-    isPrimary?: boolean;
-    isSuccess?: boolean;
-    isWarning?: boolean;
+import { IMainColorsProps, ITextColorHelpersProps } from "./modifiers";
+interface IHelpProps extends IMainColorsProps, ITextColorHelpersProps {
 }
 export default class Help extends React.Component<IHelpProps> {
     render(): JSX.Element;

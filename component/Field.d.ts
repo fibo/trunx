@@ -1,4 +1,5 @@
 import * as React from "react";
+import { ISizeProps } from "./modifiers";
 interface IFieldProps {
     hasAddons?: boolean;
     hasAddonsCentered?: boolean;
@@ -6,11 +7,7 @@ interface IFieldProps {
     isGroupedMultiline?: boolean;
     isHorizontal?: boolean;
 }
-interface IFieldLabelProps {
-    isLarge?: boolean;
-    isMedium?: boolean;
-    isNormal?: boolean;
-    isSmall?: boolean;
+interface IFieldLabelProps extends ISizeProps {
 }
 declare class FieldBody extends React.Component {
     render(): JSX.Element;

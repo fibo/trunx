@@ -1,8 +1,6 @@
 import * as React from "react";
-interface IDeleteProps {
-    isLarge?: boolean;
-    isMedium?: boolean;
-    isSmall?: boolean;
+import { ISizeProps } from "./modifiers";
+interface IDeleteProps extends ISizeProps {
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 export default class Delete extends React.Component<IDeleteProps> {

@@ -1,31 +1,32 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface IButtonProps {
+import {
+  IMainColorsProps,
+  ISizeProps,
+  ITextColorHelpersProps,
+  mainColorsPropsToClassenames,
+  sizePropsToClassenames,
+  textColorHelpersPropsToClassenames,
+} from "./modifiers"
+
+interface IButtonProps extends IMainColorsProps, ISizeProps, ITextColorHelpersProps {
   disabled?: boolean
   href?: string
   isActive?: boolean
   isBlack?: boolean
-  isDanger?: boolean
   isDark?: boolean
   isFocused?: boolean
   isFullwidth?: boolean
-  isInfo?: boolean
   isInverted?: boolean
-  isLarge?: boolean
   isLight?: boolean
   isLink?: boolean
   isLoading?: boolean
-  isMedium?: boolean
   isNormal?: boolean
   isOutlined?: boolean
-  isPrimary?: boolean
   isRounded?: boolean
-  isSmall?: boolean
   isStatic?: boolean
-  isSuccess?: boolean
   isText?: boolean
-  isWarning?: boolean
   isWhite?: boolean
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
   type?: "reset" | "submit"
@@ -38,57 +39,46 @@ export default class Button extends React.Component<IButtonProps> {
       href,
       isActive,
       isBlack,
-      isDanger,
       isDark,
       isFocused,
       isFullwidth,
-      isInfo,
       isInverted,
-      isLarge,
       isLight,
       isLink,
       isLoading,
-      isMedium,
       isNormal,
       isOutlined,
-      isPrimary,
       isRounded,
-      isSmall,
       isStatic,
-      isSuccess,
       isText,
-      isWarning,
       isWhite,
       onClick,
       type,
       ...props
     } = this.props
 
-    const className = classnames("button", {
-      "is-active": isActive,
-      "is-black": isBlack,
-      "is-danger": isDanger,
-      "is-dark": isDark,
-      "is-focused": isFocused,
-      "is-fullwidth": isFullwidth,
-      "is-info": isInfo,
-      "is-inverted": isInverted,
-      "is-large": isLarge,
-      "is-light": isLight,
-      "is-link": isLink,
-      "is-loading": isLoading,
-      "is-medium": isMedium,
-      "is-normal": isNormal,
-      "is-outlined": isOutlined,
-      "is-primary": isPrimary,
-      "is-rounded": isRounded,
-      "is-small": isSmall,
-      "is-static": isStatic,
-      "is-success": isSuccess,
-      "is-text": isText,
-      "is-warning": isWarning,
-      "is-white": isWhite,
-    })
+    const className = classnames("button",
+      {
+        "is-active": isActive,
+        "is-black": isBlack,
+        "is-dark": isDark,
+        "is-focused": isFocused,
+        "is-fullwidth": isFullwidth,
+        "is-inverted": isInverted,
+        "is-light": isLight,
+        "is-link": isLink,
+        "is-loading": isLoading,
+        "is-normal": isNormal,
+        "is-outlined": isOutlined,
+        "is-rounded": isRounded,
+        "is-static": isStatic,
+        "is-text": isText,
+        "is-white": isWhite,
+      },
+      mainColorsPropsToClassenames(this.props),
+      sizePropsToClassenames(this.props),
+      textColorHelpersPropsToClassenames(this.props),
+    )
 
     if (href) {
       return (

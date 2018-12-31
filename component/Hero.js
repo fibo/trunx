@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var HeroBody = (function (_super) {
     __extends(HeroBody, _super);
     function HeroBody() {
@@ -50,19 +51,14 @@ var Hero = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Hero.prototype.render = function () {
-        var _a = this.props, isBold = _a.isBold, isDanger = _a.isDanger, isDark = _a.isDark, isFullheight = _a.isFullheight, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isWarning = _a.isWarning;
+        var _a = this.props, isBold = _a.isBold, isDark = _a.isDark, isFullheight = _a.isFullheight, isLarge = _a.isLarge, isMedium = _a.isMedium;
         var className = classnames("hero", {
             "is-bold": isBold,
-            "is-danger": isDanger,
             "is-dark": isDark,
             "is-fullheight": isFullheight,
-            "is-info": isInfo,
             "is-large": isLarge,
             "is-medium": isMedium,
-            "is-primary": isPrimary,
-            "is-success": isSuccess,
-            "is-warning": isWarning,
-        });
+        }, modifiers_1.mainColorsPropsToClassenames(this.props));
         return (React.createElement("section", { className: className }, this.props.children));
     };
     Hero.Body = HeroBody;

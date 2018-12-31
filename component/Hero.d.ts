@@ -1,16 +1,12 @@
 import * as React from "react";
-interface IHeroProps {
+import { IMainColorsProps } from "./modifiers";
+interface IHeroProps extends IMainColorsProps {
     isBold?: boolean;
-    isDanger?: boolean;
     isDark?: boolean;
     isFullheight?: boolean;
-    isInfo?: boolean;
     isLarge?: boolean;
     isLight?: boolean;
     isMedium?: boolean;
-    isPrimary?: boolean;
-    isSuccess?: boolean;
-    isWarning?: boolean;
 }
 declare class HeroBody extends React.Component {
     render(): JSX.Element;

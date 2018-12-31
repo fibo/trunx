@@ -34,6 +34,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var NavbarBrand = (function (_super) {
     __extends(NavbarBrand, _super);
     function NavbarBrand() {
@@ -166,22 +167,17 @@ var Navbar = (function (_super) {
         }
     };
     Navbar.prototype.render = function () {
-        var _a = this.props, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isTransparent = _a.isTransparent, isLight = _a.isLight, isLink = _a.isLink, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isUnselectable = _a.isUnselectable, isWarning = _a.isWarning, isWhite = _a.isWhite, props = __rest(_a, ["isBlack", "isDanger", "isDark", "isFixedBottom", "isFixedTop", "isTransparent", "isLight", "isLink", "isPrimary", "isSuccess", "isUnselectable", "isWarning", "isWhite"]);
+        var _a = this.props, isBlack = _a.isBlack, isDark = _a.isDark, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isTransparent = _a.isTransparent, isLight = _a.isLight, isUnselectable = _a.isUnselectable, isWhite = _a.isWhite, props = __rest(_a, ["isBlack", "isDark", "isFixedBottom", "isFixedTop", "isTransparent", "isLight", "isUnselectable", "isWhite"]);
         var className = classnames("navbar", {
             "is-black": isBlack,
-            "is-danger": isDanger,
             "is-dark": isDark,
             "is-fixed-bottom": isFixedBottom,
             "is-fixed-top": isFixedTop,
             "is-light": isLight,
-            "is-link": isLink,
-            "is-primary": isPrimary,
-            "is-success": isSuccess,
             "is-transparent": isTransparent,
             "is-unselectable": isUnselectable,
-            "is-warning": isWarning,
             "is-white": isWhite,
-        });
+        }, modifiers_1.mainColorsPropsToClassenames(this.props));
         return (React.createElement("nav", __assign({ className: className }, props), this.props.children));
     };
     Navbar.Brand = NavbarBrand;

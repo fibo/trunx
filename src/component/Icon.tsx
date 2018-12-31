@@ -1,16 +1,18 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface IIconProps {
+import {
+  ISizeProps,
+  sizePropsToClassenames,
+} from "./modifiers"
+
+interface IIconProps extends ISizeProps {
   hasTextDanger?: boolean
   hasTextInfo?: boolean
   hasTextSuccess?: boolean
   hasTextWarning?: boolean
-  isLarge?: boolean
   isLeft?: boolean
-  isMedium?: boolean
   isRight?: boolean
-  isSmall?: boolean
 }
 
 interface IIconSvgProps {
@@ -59,24 +61,21 @@ export default class Icon extends React.Component<IIconProps> {
       hasTextInfo,
       hasTextSuccess,
       hasTextWarning,
-      isLarge,
       isLeft,
-      isMedium,
       isRight,
-      isSmall,
     } = this.props
 
-    const className = classnames("icon", {
-      "has-text-danger": hasTextDanger,
-      "has-text-info": hasTextInfo,
-      "has-text-success": hasTextSuccess,
-      "has-text-warning": hasTextWarning,
-      "is-large": isLarge,
-      "is-left": isLeft,
-      "is-medium": isMedium,
-      "is-right": isRight,
-      "is-small": isSmall,
-    })
+    const className = classnames("icon",
+      {
+        "has-text-danger": hasTextDanger,
+        "has-text-info": hasTextInfo,
+        "has-text-success": hasTextSuccess,
+        "has-text-warning": hasTextWarning,
+        "is-left": isLeft,
+        "is-right": isRight,
+      },
+      sizePropsToClassenames(this.props),
+    )
 
     return (
       <span className={className}>{this.props.children}</span>

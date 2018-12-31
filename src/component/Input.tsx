@@ -1,21 +1,20 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface IInputProps {
+import {
+  IMainColorsProps,
+  ISizeProps,
+  mainColorsPropsToClassenames,
+  sizePropsToClassenames,
+} from "./modifiers"
+
+interface IInputProps extends IMainColorsProps, ISizeProps {
   disabled?: boolean
   inputRef?: React.RefObject<HTMLInputElement>
-  isDanger?: boolean
   isFocused?: boolean
   isHovered?: boolean
-  isInfo?: boolean
-  isLarge?: boolean
-  isMedium?: boolean
-  isPrimary?: boolean
   isRounded?: boolean
-  isSmall?: boolean
   isStatic?: boolean
-  isSuccess?: boolean
-  isWarning?: boolean
   readOnly?: boolean
   type?: "email" | "password" | "tel" | "text"
 }
@@ -25,37 +24,25 @@ export default class Input extends React.Component<IInputProps> {
     const {
       disabled,
       inputRef,
-      isDanger,
       isFocused,
       isHovered,
-      isInfo,
-      isLarge,
-      isMedium,
-      isPrimary,
       isRounded,
-      isSmall,
       isStatic,
-      isSuccess,
-      isWarning,
       readOnly,
       type,
       ...props
     } = this.props
 
-    const className = classnames("input", {
-      "is-danger": isDanger,
-      "is-focused": isFocused,
-      "is-hovered": isHovered,
-      "is-info": isInfo,
-      "is-large": isLarge,
-      "is-medium": isMedium,
-      "is-primary": isPrimary,
-      "is-rounded": isRounded,
-      "is-small": isSmall,
-      "is-static": isStatic,
-      "is-success": isSuccess,
-      "is-warning": isWarning,
-    })
+    const className = classnames("input",
+      {
+        "is-focused": isFocused,
+        "is-hovered": isHovered,
+        "is-rounded": isRounded,
+        "is-static": isStatic,
+      },
+      mainColorsPropsToClassenames(this.props),
+      sizePropsToClassenames(this.props),
+    )
 
     return (
       <input

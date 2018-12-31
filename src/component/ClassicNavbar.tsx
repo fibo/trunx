@@ -45,5 +45,4 @@ export default class ClassicNavbar extends React.Component<IClassicNavbarProps, 
   private toggle = () => {
     this.setState({ isActive: !this.state.isActive })
   }
-
 }

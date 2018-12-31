@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var TabsItem = (function (_super) {
     __extends(TabsItem, _super);
     function TabsItem() {
@@ -41,18 +42,15 @@ var TabsNav = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TabsNav.prototype.render = function () {
-        var _a = this.props, isBoxed = _a.isBoxed, isCentered = _a.isCentered, isFullwidth = _a.isFullwidth, isLarge = _a.isLarge, isMedium = _a.isMedium, isRight = _a.isRight, isSmall = _a.isSmall, isToggle = _a.isToggle, isToggleRounded = _a.isToggleRounded;
+        var _a = this.props, isBoxed = _a.isBoxed, isCentered = _a.isCentered, isFullwidth = _a.isFullwidth, isRight = _a.isRight, isToggle = _a.isToggle, isToggleRounded = _a.isToggleRounded;
         var className = classnames("tabs", {
             "is-boxed": isBoxed,
             "is-centered": isCentered,
             "is-fullwidth": isFullwidth,
-            "is-large": isLarge,
-            "is-medium": isMedium,
             "is-right": isRight,
-            "is-small": isSmall,
             "is-toggle": isToggle,
             "is-toggle-rounded": isToggleRounded,
-        });
+        }, modifiers_1.sizePropsToClassenames(this.props));
         return (React.createElement("nav", { className: className },
             React.createElement("div", { className: "container" },
                 React.createElement("ul", null, this.props.children))));
@@ -65,18 +63,15 @@ var Tabs = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Tabs.prototype.render = function () {
-        var _a = this.props, isBoxed = _a.isBoxed, isCentered = _a.isCentered, isFullwidth = _a.isFullwidth, isLarge = _a.isLarge, isMedium = _a.isMedium, isRight = _a.isRight, isSmall = _a.isSmall, isToggle = _a.isToggle, isToggleRounded = _a.isToggleRounded;
+        var _a = this.props, isBoxed = _a.isBoxed, isCentered = _a.isCentered, isFullwidth = _a.isFullwidth, isRight = _a.isRight, isToggle = _a.isToggle, isToggleRounded = _a.isToggleRounded;
         var className = classnames("tabs", {
             "is-boxed": isBoxed,
             "is-centered": isCentered,
             "is-fullwidth": isFullwidth,
-            "is-large": isLarge,
-            "is-medium": isMedium,
             "is-right": isRight,
-            "is-small": isSmall,
             "is-toggle": isToggle,
             "is-toggle-rounded": isToggleRounded,
-        });
+        }, modifiers_1.sizePropsToClassenames(this.props));
         return (React.createElement("div", { className: className },
             React.createElement("ul", null, this.props.children)));
     };

@@ -6,17 +6,16 @@ import {
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
-interface ILabelProps extends ITextColorHelpersProps {
-}
+interface IStrongProps extends ITextColorHelpersProps {}
 
-export default class Label extends React.Component<ILabelProps> {
+export default class Strong extends React.Component<IStrongProps> {
   render() {
-    const className = classnames("label",
+    const className = classnames(
       textColorHelpersPropsToClassenames(this.props),
     )
 
     return (
-      <label className={className}>{this.props.children}</label>
+      <strong className={className}>{this.props.children}</strong>
     )
   }
 }

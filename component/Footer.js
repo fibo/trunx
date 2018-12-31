@@ -12,14 +12,17 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
+var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var Footer = (function (_super) {
     __extends(Footer, _super);
     function Footer() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Footer.prototype.render = function () {
-        return (React.createElement("footer", { className: "footer" }, this.props.children));
+        var className = classnames("footer", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        return (React.createElement("footer", { className: className }, this.props.children));
     };
     return Footer;
 }(React.Component));

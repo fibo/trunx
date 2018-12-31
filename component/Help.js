@@ -14,20 +14,14 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var Help = (function (_super) {
     __extends(Help, _super);
     function Help() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Help.prototype.render = function () {
-        var _a = this.props, isDanger = _a.isDanger, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isWarning = _a.isWarning;
-        var className = classnames("help", {
-            "is-danger": isDanger,
-            "is-info": isInfo,
-            "is-primary": isPrimary,
-            "is-success": isSuccess,
-            "is-warning": isWarning,
-        });
+        var className = classnames("help", modifiers_1.mainColorsPropsToClassenames(this.props), modifiers_1.textColorHelpersPropsToClassenames(this.props));
         return (React.createElement("p", { className: className }, this.props.children));
     };
     return Help;

@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var FieldBody = (function (_super) {
     __extends(FieldBody, _super);
     function FieldBody() {
@@ -30,13 +31,7 @@ var FieldLabel = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     FieldLabel.prototype.render = function () {
-        var _a = this.props, isLarge = _a.isLarge, isMedium = _a.isMedium, isNormal = _a.isNormal, isSmall = _a.isSmall;
-        var className = classnames("field-label", {
-            "is-large": isLarge,
-            "is-medium": isMedium,
-            "is-normal": isNormal,
-            "is-small": isSmall,
-        });
+        var className = classnames("field-label", modifiers_1.sizePropsToClassenames(this.props));
         return (React.createElement("div", { className: className }, this.props.children));
     };
     return FieldLabel;

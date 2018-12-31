@@ -1,5 +1,6 @@
 import * as React from "react";
-interface ITitleProps {
+import { ITextColorHelpersProps } from "./modifiers";
+interface ITitleProps extends ITextColorHelpersProps {
     is1?: boolean;
     is2?: boolean;
     is3?: boolean;

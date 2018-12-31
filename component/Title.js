@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var Title = (function (_super) {
     __extends(Title, _super);
     function Title() {
@@ -29,7 +30,7 @@ var Title = (function (_super) {
             "is-5": is5,
             "is-6": is6,
             "is-spaced": isSpaced,
-        });
+        }, modifiers_1.textColorHelpersPropsToClassenames(this.props));
         if (is1) {
             return (React.createElement("h1", { className: className }, this.props.children));
         }

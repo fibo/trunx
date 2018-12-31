@@ -1,14 +1,16 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface IControlProps {
+import {
+  ISizeProps,
+  sizePropsToClassenames,
+} from "./modifiers"
+
+interface IControlProps extends ISizeProps {
   hasIconsLeft?: boolean
   hasIconsRight?: boolean
   isExpanded?: boolean
-  isLarge?: boolean
   isLoading?: boolean
-  isMedium?: boolean
-  isSmall?: boolean
 }
 
 export default class Control extends React.Component<IControlProps> {
@@ -17,21 +19,18 @@ export default class Control extends React.Component<IControlProps> {
       hasIconsLeft,
       hasIconsRight,
       isExpanded,
-      isLarge,
       isLoading,
-      isMedium,
-      isSmall,
     } = this.props
 
-    const className = classnames("control", {
-      "has-icons-left": hasIconsLeft,
-      "has-icons-right": hasIconsRight,
-      "is-expanded": isExpanded,
-      "is-large": isLarge,
-      "is-loading": isLoading,
-      "is-medium": isMedium,
-      "is-small": isSmall,
-    })
+    const className = classnames("control",
+      {
+        "has-icons-left": hasIconsLeft,
+        "has-icons-right": hasIconsRight,
+        "is-expanded": isExpanded,
+        "is-loading": isLoading,
+      },
+      sizePropsToClassenames(this.props),
+    )
 
     return (
       <div className={className}>{this.props.children}</div>

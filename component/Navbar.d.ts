@@ -2,18 +2,12 @@ import * as React from "react";
 interface INavbarProps {
     hasShadow?: boolean;
     isBlack?: boolean;
-    isDanger?: boolean;
     isDark?: boolean;
     isFixedBottom?: boolean;
     isFixedTop?: boolean;
     isLight?: boolean;
-    isLink?: boolean;
-    isInfo?: boolean;
-    isPrimary?: boolean;
-    isSuccess?: boolean;
     isTransparent?: boolean;
     isUnselectable?: boolean;
-    isWarning?: boolean;
     isWhite?: boolean;
 }
 interface INavbarBurgerProps {

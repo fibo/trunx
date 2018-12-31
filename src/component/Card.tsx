@@ -1,20 +1,33 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface ICardFooterItemProps {
+import {
+  ITextColorHelpersProps,
+  textColorHelpersPropsToClassenames,
+} from "./modifiers"
+
+interface ICardContentProps extends ITextColorHelpersProps {}
+
+interface ICardFooterItemProps extends ITextColorHelpersProps {
   href?: string
 }
 
-interface ICardHeaderIconProps {
+interface ICardFooterProps extends ITextColorHelpersProps {}
+
+interface ICardHeaderIconProps extends ITextColorHelpersProps {
   href?: string
 }
 
-interface ICardHeaderTitleProps {
+interface ICardHeaderTitleProps extends ITextColorHelpersProps {
   isCentered?: boolean
 }
 
-class CardContent extends React.Component {
+class CardContent extends React.Component<ICardContentProps> {
   render() {
+    const className = classnames("card-content",
+      textColorHelpersPropsToClassenames(this.props),
+    )
+
     return (
       <div className="card-content">{this.props.children}</div>
     )
@@ -27,10 +40,14 @@ class CardFooterItem extends React.Component<ICardFooterItemProps> {
       href,
     } = this.props
 
+    const className = classnames("card-footer-item",
+      textColorHelpersPropsToClassenames(this.props),
+    )
+
     if (href) {
       return (
         <a
-          className="card-footer-item"
+          className={className}
           href={href}
         >
           {this.props.children}
@@ -38,22 +55,22 @@ class CardFooterItem extends React.Component<ICardFooterItemProps> {
       )
     } else {
       return (
-        <div
-          className="card-footer-item"
-        >
-          {this.props.children}
-        </div>
+        <div className={className}>{this.props.children}</div>
       )
     }
   }
 }
 
-class CardFooter extends React.Component {
+class CardFooter extends React.Component<ICardFooterProps> {
   static Item = CardFooterItem
 
   render() {
+    const className = classnames("card-footer",
+      textColorHelpersPropsToClassenames(this.props),
+    )
+
     return (
-      <footer className="card-footer">{this.props.children}</footer>
+      <footer className={className}>{this.props.children}</footer>
     )
   }
 }
@@ -65,10 +82,14 @@ class CardHeaderIcon extends React.Component<ICardHeaderIconProps> {
       ...props
     } = this.props
 
+    const className = classnames("card-header-icon",
+      textColorHelpersPropsToClassenames(this.props),
+    )
+
     if (href) {
       return (
         <a
-          className="card-header-icon"
+          className={className}
           href={href}
           {...props}
         >
@@ -78,7 +99,7 @@ class CardHeaderIcon extends React.Component<ICardHeaderIconProps> {
     } else {
       return (
         <div
-          className="card-header-icon"
+          className={className}
           {...props}
         >
           {this.props.children}
@@ -109,8 +130,12 @@ class CardHeader extends React.Component {
   static Title = CardHeaderTitle
 
   render() {
+    const className = classnames("card-header",
+      textColorHelpersPropsToClassenames(this.props),
+    )
+
     return (
-      <header className="card-header">{this.props.children}</header>
+      <header className={className}>{this.props.children}</header>
     )
   }
 }
@@ -130,8 +155,12 @@ export default class Card extends React.Component {
   static Image = CardImage
 
   render() {
+    const className = classnames("card",
+      textColorHelpersPropsToClassenames(this.props),
+    )
+
     return (
-      <div className="card">{this.props.children}</div>
+      <div className={className}>{this.props.children}</div>
     )
   }
 }

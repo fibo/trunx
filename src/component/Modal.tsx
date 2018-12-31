@@ -95,9 +95,7 @@ class ModalClose extends React.Component<IModalCloseProps> {
 class ModalContent extends React.Component {
   render() {
     return (
-      <div className="modal-content">
-        {this.props.children}
-      </div>
+      <div className="modal-content">{this.props.children}</div>
     )
   }
 }
@@ -110,7 +108,7 @@ export default class Modal extends React.Component<IModalProps> {
 
   render() {
     const {
-      isActive
+      isActive,
     } = this.props
 
     const className = classnames("modal", {

@@ -14,25 +14,18 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var Textarea = (function (_super) {
     __extends(Textarea, _super);
     function Textarea() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Textarea.prototype.render = function () {
-        var _a = this.props, isDanger = _a.isDanger, isFocused = _a.isFocused, isHovered = _a.isHovered, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, placeholder = _a.placeholder, rows = _a.rows;
+        var _a = this.props, isFocused = _a.isFocused, isHovered = _a.isHovered, placeholder = _a.placeholder, rows = _a.rows;
         var className = classnames("textarea", {
-            "is-danger": isDanger,
             "is-focused": isFocused,
             "is-hovered": isHovered,
-            "is-info": isInfo,
-            "is-large": isLarge,
-            "is-medium": isMedium,
-            "is-primary": isPrimary,
-            "is-small": isSmall,
-            "is-success": isSuccess,
-            "is-warning": isWarning,
-        });
+        }, modifiers_1.mainColorsPropsToClassenames(this.props), modifiers_1.sizePropsToClassenames(this.props), modifiers_1.textColorHelpersPropsToClassenames(this.props));
         return (React.createElement("textarea", { className: className, placeholder: placeholder, rows: rows }));
     };
     return Textarea;

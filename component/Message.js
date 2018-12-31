@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var MessageBody = (function (_super) {
     __extends(MessageBody, _super);
     function MessageBody() {
@@ -40,19 +41,11 @@ var Message = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Message.prototype.render = function () {
-        var _a = this.props, isDanger = _a.isDanger, isDark = _a.isDark, isInfo = _a.isInfo, isLarge = _a.isLarge, isLink = _a.isLink, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning;
+        var _a = this.props, isDark = _a.isDark, isLink = _a.isLink;
         var className = classnames("message", {
-            "is-danger": isDanger,
             "is-dark": isDark,
-            "is-info": isInfo,
-            "is-large": isLarge,
             "is-link": isLink,
-            "is-medium": isMedium,
-            "is-primary": isPrimary,
-            "is-small": isSmall,
-            "is-success": isSuccess,
-            "is-warning": isWarning,
-        });
+        }, modifiers_1.mainColorsPropsToClassenames(this.props), modifiers_1.sizePropsToClassenames(this.props));
         return (React.createElement("article", { className: className }, this.props.children));
     };
     Message.Body = MessageBody;
