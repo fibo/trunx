@@ -675,13 +675,13 @@ storiesOf('Form', module)
           </Subtitle>
 
           <p>
-            If you use the <code>readOnly</code> prop, the input will look similar to a normal one, but is not editable and has no shadow.
+            If you use the <code>readonly</code> prop, the input will look similar to a normal one, but is not editable and has no shadow.
           </p>
 
           <Columns>
             <Column isHalf>
               <Control>
-                <Input type='text' value='This text is read only' readOnly />
+                <Input type='text' value='This text is read only' readonly />
               </Control>
             </Column>
 
@@ -689,7 +689,7 @@ storiesOf('Form', module)
               <Code language='jsx'>
                 {indent`
                   <Control>
-                    <Input type='text' value='This text is read only' readOnly />
+                    <Input type='text' value='This text is read only' readonly />
                   </Control>
                 `}
               </Code>
@@ -710,7 +710,7 @@ storiesOf('Form', module)
                 <Field.Body>
                   <Field>
                     <Control>
-                      <Input isStatic type='email' value='me@example.com' readOnly />
+                      <Input isStatic type='email' value='me@example.com' readonly />
                     </Control>
                   </Field>
                 </Field.Body>
@@ -742,7 +742,7 @@ storiesOf('Form', module)
                     <Field.Body>
                       <Field>
                         <Control>
-                          <Input isStatic type='email' value='me@example.com' readOnly />
+                          <Input isStatic type='email' value='me@example.com' readonly />
                         </Control>
                       </Field>
                     </Field.Body>
