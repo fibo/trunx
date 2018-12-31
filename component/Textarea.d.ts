@@ -1,15 +1,8 @@
 import * as React from "react";
-interface ITextareaProps {
-    isDanger?: boolean;
+import { IMainColorsProps, ISizeProps, ITextColorHelpersProps } from "./modifiers";
+interface ITextareaProps extends IMainColorsProps, ISizeProps, ITextColorHelpersProps {
     isFocused?: boolean;
     isHovered?: boolean;
-    isInfo?: boolean;
-    isLarge?: boolean;
-    isMedium?: boolean;
-    isPrimary?: boolean;
-    isSmall?: boolean;
-    isSuccess?: boolean;
-    isWarning?: boolean;
     placeholder?: string;
     rows?: number;
 }

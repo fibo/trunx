@@ -1,8 +1,8 @@
 import * as React from "react";
 import { ITextColorHelpersProps } from "./modifiers";
-interface IFooterProps extends ITextColorHelpersProps {
+interface IStrongProps extends ITextColorHelpersProps {
 }
-export default class Footer extends React.Component<IFooterProps> {
+export default class Strong extends React.Component<IStrongProps> {
     render(): JSX.Element;
 }
 export {};

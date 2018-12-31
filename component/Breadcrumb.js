@@ -14,16 +14,22 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames_1 = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var Breadcrumb = (function (_super) {
     __extends(Breadcrumb, _super);
     function Breadcrumb() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Breadcrumb.prototype.render = function () {
-        var isCentered = this.props.isCentered;
+        var _a = this.props, hasArrowSeparator = _a.hasArrowSeparator, hasBulletSeparator = _a.hasBulletSeparator, hasDotSeparator = _a.hasDotSeparator, hasSuccedesSeparator = _a.hasSuccedesSeparator, isCentered = _a.isCentered, isRight = _a.isRight;
         var className = classnames_1.default("breadcrumb", {
+            "has-arrow-separator": hasArrowSeparator,
+            "has-bullet-separator": hasBulletSeparator,
+            "has-dot-separator": hasDotSeparator,
+            "has-succedes-separator": hasSuccedesSeparator,
             "is-centered": isCentered,
-        });
+            "is-right": isRight,
+        }, modifiers_1.sizePropsToClassenames(this.props), modifiers_1.textColorHelpersPropsToClassenames(this.props));
         return (React.createElement("nav", { "aria-label": "breadcrumbs", className: className },
             React.createElement("ul", null, this.props.children)));
     };

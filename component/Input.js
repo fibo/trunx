@@ -34,27 +34,20 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var Input = (function (_super) {
     __extends(Input, _super);
     function Input() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Input.prototype.render = function () {
-        var _a = this.props, disabled = _a.disabled, inputRef = _a.inputRef, isDanger = _a.isDanger, isFocused = _a.isFocused, isHovered = _a.isHovered, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isStatic = _a.isStatic, isSuccess = _a.isSuccess, isWarning = _a.isWarning, readOnly = _a.readOnly, type = _a.type, props = __rest(_a, ["disabled", "inputRef", "isDanger", "isFocused", "isHovered", "isInfo", "isLarge", "isMedium", "isPrimary", "isRounded", "isSmall", "isStatic", "isSuccess", "isWarning", "readOnly", "type"]);
+        var _a = this.props, disabled = _a.disabled, inputRef = _a.inputRef, isFocused = _a.isFocused, isHovered = _a.isHovered, isRounded = _a.isRounded, isStatic = _a.isStatic, readOnly = _a.readOnly, type = _a.type, props = __rest(_a, ["disabled", "inputRef", "isFocused", "isHovered", "isRounded", "isStatic", "readOnly", "type"]);
         var className = classnames("input", {
-            "is-danger": isDanger,
             "is-focused": isFocused,
             "is-hovered": isHovered,
-            "is-info": isInfo,
-            "is-large": isLarge,
-            "is-medium": isMedium,
-            "is-primary": isPrimary,
             "is-rounded": isRounded,
-            "is-small": isSmall,
             "is-static": isStatic,
-            "is-success": isSuccess,
-            "is-warning": isWarning,
-        });
+        }, modifiers_1.mainColorsPropsToClassenames(this.props), modifiers_1.sizePropsToClassenames(this.props));
         return (React.createElement("input", __assign({ className: className, disabled: disabled, readOnly: readOnly, ref: inputRef, type: type }, props)));
     };
     return Input;

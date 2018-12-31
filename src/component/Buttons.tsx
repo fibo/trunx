@@ -1,9 +1,21 @@
+import * as classnames from "classnames"
 import * as React from "react"
 
-export default class Buttons extends React.Component {
+import {
+  ITextColorHelpersProps,
+  textColorHelpersPropsToClassenames,
+} from "./modifiers"
+
+interface IButtonsProps extends ITextColorHelpersProps {}
+
+export default class Buttons extends React.Component<IButtonsProps> {
   render() {
+    const className = classnames("buttons",
+      textColorHelpersPropsToClassenames(this.props),
+    )
+
     return (
-      <div className="buttons">{this.props.children}</div>
+      <div className={className}>{this.props.children}</div>
     )
   }
 }

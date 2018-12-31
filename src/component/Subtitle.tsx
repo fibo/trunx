@@ -1,7 +1,12 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface ISubtitleProps {
+import {
+  ITextColorHelpersProps,
+  textColorHelpersPropsToClassenames,
+} from "./modifiers"
+
+interface ISubtitleProps extends ITextColorHelpersProps {
   is1?: boolean
   is2?: boolean
   is3?: boolean
@@ -28,7 +33,7 @@ export default class Subtitle extends React.Component<ISubtitleProps> {
       "is-4": is4,
       "is-5": is5,
       "is-6": is6,
-    })
+    }, textColorHelpersPropsToClassenames(this.props))
 
     return (<p className={className}>{this.props.children}</p>)
   }

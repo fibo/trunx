@@ -1,11 +1,6 @@
 import * as React from "react";
-interface INotificationProps {
-    isDanger?: boolean;
-    isLink?: boolean;
-    isInfo?: boolean;
-    isPrimary?: boolean;
-    isSuccess?: boolean;
-    isWarning?: boolean;
+import { IMainColorsProps } from "./modifiers";
+interface INotificationProps extends IMainColorsProps {
 }
 export default class Notification extends React.Component<INotificationProps> {
     render(): JSX.Element;

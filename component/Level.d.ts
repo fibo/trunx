@@ -1,17 +1,22 @@
 import * as React from "react";
-interface ILevelProps {
+import { ITextColorHelpersProps } from "./modifiers";
+interface ILevelItemProps extends ITextColorHelpersProps {
+    hasTextCentered?: boolean;
+}
+interface ILevelLeftProps extends ITextColorHelpersProps {
+}
+interface ILevelProps extends ITextColorHelpersProps {
     isMobile?: boolean;
 }
-interface ILevelItemProps {
-    hasTextCentered?: boolean;
+interface ILevelRightProps extends ITextColorHelpersProps {
 }
 declare class LevelItem extends React.Component<ILevelItemProps> {
     render(): JSX.Element;
 }
-declare class LevelLeft extends React.Component {
+declare class LevelLeft extends React.Component<ILevelLeftProps> {
     render(): JSX.Element;
 }
-declare class LevelRight extends React.Component {
+declare class LevelRight extends React.Component<ILevelRightProps> {
     render(): JSX.Element;
 }
 export default class Level extends React.Component<ILevelProps> {

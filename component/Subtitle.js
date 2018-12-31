@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var Subtitle = (function (_super) {
     __extends(Subtitle, _super);
     function Subtitle() {
@@ -28,7 +29,7 @@ var Subtitle = (function (_super) {
             "is-4": is4,
             "is-5": is5,
             "is-6": is6,
-        });
+        }, modifiers_1.textColorHelpersPropsToClassenames(this.props));
         return (React.createElement("p", { className: className }, this.props.children));
     };
     return Subtitle;

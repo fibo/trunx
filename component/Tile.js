@@ -14,6 +14,7 @@ var __extends = (this && this.__extends) || (function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var TileAncestor = (function (_super) {
     __extends(TileAncestor, _super);
     function TileAncestor() {
@@ -40,15 +41,7 @@ var TileChildNotification = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TileChildNotification.prototype.render = function () {
-        var _a = this.props, isDanger = _a.isDanger, isLink = _a.isLink, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isWarning = _a.isWarning;
-        var className = classnames("tile is-child notification", {
-            "is-danger": isDanger,
-            "is-info": isInfo,
-            "is-link": isLink,
-            "is-primary": isPrimary,
-            "is-success": isSuccess,
-            "is-warning": isWarning,
-        });
+        var className = classnames("tile is-child notification", modifiers_1.mainColorsPropsToClassenames(this.props));
         return (React.createElement("article", { className: className }, this.props.children));
     };
     return TileChildNotification;

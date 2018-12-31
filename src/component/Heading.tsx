@@ -1,9 +1,21 @@
+import * as classnames from "classnames"
 import * as React from "react"
 
-export default class Heading extends React.Component {
+import {
+  ITextColorHelpersProps,
+  textColorHelpersPropsToClassenames,
+} from "./modifiers"
+
+interface IHeadingProps extends ITextColorHelpersProps {}
+
+export default class Footer extends React.Component<IHeadingProps> {
   render() {
+    const className = classnames("heading",
+      textColorHelpersPropsToClassenames(this.props),
+    )
+
     return (
-      <p className="heading">{this.props.children}</p>
+      <p className={className}>{this.props.children}</p>
     )
   }
 }

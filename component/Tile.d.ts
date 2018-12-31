@@ -1,4 +1,5 @@
 import * as React from "react";
+import { IMainColorsProps } from "./modifiers";
 interface ITileProps {
     is1?: boolean;
     is2?: boolean;
@@ -15,13 +16,7 @@ interface ITileProps {
     isParent?: boolean;
     isVertical?: boolean;
 }
-interface ITileChildNotificationProps {
-    isDanger?: boolean;
-    isLink?: boolean;
-    isInfo?: boolean;
-    isPrimary?: boolean;
-    isSuccess?: boolean;
-    isWarning?: boolean;
+interface ITileChildNotificationProps extends IMainColorsProps {
 }
 declare class TileAncestor extends React.Component {
     render(): JSX.Element;

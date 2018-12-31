@@ -34,38 +34,31 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var Button = (function (_super) {
     __extends(Button, _super);
     function Button() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Button.prototype.render = function () {
-        var _a = this.props, disabled = _a.disabled, href = _a.href, isActive = _a.isActive, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isFocused = _a.isFocused, isFullwidth = _a.isFullwidth, isInfo = _a.isInfo, isInverted = _a.isInverted, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isLoading = _a.isLoading, isMedium = _a.isMedium, isNormal = _a.isNormal, isOutlined = _a.isOutlined, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isStatic = _a.isStatic, isSuccess = _a.isSuccess, isText = _a.isText, isWarning = _a.isWarning, isWhite = _a.isWhite, onClick = _a.onClick, type = _a.type, props = __rest(_a, ["disabled", "href", "isActive", "isBlack", "isDanger", "isDark", "isFocused", "isFullwidth", "isInfo", "isInverted", "isLarge", "isLight", "isLink", "isLoading", "isMedium", "isNormal", "isOutlined", "isPrimary", "isRounded", "isSmall", "isStatic", "isSuccess", "isText", "isWarning", "isWhite", "onClick", "type"]);
+        var _a = this.props, disabled = _a.disabled, href = _a.href, isActive = _a.isActive, isBlack = _a.isBlack, isDark = _a.isDark, isFocused = _a.isFocused, isFullwidth = _a.isFullwidth, isInverted = _a.isInverted, isLight = _a.isLight, isLink = _a.isLink, isLoading = _a.isLoading, isNormal = _a.isNormal, isOutlined = _a.isOutlined, isRounded = _a.isRounded, isStatic = _a.isStatic, isText = _a.isText, isWhite = _a.isWhite, onClick = _a.onClick, type = _a.type, props = __rest(_a, ["disabled", "href", "isActive", "isBlack", "isDark", "isFocused", "isFullwidth", "isInverted", "isLight", "isLink", "isLoading", "isNormal", "isOutlined", "isRounded", "isStatic", "isText", "isWhite", "onClick", "type"]);
         var className = classnames("button", {
             "is-active": isActive,
             "is-black": isBlack,
-            "is-danger": isDanger,
             "is-dark": isDark,
             "is-focused": isFocused,
             "is-fullwidth": isFullwidth,
-            "is-info": isInfo,
             "is-inverted": isInverted,
-            "is-large": isLarge,
             "is-light": isLight,
             "is-link": isLink,
             "is-loading": isLoading,
-            "is-medium": isMedium,
             "is-normal": isNormal,
             "is-outlined": isOutlined,
-            "is-primary": isPrimary,
             "is-rounded": isRounded,
-            "is-small": isSmall,
             "is-static": isStatic,
-            "is-success": isSuccess,
             "is-text": isText,
-            "is-warning": isWarning,
             "is-white": isWhite,
-        });
+        }, modifiers_1.mainColorsPropsToClassenames(this.props), modifiers_1.sizePropsToClassenames(this.props), modifiers_1.textColorHelpersPropsToClassenames(this.props));
         if (href) {
             return (React.createElement("a", __assign({ className: className, href: href }, props), this.props.children));
         }

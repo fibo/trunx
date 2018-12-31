@@ -1,11 +1,12 @@
 {
   "extends": ["tslint:latest", "tslint-react"],
   "rules": {
-    "semicolon": [true, "never"],
-    "trailing-comma": false,
     "jsx-wrap-multiline": false,
     "max-classes-per-file": false,
     "member-access": [true, "no-public"],
-    "no-implicit-dependencies": [true, "dev"]
+    "no-implicit-dependencies": [true, "dev"],
+    "no-empty-interface": false,
+    "semicolon": [true, "never"],
+    "trailing-comma": false
   }
 }

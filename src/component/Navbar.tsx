@@ -1,21 +1,20 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
+import {
+  IMainColorsProps,
+  mainColorsPropsToClassenames,
+} from "./modifiers"
+
 interface INavbarProps {
   hasShadow?: boolean
   isBlack?: boolean
-  isDanger?: boolean
   isDark?: boolean
   isFixedBottom?: boolean
   isFixedTop?: boolean
   isLight?: boolean
-  isLink?: boolean
-  isInfo?: boolean
-  isPrimary?: boolean
-  isSuccess?: boolean
   isTransparent?: boolean
   isUnselectable?: boolean
-  isWarning?: boolean
   isWhite?: boolean
 }
 
@@ -203,36 +202,29 @@ export default class Navbar extends React.Component<INavbarProps> {
   render() {
     const {
       isBlack,
-      isDanger,
       isDark,
       isFixedBottom,
       isFixedTop,
       isTransparent,
       isLight,
-      isLink,
-      isPrimary,
-      isSuccess,
       isUnselectable,
-      isWarning,
       isWhite,
       ...props
     } = this.props
 
-    const className = classnames("navbar", {
-      "is-black": isBlack,
-      "is-danger": isDanger,
-      "is-dark": isDark,
-      "is-fixed-bottom": isFixedBottom,
-      "is-fixed-top": isFixedTop,
-      "is-light": isLight,
-      "is-link": isLink,
-      "is-primary": isPrimary,
-      "is-success": isSuccess,
-      "is-transparent": isTransparent,
-      "is-unselectable": isUnselectable,
-      "is-warning": isWarning,
-      "is-white": isWhite,
-    })
+    const className = classnames("navbar",
+      {
+        "is-black": isBlack,
+        "is-dark": isDark,
+        "is-fixed-bottom": isFixedBottom,
+        "is-fixed-top": isFixedTop,
+        "is-light": isLight,
+        "is-transparent": isTransparent,
+        "is-unselectable": isUnselectable,
+        "is-white": isWhite,
+      },
+      mainColorsPropsToClassenames(this.props),
+    )
 
     return (
       <nav className={className} {...props}>{this.props.children}</nav>

@@ -1,14 +1,6 @@
 import * as React from "react";
-interface IProgressProps {
-    isDanger?: boolean;
-    isInfo?: boolean;
-    isLarge?: boolean;
-    isLink?: boolean;
-    isMedium?: boolean;
-    isPrimary?: boolean;
-    isSmall?: boolean;
-    isSuccess?: boolean;
-    isWarning?: boolean;
+import { ISizeProps } from "./modifiers";
+interface IProgressProps extends ISizeProps {
     max: number;
     value: number;
 }

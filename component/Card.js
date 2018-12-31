@@ -34,12 +34,14 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var modifiers_1 = require("./modifiers");
 var CardContent = (function (_super) {
     __extends(CardContent, _super);
     function CardContent() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardContent.prototype.render = function () {
+        var className = classnames("card-content", modifiers_1.textColorHelpersPropsToClassenames(this.props));
         return (React.createElement("div", { className: "card-content" }, this.props.children));
     };
     return CardContent;
@@ -51,11 +53,12 @@ var CardFooterItem = (function (_super) {
     }
     CardFooterItem.prototype.render = function () {
         var href = this.props.href;
+        var className = classnames("card-footer-item", modifiers_1.textColorHelpersPropsToClassenames(this.props));
         if (href) {
-            return (React.createElement("a", { className: "card-footer-item", href: href }, this.props.children));
+            return (React.createElement("a", { className: className, href: href }, this.props.children));
         }
         else {
-            return (React.createElement("div", { className: "card-footer-item" }, this.props.children));
+            return (React.createElement("div", { className: className }, this.props.children));
         }
     };
     return CardFooterItem;
@@ -66,7 +69,8 @@ var CardFooter = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardFooter.prototype.render = function () {
-        return (React.createElement("footer", { className: "card-footer" }, this.props.children));
+        var className = classnames("card-footer", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        return (React.createElement("footer", { className: className }, this.props.children));
     };
     CardFooter.Item = CardFooterItem;
     return CardFooter;
@@ -78,11 +82,12 @@ var CardHeaderIcon = (function (_super) {
     }
     CardHeaderIcon.prototype.render = function () {
         var _a = this.props, href = _a.href, props = __rest(_a, ["href"]);
+        var className = classnames("card-header-icon", modifiers_1.textColorHelpersPropsToClassenames(this.props));
         if (href) {
-            return (React.createElement("a", __assign({ className: "card-header-icon", href: href }, props), this.props.children));
+            return (React.createElement("a", __assign({ className: className, href: href }, props), this.props.children));
         }
         else {
-            return (React.createElement("div", __assign({ className: "card-header-icon" }, props), this.props.children));
+            return (React.createElement("div", __assign({ className: className }, props), this.props.children));
         }
     };
     return CardHeaderIcon;
@@ -107,7 +112,8 @@ var CardHeader = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardHeader.prototype.render = function () {
-        return (React.createElement("header", { className: "card-header" }, this.props.children));
+        var className = classnames("card-header", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        return (React.createElement("header", { className: className }, this.props.children));
     };
     CardHeader.Icon = CardHeaderIcon;
     CardHeader.Title = CardHeaderTitle;
@@ -129,7 +135,8 @@ var Card = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Card.prototype.render = function () {
-        return (React.createElement("div", { className: "card" }, this.props.children));
+        var className = classnames("card", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        return (React.createElement("div", { className: className }, this.props.children));
     };
     Card.Content = CardContent;
     Card.Footer = CardFooter;
