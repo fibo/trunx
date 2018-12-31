@@ -427,7 +427,13 @@ storiesOf('Modifiers', module)
 
             <li>
               <code>
-                Card
+                Card.Content
+              </code>
+            </li>
+
+            <li>
+              <code>
+                Card.Footer
               </code>
             </li>
 

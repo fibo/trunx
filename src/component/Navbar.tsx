@@ -6,7 +6,7 @@ import {
   mainColorsPropsToClassenames,
 } from "./modifiers"
 
-interface INavbarProps {
+interface INavbarProps extends IMainColorsProps {
   hasShadow?: boolean
   isBlack?: boolean
   isDark?: boolean
@@ -203,11 +203,16 @@ export default class Navbar extends React.Component<INavbarProps> {
     const {
       isBlack,
       isDark,
+      isDanger,
       isFixedBottom,
       isFixedTop,
-      isTransparent,
       isLight,
+      isInfo,
+      isPrimary,
+      isSuccess,
+      isTransparent,
       isUnselectable,
+      isWarning,
       isWhite,
       ...props
     } = this.props
@@ -223,7 +228,13 @@ export default class Navbar extends React.Component<INavbarProps> {
         "is-unselectable": isUnselectable,
         "is-white": isWhite,
       },
-      mainColorsPropsToClassenames(this.props),
+      mainColorsPropsToClassenames({
+        isDanger,
+        isInfo,
+        isPrimary,
+        isSuccess,
+        isWarning,
+      }),
     )
 
     return (

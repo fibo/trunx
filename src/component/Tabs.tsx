@@ -6,7 +6,7 @@ import {
   sizePropsToClassenames,
 } from "./modifiers"
 
-interface ITabsProps {
+interface ITabsProps extends ISizeProps {
   isBoxed?: boolean
   isCentered?: boolean
   isFullwidth?: boolean
@@ -91,7 +91,10 @@ export default class Tabs extends React.Component<ITabsProps> {
       isBoxed,
       isCentered,
       isFullwidth,
+      isLarge,
+      isMedium,
       isRight,
+      isSmall,
       isToggle,
       isToggleRounded,
     } = this.props
@@ -105,7 +108,11 @@ export default class Tabs extends React.Component<ITabsProps> {
         "is-toggle": isToggle,
         "is-toggle-rounded": isToggleRounded,
       },
-      sizePropsToClassenames(this.props),
+      sizePropsToClassenames({
+        isLarge,
+        isMedium,
+        isSmall,
+      }),
     )
 
     return (

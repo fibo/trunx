@@ -8,7 +8,7 @@ import {
   sizePropsToClassenames,
 } from "./modifiers"
 
-interface IProgressProps extends ISizeProps {
+interface IProgressProps extends IMainColorsProps, ISizeProps {
   max: number
   value: number
 }
@@ -16,13 +16,31 @@ interface IProgressProps extends ISizeProps {
 export default class Progress extends React.Component<IProgressProps> {
   render() {
     const {
+      isDanger,
+      isInfo,
+      isLarge,
+      isMedium,
+      isPrimary,
+      isSmall,
+      isSuccess,
+      isWarning,
       max,
       value,
     } = this.props
 
-    const className = classnames("tag",
-      mainColorsPropsToClassenames(this.props),
-      sizePropsToClassenames(this.props),
+    const className = classnames("progress",
+      mainColorsPropsToClassenames({
+        isDanger,
+        isInfo,
+        isPrimary,
+        isSuccess,
+        isWarning,
+      }),
+      sizePropsToClassenames({
+        isLarge,
+        isMedium,
+        isSmall,
+      }),
     )
 
     return (
