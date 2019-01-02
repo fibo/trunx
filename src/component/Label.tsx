@@ -6,8 +6,7 @@ import {
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
-interface ILabelProps extends ITextColorHelpersProps {
-}
+interface ILabelProps extends ITextColorHelpersProps {}
 
 export default class Label extends React.Component<ILabelProps> {
   render() {
