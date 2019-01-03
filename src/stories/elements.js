@@ -175,11 +175,11 @@ storiesOf('Elements', module)
 
           <ul>
             <li>
-              <code>{'<a>'}</code> anchor links, if there is an <code>href</code> prop
+              <code>{'<button>'}</code> form buttons
             </li>
 
             <li>
-              <code>{'<button>'}</code> form buttons
+              <code>{'<a>'}</code> anchor links, if there is an <code>href</code> prop
             </li>
 
             <li>
@@ -228,6 +228,29 @@ storiesOf('Elements', module)
             </Column>
           </Columns>
 
+          <p>
+            Despite in Bulma it is not possible, in Trunx you can set a <em>submit</em> or <em>reset</em> type <code>Button</code> component to <code>disabled</code> or even set it to <code>isLoading</code> state.
+          </p>
+
+          <Columns>
+            <Column isHalf>
+              <Buttons>
+                <Button type='submit' disabled value='Button' />
+
+                <Button type='submit' isLoading value='Button' />
+              </Buttons>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Button type='submit' disabled value='Button' />
+
+                  <Button type='submit' isLoading value='Button' />
+                `}
+              </Code>
+            </Column>
+          </Columns>
           <hr />
 
           <Title is4>

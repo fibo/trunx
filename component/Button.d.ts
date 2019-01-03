@@ -20,6 +20,7 @@ interface IButtonProps extends IMainColorsProps, ISizeProps, ITextColorHelpersPr
     isWhite?: boolean;
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     type?: "reset" | "submit";
+    value: string | number | string[] | undefined;
 }
 export default class Button extends React.Component<IButtonProps> {
     render(): JSX.Element;
