@@ -30,6 +30,7 @@ interface IButtonProps extends IMainColorsProps, ISizeProps, ITextColorHelpersPr
   isWhite?: boolean
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
   type?: "reset" | "submit"
+  value: string | number | string[] | undefined // same as in InputHTMLAttributes from @types/react
 }
 
 export default class Button extends React.Component<IButtonProps> {
@@ -81,6 +82,7 @@ export default class Button extends React.Component<IButtonProps> {
       isWhite,
       onClick,
       type,
+      value,
       ...props
     } = this.props
 
@@ -150,13 +152,24 @@ export default class Button extends React.Component<IButtonProps> {
     }
 
     if (type) {
-      return (
-        <input
-          className={className}
-          type={type}
-          {...props}
-        />
-      )
+      if (isLoading) {
+        return (
+          <button
+            className={className}
+          >
+            {value}
+          </button>
+        )
+      } else {
+        return (
+          <input
+            className={className}
+            type={type}
+            value={value}
+            {...props}
+          />
+        )
+      }
     }
 
     return (

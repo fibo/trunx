@@ -19,9 +19,9 @@ var Checkbox = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Checkbox.prototype.render = function () {
-        var disabled = this.props.disabled;
+        var _a = this.props, disabled = _a.disabled, inputRef = _a.inputRef;
         return (React.createElement("label", { className: "checkbox" },
-            React.createElement("input", { disabled: disabled, type: "checkbox" }),
+            React.createElement("input", { disabled: disabled, ref: inputRef, type: "checkbox" }),
             " ",
             this.props.children));
     };
