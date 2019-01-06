@@ -2,21 +2,22 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
+  Anchor,
+  IAnchorProps,
+} from "./Anchor"
+
+import {
   ITextColorHelpersProps,
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
 interface ICardContentProps extends ITextColorHelpersProps {}
 
-interface ICardFooterItemProps {
-  href?: string
-}
+interface ICardFooterItemProps extends IAnchorProps {}
 
 interface ICardFooterProps extends ITextColorHelpersProps {}
 
-interface ICardHeaderIconProps {
-  href?: string
-}
+interface ICardHeaderIconProps extends IAnchorProps {}
 
 interface ICardHeaderTitleProps {
   isCentered?: boolean
@@ -37,19 +38,25 @@ class CardContent extends React.Component<ICardContentProps> {
 class CardFooterItem extends React.Component<ICardFooterItemProps> {
   render() {
     const {
+      AnchorComponent,
       href,
+      hrefProp,
+      ...props
     } = this.props
 
     const className = "card-footer-item"
 
     if (href) {
       return (
-        <a
+        <Anchor
+          AnchorComponent={AnchorComponent}
           className={className}
           href={href}
+          hrefProp={hrefProp}
+          {...props}
         >
           {this.props.children}
-        </a>
+        </Anchor>
       )
     } else {
       return (
