@@ -2,6 +2,11 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
+  Anchor,
+  IAnchorProps,
+} from "./Anchor"
+
+import {
   IMainColorsProps,
   mainColorsPropsToClassenames,
 } from "./modifiers"
@@ -23,9 +28,8 @@ interface INavbarBurgerProps {
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
-interface INavbarItemProps {
+interface INavbarItemProps extends IAnchorProps {
   hasDropdown?: boolean
-  href?: string
   isActive?: boolean
   isHoverable?: boolean
 }
@@ -98,8 +102,10 @@ class NavbarEnd extends React.Component {
 class NavbarItem extends React.Component<INavbarItemProps> {
   render() {
     const {
+      AnchorComponent,
       hasDropdown,
       href,
+      hrefProp,
       isActive,
       isHoverable,
       ...props
@@ -112,13 +118,15 @@ class NavbarItem extends React.Component<INavbarItemProps> {
     })
 
     return href ? (
-      <a
+      <Anchor
+        AnchorComponent={AnchorComponent}
         className={className}
         href={href}
+        hrefProp={hrefProp}
         {...props}
       >
         {this.props.children}
-      </a>
+      </Anchor>
     ) : (
       <div
         className={className}
