@@ -34,6 +34,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var Anchor_1 = require("./Anchor");
 var modifiers_1 = require("./modifiers");
 var CardContent = (function (_super) {
     __extends(CardContent, _super);
@@ -52,10 +53,10 @@ var CardFooterItem = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardFooterItem.prototype.render = function () {
-        var href = this.props.href;
+        var _a = this.props, AnchorComponent = _a.AnchorComponent, href = _a.href, hrefProp = _a.hrefProp, props = __rest(_a, ["AnchorComponent", "href", "hrefProp"]);
         var className = "card-footer-item";
         if (href) {
-            return (React.createElement("a", { className: className, href: href }, this.props.children));
+            return (React.createElement(Anchor_1.Anchor, __assign({ AnchorComponent: AnchorComponent, className: className, href: href, hrefProp: hrefProp }, props), this.props.children));
         }
         else {
             return (React.createElement("div", { className: className }, this.props.children));

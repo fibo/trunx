@@ -1,14 +1,13 @@
 import * as React from "react";
+import { IAnchorProps } from "./Anchor";
 import { ITextColorHelpersProps } from "./modifiers";
 interface ICardContentProps extends ITextColorHelpersProps {
 }
-interface ICardFooterItemProps {
-    href?: string;
+interface ICardFooterItemProps extends IAnchorProps {
 }
 interface ICardFooterProps extends ITextColorHelpersProps {
 }
-interface ICardHeaderIconProps {
-    href?: string;
+interface ICardHeaderIconProps extends IAnchorProps {
 }
 interface ICardHeaderTitleProps {
     isCentered?: boolean;

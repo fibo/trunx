@@ -1,7 +1,7 @@
 import * as React from "react";
+import { IAnchorProps } from "./Anchor";
 import { IMainColorsProps, ISizeProps } from "./modifiers";
-interface ITagProps extends IMainColorsProps, ISizeProps {
-    href?: string;
+interface ITagProps extends IAnchorProps, IMainColorsProps, ISizeProps {
     isBlack?: boolean;
     isDark?: boolean;
     isLight?: boolean;

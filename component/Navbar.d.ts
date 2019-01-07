@@ -1,4 +1,5 @@
 import * as React from "react";
+import { IAnchorProps } from "./Anchor";
 import { IMainColorsProps } from "./modifiers";
 interface INavbarProps extends IMainColorsProps {
     hasShadow?: boolean;
@@ -15,9 +16,8 @@ interface INavbarBurgerProps {
     isActive?: boolean;
     onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
-interface INavbarItemProps {
+interface INavbarItemProps extends IAnchorProps {
     hasDropdown?: boolean;
-    href?: string;
     isActive?: boolean;
     isHoverable?: boolean;
 }

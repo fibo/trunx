@@ -438,6 +438,35 @@ storiesOf('Components', module)
               </Code>
             </Column>
           </Columns>
+
+          <hr />
+
+          <Title is4>
+            Router Integration
+          </Title>
+
+          <p>
+            <code>Card.Footer.Item</code> can be integrated with a router, for instance, <code>react-router-dom</code>.
+            First import <code>Link</code> component.
+          </p>
+
+          <Code language='jsx'>
+            {indent`
+              import { Link } from 'react-router-dom'
+            `}
+          </Code>
+
+          <p>
+            Then pass <code>Link</code> as the <code>AnchorComponent</code> prop.
+          </p>
+
+          <Code language='jsx'>
+            {indent`
+              <Card.Footer.Item AnchorComponent={Link} href='/item'>
+                Item
+              </Card.Footer.Item>
+            `}
+          </Code>
         </Content>
       </Container>
     </Section>
@@ -1025,6 +1054,33 @@ storiesOf('Components', module)
           </p>
 
           <hr />
+
+          <Title is4>
+            Router Integration
+          </Title>
+
+          <p>
+            <code>Navbar.Item</code> can be integrated with a router, for instance, <code>react-router-dom</code>.
+            First import <code>Link</code> component.
+          </p>
+
+          <Code language='jsx'>
+            {indent`
+              import { Link } from 'react-router-dom'
+            `}
+          </Code>
+
+          <p>
+            Then pass <code>Link</code> as the <code>AnchorComponent</code> prop.
+          </p>
+
+          <Code language='jsx'>
+            {indent`
+              <Navbar.Item AnchorComponent={Link} href='/pricing'>
+                Pricing
+              </Navbar.Item>
+            `}
+          </Code>
 
           <Title is4>
             Classic Navbar

@@ -34,6 +34,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var Anchor_1 = require("./Anchor");
 var modifiers_1 = require("./modifiers");
 var Tag = (function (_super) {
     __extends(Tag, _super);
@@ -41,7 +42,7 @@ var Tag = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Tag.prototype.render = function () {
-        var _a = this.props, href = _a.href, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isInfo = _a.isInfo, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, isWhite = _a.isWhite, props = __rest(_a, ["href", "isBlack", "isDanger", "isDark", "isInfo", "isLarge", "isLight", "isLink", "isMedium", "isPrimary", "isRounded", "isSmall", "isSuccess", "isWarning", "isWhite"]);
+        var _a = this.props, AnchorComponent = _a.AnchorComponent, href = _a.href, hrefProp = _a.hrefProp, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isInfo = _a.isInfo, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, isWhite = _a.isWhite, props = __rest(_a, ["AnchorComponent", "href", "hrefProp", "isBlack", "isDanger", "isDark", "isInfo", "isLarge", "isLight", "isLink", "isMedium", "isPrimary", "isRounded", "isSmall", "isSuccess", "isWarning", "isWhite"]);
         var className = classnames("tag", {
             "is-black": isBlack,
             "is-dark": isDark,
@@ -60,7 +61,7 @@ var Tag = (function (_super) {
             isMedium: isMedium,
             isSmall: isSmall,
         }));
-        return href ? (React.createElement("a", __assign({ className: className, href: href }, props), this.props.children)) : (React.createElement("span", { className: className }, this.props.children));
+        return href ? (React.createElement(Anchor_1.Anchor, __assign({ AnchorComponent: AnchorComponent, className: className, href: href, hrefProp: hrefProp }, props), this.props.children)) : (React.createElement("span", { className: className }, this.props.children));
     };
     return Tag;
 }(React.Component));
