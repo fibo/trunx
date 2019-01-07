@@ -1,7 +1,9 @@
 import * as React from "react"
 
+interface IAnchorComponentProps {}
+
 export interface IAnchorProps {
-  AnchorComponent: React.Component,
+  AnchorComponent: React.ComponentClass<IAnchorComponentProps>,
   className: string,
   href?: string,
   hrefProp: string,
