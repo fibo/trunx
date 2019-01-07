@@ -2,6 +2,11 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
+  Anchor,
+  IAnchorProps,
+} from "./Anchor"
+
+import {
   IMainColorsProps,
   ISizeProps,
   ITextColorHelpersProps,
@@ -10,9 +15,11 @@ import {
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
-interface IButtonProps extends IMainColorsProps, ISizeProps, ITextColorHelpersProps {
+interface IButtonProps extends IAnchorProps,
+                               IMainColorsProps,
+                               ISizeProps,
+                               ITextColorHelpersProps {
   disabled?: boolean
-  href?: string
   isActive?: boolean
   isBlack?: boolean
   isDark?: boolean
@@ -36,6 +43,7 @@ interface IButtonProps extends IMainColorsProps, ISizeProps, ITextColorHelpersPr
 export default class Button extends React.Component<IButtonProps> {
   render() {
     const {
+      AnchorComponent,
       disabled,
       hasTextBlack,
       hasTextBlackBis,
@@ -57,6 +65,7 @@ export default class Button extends React.Component<IButtonProps> {
       hasTextWhiteBis,
       hasTextWhiteTer,
       href,
+      hrefProp,
       isActive,
       isBlack,
       isDanger,
@@ -141,13 +150,15 @@ export default class Button extends React.Component<IButtonProps> {
 
     if (href) {
       return (
-        <a
+        <Anchor
+          AnchorComponent={AnchorComponent}
           className={className}
           href={href}
+          hrefProp={hrefProp}
           {...props}
         >
           {this.props.children}
-        </a>
+        </Anchor>
       )
     }
 
