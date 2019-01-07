@@ -34,6 +34,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var classnames = require("classnames");
 var React = require("react");
+var Anchor_1 = require("./Anchor");
 var modifiers_1 = require("./modifiers");
 var NavbarBrand = (function (_super) {
     __extends(NavbarBrand, _super);
@@ -99,13 +100,13 @@ var NavbarItem = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarItem.prototype.render = function () {
-        var _a = this.props, hasDropdown = _a.hasDropdown, href = _a.href, isActive = _a.isActive, isHoverable = _a.isHoverable, props = __rest(_a, ["hasDropdown", "href", "isActive", "isHoverable"]);
+        var _a = this.props, AnchorComponent = _a.AnchorComponent, hasDropdown = _a.hasDropdown, href = _a.href, hrefProp = _a.hrefProp, isActive = _a.isActive, isHoverable = _a.isHoverable, props = __rest(_a, ["AnchorComponent", "hasDropdown", "href", "hrefProp", "isActive", "isHoverable"]);
         var className = classnames("navbar-item", {
             "has-dropdown": hasDropdown,
             "is-active": isActive,
             "is-hoverable": isHoverable,
         });
-        return href ? (React.createElement("a", __assign({ className: className, href: href }, props), this.props.children)) : (React.createElement("div", __assign({ className: className }, props), this.props.children));
+        return href ? (React.createElement(Anchor_1.Anchor, __assign({ AnchorComponent: AnchorComponent, className: className, href: href, hrefProp: hrefProp }, props), this.props.children)) : (React.createElement("div", __assign({ className: className }, props), this.props.children));
     };
     return NavbarItem;
 }(React.Component));

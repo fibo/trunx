@@ -370,6 +370,35 @@ storiesOf('Elements', module)
               </Code>
             </Column>
           </Columns>
+
+          <hr />
+
+          <Title is4>
+            Router Integration
+          </Title>
+
+          <p>
+            <code>Button</code> can be integrated with a router, for instance, <code>react-router-dom</code>.
+            First import <code>Link</code> component.
+          </p>
+
+          <Code language='jsx'>
+            {indent`
+              import { Link } from 'react-router-dom'
+            `}
+          </Code>
+
+          <p>
+            Then pass <code>Link</code> as the <code>AnchorComponent</code> prop.
+          </p>
+
+          <Code language='jsx'>
+            {indent`
+              <Button AnchorComponent={Link} href='/signup'>
+                Sign up
+              </Button>
+            `}
+          </Code>
         </Content>
       </Container>
     </Section>
@@ -949,6 +978,35 @@ storiesOf('Elements', module)
               </Code>
             </Column>
           </Columns>
+
+          <hr />
+
+          <Title is4>
+            Router Integration
+          </Title>
+
+          <p>
+            <code>Tag</code> can be integrated with a router, for instance, <code>react-router-dom</code>.
+            First import <code>Link</code> component.
+          </p>
+
+          <Code language='jsx'>
+            {indent`
+              import { Link } from 'react-router-dom'
+            `}
+          </Code>
+
+          <p>
+            Then pass <code>Link</code> as the <code>AnchorComponent</code> prop.
+          </p>
+
+          <Code language='jsx'>
+            {indent`
+              <Tag AnchorComponent={Link} href='/foo'>
+                foo
+              </Tag>
+            `}
+          </Code>
         </Content>
       </Container>
     </Section>
