@@ -1,3 +1,7 @@
+export interface IHelpersProps {
+    isInvisible?: boolean;
+    isSrOnly?: boolean;
+}
 export interface IMainColorsProps {
     isDanger?: boolean;
     isInfo?: boolean;
@@ -31,6 +35,10 @@ export interface ITextColorHelpersProps {
     hasTextWhiteBis?: boolean;
     hasTextWhiteTer?: boolean;
 }
+export declare function helpersPropsToClassenames(props: IHelpersProps): {
+    "is-invisible": boolean | undefined;
+    "is-sr-only": boolean | undefined;
+};
 export declare function mainColorsPropsToClassenames(props: IMainColorsProps): {
     "is-danger": boolean | undefined;
     "is-info": boolean | undefined;

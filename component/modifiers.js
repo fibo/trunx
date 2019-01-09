@@ -1,4 +1,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
+function helpersPropsToClassenames(props) {
+    var isInvisible = props.isInvisible, isSrOnly = props.isSrOnly;
+    return {
+        "is-invisible": isInvisible,
+        "is-sr-only": isSrOnly,
+    };
+}
+exports.helpersPropsToClassenames = helpersPropsToClassenames;
 function mainColorsPropsToClassenames(props) {
     var isDanger = props.isDanger, isInfo = props.isInfo, isPrimary = props.isPrimary, isSuccess = props.isSuccess, isWarning = props.isWarning;
     return {

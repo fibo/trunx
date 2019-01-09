@@ -6,6 +6,8 @@
     "member-access": [true, "no-public"],
     "no-implicit-dependencies": [true, "dev"],
     "no-empty-interface": false,
+    "object-literal-sort-keys": false,
+    "ordered-imports": false,
     "semicolon": [true, "never"],
     "trailing-comma": false
   }
