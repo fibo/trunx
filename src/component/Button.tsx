@@ -7,15 +7,18 @@ import {
 } from "./Anchor"
 
 import {
+  IHelpersProps,
   IMainColorsProps,
   ISizeProps,
   ITextColorHelpersProps,
+  helpersPropsToClassenames,
   mainColorsPropsToClassenames,
   sizePropsToClassenames,
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
 interface IButtonProps extends IAnchorProps,
+                               IHelpersProps,
                                IMainColorsProps,
                                ISizeProps,
                                ITextColorHelpersProps {
@@ -74,6 +77,7 @@ export default class Button extends React.Component<IButtonProps> {
       isFullwidth,
       isInfo,
       isInverted,
+      isInvisible,
       isLarge,
       isLight,
       isLink,
@@ -83,6 +87,7 @@ export default class Button extends React.Component<IButtonProps> {
       isOutlined,
       isPrimary,
       isSmall,
+      isSrOnly,
       isSuccess,
       isRounded,
       isStatic,
@@ -113,6 +118,10 @@ export default class Button extends React.Component<IButtonProps> {
         "is-text": isText,
         "is-white": isWhite,
       },
+      helpersPropsToClassenames({
+        isInvisible,
+        isSrOnly,
+      }),
       mainColorsPropsToClassenames({
         isDanger,
         isInfo,

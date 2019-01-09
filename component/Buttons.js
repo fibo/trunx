@@ -21,7 +21,7 @@ var Buttons = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Buttons.prototype.render = function () {
-        var className = classnames("buttons", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        var className = classnames("buttons", modifiers_1.helpersPropsToClassenames(this.props), modifiers_1.textColorHelpersPropsToClassenames(this.props));
         return (React.createElement("div", { className: className }, this.props.children));
     };
     return Buttons;
