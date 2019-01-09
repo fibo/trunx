@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IAnchorProps } from "./Anchor";
-import { IMainColorsProps, ISizeProps, ITextColorHelpersProps } from "./modifiers";
-interface IButtonProps extends IAnchorProps, IMainColorsProps, ISizeProps, ITextColorHelpersProps {
+import { IHelpersProps, IMainColorsProps, ISizeProps, ITextColorHelpersProps } from "./modifiers";
+interface IButtonProps extends IAnchorProps, IHelpersProps, IMainColorsProps, ISizeProps, ITextColorHelpersProps {
     disabled?: boolean;
     isActive?: boolean;
     isBlack?: boolean;
