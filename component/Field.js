@@ -1,22 +1,10 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
 var modifiers_1 = require("./modifiers");
 var FieldBody = (function (_super) {
-    __extends(FieldBody, _super);
+    tslib_1.__extends(FieldBody, _super);
     function FieldBody() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -26,7 +14,7 @@ var FieldBody = (function (_super) {
     return FieldBody;
 }(React.Component));
 var FieldLabel = (function (_super) {
-    __extends(FieldLabel, _super);
+    tslib_1.__extends(FieldLabel, _super);
     function FieldLabel() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -37,7 +25,7 @@ var FieldLabel = (function (_super) {
     return FieldLabel;
 }(React.Component));
 var Field = (function (_super) {
-    __extends(Field, _super);
+    tslib_1.__extends(Field, _super);
     function Field() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
