@@ -11,6 +11,7 @@ interface INavbarProps extends IMainColorsProps {
     isTransparent?: boolean;
     isUnselectable?: boolean;
     isWhite?: boolean;
+    role?: "navigation";
 }
 interface INavbarBurgerProps {
     isActive?: boolean;
