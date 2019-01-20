@@ -1,21 +1,9 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
 var ModalCardBody = (function (_super) {
-    __extends(ModalCardBody, _super);
+    tslib_1.__extends(ModalCardBody, _super);
     function ModalCardBody() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -25,7 +13,7 @@ var ModalCardBody = (function (_super) {
     return ModalCardBody;
 }(React.Component));
 var ModalCardFoot = (function (_super) {
-    __extends(ModalCardFoot, _super);
+    tslib_1.__extends(ModalCardFoot, _super);
     function ModalCardFoot() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -35,7 +23,7 @@ var ModalCardFoot = (function (_super) {
     return ModalCardFoot;
 }(React.Component));
 var ModalCardHead = (function (_super) {
-    __extends(ModalCardHead, _super);
+    tslib_1.__extends(ModalCardHead, _super);
     function ModalCardHead() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -45,7 +33,7 @@ var ModalCardHead = (function (_super) {
     return ModalCardHead;
 }(React.Component));
 var ModalCardTitle = (function (_super) {
-    __extends(ModalCardTitle, _super);
+    tslib_1.__extends(ModalCardTitle, _super);
     function ModalCardTitle() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -55,7 +43,7 @@ var ModalCardTitle = (function (_super) {
     return ModalCardTitle;
 }(React.Component));
 var ModalBackground = (function (_super) {
-    __extends(ModalBackground, _super);
+    tslib_1.__extends(ModalBackground, _super);
     function ModalBackground() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -66,7 +54,7 @@ var ModalBackground = (function (_super) {
     return ModalBackground;
 }(React.Component));
 var ModalCard = (function (_super) {
-    __extends(ModalCard, _super);
+    tslib_1.__extends(ModalCard, _super);
     function ModalCard() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -80,7 +68,7 @@ var ModalCard = (function (_super) {
     return ModalCard;
 }(React.Component));
 var ModalClose = (function (_super) {
-    __extends(ModalClose, _super);
+    tslib_1.__extends(ModalClose, _super);
     function ModalClose() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -94,7 +82,7 @@ var ModalClose = (function (_super) {
     return ModalClose;
 }(React.Component));
 var ModalContent = (function (_super) {
-    __extends(ModalContent, _super);
+    tslib_1.__extends(ModalContent, _super);
     function ModalContent() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -104,7 +92,7 @@ var ModalContent = (function (_super) {
     return ModalContent;
 }(React.Component));
 var Modal = (function (_super) {
-    __extends(Modal, _super);
+    tslib_1.__extends(Modal, _super);
     function Modal() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
