@@ -3,10 +3,10 @@ import * as React from "react"
 interface IAnchorComponentProps {}
 
 export interface IAnchorProps {
-  AnchorComponent: React.ComponentClass<IAnchorComponentProps>,
-  className: string,
+  AnchorComponent?: React.ComponentClass<IAnchorComponentProps>,
+  className?: string,
   href?: string,
-  hrefProp: string,
+  hrefProp?: string,
 }
 
 export class Anchor extends React.Component<IAnchorProps> {
@@ -23,7 +23,9 @@ export class Anchor extends React.Component<IAnchorProps> {
         ...props
       } = this.props
 
-      props[hrefProp] = href
+      if (hrefProp && href) {
+        props[hrefProp] = href
+      }
 
       return (
         <AnchorComponent
