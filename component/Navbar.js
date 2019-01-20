@@ -1,43 +1,11 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
 var Anchor_1 = require("./Anchor");
 var modifiers_1 = require("./modifiers");
 var NavbarBrand = (function (_super) {
-    __extends(NavbarBrand, _super);
+    tslib_1.__extends(NavbarBrand, _super);
     function NavbarBrand() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -47,7 +15,7 @@ var NavbarBrand = (function (_super) {
     return NavbarBrand;
 }(React.Component));
 var NavbarBurger = (function (_super) {
-    __extends(NavbarBurger, _super);
+    tslib_1.__extends(NavbarBurger, _super);
     function NavbarBurger() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -64,7 +32,7 @@ var NavbarBurger = (function (_super) {
     return NavbarBurger;
 }(React.Component));
 var NavbarDivider = (function (_super) {
-    __extends(NavbarDivider, _super);
+    tslib_1.__extends(NavbarDivider, _super);
     function NavbarDivider() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -75,7 +43,7 @@ var NavbarDivider = (function (_super) {
     return NavbarDivider;
 }(React.Component));
 var NavbarDropdown = (function (_super) {
-    __extends(NavbarDropdown, _super);
+    tslib_1.__extends(NavbarDropdown, _super);
     function NavbarDropdown() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -85,7 +53,7 @@ var NavbarDropdown = (function (_super) {
     return NavbarDropdown;
 }(React.Component));
 var NavbarEnd = (function (_super) {
-    __extends(NavbarEnd, _super);
+    tslib_1.__extends(NavbarEnd, _super);
     function NavbarEnd() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -95,23 +63,23 @@ var NavbarEnd = (function (_super) {
     return NavbarEnd;
 }(React.Component));
 var NavbarItem = (function (_super) {
-    __extends(NavbarItem, _super);
+    tslib_1.__extends(NavbarItem, _super);
     function NavbarItem() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarItem.prototype.render = function () {
-        var _a = this.props, AnchorComponent = _a.AnchorComponent, hasDropdown = _a.hasDropdown, href = _a.href, hrefProp = _a.hrefProp, isActive = _a.isActive, isHoverable = _a.isHoverable, props = __rest(_a, ["AnchorComponent", "hasDropdown", "href", "hrefProp", "isActive", "isHoverable"]);
+        var _a = this.props, AnchorComponent = _a.AnchorComponent, hasDropdown = _a.hasDropdown, href = _a.href, hrefProp = _a.hrefProp, isActive = _a.isActive, isHoverable = _a.isHoverable, props = tslib_1.__rest(_a, ["AnchorComponent", "hasDropdown", "href", "hrefProp", "isActive", "isHoverable"]);
         var className = classnames("navbar-item", {
             "has-dropdown": hasDropdown,
             "is-active": isActive,
             "is-hoverable": isHoverable,
         });
-        return href ? (React.createElement(Anchor_1.Anchor, __assign({ AnchorComponent: AnchorComponent, className: className, href: href, hrefProp: hrefProp }, props), this.props.children)) : (React.createElement("div", __assign({ className: className }, props), this.props.children));
+        return href ? (React.createElement(Anchor_1.Anchor, tslib_1.__assign({ AnchorComponent: AnchorComponent, className: className, href: href, hrefProp: hrefProp }, props), this.props.children)) : (React.createElement("div", tslib_1.__assign({ className: className }, props), this.props.children));
     };
     return NavbarItem;
 }(React.Component));
 var NavbarLink = (function (_super) {
-    __extends(NavbarLink, _super);
+    tslib_1.__extends(NavbarLink, _super);
     function NavbarLink() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -121,7 +89,7 @@ var NavbarLink = (function (_super) {
     return NavbarLink;
 }(React.Component));
 var NavbarMenu = (function (_super) {
-    __extends(NavbarMenu, _super);
+    tslib_1.__extends(NavbarMenu, _super);
     function NavbarMenu() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -135,7 +103,7 @@ var NavbarMenu = (function (_super) {
     return NavbarMenu;
 }(React.Component));
 var NavbarStart = (function (_super) {
-    __extends(NavbarStart, _super);
+    tslib_1.__extends(NavbarStart, _super);
     function NavbarStart() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -145,7 +113,7 @@ var NavbarStart = (function (_super) {
     return NavbarStart;
 }(React.Component));
 var Navbar = (function (_super) {
-    __extends(Navbar, _super);
+    tslib_1.__extends(Navbar, _super);
     function Navbar() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -168,7 +136,7 @@ var Navbar = (function (_super) {
         }
     };
     Navbar.prototype.render = function () {
-        var _a = this.props, isBlack = _a.isBlack, isDark = _a.isDark, isDanger = _a.isDanger, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isLight = _a.isLight, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, isWarning = _a.isWarning, isWhite = _a.isWhite, role = _a.role, props = __rest(_a, ["isBlack", "isDark", "isDanger", "isFixedBottom", "isFixedTop", "isLight", "isInfo", "isPrimary", "isSuccess", "isTransparent", "isUnselectable", "isWarning", "isWhite", "role"]);
+        var _a = this.props, isBlack = _a.isBlack, isDark = _a.isDark, isDanger = _a.isDanger, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isLight = _a.isLight, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, isWarning = _a.isWarning, isWhite = _a.isWhite, role = _a.role, props = tslib_1.__rest(_a, ["isBlack", "isDark", "isDanger", "isFixedBottom", "isFixedTop", "isLight", "isInfo", "isPrimary", "isSuccess", "isTransparent", "isUnselectable", "isWarning", "isWhite", "role"]);
         var className = classnames("navbar", {
             "is-black": isBlack,
             "is-dark": isDark,
@@ -185,7 +153,7 @@ var Navbar = (function (_super) {
             isSuccess: isSuccess,
             isWarning: isWarning,
         }));
-        return (React.createElement("nav", __assign({ className: className, role: role }, props), this.props.children));
+        return (React.createElement("nav", tslib_1.__assign({ className: className, role: role }, props), this.props.children));
     };
     Navbar.Brand = NavbarBrand;
     Navbar.Burger = NavbarBurger;

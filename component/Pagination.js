@@ -1,41 +1,9 @@
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) if (e.indexOf(p[i]) < 0)
-            t[p[i]] = s[p[i]];
-    return t;
-};
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
 var PaginationEllipsis = (function (_super) {
-    __extends(PaginationEllipsis, _super);
+    tslib_1.__extends(PaginationEllipsis, _super);
     function PaginationEllipsis() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -46,22 +14,22 @@ var PaginationEllipsis = (function (_super) {
     return PaginationEllipsis;
 }(React.Component));
 var PaginationLink = (function (_super) {
-    __extends(PaginationLink, _super);
+    tslib_1.__extends(PaginationLink, _super);
     function PaginationLink() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     PaginationLink.prototype.render = function () {
-        var _a = this.props, isCurrent = _a.isCurrent, props = __rest(_a, ["isCurrent"]);
+        var _a = this.props, isCurrent = _a.isCurrent, props = tslib_1.__rest(_a, ["isCurrent"]);
         var className = classnames("pagination-link", {
             "is-current": isCurrent,
         });
         return (React.createElement("li", null,
-            React.createElement("a", __assign({ className: className }, props), this.props.children)));
+            React.createElement("a", tslib_1.__assign({ className: className }, props), this.props.children)));
     };
     return PaginationLink;
 }(React.Component));
 var PaginationList = (function (_super) {
-    __extends(PaginationList, _super);
+    tslib_1.__extends(PaginationList, _super);
     function PaginationList() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -71,7 +39,7 @@ var PaginationList = (function (_super) {
     return PaginationList;
 }(React.Component));
 var PaginationNext = (function (_super) {
-    __extends(PaginationNext, _super);
+    tslib_1.__extends(PaginationNext, _super);
     function PaginationNext() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -81,7 +49,7 @@ var PaginationNext = (function (_super) {
     return PaginationNext;
 }(React.Component));
 var PaginationPrevious = (function (_super) {
-    __extends(PaginationPrevious, _super);
+    tslib_1.__extends(PaginationPrevious, _super);
     function PaginationPrevious() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
@@ -91,7 +59,7 @@ var PaginationPrevious = (function (_super) {
     return PaginationPrevious;
 }(React.Component));
 var Pagination = (function (_super) {
-    __extends(Pagination, _super);
+    tslib_1.__extends(Pagination, _super);
     function Pagination() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
