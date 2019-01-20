@@ -21,6 +21,7 @@ interface INavbarProps extends IMainColorsProps {
   isTransparent?: boolean
   isUnselectable?: boolean
   isWhite?: boolean
+  role?: "navigation"
 }
 
 interface INavbarBurgerProps {
@@ -222,6 +223,7 @@ export default class Navbar extends React.Component<INavbarProps> {
       isUnselectable,
       isWarning,
       isWhite,
+      role,
       ...props
     } = this.props
 
@@ -246,7 +248,13 @@ export default class Navbar extends React.Component<INavbarProps> {
     )
 
     return (
-      <nav className={className} {...props}>{this.props.children}</nav>
+      <nav
+        className={className}
+        role={role}
+        {...props}
+      >
+        {this.props.children}
+      </nav>
     )
   }
 }
