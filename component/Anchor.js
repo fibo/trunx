@@ -4,7 +4,7 @@ var __extends = (this && this.__extends) || (function () {
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
             function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
         return extendStatics(d, b);
-    }
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
@@ -41,7 +41,9 @@ var Anchor = (function (_super) {
     Anchor.prototype.render = function () {
         if (this.props.AnchorComponent) {
             var _a = this.props, AnchorComponent = _a.AnchorComponent, href = _a.href, hrefProp = _a.hrefProp, props = __rest(_a, ["AnchorComponent", "href", "hrefProp"]);
-            props[hrefProp] = href;
+            if (hrefProp && href) {
+                props[hrefProp] = href;
+            }
             return (React.createElement(AnchorComponent, __assign({}, props), this.props.children));
         }
         else {
