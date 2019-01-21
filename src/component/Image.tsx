@@ -1,7 +1,7 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface IImageProps {
+interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   is1by1?: boolean
   is1by2?: boolean
   is1by3?: boolean
