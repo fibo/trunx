@@ -8,13 +8,14 @@ import {
   sizePropsToClassenames,
 } from "./modifiers"
 
-interface IInputProps extends IMainColorsProps, ISizeProps {
+interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement>,
+                              IMainColorsProps,
+                              ISizeProps {
   inputRef?: React.RefObject<HTMLInputElement>
   isFocused?: boolean
   isHovered?: boolean
   isRounded?: boolean
   isStatic?: boolean
-  type?: "email" | "password" | "tel" | "text"
 }
 
 export default class Input extends React.Component<IInputProps> {
