@@ -2,13 +2,17 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
+  IHelpersProps,
   IMainColorsProps,
   ISizeProps,
+  helpersPropsToClassenames,
   mainColorsPropsToClassenames,
   sizePropsToClassenames,
 } from "./modifiers"
 
-interface IMessageProps extends IMainColorsProps, ISizeProps {
+interface IMessageProps extends IHelpersProps,
+                                IMainColorsProps,
+                                ISizeProps {
   isDark?: boolean
   isLink?: boolean
 }
@@ -37,6 +41,8 @@ export default class Message extends React.Component<IMessageProps> {
     const {
       isDark,
       isLink,
+      isInvisible,
+      isSrOnly,
     } = this.props
 
     const className = classnames("message",
@@ -44,6 +50,10 @@ export default class Message extends React.Component<IMessageProps> {
         "is-dark": isDark,
         "is-link": isLink,
       },
+      helpersPropsToClassenames({
+        isInvisible,
+        isSrOnly,
+      }),
       mainColorsPropsToClassenames(this.props),
       sizePropsToClassenames(this.props)
     )
