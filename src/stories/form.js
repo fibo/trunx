@@ -325,7 +325,7 @@ storiesOf('Form', module)
           <Columns>
             <Column isHalf>
               <Field>
-                <Label isSmall>Name</Label>
+                <Label>Name</Label>
 
                 <Control>
                   <Input type='text' placeholder='e.g Alex Smith' />
@@ -333,7 +333,7 @@ storiesOf('Form', module)
               </Field>
 
               <Field>
-                <Label isMedium>Email</Label>
+                <Label>Email</Label>
 
                 <Control>
                   <Input type='password' placeholder='e.g. alexsmith@gmail.com' />

@@ -1,6 +1,6 @@
 import * as React from "react";
-import { IMainColorsProps, ISizeProps } from "./modifiers";
-interface IMessageProps extends IMainColorsProps, ISizeProps {
+import { IHelpersProps, IMainColorsProps, ISizeProps } from "./modifiers";
+interface IMessageProps extends IHelpersProps, IMainColorsProps, ISizeProps {
     isDark?: boolean;
     isLink?: boolean;
 }
