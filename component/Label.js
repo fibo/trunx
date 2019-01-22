@@ -9,7 +9,7 @@ var Label = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Label.prototype.render = function () {
-        var className = classnames("label", modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        var className = classnames("label", modifiers_1.sizePropsToClassenames(this.props), modifiers_1.textColorHelpersPropsToClassenames(this.props));
         return (React.createElement("label", { className: className }, this.props.children));
     };
     return Label;

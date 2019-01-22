@@ -266,6 +266,103 @@ storiesOf('Form', module)
             </Column>
           </Columns>
 
+          <Title is4>
+            Form field
+          </Title>
+
+          <p>
+            The <code>Field</code> component is a simple container for:
+          </p>
+
+          <ul>
+            <li>
+              a text <code>Label</code>
+            </li>
+
+            <li>
+              a form <code>Control</code>
+            </li>
+
+            <li>
+              an otional <code>Help</code> text
+            </li>
+          </ul>
+
+          <Columns>
+            <Column isHalf>
+              <Field>
+                <Label>Label</Label>
+
+                <Control>
+                  <Input type='text' placeholder='Text input' />
+                </Control>
+
+                <Help>This is a help text</Help>
+              </Field>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <Label>Label</Label>
+
+                    <Control>
+                      <Input type='text' placeholder='Text input' />
+                    </Control>
+
+                    <Help>This is a help text</Help>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <p>
+            This container allows form fields to be <b>spaced consistently</b>.
+          </p>
+
+          <Columns>
+            <Column isHalf>
+              <Field>
+                <Label isSmall>Name</Label>
+
+                <Control>
+                  <Input type='text' placeholder='e.g Alex Smith' />
+                </Control>
+              </Field>
+
+              <Field>
+                <Label isMedium>Email</Label>
+
+                <Control>
+                  <Input type='password' placeholder='e.g. alexsmith@gmail.com' />
+                </Control>
+              </Field>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <Label>Name</Label>
+
+                    <Control>
+                      <Input type='text' placeholder='e.g Alex Smith' />
+                    </Control>
+                  </Field>
+
+                  <Field>
+                    <Label>Email</Label>
+
+                    <Control>
+                      <Input type='password' placeholder='e.g. alexsmith@gmail.com' />
+                    </Control>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
         </Content>
       </Container>
     </Section>
