@@ -29,11 +29,14 @@ var Message = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Message.prototype.render = function () {
-        var _a = this.props, isDark = _a.isDark, isLink = _a.isLink;
+        var _a = this.props, isDark = _a.isDark, isLink = _a.isLink, isInvisible = _a.isInvisible, isSrOnly = _a.isSrOnly;
         var className = classnames("message", {
             "is-dark": isDark,
             "is-link": isLink,
-        }, modifiers_1.mainColorsPropsToClassenames(this.props), modifiers_1.sizePropsToClassenames(this.props));
+        }, modifiers_1.helpersPropsToClassenames({
+            isInvisible: isInvisible,
+            isSrOnly: isSrOnly,
+        }), modifiers_1.mainColorsPropsToClassenames(this.props), modifiers_1.sizePropsToClassenames(this.props));
         return (React.createElement("article", { className: className }, this.props.children));
     };
     Message.Body = MessageBody;
