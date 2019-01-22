@@ -1,6 +1,6 @@
 import * as React from "react";
-import { ITextColorHelpersProps } from "./modifiers";
-interface ILabelProps extends ITextColorHelpersProps {
+import { ISizeProps, ITextColorHelpersProps } from "./modifiers";
+interface ILabelProps extends ISizeProps, ITextColorHelpersProps {
 }
 export default class Label extends React.Component<ILabelProps> {
     render(): JSX.Element;
