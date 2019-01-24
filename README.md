@@ -1,6 +1,6 @@
 # Trunx
 
-> super Saiyan react components, son of awesome [Bulma]
+> Super Saiyan React components, son of awesome [Bulma], implemented in TypeScript
 
 <img src="./assets/trunks.png" height="290"/>
 
