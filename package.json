@@ -1,7 +1,7 @@
 {
   "name": "trunx",
   "version": "0.17.2",
-  "description": "super Saiyan react components, son of awesome Bulma",
+  "description": "Super Saiyan React components, son of awesome Bulma, implemented in TypeScript",
   "main": "component/index.js",
   "scripts": {
     "deploy-storybook": "storybook-to-ghpages",
