@@ -251,6 +251,7 @@ storiesOf('Elements', module)
               </Code>
             </Column>
           </Columns>
+
           <hr />
 
           <Title is4>

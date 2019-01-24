@@ -11,6 +11,7 @@ import Container from '../component/Container'
 import Content from '../component/Content'
 import Control from '../component/Control'
 import Field from '../component/Field'
+import FileUpload from '../component/FileUpload'
 import Heading from '../component/Heading'
 import Help from '../component/Help'
 import Icon from '../component/Icon'
@@ -90,8 +91,6 @@ class ClickToEditExample extends React.Component {
 class CheckMeExample extends React.Component {
   constructor (props) {
     super(props)
-
-    this.inputRef = React.createRef()
 
     this.state = {
       checked: false
@@ -301,6 +300,8 @@ storiesOf('Form', module)
               </Code>
             </Column>
           </Columns>
+
+          <hr />
 
           <Title is4>
             Form field
@@ -606,6 +607,8 @@ storiesOf('Form', module)
               </Code>
             </Column>
           </Columns>
+
+          <hr />
 
           <Title is4>
             States
@@ -1138,11 +1141,12 @@ storiesOf('Form', module)
           <hr />
 
           <Title is4>
-            Ref
+            Example
           </Title>
 
           <p>
             The <code>inputRef</code> prop accepts a React ref, created with <code>React.createRef()</code>.
+            Other than that it accepts all props you can pass to a React <code>input</code> element.
           </p>
 
           <ClickToEditExample />
@@ -1411,12 +1415,15 @@ storiesOf('Form', module)
             </Column>
           </Columns>
 
+          <hr />
+
           <Title is4>
-            Ref
+            Example
           </Title>
 
           <p>
             The <code>inputRef</code> prop accepts a React ref, created with <code>React.createRef()</code>.
+            Other than that it accepts all props you can pass to a React <code>input</code> element.
           </p>
 
           <CheckMeExample />
@@ -1426,8 +1433,6 @@ storiesOf('Form', module)
               class CheckMeExample extends React.Component {
                 constructor (props) {
                   super(props)
-
-                  this.inputRef = React.createRef()
 
                   this.state = {
                     checked: false
@@ -1957,6 +1962,7 @@ storiesOf('Form', module)
       </Container>
     </Section>
   ))
+  */
   .add('File upload', () => (
     <Section>
       <Container>
@@ -1973,14 +1979,321 @@ storiesOf('Form', module)
 
           <hr />
 
+          <p>
+            The <code>FileUpload</code> component is a simple <b>interactive label</b> that wraps an <code>{'<input type="file">'}</code>. It comprises several sub-elements:
+          </p>
+
+          <ul>
+            <li>
+              <code>FileUpload</code>, the main <b>container</b>
+
+              <ul>
+                <li>
+                  <code>FileUpload.Input</code>
+                </li>
+
+                <li>
+                  <code>FileUpload.Name</code> a container for the <b>chosen file</b> name
+                </li>
+
+                <li>
+                  <code>FileUpload.Cta</code> the upload <b>call-to-action</b>
+
+                  <ul>
+                    <li>
+                      <code>FileUpload.Icon</code> an optional <b>upload</b> icon
+                    </li>
+
+                    <li>
+                      <code>FileUpload.Label</code>  the "Choose a file…" text
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+
           <Columns>
             <Column isHalf>
+              <FileUpload>
+                <FileUpload.Input name='resume' />
+
+                <FileUpload.Cta>
+                  <FileUpload.Icon>
+                    <Icon.Svg icon={solidIcon.upload} />
+                  </FileUpload.Icon>
+
+                  <FileUpload.Label>
+                    Choose a file…
+                  </FileUpload.Label>
+                </FileUpload.Cta>
+              </FileUpload>
             </Column>
 
             <Column isHalf>
               <Code language='jsx'>
                 {indent`
-                  code
+                  <FileUpload>
+                    <FileUpload.Input name='resume' />
+
+                    <FileUpload.Cta>
+                      <FileUpload.Icon>
+                        <Icon.Svg icon={solidIcon.upload} />
+                      </FileUpload.Icon>
+
+                      <FileUpload.Label>
+                        Choose a file…
+                      </FileUpload.Label>
+                    </FileUpload.Cta>
+                  </FileUpload>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Title is4>
+            Modifiers
+          </Title>
+
+          <Columns>
+            <Column isHalf>
+              <p>
+                With the <code>hasName</code> prop combined with the <code>FileUpload.Name</code> component you can add a <b>placeholder</b> for the selected file name.
+              </p>
+
+              <FileUpload hasName>
+                <FileUpload.Input name='resume' />
+
+                <FileUpload.Cta>
+                  <FileUpload.Icon>
+                    <Icon.Svg icon={solidIcon.upload} />
+                  </FileUpload.Icon>
+
+                  <FileUpload.Label>
+                    Choose a file…
+                  </FileUpload.Label>
+                </FileUpload.Cta>
+
+                <FileUpload.Name>
+                  Screen Shot 2017-07-29 at 15.54.25.png
+                </FileUpload.Name>
+              </FileUpload>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <FileUpload hasName>
+                    <FileUpload.Input name='resume' />
+
+                    <FileUpload.Cta>
+                      <FileUpload.Icon>
+                        <Icon.Svg icon={solidIcon.upload} />
+                      </FileUpload.Icon>
+
+                      <FileUpload.Label>
+                        Choose a file…
+                      </FileUpload.Label>
+                    </FileUpload.Cta>
+
+                    <FileUpload.Name>
+                      Screen Shot 2017-07-29 at 15.54.25.png
+                    </FileUpload.Name>
+                  </FileUpload>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Columns>
+            <Column isHalf>
+              <p>
+                You can move the CTA to the <b>right side</b> with the <code>isRight</code> prop.
+              </p>
+
+              <FileUpload hasName isRight>
+                <FileUpload.Input name='resume' />
+
+                <FileUpload.Cta>
+                  <FileUpload.Icon>
+                    <Icon.Svg icon={solidIcon.upload} />
+                  </FileUpload.Icon>
+
+                  <FileUpload.Label>
+                    Choose a file…
+                  </FileUpload.Label>
+                </FileUpload.Cta>
+
+                <FileUpload.Name>
+                  Screen Shot 2017-07-29 at 15.54.25.png
+                </FileUpload.Name>
+              </FileUpload>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <FileUpload hasName isRight>
+                    <FileUpload.Input name='resume' />
+
+                    <FileUpload.Cta>
+                      <FileUpload.Icon>
+                        <Icon.Svg icon={solidIcon.upload} />
+                      </FileUpload.Icon>
+
+                      <FileUpload.Label>
+                        Choose a file…
+                      </FileUpload.Label>
+                    </FileUpload.Cta>
+
+                    <FileUpload.Name>
+                      Screen Shot 2017-07-29 at 15.54.25.png
+                    </FileUpload.Name>
+                  </FileUpload>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Columns>
+            <Column isHalf>
+              <p>
+                You can also <b>expand</b> the name to fill up the space with the <code>isFullwidth</code> prop.
+              </p>
+
+              <FileUpload hasName isFullwidth>
+                <FileUpload.Input name='resume' />
+
+                <FileUpload.Cta>
+                  <FileUpload.Icon>
+                    <Icon.Svg icon={solidIcon.upload} />
+                  </FileUpload.Icon>
+
+                  <FileUpload.Label>
+                    Choose a file…
+                  </FileUpload.Label>
+                </FileUpload.Cta>
+
+                <FileUpload.Name>
+                  Screen Shot 2017-07-29 at 15.54.25.png
+                </FileUpload.Name>
+              </FileUpload>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <FileUpload hasName isFullwidth>
+                    <FileUpload.Input name='resume' />
+
+                    <FileUpload.Cta>
+                      <FileUpload.Icon>
+                        <Icon.Svg icon={solidIcon.upload} />
+                      </FileUpload.Icon>
+
+                      <FileUpload.Label>
+                        Choose a file…
+                      </FileUpload.Label>
+                    </FileUpload.Cta>
+
+                    <FileUpload.Name>
+                      Screen Shot 2017-07-29 at 15.54.25.png
+                    </FileUpload.Name>
+                  </FileUpload>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Columns>
+            <Column isHalf>
+              <p>
+                You can have a <b>boxed block</b> with the <code>isBoxed</code> prop.
+              </p>
+
+              <FileUpload isBoxed>
+                <FileUpload.Input name='resume' />
+
+                <FileUpload.Cta>
+                  <FileUpload.Icon>
+                    <Icon.Svg icon={solidIcon.upload} />
+                  </FileUpload.Icon>
+
+                  <FileUpload.Label>
+                    Choose a file…
+                  </FileUpload.Label>
+                </FileUpload.Cta>
+              </FileUpload>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <FileUpload isBoxed>
+                    <FileUpload.Input name='resume' />
+
+                    <FileUpload.Cta>
+                      <FileUpload.Icon>
+                        <Icon.Svg icon={solidIcon.upload} />
+                      </FileUpload.Icon>
+
+                      <FileUpload.Label>
+                        Choose a file…
+                      </FileUpload.Label>
+                    </FileUpload.Cta>
+                  </FileUpload>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Columns>
+            <Column isHalf>
+              <p>
+                You can combine <code>hasName</code> and <code>isBoxed</code> props.
+              </p>
+
+              <FileUpload hasName isBoxed>
+                <FileUpload.Input name='resume' />
+
+                <FileUpload.Cta>
+                  <FileUpload.Icon>
+                    <Icon.Svg icon={solidIcon.upload} />
+                  </FileUpload.Icon>
+
+                  <FileUpload.Label>
+                    Choose a file…
+                  </FileUpload.Label>
+                </FileUpload.Cta>
+
+                <FileUpload.Name>
+                  Screen Shot 2017-07-29 at 15.54.25.png
+                </FileUpload.Name>
+              </FileUpload>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <FileUpload hasName isBoxed>
+                    <FileUpload.Input name='resume' />
+
+                    <FileUpload.Cta>
+                      <FileUpload.Icon>
+                        <Icon.Svg icon={solidIcon.upload} />
+                      </FileUpload.Icon>
+
+                      <FileUpload.Label>
+                        Choose a file…
+                      </FileUpload.Label>
+                    </FileUpload.Cta>
+
+                    <FileUpload.Name>
+                      Screen Shot 2017-07-29 at 15.54.25.png
+                    </FileUpload.Name>
+                  </FileUpload>
                 `}
               </Code>
             </Column>
@@ -1989,4 +2302,3 @@ storiesOf('Form', module)
       </Container>
     </Section>
   ))
-  */

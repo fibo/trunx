@@ -12,7 +12,7 @@ import Content from "./component/Content"
 import Control from "./component/Control"
 import Delete from "./component/Delete"
 import Field from "./component/Field"
-import File from "./component/File"
+import FileUpload from "./component/FileUpload"
 import Footer from "./component/Footer"
 import Heading from "./component/Heading"
 import Help from "./component/Help"
@@ -57,7 +57,7 @@ export {
   Content,
   Control,
   Delete,
-  File,
+  FileUpload,
   Field,
   Footer,
   Heading,
