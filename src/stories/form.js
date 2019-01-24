@@ -11,6 +11,7 @@ import Container from '../component/Container'
 import Content from '../component/Content'
 import Control from '../component/Control'
 import Field from '../component/Field'
+import Heading from '../component/Heading'
 import Help from '../component/Help'
 import Icon from '../component/Icon'
 import Input from '../component/Input'
@@ -83,6 +84,41 @@ class ClickToEditExample extends React.Component {
         this.inputRef.current.focus()
       }
     })
+  }
+}
+
+class CheckMeExample extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.inputRef = React.createRef()
+
+    this.state = {
+      checked: false
+    }
+
+    this.onChange = this.onChange.bind(this)
+  }
+
+  onChange (event) {
+    this.setState({
+      checked: event.target.checked
+    })
+  }
+
+  render () {
+    const {
+      checked
+    } = this.state
+
+    return (
+      <Checkbox
+        checked={checked}
+        onChange={this.onChange}
+      >
+        <Heading hasTextSuccess={checked}>{checked ? 'ok' : 'check me'}</Heading>
+      </Checkbox>
+    )
   }
 }
 
@@ -1305,6 +1341,128 @@ storiesOf('Form', module)
       </Container>
     </Section>
   ))
+  .add('Checkbox', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Checkbox
+          </Title>
+
+          <Subtitle>
+            The 2-state <b>checkbox</b> in its native format
+          </Subtitle>
+
+          <Meta />
+
+          <hr />
+
+          <p>
+            The <code>Checkbox</code> component is a simple wrapper around the <code>{'<input type="checkbox">'}</code> HTML element. It is intentionally not styled, to preserve cross-browser compatibility and the user experience.
+          </p>
+
+          <Columns>
+            <Column isHalf>
+              <Checkbox>Remember me</Checkbox>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Checkbox>Remember me</Checkbox>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <p>
+            You can add <b>links</b> to your checkbox, or even <b>disable</b> it.
+          </p>
+
+          <Columns>
+            <Column isHalf>
+              <Checkbox>
+                I agree to the <a href='#'>terms and conditions</a>
+              </Checkbox>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Checkbox>
+                    I agree to the <a href='#'>terms and conditions</a>
+                  </Checkbox>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Columns>
+            <Column isHalf>
+              <Checkbox disabled>Save my preferences</Checkbox>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Checkbox disabled>Save my preferences</Checkbox>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Title is4>
+            Ref
+          </Title>
+
+          <p>
+            The <code>inputRef</code> prop accepts a React ref, created with <code>React.createRef()</code>.
+          </p>
+
+          <CheckMeExample />
+
+          <Code language='jsx'>
+            {indent`
+              class CheckMeExample extends React.Component {
+                constructor (props) {
+                  super(props)
+
+                  this.inputRef = React.createRef()
+
+                  this.state = {
+                    checked: false
+                  }
+
+                  this.onChange = this.onChange.bind(this)
+                }
+
+                onChange (event) {
+                  this.setState({
+                    checked: event.target.checked
+                  })
+                }
+
+                render () {
+                  const {
+                    checked
+                  } = this.state
+
+                  return (
+                    <Checkbox
+                      checked={checked}
+                      onChange={this.onChange}
+                    >
+                      <Heading hasTextSuccess={checked}>{checked ? 'ok' : 'check me'}</Heading>
+                    </Checkbox>
+                  )
+                }
+              }
+            `}
+          </Code>
+        </Content>
+      </Container>
+    </Section>
+  ))
   .add('Select', () => (
     <Section>
       <Container>
@@ -1758,79 +1916,6 @@ storiesOf('Form', module)
                       </Select>
                     </Control>
                   </Field>
-                `}
-              </Code>
-            </Column>
-          </Columns>
-        </Content>
-      </Container>
-    </Section>
-  ))
-  .add('Checkbox', () => (
-    <Section>
-      <Container>
-        <Content>
-          <Title is2>
-            Checkbox
-          </Title>
-
-          <Subtitle>
-            The 2-state <b>checkbox</b> in its native format
-          </Subtitle>
-
-          <Meta />
-
-          <hr />
-
-          <p>
-            The <code>Checkbox</code> component is a simple wrapper around the <code>{'<input type="checkbox">'}</code> HTML element. It is intentionally not styled, to preserve cross-browser compatibility and the user experience.
-          </p>
-
-          <Columns>
-            <Column isHalf>
-              <Checkbox>Remember me</Checkbox>
-            </Column>
-
-            <Column isHalf>
-              <Code language='jsx'>
-                {indent`
-                  <Checkbox>Remember me</Checkbox>
-                `}
-              </Code>
-            </Column>
-          </Columns>
-
-          <p>
-            You can add <b>links</b> to your checkbox, or even <b>disable</b> it.
-          </p>
-
-          <Columns>
-            <Column isHalf>
-              <Checkbox>
-                I agree to the <a href='#'>terms and conditions</a>
-              </Checkbox>
-            </Column>
-
-            <Column isHalf>
-              <Code language='jsx'>
-                {indent`
-                  <Checkbox>
-                    I agree to the <a href='#'>terms and conditions</a>
-                  </Checkbox>
-                `}
-              </Code>
-            </Column>
-          </Columns>
-
-          <Columns>
-            <Column isHalf>
-              <Checkbox disabled>Save my preferences</Checkbox>
-            </Column>
-
-            <Column isHalf>
-              <Code language='jsx'>
-                {indent`
-                  <Checkbox disabled>Save my preferences</Checkbox>
                 `}
               </Code>
             </Column>
