@@ -73,7 +73,7 @@ export default class Level extends React.Component<ILevelProps> {
 
     const className = classnames("level",
       {
-      "is-mobile": isMobile,
+        "is-mobile": isMobile,
       },
       textColorHelpersPropsToClassenames(this.props),
     )

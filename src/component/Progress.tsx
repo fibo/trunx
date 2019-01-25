@@ -9,10 +9,8 @@ import {
 } from "./modifiers"
 
 interface IProgressProps extends IMainColorsProps,
-                                 ISizeProps {
-  max: number
-  value: number
-}
+                                 ISizeProps,
+                                 React.ProgressHTMLAttributes<HTMLProgressElement> {}
 
 export default class Progress extends React.Component<IProgressProps> {
   render() {
@@ -25,8 +23,7 @@ export default class Progress extends React.Component<IProgressProps> {
       isSmall,
       isSuccess,
       isWarning,
-      max,
-      value,
+      ...props
     } = this.props
 
     const className = classnames("progress",
@@ -45,13 +42,7 @@ export default class Progress extends React.Component<IProgressProps> {
     )
 
     return (
-      <progress
-        className={className}
-        max={max}
-        value={value}
-      >
-        {this.props.children}
-      </progress>
+      <progress {...props} className={className}>{this.props.children}</progress>
     )
   }
 }

@@ -12,7 +12,8 @@ import {
 
 interface ITextareaProps extends IMainColorsProps,
                                  ISizeProps,
-                                 ITextColorHelpersProps {
+                                 ITextColorHelpersProps,
+                                 React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   isFocused?: boolean
   isHovered?: boolean
   placeholder?: string

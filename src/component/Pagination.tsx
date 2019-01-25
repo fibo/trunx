@@ -67,7 +67,7 @@ export default class Pagination extends React.Component {
 
   render() {
     return (
-      <nav className="pagination" role="navigation"aria-label="pagination">{this.props.children}</nav>
+      <nav aria-label="pagination" className="pagination" role="navigation">{this.props.children}</nav>
     )
   }
 }

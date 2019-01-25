@@ -1,27 +1,19 @@
 import * as React from "react"
 
-interface IRadioProps {
-  checked?: boolean
-  disabled?: boolean
-  name: string
+interface IRadioProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  inputRef?: React.RefObject<HTMLInputElement>
 }
 
 export default class Radio extends React.Component<IRadioProps> {
   render() {
     const {
-      checked,
-      disabled,
-      name,
+      inputRef,
+      ...props
     } = this.props
 
     return (
       <label className="radio">
-        <input
-          type="radio"
-          checked={checked}
-          disabled={disabled}
-          name={name}
-        />
+        <input {...props} type="radio"/>
 
         {" "/* adding a space looks better*/}
 

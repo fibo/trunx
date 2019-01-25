@@ -61,9 +61,13 @@ class ModalCardExample extends Component {
           isLarge
           isPrimary
           onClick={this.openModal}
-        >Launch example modal</Button>
+        >
+          Launch example modal
+        </Button>
+
         <Modal isActive={modalIsActive}>
           <Modal.Background onClick={this.closeModal} />
+
           <Modal.Card>
             <Modal.Card.Head>
               <Modal.Card.Title>Modal title</Modal.Card.Title>
@@ -706,9 +710,13 @@ storiesOf('Components', module)
                         isLarge
                         isPrimary
                         onClick={this.openModal}
-                      >Launch example modal</Button>
+                      >
+                        Launch example modal
+                      </Button>
+
                       <Modal isActive={modalIsActive}>
                         <Modal.Background onClick={this.closeModal} />
+
                         <Modal.Card>
                           <Modal.Card.Head>
                             <Modal.Card.Title>Modal title</Modal.Card.Title>
