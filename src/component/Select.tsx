@@ -8,7 +8,8 @@ import {
   sizePropsToClassenames,
 } from "./modifiers"
 
-interface ISelectProps extends IMainColorsProps, ISizeProps {
+interface ISelectProps extends IMainColorsProps,
+                               ISizeProps {
   isFocused?: boolean
   isHovered?: boolean
   isLoading?: boolean

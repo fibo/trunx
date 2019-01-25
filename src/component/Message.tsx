@@ -14,7 +14,6 @@ interface IMessageProps extends IHelpersProps,
                                 IMainColorsProps,
                                 ISizeProps {
   isDark?: boolean
-  isLink?: boolean
 }
 
 class MessageBody extends React.Component {
@@ -40,7 +39,6 @@ export default class Message extends React.Component<IMessageProps> {
   render() {
     const {
       isDark,
-      isLink,
       isInvisible,
       isSrOnly,
     } = this.props
@@ -48,7 +46,6 @@ export default class Message extends React.Component<IMessageProps> {
     const className = classnames("message",
       {
         "is-dark": isDark,
-        "is-link": isLink,
       },
       helpersPropsToClassenames({
         isInvisible,
