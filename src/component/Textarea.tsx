@@ -10,7 +10,9 @@ import {
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
-interface ITextareaProps extends IMainColorsProps, ISizeProps, ITextColorHelpersProps {
+interface ITextareaProps extends IMainColorsProps,
+                                 ISizeProps,
+                                 ITextColorHelpersProps {
   isFocused?: boolean
   isHovered?: boolean
   placeholder?: string

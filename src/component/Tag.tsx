@@ -8,20 +8,18 @@ import {
 
 import {
   IMainColorsProps,
+  IShadeColorsProps,
   ISizeProps,
   mainColorsPropsToClassenames,
+  shadeColorsPropsToClassenames,
   sizePropsToClassenames,
 } from "./modifiers"
 
 interface ITagProps extends IAnchorProps,
                             IMainColorsProps,
+                            IShadeColorsProps,
                             ISizeProps {
-  isBlack?: boolean
-  isDark?: boolean
-  isLight?: boolean
-  isLink?: boolean
   isRounded?: boolean
-  isWhite?: boolean
 }
 
 export default class Tag extends React.Component<ITagProps> {
@@ -52,16 +50,22 @@ export default class Tag extends React.Component<ITagProps> {
         "is-black": isBlack,
         "is-dark": isDark,
         "is-light": isLight,
-        "is-link": isLink,
         "is-rounded": isRounded,
         "is-white": isWhite,
       },
       mainColorsPropsToClassenames({
         isDanger,
         isInfo,
+        isLink,
         isPrimary,
         isSuccess,
         isWarning,
+      }),
+      shadeColorsPropsToClassenames({
+        isBlack,
+        isDark,
+        isLight,
+        isWhite,
       }),
       sizePropsToClassenames({
         isLarge,

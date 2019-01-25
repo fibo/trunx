@@ -9,10 +9,12 @@ import {
 import {
   IHelpersProps,
   IMainColorsProps,
+  IShadeColorsProps,
   ISizeProps,
   ITextColorHelpersProps,
   helpersPropsToClassenames,
   mainColorsPropsToClassenames,
+  shadeColorsPropsToClassenames,
   sizePropsToClassenames,
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
@@ -20,24 +22,20 @@ import {
 interface IButtonProps extends IAnchorProps,
                                IHelpersProps,
                                IMainColorsProps,
+                               IShadeColorsProps,
                                ISizeProps,
                                ITextColorHelpersProps {
   disabled?: boolean
   isActive?: boolean
-  isBlack?: boolean
-  isDark?: boolean
   isFocused?: boolean
   isFullwidth?: boolean
   isInverted?: boolean
-  isLight?: boolean
-  isLink?: boolean
   isLoading?: boolean
   isNormal?: boolean
   isOutlined?: boolean
   isRounded?: boolean
   isStatic?: boolean
   isText?: boolean
-  isWhite?: boolean
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
   type?: "reset" | "submit"
   value: string | number | string[] | undefined // same as in InputHTMLAttributes from @types/react
@@ -103,20 +101,15 @@ export default class Button extends React.Component<IButtonProps> {
     const className = classnames("button",
       {
         "is-active": isActive,
-        "is-black": isBlack,
-        "is-dark": isDark,
         "is-focused": isFocused,
         "is-fullwidth": isFullwidth,
         "is-inverted": isInverted,
-        "is-light": isLight,
-        "is-link": isLink,
         "is-loading": isLoading,
         "is-normal": isNormal,
         "is-outlined": isOutlined,
         "is-rounded": isRounded,
         "is-static": isStatic,
         "is-text": isText,
-        "is-white": isWhite,
       },
       helpersPropsToClassenames({
         isInvisible,
@@ -125,9 +118,16 @@ export default class Button extends React.Component<IButtonProps> {
       mainColorsPropsToClassenames({
         isDanger,
         isInfo,
+        isLink,
         isPrimary,
         isSuccess,
         isWarning,
+      }),
+      shadeColorsPropsToClassenames({
+        isBlack,
+        isDark,
+        isLight,
+        isWhite,
       }),
       sizePropsToClassenames({
         isLarge,
