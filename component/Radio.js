@@ -7,9 +7,9 @@ var Radio = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Radio.prototype.render = function () {
-        var _a = this.props, checked = _a.checked, disabled = _a.disabled, name = _a.name;
+        var _a = this.props, inputRef = _a.inputRef, props = tslib_1.__rest(_a, ["inputRef"]);
         return (React.createElement("label", { className: "radio" },
-            React.createElement("input", { type: "radio", checked: checked, disabled: disabled, name: name }),
+            React.createElement("input", tslib_1.__assign({}, props, { type: "radio" })),
             " ",
             this.props.children));
     };

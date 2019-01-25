@@ -2,7 +2,6 @@ import * as React from "react";
 import { IHelpersProps, IMainColorsProps, ISizeProps } from "./modifiers";
 interface IMessageProps extends IHelpersProps, IMainColorsProps, ISizeProps {
     isDark?: boolean;
-    isLink?: boolean;
 }
 declare class MessageBody extends React.Component {
     render(): JSX.Element;

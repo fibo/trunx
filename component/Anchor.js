@@ -16,7 +16,7 @@ var Anchor = (function (_super) {
         }
         else {
             var _b = this.props, className = _b.className, href = _b.href, props = tslib_1.__rest(_b, ["className", "href"]);
-            return (React.createElement("a", tslib_1.__assign({ className: className, href: href }, props), this.props.children));
+            return (React.createElement("a", tslib_1.__assign({}, props, { className: className, href: href }), this.props.children));
         }
     };
     Anchor.defaultProps = {

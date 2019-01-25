@@ -5,9 +5,16 @@ export interface IHelpersProps {
 export interface IMainColorsProps {
     isDanger?: boolean;
     isInfo?: boolean;
+    isLink?: boolean;
     isPrimary?: boolean;
     isSuccess?: boolean;
     isWarning?: boolean;
+}
+export interface IShadeColorsProps {
+    isBlack?: boolean;
+    isDark?: boolean;
+    isLight?: boolean;
+    isWhite?: boolean;
 }
 export interface ISizeProps {
     isLarge?: boolean;
@@ -42,9 +49,16 @@ export declare function helpersPropsToClassenames(props: IHelpersProps): {
 export declare function mainColorsPropsToClassenames(props: IMainColorsProps): {
     "is-danger": boolean | undefined;
     "is-info": boolean | undefined;
+    "is-link": boolean | undefined;
     "is-primary": boolean | undefined;
     "is-success": boolean | undefined;
     "is-warning": boolean | undefined;
+};
+export declare function shadeColorsPropsToClassenames(props: IShadeColorsProps): {
+    "is-black": boolean | undefined;
+    "is-dark": boolean | undefined;
+    "is-light": boolean | undefined;
+    "is-white": boolean | undefined;
 };
 export declare function sizePropsToClassenames(props: ISizeProps): {
     "is-large": boolean | undefined;

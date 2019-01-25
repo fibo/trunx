@@ -1,8 +1,6 @@
 import * as React from "react";
-interface IRadioProps {
-    checked?: boolean;
-    disabled?: boolean;
-    name: string;
+interface IRadioProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    inputRef?: React.RefObject<HTMLInputElement>;
 }
 export default class Radio extends React.Component<IRadioProps> {
     render(): JSX.Element;
