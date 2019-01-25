@@ -38,7 +38,7 @@ interface IButtonProps extends IAnchorProps,
   isText?: boolean
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
   type?: "reset" | "submit"
-  value: string | number | string[] | undefined // same as in InputHTMLAttributes from @types/react
+  value?: string | number | string[] | undefined // same as in InputHTMLAttributes from @types/react
 }
 
 export default class Button extends React.Component<IButtonProps> {
