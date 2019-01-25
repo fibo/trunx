@@ -40,6 +40,8 @@ export default class Message extends React.Component<IMessageProps> {
     const {
       isDark,
       isInvisible,
+      isMarginLess,
+      isPaddingLess,
       isSrOnly,
     } = this.props
 
@@ -49,6 +51,8 @@ export default class Message extends React.Component<IMessageProps> {
       },
       helpersPropsToClassenames({
         isInvisible,
+        isMarginLess,
+        isPaddingLess,
         isSrOnly,
       }),
       mainColorsPropsToClassenames(this.props),

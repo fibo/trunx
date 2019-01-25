@@ -1,5 +1,6 @@
 import * as React from "react";
-interface ISectionProps {
+import { IHelpersProps } from "./modifiers";
+interface ISectionProps extends IHelpersProps {
     isLarge?: boolean;
     isMedium?: boolean;
 }

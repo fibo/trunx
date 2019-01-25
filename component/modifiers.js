@@ -1,8 +1,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 function helpersPropsToClassenames(props) {
-    var isInvisible = props.isInvisible, isSrOnly = props.isSrOnly;
+    var isInvisible = props.isInvisible, isMarginLess = props.isMarginLess, isPaddingLess = props.isPaddingLess, isSrOnly = props.isSrOnly;
     return {
+        "is-marginless": isMarginLess,
         "is-invisible": isInvisible,
+        "is-paddingless": isPaddingLess,
         "is-sr-only": isSrOnly,
     };
 }
