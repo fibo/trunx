@@ -26,15 +26,20 @@ export default class Subtitle extends React.Component<ISubtitleProps> {
       is6,
     } = this.props
 
-    const className = classnames("subtitle", {
-      "is-1": is1,
-      "is-2": is2,
-      "is-3": is3,
-      "is-4": is4,
-      "is-5": is5,
-      "is-6": is6,
-    }, textColorHelpersPropsToClassenames(this.props))
+    const className = classnames("subtitle",
+      {
+        "is-1": is1,
+        "is-2": is2,
+        "is-3": is3,
+        "is-4": is4,
+        "is-5": is5,
+        "is-6": is6,
+      },
+      textColorHelpersPropsToClassenames(this.props),
+    )
 
-    return (<p className={className}>{this.props.children}</p>)
+    return (
+      <p className={className}>{this.props.children}</p>
+    )
   }
 }

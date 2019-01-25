@@ -76,11 +76,11 @@ export default class Tag extends React.Component<ITagProps> {
 
     return href ? (
       <Anchor
+        {...props}
         AnchorComponent={AnchorComponent}
         className={className}
         href={href}
         hrefProp={hrefProp}
-        {...props}
       >
         {this.props.children}
       </Anchor>

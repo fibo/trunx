@@ -43,6 +43,14 @@ import Textarea from "./component/Textarea"
 import Tile from "./component/Tile"
 import Title from "./component/Title"
 
+import {
+  helpersPropsToClassenames,
+  mainColorsPropsToClassenames,
+  shadeColorsPropsToClassenames,
+  sizePropsToClassenames,
+  textColorHelpersPropsToClassenames,
+} from "./component/modifiers"
+
 export {
   Box,
   Breadcrumb,
@@ -88,4 +96,9 @@ export {
   Textarea,
   Tile,
   Title,
+  helpersPropsToClassenames,
+  mainColorsPropsToClassenames,
+  shadeColorsPropsToClassenames,
+  sizePropsToClassenames,
+  textColorHelpersPropsToClassenames,
 }

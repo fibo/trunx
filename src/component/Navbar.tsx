@@ -14,13 +14,13 @@ import {
 } from "./modifiers"
 
 interface INavbarProps extends IMainColorsProps,
-                               IShadeColorsProps {
+                               IShadeColorsProps,
+                               React.HTMLAttributes<HTMLElement> {
   hasShadow?: boolean
   isFixedBottom?: boolean
   isFixedTop?: boolean
   isTransparent?: boolean
   isUnselectable?: boolean
-  role?: "navigation"
 }
 
 interface INavbarBurgerProps {
@@ -119,21 +119,16 @@ class NavbarItem extends React.Component<INavbarItemProps> {
 
     return href ? (
       <Anchor
+        {...props}
         AnchorComponent={AnchorComponent}
         className={className}
         href={href}
         hrefProp={hrefProp}
-        {...props}
       >
         {this.props.children}
       </Anchor>
     ) : (
-      <div
-        className={className}
-        {...props}
-      >
-        {this.props.children}
-      </div>
+      <div {...props} className={className}>{this.props.children}</div>
     )
   }
 }
@@ -222,7 +217,6 @@ export default class Navbar extends React.Component<INavbarProps> {
       isUnselectable,
       isWarning,
       isWhite,
-      role,
       ...props
     } = this.props
 
@@ -249,13 +243,7 @@ export default class Navbar extends React.Component<INavbarProps> {
     )
 
     return (
-      <nav
-        className={className}
-        role={role}
-        {...props}
-      >
-        {this.props.children}
-      </nav>
+      <nav {...props} className={className}>{this.props.children}</nav>
     )
   }
 }

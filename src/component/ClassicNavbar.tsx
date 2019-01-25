@@ -30,11 +30,13 @@ export default class ClassicNavbar extends React.Component<IClassicNavbarProps, 
       <Navbar aria-label="main navigation" isFixedTop={isFixedTop}>
         <Navbar.Brand>
           {brand && brand()}
+
           <Navbar.Burger
             isActive={isActive}
             onClick={this.toggle}
           />
         </Navbar.Brand>
+
         <Navbar.Menu isActive={isActive}>
           {this.props.children}
         </Navbar.Menu>
