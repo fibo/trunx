@@ -9,12 +9,12 @@ import {
 } from "./modifiers"
 
 interface ISelectProps extends IMainColorsProps,
-                               ISizeProps {
+                               ISizeProps,
+                               React.SelectHTMLAttributes<HTMLSelectElement> {
   isFocused?: boolean
   isHovered?: boolean
   isLoading?: boolean
   isMultiple?: boolean
-  size?: number
 }
 
 export default class Select extends React.Component<ISelectProps> {
@@ -24,7 +24,7 @@ export default class Select extends React.Component<ISelectProps> {
       isHovered,
       isLoading,
       isMultiple,
-      size,
+      ...props
     } = this.props
 
     const className = classnames("select",
@@ -40,12 +40,7 @@ export default class Select extends React.Component<ISelectProps> {
 
     return (
       <div className={className}>
-        <select
-          multiple={isMultiple}
-          size={size}
-        >
-          {this.props.children}
-        </select>
+        <select {...props} multiple={isMultiple}>{this.props.children}</select>
       </div>
     )
   }

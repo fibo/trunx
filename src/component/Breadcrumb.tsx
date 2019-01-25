@@ -8,7 +8,9 @@ import {
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
-interface IBreadcrumbProps extends ISizeProps, ITextColorHelpersProps {
+interface IBreadcrumbProps extends ISizeProps,
+                                   ITextColorHelpersProps,
+                                   React.HTMLAttributes<HTMLElement> {
   hasArrowSeparator?: boolean
   hasBulletSeparator?: boolean
   hasDotSeparator?: boolean
@@ -26,6 +28,7 @@ export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
       hasSuccedesSeparator,
       isCentered,
       isRight,
+      ...props
     } = this.props
 
     const className = classnames("breadcrumb",
@@ -43,6 +46,7 @@ export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
 
     return (
       <nav
+        {...props}
         aria-label="breadcrumbs"
         className={className}
       >

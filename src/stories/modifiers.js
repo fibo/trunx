@@ -276,6 +276,7 @@ storiesOf('Modifiers', module)
               </Code>
             </Column>
           </Columns>
+
           <p>
             You can set some components to one of the <b>9 colors</b> or <b>9 shades of grey</b>:
           </p>
@@ -397,7 +398,7 @@ storiesOf('Modifiers', module)
           </ul>
 
           <p>
-            The following elements support text color modifiers:
+            The following components support text color modifiers:
           </p>
 
           <ul>

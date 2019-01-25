@@ -28,11 +28,7 @@ export class Anchor extends React.Component<IAnchorProps> {
       }
 
       return (
-        <AnchorComponent
-          {...props}
-        >
-          {this.props.children}
-        </AnchorComponent>
+        <AnchorComponent {...props}>{this.props.children}</AnchorComponent>
       )
     } else {
       const {
@@ -42,13 +38,7 @@ export class Anchor extends React.Component<IAnchorProps> {
       } = this.props
 
       return (
-        <a
-          className={className}
-          href={href}
-          {...props}
-        >
-          {this.props.children}
-        </a>
+        <a {...props} className={className} href={href}>{this.props.children}</a>
       )
     }
   }
