@@ -1,17 +1,12 @@
 import * as React from "react";
 import { IAnchorProps } from "./Anchor";
-import { IMainColorsProps } from "./modifiers";
-interface INavbarProps extends IMainColorsProps {
+import { IMainColorsProps, IShadeColorsProps } from "./modifiers";
+interface INavbarProps extends IMainColorsProps, IShadeColorsProps, React.HTMLAttributes<HTMLElement> {
     hasShadow?: boolean;
-    isBlack?: boolean;
-    isDark?: boolean;
     isFixedBottom?: boolean;
     isFixedTop?: boolean;
-    isLight?: boolean;
     isTransparent?: boolean;
     isUnselectable?: boolean;
-    isWhite?: boolean;
-    role?: "navigation";
 }
 interface INavbarBurgerProps {
     isActive?: boolean;

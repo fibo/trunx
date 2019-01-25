@@ -9,7 +9,7 @@ var Select = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Select.prototype.render = function () {
-        var _a = this.props, isFocused = _a.isFocused, isHovered = _a.isHovered, isLoading = _a.isLoading, isMultiple = _a.isMultiple, size = _a.size;
+        var _a = this.props, isFocused = _a.isFocused, isHovered = _a.isHovered, isLoading = _a.isLoading, isMultiple = _a.isMultiple, props = tslib_1.__rest(_a, ["isFocused", "isHovered", "isLoading", "isMultiple"]);
         var className = classnames("select", {
             "is-focused": isFocused,
             "is-hovered": isHovered,
@@ -17,7 +17,7 @@ var Select = (function (_super) {
             "is-multiple": isMultiple,
         }, modifiers_1.mainColorsPropsToClassenames(this.props), modifiers_1.sizePropsToClassenames(this.props));
         return (React.createElement("div", { className: className },
-            React.createElement("select", { multiple: isMultiple, size: size }, this.props.children)));
+            React.createElement("select", tslib_1.__assign({}, props, { multiple: isMultiple }), this.props.children)));
     };
     return Select;
 }(React.Component));

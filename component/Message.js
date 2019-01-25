@@ -29,10 +29,9 @@ var Message = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Message.prototype.render = function () {
-        var _a = this.props, isDark = _a.isDark, isLink = _a.isLink, isInvisible = _a.isInvisible, isSrOnly = _a.isSrOnly;
+        var _a = this.props, isDark = _a.isDark, isInvisible = _a.isInvisible, isSrOnly = _a.isSrOnly;
         var className = classnames("message", {
             "is-dark": isDark,
-            "is-link": isLink,
         }, modifiers_1.helpersPropsToClassenames({
             isInvisible: isInvisible,
             isSrOnly: isSrOnly,

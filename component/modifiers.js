@@ -8,16 +8,27 @@ function helpersPropsToClassenames(props) {
 }
 exports.helpersPropsToClassenames = helpersPropsToClassenames;
 function mainColorsPropsToClassenames(props) {
-    var isDanger = props.isDanger, isInfo = props.isInfo, isPrimary = props.isPrimary, isSuccess = props.isSuccess, isWarning = props.isWarning;
+    var isDanger = props.isDanger, isInfo = props.isInfo, isLink = props.isLink, isPrimary = props.isPrimary, isSuccess = props.isSuccess, isWarning = props.isWarning;
     return {
         "is-danger": isDanger,
         "is-info": isInfo,
+        "is-link": isLink,
         "is-primary": isPrimary,
         "is-success": isSuccess,
         "is-warning": isWarning,
     };
 }
 exports.mainColorsPropsToClassenames = mainColorsPropsToClassenames;
+function shadeColorsPropsToClassenames(props) {
+    var isBlack = props.isBlack, isDark = props.isDark, isLight = props.isLight, isWhite = props.isWhite;
+    return {
+        "is-black": isBlack,
+        "is-dark": isDark,
+        "is-light": isLight,
+        "is-white": isWhite,
+    };
+}
+exports.shadeColorsPropsToClassenames = shadeColorsPropsToClassenames;
 function sizePropsToClassenames(props) {
     var isLarge = props.isLarge, isMedium = props.isMedium, isSmall = props.isSmall;
     return {

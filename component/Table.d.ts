@@ -1,5 +1,5 @@
 import * as React from "react";
-interface ITableProps {
+interface ITableProps extends React.TableHTMLAttributes<HTMLTableElement> {
     isBordered?: boolean;
     isFullwidth?: boolean;
     isHoverable?: boolean;

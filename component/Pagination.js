@@ -64,7 +64,7 @@ var Pagination = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Pagination.prototype.render = function () {
-        return (React.createElement("nav", { className: "pagination", role: "navigation", "aria-label": "pagination" }, this.props.children));
+        return (React.createElement("nav", { "aria-label": "pagination", className: "pagination", role: "navigation" }, this.props.children));
     };
     Pagination.Ellipsis = PaginationEllipsis;
     Pagination.Link = PaginationLink;

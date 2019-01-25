@@ -42,4 +42,5 @@ import Tags from "./component/Tags";
 import Textarea from "./component/Textarea";
 import Tile from "./component/Tile";
 import Title from "./component/Title";
-export { Box, Breadcrumb, Button, Buttons, Card, Checkbox, ClassicNavbar, Column, Columns, Container, Content, Control, Delete, FileUpload, Field, Footer, Heading, Help, Hero, Icon, Image, Input, Label, Level, Media, Menu, Message, Modal, Navbar, Notification, Pagination, Progress, Radio, Section, Select, Strong, Subtitle, Table, Tag, Tabs, Tags, Textarea, Tile, Title, };
+import { helpersPropsToClassenames, mainColorsPropsToClassenames, shadeColorsPropsToClassenames, sizePropsToClassenames, textColorHelpersPropsToClassenames } from "./component/modifiers";
+export { Box, Breadcrumb, Button, Buttons, Card, Checkbox, ClassicNavbar, Column, Columns, Container, Content, Control, Delete, FileUpload, Field, Footer, Heading, Help, Hero, Icon, Image, Input, Label, Level, Media, Menu, Message, Modal, Navbar, Notification, Pagination, Progress, Radio, Section, Select, Strong, Subtitle, Table, Tag, Tabs, Tags, Textarea, Tile, Title, helpersPropsToClassenames, mainColorsPropsToClassenames, shadeColorsPropsToClassenames, sizePropsToClassenames, textColorHelpersPropsToClassenames, };

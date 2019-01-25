@@ -15,21 +15,26 @@ var Tag = (function (_super) {
             "is-black": isBlack,
             "is-dark": isDark,
             "is-light": isLight,
-            "is-link": isLink,
             "is-rounded": isRounded,
             "is-white": isWhite,
         }, modifiers_1.mainColorsPropsToClassenames({
             isDanger: isDanger,
             isInfo: isInfo,
+            isLink: isLink,
             isPrimary: isPrimary,
             isSuccess: isSuccess,
             isWarning: isWarning,
+        }), modifiers_1.shadeColorsPropsToClassenames({
+            isBlack: isBlack,
+            isDark: isDark,
+            isLight: isLight,
+            isWhite: isWhite,
         }), modifiers_1.sizePropsToClassenames({
             isLarge: isLarge,
             isMedium: isMedium,
             isSmall: isSmall,
         }));
-        return href ? (React.createElement(Anchor_1.Anchor, tslib_1.__assign({ AnchorComponent: AnchorComponent, className: className, href: href, hrefProp: hrefProp }, props), this.props.children)) : (React.createElement("span", { className: className }, this.props.children));
+        return href ? (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { AnchorComponent: AnchorComponent, className: className, href: href, hrefProp: hrefProp }), this.props.children)) : (React.createElement("span", { className: className }, this.props.children));
     };
     return Tag;
 }(React.Component));
