@@ -7,17 +7,18 @@ interface IRadioProps extends React.InputHTMLAttributes<HTMLInputElement> {
 export default class Radio extends React.Component<IRadioProps> {
   render() {
     const {
+      children,
       inputRef,
       ...props
     } = this.props
 
     return (
       <label className="radio">
-        <input {...props} type="radio"/>
+        <input {...props} type="radio" />
 
         {" "/* adding a space looks better*/}
 
-        {this.props.children}
+        {children}
       </label>
     )
   }
