@@ -28,7 +28,8 @@
     "react",
     "bulma",
     "component",
-    "components"
+    "components",
+    "typescript"
   ],
   "author": {
     "name": "Gianluca Casati",

@@ -8,7 +8,8 @@ import {
   sizePropsToClassenames,
 } from "./modifiers"
 
-interface IProgressProps extends IMainColorsProps, ISizeProps {
+interface IProgressProps extends IMainColorsProps,
+                                 ISizeProps {
   max: number
   value: number
 }

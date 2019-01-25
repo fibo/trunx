@@ -6,9 +6,17 @@ export interface IHelpersProps {
 export interface IMainColorsProps {
   isDanger?: boolean
   isInfo?: boolean
+  isLink?: boolean
   isPrimary?: boolean
   isSuccess?: boolean
   isWarning?: boolean
+}
+
+export interface IShadeColorsProps {
+  isBlack?: boolean
+  isDark?: boolean
+  isLight?: boolean
+  isWhite?: boolean
 }
 
 export interface ISizeProps {
@@ -55,6 +63,7 @@ export function mainColorsPropsToClassenames(props: IMainColorsProps) {
   const {
     isDanger,
     isInfo,
+    isLink,
     isPrimary,
     isSuccess,
     isWarning,
@@ -63,9 +72,26 @@ export function mainColorsPropsToClassenames(props: IMainColorsProps) {
   return {
     "is-danger": isDanger,
     "is-info": isInfo,
+    "is-link": isLink,
     "is-primary": isPrimary,
     "is-success": isSuccess,
     "is-warning": isWarning,
+  }
+}
+
+export function shadeColorsPropsToClassenames(props: IShadeColorsProps) {
+  const {
+    isBlack,
+    isDark,
+    isLight,
+    isWhite,
+  } = props
+
+  return {
+    "is-black": isBlack,
+    "is-dark": isDark,
+    "is-light": isLight,
+    "is-white": isWhite,
   }
 }
 
