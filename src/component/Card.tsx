@@ -11,6 +11,8 @@ import {
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
+import Image, { IImageProps } from "./Image"
+
 interface ICardContentProps extends ITextColorHelpersProps {}
 
 interface ICardFooterItemProps extends IAnchorProps {}
@@ -139,10 +141,10 @@ class CardHeader extends React.Component {
   }
 }
 
-class CardImage extends React.Component {
+class CardImage extends React.Component<IImageProps> {
   render() {
     return (
-      <div className="card-image">{this.props.children}</div>
+      <div className="card-image"><Image {...this.props} /></div>
     )
   }
 }

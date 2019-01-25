@@ -4,6 +4,7 @@ var classnames = require("classnames");
 var React = require("react");
 var Anchor_1 = require("./Anchor");
 var modifiers_1 = require("./modifiers");
+var Image_1 = require("./Image");
 var CardContent = (function (_super) {
     tslib_1.__extends(CardContent, _super);
     function CardContent() {
@@ -93,7 +94,8 @@ var CardImage = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardImage.prototype.render = function () {
-        return (React.createElement("div", { className: "card-image" }, this.props.children));
+        return (React.createElement("div", { className: "card-image" },
+            React.createElement(Image_1.default, tslib_1.__assign({}, this.props))));
     };
     return CardImage;
 }(React.Component));
