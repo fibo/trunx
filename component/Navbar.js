@@ -74,7 +74,7 @@ var NavbarItem = (function (_super) {
             "is-active": isActive,
             "is-hoverable": isHoverable,
         });
-        return href ? (React.createElement(Anchor_1.Anchor, tslib_1.__assign({ AnchorComponent: AnchorComponent, className: className, href: href, hrefProp: hrefProp }, props), this.props.children)) : (React.createElement("div", tslib_1.__assign({ className: className }, props), this.props.children));
+        return href ? (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { AnchorComponent: AnchorComponent, className: className, href: href, hrefProp: hrefProp }), this.props.children)) : (React.createElement("div", tslib_1.__assign({}, props, { className: className }), this.props.children));
     };
     return NavbarItem;
 }(React.Component));
@@ -136,24 +136,25 @@ var Navbar = (function (_super) {
         }
     };
     Navbar.prototype.render = function () {
-        var _a = this.props, isBlack = _a.isBlack, isDark = _a.isDark, isDanger = _a.isDanger, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isLight = _a.isLight, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, isWarning = _a.isWarning, isWhite = _a.isWhite, role = _a.role, props = tslib_1.__rest(_a, ["isBlack", "isDark", "isDanger", "isFixedBottom", "isFixedTop", "isLight", "isInfo", "isPrimary", "isSuccess", "isTransparent", "isUnselectable", "isWarning", "isWhite", "role"]);
+        var _a = this.props, isBlack = _a.isBlack, isDark = _a.isDark, isDanger = _a.isDanger, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isLight = _a.isLight, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, isWarning = _a.isWarning, isWhite = _a.isWhite, props = tslib_1.__rest(_a, ["isBlack", "isDark", "isDanger", "isFixedBottom", "isFixedTop", "isLight", "isInfo", "isPrimary", "isSuccess", "isTransparent", "isUnselectable", "isWarning", "isWhite"]);
         var className = classnames("navbar", {
-            "is-black": isBlack,
-            "is-dark": isDark,
             "is-fixed-bottom": isFixedBottom,
             "is-fixed-top": isFixedTop,
-            "is-light": isLight,
             "is-transparent": isTransparent,
             "is-unselectable": isUnselectable,
-            "is-white": isWhite,
         }, modifiers_1.mainColorsPropsToClassenames({
             isDanger: isDanger,
             isInfo: isInfo,
             isPrimary: isPrimary,
             isSuccess: isSuccess,
             isWarning: isWarning,
+        }), modifiers_1.shadeColorsPropsToClassenames({
+            isBlack: isBlack,
+            isDark: isDark,
+            isLight: isLight,
+            isWhite: isWhite,
         }));
-        return (React.createElement("nav", tslib_1.__assign({ className: className, role: role }, props), this.props.children));
+        return (React.createElement("nav", tslib_1.__assign({}, props, { className: className }), this.props.children));
     };
     Navbar.Brand = NavbarBrand;
     Navbar.Burger = NavbarBurger;

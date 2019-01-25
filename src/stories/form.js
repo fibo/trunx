@@ -2298,6 +2298,212 @@ storiesOf('Form', module)
               </Code>
             </Column>
           </Columns>
+
+          <hr />
+
+          <Title is4>
+            Colors
+          </Title>
+
+          <p>
+            You can style the file element by appending one of the <p>10 color modifiers</p>
+          </p>
+
+          <ul>
+            <li>
+              <code>isWhite</code>
+            </li>
+
+            <li>
+              <code>isBlack</code>
+            </li>
+
+            <li>
+              <code>isLight</code>
+            </li>
+
+            <li>
+              <code>isDark</code>
+            </li>
+
+            <li>
+              <code>isPrimary</code>
+            </li>
+
+            <li>
+              <code>isLink</code>
+            </li>
+
+            <li>
+              <code>isInfo</code>
+            </li>
+
+            <li>
+              <code>isSuccess</code>
+            </li>
+
+            <li>
+              <code>isWarning</code>
+            </li>
+
+            <li>
+              <code>isDanger</code>
+            </li>
+          </ul>
+
+          <Columns>
+            <Column>
+              <Field>
+                <FileUpload isPrimary>
+                  <FileUpload.Input name='resume' />
+
+                  <FileUpload.Cta>
+                    <FileUpload.Icon>
+                      <Icon.Svg icon={solidIcon.upload} />
+                    </FileUpload.Icon>
+
+                    <FileUpload.Label>
+                      Primary file…
+                    </FileUpload.Label>
+                  </FileUpload.Cta>
+                </FileUpload>
+              </Field>
+
+              <Field>
+                <FileUpload hasName isInfo>
+                  <FileUpload.Input name='resume' />
+
+                  <FileUpload.Cta>
+                    <FileUpload.Icon>
+                      <Icon.Svg icon={solidIcon.upload} />
+                    </FileUpload.Icon>
+
+                    <FileUpload.Label>
+                      Info file…
+                    </FileUpload.Label>
+                  </FileUpload.Cta>
+
+                  <FileUpload.Name>
+                    Screen Shot 2017-07-29 at 15.54.25.png
+                  </FileUpload.Name>
+                </FileUpload>
+              </Field>
+
+              <Field>
+                <FileUpload hasName isWarning>
+                  <FileUpload.Input name='resume' />
+
+                  <FileUpload.Cta>
+                    <FileUpload.Icon>
+                      <Icon.Svg icon={solidIcon.upload} />
+                    </FileUpload.Icon>
+
+                    <FileUpload.Label>
+                      Warning file…
+                    </FileUpload.Label>
+                  </FileUpload.Cta>
+                </FileUpload>
+              </Field>
+
+              <Field>
+                <FileUpload hasName isBoxed isDanger>
+                  <FileUpload.Input name='resume' />
+
+                  <FileUpload.Cta>
+                    <FileUpload.Icon>
+                      <Icon.Svg icon={solidIcon.upload} />
+                    </FileUpload.Icon>
+
+                    <FileUpload.Label>
+                      Danger file…
+                    </FileUpload.Label>
+                  </FileUpload.Cta>
+
+                  <FileUpload.Name>
+                    Screen Shot 2017-07-29 at 15.54.25.png
+                  </FileUpload.Name>
+                </FileUpload>
+              </Field>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Field>
+                    <FileUpload isPrimary>
+                      <FileUpload.Input name='resume' />
+
+                      <FileUpload.Cta>
+                        <FileUpload.Icon>
+                          <Icon.Svg icon={solidIcon.upload} />
+                        </FileUpload.Icon>
+
+                        <FileUpload.Label>
+                          Primary file…
+                        </FileUpload.Label>
+                      </FileUpload.Cta>
+                    </FileUpload>
+                  </Field>
+
+                  <Field>
+                    <FileUpload hasName isInfo>
+                      <FileUpload.Input name='resume' />
+
+                      <FileUpload.Cta>
+                        <FileUpload.Icon>
+                          <Icon.Svg icon={solidIcon.upload} />
+                        </FileUpload.Icon>
+
+                        <FileUpload.Label>
+                          Info file…
+                        </FileUpload.Label>
+                      </FileUpload.Cta>
+
+                      <FileUpload.Name>
+                        Screen Shot 2017-07-29 at 15.54.25.png
+                      </FileUpload.Name>
+                    </FileUpload>
+                  </Field>
+
+                  <Field>
+                    <FileUpload hasName isWarning>
+                      <FileUpload.Input name='resume' />
+
+                      <FileUpload.Cta>
+                        <FileUpload.Icon>
+                          <Icon.Svg icon={solidIcon.upload} />
+                        </FileUpload.Icon>
+
+                        <FileUpload.Label>
+                          Warning file…
+                        </FileUpload.Label>
+                      </FileUpload.Cta>
+                    </FileUpload>
+                  </Field>
+
+                  <Field>
+                    <FileUpload hasName isBoxed isDanger>
+                      <FileUpload.Input name='resume' />
+
+                      <FileUpload.Cta>
+                        <FileUpload.Icon>
+                          <Icon.Svg icon={solidIcon.upload} />
+                        </FileUpload.Icon>
+
+                        <FileUpload.Label>
+                          Danger file…
+                        </FileUpload.Label>
+                      </FileUpload.Cta>
+
+                      <FileUpload.Name>
+                        Screen Shot 2017-07-29 at 15.54.25.png
+                      </FileUpload.Name>
+                    </FileUpload>
+                  </Field>
+                `}
+              </Code>
+            </Column>
+          </Columns>
         </Content>
       </Container>
     </Section>

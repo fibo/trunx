@@ -9,7 +9,7 @@ var Breadcrumb = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Breadcrumb.prototype.render = function () {
-        var _a = this.props, hasArrowSeparator = _a.hasArrowSeparator, hasBulletSeparator = _a.hasBulletSeparator, hasDotSeparator = _a.hasDotSeparator, hasSuccedesSeparator = _a.hasSuccedesSeparator, isCentered = _a.isCentered, isRight = _a.isRight;
+        var _a = this.props, hasArrowSeparator = _a.hasArrowSeparator, hasBulletSeparator = _a.hasBulletSeparator, hasDotSeparator = _a.hasDotSeparator, hasSuccedesSeparator = _a.hasSuccedesSeparator, isCentered = _a.isCentered, isRight = _a.isRight, props = tslib_1.__rest(_a, ["hasArrowSeparator", "hasBulletSeparator", "hasDotSeparator", "hasSuccedesSeparator", "isCentered", "isRight"]);
         var className = classnames_1.default("breadcrumb", {
             "has-arrow-separator": hasArrowSeparator,
             "has-bullet-separator": hasBulletSeparator,
@@ -18,7 +18,7 @@ var Breadcrumb = (function (_super) {
             "is-centered": isCentered,
             "is-right": isRight,
         }, modifiers_1.sizePropsToClassenames(this.props), modifiers_1.textColorHelpersPropsToClassenames(this.props));
-        return (React.createElement("nav", { "aria-label": "breadcrumbs", className: className },
+        return (React.createElement("nav", tslib_1.__assign({}, props, { "aria-label": "breadcrumbs", className: className }),
             React.createElement("ul", null, this.props.children)));
     };
     return Breadcrumb;
