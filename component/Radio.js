@@ -7,11 +7,11 @@ var Radio = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Radio.prototype.render = function () {
-        var _a = this.props, inputRef = _a.inputRef, props = tslib_1.__rest(_a, ["inputRef"]);
+        var _a = this.props, children = _a.children, inputRef = _a.inputRef, props = tslib_1.__rest(_a, ["children", "inputRef"]);
         return (React.createElement("label", { className: "radio" },
             React.createElement("input", tslib_1.__assign({}, props, { type: "radio" })),
             " ",
-            this.props.children));
+            children));
     };
     return Radio;
 }(React.Component));
