@@ -1,5 +1,7 @@
 export interface IHelpersProps {
     isInvisible?: boolean;
+    isMarginLess?: boolean;
+    isPaddingLess?: boolean;
     isSrOnly?: boolean;
 }
 export interface IMainColorsProps {
@@ -43,7 +45,9 @@ export interface ITextColorHelpersProps {
     hasTextWhiteTer?: boolean;
 }
 export declare function helpersPropsToClassenames(props: IHelpersProps): {
+    "is-marginless": boolean | undefined;
     "is-invisible": boolean | undefined;
+    "is-paddingless": boolean | undefined;
     "is-sr-only": boolean | undefined;
 };
 export declare function mainColorsPropsToClassenames(props: IMainColorsProps): {

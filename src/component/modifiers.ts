@@ -1,5 +1,7 @@
 export interface IHelpersProps {
   isInvisible?: boolean
+  isMarginLess?: boolean
+  isPaddingLess?: boolean
   isSrOnly?: boolean
 }
 
@@ -50,11 +52,15 @@ export interface ITextColorHelpersProps {
 export function helpersPropsToClassenames(props: IHelpersProps) {
   const {
     isInvisible,
+    isMarginLess,
+    isPaddingLess,
     isSrOnly,
   } = props
 
   return {
+    "is-marginless": isMarginLess,
     "is-invisible": isInvisible,
+    "is-paddingless": isPaddingLess,
     "is-sr-only": isSrOnly,
   }
 }

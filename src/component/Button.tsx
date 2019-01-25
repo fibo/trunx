@@ -80,9 +80,11 @@ export default class Button extends React.Component<IButtonProps> {
       isLight,
       isLink,
       isLoading,
+      isMarginLess,
       isMedium,
       isNormal,
       isOutlined,
+      isPaddingLess,
       isPrimary,
       isSmall,
       isSrOnly,
@@ -113,6 +115,8 @@ export default class Button extends React.Component<IButtonProps> {
       },
       helpersPropsToClassenames({
         isInvisible,
+        isMarginLess,
+        isPaddingLess,
         isSrOnly,
       }),
       mainColorsPropsToClassenames({
