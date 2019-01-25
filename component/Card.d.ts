@@ -1,6 +1,7 @@
 import * as React from "react";
 import { IAnchorProps } from "./Anchor";
 import { ITextColorHelpersProps } from "./modifiers";
+import { IImageProps } from "./Image";
 interface ICardContentProps extends ITextColorHelpersProps {
 }
 interface ICardFooterItemProps extends IAnchorProps {
@@ -33,7 +34,7 @@ declare class CardHeader extends React.Component {
     static Title: typeof CardHeaderTitle;
     render(): JSX.Element;
 }
-declare class CardImage extends React.Component {
+declare class CardImage extends React.Component<IImageProps> {
     render(): JSX.Element;
 }
 export default class Card extends React.Component {

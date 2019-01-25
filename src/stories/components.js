@@ -254,9 +254,11 @@ storiesOf('Components', module)
           <Columns>
             <Column isOneThird>
               <Card>
-                <Card.Image is4by3>
-                  <img src='https://bulma.io/images/placeholders/1280x960.png' alt='Placeholder image' />
-                </Card.Image>
+                <Card.Image
+                  alt='Placeholder image'
+                  is4by3
+                  src='https://bulma.io/images/placeholders/1280x960.png'
+                />
 
                 <Card.Content>
                   <Media>
@@ -289,9 +291,11 @@ storiesOf('Components', module)
               <Code language='jsx'>
                 {indent`
                   <Card>
-                    <Card.Image is4by3>
-                      <img src='https://bulma.io/images/placeholders/1280x960.png' alt='Placeholder image' />
-                    </Card.Image>
+                    <Card.Image
+                      alt='Placeholder image'
+                      is4by3
+                      src='https://bulma.io/images/placeholders/1280x960.png'
+                    />
 
                     <Card.Content>
                       <Media>
