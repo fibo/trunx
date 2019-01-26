@@ -1,4 +1,14 @@
 Object.defineProperty(exports, "__esModule", { value: true });
+function alignementPropsToClassenames(props) {
+    var hasTextCentered = props.hasTextCentered, hasTextJustified = props.hasTextJustified, hasTextLeft = props.hasTextLeft, hasTextRight = props.hasTextRight;
+    return {
+        "has-text-centered": hasTextCentered,
+        "has-text-justified": hasTextJustified,
+        "has-text-left": hasTextLeft,
+        "has-text-right": hasTextRight,
+    };
+}
+exports.alignementPropsToClassenames = alignementPropsToClassenames;
 function backgroundColorHelpersPropsToClassenames(props) {
     var hasBackgroundBlack = props.hasBackgroundBlack, hasBackgroundBlackBis = props.hasBackgroundBlackBis, hasBackgroundBlackTer = props.hasBackgroundBlackTer, hasBackgroundDanger = props.hasBackgroundDanger, hasBackgroundDark = props.hasBackgroundDark, hasBackgroundGrey = props.hasBackgroundGrey, hasBackgroundGreyDark = props.hasBackgroundGreyDark, hasBackgroundGreyDarker = props.hasBackgroundGreyDarker, hasBackgroundGreyLight = props.hasBackgroundGreyLight, hasBackgroundGreyLighter = props.hasBackgroundGreyLighter, hasBackgroundInfo = props.hasBackgroundInfo, hasBackgroundLight = props.hasBackgroundLight, hasBackgroundLink = props.hasBackgroundLink, hasBackgroundPrimary = props.hasBackgroundPrimary, hasBackgroundSuccess = props.hasBackgroundSuccess, hasBackgroundWarning = props.hasBackgroundWarning, hasBackgroundWhite = props.hasBackgroundWhite, hasBackgroundWhiteBis = props.hasBackgroundWhiteBis, hasBackgroundWhiteTer = props.hasBackgroundWhiteTer;
     return {
