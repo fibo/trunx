@@ -7,6 +7,7 @@ interface IIconProps extends ISizeProps {
     hasTextWarning?: boolean;
     isLeft?: boolean;
     isRight?: boolean;
+    onClick?: (event: React.MouseEvent<HTMLSpanElement>) => void;
 }
 interface IIconSvgProps {
     icon: {
