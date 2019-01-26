@@ -44,6 +44,7 @@ import Tile from "./component/Tile"
 import Title from "./component/Title"
 
 import {
+  alignementPropsToClassenames,
   backgroundColorHelpersPropsToClassenames,
   helpersPropsToClassenames,
   mainColorsPropsToClassenames,

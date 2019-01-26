@@ -1,3 +1,9 @@
+export interface IAlignementHelpersProps {
+    hasTextCentered?: boolean;
+    hasTextJustified?: boolean;
+    hasTextLeft?: boolean;
+    hasTextRight?: boolean;
+}
 export interface IBackgroundColorHelpersProps {
     hasBackgroundBlack?: boolean;
     hasBackgroundBlackBis?: boolean;
@@ -65,6 +71,12 @@ export interface ITextColorHelpersProps {
     hasTextWhiteBis?: boolean;
     hasTextWhiteTer?: boolean;
 }
+export declare function alignementPropsToClassenames(props: IAlignementHelpersProps): {
+    "has-text-centered": boolean | undefined;
+    "has-text-justified": boolean | undefined;
+    "has-text-left": boolean | undefined;
+    "has-text-right": boolean | undefined;
+};
 export declare function backgroundColorHelpersPropsToClassenames(props: IBackgroundColorHelpersProps): {
     "has-background-black": boolean | undefined;
     "has-background-black-bis": boolean | undefined;
