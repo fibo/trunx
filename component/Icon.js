@@ -24,7 +24,7 @@ var Icon = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Icon.prototype.render = function () {
-        var _a = this.props, hasTextDanger = _a.hasTextDanger, hasTextInfo = _a.hasTextInfo, hasTextSuccess = _a.hasTextSuccess, hasTextWarning = _a.hasTextWarning, isLeft = _a.isLeft, isRight = _a.isRight;
+        var _a = this.props, hasTextDanger = _a.hasTextDanger, hasTextInfo = _a.hasTextInfo, hasTextSuccess = _a.hasTextSuccess, hasTextWarning = _a.hasTextWarning, onClick = _a.onClick, isLeft = _a.isLeft, isRight = _a.isRight;
         var className = classnames("icon", {
             "has-text-danger": hasTextDanger,
             "has-text-info": hasTextInfo,
@@ -33,7 +33,7 @@ var Icon = (function (_super) {
             "is-left": isLeft,
             "is-right": isRight,
         }, modifiers_1.sizePropsToClassenames(this.props));
-        return (React.createElement("span", { className: className }, this.props.children));
+        return (React.createElement("span", { className: className, onClick: onClick }, this.props.children));
     };
     Icon.Svg = IconSvg;
     return Icon;
