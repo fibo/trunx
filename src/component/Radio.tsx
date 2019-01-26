@@ -16,8 +16,6 @@ export default class Radio extends React.Component<IRadioProps> {
       <label className="radio">
         <input {...props} type="radio" />
 
-        {" "/* adding a space looks better*/}
-
         {children}
       </label>
     )
