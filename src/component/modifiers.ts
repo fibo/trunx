@@ -1,3 +1,25 @@
+export interface IBackgroundColorHelpersProps {
+  hasBackgroundBlack?: boolean
+  hasBackgroundBlackBis?: boolean
+  hasBackgroundBlackTer?: boolean
+  hasBackgroundDanger?: boolean
+  hasBackgroundDark?: boolean
+  hasBackgroundGrey?: boolean
+  hasBackgroundGreyDark?: boolean
+  hasBackgroundGreyDarker?: boolean
+  hasBackgroundGreyLight?: boolean
+  hasBackgroundGreyLighter?: boolean
+  hasBackgroundLight?: boolean
+  hasBackgroundLink?: boolean
+  hasBackgroundInfo?: boolean
+  hasBackgroundPrimary?: boolean
+  hasBackgroundSuccess?: boolean
+  hasBackgroundWarning?: boolean
+  hasBackgroundWhite?: boolean
+  hasBackgroundWhiteBis?: boolean
+  hasBackgroundWhiteTer?: boolean
+}
+
 export interface IHelpersProps {
   isInvisible?: boolean
   isMarginLess?: boolean
@@ -47,6 +69,52 @@ export interface ITextColorHelpersProps {
   hasTextWhite?: boolean
   hasTextWhiteBis?: boolean
   hasTextWhiteTer?: boolean
+}
+
+export function backgroundColorHelpersPropsToClassenames(props: IBackgroundColorHelpersProps) {
+  const {
+    hasBackgroundBlack,
+    hasBackgroundBlackBis,
+    hasBackgroundBlackTer,
+    hasBackgroundDanger,
+    hasBackgroundDark,
+    hasBackgroundGrey,
+    hasBackgroundGreyDark,
+    hasBackgroundGreyDarker,
+    hasBackgroundGreyLight,
+    hasBackgroundGreyLighter,
+    hasBackgroundInfo,
+    hasBackgroundLight,
+    hasBackgroundLink,
+    hasBackgroundPrimary,
+    hasBackgroundSuccess,
+    hasBackgroundWarning,
+    hasBackgroundWhite,
+    hasBackgroundWhiteBis,
+    hasBackgroundWhiteTer,
+  } = props
+
+  return {
+    "has-background-black": hasBackgroundBlack,
+    "has-background-black-bis": hasBackgroundBlackBis,
+    "has-background-black-ter": hasBackgroundBlackTer,
+    "has-background-danger": hasBackgroundDanger,
+    "has-background-dark": hasBackgroundDark,
+    "has-background-grey": hasBackgroundGrey,
+    "has-background-grey-dark": hasBackgroundGreyDark,
+    "has-background-grey-darker": hasBackgroundGreyDarker,
+    "has-background-grey-light": hasBackgroundGreyLight,
+    "has-background-grey-lighter": hasBackgroundGreyLighter,
+    "has-background-info": hasBackgroundInfo,
+    "has-background-light": hasBackgroundLight,
+    "has-background-link": hasBackgroundLink,
+    "has-background-primary": hasBackgroundPrimary,
+    "has-background-success": hasBackgroundSuccess,
+    "has-background-warning": hasBackgroundWarning,
+    "has-background-white": hasBackgroundWhite,
+    "has-background-white-bis": hasBackgroundWhiteBis,
+    "has-background-white-ter": hasBackgroundWhiteTer,
+  }
 }
 
 export function helpersPropsToClassenames(props: IHelpersProps) {

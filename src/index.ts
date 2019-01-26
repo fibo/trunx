@@ -44,6 +44,7 @@ import Tile from "./component/Tile"
 import Title from "./component/Title"
 
 import {
+  backgroundColorHelpersPropsToClassenames,
   helpersPropsToClassenames,
   mainColorsPropsToClassenames,
   shadeColorsPropsToClassenames,
@@ -96,6 +97,7 @@ export {
   Textarea,
   Tile,
   Title,
+  backgroundColorHelpersPropsToClassenames,
   helpersPropsToClassenames,
   mainColorsPropsToClassenames,
   shadeColorsPropsToClassenames,
