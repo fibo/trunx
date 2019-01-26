@@ -3,16 +3,16 @@ import * as React from "react"
 
 import {
   ISizeProps,
+  ITextColorHelpersProps,
   sizePropsToClassenames,
+  textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
-interface IIconProps extends ISizeProps {
-  hasTextDanger?: boolean
-  hasTextInfo?: boolean
-  hasTextSuccess?: boolean
-  hasTextWarning?: boolean
+interface IIconProps extends ITextColorHelpersProps,
+                             ISizeProps {
   isLeft?: boolean
   isRight?: boolean
+  onClick?: (event: React.MouseEvent<HTMLSpanElement>) => void
 }
 
 interface IIconSvgProps {
@@ -57,28 +57,22 @@ export default class Icon extends React.Component<IIconProps> {
 
   render() {
     const {
-      hasTextDanger,
-      hasTextInfo,
-      hasTextSuccess,
-      hasTextWarning,
+      onClick,
       isLeft,
       isRight,
     } = this.props
 
     const className = classnames("icon",
       {
-        "has-text-danger": hasTextDanger,
-        "has-text-info": hasTextInfo,
-        "has-text-success": hasTextSuccess,
-        "has-text-warning": hasTextWarning,
         "is-left": isLeft,
         "is-right": isRight,
       },
+      textColorHelpersPropsToClassenames(this.props),
       sizePropsToClassenames(this.props),
     )
 
     return (
-      <span className={className}>{this.props.children}</span>
+      <span className={className} onClick={onClick}>{this.props.children}</span>
    )
   }
 }
