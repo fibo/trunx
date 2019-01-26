@@ -1,3 +1,24 @@
+export interface IBackgroundColorHelpersProps {
+    hasBackgroundBlack?: boolean;
+    hasBackgroundBlackBis?: boolean;
+    hasBackgroundBlackTer?: boolean;
+    hasBackgroundDanger?: boolean;
+    hasBackgroundDark?: boolean;
+    hasBackgroundGrey?: boolean;
+    hasBackgroundGreyDark?: boolean;
+    hasBackgroundGreyDarker?: boolean;
+    hasBackgroundGreyLight?: boolean;
+    hasBackgroundGreyLighter?: boolean;
+    hasBackgroundLight?: boolean;
+    hasBackgroundLink?: boolean;
+    hasBackgroundInfo?: boolean;
+    hasBackgroundPrimary?: boolean;
+    hasBackgroundSuccess?: boolean;
+    hasBackgroundWarning?: boolean;
+    hasBackgroundWhite?: boolean;
+    hasBackgroundWhiteBis?: boolean;
+    hasBackgroundWhiteTer?: boolean;
+}
 export interface IHelpersProps {
     isInvisible?: boolean;
     isMarginLess?: boolean;
@@ -44,6 +65,27 @@ export interface ITextColorHelpersProps {
     hasTextWhiteBis?: boolean;
     hasTextWhiteTer?: boolean;
 }
+export declare function backgroundColorHelpersPropsToClassenames(props: IBackgroundColorHelpersProps): {
+    "has-background-black": boolean | undefined;
+    "has-background-black-bis": boolean | undefined;
+    "has-background-black-ter": boolean | undefined;
+    "has-background-danger": boolean | undefined;
+    "has-background-dark": boolean | undefined;
+    "has-background-grey": boolean | undefined;
+    "has-background-grey-dark": boolean | undefined;
+    "has-background-grey-darker": boolean | undefined;
+    "has-background-grey-light": boolean | undefined;
+    "has-background-grey-lighter": boolean | undefined;
+    "has-background-info": boolean | undefined;
+    "has-background-light": boolean | undefined;
+    "has-background-link": boolean | undefined;
+    "has-background-primary": boolean | undefined;
+    "has-background-success": boolean | undefined;
+    "has-background-warning": boolean | undefined;
+    "has-background-white": boolean | undefined;
+    "has-background-white-bis": boolean | undefined;
+    "has-background-white-ter": boolean | undefined;
+};
 export declare function helpersPropsToClassenames(props: IHelpersProps): {
     "is-marginless": boolean | undefined;
     "is-invisible": boolean | undefined;

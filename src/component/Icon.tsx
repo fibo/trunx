@@ -2,13 +2,16 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
+  IBackgroundColorHelpersProps,
   ISizeProps,
   ITextColorHelpersProps,
+  backgroundColorHelpersPropsToClassenames,
   sizePropsToClassenames,
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
-interface IIconProps extends ITextColorHelpersProps,
+interface IIconProps extends IBackgroundColorHelpersProps,
+                             ITextColorHelpersProps,
                              ISizeProps {
   isLeft?: boolean
   isRight?: boolean
@@ -67,6 +70,7 @@ export default class Icon extends React.Component<IIconProps> {
         "is-left": isLeft,
         "is-right": isRight,
       },
+      backgroundColorHelpersPropsToClassenames(this.props),
       textColorHelpersPropsToClassenames(this.props),
       sizePropsToClassenames(this.props),
     )
