@@ -1,10 +1,6 @@
 import * as React from "react";
-import { ISizeProps } from "./modifiers";
-interface IIconProps extends ISizeProps {
-    hasTextDanger?: boolean;
-    hasTextInfo?: boolean;
-    hasTextSuccess?: boolean;
-    hasTextWarning?: boolean;
+import { IBackgroundColorHelpersProps, ISizeProps, ITextColorHelpersProps } from "./modifiers";
+interface IIconProps extends IBackgroundColorHelpersProps, ITextColorHelpersProps, ISizeProps {
     isLeft?: boolean;
     isRight?: boolean;
     onClick?: (event: React.MouseEvent<HTMLSpanElement>) => void;

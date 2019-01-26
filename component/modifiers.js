@@ -1,4 +1,29 @@
 Object.defineProperty(exports, "__esModule", { value: true });
+function backgroundColorHelpersPropsToClassenames(props) {
+    var hasBackgroundBlack = props.hasBackgroundBlack, hasBackgroundBlackBis = props.hasBackgroundBlackBis, hasBackgroundBlackTer = props.hasBackgroundBlackTer, hasBackgroundDanger = props.hasBackgroundDanger, hasBackgroundDark = props.hasBackgroundDark, hasBackgroundGrey = props.hasBackgroundGrey, hasBackgroundGreyDark = props.hasBackgroundGreyDark, hasBackgroundGreyDarker = props.hasBackgroundGreyDarker, hasBackgroundGreyLight = props.hasBackgroundGreyLight, hasBackgroundGreyLighter = props.hasBackgroundGreyLighter, hasBackgroundInfo = props.hasBackgroundInfo, hasBackgroundLight = props.hasBackgroundLight, hasBackgroundLink = props.hasBackgroundLink, hasBackgroundPrimary = props.hasBackgroundPrimary, hasBackgroundSuccess = props.hasBackgroundSuccess, hasBackgroundWarning = props.hasBackgroundWarning, hasBackgroundWhite = props.hasBackgroundWhite, hasBackgroundWhiteBis = props.hasBackgroundWhiteBis, hasBackgroundWhiteTer = props.hasBackgroundWhiteTer;
+    return {
+        "has-background-black": hasBackgroundBlack,
+        "has-background-black-bis": hasBackgroundBlackBis,
+        "has-background-black-ter": hasBackgroundBlackTer,
+        "has-background-danger": hasBackgroundDanger,
+        "has-background-dark": hasBackgroundDark,
+        "has-background-grey": hasBackgroundGrey,
+        "has-background-grey-dark": hasBackgroundGreyDark,
+        "has-background-grey-darker": hasBackgroundGreyDarker,
+        "has-background-grey-light": hasBackgroundGreyLight,
+        "has-background-grey-lighter": hasBackgroundGreyLighter,
+        "has-background-info": hasBackgroundInfo,
+        "has-background-light": hasBackgroundLight,
+        "has-background-link": hasBackgroundLink,
+        "has-background-primary": hasBackgroundPrimary,
+        "has-background-success": hasBackgroundSuccess,
+        "has-background-warning": hasBackgroundWarning,
+        "has-background-white": hasBackgroundWhite,
+        "has-background-white-bis": hasBackgroundWhiteBis,
+        "has-background-white-ter": hasBackgroundWhiteTer,
+    };
+}
+exports.backgroundColorHelpersPropsToClassenames = backgroundColorHelpersPropsToClassenames;
 function helpersPropsToClassenames(props) {
     var isInvisible = props.isInvisible, isMarginLess = props.isMarginLess, isPaddingLess = props.isPaddingLess, isSrOnly = props.isSrOnly;
     return {
