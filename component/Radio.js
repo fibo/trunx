@@ -10,7 +10,6 @@ var Radio = (function (_super) {
         var _a = this.props, children = _a.children, inputRef = _a.inputRef, props = tslib_1.__rest(_a, ["children", "inputRef"]);
         return (React.createElement("label", { className: "radio" },
             React.createElement("input", tslib_1.__assign({}, props, { type: "radio" })),
-            " ",
             children));
     };
     return Radio;
