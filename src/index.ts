@@ -98,6 +98,7 @@ export {
   Textarea,
   Tile,
   Title,
+  alignementPropsToClassenames,
   backgroundColorHelpersPropsToClassenames,
   helpersPropsToClassenames,
   mainColorsPropsToClassenames,

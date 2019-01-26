@@ -88,6 +88,7 @@ exports.Tile = Tile_1.default;
 var Title_1 = require("./component/Title");
 exports.Title = Title_1.default;
 var modifiers_1 = require("./component/modifiers");
+exports.alignementPropsToClassenames = modifiers_1.alignementPropsToClassenames;
 exports.backgroundColorHelpersPropsToClassenames = modifiers_1.backgroundColorHelpersPropsToClassenames;
 exports.helpersPropsToClassenames = modifiers_1.helpersPropsToClassenames;
 exports.mainColorsPropsToClassenames = modifiers_1.mainColorsPropsToClassenames;
