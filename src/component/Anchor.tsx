@@ -2,10 +2,20 @@ import * as React from "react"
 
 interface IAnchorComponentProps {}
 
-export interface IAnchorProps {
+// Sync this interface with AnchorHTMLAttributes in @types/react but do not extend HTMLAttributes.
+interface IAnchorHTMLAttributes {
+  download?: any
+  href?: string
+  hrefLang?: string
+  media?: string
+  rel?: string
+  target?: string
+  type?: string
+}
+
+export interface IAnchorProps extends IAnchorHTMLAttributes {
   AnchorComponent?: React.ComponentClass<IAnchorComponentProps>,
   className?: string,
-  href?: string,
   hrefProp?: string,
 }
 
