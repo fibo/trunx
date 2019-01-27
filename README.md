@@ -7,7 +7,9 @@
 ## Status
 
 Almost all Bulma features are available and documented, few helpers and custom components are already implemented.
-I am using **Trunx** component library in production for my [Go7](https://go7.li) website.
+
+I am using **Trunx** component library in production for my [GoSeven](https://go7.li) website.
+It is an open source project, if you want to see code snippets you can check out the repo on GitHub: [github.com/go-seven/go-seven.com](https://github.com/go-seven/go-seven.com).
 
 ## Documentation
 
