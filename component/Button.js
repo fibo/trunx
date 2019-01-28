@@ -68,8 +68,8 @@ var Button = (function (_super) {
             return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({ AnchorComponent: AnchorComponent, className: className, href: href, hrefProp: hrefProp }, props), this.props.children));
         }
         if (type) {
-            if (isLoading) {
-                return (React.createElement("button", { className: className }, value));
+            if (disabled || isLoading) {
+                return (React.createElement("button", { className: className, disabled: disabled }, value));
             }
             else {
                 return (React.createElement("input", tslib_1.__assign({ className: className, type: type, value: value }, props)));
