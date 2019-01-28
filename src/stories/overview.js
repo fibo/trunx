@@ -21,7 +21,7 @@ storiesOf('Overview', module)
           </Title>
 
           <p>
-            <em>Trunx</em> is an open source collection of <em>React</em> components built on top of <em>Bulma</em> CSS framework.
+            <em>Trunx</em> is an open source collection of <em>React</em> components built on top of <em>Bulma</em> CSS framework and implemented with <em>TypeScript</em>.
             GitHub repo here: <a href='https://github.com/fibo/trunx'>github.com/fibo/trunx</a>.
           </p>
 
