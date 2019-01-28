@@ -176,10 +176,11 @@ export default class Button extends React.Component<IButtonProps> {
     }
 
     if (type) {
-      if (isLoading) {
+      if (disabled || isLoading) {
         return (
           <button
             className={className}
+            disabled={disabled}
           >
             {value}
           </button>
