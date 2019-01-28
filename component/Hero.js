@@ -39,11 +39,12 @@ var Hero = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Hero.prototype.render = function () {
-        var _a = this.props, isBold = _a.isBold, isDark = _a.isDark, isFullheight = _a.isFullheight, isLarge = _a.isLarge, isMedium = _a.isMedium;
+        var _a = this.props, isBold = _a.isBold, isDark = _a.isDark, isFullheight = _a.isFullheight, isFullheightWithNavbar = _a.isFullheightWithNavbar, isLarge = _a.isLarge, isMedium = _a.isMedium;
         var className = classnames("hero", {
             "is-bold": isBold,
             "is-dark": isDark,
             "is-fullheight": isFullheight,
+            "is-fullheight-with-navbar": isFullheightWithNavbar,
             "is-large": isLarge,
             "is-medium": isMedium,
         }, modifiers_1.mainColorsPropsToClassenames(this.props));
