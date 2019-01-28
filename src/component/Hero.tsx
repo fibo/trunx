@@ -9,6 +9,7 @@ import {
 interface IHeroProps extends IMainColorsProps {
   isBold?: boolean
   isDark?: boolean
+  isFullheightWithNavbar?: boolean
   isFullheight?: boolean
   isLarge?: boolean
   isLight?: boolean
@@ -49,6 +50,7 @@ export default class Hero extends React.Component<IHeroProps> {
       isBold,
       isDark,
       isFullheight,
+      isFullheightWithNavbar,
       isLarge,
       isMedium,
     } = this.props
@@ -58,6 +60,7 @@ export default class Hero extends React.Component<IHeroProps> {
         "is-bold": isBold,
         "is-dark": isDark,
         "is-fullheight": isFullheight,
+        "is-fullheight-with-navbar": isFullheightWithNavbar,
         "is-large": isLarge,
         "is-medium": isMedium,
       },

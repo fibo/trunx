@@ -3,6 +3,7 @@ import { IMainColorsProps } from "./modifiers";
 interface IHeroProps extends IMainColorsProps {
     isBold?: boolean;
     isDark?: boolean;
+    isFullheightWithNavbar?: boolean;
     isFullheight?: boolean;
     isLarge?: boolean;
     isLight?: boolean;
