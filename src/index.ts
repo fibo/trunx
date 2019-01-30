@@ -33,6 +33,7 @@ import Progress from "./component/Progress"
 import Radio from "./component/Radio"
 import Section from "./component/Section"
 import Select from "./component/Select"
+import Span from "./component/Span"
 import Strong from "./component/Strong"
 import Subtitle from "./component/Subtitle"
 import Table from "./component/Table"
@@ -42,16 +43,6 @@ import Tags from "./component/Tags"
 import Textarea from "./component/Textarea"
 import Tile from "./component/Tile"
 import Title from "./component/Title"
-
-import {
-  alignementPropsToClassenames,
-  backgroundColorHelpersPropsToClassenames,
-  helpersPropsToClassenames,
-  mainColorsPropsToClassenames,
-  shadeColorsPropsToClassenames,
-  sizePropsToClassenames,
-  textColorHelpersPropsToClassenames,
-} from "./component/modifiers"
 
 export {
   Box,
@@ -89,6 +80,7 @@ export {
   Radio,
   Section,
   Select,
+  Span,
   Strong,
   Subtitle,
   Table,
@@ -98,11 +90,4 @@ export {
   Textarea,
   Tile,
   Title,
-  alignementPropsToClassenames,
-  backgroundColorHelpersPropsToClassenames,
-  helpersPropsToClassenames,
-  mainColorsPropsToClassenames,
-  shadeColorsPropsToClassenames,
-  sizePropsToClassenames,
-  textColorHelpersPropsToClassenames,
 }

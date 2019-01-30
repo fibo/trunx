@@ -1,8 +1,8 @@
 import * as React from "react";
 import { IBackgroundColorHelpersProps, ITextColorHelpersProps } from "./modifiers";
-interface IStrongProps extends IBackgroundColorHelpersProps, ITextColorHelpersProps {
+interface ISpanProps extends IBackgroundColorHelpersProps, ITextColorHelpersProps {
 }
-export default class Strong extends React.Component<IStrongProps> {
+export default class Span extends React.Component<ISpanProps> {
     render(): JSX.Element;
 }
 export {};
