@@ -3,26 +3,34 @@ import * as React from "react"
 
 import {
   IMainColorsProps,
+  IShadeColorsProps,
   ISizeProps,
   mainColorsPropsToClassenames,
+  shadeColorsPropsToClassenames,
   sizePropsToClassenames,
 } from "./modifiers"
 
 interface IProgressProps extends IMainColorsProps,
+                                 IShadeColorsProps,
                                  ISizeProps,
                                  React.ProgressHTMLAttributes<HTMLProgressElement> {}
 
 export default class Progress extends React.Component<IProgressProps> {
   render() {
     const {
+      isBlack,
       isDanger,
+      isDark,
       isInfo,
       isLarge,
+      isLight,
+      isLink,
       isMedium,
       isPrimary,
       isSmall,
       isSuccess,
       isWarning,
+      isWhite,
       ...props
     } = this.props
 
@@ -30,9 +38,16 @@ export default class Progress extends React.Component<IProgressProps> {
       mainColorsPropsToClassenames({
         isDanger,
         isInfo,
+        isLink,
         isPrimary,
         isSuccess,
         isWarning,
+      }),
+      shadeColorsPropsToClassenames({
+        isBlack,
+        isDark,
+        isLight,
+        isWhite,
       }),
       sizePropsToClassenames({
         isLarge,

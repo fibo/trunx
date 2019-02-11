@@ -17,6 +17,7 @@ import Image from '../component/Image'
 import Level from '../component/Level'
 import Media from '../component/Media'
 import Notification from '../component/Notification'
+import Progress from '../component/Progress'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
 import Tag from '../component/Tag'
@@ -836,6 +837,147 @@ storiesOf('Elements', module)
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lorem ipsum dolor.<b>Pellentesque risus mi</b>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet, consectetur adipiscing elit</p>
                   </Notification>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+        </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Progress bars', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Progress Bar
+          </Title>
+
+          <Subtitle>
+            Native HTML <b>progress</b> bars
+          </Subtitle>
+
+          <Meta colors sizes />
+
+          <hr />
+
+          <Columns>
+            <Column isHalf>
+              <Progress value='15' max='100'>15%</Progress>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Progress value='15' max='100'>15%</Progress>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Title is4>
+            Colors
+          </Title>
+
+          <Columns>
+            <Column isHalf>
+              <Progress isPrimary value='15' max='100'>15%</Progress>
+
+              <Progress isLink value='30' max='100'>30%</Progress>
+
+              <Progress isInfo value='45' max='100'>45%</Progress>
+
+              <Progress isSuccess value='60' max='100'>60%</Progress>
+
+              <Progress isWarning value='75' max='100'>75%</Progress>
+
+              <Progress isDanger value='90' max='90'>75%</Progress>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Progress isPrimary value='15' max='100'>15%</Progress>
+
+                  <Progress isLink value='30' max='100'>30%</Progress>
+
+                  <Progress isInfo value='45' max='100'>45%</Progress>
+
+                  <Progress isSuccess value='60' max='100'>60%</Progress>
+
+                  <Progress isWarning value='75' max='100'>75%</Progress>
+
+                  <Progress isDanger value='90' max='90'>75%</Progress>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Title is4>
+            Sizes
+          </Title>
+
+          <Columns>
+            <Column isHalf>
+              <Progress isSmall value='15' max='100'>15%</Progress>
+
+              <Progress value='30' max='100'>30%</Progress>
+
+              <Progress isMedium value='45' max='100'>45%</Progress>
+
+              <Progress isLarge value='60' max='100'>60%</Progress>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Progress isSmall value='15' max='100'>15%</Progress>
+
+                  <Progress value='30' max='100'>30%</Progress>
+
+                  <Progress isMedium value='45' max='100'>45%</Progress>
+
+                  <Progress isLarge value='60' max='100'>60%</Progress>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <hr />
+
+          <Title is4>
+            Indeterminate
+          </Title>
+
+          <p>
+            If you don't set the <code>value</code> prop, you can display an <b>Indeterminate</b> progress bar. It's used to show that some progress is going on, but the actual duration is not yet determined.
+          </p>
+
+          <Columns>
+            <Column isHalf>
+              <Progress isSmall isPrimary max='100'>15%</Progress>
+
+              <Progress isDanger max='100'>30%</Progress>
+
+              <Progress isMedium isDark max='100'>45%</Progress>
+
+              <Progress isLarge isInfo max='100'>60%</Progress>
+            </Column>
+
+            <Column isHalf>
+              <Code language='jsx'>
+                {indent`
+                  <Progress isSmall isPrimary max='100'>15%</Progress>
+
+                  <Progress isDanger max='100'>30%</Progress>
+
+                  <Progress isMedium isDark max='100'>45%</Progress>
+
+                  <Progress isLarge isInfo max='100'>60%</Progress>
                 `}
               </Code>
             </Column>
