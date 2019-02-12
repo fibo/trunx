@@ -2,6 +2,8 @@ import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 
+import pkg from '../../package.json'
+
 import Container from '../component/Container'
 import Content from '../component/Content'
 import Title from '../component/Title'
@@ -42,7 +44,11 @@ storiesOf('Overview', module)
 
           <p>
             It is also required to add Bulma CSS. You can use a CDN, see <a href='https://bulma.io/documentation/'>Bulma documentation</a> or a custom Bulma theme, checkout <a href='https://jenil.github.io/bulmaswatch/'>Bulmaswatch</a>.
-            but the good new is that it is easy to customize your Bulma build to create your own theme.
+            Current bulma version supported is <code>{pkg.devDependencies.bulma.substring(1)}</code>.
+          </p>
+
+          <p>
+            The good new is that it is easy to customize your Bulma build to create your own theme.
           </p>
 
           <p>
