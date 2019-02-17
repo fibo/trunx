@@ -10,7 +10,7 @@ var Tag = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Tag.prototype.render = function () {
-        var _a = this.props, href = _a.href, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isInfo = _a.isInfo, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, isWhite = _a.isWhite, onClick = _a.onClick, props = tslib_1.__rest(_a, ["href", "isBlack", "isDanger", "isDark", "isInfo", "isLarge", "isLight", "isLink", "isMedium", "isPrimary", "isRounded", "isSmall", "isSuccess", "isWarning", "isWhite", "onClick"]);
+        var _a = this.props, href = _a.href, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isInfo = _a.isInfo, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, isWhite = _a.isWhite, onClick = _a.onClick, target = _a.target, props = tslib_1.__rest(_a, ["href", "isBlack", "isDanger", "isDark", "isInfo", "isLarge", "isLight", "isLink", "isMedium", "isPrimary", "isRounded", "isSmall", "isSuccess", "isWarning", "isWhite", "onClick", "target"]);
         var className = classnames("tag", {
             "is-black": isBlack,
             "is-dark": isDark,
@@ -35,10 +35,10 @@ var Tag = (function (_super) {
             isSmall: isSmall,
         }));
         if (href || onClick) {
-            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, href: href, onClick: onClick }), this.props.children));
+            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, href: href, onClick: onClick, target: target }), this.props.children));
         }
         else {
-            return (React.createElement("span", { className: className }, this.props.children));
+            return (React.createElement("span", tslib_1.__assign({}, props, { className: className }), this.props.children));
         }
     };
     return Tag;
