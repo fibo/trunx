@@ -12,10 +12,14 @@ interface INavbarBurgerProps {
     isActive?: boolean;
     onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
-interface INavbarItemProps extends IAnchorProps {
+interface INavbarItemProps {
+    download?: IAnchorProps["download"];
     hasDropdown?: boolean;
+    href?: IAnchorProps["href"];
     isActive?: boolean;
     isHoverable?: boolean;
+    onClick?: IAnchorProps["onClick"];
+    target?: IAnchorProps["target"];
 }
 interface INavbarMenuProps {
     isActive?: boolean;
