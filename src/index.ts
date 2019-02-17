@@ -4,7 +4,6 @@ import Button from "./component/Button"
 import Buttons from "./component/Buttons"
 import Card from "./component/Card"
 import Checkbox from "./component/Checkbox"
-import ClassicNavbar from "./component/ClassicNavbar"
 import Column from "./component/Column"
 import Columns from "./component/Columns"
 import Container from "./component/Container"
@@ -51,7 +50,6 @@ export {
   Buttons,
   Card,
   Checkbox,
-  ClassicNavbar,
   Column,
   Columns,
   Container,

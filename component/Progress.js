@@ -9,13 +9,19 @@ var Progress = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Progress.prototype.render = function () {
-        var _a = this.props, isDanger = _a.isDanger, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, props = tslib_1.__rest(_a, ["isDanger", "isInfo", "isLarge", "isMedium", "isPrimary", "isSmall", "isSuccess", "isWarning"]);
+        var _a = this.props, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isInfo = _a.isInfo, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isWarning = _a.isWarning, isWhite = _a.isWhite, props = tslib_1.__rest(_a, ["isBlack", "isDanger", "isDark", "isInfo", "isLarge", "isLight", "isLink", "isMedium", "isPrimary", "isSmall", "isSuccess", "isWarning", "isWhite"]);
         var className = classnames("progress", modifiers_1.mainColorsPropsToClassenames({
             isDanger: isDanger,
             isInfo: isInfo,
+            isLink: isLink,
             isPrimary: isPrimary,
             isSuccess: isSuccess,
             isWarning: isWarning,
+        }), modifiers_1.shadeColorsPropsToClassenames({
+            isBlack: isBlack,
+            isDark: isDark,
+            isLight: isLight,
+            isWhite: isWhite,
         }), modifiers_1.sizePropsToClassenames({
             isLarge: isLarge,
             isMedium: isMedium,
