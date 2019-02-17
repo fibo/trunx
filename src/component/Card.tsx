@@ -15,11 +15,21 @@ import Image, { IImageProps } from "./Image"
 
 interface ICardContentProps extends ITextColorHelpersProps {}
 
-interface ICardFooterItemProps extends IAnchorProps {}
+interface ICardFooterItemProps {
+  download?: IAnchorProps["download"]
+  href?: IAnchorProps["href"]
+  onClick?: IAnchorProps["onClick"]
+  target?: IAnchorProps["target"]
+}
 
 interface ICardFooterProps extends ITextColorHelpersProps {}
 
-interface ICardHeaderIconProps extends IAnchorProps {}
+interface ICardHeaderIconProps {
+  download?: IAnchorProps["download"]
+  href?: IAnchorProps["href"]
+  onClick?: IAnchorProps["onClick"]
+  target?: IAnchorProps["target"]
+}
 
 interface ICardHeaderTitleProps {
   isCentered?: boolean
@@ -40,29 +50,31 @@ class CardContent extends React.Component<ICardContentProps> {
 class CardFooterItem extends React.Component<ICardFooterItemProps> {
   render() {
     const {
-      AnchorComponent,
+      download,
       href,
-      hrefProp,
+      onClick,
+      target,
       ...props
     } = this.props
 
     const className = "card-footer-item"
 
-    if (href) {
+    if (href || onClick) {
       return (
         <Anchor
-          AnchorComponent={AnchorComponent}
-          className={className}
-          href={href}
-          hrefProp={hrefProp}
           {...props}
+          className={className}
+          download={download}
+          href={href}
+          onClick={onClick}
+          target={target}
         >
           {this.props.children}
         </Anchor>
       )
     } else {
       return (
-        <div className={className}>{this.props.children}</div>
+        <div {...props} className={className}>{this.props.children}</div>
       )
     }
   }
@@ -85,30 +97,31 @@ class CardFooter extends React.Component<ICardFooterProps> {
 class CardHeaderIcon extends React.Component<ICardHeaderIconProps> {
   render() {
     const {
+      download,
       href,
+      onClick,
+      target,
       ...props
     } = this.props
 
     const className = "card-header-icon"
 
-    if (href) {
+    if (href || onClick) {
       return (
-        <a
-          className={className}
-          href={href}
+        <Anchor
           {...props}
+          className={className}
+          download={download}
+          href={href}
+          onClick={onClick}
+          target={target}
         >
           {this.props.children}
-        </a>
+        </Anchor>
       )
     } else {
       return (
-        <div
-          className={className}
-          {...props}
-        >
-          {this.props.children}
-        </div>
+        <div {...props} className={className}>{this.props.children}</div>
       )
     }
   }

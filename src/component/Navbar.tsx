@@ -102,10 +102,7 @@ class NavbarEnd extends React.Component {
 class NavbarItem extends React.Component<INavbarItemProps> {
   render() {
     const {
-      AnchorComponent,
       hasDropdown,
-      href,
-      hrefProp,
       isActive,
       isHoverable,
       ...props
@@ -117,18 +114,13 @@ class NavbarItem extends React.Component<INavbarItemProps> {
       "is-hoverable": isHoverable,
     })
 
-    return href ? (
+    return (
       <Anchor
         {...props}
-        AnchorComponent={AnchorComponent}
         className={className}
-        href={href}
-        hrefProp={hrefProp}
       >
         {this.props.children}
       </Anchor>
-    ) : (
-      <div {...props} className={className}>{this.props.children}</div>
     )
   }
 }

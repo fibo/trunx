@@ -19,13 +19,14 @@ import {
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
-interface IButtonProps extends IAnchorProps,
-                               IHelpersProps,
+interface IButtonProps extends IHelpersProps,
                                IMainColorsProps,
                                IShadeColorsProps,
                                ISizeProps,
-                               ITextColorHelpersProps {
-  disabled?: boolean
+                               ITextColorHelpersProps,
+                               React.ButtonHTMLAttributes<HTMLButtonElement> {
+  download?: IAnchorProps["download"]
+  href?: IAnchorProps["href"]
   isActive?: boolean
   isFocused?: boolean
   isFullwidth?: boolean
@@ -36,16 +37,17 @@ interface IButtonProps extends IAnchorProps,
   isRounded?: boolean
   isStatic?: boolean
   isText?: boolean
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
+  onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
+  target?: IAnchorProps["target"]
   type?: "reset" | "submit"
-  value?: string | number | string[] | undefined // same as in InputHTMLAttributes from @types/react
+  value?: React.InputHTMLAttributes<HTMLInputElement>["value"]
 }
 
 export default class Button extends React.Component<IButtonProps> {
   render() {
     const {
-      AnchorComponent,
       disabled,
+      download,
       hasTextBlack,
       hasTextBlackBis,
       hasTextBlackTer,
@@ -66,7 +68,6 @@ export default class Button extends React.Component<IButtonProps> {
       hasTextWhiteBis,
       hasTextWhiteTer,
       href,
-      hrefProp,
       isActive,
       isBlack,
       isDanger,
@@ -95,6 +96,7 @@ export default class Button extends React.Component<IButtonProps> {
       isWarning,
       isWhite,
       onClick,
+      target,
       type,
       value,
       ...props
@@ -161,14 +163,14 @@ export default class Button extends React.Component<IButtonProps> {
       }),
     )
 
-    if (href) {
+    if (href || onClick) {
       return (
         <Anchor
-          AnchorComponent={AnchorComponent}
           className={className}
+          download={download}
           href={href}
-          hrefProp={hrefProp}
-          {...props}
+          onClick={onClick}
+          target={target}
         >
           {this.props.children}
         </Anchor>
@@ -191,7 +193,6 @@ export default class Button extends React.Component<IButtonProps> {
             className={className}
             type={type}
             value={value}
-            {...props}
           />
         )
       }
