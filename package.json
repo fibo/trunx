@@ -53,7 +53,6 @@
     "@types/react-dom": "^16.8.0",
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.4",
-    "bulma": "^0.7.4",
     "dot-editorconfig": "^1.1.1",
     "fa-svg-icon": "^0.3.0",
     "node-sass": "^4.9.4",
@@ -69,6 +68,7 @@
     "typescript": "^3.3.3"
   },
   "dependencies": {
+    "bulma": "^0.7.4",
     "classnames": "^2.2.6",
     "tslib": "^1.9.3"
   }
