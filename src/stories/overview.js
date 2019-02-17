@@ -32,7 +32,7 @@ storiesOf('Overview', module)
           </Title>
 
           <p>
-            Use <b>npm</b> to install Trunx package. React v16 is required as a peer dependency.
+            Use <b>npm</b> to install Trunx package. React is required as a peer dependency.
           </p>
 
           <Code language='bash'>
@@ -43,8 +43,8 @@ storiesOf('Overview', module)
           </Code>
 
           <p>
-            It is also required to add Bulma CSS. You can use a CDN, see <a href='https://bulma.io/documentation/'>Bulma documentation</a> or a custom Bulma theme, checkout <a href='https://jenil.github.io/bulmaswatch/'>Bulmaswatch</a>.
-            Current bulma version supported is <code>{pkg.devDependencies.bulma.substring(1)}</code>.
+            It is also required to add Bulma CSS. You can use a CDN or (recommended) the bulma npm package that Trunx includes as a dependencies.
+            Current bulma npm package version included is <code>{pkg.dependencies.bulma.substring(1)}</code>.
           </p>
 
           <p>
@@ -52,17 +52,7 @@ storiesOf('Overview', module)
           </p>
 
           <p>
-            It is also easy to add Bulma via webpack. Install Bulma using npm.
-          </p>
-
-          <Code language='bash'>
-            {indent`
-              npm install bulma
-            `}
-          </Code>
-
-          <p>
-            Then in your entry JS file or wherever, import Bulma CSS
+            It is also easy to add Bulma via webpack: in your entry JS file or wherever, import Bulma CSS.
           </p>
 
           <Code language='css'>
@@ -73,12 +63,11 @@ storiesOf('Overview', module)
 
           <p>
             The good new is that you can use Sass to customize your Bulma build to create your own theme.
-            Install Bulma and Sass using npm.
+            Install Sass using npm.
           </p>
 
           <Code language='bash'>
             {indent`
-              npm install bulma
               npm install node-sass
             `}
           </Code>
@@ -121,6 +110,7 @@ storiesOf('Overview', module)
 
           <p>
             Note that you can also tweek and import individual Bulma modules, checkout <a href='https://bulma.io/documentation/'>official Bulma documentation</a>.
+            See also <a href='https://jenil.github.io/bulmaswatch/'>Bulmaswatch</a> for custom Bulma themes.
           </p>
 
           <hr />
