@@ -22,13 +22,13 @@ var CardFooterItem = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardFooterItem.prototype.render = function () {
-        var _a = this.props, AnchorComponent = _a.AnchorComponent, href = _a.href, hrefProp = _a.hrefProp, props = tslib_1.__rest(_a, ["AnchorComponent", "href", "hrefProp"]);
+        var _a = this.props, download = _a.download, href = _a.href, onClick = _a.onClick, target = _a.target, props = tslib_1.__rest(_a, ["download", "href", "onClick", "target"]);
         var className = "card-footer-item";
-        if (href) {
-            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({ AnchorComponent: AnchorComponent, className: className, href: href, hrefProp: hrefProp }, props), this.props.children));
+        if (href || onClick) {
+            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), this.props.children));
         }
         else {
-            return (React.createElement("div", { className: className }, this.props.children));
+            return (React.createElement("div", tslib_1.__assign({}, props, { className: className }), this.props.children));
         }
     };
     return CardFooterItem;
@@ -51,13 +51,13 @@ var CardHeaderIcon = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardHeaderIcon.prototype.render = function () {
-        var _a = this.props, href = _a.href, props = tslib_1.__rest(_a, ["href"]);
+        var _a = this.props, download = _a.download, href = _a.href, onClick = _a.onClick, target = _a.target, props = tslib_1.__rest(_a, ["download", "href", "onClick", "target"]);
         var className = "card-header-icon";
-        if (href) {
-            return (React.createElement("a", tslib_1.__assign({ className: className, href: href }, props), this.props.children));
+        if (href || onClick) {
+            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), this.props.children));
         }
         else {
-            return (React.createElement("div", tslib_1.__assign({ className: className }, props), this.props.children));
+            return (React.createElement("div", tslib_1.__assign({}, props, { className: className }), this.props.children));
         }
     };
     return CardHeaderIcon;

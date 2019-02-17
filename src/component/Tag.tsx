@@ -25,9 +25,7 @@ interface ITagProps extends IAnchorProps,
 export default class Tag extends React.Component<ITagProps> {
   render() {
     const {
-      AnchorComponent,
       href,
-      hrefProp,
       isBlack,
       isDanger,
       isDark,
@@ -42,6 +40,7 @@ export default class Tag extends React.Component<ITagProps> {
       isSuccess,
       isWarning,
       isWhite,
+      onClick,
       ...props
     } = this.props
 
@@ -74,18 +73,21 @@ export default class Tag extends React.Component<ITagProps> {
       }),
     )
 
-    return href ? (
-      <Anchor
-        {...props}
-        AnchorComponent={AnchorComponent}
-        className={className}
-        href={href}
-        hrefProp={hrefProp}
-      >
-        {this.props.children}
-      </Anchor>
-    ) : (
-      <span className={className}>{this.props.children}</span>
-    )
+    if (href || onClick) {
+      return (
+        <Anchor
+          {...props}
+          className={className}
+          href={href}
+          onClick={onClick}
+        >
+          {this.props.children}
+        </Anchor>
+      )
+    } else {
+      return (
+        <span className={className}>{this.props.children}</span>
+      )
+    }
   }
 }

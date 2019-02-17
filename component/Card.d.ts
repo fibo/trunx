@@ -4,11 +4,19 @@ import { ITextColorHelpersProps } from "./modifiers";
 import { IImageProps } from "./Image";
 interface ICardContentProps extends ITextColorHelpersProps {
 }
-interface ICardFooterItemProps extends IAnchorProps {
+interface ICardFooterItemProps {
+    download?: IAnchorProps["download"];
+    href?: IAnchorProps["href"];
+    onClick?: IAnchorProps["onClick"];
+    target?: IAnchorProps["target"];
 }
 interface ICardFooterProps extends ITextColorHelpersProps {
 }
-interface ICardHeaderIconProps extends IAnchorProps {
+interface ICardHeaderIconProps {
+    download?: IAnchorProps["download"];
+    href?: IAnchorProps["href"];
+    onClick?: IAnchorProps["onClick"];
+    target?: IAnchorProps["target"];
 }
 interface ICardHeaderTitleProps {
     isCentered?: boolean;

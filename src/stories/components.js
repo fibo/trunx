@@ -11,7 +11,6 @@ import Column from '../component/Column'
 import Columns from '../component/Columns'
 import Container from '../component/Container'
 import Content from '../component/Content'
-import ClassicNavbar from '../component/ClassicNavbar'
 import Delete from '../component/Delete'
 import Icon from '../component/Icon'
 import Image from '../component/Image'
@@ -30,12 +29,56 @@ import Code from './Code'
 import indent from './indent'
 import Meta from './Meta'
 
+class ClassicNavbarExample extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      isActive: false
+    }
+
+    this.onClickBurger = this.onClickBurger.bind(this)
+  }
+
+  onClickBurger () {
+    this.setState({ isActive: !this.state.isActive })
+  }
+
+  render () {
+    const {
+      isActive
+    } = this.state
+
+    return (
+      <Navbar aria-label='main navigation'>
+        <Navbar.Brand>
+          <Navbar.Item href='https://g14n.info/trunx'>Trunx</Navbar.Item>
+
+          <Navbar.Burger
+            isActive={isActive}
+            onClick={this.onClickBurger}
+          />
+        </Navbar.Brand>
+
+        <Navbar.Menu isActive={isActive}>
+          {this.props.children}
+        </Navbar.Menu>
+
+        <Navbar.End>
+          <Navbar.Item>Foo</Navbar.Item>
+          <Navbar.Item>Bar</Navbar.Item>
+        </Navbar.End>
+      </Navbar>
+    )
+  }
+}
+
 class ModalCardExample extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      modalIsActive: false
+      isActive: false
     }
 
     this.closeModal = this.closeModal.bind(this)
@@ -43,16 +86,16 @@ class ModalCardExample extends Component {
   }
 
   closeModal () {
-    this.setState({ modalIsActive: false })
+    this.setState({ isActive: false })
   }
 
   openModal () {
-    this.setState({ modalIsActive: true })
+    this.setState({ isActive: true })
   }
 
   render () {
     const {
-      modalIsActive
+      isActive
     } = this.state
 
     return (
@@ -65,7 +108,7 @@ class ModalCardExample extends Component {
           Launch example modal
         </Button>
 
-        <Modal isActive={modalIsActive}>
+        <Modal isActive={isActive}>
           <Modal.Background onClick={this.closeModal} />
 
           <Modal.Card>
@@ -446,35 +489,6 @@ storiesOf('Components', module)
               </Code>
             </Column>
           </Columns>
-
-          <hr />
-
-          <Title is4>
-            Router Integration
-          </Title>
-
-          <p>
-            <code>Card.Footer.Item</code> can be integrated with a router, for instance, <code>react-router-dom</code>.
-            First import <code>Link</code> component.
-          </p>
-
-          <Code language='jsx'>
-            {indent`
-              import { Link } from 'react-router-dom'
-            `}
-          </Code>
-
-          <p>
-            Then pass <code>Link</code> as the <code>AnchorComponent</code> prop.
-          </p>
-
-          <Code language='jsx'>
-            {indent`
-              <Card.Footer.Item AnchorComponent={Link} href='/item'>
-                Item
-              </Card.Footer.Item>
-            `}
-          </Code>
         </Content>
       </Container>
     </Section>
@@ -688,7 +702,7 @@ storiesOf('Components', module)
                   super(props)
 
                   this.state = {
-                    modalIsActive: false
+                    isActive: false
                   }
 
                   this.closeModal = this.closeModal.bind(this)
@@ -696,16 +710,16 @@ storiesOf('Components', module)
                 }
 
                 closeModal () {
-                  this.setState({ modalIsActive: false })
+                  this.setState({ isActive: false })
                 }
 
                 openModal () {
-                  this.setState({ modalIsActive: true })
+                  this.setState({ isActive: true })
                 }
 
                 render () {
                   const {
-                    modalIsActive
+                    isActive
                   } = this.state
 
                   return (
@@ -718,7 +732,7 @@ storiesOf('Components', module)
                         Launch example modal
                       </Button>
 
-                      <Modal isActive={modalIsActive}>
+                      <Modal isActive={isActive}>
                         <Modal.Background onClick={this.closeModal} />
 
                         <Modal.Card>
@@ -1068,69 +1082,60 @@ storiesOf('Components', module)
           <hr />
 
           <Title is4>
-            Router Integration
+            Classic Navbar example
           </Title>
 
           <p>
-            <code>Navbar.Item</code> can be integrated with a router, for instance, <code>react-router-dom</code>.
-            First import <code>Link</code> component.
+            Probably you need a common <em>navbar</em> on top, with a classic <em>hamburger icon</em>. You can start with the following sample code.
           </p>
+
+          <ClassicNavbarExample />
 
           <Code language='jsx'>
             {indent`
-              import { Link } from 'react-router-dom'
-            `}
-          </Code>
+              class ClassicNavbarExample extends Component {
+                constructor (props) {
+                  super(props)
 
-          <p>
-            Then pass <code>Link</code> as the <code>AnchorComponent</code> prop.
-          </p>
+                  this.state = {
+                    isActive: false
+                  }
 
-          <Code language='jsx'>
-            {indent`
-              <Navbar.Item AnchorComponent={Link} href='/pricing'>
-                Pricing
-              </Navbar.Item>
-            `}
-          </Code>
+                  this.onClickBurger = this.onClickBurger.bind(this)
+                }
 
-          <Title is4>
-            Classic Navbar
-          </Title>
+                onClickBurger () {
+                  this.setState({ isActive: !this.state.isActive })
+                }
 
-          <p>
-            Probably you need a classic <em>navbar</em> on top, with a classic <em>hamburger icon</em>. You can use a <code>ClassicNavbar</code> component.
-          </p>
+                render () {
+                  const {
+                    isActive
+                  } = this.state
 
-          <ClassicNavbar
-            brand={() => (
-              <Navbar.Item
-                href='https://g14n.info/trunx'
-              >Trunx</Navbar.Item>
-            )}
-          >
-            <Navbar.Start />
-            <Navbar.End>
-              <Navbar.Item>Foo</Navbar.Item>
-              <Navbar.Item>Bar</Navbar.Item>
-            </Navbar.End>
-          </ClassicNavbar>
+                  return (
+                    <Navbar aria-label='main navigation'>
+                      <Navbar.Brand>
+                        <Navbar.Item href='https://g14n.info/trunx'>Trunx</Navbar.Item>
 
-          <Code language='jsx'>
-            {indent`
-              <ClassicNavbar
-                brand={() => (
-                  <Navbar.Item
-                    href='https://g14n.info/trunx'
-                  >Trunx</Navbar.Item>
-                )}
-              >
-                <Navbar.Start />
-                <Navbar.End>
-                  <Navbar.Item>Foo</Navbar.Item>
-                  <Navbar.Item>Bar</Navbar.Item>
-                </Navbar.End>
-              </ClassicNavbar>
+                        <Navbar.Burger
+                          isActive={isActive}
+                          onClick={this.onClickBurger}
+                        />
+                      </Navbar.Brand>
+
+                      <Navbar.Menu isActive={isActive}>
+                        {this.props.children}
+                      </Navbar.Menu>
+
+                      <Navbar.End>
+                        <Navbar.Item>Foo</Navbar.Item>
+                        <Navbar.Item>Bar</Navbar.Item>
+                      </Navbar.End>
+                    </Navbar>
+                  )
+                }
+              }
             `}
           </Code>
 

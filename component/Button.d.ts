@@ -1,8 +1,9 @@
 import * as React from "react";
 import { IAnchorProps } from "./Anchor";
 import { IHelpersProps, IMainColorsProps, IShadeColorsProps, ISizeProps, ITextColorHelpersProps } from "./modifiers";
-interface IButtonProps extends IAnchorProps, IHelpersProps, IMainColorsProps, IShadeColorsProps, ISizeProps, ITextColorHelpersProps {
-    disabled?: boolean;
+interface IButtonProps extends IHelpersProps, IMainColorsProps, IShadeColorsProps, ISizeProps, ITextColorHelpersProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
+    download?: IAnchorProps["download"];
+    href?: IAnchorProps["href"];
     isActive?: boolean;
     isFocused?: boolean;
     isFullwidth?: boolean;
@@ -13,9 +14,10 @@ interface IButtonProps extends IAnchorProps, IHelpersProps, IMainColorsProps, IS
     isRounded?: boolean;
     isStatic?: boolean;
     isText?: boolean;
-    onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
+    target?: IAnchorProps["target"];
     type?: "reset" | "submit";
-    value?: string | number | string[] | undefined;
+    value?: React.InputHTMLAttributes<HTMLInputElement>["value"];
 }
 export default class Button extends React.Component<IButtonProps> {
     render(): JSX.Element;

@@ -7,19 +7,8 @@ var Anchor = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Anchor.prototype.render = function () {
-        var _a = this.props, AnchorComponent = _a.AnchorComponent, className = _a.className, href = _a.href, hrefProp = _a.hrefProp, props = tslib_1.__rest(_a, ["AnchorComponent", "className", "href", "hrefProp"]);
-        if (AnchorComponent) {
-            if (hrefProp && href) {
-                props[hrefProp] = href;
-            }
-            return (React.createElement(AnchorComponent, tslib_1.__assign({}, props), this.props.children));
-        }
-        else {
-            return (React.createElement("a", tslib_1.__assign({}, props, { className: className, href: href }), this.props.children));
-        }
-    };
-    Anchor.defaultProps = {
-        hrefProp: "to"
+        var _a = this.props, className = _a.className, props = tslib_1.__rest(_a, ["className"]);
+        return (React.createElement("a", tslib_1.__assign({}, props, { className: className }), this.props.children));
     };
     return Anchor;
 }(React.Component));
