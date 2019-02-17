@@ -68,13 +68,13 @@ var NavbarItem = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarItem.prototype.render = function () {
-        var _a = this.props, hasDropdown = _a.hasDropdown, isActive = _a.isActive, isHoverable = _a.isHoverable, props = tslib_1.__rest(_a, ["hasDropdown", "isActive", "isHoverable"]);
+        var _a = this.props, download = _a.download, hasDropdown = _a.hasDropdown, href = _a.href, isActive = _a.isActive, isHoverable = _a.isHoverable, onClick = _a.onClick, target = _a.target, props = tslib_1.__rest(_a, ["download", "hasDropdown", "href", "isActive", "isHoverable", "onClick", "target"]);
         var className = classnames("navbar-item", {
             "has-dropdown": hasDropdown,
             "is-active": isActive,
             "is-hoverable": isHoverable,
         });
-        return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className }), this.props.children));
+        return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), this.props.children));
     };
     return NavbarItem;
 }(React.Component));

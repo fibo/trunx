@@ -28,10 +28,14 @@ interface INavbarBurgerProps {
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
-interface INavbarItemProps extends IAnchorProps {
+interface INavbarItemProps {
+  download?: IAnchorProps["download"]
   hasDropdown?: boolean
+  href?: IAnchorProps["href"]
   isActive?: boolean
   isHoverable?: boolean
+  onClick?: IAnchorProps["onClick"]
+  target?: IAnchorProps["target"]
 }
 
 interface INavbarMenuProps {
@@ -102,9 +106,13 @@ class NavbarEnd extends React.Component {
 class NavbarItem extends React.Component<INavbarItemProps> {
   render() {
     const {
+      download,
       hasDropdown,
+      href,
       isActive,
       isHoverable,
+      onClick,
+      target,
       ...props
     } = this.props
 
@@ -118,6 +126,10 @@ class NavbarItem extends React.Component<INavbarItemProps> {
       <Anchor
         {...props}
         className={className}
+        download={download}
+        href={href}
+        onClick={onClick}
+        target={target}
       >
         {this.props.children}
       </Anchor>

@@ -15,11 +15,13 @@ import {
   sizePropsToClassenames,
 } from "./modifiers"
 
-interface ITagProps extends IAnchorProps,
-                            IMainColorsProps,
+interface ITagProps extends IMainColorsProps,
                             IShadeColorsProps,
                             ISizeProps {
+  href?: IAnchorProps["href"]
   isRounded?: boolean
+  onClick?: IAnchorProps["onClick"]
+  target?: IAnchorProps["target"]
 }
 
 export default class Tag extends React.Component<ITagProps> {
@@ -41,6 +43,7 @@ export default class Tag extends React.Component<ITagProps> {
       isWarning,
       isWhite,
       onClick,
+      target,
       ...props
     } = this.props
 
@@ -80,13 +83,14 @@ export default class Tag extends React.Component<ITagProps> {
           className={className}
           href={href}
           onClick={onClick}
+          target={target}
         >
           {this.props.children}
         </Anchor>
       )
     } else {
       return (
-        <span className={className}>{this.props.children}</span>
+        <span {...props} className={className}>{this.props.children}</span>
       )
     }
   }
