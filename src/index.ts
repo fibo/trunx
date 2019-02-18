@@ -28,6 +28,7 @@ import Modal from "./component/Modal"
 import Navbar from "./component/Navbar"
 import Notification from "./component/Notification"
 import Pagination from "./component/Pagination"
+import Panel from "./component/Panel"
 import Progress from "./component/Progress"
 import Radio from "./component/Radio"
 import Section from "./component/Section"
@@ -74,6 +75,7 @@ export {
   Navbar,
   Notification,
   Pagination,
+  Panel,
   Progress,
   Radio,
   Section,
