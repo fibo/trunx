@@ -30,14 +30,19 @@ var Field = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Field.prototype.render = function () {
-        var _a = this.props, hasAddons = _a.hasAddons, hasAddonsCentered = _a.hasAddonsCentered, isGrouped = _a.isGrouped, isGroupedMultiline = _a.isGroupedMultiline, isHorizontal = _a.isHorizontal;
+        var _a = this.props, hasAddons = _a.hasAddons, hasAddonsCentered = _a.hasAddonsCentered, isGrouped = _a.isGrouped, isGroupedMultiline = _a.isGroupedMultiline, isHorizontal = _a.isHorizontal, isInvisible = _a.isInvisible, isMarginLess = _a.isMarginLess, isPaddingLess = _a.isPaddingLess, isSrOnly = _a.isSrOnly;
         var className = classnames("field", {
             "has-addons": hasAddons,
             "has-addons-centered": hasAddonsCentered,
             "is-grouped": isGrouped,
             "is-grouped-multiline": isGroupedMultiline,
             "is-horizontal": isHorizontal,
-        });
+        }, modifiers_1.helpersPropsToClassenames({
+            isInvisible: isInvisible,
+            isMarginLess: isMarginLess,
+            isPaddingLess: isPaddingLess,
+            isSrOnly: isSrOnly,
+        }));
         return (React.createElement("div", { className: className }, this.props.children));
     };
     Field.Body = FieldBody;
