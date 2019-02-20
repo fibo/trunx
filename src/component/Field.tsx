@@ -2,11 +2,13 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
+  IHelpersProps,
   ISizeProps,
+  helpersPropsToClassenames,
   sizePropsToClassenames,
 } from "./modifiers"
 
-interface IFieldProps {
+interface IFieldProps extends IHelpersProps {
   hasAddons?: boolean
   hasAddonsCentered?: boolean
   isGrouped?: boolean
@@ -46,16 +48,28 @@ export default class Field extends React.Component<IFieldProps> {
       hasAddonsCentered,
       isGrouped,
       isGroupedMultiline,
-      isHorizontal
+      isHorizontal,
+      isInvisible,
+      isMarginLess,
+      isPaddingLess,
+      isSrOnly,
     } = this.props
 
-    const className = classnames("field", {
-      "has-addons": hasAddons,
-      "has-addons-centered": hasAddonsCentered,
-      "is-grouped": isGrouped,
-      "is-grouped-multiline": isGroupedMultiline,
-      "is-horizontal": isHorizontal,
-    })
+    const className = classnames("field",
+      {
+        "has-addons": hasAddons,
+        "has-addons-centered": hasAddonsCentered,
+        "is-grouped": isGrouped,
+        "is-grouped-multiline": isGroupedMultiline,
+        "is-horizontal": isHorizontal,
+      },
+      helpersPropsToClassenames({
+        isInvisible,
+        isMarginLess,
+        isPaddingLess,
+        isSrOnly,
+      }),
+    )
 
     return (
       <div className={className}>{this.props.children}</div>

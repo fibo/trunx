@@ -1,6 +1,6 @@
 import * as React from "react";
-import { ISizeProps } from "./modifiers";
-interface IFieldProps {
+import { IHelpersProps, ISizeProps } from "./modifiers";
+interface IFieldProps extends IHelpersProps {
     hasAddons?: boolean;
     hasAddonsCentered?: boolean;
     isGrouped?: boolean;
