@@ -116,11 +116,13 @@ class NavbarItem extends React.Component<INavbarItemProps> {
       ...props
     } = this.props
 
-    const className = classnames("navbar-item", {
-      "has-dropdown": hasDropdown,
-      "is-active": isActive,
-      "is-hoverable": isHoverable,
-    })
+    const className = classnames("navbar-item",
+      {
+        "has-dropdown": hasDropdown,
+        "is-active": isActive,
+        "is-hoverable": isHoverable,
+      },
+    )
 
     return (
       <Anchor
