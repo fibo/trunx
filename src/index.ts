@@ -10,6 +10,7 @@ import Container from "./component/Container"
 import Content from "./component/Content"
 import Control from "./component/Control"
 import Delete from "./component/Delete"
+import Dropdown from "./component/Dropdown"
 import Field from "./component/Field"
 import FileUpload from "./component/FileUpload"
 import Footer from "./component/Footer"
@@ -57,6 +58,7 @@ export {
   Content,
   Control,
   Delete,
+  Dropdown,
   FileUpload,
   Field,
   Footer,

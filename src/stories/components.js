@@ -12,6 +12,7 @@ import Columns from '../component/Columns'
 import Container from '../component/Container'
 import Content from '../component/Content'
 import Delete from '../component/Delete'
+import Dropdown from '../component/Dropdown'
 import Icon from '../component/Icon'
 import Image from '../component/Image'
 import Menu from '../component/Menu'
@@ -490,6 +491,139 @@ storiesOf('Components', module)
             </Column>
           </Columns>
         </Content>
+      </Container>
+    </Section>
+  ))
+  .add('Dropdown', () => (
+    <Section>
+      <Container>
+        <Content>
+          <Title is2>
+            Dropdown
+          </Title>
+
+          <Subtitle>
+            An interactive <b>dropdown menu</b> for discoverable content
+          </Subtitle>
+
+          <Meta />
+
+          <hr />
+
+          <p>
+          The <code>Dropdown</code> component is a container for a dropdown button and a dropdown menu.
+          </p>
+
+          <ul>
+            <li>
+              <code>Dropdown</code> then <b>main</b> container.
+
+              <ul>
+                <li>
+                  <code>Dropdown.Trigger</code> the container for a <code>Button</code>
+                </li>
+
+                <li>
+                  <code>Dropdown.Menu</code> the toggable menu, <b>hidden</b> by default
+
+                  <ul>
+                    <li>
+                      <code>Dropdown.Content</code> the dropdown <b>box</b>, with a white background and a shadow
+
+                      <ul>
+                        <li>
+                          <code>Dropdown.Item</code> each <b>single item</b> of the dropdown, which can either be a <code>a</code> or a <code>div</code>
+                        </li>
+
+                        <li>
+                          <code>Dropdown.Divider</code> a <b>horizontal line</b> to separate dropdown items
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </Content>
+
+        <Columns>
+          <Column isHalf>
+            <Dropdown isActive>
+              <Dropdown.Trigger>
+                <Button aria-haspopup='true' aria-controls='dropdown-menu'>
+                  <span>Dropdown button</span>
+                </Button>
+              </Dropdown.Trigger>
+
+              <Dropdown.Menu>
+                <Dropdown.Content>
+                  <Dropdown.Item>
+                    Dropdown item
+                  </Dropdown.Item>
+
+                  <Dropdown.Item>
+                    Other dropdown item
+                  </Dropdown.Item>
+
+                  <Dropdown.Item isActive>
+                    Active dropdown item
+                  </Dropdown.Item>
+
+                  <Dropdown.Item>
+                    Other dropdown item
+                  </Dropdown.Item>
+
+                  <Dropdown.Divider />
+
+                  <Dropdown.Item>
+                    With a divider
+                  </Dropdown.Item>
+                </Dropdown.Content>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Column>
+
+          <Column isHalf>
+            <Code language='jsx'>
+              {indent`
+                <Dropdown isActive>
+                  <Dropdown.Trigger>
+                    <Button aria-haspopup="true" aria-controls="dropdown-menu">
+                      <span>Dropdown button</span>
+                    </Button>
+                  </Dropdown.Trigger>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Content>
+                      <Dropdown.Item>
+                        Dropdown item
+                      </Dropdown.Item>
+
+                      <Dropdown.Item>
+                        Other dropdown item
+                      </Dropdown.Item>
+
+                      <Dropdown.Item isActive>
+                        Active dropdown item
+                      </Dropdown.Item>
+
+                      <Dropdown.Item>
+                        Other dropdown item
+                      </Dropdown.Item>
+
+                      <Dropdown.Divider />
+
+                      <Dropdown.Item>
+                        With a divider
+                      </Dropdown.Item>
+                    </Dropdown.Content>
+                  </Dropdown.Menu>
+                </Dropdown>
+              `}
+            </Code>
+          </Column>
+        </Columns>
       </Container>
     </Section>
   ))
