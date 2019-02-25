@@ -11,9 +11,10 @@
     "lint:storybook": "cd .storybook && standard",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "pretypescript": "rimraf component",
-    "test": "npm run typescript--noemit",
-    "typescript": "tsc --declaration --project .",
-    "typescript--noemit": "tsc --declaration --project . --noemit",
+    "test": "npm run tsc--noemit; npm run test:bulma-version",
+    "test:bulma-version": "node test/bulma-version.js",
+    "tsc": "tsc --declaration --project .",
+    "tsc--noemit": "tsc --declaration --project . --noemit",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "pre-commit": [
