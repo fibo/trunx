@@ -43,8 +43,9 @@ storiesOf('Overview', module)
           </Code>
 
           <p>
-            It is also required to add Bulma CSS. You can use a CDN or (recommended) the bulma npm package that Trunx includes as a dependencies.
-            Current bulma npm package version included is <code>{pkg.dependencies.bulma.substring(1)}</code>.
+            It is also required to add Bulma CSS. You can use the bulma npm package that Trunx includes as a dependency.
+            Note that trunx npm package major version will be the same as bulma npm package major version.
+            Current bulma npm package version included is <code>v{pkg.dependencies.bulma.substring(1)}</code>.
           </p>
 
           <p>
