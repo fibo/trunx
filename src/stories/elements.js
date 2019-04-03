@@ -930,25 +930,25 @@ storiesOf('Elements', module)
 
           <Columns>
             <Column isHalf>
-              <Progress isSmall isPrimary max='100'>15%</Progress>
+              <Progress isSmall isPrimary />
 
-              <Progress isDanger max='100'>30%</Progress>
+              <Progress isDanger />
 
-              <Progress isMedium isDark max='100'>45%</Progress>
+              <Progress isMedium isDark />
 
-              <Progress isLarge isInfo max='100'>60%</Progress>
+              <Progress isLarge isInfo />
             </Column>
 
             <Column isHalf>
               <Code language='jsx'>
                 {indent`
-                  <Progress isSmall isPrimary max='100'>15%</Progress>
+                  <Progress isSmall isPrimary />
 
-                  <Progress isDanger max='100'>30%</Progress>
+                  <Progress isDanger />
 
-                  <Progress isMedium isDark max='100'>45%</Progress>
+                  <Progress isMedium isDark />
 
-                  <Progress isLarge isInfo max='100'>60%</Progress>
+                  <Progress isLarge isInfo />
                 `}
               </Code>
             </Column>
