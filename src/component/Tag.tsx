@@ -19,6 +19,8 @@ interface ITagProps extends IMainColorsProps,
                             IShadeColorsProps,
                             ISizeProps {
   href?: IAnchorProps["href"]
+  isDelete?: boolean
+  isNormal?: boolean
   isRounded?: boolean
   onClick?: IAnchorProps["onClick"]
   target?: IAnchorProps["target"]
@@ -31,11 +33,13 @@ export default class Tag extends React.Component<ITagProps> {
       isBlack,
       isDanger,
       isDark,
+      isDelete,
       isInfo,
       isLarge,
       isLight,
       isLink,
       isMedium,
+      isNormal,
       isPrimary,
       isRounded,
       isSmall,
@@ -51,7 +55,9 @@ export default class Tag extends React.Component<ITagProps> {
       {
         "is-black": isBlack,
         "is-dark": isDark,
+        "is-delete": isDelete,
         "is-light": isLight,
+        "is-normal": isNormal,
         "is-rounded": isRounded,
         "is-white": isWhite,
       },

@@ -21,6 +21,7 @@ import Progress from '../component/Progress'
 import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
 import Tag from '../component/Tag'
+import Tags from '../component/Tags'
 import Title from '../component/Title'
 
 import Code from './Code'
@@ -1070,10 +1071,23 @@ storiesOf('Elements', module)
 
           <Columns>
             <Column is4>
-              And <b>2 additional</b> sizes
+              <Content>
+                <p>
+                  The tag comes in <b>3 different</b> sizes.
+                </p>
+
+                <p>
+                While the default size is the <b>normal</b> one, the <code>isNormal</code> modifier prop exists in case you need to reset the tag to its normal size.
+                  The tag comes in <b>3 different</b> sizes.
+                </p>
+              </Content>
             </Column>
 
             <Column is2>
+              <Field>
+                <Tag isLink isNormal>Normal</Tag>
+              </Field>
+
               <Field>
                 <Tag isPrimary isMedium>Medium</Tag>
               </Field>
@@ -1086,8 +1100,87 @@ storiesOf('Elements', module)
             <Column is6>
               <Code language='jsx'>
                 {indent`
+                  <Tag isLink isNormal>Normal</Tag>
                   <Tag isPrimary isMedium>Medium</Tag>
                   <Tag isInfo isLarge>Large</Tag>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <p>
+            You can change the size of <b>all</b> tags at once:
+          </p>
+
+          <Columns>
+            <Column>
+              <Tags areMedium>
+                <Tag>All</Tag>
+                <Tag>Medium</Tag>
+                <Tag>Size</Tag>
+              </Tags>
+            </Column>
+
+            <Column>
+              <Code language='jsx'>
+                {indent`
+                  <Tags areMedium>
+                    <Tag>All</Tag>
+                    <Tag>Medium</Tag>
+                    <Tag>Size</Tag>
+                  </Tags>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <Columns>
+            <Column>
+              <Tags areLarge>
+                <Tag>All</Tag>
+                <Tag>Large</Tag>
+                <Tag>Size</Tag>
+              </Tags>
+            </Column>
+
+            <Column>
+              <Code language='jsx'>
+                {indent`
+                  <Tags areLarge>
+                    <Tag>All</Tag>
+                    <Tag>Large</Tag>
+                    <Tag>Size</Tag>
+                  </Tags>
+                `}
+              </Code>
+            </Column>
+          </Columns>
+
+          <p>
+            You can however keep the original size of a <b>subset</b> of tags, simply by applying one of its modifier class:
+          </p>
+
+          <Columns>
+            <Column>
+              <Tags areMedium>
+                <Tag>Medium</Tag>
+                <Tag isNormal>Normal</Tag>
+                <Tag>Medium</Tag>
+                <Tag isLarge>Large</Tag>
+                <Tag>Medium</Tag>
+              </Tags>
+            </Column>
+
+            <Column>
+              <Code language='jsx'>
+                {indent`
+                  <Tags areMedium>
+                    <Tag>Medium</Tag>
+                    <Tag isNormal>Normal</Tag>
+                    <Tag>Medium</Tag>
+                    <Tag isLarge>Large</Tag>
+                    <Tag>Medium</Tag>
+                  </Tags>
                 `}
               </Code>
             </Column>
