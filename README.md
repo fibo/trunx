@@ -17,9 +17,7 @@ Please see *components storybook*: [click here](http://g14n.info/trunx).
 
 ## Motivation
 
-I really like [Bulma] CSS framework and I am using it to build an URL
-shortener: [Go7]!
-I love [React] and I am also a Dragon Ball fan.
+I really like [Bulma] CSS framework, I love [React] and I am also a [Dragon Ball](https://en.wikipedia.org/wiki/Dragon_Ball) fan.
 So, summing all, I am creating this component library. I hope you enjoy it!
 
 > Trunks (Japanese: トランクス Hepburn: Torankusu) is a fictional character in the Dragon Ball manga series created by Akira Toriyama.
@@ -63,5 +61,4 @@ Tons of kudos to [Bulma] author!
 Trunks png comes from [kisspng](https://www.kisspng.com/png-trunks-gohan-goku-goten-bulma-1996965/).
 
 [Bulma]: https://bulma.io "Bulma CSS framework"
-[Go7]: https://go7.li "Go7 Url shortener"
 [React]: https://facebook.github.io/react/ "React"
