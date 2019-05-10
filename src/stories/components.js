@@ -3,7 +3,7 @@ import React, { Component, Fragment } from 'react'
 import { storiesOf } from '@storybook/react'
 import solidIcon from 'fa-svg-icon/solid'
 
-import Breadcrumb from '../component/Breadcrumb'
+import A from '../component/A'
 import Button from '../component/Button'
 import Buttons from '../component/Buttons'
 import Card from '../component/Card'
@@ -12,10 +12,13 @@ import Columns from '../component/Columns'
 import Container from '../component/Container'
 import Content from '../component/Content'
 import Delete from '../component/Delete'
+import Div from '../component/Div'
 import Dropdown from '../component/Dropdown'
 import Icon from '../component/Icon'
 import Image from '../component/Image'
+import Li from '../component/Li'
 import Menu from '../component/Menu'
+import Nav from '../component/Nav'
 import Navbar from '../component/Navbar'
 import Media from '../component/Media'
 import Message from '../component/Message'
@@ -25,6 +28,7 @@ import Section from '../component/Section'
 import Subtitle from '../component/Subtitle'
 import Tabs from '../component/Tabs'
 import Title from '../component/Title'
+import Ul from '../component/Ul'
 
 import Code from './Code'
 import indent from './indent'
@@ -213,23 +217,33 @@ storiesOf('Components', module)
 
           <hr />
 
+          <p>The <strong>breadcrumb</strong> component only requires a <code>.breadcrumb</code> container and a <code>ul</code> list.</p>
+
+          <p>The dividers are automatically created in the content of the <code>::before</code> pseudo-element of <code>li</code> tags.</p>
+
+          <p>You can inform the current page using the <code>is-active</code> modifier in a <code>li</code> tag. It will disable the navigation of inner links.</p>
+
         </Content>
 
-        <Breadcrumb>
-          <li><a href='#'>Bulma</a></li>
-          <li><a href='#'>Documentation</a></li>
-          <li><a href='#'>Components</a></li>
-          <li className='is-active'><a href='#' aria-current='page'>Breadcrumb</a></li>
-        </Breadcrumb>
+        <Nav breadcrumb aria-label='breadcrumbs'>
+          <Ul>
+            <Li><A href='#'>Bulma</A></Li>
+            <Li><A href='#'>Documentation</A></Li>
+            <Li><A href='#'>Components</A></Li>
+            <Li isActive><A href='#' aria-current='page'>Breadcrumb</A></Li>
+          </Ul>
+        </Nav>
 
         <Code language='jsx'>
           {indent`
-            <Breadcrumb>
-              <li><a href='#'>Bulma</a></li>
-              <li><a href='#'>Documentation</a></li>
-              <li><a href='#'>Components</a></li>
-              <li className='is-active'><a href='#' aria-current='page'>Breadcrumb</a></li>
-            </Breadcrumb>
+            <Nav breadcrumb aria-label='breadcrumbs'>
+              <Ul>
+                <Li><A href='#'>Bulma</A></Li>
+                <Li><A href='#'>Documentation</A></Li>
+                <Li><A href='#'>Components</A></Li>
+                <Li isActive><A href='#' aria-current='page'>Breadcrumb</A></Li>
+              </Ul>
+            </Nav>
           `}
         </Code>
       </Container>
@@ -1380,31 +1394,29 @@ storiesOf('Components', module)
           <hr />
 
           <p>
-            The <code>Tabs</code> component contains a <code>Tabs.Item</code> components.
-            The default style has a single border at the bottom.
+            <strong>Tabs</strong> only require a <code>tabs</code> container and a <code>&lt;ul&gt;</code> list.<br />
+            The <strong>default</strong> tabs style has a single border at the bottom.
           </p>
 
-          <Tabs>
-            <Tabs.Item isActive>Pictures</Tabs.Item>
-
-            <Tabs.Item>Music</Tabs.Item>
-
-            <Tabs.Item>Videos</Tabs.Item>
-
-            <Tabs.Item>Documents</Tabs.Item>
-          </Tabs>
+          <Div tabs>
+            <Ul>
+              <Li isActive><A>Pictures</A></Li>
+              <Li><A>Music</A></Li>
+              <Li><A>Videos</A></Li>
+              <Li><A>Documents</A></Li>
+            </Ul>
+          </Div>
 
           <Code language='jsx'>
             {indent`
-              <Tabs>
-                <Tabs.Item isActive>Pictures</Tabs.Item>
-
-                <Tabs.Item>Music</Tabs.Item>
-
-                <Tabs.Item>Videos</Tabs.Item>
-
-                <Tabs.Item>Documents</Tabs.Item>
-              </Tabs>
+              <Div tabs>
+                <Ul>
+                  <Li isActive><A>Pictures</A></Li>
+                  <Li><A>Music</A></Li>
+                  <Li><A>Videos</A></Li>
+                  <Li><A>Documents</A></Li>
+                </Ul>
+              </Div>
             `}
           </Code>
 
@@ -1413,7 +1425,7 @@ storiesOf('Components', module)
           </Title>
 
           <p>
-          To align the tabs list, use the <code>isCentered</code> or <code>isRight</code> props on the <code>Tabs</code> component.
+            To align the tabs list, use the <code>isCentered</code> or <code>isRight</code> props on the <code>Tabs</code> component.
           </p>
 
           <Tabs isCentered>
