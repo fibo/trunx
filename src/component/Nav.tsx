@@ -1,16 +1,12 @@
-import classnames from "classnames"
+import * as classnames from "classnames"
 import * as React from "react"
 
 import {
   ISizeProps,
-  ITextColorHelpersProps,
   sizePropsToClassenames,
-  textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
-interface IBreadcrumbProps extends ISizeProps,
-                                   ITextColorHelpersProps,
-                                   React.HTMLAttributes<HTMLElement> {
+interface IBreadcrumbProps {
   hasArrowSeparator?: boolean
   hasBulletSeparator?: boolean
   hasDotSeparator?: boolean
@@ -19,39 +15,47 @@ interface IBreadcrumbProps extends ISizeProps,
   isRight?: boolean
 }
 
-export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
+interface INavProps extends IBreadcrumbProps,
+                            ISizeProps,
+                            React.HTMLAttributes<HTMLElement> {
+  breadcrumb?: boolean
+}
+
+export default class Nav extends React.Component<INavProps> {
   render() {
     const {
+      breadcrumb,
       hasArrowSeparator,
       hasBulletSeparator,
       hasDotSeparator,
       hasSuccedesSeparator,
       isCentered,
+      isLarge,
+      isMedium,
       isRight,
+      isSmall,
       ...props
     } = this.props
 
-    const className = classnames("breadcrumb",
+    const className = classnames(
       {
+        "breadcrumb": breadcrumb,
         "has-arrow-separator": hasArrowSeparator,
         "has-bullet-separator": hasBulletSeparator,
         "has-dot-separator": hasDotSeparator,
         "has-succedes-separator": hasSuccedesSeparator,
         "is-centered": isCentered,
         "is-right": isRight,
-      },
-      sizePropsToClassenames(this.props),
-      textColorHelpersPropsToClassenames(this.props),
+        },
+      sizePropsToClassenames({
+        isLarge,
+        isMedium,
+        isSmall,
+      }),
     )
 
     return (
-      <nav
-        {...props}
-        aria-label="breadcrumbs"
-        className={className}
-      >
-        <ul>{this.props.children}</ul>
-      </nav>
+      <nav {...props} className={className}>{this.props.children}</nav>
     )
   }
 }
