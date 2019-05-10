@@ -56,7 +56,7 @@
     "babel-loader": "^8.0.4",
     "dot-editorconfig": "^1.1.1",
     "fa-svg-icon": "^0.3.0",
-    "node-sass": "^4.9.4",
+    "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.2",
     "pre-commit": "^1.2.2",
     "react": "^16.8.1",
