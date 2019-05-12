@@ -676,37 +676,43 @@ storiesOf('Components', module)
               <Menu.Label>General</Menu.Label>
 
               <Menu.List>
-                <li><a>Dashboard</a></li>
+                <Li><A>Dashboard</A></Li>
 
-                <li><a>Customers</a></li>
+                <Li><A>Customers</A></Li>
               </Menu.List>
 
               <Menu.Label>Administration</Menu.Label>
 
               <Menu.List>
-                <li><a>Team Settings</a></li>
+                <Li><A>Team Settings</A></Li>
 
-                <li>
-                  <a className='is-active'>Manage Your Team</a>
+                <Li>
+                  <A isActive>Manage Your Team</A>
 
-                  <ul>
-                    <li><a>Members</a></li>
-                    <li><a>Plugins</a></li>
-                    <li><a>Add a member</a></li>
-                  </ul>
-                </li>
+                  <Ul>
+                    <Li><A>Members</A></Li>
 
-                <li><a>Invitations</a></li>
-                <li><a>Cloud Storage Environment Settings</a></li>
-                <li><a>Authentication</a></li>
+                    <Li><A>Plugins</A></Li>
+
+                    <Li><A>Add a member</A></Li>
+                  </Ul>
+                </Li>
+
+                <Li><A>Invitations</A></Li>
+
+                <Li><A>Cloud Storage Environment Settings</A></Li>
+
+                <Li><A>Authentication</A></Li>
               </Menu.List>
 
               <Menu.Label>Transactions</Menu.Label>
 
               <Menu.List>
-                <li><a>Payments</a></li>
-                <li><a>Transfers</a></li>
-                <li><a>Balance</a></li>
+                <Li><A>Payments</A></Li>
+
+                <Li><A>Transfers</A></Li>
+
+                <Li><A>Balance</A></Li>
               </Menu.List>
             </Menu>
           </Column>
@@ -714,45 +720,49 @@ storiesOf('Components', module)
           <Column>
             <Code language='jsx'>
               {indent`
-                <Column isNarrow>
-                  <Menu>
-                    <Menu.Label>General</Menu.Label>
+                <Menu>
+                  <Menu.Label>General</Menu.Label>
 
-                    <Menu.List>
-                      <li><a>Dashboard</a></li>
+                  <Menu.List>
+                    <Li><A>Dashboard</A></Li>
 
-                      <li><a>Customers</a></li>
-                    </Menu.List>
+                    <Li><A>Customers</A></Li>
+                  </Menu.List>
 
-                    <Menu.Label>Administration</Menu.Label>
+                  <Menu.Label>Administration</Menu.Label>
 
-                    <Menu.List>
-                      <li><a>Team Settings</a></li>
+                  <Menu.List>
+                    <Li><A>Team Settings</A></Li>
 
-                      <li>
-                        <a className='is-active'>Manage Your Team</a>
+                    <Li>
+                      <A isActive>Manage Your Team</A>
 
-                        <ul>
-                          <li><a>Members</a></li>
-                          <li><a>Plugins</a></li>
-                          <li><a>Add a member</a></li>
-                        </ul>
-                      </li>
+                      <Ul>
+                        <Li><A>Members</A></Li>
 
-                      <li><a>Invitations</a></li>
-                      <li><a>Cloud Storage Environment Settings</a></li>
-                      <li><a>Authentication</a></li>
-                    </Menu.List>
+                        <Li><A>Plugins</A></Li>
 
-                    <Menu.Label>Transactions</Menu.Label>
+                        <Li><A>Add a member</A></Li>
+                      </Ul>
+                    </Li>
 
-                    <Menu.List>
-                      <li><a>Payments</a></li>
-                      <li><a>Transfers</a></li>
-                      <li><a>Balance</a></li>
-                    </Menu.List>
-                  </Menu>
-                </Column>
+                    <Li><A>Invitations</A></Li>
+
+                    <Li><A>Cloud Storage Environment Settings</A></Li>
+
+                    <Li><A>Authentication</A></Li>
+                  </Menu.List>
+
+                  <Menu.Label>Transactions</Menu.Label>
+
+                  <Menu.List>
+                    <Li><A>Payments</A></Li>
+
+                    <Li><A>Transfers</A></Li>
+
+                    <Li><A>Balance</A></Li>
+                  </Menu.List>
+                </Menu>
               `}
             </Code>
           </Column>
