@@ -18,6 +18,7 @@ import Image from '../component/Image'
 import Icon from '../component/Icon'
 import Input from '../component/Input'
 import Level from '../component/Level'
+import Li from '../component/Li'
 import Media from '../component/Media'
 import Navbar from '../component/Navbar'
 import Notification from '../component/Notification'
@@ -1031,14 +1032,16 @@ storiesOf('Layout', module)
           </Hero.Body>
 
           <Hero.Foot>
-            <Tabs.Nav>
-              <Tabs.Item isActive>Overview</Tabs.Item>
-              <Tabs.Item>Modifiers</Tabs.Item>
-              <Tabs.Item>Grid</Tabs.Item>
-              <Tabs.Item>Elements</Tabs.Item>
-              <Tabs.Item>Components</Tabs.Item>
-              <Tabs.Item>Layout</Tabs.Item>
-            </Tabs.Nav>
+            <Tabs>
+              <Container>
+                <Li isActive>Overview</Li>
+                <Li>Modifiers</Li>
+                <Li>Grid</Li>
+                <Li>Elements</Li>
+                <Li>Components</Li>
+                <Li>Layout</Li>
+              </Container>
+            </Tabs>
           </Hero.Foot>
         </Hero>
 

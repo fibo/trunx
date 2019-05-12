@@ -12,7 +12,6 @@ import Columns from '../component/Columns'
 import Container from '../component/Container'
 import Content from '../component/Content'
 import Delete from '../component/Delete'
-import Div from '../component/Div'
 import Dropdown from '../component/Dropdown'
 import Icon from '../component/Icon'
 import Image from '../component/Image'
@@ -217,19 +216,28 @@ storiesOf('Components', module)
 
           <hr />
 
-          <p>The <strong>breadcrumb</strong> component only requires a <code>.breadcrumb</code> container and a <code>ul</code> list.</p>
+          <p>
+            The <strong>breadcrumb</strong> component only requires a <code>.breadcrumb</code> container and a <code>ul</code> list.
+          </p>
 
-          <p>The dividers are automatically created in the content of the <code>::before</code> pseudo-element of <code>li</code> tags.</p>
+          <p>
+            The dividers are automatically created in the content of the <code>::before</code> pseudo-element of <code>li</code> tags.
+          </p>
 
-          <p>You can inform the current page using the <code>is-active</code> modifier in a <code>li</code> tag. It will disable the navigation of inner links.</p>
+          <p>
+            You can inform the current page using the <code>is-active</code> modifier in a <code>li</code> tag. It will disable the navigation of inner links.
+          </p>
 
         </Content>
 
         <Nav breadcrumb aria-label='breadcrumbs'>
           <Ul>
             <Li><A href='#'>Bulma</A></Li>
+
             <Li><A href='#'>Documentation</A></Li>
+
             <Li><A href='#'>Components</A></Li>
+
             <Li isActive><A href='#' aria-current='page'>Breadcrumb</A></Li>
           </Ul>
         </Nav>
@@ -239,8 +247,11 @@ storiesOf('Components', module)
             <Nav breadcrumb aria-label='breadcrumbs'>
               <Ul>
                 <Li><A href='#'>Bulma</A></Li>
+
                 <Li><A href='#'>Documentation</A></Li>
+
                 <Li><A href='#'>Components</A></Li>
+
                 <Li isActive><A href='#' aria-current='page'>Breadcrumb</A></Li>
               </Ul>
             </Nav>
@@ -1398,25 +1409,31 @@ storiesOf('Components', module)
             The <strong>default</strong> tabs style has a single border at the bottom.
           </p>
 
-          <Div tabs>
+          <Tabs>
             <Ul>
               <Li isActive><A>Pictures</A></Li>
+
               <Li><A>Music</A></Li>
+
               <Li><A>Videos</A></Li>
+
               <Li><A>Documents</A></Li>
             </Ul>
-          </Div>
+          </Tabs>
 
           <Code language='jsx'>
             {indent`
-              <Div tabs>
+              <Tabs>
                 <Ul>
                   <Li isActive><A>Pictures</A></Li>
+
                   <Li><A>Music</A></Li>
+
                   <Li><A>Videos</A></Li>
+
                   <Li><A>Documents</A></Li>
                 </Ul>
-              </Div>
+              </Tabs>
             `}
           </Code>
 
@@ -1429,49 +1446,57 @@ storiesOf('Components', module)
           </p>
 
           <Tabs isCentered>
-            <Tabs.Item isActive>Pictures</Tabs.Item>
+            <Ul>
+              <Li isActive><A>Pictures</A></Li>
 
-            <Tabs.Item>Music</Tabs.Item>
+              <Li><A>Music</A></Li>
 
-            <Tabs.Item>Videos</Tabs.Item>
+              <Li><A>Videos</A></Li>
 
-            <Tabs.Item>Documents</Tabs.Item>
+              <Li><A>Documents</A></Li>
+            </Ul>
           </Tabs>
 
           <Code language='jsx'>
             {indent`
               <Tabs isCentered>
-                <Tabs.Item isActive>Pictures</Tabs.Item>
+                <Ul>
+                  <Li isActive><A>Pictures</A></Li>
 
-                <Tabs.Item>Music</Tabs.Item>
+                  <Li><A>Music</A></Li>
 
-                <Tabs.Item>Videos</Tabs.Item>
+                  <Li><A>Videos</A></Li>
 
-                <Tabs.Item>Documents</Tabs.Item>
+                  <Li><A>Documents</A></Li>
+                </Ul>
               </Tabs>
             `}
           </Code>
 
           <Tabs isRight>
-            <Tabs.Item isActive>Pictures</Tabs.Item>
+            <Ul>
+              <Li isActive><A>Pictures</A></Li>
 
-            <Tabs.Item>Music</Tabs.Item>
+              <Li><A>Music</A></Li>
 
-            <Tabs.Item>Videos</Tabs.Item>
+              <Li><A>Videos</A></Li>
 
-            <Tabs.Item>Documents</Tabs.Item>
+              <Li><A>Documents</A></Li>
+            </Ul>
           </Tabs>
 
           <Code language='jsx'>
             {indent`
               <Tabs isRight>
-                <Tabs.Item isActive>Pictures</Tabs.Item>
+                <Ul>
+                  <Li isActive><A>Pictures</A></Li>
 
-                <Tabs.Item>Music</Tabs.Item>
+                  <Li><A>Music</A></Li>
 
-                <Tabs.Item>Videos</Tabs.Item>
+                  <Li><A>Videos</A></Li>
 
-                <Tabs.Item>Documents</Tabs.Item>
+                  <Li><A>Documents</A></Li>
+                </Ul>
               </Tabs>
             `}
           </Code>
