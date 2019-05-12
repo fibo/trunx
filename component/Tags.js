@@ -8,8 +8,10 @@ var Tags = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Tags.prototype.render = function () {
-        var hasAddons = this.props.hasAddons;
+        var _a = this.props, areLarge = _a.areLarge, areMedium = _a.areMedium, hasAddons = _a.hasAddons;
         var className = classnames("tags", {
+            "are-large": areLarge,
+            "are-medium": areMedium,
             "has-addons": hasAddons,
         });
         return (React.createElement("div", { className: className }, this.props.children));
