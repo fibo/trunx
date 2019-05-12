@@ -4,6 +4,7 @@
   "description": "Super Saiyan React components, son of awesome Bulma, implemented in TypeScript",
   "main": "component/index.js",
   "scripts": {
+    "build": "npm run tsc",
     "deploy-storybook": "storybook-to-ghpages",
     "lint": "run-p lint:*",
     "lint:src-js": "cd src && standard",
