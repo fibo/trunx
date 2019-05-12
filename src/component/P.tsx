@@ -2,17 +2,20 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
+  IAlignementHelpersProps,
   IBackgroundColorHelpersProps,
   ITextColorHelpersProps,
+  alignementPropsToClassenames,
   backgroundColorHelpersPropsToClassenames,
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
-interface ISpanProps extends IBackgroundColorHelpersProps,
-                             ITextColorHelpersProps,
-                             React.HTMLAttributes<HTMLSpanElement> {}
+interface IParagraphProps extends IAlignementHelpersProps,
+                                  IBackgroundColorHelpersProps,
+                                  ITextColorHelpersProps,
+                                  React.HTMLAttributes<HTMLParagraphElement> {}
 
-export default class Span extends React.Component<ISpanProps> {
+export default class Span extends React.Component<IParagraphProps> {
   render() {
     const {
       hasBackgroundBlack,
@@ -37,6 +40,7 @@ export default class Span extends React.Component<ISpanProps> {
       hasTextBlack,
       hasTextBlackBis,
       hasTextBlackTer,
+      hasTextCentered,
       hasTextDanger,
       hasTextDark,
       hasTextGrey,
@@ -45,9 +49,12 @@ export default class Span extends React.Component<ISpanProps> {
       hasTextGreyLight,
       hasTextGreyLighter,
       hasTextInfo,
+      hasTextJustified,
+      hasTextLeft,
       hasTextLight,
       hasTextLink,
       hasTextPrimary,
+      hasTextRight,
       hasTextSuccess,
       hasTextWarning,
       hasTextWhite,
@@ -57,6 +64,12 @@ export default class Span extends React.Component<ISpanProps> {
     } = this.props
 
     const className = classnames(
+      alignementPropsToClassenames({
+        hasTextCentered,
+        hasTextJustified,
+        hasTextLeft,
+        hasTextRight,
+      }),
       backgroundColorHelpersPropsToClassenames({
         hasBackgroundBlack,
         hasBackgroundBlackBis,
