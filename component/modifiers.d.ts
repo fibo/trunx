@@ -25,6 +25,11 @@ export interface IBackgroundColorHelpersProps {
     hasBackgroundWhiteBis?: boolean;
     hasBackgroundWhiteTer?: boolean;
 }
+export interface IFloatHelpersProps {
+    isClearfix?: boolean;
+    isPulledLeft?: boolean;
+    isPulledRight?: boolean;
+}
 export interface IHelpersProps {
     isInvisible?: boolean;
     isMarginLess?: boolean;
@@ -97,6 +102,11 @@ export declare function backgroundColorHelpersPropsToClassenames(props: IBackgro
     "has-background-white": boolean | undefined;
     "has-background-white-bis": boolean | undefined;
     "has-background-white-ter": boolean | undefined;
+};
+export declare function floatHelpersPropsToClassenames(props: IFloatHelpersProps): {
+    "is-clearfix": boolean | undefined;
+    "is-pulled-left": boolean | undefined;
+    "is-pulled-right": boolean | undefined;
 };
 export declare function helpersPropsToClassenames(props: IHelpersProps): {
     "is-marginless": boolean | undefined;

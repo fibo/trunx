@@ -9,12 +9,12 @@ var Textarea = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Textarea.prototype.render = function () {
-        var _a = this.props, isFocused = _a.isFocused, isHovered = _a.isHovered, placeholder = _a.placeholder, rows = _a.rows;
+        var _a = this.props, isFocused = _a.isFocused, isHovered = _a.isHovered, placeholder = _a.placeholder, rows = _a.rows, props = tslib_1.__rest(_a, ["isFocused", "isHovered", "placeholder", "rows"]);
         var className = classnames("textarea", {
             "is-focused": isFocused,
             "is-hovered": isHovered,
         }, modifiers_1.mainColorsPropsToClassenames(this.props), modifiers_1.sizePropsToClassenames(this.props), modifiers_1.textColorHelpersPropsToClassenames(this.props));
-        return (React.createElement("textarea", { className: className, placeholder: placeholder, rows: rows }));
+        return (React.createElement("textarea", tslib_1.__assign({}, props, { className: className, placeholder: placeholder, rows: rows })));
     };
     return Textarea;
 }(React.Component));
