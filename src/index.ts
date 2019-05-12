@@ -49,6 +49,7 @@ import Title from "./component/Title"
 import Ul from "./component/Ul"
 
 export {
+  A,
   Box,
   Button,
   Buttons,
@@ -72,6 +73,7 @@ export {
   Input,
   Label,
   Level,
+  Li,
   Media,
   Menu,
   Message,
@@ -95,4 +97,5 @@ export {
   Textarea,
   Tile,
   Title,
+  Ul,
 }

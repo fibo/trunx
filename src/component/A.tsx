@@ -7,11 +7,14 @@ import {
 } from "./modifiers"
 
 interface IAProps extends IFloatHelpersProps,
-                          React.AnchorHTMLAttributes<HTMLAnchorElement> {}
+                          React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  isActive?: boolean
+}
 
 export default class A extends React.Component<IAProps> {
   render() {
     const {
+      isActive,
       isClearfix,
       isPulledLeft,
       isPulledRight,
@@ -19,6 +22,9 @@ export default class A extends React.Component<IAProps> {
     } = this.props
 
     const className = classnames(
+      {
+        isActive: "is-active",
+      },
       floatHelpersPropsToClassenames({
         isClearfix,
         isPulledLeft,
