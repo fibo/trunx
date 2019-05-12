@@ -3,6 +3,8 @@ import { IAnchorProps } from "./Anchor";
 import { IMainColorsProps, IShadeColorsProps, ISizeProps } from "./modifiers";
 interface ITagProps extends IMainColorsProps, IShadeColorsProps, ISizeProps {
     href?: IAnchorProps["href"];
+    isDelete?: boolean;
+    isNormal?: boolean;
     isRounded?: boolean;
     onClick?: IAnchorProps["onClick"];
     target?: IAnchorProps["target"];

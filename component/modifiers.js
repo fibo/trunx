@@ -34,6 +34,15 @@ function backgroundColorHelpersPropsToClassenames(props) {
     };
 }
 exports.backgroundColorHelpersPropsToClassenames = backgroundColorHelpersPropsToClassenames;
+function floatHelpersPropsToClassenames(props) {
+    var isClearfix = props.isClearfix, isPulledLeft = props.isPulledLeft, isPulledRight = props.isPulledRight;
+    return {
+        "is-clearfix": isClearfix,
+        "is-pulled-left": isPulledLeft,
+        "is-pulled-right": isPulledRight,
+    };
+}
+exports.floatHelpersPropsToClassenames = floatHelpersPropsToClassenames;
 function helpersPropsToClassenames(props) {
     var isInvisible = props.isInvisible, isMarginLess = props.isMarginLess, isPaddingLess = props.isPaddingLess, isSrOnly = props.isSrOnly;
     return {
