@@ -27,6 +27,7 @@ export default class Textarea extends React.Component<ITextareaProps> {
       isHovered,
       placeholder,
       rows,
+      ...props
     } = this.props
 
     const className = classnames("textarea",
@@ -41,6 +42,7 @@ export default class Textarea extends React.Component<ITextareaProps> {
 
     return (
       <textarea
+        {...props}
         className={className}
         placeholder={placeholder}
         rows={rows}
