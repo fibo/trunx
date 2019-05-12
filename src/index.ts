@@ -30,6 +30,7 @@ import Modal from "./component/Modal"
 import Nav from "./component/Nav"
 import Navbar from "./component/Navbar"
 import Notification from "./component/Notification"
+import P from "./component/P"
 import Pagination from "./component/Pagination"
 import Panel from "./component/Panel"
 import Progress from "./component/Progress"
@@ -81,6 +82,7 @@ export {
   Nav,
   Navbar,
   Notification,
+  P,
   Pagination,
   Panel,
   Progress,
