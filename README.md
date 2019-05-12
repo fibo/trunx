@@ -35,10 +35,10 @@ npm run storybook
 Build
 
 ```bash
-npm run typescript
+npm run build
 ```
 
-Deploy
+Release new version
 
 ```bash
 npm version [patch|minor|major]
