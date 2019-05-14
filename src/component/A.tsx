@@ -23,7 +23,7 @@ export default class A extends React.Component<IAProps> {
 
     const className = classnames(
       {
-        isActive: "is-active",
+        "is-active": isActive,
       },
       floatHelpersPropsToClassenames({
         isClearfix,
