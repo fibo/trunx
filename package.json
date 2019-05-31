@@ -1,6 +1,6 @@
 {
   "name": "trunx",
-  "version": "0.22.1",
+  "version": "0.23.0",
   "description": "Super Saiyan React components, son of awesome Bulma, implemented in TypeScript",
   "main": "component/index.js",
   "scripts": {
