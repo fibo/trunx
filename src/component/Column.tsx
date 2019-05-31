@@ -14,6 +14,7 @@ interface IColumnProps {
   is10?: boolean
   is11?: boolean
   is12?: boolean
+  isCentered?: boolean
   isFourFifths?: boolean
   isHalf?: boolean
   isNarrow?: boolean
@@ -60,6 +61,7 @@ export default class Column extends React.Component<IColumnProps> {
       is10,
       is11,
       is12,
+      isCentered,
       isFourFifths,
       isHalf,
       isNarrow,
@@ -107,6 +109,7 @@ export default class Column extends React.Component<IColumnProps> {
         "is-11": is11,
         "is-12": is12,
         /* tslint:enable object-literal-sort-keys */
+        "is-centered": isCentered,
         "is-four-fifths": isFourFifths,
         "is-half": isHalf,
         "is-narrow": isNarrow,
