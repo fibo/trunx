@@ -11,7 +11,7 @@ var A = (function (_super) {
     A.prototype.render = function () {
         var _a = this.props, isActive = _a.isActive, isClearfix = _a.isClearfix, isPulledLeft = _a.isPulledLeft, isPulledRight = _a.isPulledRight, props = tslib_1.__rest(_a, ["isActive", "isClearfix", "isPulledLeft", "isPulledRight"]);
         var className = classnames({
-            isActive: "is-active",
+            "is-active": isActive,
         }, modifiers_1.floatHelpersPropsToClassenames({
             isClearfix: isClearfix,
             isPulledLeft: isPulledLeft,
