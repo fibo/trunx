@@ -12,6 +12,7 @@ interface IColumnProps {
     is10?: boolean;
     is11?: boolean;
     is12?: boolean;
+    isCentered?: boolean;
     isFourFifths?: boolean;
     isHalf?: boolean;
     isNarrow?: boolean;
