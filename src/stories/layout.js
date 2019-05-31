@@ -1057,14 +1057,16 @@ storiesOf('Layout', module)
                 </Hero.Body>
 
                 <Hero.Foot>
-                  <Tabs.Nav>
-                    <Tabs.Item isActive>Overview</Tabs.Item>
-                    <Tabs.Item>Modifiers</Tabs.Item>
-                    <Tabs.Item>Grid</Tabs.Item>
-                    <Tabs.Item>Elements</Tabs.Item>
-                    <Tabs.Item>Components</Tabs.Item>
-                    <Tabs.Item>Layout</Tabs.Item>
-                  </Tabs.Nav>
+                  <Tabs>
+                    <Container>
+                      <Li isActive>Overview</Li>
+                      <Li>Modifiers</Li>
+                      <Li>Grid</Li>
+                      <Li>Elements</Li>
+                      <Li>Components</Li>
+                      <Li>Layout</Li>
+                    </Container>
+                  </Tabs>
                 </Hero.Foot>
               </Hero>
             `}
@@ -1103,14 +1105,16 @@ storiesOf('Layout', module)
           </Hero.Body>
 
           <Hero.Foot>
-            <Tabs.Nav isBoxed isFullwidth>
-              <Tabs.Item isActive>Overview</Tabs.Item>
-              <Tabs.Item>Modifiers</Tabs.Item>
-              <Tabs.Item>Grid</Tabs.Item>
-              <Tabs.Item>Elements</Tabs.Item>
-              <Tabs.Item>Components</Tabs.Item>
-              <Tabs.Item>Layout</Tabs.Item>
-            </Tabs.Nav>
+            <Tabs>
+              <Container>
+                <Li isActive>Overview</Li>
+                <Li>Modifiers</Li>
+                <Li>Grid</Li>
+                <Li>Elements</Li>
+                <Li>Components</Li>
+                <Li>Layout</Li>
+              </Container>
+            </Tabs>
           </Hero.Foot>
         </Hero>
 
@@ -1149,14 +1153,16 @@ storiesOf('Layout', module)
                 </Hero.Body>
 
                 <Hero.Foot>
-                  <Tabs.Nav isBoxed isFullwidth>
-                    <Tabs.Item isActive>Overview</Tabs.Item>
-                    <Tabs.Item>Modifiers</Tabs.Item>
-                    <Tabs.Item>Grid</Tabs.Item>
-                    <Tabs.Item>Elements</Tabs.Item>
-                    <Tabs.Item>Components</Tabs.Item>
-                    <Tabs.Item>Layout</Tabs.Item>
-                  </Tabs.Nav>
+                  <Tabs>
+                    <Container>
+                      <Li isActive>Overview</Li>
+                      <Li>Modifiers</Li>
+                      <Li>Grid</Li>
+                      <Li>Elements</Li>
+                      <Li>Components</Li>
+                      <Li>Layout</Li>
+                    </Container>
+                  </Tabs>
                 </Hero.Foot>
               </Hero>
             `}
