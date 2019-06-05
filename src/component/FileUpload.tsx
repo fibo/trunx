@@ -79,7 +79,6 @@ export default class FileUpload extends React.Component<IFileUploadProps> {
       isSuccess,
       isRight,
       isWarning,
-      ...props
     } = this.props
 
     const className = classnames("file",

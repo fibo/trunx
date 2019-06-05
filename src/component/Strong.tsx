@@ -14,6 +14,7 @@ interface IStrongProps extends IBackgroundColorHelpersProps,
 export default class Strong extends React.Component<IStrongProps> {
   render() {
     const className = classnames(
+      backgroundColorHelpersPropsToClassenames(this.props),
       textColorHelpersPropsToClassenames(this.props),
     )
 
