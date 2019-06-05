@@ -10,6 +10,8 @@
     ],
     "module": "commonjs",
     "noImplicitUseStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "outDir": ".",
     "removeComments": true,
     "sourceMap": false,

@@ -47,6 +47,7 @@ class PanelTabs extends React.Component {
 }
 
 export default class Panel extends React.Component {
+  static Block = PanelBlock
   static Heading = PanelHeading
   static Icon = PanelIcon
   static Tabs = PanelTabs

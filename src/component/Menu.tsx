@@ -1,4 +1,3 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
 class MenuLabel extends React.Component {
