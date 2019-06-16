@@ -163,7 +163,7 @@ export default class Button extends React.Component<IButtonProps> {
       }),
     )
 
-    if (href || onClick) {
+    if (href) {
       return (
         <Anchor
           className={className}
