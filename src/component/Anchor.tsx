@@ -4,15 +4,12 @@ export interface IAnchorProps extends React.AnchorHTMLAttributes<HTMLAnchorEleme
   className: string
 }
 
-export class Anchor extends React.Component<IAnchorProps> {
-  render() {
-    const {
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <a {...props} className={className}>{this.props.children}</a>
-    )
-  }
+export function Anchor({
+  children,
+  className,
+  ...props
+}: IAnchorProps) {
+  return (
+    <a {...props} className={className}>{children}</a>
+  )
 }
