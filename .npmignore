@@ -1,6 +1,7 @@
 .editorconfig
 .storybook
 assets
+Development.md
 src
 tsconfig.json
 tslint.json

@@ -9,7 +9,7 @@ var Strong = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Strong.prototype.render = function () {
-        var className = classnames(modifiers_1.textColorHelpersPropsToClassenames(this.props));
+        var className = classnames(modifiers_1.backgroundColorHelpersPropsToClassenames(this.props), modifiers_1.textColorHelpersPropsToClassenames(this.props));
         return (React.createElement("strong", { className: className }, this.props.children));
     };
     return Strong;
