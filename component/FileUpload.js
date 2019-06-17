@@ -59,7 +59,7 @@ var FileUpload = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     FileUpload.prototype.render = function () {
-        var _a = this.props, hasName = _a.hasName, isBoxed = _a.isBoxed, isDanger = _a.isDanger, isFullwidth = _a.isFullwidth, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isRight = _a.isRight, isWarning = _a.isWarning, props = tslib_1.__rest(_a, ["hasName", "isBoxed", "isDanger", "isFullwidth", "isInfo", "isLarge", "isMedium", "isPrimary", "isSmall", "isSuccess", "isRight", "isWarning"]);
+        var _a = this.props, hasName = _a.hasName, isBoxed = _a.isBoxed, isDanger = _a.isDanger, isFullwidth = _a.isFullwidth, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isRight = _a.isRight, isWarning = _a.isWarning;
         var className = classnames("file", {
             "has-name": hasName,
             "is-boxed": isBoxed,

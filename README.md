@@ -24,32 +24,6 @@ So, summing all, I am creating this component library. I hope you enjoy it!
 
 I remember when I was reading the comics and Trunks arrived from the future. He was really powerful and could defeat Frieza in few seconds. One of the best twists of the entire series, in my opinion.
 
-## Development
-
-Start *storybook*
-
-```bash
-npm run storybook
-```
-
-Build
-
-```bash
-npm run build
-```
-
-Release new version
-
-```bash
-npm version [patch|minor|major]
-```
-
-Publish storybook
-
-```bash
-npm run deploy-storybook
-```
-
 ## License
 
 [MIT](http://g14n.info/mit-license)

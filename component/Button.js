@@ -64,7 +64,7 @@ var Button = (function (_super) {
             hasTextWhiteBis: hasTextWhiteBis,
             hasTextWhiteTer: hasTextWhiteTer,
         }));
-        if (href || onClick) {
+        if (href) {
             return (React.createElement(Anchor_1.Anchor, { className: className, download: download, href: href, onClick: onClick, target: target }, this.props.children));
         }
         if (type) {

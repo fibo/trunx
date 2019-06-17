@@ -54,6 +54,7 @@ var Panel = (function (_super) {
     Panel.prototype.render = function () {
         return (React.createElement("nav", { className: "panel" }, this.props.children));
     };
+    Panel.Block = PanelBlock;
     Panel.Heading = PanelHeading;
     Panel.Icon = PanelIcon;
     Panel.Tabs = PanelTabs;
