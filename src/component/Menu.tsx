@@ -1,5 +1,7 @@
 import * as React from "react"
 
+interface IMenuProps extends React.HTMLAttributes<HTMLElement> {}
+
 class MenuLabel extends React.Component {
   render() {
     return (
@@ -16,13 +18,18 @@ class MenuList extends React.Component {
   }
 }
 
-export default class Menu extends React.Component {
+export default class Menu extends React.Component<IMenuProps> {
   static Label = MenuLabel
   static List = MenuList
 
   render() {
+    const {
+      children,
+      ...props
+    } = this.props
+
     return (
-      <aside className="menu">{this.props.children}</aside>
+      <aside {...props} className="menu">{children}</aside>
     )
   }
 }

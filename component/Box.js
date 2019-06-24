@@ -9,8 +9,9 @@ var Box = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Box.prototype.render = function () {
+        var _a = this.props, children = _a.children, props = tslib_1.__rest(_a, ["children"]);
         var className = classnames("box", modifiers_1.textColorHelpersPropsToClassenames(this.props));
-        return (React.createElement("div", { className: className }, this.props.children));
+        return (React.createElement("div", tslib_1.__assign({}, props, { className: className }), children));
     };
     return Box;
 }(React.Component));
