@@ -27,7 +27,8 @@ var Menu = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Menu.prototype.render = function () {
-        return (React.createElement("aside", { className: "menu" }, this.props.children));
+        var _a = this.props, children = _a.children, props = tslib_1.__rest(_a, ["children"]);
+        return (React.createElement("aside", tslib_1.__assign({}, props, { className: "menu" }), children));
     };
     Menu.Label = MenuLabel;
     Menu.List = MenuList;

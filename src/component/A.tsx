@@ -14,6 +14,7 @@ interface IAProps extends IFloatHelpersProps,
 export default class A extends React.Component<IAProps> {
   render() {
     const {
+      children,
       isActive,
       isClearfix,
       isPulledLeft,
@@ -33,7 +34,7 @@ export default class A extends React.Component<IAProps> {
     )
 
     return (
-      <a {...props} className={className}>{this.props.children}</a>
+      <a {...props} className={className}>{children}</a>
     )
   }
 }

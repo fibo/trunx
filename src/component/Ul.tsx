@@ -5,11 +5,12 @@ interface IUlProps extends React.HTMLAttributes<HTMLUListElement> {}
 export default class Ul extends React.Component<IUlProps> {
   render() {
     const {
+      children,
       ...props
     } = this.props
 
     return (
-      <ul {...props}>{this.props.children}</ul>
+      <ul {...props}>{children}</ul>
     )
   }
 }

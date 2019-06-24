@@ -29,6 +29,7 @@ interface ITagProps extends IMainColorsProps,
 export default class Tag extends React.Component<ITagProps> {
   render() {
     const {
+      children,
       href,
       isBlack,
       isDanger,
@@ -91,12 +92,12 @@ export default class Tag extends React.Component<ITagProps> {
           onClick={onClick}
           target={target}
         >
-          {this.props.children}
+          {children}
         </Anchor>
       )
     } else {
       return (
-        <span {...props} className={className}>{this.props.children}</span>
+        <span {...props} className={className}>{children}</span>
       )
     }
   }

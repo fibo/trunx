@@ -8,7 +8,7 @@ var Table = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Table.prototype.render = function () {
-        var _a = this.props, isBordered = _a.isBordered, isFullwidth = _a.isFullwidth, isHoverable = _a.isHoverable, isNarrow = _a.isNarrow, isStriped = _a.isStriped;
+        var _a = this.props, children = _a.children, isBordered = _a.isBordered, isFullwidth = _a.isFullwidth, isHoverable = _a.isHoverable, isNarrow = _a.isNarrow, isStriped = _a.isStriped, props = tslib_1.__rest(_a, ["children", "isBordered", "isFullwidth", "isHoverable", "isNarrow", "isStriped"]);
         var className = classnames("table", {
             "is-bordered": isBordered,
             "is-fullwidth": isFullwidth,
@@ -16,7 +16,7 @@ var Table = (function (_super) {
             "is-narrow": isNarrow,
             "is-striped": isStriped,
         });
-        return (React.createElement("table", { className: className }, this.props.children));
+        return (React.createElement("table", tslib_1.__assign({}, props, { className: className }), children));
     };
     return Table;
 }(React.Component));

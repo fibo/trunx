@@ -6,7 +6,7 @@ import {
   mainColorsPropsToClassenames,
 } from "./modifiers"
 
-interface ITileProps {
+interface ITileProps extends React.HTMLAttributes<HTMLDivElement> {
   is1?: boolean
   is2?: boolean
   is3?: boolean
@@ -72,6 +72,7 @@ export default class Tile extends React.Component<ITileProps> {
 
   render() {
     const {
+      children,
       is1,
       is2,
       is3,
@@ -86,6 +87,7 @@ export default class Tile extends React.Component<ITileProps> {
       is12,
       isParent,
       isVertical,
+      ...props
     } = this.props
 
     const className = classnames("tile", {
@@ -108,7 +110,7 @@ export default class Tile extends React.Component<ITileProps> {
     })
 
     return (
-      <div className={className}>{this.props.children}</div>
+      <div {...props} className={className}>{children}</div>
     )
   }
 }
