@@ -12,11 +12,13 @@ interface ITableProps extends React.TableHTMLAttributes<HTMLTableElement> {
 export default class Table extends React.Component<ITableProps> {
   render() {
     const {
+      children,
       isBordered,
       isFullwidth,
       isHoverable,
       isNarrow,
       isStriped,
+      ...props
     } = this.props
 
     const className = classnames("table", {
@@ -28,7 +30,7 @@ export default class Table extends React.Component<ITableProps> {
     })
 
     return (
-      <table className={className}>{this.props.children}</table>
+      <table {...props} className={className}>{children}</table>
     )
   }
 }

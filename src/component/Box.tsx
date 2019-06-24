@@ -6,16 +6,22 @@ import {
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
-interface IBoxProps extends ITextColorHelpersProps {}
+interface IBoxProps extends ITextColorHelpersProps,
+                            React.HTMLAttributes<HTMLDivElement> {}
 
 export default class Box extends React.Component<IBoxProps> {
   render() {
+    const {
+      children,
+      ...props
+    } = this.props
+
     const className = classnames("box",
       textColorHelpersPropsToClassenames(this.props),
     )
 
     return (
-      <div className={className}>{this.props.children}</div>
+      <div {...props} className={className}>{children}</div>
     )
   }
 }

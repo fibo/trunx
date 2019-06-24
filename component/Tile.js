@@ -52,7 +52,7 @@ var Tile = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Tile.prototype.render = function () {
-        var _a = this.props, is1 = _a.is1, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6, is7 = _a.is7, is8 = _a.is8, is9 = _a.is9, is10 = _a.is10, is11 = _a.is11, is12 = _a.is12, isParent = _a.isParent, isVertical = _a.isVertical;
+        var _a = this.props, children = _a.children, is1 = _a.is1, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6, is7 = _a.is7, is8 = _a.is8, is9 = _a.is9, is10 = _a.is10, is11 = _a.is11, is12 = _a.is12, isParent = _a.isParent, isVertical = _a.isVertical, props = tslib_1.__rest(_a, ["children", "is1", "is2", "is3", "is4", "is5", "is6", "is7", "is8", "is9", "is10", "is11", "is12", "isParent", "isVertical"]);
         var className = classnames("tile", {
             "is-1": is1,
             "is-2": is2,
@@ -69,7 +69,7 @@ var Tile = (function (_super) {
             "is-parent": isParent,
             "is-vertical": isVertical,
         });
-        return (React.createElement("div", { className: className }, this.props.children));
+        return (React.createElement("div", tslib_1.__assign({}, props, { className: className }), children));
     };
     Tile.Ancestor = TileAncestor;
     Tile.Child = TileChild;

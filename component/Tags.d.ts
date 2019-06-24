@@ -1,5 +1,5 @@
 import * as React from "react";
-interface ITagsProps {
+interface ITagsProps extends React.HTMLAttributes<HTMLDivElement> {
     areLarge?: boolean;
     areMedium?: boolean;
     hasAddons?: boolean;

@@ -37,7 +37,8 @@ var Media = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Media.prototype.render = function () {
-        return (React.createElement("div", { className: "media" }, this.props.children));
+        var _a = this.props, children = _a.children, props = tslib_1.__rest(_a, ["children"]);
+        return (React.createElement("div", tslib_1.__assign({}, props, { className: "media" }), children));
     };
     Media.Content = MediaContent;
     Media.Left = MediaLeft;

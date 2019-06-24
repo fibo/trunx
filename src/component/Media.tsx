@@ -1,5 +1,7 @@
 import * as React from "react"
 
+interface IMediaProps extends React.HTMLAttributes<HTMLDivElement> {}
+
 class MediaContent extends React.Component {
   render() {
 
@@ -25,14 +27,19 @@ class MediaRight extends React.Component {
   }
 }
 
-export default class Media extends React.Component {
+export default class Media extends React.Component<IMediaProps> {
   static Content = MediaContent
   static Left = MediaLeft
   static Right = MediaRight
 
   render() {
+    const {
+      children,
+      ...props
+    } = this.props
+
     return (
-      <div className="media">{this.props.children}</div>
+      <div {...props} className="media">{children}</div>
     )
   }
 }

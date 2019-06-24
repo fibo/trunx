@@ -21,6 +21,8 @@ interface ICardHeaderIconProps {
 interface ICardHeaderTitleProps {
     isCentered?: boolean;
 }
+interface ICardProps extends React.HTMLAttributes<HTMLDivElement> {
+}
 declare class CardContent extends React.Component<ICardContentProps> {
     render(): JSX.Element;
 }
@@ -45,7 +47,7 @@ declare class CardHeader extends React.Component {
 declare class CardImage extends React.Component<IImageProps> {
     render(): JSX.Element;
 }
-export default class Card extends React.Component {
+export default class Card extends React.Component<ICardProps> {
     static Content: typeof CardContent;
     static Footer: typeof CardFooter;
     static Header: typeof CardHeader;

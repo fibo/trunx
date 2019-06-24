@@ -1,7 +1,7 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface ITagsProps {
+interface ITagsProps extends React.HTMLAttributes<HTMLDivElement> {
   areLarge?: boolean
   areMedium?: boolean
   hasAddons?: boolean
@@ -12,7 +12,9 @@ export default class Tags extends React.Component<ITagsProps> {
     const {
       areLarge,
       areMedium,
+      children,
       hasAddons,
+      ...props
     } = this.props
 
     const className = classnames("tags", {
@@ -22,7 +24,7 @@ export default class Tags extends React.Component<ITagsProps> {
     })
 
     return (
-      <div className={className}>{this.props.children}</div>
+      <div {...props} className={className}>{children}</div>
     )
   }
 }

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IMainColorsProps } from "./modifiers";
-interface ITileProps {
+interface ITileProps extends React.HTMLAttributes<HTMLDivElement> {
     is1?: boolean;
     is2?: boolean;
     is3?: boolean;
