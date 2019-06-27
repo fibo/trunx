@@ -6,6 +6,7 @@
   "scripts": {
     "budo": "budo src/website/index.js --dir website --serve bundle.js --open --live --pushstate -- -t babelify",
     "build": "npm run tsc",
+    "deploy": "aws s3 sync website s3://trunx.dev",
     "lint": "run-p lint:*",
     "lint:js": "standard",
     "lint:ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
