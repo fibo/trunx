@@ -2,7 +2,7 @@
 
 > Super Saiyan React components, son of awesome [Bulma], implemented in TypeScript
 
-<img src="./assets/trunks.png" height="290"/>
+<img src="./website/images/trunks.png" height="290"/>
 
 ## Status
 

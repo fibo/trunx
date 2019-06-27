@@ -1,7 +1,8 @@
+.babelrc
+.browserslistrc
 .editorconfig
-.storybook
-assets
 Development.md
-src
+src/
 tsconfig.json
 tslint.json
+website/
