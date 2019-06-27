@@ -1,26 +1,32 @@
 # Trunx Development
 
-Start *storybook*
+Install dependencies
 
 ```bash
-npm run storybook
+npm install
 ```
 
-Build
+Launch website locally
+
+```bash
+npm start
+```
+
+Build components
 
 ```bash
 npm run build
 ```
 
-Release new version
+After components are built, commit code and then you can release a new version
 
 ```bash
 npm version [patch|minor|major]
 ```
 
-Publish storybook
+Publish website
 
 ```bash
-npm run deploy-storybook
+npm run deploy
 ```
 
