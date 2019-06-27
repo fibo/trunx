@@ -4,24 +4,34 @@
   "description": "Super Saiyan React components, son of awesome Bulma, implemented in TypeScript",
   "main": "component/index.js",
   "scripts": {
+    "budo": "budo src/website/index.js --dir website --serve bundle.js --open --live --pushstate -- -t babelify",
     "build": "npm run tsc",
-    "deploy-storybook": "storybook-to-ghpages",
     "lint": "run-p lint:*",
-    "lint:src-js": "cd src && standard",
-    "lint:src-ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
-    "lint:storybook": "cd .storybook && standard",
+    "lint:js": "standard",
+    "lint:ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
+    "prebudo": "rimraf website/bundle.js",
     "pretsc": "rimraf component",
+    "start": "npm run budo",
     "test": "npm run tsc--noemit; npm run test:bulma-version",
     "test:bulma-version": "node test/bulma-version.js",
     "tsc": "tsc --declaration --project .",
-    "tsc--noemit": "tsc --declaration --project . --noemit",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "tsc--noemit": "tsc --declaration --project . --noemit"
   },
   "pre-commit": [
     "lint",
     "test"
   ],
+  "standard": {
+    "ignore": [
+      "component",
+      "dist/",
+      "index.js",
+      "src/component/",
+      "website"
+    ],
+    "parser": "babel-eslint"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fibo/trunx.git"
@@ -41,33 +51,27 @@
   "bugs": {
     "url": "https://github.com/fibo/trunx/issues"
   },
-  "homepage": "http://g14n.info/trunx",
+  "homepage": "http://trunx.dev",
   "peerDependencies": {
     "react": "16.x"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@storybook/addon-options": "^4.1.18",
-    "@storybook/addon-viewport": "^4.1.18",
-    "@storybook/react": "^4.1.18",
-    "@storybook/storybook-deployer": "^2.3.0",
     "@types/react": "^16.8.20",
     "@types/react-dom": "^16.8.4",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.0.6",
+    "babel-eslint": "^10.0.2",
     "dot-editorconfig": "^1.1.1",
     "fa-svg-icon": "^0.3.0",
     "node-sass": "^4.12.0",
     "npm-run-all": "^4.1.2",
     "pre-commit": "^1.2.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "react-syntax-highlighter": "^8.0.1",
-    "rimraf": "^2.6.2",
+    "rimraf": "^2.6.3",
     "standard": "^12.0.1",
     "tslint": "^5.17.0",
     "tslint-react": "^4.0.0",
-    "typescript": "^3.5.2"
+    "typescript": "^3.5.2",
+    "zeroconf-redux": "^4.9.0"
   },
   "dependencies": {
     "bulma": "^0.7.5",
