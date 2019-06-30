@@ -978,7 +978,7 @@ storiesOf('Components', module)
 
                       <ul>
                         <li>
-                          <code>Navbar.Item</code>: each <b>single item</b> of the navbar, which can either be an <code>a</code> or a <code>div</code>
+                          <code>Navbar.Item</code>: each <b>single item</b> of the navbar, rendered with an <code>a</code> tag; if you want to render an item as a <code>div</code> use <code>Navbar.Item.Div</code>.
 
                           <ul>
                             <li>
