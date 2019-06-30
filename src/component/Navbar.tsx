@@ -28,12 +28,15 @@ interface INavbarBurgerProps {
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
-interface INavbarItemProps {
-  download?: IAnchorProps["download"]
+interface INavbarItemDivProps {
   hasDropdown?: boolean
-  href?: IAnchorProps["href"]
   isActive?: boolean
   isHoverable?: boolean
+}
+
+interface INavbarItemProps extends INavbarItemDivProps {
+  download?: IAnchorProps["download"]
+  href?: IAnchorProps["href"]
   onClick?: IAnchorProps["onClick"]
   target?: IAnchorProps["target"]
 }
@@ -103,7 +106,34 @@ class NavbarEnd extends React.Component {
   }
 }
 
+class NavbarItemDiv extends React.Component<INavbarItemDivProps> {
+  render() {
+    const {
+      hasDropdown,
+      isActive,
+      isHoverable,
+      ...props
+    } = this.props
+
+    const className = classnames("navbar-item",
+      {
+        "has-dropdown": hasDropdown,
+        "is-active": isActive,
+        "is-hoverable": isHoverable,
+      },
+    )
+
+    return (
+      <div {...props} className={className}>
+        {this.props.children}
+      </div>
+    )
+  }
+}
+
 class NavbarItem extends React.Component<INavbarItemProps> {
+  static Div = NavbarItemDiv
+
   render() {
     const {
       download,
