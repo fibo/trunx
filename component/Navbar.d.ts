@@ -12,12 +12,14 @@ interface INavbarBurgerProps {
     isActive?: boolean;
     onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
-interface INavbarItemProps {
-    download?: IAnchorProps["download"];
+interface INavbarItemDivProps {
     hasDropdown?: boolean;
-    href?: IAnchorProps["href"];
     isActive?: boolean;
     isHoverable?: boolean;
+}
+interface INavbarItemProps extends INavbarItemDivProps {
+    download?: IAnchorProps["download"];
+    href?: IAnchorProps["href"];
     onClick?: IAnchorProps["onClick"];
     target?: IAnchorProps["target"];
 }
@@ -40,7 +42,11 @@ declare class NavbarDropdown extends React.Component {
 declare class NavbarEnd extends React.Component {
     render(): JSX.Element;
 }
+declare class NavbarItemDiv extends React.Component<INavbarItemDivProps> {
+    render(): JSX.Element;
+}
 declare class NavbarItem extends React.Component<INavbarItemProps> {
+    static Div: typeof NavbarItemDiv;
     render(): JSX.Element;
 }
 declare class NavbarLink extends React.Component {

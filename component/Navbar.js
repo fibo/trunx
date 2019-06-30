@@ -62,6 +62,22 @@ var NavbarEnd = (function (_super) {
     };
     return NavbarEnd;
 }(React.Component));
+var NavbarItemDiv = (function (_super) {
+    tslib_1.__extends(NavbarItemDiv, _super);
+    function NavbarItemDiv() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    NavbarItemDiv.prototype.render = function () {
+        var _a = this.props, hasDropdown = _a.hasDropdown, isActive = _a.isActive, isHoverable = _a.isHoverable, props = tslib_1.__rest(_a, ["hasDropdown", "isActive", "isHoverable"]);
+        var className = classnames("navbar-item", {
+            "has-dropdown": hasDropdown,
+            "is-active": isActive,
+            "is-hoverable": isHoverable,
+        });
+        return (React.createElement("div", tslib_1.__assign({}, props, { className: className }), this.props.children));
+    };
+    return NavbarItemDiv;
+}(React.Component));
 var NavbarItem = (function (_super) {
     tslib_1.__extends(NavbarItem, _super);
     function NavbarItem() {
@@ -76,6 +92,7 @@ var NavbarItem = (function (_super) {
         });
         return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), this.props.children));
     };
+    NavbarItem.Div = NavbarItemDiv;
     return NavbarItem;
 }(React.Component));
 var NavbarLink = (function (_super) {
