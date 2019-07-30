@@ -10,12 +10,12 @@ import {
   textColorHelpersPropsToClassenames,
 } from "./modifiers"
 
-interface IParagraphProps extends IAlignementHelpersProps,
-                                  IBackgroundColorHelpersProps,
-                                  ITextColorHelpersProps,
-                                  React.HTMLAttributes<HTMLParagraphElement> {}
+interface IPProps extends IAlignementHelpersProps,
+                          IBackgroundColorHelpersProps,
+                          ITextColorHelpersProps,
+                          React.HTMLAttributes<HTMLParagraphElement> {}
 
-export default class Span extends React.Component<IParagraphProps> {
+export default class P extends React.Component<IPProps> {
   render() {
     const {
       hasBackgroundBlack,
@@ -115,7 +115,7 @@ export default class Span extends React.Component<IParagraphProps> {
     )
 
     return (
-      <span {...props} className={className}>{this.props.children}</span>
+      <p {...props} className={className}>{this.props.children}</p>
     )
   }
 }

@@ -1,8 +1,8 @@
 import * as React from "react";
 import { IAlignementHelpersProps, IBackgroundColorHelpersProps, ITextColorHelpersProps } from "./modifiers";
-interface IParagraphProps extends IAlignementHelpersProps, IBackgroundColorHelpersProps, ITextColorHelpersProps, React.HTMLAttributes<HTMLParagraphElement> {
+interface IPProps extends IAlignementHelpersProps, IBackgroundColorHelpersProps, ITextColorHelpersProps, React.HTMLAttributes<HTMLParagraphElement> {
 }
-export default class Span extends React.Component<IParagraphProps> {
+export default class P extends React.Component<IPProps> {
     render(): JSX.Element;
 }
 export {};

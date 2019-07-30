@@ -3,12 +3,12 @@ var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
 var modifiers_1 = require("./modifiers");
-var Span = (function (_super) {
-    tslib_1.__extends(Span, _super);
-    function Span() {
+var P = (function (_super) {
+    tslib_1.__extends(P, _super);
+    function P() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Span.prototype.render = function () {
+    P.prototype.render = function () {
         var _a = this.props, hasBackgroundBlack = _a.hasBackgroundBlack, hasBackgroundBlackBis = _a.hasBackgroundBlackBis, hasBackgroundBlackTer = _a.hasBackgroundBlackTer, hasBackgroundDanger = _a.hasBackgroundDanger, hasBackgroundDark = _a.hasBackgroundDark, hasBackgroundGrey = _a.hasBackgroundGrey, hasBackgroundGreyDark = _a.hasBackgroundGreyDark, hasBackgroundGreyDarker = _a.hasBackgroundGreyDarker, hasBackgroundGreyLight = _a.hasBackgroundGreyLight, hasBackgroundGreyLighter = _a.hasBackgroundGreyLighter, hasBackgroundInfo = _a.hasBackgroundInfo, hasBackgroundLight = _a.hasBackgroundLight, hasBackgroundLink = _a.hasBackgroundLink, hasBackgroundPrimary = _a.hasBackgroundPrimary, hasBackgroundSuccess = _a.hasBackgroundSuccess, hasBackgroundWarning = _a.hasBackgroundWarning, hasBackgroundWhite = _a.hasBackgroundWhite, hasBackgroundWhiteBis = _a.hasBackgroundWhiteBis, hasBackgroundWhiteTer = _a.hasBackgroundWhiteTer, hasTextBlack = _a.hasTextBlack, hasTextBlackBis = _a.hasTextBlackBis, hasTextBlackTer = _a.hasTextBlackTer, hasTextCentered = _a.hasTextCentered, hasTextDanger = _a.hasTextDanger, hasTextDark = _a.hasTextDark, hasTextGrey = _a.hasTextGrey, hasTextGreyDark = _a.hasTextGreyDark, hasTextGreyDarker = _a.hasTextGreyDarker, hasTextGreyLight = _a.hasTextGreyLight, hasTextGreyLighter = _a.hasTextGreyLighter, hasTextInfo = _a.hasTextInfo, hasTextJustified = _a.hasTextJustified, hasTextLeft = _a.hasTextLeft, hasTextLight = _a.hasTextLight, hasTextLink = _a.hasTextLink, hasTextPrimary = _a.hasTextPrimary, hasTextRight = _a.hasTextRight, hasTextSuccess = _a.hasTextSuccess, hasTextWarning = _a.hasTextWarning, hasTextWhite = _a.hasTextWhite, hasTextWhiteBis = _a.hasTextWhiteBis, hasTextWhiteTer = _a.hasTextWhiteTer, props = tslib_1.__rest(_a, ["hasBackgroundBlack", "hasBackgroundBlackBis", "hasBackgroundBlackTer", "hasBackgroundDanger", "hasBackgroundDark", "hasBackgroundGrey", "hasBackgroundGreyDark", "hasBackgroundGreyDarker", "hasBackgroundGreyLight", "hasBackgroundGreyLighter", "hasBackgroundInfo", "hasBackgroundLight", "hasBackgroundLink", "hasBackgroundPrimary", "hasBackgroundSuccess", "hasBackgroundWarning", "hasBackgroundWhite", "hasBackgroundWhiteBis", "hasBackgroundWhiteTer", "hasTextBlack", "hasTextBlackBis", "hasTextBlackTer", "hasTextCentered", "hasTextDanger", "hasTextDark", "hasTextGrey", "hasTextGreyDark", "hasTextGreyDarker", "hasTextGreyLight", "hasTextGreyLighter", "hasTextInfo", "hasTextJustified", "hasTextLeft", "hasTextLight", "hasTextLink", "hasTextPrimary", "hasTextRight", "hasTextSuccess", "hasTextWarning", "hasTextWhite", "hasTextWhiteBis", "hasTextWhiteTer"]);
         var className = classnames(modifiers_1.alignementPropsToClassenames({
             hasTextCentered: hasTextCentered,
@@ -56,8 +56,8 @@ var Span = (function (_super) {
             hasTextWhiteBis: hasTextWhiteBis,
             hasTextWhiteTer: hasTextWhiteTer,
         }));
-        return (React.createElement("span", tslib_1.__assign({}, props, { className: className }), this.props.children));
+        return (React.createElement("p", tslib_1.__assign({}, props, { className: className }), this.props.children));
     };
-    return Span;
+    return P;
 }(React.Component));
-exports.default = Span;
+exports.default = P;
