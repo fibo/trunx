@@ -1,6 +1,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var A_1 = require("./component/A");
 exports.A = A_1.default;
+var B_1 = require("./component/B");
+exports.B = B_1.default;
 var Box_1 = require("./component/Box");
 exports.Box = Box_1.default;
 var Button_1 = require("./component/Button");
@@ -25,6 +27,8 @@ var Delete_1 = require("./component/Delete");
 exports.Delete = Delete_1.default;
 var Dropdown_1 = require("./component/Dropdown");
 exports.Dropdown = Dropdown_1.default;
+var Em_1 = require("./component/Em");
+exports.Em = Em_1.default;
 var Field_1 = require("./component/Field");
 exports.Field = Field_1.default;
 var FileUpload_1 = require("./component/FileUpload");
