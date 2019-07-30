@@ -1,4 +1,5 @@
 import A from "./component/A"
+import B from "./component/B"
 import Box from "./component/Box"
 import Button from "./component/Button"
 import Buttons from "./component/Buttons"
@@ -11,6 +12,7 @@ import Content from "./component/Content"
 import Control from "./component/Control"
 import Delete from "./component/Delete"
 import Dropdown from "./component/Dropdown"
+import Em from "./component/Em"
 import Field from "./component/Field"
 import FileUpload from "./component/FileUpload"
 import Footer from "./component/Footer"
@@ -51,6 +53,7 @@ import Ul from "./component/Ul"
 
 export {
   A,
+  B,
   Box,
   Button,
   Buttons,
@@ -63,6 +66,7 @@ export {
   Control,
   Delete,
   Dropdown,
+  Em,
   FileUpload,
   Field,
   Footer,
