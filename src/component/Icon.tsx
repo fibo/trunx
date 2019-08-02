@@ -19,6 +19,7 @@ interface IIconProps extends IBackgroundColorHelpersProps,
 }
 
 interface IIconSvgProps {
+  fill?: string,
   icon: {
     d: string
     viewBox: string
@@ -28,12 +29,14 @@ interface IIconSvgProps {
 
 class IconSvg extends React.Component<IIconSvgProps> {
   static defaultProps = {
+    fill: "currentColor",
     size: "1em"
   }
 
   render() {
     const {
       icon,
+      fill,
       size,
     } = this.props
 
@@ -47,7 +50,7 @@ class IconSvg extends React.Component<IIconSvgProps> {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          fill="currentColor"
+          fill={fill}
           d={icon.d}
         />
       </svg>
