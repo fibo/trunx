@@ -9,7 +9,17 @@ interface ITableProps extends React.TableHTMLAttributes<HTMLTableElement> {
   isStriped?: boolean
 }
 
+class TableContainer extends React.Component {
+  render() {
+    return (
+      <div className="table-container">{this.props.children}</div>
+    )
+  }
+}
+
 export default class Table extends React.Component<ITableProps> {
+  static Container = TableContainer
+
   render() {
     const {
       children,
