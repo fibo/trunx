@@ -2,6 +2,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
+var TableContainer = (function (_super) {
+    tslib_1.__extends(TableContainer, _super);
+    function TableContainer() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    TableContainer.prototype.render = function () {
+        return (React.createElement("div", { className: "table-container" }, this.props.children));
+    };
+    return TableContainer;
+}(React.Component));
 var Table = (function (_super) {
     tslib_1.__extends(Table, _super);
     function Table() {
@@ -18,6 +28,7 @@ var Table = (function (_super) {
         });
         return (React.createElement("table", tslib_1.__assign({}, props, { className: className }), children));
     };
+    Table.Container = TableContainer;
     return Table;
 }(React.Component));
 exports.default = Table;
