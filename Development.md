@@ -6,7 +6,7 @@ Install dependencies
 npm install
 ```
 
-Launch website locally
+Launch documentation website locally
 
 ```bash
 npm start
@@ -22,11 +22,5 @@ After components are built, commit code and then you can release a new version
 
 ```bash
 npm version [patch|minor|major]
-```
-
-Publish website
-
-```bash
-npm run deploy
 ```
 
