@@ -154,18 +154,24 @@ class NavbarItem extends React.Component<INavbarItemProps> {
       },
     )
 
-    return (
-      <Anchor
-        {...props}
-        className={className}
-        download={download}
-        href={href}
-        onClick={onClick}
-        target={target}
-      >
-        {this.props.children}
-      </Anchor>
-    )
+    if (hasDropdown) {
+      return (
+        <div className={className}>{this.props.children}</div>
+      )
+    } else {
+      return (
+        <Anchor
+          {...props}
+          className={className}
+          download={download}
+          href={href}
+          onClick={onClick}
+          target={target}
+        >
+          {this.props.children}
+        </Anchor>
+      )
+    }
   }
 }
 
