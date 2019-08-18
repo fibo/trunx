@@ -6,7 +6,7 @@ import {
 } from '../../../index.js'
 
 export default function Nav ({
-  location: { pathname }
+  pathname
 }) {
   const [expanded, setExpanded] = React.useState(false)
   const [redirect, setRedirect] = React.useState(null)
@@ -64,6 +64,70 @@ export default function Nav ({
                 onClick={redirectTo('/modifiers/color-helpers')}
               >
                 Color helpers
+              </Navbar.Item>
+            </Navbar.Dropdown>
+          </Navbar.Item>
+
+          <Navbar.Item hasDropdown isHoverable>
+            <Navbar.Link>
+              Columns
+            </Navbar.Link>
+
+            <Navbar.Dropdown>
+              <Navbar.Item
+                onClick={redirectTo('/columns/basics')}
+              >
+                Basics
+              </Navbar.Item>
+
+              <Navbar.Item
+                onClick={redirectTo('/columns/sizes')}
+              >
+                Sizes
+              </Navbar.Item>
+
+              <Navbar.Item
+                onClick={redirectTo('/columns/responsiveness')}
+              >
+                Responsiveness
+              </Navbar.Item>
+            </Navbar.Dropdown>
+          </Navbar.Item>
+
+          <Navbar.Item hasDropdown isHoverable>
+            <Navbar.Link>
+              Layout
+            </Navbar.Link>
+
+            <Navbar.Dropdown>
+              <Navbar.Item
+                onClick={redirectTo('/layout/container')}
+              >
+                Container
+              </Navbar.Item>
+
+              <Navbar.Item
+                onClick={redirectTo('/layout/level')}
+              >
+                Level
+              </Navbar.Item>
+
+              <Navbar.Item
+                onClick={redirectTo('/layout/media-object')}
+              >
+                Media Object
+              </Navbar.Item>
+
+              <Navbar.Item
+                onClick={redirectTo('/layout/footer')}
+              >
+                Footer
+              </Navbar.Item>
+
+              <Navbar.Item
+                onClick={redirectTo('/layout/tiles')}
+              >
+                Tiles
               </Navbar.Item>
             </Navbar.Dropdown>
           </Navbar.Item>
