@@ -10,18 +10,13 @@ registerLanguage('bash', bash)
 registerLanguage('css', css)
 registerLanguage('jsx', jsx)
 
-export default class Code extends Component {
-  render () {
-    const {
-      children,
-      ...props
-    } = this.props
-
-    return (
-      <SyntaxHighlighter style={solarizedlight} {...props}>
-        {children}
-      </SyntaxHighlighter>
-
-    )
-  }
+export default function Code ({ children, ...props }) {
+  return (
+    <SyntaxHighlighter
+      style={solarizedlight}
+      {...props}
+    >
+      {children}
+    </SyntaxHighlighter>
+  )
 }
