@@ -1,3 +1,12 @@
+# documentation website build
+docs/style.css
+docs/bundle.js
+
+# trash files
+*.log
+*.swp
+*.un~
+.DS_Store
+build*
 node_modules
-.*.swp
-.cache
+npm-debug.log

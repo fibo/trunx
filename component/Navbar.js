@@ -90,7 +90,12 @@ var NavbarItem = (function (_super) {
             "is-active": isActive,
             "is-hoverable": isHoverable,
         });
-        return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), this.props.children));
+        if (hasDropdown) {
+            return (React.createElement("div", { className: className }, this.props.children));
+        }
+        else {
+            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), this.props.children));
+        }
     };
     NavbarItem.Div = NavbarItemDiv;
     return NavbarItem;
