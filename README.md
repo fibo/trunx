@@ -13,7 +13,9 @@ It is an open source project, if you want to see code snippets you can check out
 
 ## Documentation
 
-Please see *components storybook*: [click here](http://g14n.info/trunx).
+To read documentation point your browser to http://trunx.dev
+
+Yes, the website itself is implemented with Trunx: you can read its [source code here](https://github.com/fibo/trunx/tree/master/src/docs).
 
 ## Motivation
 
