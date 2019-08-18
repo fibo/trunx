@@ -2,17 +2,17 @@
   "name": "trunx",
   "version": "0.24.1",
   "description": "Super Saiyan React components, son of awesome Bulma, implemented in TypeScript",
-  "main": "component/index.js",
+  "main": "index.js",
   "scripts": {
-    "budo": "budo src/website/index.js --dir website --serve bundle.js --open --live --pushstate -- -t babelify",
+    "budo": "budo src/docs/index.js --dir docs --serve bundle.js --open --live --pushstate -- -t babelify",
     "build": "npm run tsc",
-    "deploy": "aws s3 sync website s3://trunx.dev",
     "lint": "run-p lint:*",
     "lint:js": "standard",
     "lint:ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
-    "prebudo": "rimraf website/bundle.js",
+    "prebudo": "rimraf docs/bundle.js",
     "pretsc": "rimraf component",
+    "sass": "node-sass --include-path node_modules src/docs/sass/style.scss --output-style compressed -o docs/",
     "start": "npm run budo",
     "test": "npm run tsc--noemit; npm run test:bulma-version",
     "test:bulma-version": "node test/bulma-version.js",
@@ -28,8 +28,7 @@
       "component",
       "dist/",
       "index.js",
-      "src/component/",
-      "website"
+      "docs"
     ],
     "parser": "babel-eslint"
   },
