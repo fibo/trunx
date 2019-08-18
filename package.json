@@ -4,7 +4,9 @@
   "description": "Super Saiyan React components, son of awesome Bulma, implemented in TypeScript",
   "main": "index.js",
   "scripts": {
+    "aws_s3_sync": "aws s3 sync docs s3://trunx.dev",
     "budo": "budo src/docs/index.js --dir docs --serve bundle.js --open --live --pushstate -- -t babelify",
+    "browserify": "cross-env NODE_ENV=production browserify src/docs/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/bundle.js",
     "build": "npm run tsc",
     "lint": "run-p lint:*",
     "lint:js": "standard",
@@ -71,7 +73,7 @@
     "tslint": "^5.17.0",
     "tslint-react": "^4.0.0",
     "typescript": "^3.5.2",
-    "zeroconf-redux": "^4.9.0"
+    "zeroconf-redux": "^5.2.0"
   },
   "dependencies": {
     "bulma": "^0.7.5",

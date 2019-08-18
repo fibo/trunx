@@ -1,6 +1,8 @@
 import React from 'react'
 
 import Code from '../components/Code.js'
+import Nav from '../components/Nav.js'
+
 import indent from '../utils/indent.js'
 
 import {
@@ -13,224 +15,230 @@ import {
 
 import pkg from '../../../package.json'
 
-export default function Overview () {
+export default function Overview ({
+  location: { pathname }
+}) {
   return (
-    <Section>
-      <Container>
-        <Content>
-          <Title is2>
-            Getting started with Trunx
-          </Title>
+    <>
+      <Nav pathname={pathname} />
 
-          <p>
-            <em>Trunx</em> is an open source collection of <em>React</em> components built on top of <em>Bulma</em> CSS framework and implemented with <em>TypeScript</em>.
-            GitHub repo here: <a href='https://github.com/fibo/trunx'>github.com/fibo/trunx</a>.
-          </p>
+      <Section>
+        <Container>
+          <Content>
+            <Title is2>
+              Getting started with Trunx
+            </Title>
 
-          <Title is4>
-            Installation
-          </Title>
+            <p>
+              <em>Trunx</em> is an open source collection of <em>React</em> components built on top of <em>Bulma</em> CSS framework and implemented with <em>TypeScript</em>.
+              GitHub repo here: <a href='https://github.com/fibo/trunx'>github.com/fibo/trunx</a>.
+            </p>
 
-          <p>
-            Use <b>npm</b> to install Trunx package. React is required as a peer dependency.
-          </p>
+            <Title is4>
+              Installation
+            </Title>
 
-          <Code language='bash'>
-            {indent`
-              npm install react
-              npm install trunx
-            `}
-          </Code>
+            <p>
+              Use <b>npm</b> to install Trunx package. React is required as a peer dependency.
+            </p>
 
-          <p>
-            It is also required to add Bulma CSS. You can use the bulma npm package that Trunx includes as a dependency.
-            Note that trunx npm package major version will be the same as bulma npm package major version.
-            Current bulma npm package version included is <code>v{pkg.dependencies.bulma.substring(1)}</code>.
-          </p>
+            <Code language='bash'>
+              {indent`
+                npm install react
+                npm install trunx
+              `}
+            </Code>
 
-          <p>
-            The good new is that it is easy to customize your Bulma build to create your own theme.
-          </p>
+            <p>
+              It is also required to add Bulma CSS. You can use the bulma npm package that Trunx includes as a dependency.
+              Note that trunx npm package major version will be the same as bulma npm package major version.
+              Current bulma npm package version included is <code>v{pkg.dependencies.bulma.substring(1)}</code>.
+            </p>
 
-          <p>
-            It is also easy to add Bulma via webpack: in your entry JS file or wherever, import Bulma CSS.
-          </p>
+            <p>
+              The good new is that it is easy to customize your Bulma build to create your own theme.
+            </p>
 
-          <Code language='css'>
-            {indent`
-              import 'bulma/css/bulma.css'
-            `}
-          </Code>
+            <p>
+              It is also easy to add Bulma via webpack: in your entry JS file or wherever, import Bulma CSS.
+            </p>
 
-          <p>
-            The good new is that you can use Sass to customize your Bulma build to create your own theme.
-            Install Sass using npm.
-          </p>
+            <Code language='css'>
+              {indent`
+                import 'bulma/css/bulma.css'
+              `}
+            </Code>
 
-          <Code language='bash'>
-            {indent`
-              npm install node-sass
-            `}
-          </Code>
+            <p>
+              The good new is that you can use Sass to customize your Bulma build to create your own theme.
+              Install Sass using npm.
+            </p>
 
-          <p>
-            Create, for example, a <em>_colors.scss</em> file like the following
-          </p>
+            <Code language='bash'>
+              {indent`
+                npm install node-sass
+              `}
+            </Code>
 
-          <Code language='css'>
-            {indent`
-              $azure: hsl(180, 100%, 97%);
-              $limegreen: hsl(120, 60%, 50%);
-              $orangered: hsl(16, 100%, 50%);
-              $skyblue: hsl(197, 71%, 73%);
-              $steelblue: hsl(207, 44%, 49%);
+            <p>
+              Create, for example, a <em>_colors.scss</em> file like the following
+            </p>
 
-              $body-background-color: $azure;
+            <Code language='css'>
+              {indent`
+                $azure: hsl(180, 100%, 97%);
+                $limegreen: hsl(120, 60%, 50%);
+                $orangered: hsl(16, 100%, 50%);
+                $skyblue: hsl(197, 71%, 73%);
+                $steelblue: hsl(207, 44%, 49%);
 
-              $primary: $skyblue;
+                $body-background-color: $azure;
 
-              $info: $steelblue;
-              $success: $limegreen;
-              $warning: hsl(48, 89%, 60%);
-              $danger: $orangered;
-            `}
-          </Code>
+                $primary: $skyblue;
 
-          <p>
-            In your entry Sass file import first customizations and then Bulma.
-          </p>
+                $info: $steelblue;
+                $success: $limegreen;
+                $warning: hsl(48, 89%, 60%);
+                $danger: $orangered;
+              `}
+            </Code>
 
-          <Code>
-            {indent`
-              /* Import custom variables first. */
-              @import "colors";
-              /* Import all bulma modules. */
-              @import "bulma/bulma";
-            `}
-          </Code>
+            <p>
+              In your entry Sass file import first customizations and then Bulma.
+            </p>
 
-          <p>
-            Note that you can also tweek and import individual Bulma modules, checkout <a href='https://bulma.io/documentation/'>official Bulma documentation</a>.
-            See also <a href='https://jenil.github.io/bulmaswatch/'>Bulmaswatch</a> for custom Bulma themes.
-          </p>
+            <Code>
+              {indent`
+                /* Import custom variables first. */
+                @import "colors";
+                /* Import all bulma modules. */
+                @import "bulma/bulma";
+              `}
+            </Code>
 
-          <hr />
+            <p>
+              Note that you can also tweek and import individual Bulma modules, checkout <a href='https://bulma.io/documentation/'>official Bulma documentation</a>.
+              See also <a href='https://jenil.github.io/bulmaswatch/'>Bulmaswatch</a> for custom Bulma themes.
+            </p>
 
-          <Title is4>
-            HTML code requirements
-          </Title>
+            <hr />
 
-          <p>
-            Trunx is son of awesome <a href='https://bulma.io/' target='_blank'>Bulma</a> which to work correctly need a <b>responsive</b> webpage.
-          </p>
+            <Title is4>
+              HTML code requirements
+            </Title>
 
-          <p>
-            Use the HTML5 doctype
-          </p>
+            <p>
+              Trunx is son of awesome <a href='https://bulma.io/' target='_blank'>Bulma</a> which to work correctly need a <b>responsive</b> webpage.
+            </p>
 
-          <Code language='html'>
-            {indent`
-              <!DOCTYPE html>
-            `}
-          </Code>
+            <p>
+              Use the HTML5 doctype
+            </p>
 
-          <p>
-            Add the responsive viewport meta tag
-          </p>
+            <Code language='html'>
+              {indent`
+                <!DOCTYPE html>
+              `}
+            </Code>
 
-          <Code language='html'>
-            {indent`
-              <meta name="viewport" content="width=device-width, initial-scale=1">
-            `}
-          </Code>
+            <p>
+              Add the responsive viewport meta tag
+            </p>
 
-          <p>
-            To import components, the following syntaxes are supported.
-            For example to import the <code>Button</code> component you can use
-            both ES6 or CommonJS syntaxes.
-          </p>
+            <Code language='html'>
+              {indent`
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+              `}
+            </Code>
 
-          <Code language='jsx'>
-            {indent`
-              import { Button } from 'trunx'
-            `}
-          </Code>
+            <p>
+              To import components, the following syntaxes are supported.
+              For example to import the <code>Button</code> component you can use
+              both ES6 or CommonJS syntaxes.
+            </p>
 
-          <Code language='jsx'>
-            {indent`
-              const { Button } = require('trunx')
-            `}
-          </Code>
+            <Code language='jsx'>
+              {indent`
+                import { Button } from 'trunx'
+              `}
+            </Code>
 
-          <p>
-            It is also possible to import components directly.
-            If you do not have <em>Tree shaking</em> setup in your build, the
-            following imports will create lighter bundles <b>out of the box</b>.
-          </p>
+            <Code language='jsx'>
+              {indent`
+                const { Button } = require('trunx')
+              `}
+            </Code>
 
-          <Code language='jsx'>
-            {indent`
-              import Button from 'trunx/component/Button'
-            `}
-          </Code>
+            <p>
+              It is also possible to import components directly.
+              If you do not have <em>Tree shaking</em> setup in your build, the
+              following imports will create lighter bundles <b>out of the box</b>.
+            </p>
 
-          <Code language='jsx'>
-            {indent`
-              const Button = require('trunx/component/Button')
-            `}
-          </Code>
+            <Code language='jsx'>
+              {indent`
+                import Button from 'trunx/component/Button'
+              `}
+            </Code>
 
-          <hr />
+            <Code language='jsx'>
+              {indent`
+                const Button = require('trunx/component/Button')
+              `}
+            </Code>
 
-          <Title is4>
-            How it works
-          </Title>
+            <hr />
 
-          <p>
-            Trunx React components wrap Bulma CSS classes. For instance, this JSX code
-          </p>
+            <Title is4>
+              How it works
+            </Title>
 
-          <Code language='jsx'>
-            {indent`
-              <Button isPrimary isLarge>Push me</Button>
-            `}
-          </Code>
+            <p>
+              Trunx React components wrap Bulma CSS classes. For instance, this JSX code
+            </p>
 
-          <p>
-            is equivalent to
-          </p>
+            <Code language='jsx'>
+              {indent`
+                <Button isPrimary isLarge>Push me</Button>
+              `}
+            </Code>
 
-          <Code language='jsx'>
-            {indent`
-              <button className="is-primary is-large">Push me</button>
-            `}
-          </Code>
+            <p>
+              is equivalent to
+            </p>
 
-          <p>
-            Note that you can still use Bulma directly if some feature or HTML tag is not implemented by Trunx, for example
-          </p>
+            <Code language='jsx'>
+              {indent`
+                <button className="is-primary is-large">Push me</button>
+              `}
+            </Code>
 
-          <Code language='jsx'>
-            {indent`
-              You are <strong className='has-text-success'>successful</strong>!
-            `}
-          </Code>
+            <p>
+              Note that you can still use Bulma directly if some feature or HTML tag is not implemented by Trunx, for example
+            </p>
 
-          <p>
-            Actually, there is a <code>Strong</code> component in this case
-          </p>
+            <Code language='jsx'>
+              {indent`
+                You are <strong className='has-text-success'>successful</strong>!
+              `}
+            </Code>
 
-          <Code language='jsx'>
-            {indent`
+            <p>
+              Actually, there is a <code>Strong</code> component in this case
+            </p>
+
+            <Code language='jsx'>
+              {indent`
+                You are <Strong hasTextSuccess>successful</Strong>!
+              `}
+            </Code>
+
+            <p>
               You are <Strong hasTextSuccess>successful</Strong>!
-            `}
-          </Code>
-
-          <p>
-            You are <Strong hasTextSuccess>successful</Strong>!
-          </p>
-        </Content>
-      </Container>
-    </Section>
+            </p>
+          </Content>
+        </Container>
+      </Section>
+    </>
   )
 }

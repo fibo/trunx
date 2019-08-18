@@ -1,6 +1,6 @@
-# website build
-website/style.css
-website/bundle.js
+# documentation website build
+docs/style.css
+docs/bundle.js
 
 # trash files
 *.log
