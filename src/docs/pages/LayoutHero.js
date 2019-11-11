@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Code from '../components/Code.js'
+import Meta from '../components/Meta.js'
 import Nav from '../components/Nav.js'
 
 import indent from '../utils/indent.js'
