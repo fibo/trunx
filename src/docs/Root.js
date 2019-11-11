@@ -8,6 +8,7 @@ import {
 import ColumnsBasics from './pages/ColumnsBasics.js'
 import ColumnsResponsiveness from './pages/ColumnsResponsiveness.js'
 import ColumnsSizes from './pages/ColumnsSizes.js'
+import ComponentsNavbar from './pages/ComponentsNavbar.js'
 import LayoutContainer from './pages/LayoutContainer.js'
 import LayoutFooter from './pages/LayoutFooter.js'
 import LayoutHero from './pages/LayoutHero.js'
@@ -19,35 +20,39 @@ import Overview from './pages/Overview.js'
 import ModifiersColorHelpers from './pages/ModifiersColorHelpers.js'
 import ModifiersSyntax from './pages/ModifiersSyntax.js'
 
+import routes from './routes.js'
+
 export default function Root () {
   return (
     <BrowserRouter>
       <Switch>
-        <Route component={Overview} exact path='/' />
+        <Route component={Overview} exact path={routes.home} />
 
-        <Route component={ColumnsBasics} exact path='/columns/basics' />
+        <Route component={ColumnsBasics} exact path={routes.columns.basics} />
 
-        <Route component={ColumnsResponsiveness} exact path='/columns/responsiveness' />
+        <Route component={ColumnsResponsiveness} exact path={routes.columns.responsiveness} />
 
-        <Route component={ColumnsSizes} exact path='/columns/sizes' />
+        <Route component={ColumnsSizes} exact path={routes.columns.sizes} />
 
-        <Route component={LayoutContainer} exact path='/layout/container' />
+        <Route component={ComponentsNavbar} exact path={routes.components.navbar} />
 
-        <Route component={LayoutFooter} exact path='/layout/footer' />
+        <Route component={LayoutContainer} exact path={routes.layout.container} />
 
-        <Route component={LayoutHero} exact path='/layout/hero' />
+        <Route component={LayoutFooter} exact path={routes.layout.footer} />
 
-        <Route component={LayoutLevel} exact path='/layout/level' />
+        <Route component={LayoutHero} exact path={routes.layout.hero} />
 
-        <Route component={LayoutMediaObject} exact path='/layout/media-object' />
+        <Route component={LayoutLevel} exact path={routes.layout.level} />
 
-        <Route component={LayoutSection} exact path='/layout/section' />
+        <Route component={LayoutMediaObject} exact path={routes.layout.mediaObject} />
 
-        <Route component={LayoutTiles} exact path='/layout/tiles' />
+        <Route component={LayoutSection} exact path={routes.layout.section} />
 
-        <Route component={ModifiersSyntax} exact path='/modifiers/syntax' />
+        <Route component={LayoutTiles} exact path={routes.layout.tiles} />
 
-        <Route component={ModifiersColorHelpers} exact path='/modifiers/color-helpers' />
+        <Route component={ModifiersSyntax} exact path={routes.modifiersSyntax} />
+
+        <Route component={ModifiersColorHelpers} exact path={routes.modifiers.colorHelpers} />
       </Switch>
     </BrowserRouter>
   )
