@@ -1,6 +1,8 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 
+import routes from '../routes.js'
+
 import {
   Navbar
 } from '../../../index.js'
@@ -33,7 +35,7 @@ export default function Nav ({
     >
       <Navbar.Brand>
         <Navbar.Item
-          onClick={redirectTo('/')}
+          onClick={redirectTo(routes.home)}
         >
           Trunx
         </Navbar.Item>
@@ -55,13 +57,13 @@ export default function Nav ({
 
             <Navbar.Dropdown>
               <Navbar.Item
-                onClick={redirectTo('/modifiers/syntax')}
+                onClick={redirectTo(routes.modifiersSyntax)}
               >
                 Syntax
               </Navbar.Item>
 
               <Navbar.Item
-                onClick={redirectTo('/modifiers/color-helpers')}
+                onClick={redirectTo(routes.modifiers.colorHelpers)}
               >
                 Color helpers
               </Navbar.Item>
@@ -75,19 +77,19 @@ export default function Nav ({
 
             <Navbar.Dropdown>
               <Navbar.Item
-                onClick={redirectTo('/columns/basics')}
+                onClick={redirectTo(routes.columns.basics)}
               >
                 Basics
               </Navbar.Item>
 
               <Navbar.Item
-                onClick={redirectTo('/columns/sizes')}
+                onClick={redirectTo(routes.columns.sizes)}
               >
                 Sizes
               </Navbar.Item>
 
               <Navbar.Item
-                onClick={redirectTo('/columns/responsiveness')}
+                onClick={redirectTo(routes.columns.responsiveness)}
               >
                 Responsiveness
               </Navbar.Item>
@@ -101,33 +103,47 @@ export default function Nav ({
 
             <Navbar.Dropdown>
               <Navbar.Item
-                onClick={redirectTo('/layout/container')}
+                onClick={redirectTo(routes.layout.container)}
               >
                 Container
               </Navbar.Item>
 
               <Navbar.Item
-                onClick={redirectTo('/layout/level')}
+                onClick={redirectTo(routes.layout.level)}
               >
                 Level
               </Navbar.Item>
 
               <Navbar.Item
-                onClick={redirectTo('/layout/media-object')}
+                onClick={redirectTo(routes.layout.mediaObject)}
               >
                 Media Object
               </Navbar.Item>
 
               <Navbar.Item
-                onClick={redirectTo('/layout/footer')}
+                onClick={redirectTo(routes.layout.footer)}
               >
                 Footer
               </Navbar.Item>
 
               <Navbar.Item
-                onClick={redirectTo('/layout/tiles')}
+                onClick={redirectTo(routes.layout.tiles)}
               >
                 Tiles
+              </Navbar.Item>
+            </Navbar.Dropdown>
+          </Navbar.Item>
+
+          <Navbar.Item hasDropdown isHoverable>
+            <Navbar.Link>
+              Components
+            </Navbar.Link>
+
+            <Navbar.Dropdown>
+              <Navbar.Item
+                onClick={redirectTo(routes.components.navbar)}
+              >
+                Navbar
               </Navbar.Item>
             </Navbar.Dropdown>
           </Navbar.Item>
