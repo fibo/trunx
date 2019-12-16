@@ -8,6 +8,7 @@ import indent from '../utils/indent.js'
 import {
   Container,
   Content,
+  Message,
   Section,
   Strong,
   Title
@@ -33,6 +34,14 @@ export default function Overview ({
               <em>Trunx</em> is an open source collection of <em>React</em> components built on top of <em>Bulma</em> CSS framework and implemented with <em>TypeScript</em>.
               GitHub repo here: <a href='https://github.com/fibo/trunx'>github.com/fibo/trunx</a>.
             </p>
+
+            <Message isInfo>
+              <Message.Body>
+                Currently I am migrating documentation you are reading now from <a href='https://g14n.info/trunx/'>this storybook</a>.
+
+                Almost all bulma components are implemented, yet not documented here.
+              </Message.Body>
+            </Message>
 
             <Title is4>
               Installation
