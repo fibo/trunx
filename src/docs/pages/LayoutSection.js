@@ -13,7 +13,9 @@ import {
   Subtitle
 } from '../../../index.js'
 
-export default function LayoutSection () {
+export default function LayoutSection ({
+  location: { pathname }
+}) {
   return (
     <>
       <Nav pathname={pathname} />
