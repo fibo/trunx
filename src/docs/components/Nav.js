@@ -40,6 +40,8 @@ export default function Nav ({
           Trunx
         </Navbar.Item>
 
+        <img src='/assets/trunks-head-52x52.png' height='52' width='52' />
+
         <Navbar.Burger
           isActive={expanded}
           onClick={onClickBurger}
