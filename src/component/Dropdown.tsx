@@ -7,7 +7,7 @@ import {
 } from "./Anchor"
 
 interface IDropdownProps {
-  isActive: boolean
+  isActive?: boolean
   isHoverable?: boolean
   isRight?: boolean
   isUp?: boolean
@@ -15,7 +15,7 @@ interface IDropdownProps {
 
 interface IDropdownItemProps {
   href?: IAnchorProps["href"]
-  isActive: boolean
+  isActive?: boolean
   onClick?: IAnchorProps["onClick"]
 }
 
