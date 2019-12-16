@@ -1,3 +1,4 @@
+import brandsIcon from 'fa-svg-icon/brands'
 import React from 'react'
 
 import Code from '../components/Code.js'
@@ -10,7 +11,12 @@ import {
   Button,
   Container,
   Content,
+  Hero,
+  Icon,
+  Li,
+  Navbar,
   Section,
+  Tabs,
   Title,
   Subtitle
 } from '../../../index.js'

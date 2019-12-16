@@ -5,6 +5,7 @@ import Nav from '../components/Nav.js'
 import {
   Container,
   Content,
+  Image,
   Section,
   Subtitle,
   Tile,
