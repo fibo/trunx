@@ -1,3 +1,4 @@
+import solidIcon from 'fa-svg-icon/solid'
 import React from 'react'
 
 import Code from '../components/Code.js'
@@ -7,12 +8,18 @@ import indent from '../utils/indent.js'
 
 import {
   Button,
+  Checkbox,
   Container,
   Content,
   Control,
+  Delete,
   Field,
+  Icon,
+  Image,
   Level,
+  Media,
   Section,
+  Textarea,
   Title,
   Subtitle
 } from '../../../index.js'

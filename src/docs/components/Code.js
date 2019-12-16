@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light'
 import { solarizedlight } from 'react-syntax-highlighter/styles/prism'
