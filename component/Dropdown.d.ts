@@ -1,14 +1,14 @@
 import * as React from "react";
 import { IAnchorProps } from "./Anchor";
 interface IDropdownProps {
-    isActive: boolean;
+    isActive?: boolean;
     isHoverable?: boolean;
     isRight?: boolean;
     isUp?: boolean;
 }
 interface IDropdownItemProps {
     href?: IAnchorProps["href"];
-    isActive: boolean;
+    isActive?: boolean;
     onClick?: IAnchorProps["onClick"];
 }
 declare class DropdownContent extends React.Component {
