@@ -1,7 +1,8 @@
 .babelrc
 .browserslistrc
 .editorconfig
-CNAME
+.eslintignore
+.eslintrc.json
 Development.md
 docs/
 src/

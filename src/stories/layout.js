@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import { storiesOf } from '@storybook/react'
 import brandsIcon from 'fa-svg-icon/brands'
@@ -716,7 +716,7 @@ storiesOf('Layout', module)
     </Section>
   ))
   .add('Hero', () => (
-    <Fragment>
+    <>
       <Section>
         <Container>
           <Content>
@@ -1169,7 +1169,7 @@ storiesOf('Layout', module)
           </Code>
         </Container>
       </Section>
-    </Fragment>
+    </>
   ))
   .add('Section', () => (
     <Section>

@@ -103,7 +103,7 @@ class ModalCardExample extends Component {
     } = this.state
 
     return (
-      <Fragment>
+      <>
         <Button
           isLarge
           isPrimary
@@ -130,7 +130,7 @@ class ModalCardExample extends Component {
             </Modal.Card.Foot>
           </Modal.Card>
         </Modal>
-      </Fragment>
+      </>
     )
   }
 }
@@ -1166,7 +1166,8 @@ storiesOf('Components', module)
             <Navbar.Brand>
               <Navbar.Item
                 href='https://g14n.info/trunx'
-              >Trunx</Navbar.Item>
+              >Trunx
+              </Navbar.Item>
               <Navbar.Burger />
             </Navbar.Brand>
           </Navbar>
