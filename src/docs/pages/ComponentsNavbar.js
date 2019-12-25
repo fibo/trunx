@@ -367,7 +367,8 @@ export default function ColumnBasics ({
               <Navbar.Brand>
                 <Navbar.Item
                   href='https://g14n.info/trunx'
-                >Trunx</Navbar.Item>
+                >Trunx
+                </Navbar.Item>
                 <Navbar.Burger />
               </Navbar.Brand>
             </Navbar>
