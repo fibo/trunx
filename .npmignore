@@ -1,6 +1,7 @@
 .babelrc
 .browserslistrc
 .editorconfig
+CNAME
 Development.md
 docs/
 src/
