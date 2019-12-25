@@ -4,30 +4,24 @@
   "description": "Super Saiyan React components, son of awesome Bulma, implemented in TypeScript",
   "main": "index.js",
   "scripts": {
-    "aws_s3_sync": "aws s3 sync docs s3://trunx.dev",
     "budo": "budo src/docs/index.js --dir docs --serve bundle.js --open --live --pushstate -- -t babelify",
     "browserify": "cross-env NODE_ENV=production browserify src/docs/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/bundle.js",
     "build": "npm run tsc",
-    "lint": "run-p lint:*",
-    "lint:js": "cd src/docs; standard; cd -",
-    "lint:ts": "tslint -c tslint.json 'src/**/*.{ts,tsx}'",
+    "eslint": "eslint . --fix",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "prebudo": "rimraf docs/bundle.js",
     "pretsc": "rimraf component",
     "sass": "node-sass --include-path node_modules src/docs/sass/style.scss --output-style compressed -o docs/",
     "start": "npm run budo",
-    "test": "npm run tsc--noemit; npm run test:bulma-version",
+    "test": "run-p test:*",
     "test:bulma-version": "node test/bulma-version.js",
-    "tsc": "tsc --declaration --project .",
-    "tsc--noemit": "tsc --declaration --project . --noemit"
+    "test:types": "tsc --declaration --project . --noemit",
+    "tsc": "tsc --declaration --project ."
   },
   "pre-commit": [
-    "lint",
+    "eslint",
     "test"
   ],
-  "standard": {
-    "parser": "babel-eslint"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fibo/trunx.git"
@@ -54,8 +48,19 @@
   "devDependencies": {
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
+    "@typescript-eslint/eslint-plugin": "^2.13.0",
+    "@typescript-eslint/parser": "^2.13.0",
     "babel-eslint": "^10.0.2",
     "dot-editorconfig": "^1.1.1",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard-jsx": "^8.1.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "eslint-plugin-standard": "^4.0.1",
     "fa-svg-icon": "^0.3.0",
     "node-sass": "^4.13.0",
     "npm-run-all": "^4.1.2",
@@ -63,9 +68,6 @@
     "react-router-dom": "^5.0.1",
     "react-syntax-highlighter": "^8.0.1",
     "rimraf": "^2.6.3",
-    "standard": "^12.0.1",
-    "tslint": "^5.17.0",
-    "tslint-react": "^4.0.0",
     "typescript": "^3.7.4",
     "zeroconf-redux": "^5.3.0"
   },

@@ -445,25 +445,25 @@ storiesOf('Form', module)
           <ul>
             <li>
               <code>
-                {'type="text"'}
+                type="text"
               </code>
             </li>
 
             <li>
               <code>
-                {'type="password"'}
+                type="password"
               </code>
             </li>
 
             <li>
               <code>
-                {'type="email"'}
+                type="email"
               </code>
             </li>
 
             <li>
               <code>
-                {'type="tel"'}
+                type="tel"
               </code>
             </li>
           </ul>

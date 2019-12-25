@@ -1,7 +1,3 @@
-# documentation website build
-docs/style.css
-docs/bundle.js
-
 # trash files
 *.log
 *.swp
