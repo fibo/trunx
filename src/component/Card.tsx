@@ -7,7 +7,9 @@ import {
 } from "./Anchor"
 
 import {
+  IBackgroundColorHelpersProps,
   ITextColorHelpersProps,
+  backgroundColorHelpersPropsToClassnames,
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
@@ -35,7 +37,8 @@ interface ICardHeaderTitleProps {
   isCentered?: boolean
 }
 
-interface ICardProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface ICardProps extends IBackgroundColorHelpersProps,
+                             React.HTMLAttributes<HTMLDivElement> {}
 
 class CardContent extends React.Component<ICardContentProps> {
   render() {
@@ -171,15 +174,17 @@ export default class Card extends React.Component<ICardProps> {
   static Image = CardImage
 
   render() {
-    const className = "card"
-
     const {
       children,
       ...props
     } = this.props
 
+    const className = classnames("card",
+      backgroundColorHelpersPropsToClassnames(props),
+    )
+
     return (
-      <div {...props} className={className}>{children}</div>
+      <div className={className}>{children}</div>
     )
   }
 }

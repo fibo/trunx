@@ -1,6 +1,6 @@
 import * as React from "react";
 import { IAnchorProps } from "./Anchor";
-import { ITextColorHelpersProps } from "./modifiers";
+import { IBackgroundColorHelpersProps, ITextColorHelpersProps } from "./modifiers";
 import { IImageProps } from "./Image";
 interface ICardContentProps extends ITextColorHelpersProps {
 }
@@ -21,7 +21,7 @@ interface ICardHeaderIconProps {
 interface ICardHeaderTitleProps {
     isCentered?: boolean;
 }
-interface ICardProps extends React.HTMLAttributes<HTMLDivElement> {
+interface ICardProps extends IBackgroundColorHelpersProps, React.HTMLAttributes<HTMLDivElement> {
 }
 declare class CardContent extends React.Component<ICardContentProps> {
     render(): JSX.Element;
