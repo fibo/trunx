@@ -49,7 +49,6 @@ import Tags from "./component/Tags"
 import Textarea from "./component/Textarea"
 import Tile from "./component/Tile"
 import Title from "./component/Title"
-import Ul from "./component/Ul"
 
 export {
   A,
@@ -103,5 +102,4 @@ export {
   Textarea,
   Tile,
   Title,
-  Ul,
 }

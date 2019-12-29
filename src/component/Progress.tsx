@@ -5,9 +5,9 @@ import {
   IMainColorsProps,
   IShadeColorsProps,
   ISizeProps,
-  mainColorsPropsToClassenames,
-  shadeColorsPropsToClassenames,
-  sizePropsToClassenames,
+  mainColorsPropsToClassnames,
+  shadeColorsPropsToClassnames,
+  sizePropsToClassnames,
 } from "./modifiers"
 
 interface IProgressProps extends IMainColorsProps,
@@ -35,7 +35,7 @@ export default class Progress extends React.Component<IProgressProps> {
     } = this.props
 
     const className = classnames("progress",
-      mainColorsPropsToClassenames({
+      mainColorsPropsToClassnames({
         isDanger,
         isInfo,
         isLink,
@@ -43,13 +43,13 @@ export default class Progress extends React.Component<IProgressProps> {
         isSuccess,
         isWarning,
       }),
-      shadeColorsPropsToClassenames({
+      shadeColorsPropsToClassnames({
         isBlack,
         isDark,
         isLight,
         isWhite,
       }),
-      sizePropsToClassenames({
+      sizePropsToClassnames({
         isLarge,
         isMedium,
         isSmall,

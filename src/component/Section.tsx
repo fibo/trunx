@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   IHelpersProps,
-  helpersPropsToClassenames,
+  helpersPropsToClassnames,
 } from "./modifiers"
 
 interface ISectionProps extends IHelpersProps {
@@ -27,7 +27,7 @@ export default class Section extends React.Component<ISectionProps> {
         "is-large": isLarge,
         "is-medium": isMedium,
       },
-      helpersPropsToClassenames({
+      helpersPropsToClassnames({
         isInvisible,
         isMarginLess,
         isPaddingLess,

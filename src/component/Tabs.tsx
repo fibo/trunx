@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   ISizeProps,
-  sizePropsToClassenames,
+  sizePropsToClassnames,
 } from "./modifiers"
 
 interface ITabsProps extends ISizeProps {
@@ -39,7 +39,7 @@ export default class Tabs extends React.Component<ITabsProps> {
         "is-toggle": isToggle,
         "is-toggle-rounded": isToggleRounded,
       },
-      sizePropsToClassenames({
+      sizePropsToClassnames({
         isLarge,
         isMedium,
         isSmall,

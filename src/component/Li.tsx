@@ -8,6 +8,7 @@ interface ILiProps extends React.LiHTMLAttributes<HTMLLIElement> {
 export default class Li extends React.Component<ILiProps> {
   render() {
     const {
+      children,
       isActive,
       ...props
     } = this.props
@@ -19,7 +20,7 @@ export default class Li extends React.Component<ILiProps> {
     )
 
     return (
-      <li {...props} className={className}>{this.props.children}</li>
+      <li {...props} className={className}>{children}</li>
     )
   }
 }

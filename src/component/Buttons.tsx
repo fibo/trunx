@@ -4,8 +4,8 @@ import * as React from "react"
 import {
   IHelpersProps,
   ITextColorHelpersProps,
-  helpersPropsToClassenames,
-  textColorHelpersPropsToClassenames,
+  helpersPropsToClassnames,
+  textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
 interface IButtonsProps extends IHelpersProps, ITextColorHelpersProps {}
@@ -13,8 +13,8 @@ interface IButtonsProps extends IHelpersProps, ITextColorHelpersProps {}
 export default class Buttons extends React.Component<IButtonsProps> {
   render() {
     const className = classnames("buttons",
-      helpersPropsToClassenames(this.props),
-      textColorHelpersPropsToClassenames(this.props),
+      helpersPropsToClassnames(this.props),
+      textColorHelpersPropsToClassnames(this.props),
     )
 
     return (

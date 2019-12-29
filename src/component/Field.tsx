@@ -4,8 +4,8 @@ import * as React from "react"
 import {
   IHelpersProps,
   ISizeProps,
-  helpersPropsToClassenames,
-  sizePropsToClassenames,
+  helpersPropsToClassnames,
+  sizePropsToClassnames,
 } from "./modifiers"
 
 interface IFieldProps extends IHelpersProps {
@@ -29,7 +29,7 @@ class FieldBody extends React.Component {
 class FieldLabel extends React.Component<IFieldLabelProps> {
   render() {
     const className = classnames("field-label",
-      sizePropsToClassenames(this.props),
+      sizePropsToClassnames(this.props),
     )
 
     return (
@@ -63,7 +63,7 @@ export default class Field extends React.Component<IFieldProps> {
         "is-grouped-multiline": isGroupedMultiline,
         "is-horizontal": isHorizontal,
       },
-      helpersPropsToClassenames({
+      helpersPropsToClassnames({
         isInvisible,
         isMarginLess,
         isPaddingLess,

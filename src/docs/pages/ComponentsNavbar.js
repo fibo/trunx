@@ -411,45 +411,45 @@ export default function ColumnBasics ({
               `}
             </Code>
 
-            <p>
+            <div>
               <NavbarExample isPrimary />
-            </p>
+            </div>
 
-            <p>
+            <div>
               <NavbarExample isLink />
-            </p>
+            </div>
 
-            <p>
+            <div>
               <NavbarExample isInfo />
-            </p>
+            </div>
 
-            <p>
+            <div>
               <NavbarExample isSuccess />
-            </p>
+            </div>
 
-            <p>
+            <div>
               <NavbarExample isWarning />
-            </p>
+            </div>
 
-            <p>
+            <div>
               <NavbarExample isDanger />
-            </p>
+            </div>
 
-            <p>
+            <div>
               <NavbarExample isBlack />
-            </p>
+            </div>
 
-            <p>
+            <div>
               <NavbarExample isDark />
-            </p>
+            </div>
 
-            <p>
+            <div>
               <NavbarExample isLight />
-            </p>
+            </div>
 
-            <p>
+            <div>
               <NavbarExample isWhite />
-            </p>
+            </div>
 
             <hr />
 

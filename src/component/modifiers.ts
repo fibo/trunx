@@ -84,7 +84,7 @@ export interface ITextColorHelpersProps {
   hasTextWhiteTer?: boolean
 }
 
-export function alignementPropsToClassenames(props: IAlignementHelpersProps) {
+export function alignementPropsToClassnames(props: IAlignementHelpersProps) {
   const {
     hasTextCentered,
     hasTextJustified,
@@ -100,7 +100,7 @@ export function alignementPropsToClassenames(props: IAlignementHelpersProps) {
   }
 }
 
-export function backgroundColorHelpersPropsToClassenames(props: IBackgroundColorHelpersProps) {
+export function backgroundColorHelpersPropsToClassnames(props: IBackgroundColorHelpersProps) {
   const {
     hasBackgroundBlack,
     hasBackgroundBlackBis,
@@ -146,7 +146,7 @@ export function backgroundColorHelpersPropsToClassenames(props: IBackgroundColor
   }
 }
 
-export function floatHelpersPropsToClassenames(props: IFloatHelpersProps) {
+export function floatHelpersPropsToClassnames(props: IFloatHelpersProps) {
   const {
     isClearfix,
     isPulledLeft,
@@ -160,7 +160,7 @@ export function floatHelpersPropsToClassenames(props: IFloatHelpersProps) {
   }
 }
 
-export function helpersPropsToClassenames(props: IHelpersProps) {
+export function helpersPropsToClassnames(props: IHelpersProps) {
   const {
     isInvisible,
     isMarginLess,
@@ -176,7 +176,7 @@ export function helpersPropsToClassenames(props: IHelpersProps) {
   }
 }
 
-export function mainColorsPropsToClassenames(props: IMainColorsProps) {
+export function mainColorsPropsToClassnames(props: IMainColorsProps) {
   const {
     isDanger,
     isInfo,
@@ -196,7 +196,7 @@ export function mainColorsPropsToClassenames(props: IMainColorsProps) {
   }
 }
 
-export function shadeColorsPropsToClassenames(props: IShadeColorsProps) {
+export function shadeColorsPropsToClassnames(props: IShadeColorsProps) {
   const {
     isBlack,
     isDark,
@@ -212,7 +212,7 @@ export function shadeColorsPropsToClassenames(props: IShadeColorsProps) {
   }
 }
 
-export function sizePropsToClassenames(props: ISizeProps) {
+export function sizePropsToClassnames(props: ISizeProps) {
   const {
     isLarge,
     isMedium,
@@ -226,7 +226,7 @@ export function sizePropsToClassenames(props: ISizeProps) {
   }
 }
 
-export function textColorHelpersPropsToClassenames(props: ITextColorHelpersProps) {
+export function textColorHelpersPropsToClassnames(props: ITextColorHelpersProps) {
   const {
     hasTextBlack,
     hasTextBlackBis,

@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   ISizeProps,
-  sizePropsToClassenames,
+  sizePropsToClassnames,
 } from "./modifiers"
 
 interface IDeleteProps extends ISizeProps {
@@ -17,7 +17,7 @@ export default class Delete extends React.Component<IDeleteProps> {
     } = this.props
 
     const className = classnames("delete",
-      sizePropsToClassenames(this.props),
+      sizePropsToClassnames(this.props),
     )
 
     return (

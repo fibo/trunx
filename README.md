@@ -34,7 +34,8 @@ I remember when I was reading the comics and Trunks arrived from the future. He 
 
 Tons of kudos to [Bulma] author!
 
-Trunks png comes from [kisspng](https://www.kisspng.com/png-trunks-gohan-goku-goten-bulma-1996965/).
+Trunks full body png comes from [kisspng](https://www.kisspng.com/png-trunks-gohan-goku-goten-bulma-1996965/).
+Then I draw Trunks' head with [Tayasui Sketches](https://tayasui.com/sketches/).
 
 [Bulma]: https://bulma.io "Bulma CSS framework"
 [React]: https://facebook.github.io/react/ "React"

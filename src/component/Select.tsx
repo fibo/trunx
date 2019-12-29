@@ -4,8 +4,8 @@ import * as React from "react"
 import {
   IMainColorsProps,
   ISizeProps,
-  mainColorsPropsToClassenames,
-  sizePropsToClassenames,
+  mainColorsPropsToClassnames,
+  sizePropsToClassnames,
 } from "./modifiers"
 
 interface ISelectProps extends IMainColorsProps,
@@ -34,8 +34,8 @@ export default class Select extends React.Component<ISelectProps> {
         "is-loading": isLoading,
         "is-multiple": isMultiple,
       },
-      mainColorsPropsToClassenames(this.props),
-      sizePropsToClassenames(this.props),
+      mainColorsPropsToClassnames(this.props),
+      sizePropsToClassnames(this.props),
     )
 
     return (

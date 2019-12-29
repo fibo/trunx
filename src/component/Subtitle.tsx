@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   ITextColorHelpersProps,
-  textColorHelpersPropsToClassenames,
+  textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
 interface ISubtitleProps extends ITextColorHelpersProps {
@@ -35,7 +35,7 @@ export default class Subtitle extends React.Component<ISubtitleProps> {
         "is-5": is5,
         "is-6": is6,
       },
-      textColorHelpersPropsToClassenames(this.props),
+      textColorHelpersPropsToClassnames(this.props),
     )
 
     return (

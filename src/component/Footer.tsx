@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   ITextColorHelpersProps,
-  textColorHelpersPropsToClassenames,
+  textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
 interface IFooterProps extends ITextColorHelpersProps {}
@@ -11,7 +11,7 @@ interface IFooterProps extends ITextColorHelpersProps {}
 export default class Footer extends React.Component<IFooterProps> {
   render() {
     const className = classnames("footer",
-      textColorHelpersPropsToClassenames(this.props),
+      textColorHelpersPropsToClassnames(this.props),
     )
 
     return (
