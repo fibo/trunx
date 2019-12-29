@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "browserify": "cross-env NODE_ENV=production browserify src/docs/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/bundle.js",
-    "build": "npm run tsc",
+    "build": "run-p build:*",
+    "build:docs": "npm run browserify",
+    "build:lib": "npm run tsc",
     "eslint": "eslint . --fix",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "pretsc": "rimraf component",
