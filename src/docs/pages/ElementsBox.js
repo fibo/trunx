@@ -47,7 +47,7 @@ export default function ElementsBox ({
               For example, you can include a media object:
             </p>
 
-            <Box hasBackgroundLight>
+            <Box>
               <Media>
                 <Media.Left>
                   <Image is64x64 src='http://via.placeholder.com/128x128.png' />

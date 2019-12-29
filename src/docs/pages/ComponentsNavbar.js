@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 import Code from '../components/Code.js'
-import Meta from '../components/Meta.js'
 import Nav from '../components/Nav.js'
 
 import indent from '../utils/indent.js'
@@ -125,7 +124,7 @@ const NavbarExample = (props) => (
   </Navbar>
 )
 
-export default function ColumnBasics ({
+export default function ComponentsNavbar ({
   location: { pathname }
 }) {
   return (
@@ -142,8 +141,6 @@ export default function ColumnBasics ({
             <Subtitle>
               A responsive horizontal <b>navbar</b> that can support images, links, buttons, and dropdowns
             </Subtitle>
-
-            <Meta />
 
             <hr />
 

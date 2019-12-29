@@ -6,6 +6,7 @@ export default {
   },
   home: '/',
   components: {
+    breadcrumb: '/components/breadcrumb',
     navbar: '/components/navbar'
   },
   elements: {

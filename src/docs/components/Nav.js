@@ -163,6 +163,12 @@ export default function Nav ({
 
             <Navbar.Dropdown>
               <Navbar.Item
+                onClick={redirectTo(routes.components.breadcrumb)}
+              >
+                Breadcrumb
+              </Navbar.Item>
+
+              <Navbar.Item
                 onClick={redirectTo(routes.components.navbar)}
               >
                 Navbar
