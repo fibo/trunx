@@ -1,17 +1,18 @@
-Object.defineProperty(exports, '__esModule', { value: true })
-const tslib_1 = require('tslib')
-const classnames = require('classnames')
-const React = require('react')
-const modifiers_1 = require('./modifiers')
-const Em = (function (_super) {
-  tslib_1.__extends(Em, _super)
-  function Em () {
-    return _super !== null && _super.apply(this, arguments) || this
-  }
-  Em.prototype.render = function () {
-    const className = classnames(modifiers_1.backgroundColorHelpersPropsToClassenames(this.props), modifiers_1.textColorHelpersPropsToClassenames(this.props))
-    return (React.createElement('em', { className: className }, this.props.children))
-  }
-  return Em
-}(React.Component))
-exports.default = Em
+Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
+var classnames = require("classnames");
+var React = require("react");
+var modifiers_1 = require("./modifiers");
+var Em = (function (_super) {
+    tslib_1.__extends(Em, _super);
+    function Em() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Em.prototype.render = function () {
+        var _a = this.props, children = _a.children, props = tslib_1.__rest(_a, ["children"]);
+        var className = classnames(modifiers_1.backgroundColorHelpersPropsToClassnames(props), modifiers_1.textColorHelpersPropsToClassnames(props));
+        return (React.createElement("em", { className: className }, children));
+    };
+    return Em;
+}(React.Component));
+exports.default = Em;

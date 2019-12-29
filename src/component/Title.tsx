@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   ITextColorHelpersProps,
-  textColorHelpersPropsToClassenames,
+  textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
 interface ITitleProps extends ITextColorHelpersProps {
@@ -36,7 +36,7 @@ export default class Title extends React.Component<ITitleProps> {
       "is-5": is5,
       "is-6": is6,
       "is-spaced": isSpaced,
-    }, textColorHelpersPropsToClassenames(this.props))
+    }, textColorHelpersPropsToClassnames(this.props))
 
     if (is1) {
       return (

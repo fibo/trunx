@@ -138,6 +138,26 @@ export default function Nav ({
 
           <Navbar.Item hasDropdown isHoverable>
             <Navbar.Link>
+              Elements
+            </Navbar.Link>
+
+            <Navbar.Dropdown>
+              <Navbar.Item
+                onClick={redirectTo(routes.elements.box)}
+              >
+                Box
+              </Navbar.Item>
+
+              <Navbar.Item
+                onClick={redirectTo(routes.elements.button)}
+              >
+                Button
+              </Navbar.Item>
+            </Navbar.Dropdown>
+          </Navbar.Item>
+
+          <Navbar.Item hasDropdown isHoverable>
+            <Navbar.Link>
               Components
             </Navbar.Link>
 

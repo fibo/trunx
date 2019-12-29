@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   IMainColorsProps,
-  mainColorsPropsToClassenames,
+  mainColorsPropsToClassnames,
 } from "./modifiers"
 
 interface ITileProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -46,7 +46,7 @@ class TileChildNotification extends React.Component<ITileChildNotificationProps>
   render() {
 
     const className = classnames("tile is-child notification",
-      mainColorsPropsToClassenames(this.props),
+      mainColorsPropsToClassnames(this.props),
     )
 
     return (

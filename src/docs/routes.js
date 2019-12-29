@@ -8,6 +8,10 @@ export default {
   components: {
     navbar: '/components/navbar'
   },
+  elements: {
+    box: '/elements/box',
+    button: '/elements/button'
+  },
   layout: {
     container: '/layout/container',
     footer: '/layout/footer',

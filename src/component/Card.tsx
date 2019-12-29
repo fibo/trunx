@@ -8,7 +8,7 @@ import {
 
 import {
   ITextColorHelpersProps,
-  textColorHelpersPropsToClassenames,
+  textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
 import Image, { IImageProps } from "./Image"
@@ -40,7 +40,7 @@ interface ICardProps extends React.HTMLAttributes<HTMLDivElement> {}
 class CardContent extends React.Component<ICardContentProps> {
   render() {
     const className = classnames("card-content",
-      textColorHelpersPropsToClassenames(this.props),
+      textColorHelpersPropsToClassnames(this.props),
     )
 
     return (
@@ -87,7 +87,7 @@ class CardFooter extends React.Component<ICardFooterProps> {
 
   render() {
     const className = classnames("card-footer",
-      textColorHelpersPropsToClassenames(this.props),
+      textColorHelpersPropsToClassnames(this.props),
     )
 
     return (

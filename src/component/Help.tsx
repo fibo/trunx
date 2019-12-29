@@ -4,8 +4,8 @@ import * as React from "react"
 import {
   IMainColorsProps,
   ITextColorHelpersProps,
-  mainColorsPropsToClassenames,
-  textColorHelpersPropsToClassenames,
+  mainColorsPropsToClassnames,
+  textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
 interface IHelpProps extends IMainColorsProps, ITextColorHelpersProps {}
@@ -13,8 +13,8 @@ interface IHelpProps extends IMainColorsProps, ITextColorHelpersProps {}
 export default class Help extends React.Component<IHelpProps> {
   render() {
     const className = classnames("help",
-      mainColorsPropsToClassenames(this.props),
-      textColorHelpersPropsToClassenames(this.props),
+      mainColorsPropsToClassnames(this.props),
+      textColorHelpersPropsToClassnames(this.props),
     )
 
     return (

@@ -4,8 +4,8 @@ import * as React from "react"
 import {
   IBackgroundColorHelpersProps,
   ITextColorHelpersProps,
-  backgroundColorHelpersPropsToClassenames,
-  textColorHelpersPropsToClassenames,
+  backgroundColorHelpersPropsToClassnames,
+  textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
 interface IEmProps extends IBackgroundColorHelpersProps,
@@ -13,13 +13,18 @@ interface IEmProps extends IBackgroundColorHelpersProps,
 
 export default class Em extends React.Component<IEmProps> {
   render() {
+    const {
+      children,
+      ...props
+    } = this.props
+
     const className = classnames(
-      backgroundColorHelpersPropsToClassenames(this.props),
-      textColorHelpersPropsToClassenames(this.props),
+      backgroundColorHelpersPropsToClassnames(props),
+      textColorHelpersPropsToClassnames(props),
     )
 
     return (
-      <em className={className}>{this.props.children}</em>
+      <em className={className}>{children}</em>
     )
   }
 }

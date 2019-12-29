@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component, Fragment } from 'react'
 
 import { storiesOf } from '@storybook/react'

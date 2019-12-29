@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   IMainColorsProps,
-  mainColorsPropsToClassenames,
+  mainColorsPropsToClassnames,
 } from "./modifiers"
 
 interface IHeroProps extends IMainColorsProps {
@@ -64,7 +64,7 @@ export default class Hero extends React.Component<IHeroProps> {
         "is-large": isLarge,
         "is-medium": isMedium,
       },
-      mainColorsPropsToClassenames(this.props),
+      mainColorsPropsToClassnames(this.props),
     )
 
     return (

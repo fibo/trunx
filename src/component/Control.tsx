@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   ISizeProps,
-  sizePropsToClassenames,
+  sizePropsToClassnames,
 } from "./modifiers"
 
 interface IControlProps extends ISizeProps {
@@ -29,7 +29,7 @@ export default class Control extends React.Component<IControlProps> {
         "is-expanded": isExpanded,
         "is-loading": isLoading,
       },
-      sizePropsToClassenames(this.props),
+      sizePropsToClassnames(this.props),
     )
 
     return (
