@@ -9,6 +9,7 @@ import {
 import ColumnsBasics from './pages/ColumnsBasics.js'
 import ColumnsResponsiveness from './pages/ColumnsResponsiveness.js'
 import ColumnsSizes from './pages/ColumnsSizes.js'
+import ComponentsBreadcrumb from './pages/ComponentsBreadcrumb.js'
 import ComponentsNavbar from './pages/ComponentsNavbar.js'
 import ElementsBox from './pages/ElementsBox.js'
 import ElementsButton from './pages/ElementsButton.js'
@@ -34,6 +35,7 @@ export default function Root () {
           [ColumnsBasics, routes.columns.basics],
           [ColumnsResponsiveness, routes.columns.responsiveness],
           [ColumnsSizes, routes.columns.sizes],
+          [ComponentsBreadcrumb, routes.components.breadcrumb],
           [ComponentsNavbar, routes.components.navbar],
           [ElementsBox, routes.elements.box],
           [ElementsButton, routes.elements.button],

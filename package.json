@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "browserify": "cross-env NODE_ENV=production browserify src/docs/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/bundle.js",
-    "build": "run-p build:*",
+    "build": "run-s build:*",
     "build:docs": "npm run browserify",
     "build:lib": "npm run tsc",
     "eslint": "eslint . --fix",

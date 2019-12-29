@@ -6,7 +6,8 @@ import {
   sizePropsToClassnames,
 } from "./modifiers"
 
-interface IBreadcrumbProps {
+interface IBreadcrumbProps extends ISizeProps,
+                            React.HTMLAttributes<HTMLElement> {
   hasArrowSeparator?: boolean
   hasBulletSeparator?: boolean
   hasDotSeparator?: boolean
@@ -15,16 +16,35 @@ interface IBreadcrumbProps {
   isRight?: boolean
 }
 
-interface INavProps extends IBreadcrumbProps,
-                            ISizeProps,
-                            React.HTMLAttributes<HTMLElement> {
-  breadcrumb?: boolean
+interface IBreadcrumbItemProps extends React.LiHTMLAttributes<HTMLLIElement> {
+  isActive?: boolean
 }
 
-export default class Nav extends React.Component<INavProps> {
+class BreadcrumbItem extends React.Component<IBreadcrumbItemProps> {
   render() {
     const {
-      breadcrumb,
+      children,
+      isActive,
+      ...props
+    } = this.props
+
+    const className = classnames({
+      "is-active": isActive,
+    })
+
+    return (
+      <li {...props} className={className}>{children}</li>
+
+    )
+  }
+}
+
+export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
+  static Item = BreadcrumbItem
+
+  render() {
+    const {
+      children,
       hasArrowSeparator,
       hasBulletSeparator,
       hasDotSeparator,
@@ -34,12 +54,10 @@ export default class Nav extends React.Component<INavProps> {
       isMedium,
       isRight,
       isSmall,
-      ...props
     } = this.props
 
-    const className = classnames(
+    const className = classnames("breadcrumb",
       {
-        "breadcrumb": breadcrumb,
         "has-arrow-separator": hasArrowSeparator,
         "has-bullet-separator": hasBulletSeparator,
         "has-dot-separator": hasDotSeparator,
@@ -55,7 +73,11 @@ export default class Nav extends React.Component<INavProps> {
     )
 
     return (
-      <nav {...props} className={className}>{this.props.children}</nav>
+      <nav aria-label="breadcrumbs" className={className}>
+        <ul>
+          {children}
+        </ul>
+      </nav>
     )
   }
 }
