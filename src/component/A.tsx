@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   IFloatHelpersProps,
-  floatHelpersPropsToClassenames,
+  floatHelpersPropsToClassnames,
 } from "./modifiers"
 
 interface IAProps extends IFloatHelpersProps,
@@ -26,7 +26,7 @@ export default class A extends React.Component<IAProps> {
       {
         "is-active": isActive,
       },
-      floatHelpersPropsToClassenames({
+      floatHelpersPropsToClassnames({
         isClearfix,
         isPulledLeft,
         isPulledRight,

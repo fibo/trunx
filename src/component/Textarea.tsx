@@ -5,9 +5,9 @@ import {
   IMainColorsProps,
   ISizeProps,
   ITextColorHelpersProps,
-  mainColorsPropsToClassenames,
-  sizePropsToClassenames,
-  textColorHelpersPropsToClassenames,
+  mainColorsPropsToClassnames,
+  sizePropsToClassnames,
+  textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
 interface ITextareaProps extends IMainColorsProps,
@@ -35,9 +35,9 @@ export default class Textarea extends React.Component<ITextareaProps> {
         "is-focused": isFocused,
         "is-hovered": isHovered,
       },
-      mainColorsPropsToClassenames(this.props),
-      sizePropsToClassenames(this.props),
-      textColorHelpersPropsToClassenames(this.props),
+      mainColorsPropsToClassnames(this.props),
+      sizePropsToClassnames(this.props),
+      textColorHelpersPropsToClassnames(this.props),
     )
 
     return (

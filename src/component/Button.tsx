@@ -12,11 +12,11 @@ import {
   IShadeColorsProps,
   ISizeProps,
   ITextColorHelpersProps,
-  helpersPropsToClassenames,
-  mainColorsPropsToClassenames,
-  shadeColorsPropsToClassenames,
-  sizePropsToClassenames,
-  textColorHelpersPropsToClassenames,
+  helpersPropsToClassnames,
+  mainColorsPropsToClassnames,
+  shadeColorsPropsToClassnames,
+  sizePropsToClassnames,
+  textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
 interface IButtonProps extends IHelpersProps,
@@ -115,13 +115,13 @@ export default class Button extends React.Component<IButtonProps> {
         "is-static": isStatic,
         "is-text": isText,
       },
-      helpersPropsToClassenames({
+      helpersPropsToClassnames({
         isInvisible,
         isMarginLess,
         isPaddingLess,
         isSrOnly,
       }),
-      mainColorsPropsToClassenames({
+      mainColorsPropsToClassnames({
         isDanger,
         isInfo,
         isLink,
@@ -129,18 +129,18 @@ export default class Button extends React.Component<IButtonProps> {
         isSuccess,
         isWarning,
       }),
-      shadeColorsPropsToClassenames({
+      shadeColorsPropsToClassnames({
         isBlack,
         isDark,
         isLight,
         isWhite,
       }),
-      sizePropsToClassenames({
+      sizePropsToClassnames({
         isLarge,
         isMedium,
         isSmall,
       }),
-      textColorHelpersPropsToClassenames({
+      textColorHelpersPropsToClassnames({
         hasTextBlack,
         hasTextBlackBis,
         hasTextBlackTer,

@@ -49,5 +49,4 @@ import Tags from "./component/Tags";
 import Textarea from "./component/Textarea";
 import Tile from "./component/Tile";
 import Title from "./component/Title";
-import Ul from "./component/Ul";
-export { A, B, Box, Button, Buttons, Card, Checkbox, Column, Columns, Container, Content, Control, Delete, Dropdown, Em, FileUpload, Field, Footer, Heading, Help, Hero, Icon, Image, Input, Label, Level, Li, Media, Menu, Message, Modal, Nav, Navbar, Notification, P, Pagination, Panel, Progress, Radio, Section, Select, Span, Strong, Subtitle, Table, Tag, Tabs, Tags, Textarea, Tile, Title, Ul, };
+export { A, B, Box, Button, Buttons, Card, Checkbox, Column, Columns, Container, Content, Control, Delete, Dropdown, Em, FileUpload, Field, Footer, Heading, Help, Hero, Icon, Image, Input, Label, Level, Li, Media, Menu, Message, Modal, Nav, Navbar, Notification, P, Pagination, Panel, Progress, Radio, Section, Select, Span, Strong, Subtitle, Table, Tag, Tabs, Tags, Textarea, Tile, Title, };

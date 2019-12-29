@@ -4,8 +4,8 @@ import * as React from "react"
 import {
   IMainColorsProps,
   ISizeProps,
-  mainColorsPropsToClassenames,
-  sizePropsToClassenames,
+  mainColorsPropsToClassnames,
+  sizePropsToClassnames,
 } from "./modifiers"
 
 interface IFileUploadProps extends IMainColorsProps,
@@ -88,14 +88,14 @@ export default class FileUpload extends React.Component<IFileUploadProps> {
         "is-fullwidth": isFullwidth,
         "is-right": isRight,
       },
-      mainColorsPropsToClassenames({
+      mainColorsPropsToClassnames({
         isDanger,
         isInfo,
         isPrimary,
         isSuccess,
         isWarning,
       }),
-      sizePropsToClassenames({
+      sizePropsToClassnames({
         isLarge,
         isMedium,
         isSmall,

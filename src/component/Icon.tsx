@@ -5,9 +5,9 @@ import {
   IBackgroundColorHelpersProps,
   ISizeProps,
   ITextColorHelpersProps,
-  backgroundColorHelpersPropsToClassenames,
-  sizePropsToClassenames,
-  textColorHelpersPropsToClassenames,
+  backgroundColorHelpersPropsToClassnames,
+  sizePropsToClassnames,
+  textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
 interface IIconProps extends IBackgroundColorHelpersProps,
@@ -73,9 +73,9 @@ export default class Icon extends React.Component<IIconProps> {
         "is-left": isLeft,
         "is-right": isRight,
       },
-      backgroundColorHelpersPropsToClassenames(this.props),
-      textColorHelpersPropsToClassenames(this.props),
-      sizePropsToClassenames(this.props),
+      backgroundColorHelpersPropsToClassnames(this.props),
+      textColorHelpersPropsToClassnames(this.props),
+      sizePropsToClassnames(this.props),
     )
 
     return (

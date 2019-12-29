@@ -5,9 +5,9 @@ import {
   IHelpersProps,
   IMainColorsProps,
   ISizeProps,
-  helpersPropsToClassenames,
-  mainColorsPropsToClassenames,
-  sizePropsToClassenames,
+  helpersPropsToClassnames,
+  mainColorsPropsToClassnames,
+  sizePropsToClassnames,
 } from "./modifiers"
 
 interface IMessageProps extends IHelpersProps,
@@ -49,14 +49,14 @@ export default class Message extends React.Component<IMessageProps> {
       {
         "is-dark": isDark,
       },
-      helpersPropsToClassenames({
+      helpersPropsToClassnames({
         isInvisible,
         isMarginLess,
         isPaddingLess,
         isSrOnly,
       }),
-      mainColorsPropsToClassenames(this.props),
-      sizePropsToClassenames(this.props)
+      mainColorsPropsToClassnames(this.props),
+      sizePropsToClassnames(this.props)
     )
 
     return (

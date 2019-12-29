@@ -2,11 +2,14 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
+  IBackgroundColorHelpersProps,
   ITextColorHelpersProps,
-  textColorHelpersPropsToClassenames,
+  backgroundColorHelpersPropsToClassnames,
+  textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface IBoxProps extends ITextColorHelpersProps,
+interface IBoxProps extends IBackgroundColorHelpersProps,
+                            ITextColorHelpersProps,
                             React.HTMLAttributes<HTMLDivElement> {}
 
 export default class Box extends React.Component<IBoxProps> {
@@ -17,11 +20,12 @@ export default class Box extends React.Component<IBoxProps> {
     } = this.props
 
     const className = classnames("box",
-      textColorHelpersPropsToClassenames(this.props),
+      backgroundColorHelpersPropsToClassnames(props),
+      textColorHelpersPropsToClassnames(props),
     )
 
     return (
-      <div {...props} className={className}>{children}</div>
+      <div className={className}>{children}</div>
     )
   }
 }

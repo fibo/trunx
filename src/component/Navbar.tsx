@@ -9,8 +9,8 @@ import {
 import {
   IMainColorsProps,
   IShadeColorsProps,
-  mainColorsPropsToClassenames,
-  shadeColorsPropsToClassenames,
+  mainColorsPropsToClassnames,
+  shadeColorsPropsToClassnames,
 } from "./modifiers"
 
 interface INavbarProps extends IMainColorsProps,
@@ -252,6 +252,7 @@ export default class Navbar extends React.Component<INavbarProps> {
       isFixedBottom,
       isFixedTop,
       isLight,
+      isLink,
       isInfo,
       isPrimary,
       isSuccess,
@@ -269,14 +270,15 @@ export default class Navbar extends React.Component<INavbarProps> {
         "is-transparent": isTransparent,
         "is-unselectable": isUnselectable,
       },
-      mainColorsPropsToClassenames({
+      mainColorsPropsToClassnames({
         isDanger,
         isInfo,
+        isLink,
         isPrimary,
         isSuccess,
         isWarning,
       }),
-      shadeColorsPropsToClassenames({
+      shadeColorsPropsToClassnames({
         isBlack,
         isDark,
         isLight,

@@ -76,13 +76,13 @@ export interface ITextColorHelpersProps {
     hasTextWhiteBis?: boolean;
     hasTextWhiteTer?: boolean;
 }
-export declare function alignementPropsToClassenames(props: IAlignementHelpersProps): {
+export declare function alignementPropsToClassnames(props: IAlignementHelpersProps): {
     "has-text-centered": boolean | undefined;
     "has-text-justified": boolean | undefined;
     "has-text-left": boolean | undefined;
     "has-text-right": boolean | undefined;
 };
-export declare function backgroundColorHelpersPropsToClassenames(props: IBackgroundColorHelpersProps): {
+export declare function backgroundColorHelpersPropsToClassnames(props: IBackgroundColorHelpersProps): {
     "has-background-black": boolean | undefined;
     "has-background-black-bis": boolean | undefined;
     "has-background-black-ter": boolean | undefined;
@@ -103,18 +103,18 @@ export declare function backgroundColorHelpersPropsToClassenames(props: IBackgro
     "has-background-white-bis": boolean | undefined;
     "has-background-white-ter": boolean | undefined;
 };
-export declare function floatHelpersPropsToClassenames(props: IFloatHelpersProps): {
+export declare function floatHelpersPropsToClassnames(props: IFloatHelpersProps): {
     "is-clearfix": boolean | undefined;
     "is-pulled-left": boolean | undefined;
     "is-pulled-right": boolean | undefined;
 };
-export declare function helpersPropsToClassenames(props: IHelpersProps): {
+export declare function helpersPropsToClassnames(props: IHelpersProps): {
     "is-marginless": boolean | undefined;
     "is-invisible": boolean | undefined;
     "is-paddingless": boolean | undefined;
     "is-sr-only": boolean | undefined;
 };
-export declare function mainColorsPropsToClassenames(props: IMainColorsProps): {
+export declare function mainColorsPropsToClassnames(props: IMainColorsProps): {
     "is-danger": boolean | undefined;
     "is-info": boolean | undefined;
     "is-link": boolean | undefined;
@@ -122,18 +122,18 @@ export declare function mainColorsPropsToClassenames(props: IMainColorsProps): {
     "is-success": boolean | undefined;
     "is-warning": boolean | undefined;
 };
-export declare function shadeColorsPropsToClassenames(props: IShadeColorsProps): {
+export declare function shadeColorsPropsToClassnames(props: IShadeColorsProps): {
     "is-black": boolean | undefined;
     "is-dark": boolean | undefined;
     "is-light": boolean | undefined;
     "is-white": boolean | undefined;
 };
-export declare function sizePropsToClassenames(props: ISizeProps): {
+export declare function sizePropsToClassnames(props: ISizeProps): {
     "is-large": boolean | undefined;
     "is-medium": boolean | undefined;
     "is-small": boolean | undefined;
 };
-export declare function textColorHelpersPropsToClassenames(props: ITextColorHelpersProps): {
+export declare function textColorHelpersPropsToClassnames(props: ITextColorHelpersProps): {
     "has-text-black": boolean | undefined;
     "has-text-black-bis": boolean | undefined;
     "has-text-black-ter": boolean | undefined;

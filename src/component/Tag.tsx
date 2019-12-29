@@ -10,9 +10,9 @@ import {
   IMainColorsProps,
   IShadeColorsProps,
   ISizeProps,
-  mainColorsPropsToClassenames,
-  shadeColorsPropsToClassenames,
-  sizePropsToClassenames,
+  mainColorsPropsToClassnames,
+  shadeColorsPropsToClassnames,
+  sizePropsToClassnames,
 } from "./modifiers"
 
 interface ITagProps extends IMainColorsProps,
@@ -62,7 +62,7 @@ export default class Tag extends React.Component<ITagProps> {
         "is-rounded": isRounded,
         "is-white": isWhite,
       },
-      mainColorsPropsToClassenames({
+      mainColorsPropsToClassnames({
         isDanger,
         isInfo,
         isLink,
@@ -70,13 +70,13 @@ export default class Tag extends React.Component<ITagProps> {
         isSuccess,
         isWarning,
       }),
-      shadeColorsPropsToClassenames({
+      shadeColorsPropsToClassnames({
         isBlack,
         isDark,
         isLight,
         isWhite,
       }),
-      sizePropsToClassenames({
+      sizePropsToClassnames({
         isLarge,
         isMedium,
         isSmall,

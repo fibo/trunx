@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   ISizeProps,
-  sizePropsToClassenames,
+  sizePropsToClassnames,
 } from "./modifiers"
 
 interface IContentProps extends ISizeProps {
@@ -29,7 +29,7 @@ export default class Content extends React.Component<IContentProps> {
         "has-text-left": hasTextLeft,
         "has-text-right": hasTextRight,
       },
-      sizePropsToClassenames(this.props),
+      sizePropsToClassnames(this.props),
     )
 
     return (

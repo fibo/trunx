@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   ISizeProps,
-  sizePropsToClassenames,
+  sizePropsToClassnames,
 } from "./modifiers"
 
 interface IBreadcrumbProps {
@@ -47,7 +47,7 @@ export default class Nav extends React.Component<INavProps> {
         "is-centered": isCentered,
         "is-right": isRight,
         },
-      sizePropsToClassenames({
+      sizePropsToClassnames({
         isLarge,
         isMedium,
         isSmall,

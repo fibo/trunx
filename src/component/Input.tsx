@@ -4,8 +4,8 @@ import * as React from "react"
 import {
   IMainColorsProps,
   ISizeProps,
-  mainColorsPropsToClassenames,
-  sizePropsToClassenames,
+  mainColorsPropsToClassnames,
+  sizePropsToClassnames,
 } from "./modifiers"
 
 interface IInputProps extends IMainColorsProps,
@@ -45,14 +45,14 @@ export default class Input extends React.Component<IInputProps> {
         "is-rounded": isRounded,
         "is-static": isStatic,
       },
-      mainColorsPropsToClassenames({
+      mainColorsPropsToClassnames({
         isDanger,
         isInfo,
         isPrimary,
         isSuccess,
         isWarning,
       }),
-      sizePropsToClassenames({
+      sizePropsToClassnames({
         isLarge,
         isMedium,
         isSmall,

@@ -3,7 +3,7 @@ import * as React from "react"
 
 import {
   ITextColorHelpersProps,
-  textColorHelpersPropsToClassenames,
+  textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
 interface ILevelItemProps extends ITextColorHelpersProps {
@@ -28,7 +28,7 @@ class LevelItem extends React.Component<ILevelItemProps> {
       {
         "has-text-centered": hasTextCentered,
       },
-      textColorHelpersPropsToClassenames(this.props),
+      textColorHelpersPropsToClassnames(this.props),
     )
 
     return (
@@ -40,7 +40,7 @@ class LevelItem extends React.Component<ILevelItemProps> {
 class LevelLeft extends React.Component<ILevelLeftProps> {
   render() {
     const className = classnames("level-left",
-      textColorHelpersPropsToClassenames(this.props),
+      textColorHelpersPropsToClassnames(this.props),
     )
 
     return (
@@ -52,7 +52,7 @@ class LevelLeft extends React.Component<ILevelLeftProps> {
 class LevelRight extends React.Component<ILevelRightProps> {
   render() {
     const className = classnames("level-right",
-      textColorHelpersPropsToClassenames(this.props),
+      textColorHelpersPropsToClassnames(this.props),
     )
 
     return (
@@ -75,7 +75,7 @@ export default class Level extends React.Component<ILevelProps> {
       {
         "is-mobile": isMobile,
       },
-      textColorHelpersPropsToClassenames(this.props),
+      textColorHelpersPropsToClassnames(this.props),
     )
 
     return (
