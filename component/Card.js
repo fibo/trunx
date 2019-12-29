@@ -105,9 +105,9 @@ var Card = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Card.prototype.render = function () {
-        var className = "card";
         var _a = this.props, children = _a.children, props = tslib_1.__rest(_a, ["children"]);
-        return (React.createElement("div", tslib_1.__assign({}, props, { className: className }), children));
+        var className = classnames("card", modifiers_1.backgroundColorHelpersPropsToClassnames(props));
+        return (React.createElement("div", { className: className }, children));
     };
     Card.Content = CardContent;
     Card.Footer = CardFooter;
