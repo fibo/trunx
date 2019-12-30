@@ -37,10 +37,9 @@ export default function Nav ({
         <Navbar.Item
           onClick={redirectTo(routes.home)}
         >
-          Trunx
+          <img src='/assets/trunx-logotype-white.png' />
         </Navbar.Item>
 
-        <img src='/assets/trunks-head-52x52.png' height='52' width='52' />
 
         <Navbar.Burger
           isActive={expanded}
