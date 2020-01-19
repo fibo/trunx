@@ -11,7 +11,8 @@ export default {
   },
   elements: {
     box: '/elements/box',
-    button: '/elements/button'
+    button: '/elements/button',
+    tag: '/elements/tag'
   },
   layout: {
     container: '/layout/container',
