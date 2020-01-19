@@ -54,13 +54,10 @@ export default class Tag extends React.Component<ITagProps> {
 
     const className = classnames("tag",
       {
-        "is-black": isBlack,
-        "is-dark": isDark,
         "is-delete": isDelete,
         "is-light": isLight,
         "is-normal": isNormal,
         "is-rounded": isRounded,
-        "is-white": isWhite,
       },
       mainColorsPropsToClassnames({
         isDanger,
