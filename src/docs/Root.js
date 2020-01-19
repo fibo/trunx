@@ -13,6 +13,7 @@ import ComponentsBreadcrumb from './pages/ComponentsBreadcrumb.js'
 import ComponentsNavbar from './pages/ComponentsNavbar.js'
 import ElementsBox from './pages/ElementsBox.js'
 import ElementsButton from './pages/ElementsButton.js'
+import ElementsTag from './pages/ElementsTag.js'
 import LayoutContainer from './pages/LayoutContainer.js'
 import LayoutFooter from './pages/LayoutFooter.js'
 import LayoutHero from './pages/LayoutHero.js'
@@ -39,6 +40,7 @@ export default function Root () {
           [ComponentsNavbar, routes.components.navbar],
           [ElementsBox, routes.elements.box],
           [ElementsButton, routes.elements.button],
+          [ElementsTag, routes.elements.tag],
           [LayoutContainer, routes.layout.container],
           [LayoutFooter, routes.layout.footer],
           [LayoutHero, routes.layout.hero],

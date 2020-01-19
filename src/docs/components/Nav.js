@@ -152,6 +152,12 @@ export default function Nav ({
               >
                 Button
               </Navbar.Item>
+
+              <Navbar.Item
+                onClick={redirectTo(routes.elements.tag)}
+              >
+                Tag
+              </Navbar.Item>
             </Navbar.Dropdown>
           </Navbar.Item>
 
