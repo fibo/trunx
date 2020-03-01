@@ -12,7 +12,7 @@ Launch documentation website locally
 npm start
 ```
 
-Build components
+Transpile components, build documentation website
 
 ```bash
 npm run build

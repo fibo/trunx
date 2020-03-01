@@ -9,6 +9,9 @@ export default {
     breadcrumb: '/components/breadcrumb',
     navbar: '/components/navbar'
   },
+  form: {
+    general: '/form/general'
+  },
   elements: {
     box: '/elements/box',
     button: '/elements/button',

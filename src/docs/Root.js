@@ -14,6 +14,7 @@ import ComponentsNavbar from './pages/ComponentsNavbar.js'
 import ElementsBox from './pages/ElementsBox.js'
 import ElementsButton from './pages/ElementsButton.js'
 import ElementsTag from './pages/ElementsTag.js'
+import FormGeneral from './pages/FormGeneral.js'
 import LayoutContainer from './pages/LayoutContainer.js'
 import LayoutFooter from './pages/LayoutFooter.js'
 import LayoutHero from './pages/LayoutHero.js'
@@ -41,6 +42,7 @@ export default function Root () {
           [ElementsBox, routes.elements.box],
           [ElementsButton, routes.elements.button],
           [ElementsTag, routes.elements.tag],
+          [FormGeneral, routes.form.general],
           [LayoutContainer, routes.layout.container],
           [LayoutFooter, routes.layout.footer],
           [LayoutHero, routes.layout.hero],
@@ -48,7 +50,7 @@ export default function Root () {
           [LayoutMediaObject, routes.layout.mediaObject],
           [LayoutSection, routes.layout.section],
           [LayoutTiles, routes.layout.tiles],
-          [ModifiersSyntax, routes.modifiersSyntax],
+          [ModifiersSyntax, routes.modifiers.syntax],
           [ModifiersColorHelpers, routes.modifiers.colorHelpers]
         ].map(([component, path], i) => (
           <Route key={i} component={component} exact path={path} />
