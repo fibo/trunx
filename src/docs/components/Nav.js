@@ -137,6 +137,20 @@ export default function Nav ({
 
           <Navbar.Item hasDropdown isHoverable>
             <Navbar.Link>
+              Form
+            </Navbar.Link>
+
+            <Navbar.Dropdown>
+              <Navbar.Item
+                onClick={redirectTo(routes.form.general)}
+              >
+                General
+              </Navbar.Item>
+            </Navbar.Dropdown>
+          </Navbar.Item>
+
+          <Navbar.Item hasDropdown isHoverable>
+            <Navbar.Link>
               Elements
             </Navbar.Link>
 
