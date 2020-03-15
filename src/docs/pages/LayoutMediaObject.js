@@ -29,7 +29,7 @@ export default function LayoutMediaObject ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>

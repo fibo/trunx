@@ -21,7 +21,7 @@ export default function ColumnSizes ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>

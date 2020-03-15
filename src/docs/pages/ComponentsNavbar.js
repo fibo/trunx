@@ -129,7 +129,7 @@ export default function ComponentsNavbar ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>

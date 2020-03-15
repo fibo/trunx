@@ -17,7 +17,7 @@ export default function LayoutTiles ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>

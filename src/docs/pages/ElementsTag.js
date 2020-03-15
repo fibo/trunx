@@ -27,7 +27,7 @@ export default function ElementsTag ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>

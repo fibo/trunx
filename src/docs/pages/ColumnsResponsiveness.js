@@ -21,7 +21,7 @@ export default function ColumnsResponsiveness ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>

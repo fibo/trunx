@@ -27,7 +27,7 @@ export default function ElementsBox ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>

@@ -156,7 +156,7 @@ class NavbarItem extends React.Component<INavbarItemProps> {
 
     if (hasDropdown) {
       return (
-        <div className={className}>{this.props.children}</div>
+        <a className={className}>{this.props.children}</a>
       )
     } else {
       return (

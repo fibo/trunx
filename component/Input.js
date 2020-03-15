@@ -9,7 +9,7 @@ var Input = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Input.prototype.render = function () {
-        var _a = this.props, inputRef = _a.inputRef, isDanger = _a.isDanger, isFocused = _a.isFocused, isHovered = _a.isHovered, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isStatic = _a.isStatic, isWarning = _a.isWarning, type = _a.type, props = tslib_1.__rest(_a, ["inputRef", "isDanger", "isFocused", "isHovered", "isInfo", "isLarge", "isMedium", "isPrimary", "isRounded", "isSmall", "isSuccess", "isStatic", "isWarning", "type"]);
+        var _a = this.props, isDanger = _a.isDanger, isFocused = _a.isFocused, isHovered = _a.isHovered, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isRounded = _a.isRounded, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isStatic = _a.isStatic, isWarning = _a.isWarning, type = _a.type, props = tslib_1.__rest(_a, ["isDanger", "isFocused", "isHovered", "isInfo", "isLarge", "isMedium", "isPrimary", "isRounded", "isSmall", "isSuccess", "isStatic", "isWarning", "type"]);
         var className = classnames("input", {
             "is-focused": isFocused,
             "is-hovered": isHovered,
@@ -26,7 +26,7 @@ var Input = (function (_super) {
             isMedium: isMedium,
             isSmall: isSmall,
         }));
-        return (React.createElement("input", tslib_1.__assign({ className: className, ref: inputRef, type: type }, props)));
+        return (React.createElement("input", tslib_1.__assign({ className: className, type: type }, props)));
     };
     return Input;
 }(React.Component));

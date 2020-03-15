@@ -22,7 +22,7 @@ export default function ModifiersSyntax ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>

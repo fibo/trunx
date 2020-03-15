@@ -20,7 +20,7 @@ export default function ComponentsBreadcrumb ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>

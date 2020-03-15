@@ -20,7 +20,7 @@ export default function ModifiersColorHelpers ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>

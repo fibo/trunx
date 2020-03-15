@@ -19,7 +19,7 @@ export default function LayoutContainer ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>

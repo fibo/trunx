@@ -1,5 +1,5 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom'
+import { Redirect, useLocation } from 'react-router-dom'
 
 import routes from '../routes.js'
 
@@ -7,9 +7,10 @@ import {
   Navbar
 } from '../../../index.js'
 
-export default function Nav ({
-  pathname
-}) {
+export default function Nav () {
+  const { pathname } = useLocation()
+
+  console.log(pathname, routes.modifiers)
   const [expanded, setExpanded] = React.useState(false)
   const [redirect, setRedirect] = React.useState(null)
 
@@ -51,149 +52,76 @@ export default function Nav ({
         isActive={expanded}
       >
         <Navbar.Start>
-          <Navbar.Item hasDropdown isHoverable>
-            <Navbar.Link>
-              Modifiers
-            </Navbar.Link>
+          {[
+            {
+              label: 'Modifiers',
+              items: [
+                { label: 'Syntax', route: routes.modifiers.syntax },
+                { label: 'Color helpers', route: routes.modifiers.colorHelpers }
+              ]
+            },
+            {
+              label: 'Columns',
+              items: [
+                { label: 'Basics', route: routes.columns.basics },
+                { label: 'Sizes', route: routes.modifiers.sizes },
+                { label: 'Responsiveness', route: routes.modifiers.responsiveness }
+              ]
+            },
+            {
+              label: 'Layout',
+              items: [
+                { label: 'Container', route: routes.layout.container },
+                { label: 'Level', route: routes.layout.level },
+                { label: 'Media Object', route: routes.layout.mediaObject },
+                { label: 'Footer', route: routes.layout.footer },
+                { label: 'Tiles', route: routes.layout.tiles },
+              ]
+            },
+            {
+              label: 'Form',
+              items: [
+                { label: 'General', route: routes.form.general }
+              ]
+            },
+            {
+              label: 'Elements',
+              items: [
+                { label: 'Box', route: routes.elements.box },
+                { label: 'Button', route: routes.elements.button },
+                { label: 'Tag', route: routes.elements.tag }
+              ]
+            },
+            {
+              label: 'Components',
+              items: [
+                { label: 'Box', route: routes.components.breadcrumb },
+                { label: 'Navbar', route: routes.components.navbar }
+              ]
+            }
+          ].map(({ label, items }, i) => (
+            <Navbar.Item
+              hasDropdown
+              isHoverable
+              key={i}
+            >
+              <Navbar.Link>
+                {label}
+              </Navbar.Link>
 
-            <Navbar.Dropdown>
-              <Navbar.Item
-                onClick={redirectTo(routes.modifiersSyntax)}
-              >
-                Syntax
-              </Navbar.Item>
-
-              <Navbar.Item
-                onClick={redirectTo(routes.modifiers.colorHelpers)}
-              >
-                Color helpers
-              </Navbar.Item>
-            </Navbar.Dropdown>
-          </Navbar.Item>
-
-          <Navbar.Item hasDropdown isHoverable>
-            <Navbar.Link>
-              Columns
-            </Navbar.Link>
-
-            <Navbar.Dropdown>
-              <Navbar.Item
-                onClick={redirectTo(routes.columns.basics)}
-              >
-                Basics
-              </Navbar.Item>
-
-              <Navbar.Item
-                onClick={redirectTo(routes.columns.sizes)}
-              >
-                Sizes
-              </Navbar.Item>
-
-              <Navbar.Item
-                onClick={redirectTo(routes.columns.responsiveness)}
-              >
-                Responsiveness
-              </Navbar.Item>
-            </Navbar.Dropdown>
-          </Navbar.Item>
-
-          <Navbar.Item hasDropdown isHoverable>
-            <Navbar.Link>
-              Layout
-            </Navbar.Link>
-
-            <Navbar.Dropdown>
-              <Navbar.Item
-                onClick={redirectTo(routes.layout.container)}
-              >
-                Container
-              </Navbar.Item>
-
-              <Navbar.Item
-                onClick={redirectTo(routes.layout.level)}
-              >
-                Level
-              </Navbar.Item>
-
-              <Navbar.Item
-                onClick={redirectTo(routes.layout.mediaObject)}
-              >
-                Media Object
-              </Navbar.Item>
-
-              <Navbar.Item
-                onClick={redirectTo(routes.layout.footer)}
-              >
-                Footer
-              </Navbar.Item>
-
-              <Navbar.Item
-                onClick={redirectTo(routes.layout.tiles)}
-              >
-                Tiles
-              </Navbar.Item>
-            </Navbar.Dropdown>
-          </Navbar.Item>
-
-          <Navbar.Item hasDropdown isHoverable>
-            <Navbar.Link>
-              Form
-            </Navbar.Link>
-
-            <Navbar.Dropdown>
-              <Navbar.Item
-                onClick={redirectTo(routes.form.general)}
-              >
-                General
-              </Navbar.Item>
-            </Navbar.Dropdown>
-          </Navbar.Item>
-
-          <Navbar.Item hasDropdown isHoverable>
-            <Navbar.Link>
-              Elements
-            </Navbar.Link>
-
-            <Navbar.Dropdown>
-              <Navbar.Item
-                onClick={redirectTo(routes.elements.box)}
-              >
-                Box
-              </Navbar.Item>
-
-              <Navbar.Item
-                onClick={redirectTo(routes.elements.button)}
-              >
-                Button
-              </Navbar.Item>
-
-              <Navbar.Item
-                onClick={redirectTo(routes.elements.tag)}
-              >
-                Tag
-              </Navbar.Item>
-            </Navbar.Dropdown>
-          </Navbar.Item>
-
-          <Navbar.Item hasDropdown isHoverable>
-            <Navbar.Link>
-              Components
-            </Navbar.Link>
-
-            <Navbar.Dropdown>
-              <Navbar.Item
-                onClick={redirectTo(routes.components.breadcrumb)}
-              >
-                Breadcrumb
-              </Navbar.Item>
-
-              <Navbar.Item
-                onClick={redirectTo(routes.components.navbar)}
-              >
-                Navbar
-              </Navbar.Item>
-            </Navbar.Dropdown>
-          </Navbar.Item>
+              <Navbar.Dropdown>
+                {items.map(({ label, route }, i) => (
+                  <Navbar.Item
+                    isActive={route === pathname}
+                    key={i}
+                    onClick={redirectTo(route)}
+                  >
+                    {label}
+                  </Navbar.Item>
+                ))}
+              </Navbar.Dropdown>
+            </Navbar.Item>
+          ))}
         </Navbar.Start>
       </Navbar.Menu>
     </Navbar>

@@ -24,7 +24,7 @@ export default function LayoutLevel ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>
