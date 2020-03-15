@@ -1,5 +1,5 @@
 import solidIcon from 'fa-svg-icon/solid'
-import React from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import Code from '../components/Code.js'
 import Nav from '../components/Nav.js'
@@ -25,64 +25,35 @@ import {
   Title
 } from '../../../index.js'
 
-class ClickToEditExample extends React.Component {
-  constructor (props) {
-    super(props)
+function ClickToEditExample () {
+  const initialValue = 'Click to edit'
 
-    this.inputRef = React.createRef()
+  const [editing, setEditing] = useState(false)
+  const [value, setValue] = useState(initialValue)
+  const inputRef = useRef()
 
-    this.state = {
-      editing: false,
-      value: 'Click to edit'
+  useEffect(() => {
+    if (editing) {
+      inputRef.current.focus()
     }
+  }, [editing, inputRef])
 
-    this.onChange = this.onChange.bind(this)
-    this.toggleEditing = this.toggleEditing.bind(this)
-  }
-
-  onChange (event) {
-    this.setState({
-      value: event.target.value
-    })
-  }
-
-  render () {
-    const {
-      editing,
-      value
-    } = this.state
-
-    return editing ? (
-      <Input
-        inputRef={this.inputRef}
-        isPrimary
-        onBlur={this.toggleEditing}
-        onChange={this.onChange}
-        value={value}
-      />
-    ) : (
-      <Button
-        onClick={this.toggleEditing}
-      >
-        {value === '' ? '(empty 😔)' : value}
-      </Button>
-    )
-  }
-
-  toggleEditing () {
-    const {
-      editing
-    } = this.state
-
-    this.setState({
-      editing: !editing
-    }, () => {
-      // If switching from read to edit mode, give focus to input.
-      if (!editing) {
-        this.inputRef.current.focus()
-      }
-    })
-  }
+  return editing ? (
+    <Input
+      inputRef={inputRef}
+      isPrimary
+      onBlur={() => setEditing(false)}
+      onChange={(event) => setValue(event.target.value)}
+      onKeyUp={(event) => event.keyCode === 13 && setEditing(false)}
+      value={value}
+    />
+  ) : (
+    <Button
+      onClick={() => setEditing(true)}
+    >
+      {value === '' ? initialValue : value}
+    </Button>
+  )
 }
 
 export default function FormInput () {
@@ -836,64 +807,39 @@ export default function FormInput () {
 
             <Code language='jsx'>
               {indent`
-                class ClickToEditExample extends React.Component {
-                  constructor (props) {
-                    super(props)
+                import React, { useEffect, useRef, useState } from 'react'
 
-                    this.inputRef = React.createRef()
+                import { Button, Input } from 'trunx'
 
-                    this.state = {
-                      editing: false,
-                      value: 'Click to edit'
+                function ClickToEditExample () {
+                  const initialValue = 'Click to edit'
+
+                  const [editing, setEditing] = useState(false)
+                  const [value, setValue] = useState(initialValue)
+                  const inputRef = useRef()
+
+                  useEffect(() => {
+                    if (editing) {
+                      inputRef.current.focus()
                     }
+                  }, [editing, inputRef])
 
-                    this.onChange = this.onChange.bind(this)
-                    this.toggleEditing = this.toggleEditing.bind(this)
-                  }
-
-                  onChange (event) {
-                    this.setState({
-                      value: event.target.value
-                    })
-                  }
-
-                  render () {
-                    const {
-                      editing,
-                      value
-                    } = this.state
-
-                    return editing ? (
-                      <Input
-                        inputRef={this.inputRef}
-                        isPrimary
-                        onBlur={this.toggleEditing}
-                        onChange={this.onChange}
-                        value={value}
-                      />
-                    ) : (
-                      <Button
-                        onClick={this.toggleEditing}
-                      >
-                        {value === '' ? '(empty 😔)' : value}
-                      </Button>
-                    )
-                  }
-
-                  toggleEditing () {
-                    const {
-                      editing
-                    } = this.state
-
-                    this.setState({
-                      editing: !editing
-                    }, () => {
-                      // If switching from read to edit mode, give focus to input.
-                      if (!editing) {
-                        this.inputRef.current.focus()
-                      }
-                    })
-                  }
+                  return editing ? (
+                    <Input
+                      inputRef={inputRef}
+                      isPrimary
+                      onBlur={() => setEditing(false)}
+                      onChange={(event) => setValue(event.target.value)}
+                      onKeyUp={(event) => event.keyCode === 13 && setEditing(false)}
+                      value={value}
+                    />
+                  ) : (
+                    <Button
+                      onClick={() => setEditing(true)}
+                    >
+                      {value === '' ? initialValue : value}
+                    </Button>
+                  )
                 }
               `}
             </Code>
