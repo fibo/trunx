@@ -10,7 +10,6 @@ import {
 export default function Nav () {
   const { pathname } = useLocation()
 
-  console.log(pathname, routes.modifiers)
   const [expanded, setExpanded] = React.useState(false)
   const [redirect, setRedirect] = React.useState(null)
 
@@ -81,7 +80,9 @@ export default function Nav () {
             {
               label: 'Form',
               items: [
-                { label: 'General', route: routes.form.general }
+                { label: 'General', route: routes.form.general },
+                { label: 'Input', route: routes.form.input },
+                { label: 'Textarea', route: routes.form.textarea }
               ]
             },
             {

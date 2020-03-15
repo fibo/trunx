@@ -10,7 +10,9 @@ export default {
     navbar: '/components/navbar'
   },
   form: {
-    general: '/form/general'
+    general: '/form/general',
+    input: '/form/input',
+    textarea: '/form/textarea'
   },
   elements: {
     box: '/elements/box',
