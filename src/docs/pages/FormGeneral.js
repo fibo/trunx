@@ -23,9 +23,7 @@ import {
   Title
 } from '../../../index.js'
 
-export default function FormGeneral ({
-  location: { pathname }
-}) {
+export default function FormGeneral () {
   return (
     <>
       <Nav />

@@ -16,17 +16,40 @@ interface ITextareaProps extends IMainColorsProps,
                                  React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   isFocused?: boolean
   isHovered?: boolean
-  placeholder?: string
-  rows?: number
 }
 
 export default class Textarea extends React.Component<ITextareaProps> {
   render() {
     const {
+      hasTextBlack,
+      hasTextBlackBis,
+      hasTextBlackTer,
+      hasTextDanger,
+      hasTextDark,
+      hasTextGrey,
+      hasTextGreyDark,
+      hasTextGreyDarker,
+      hasTextGreyLight,
+      hasTextGreyLighter,
+      hasTextInfo,
+      hasTextLight,
+      hasTextLink,
+      hasTextPrimary,
+      hasTextSuccess,
+      hasTextWarning,
+      hasTextWhite,
+      hasTextWhiteBis,
+      hasTextWhiteTer,
+      isDanger,
       isFocused,
       isHovered,
-      placeholder,
-      rows,
+      isInfo,
+      isLarge,
+      isMedium,
+      isPrimary,
+      isSmall,
+      isSuccess,
+      isWarning,
       ...props
     } = this.props
 
@@ -35,18 +58,43 @@ export default class Textarea extends React.Component<ITextareaProps> {
         "is-focused": isFocused,
         "is-hovered": isHovered,
       },
-      mainColorsPropsToClassnames(this.props),
-      sizePropsToClassnames(this.props),
-      textColorHelpersPropsToClassnames(this.props),
+      mainColorsPropsToClassnames({
+        isDanger,
+        isInfo,
+        isPrimary,
+        isSuccess,
+        isWarning,
+      }),
+      sizePropsToClassnames({
+        isLarge,
+        isMedium,
+        isSmall,
+      }),
+      textColorHelpersPropsToClassnames({
+        hasTextBlack,
+        hasTextBlackBis,
+        hasTextBlackTer,
+        hasTextDanger,
+        hasTextDark,
+        hasTextGrey,
+        hasTextGreyDark,
+        hasTextGreyDarker,
+        hasTextGreyLight,
+        hasTextGreyLighter,
+        hasTextInfo,
+        hasTextLight,
+        hasTextLink,
+        hasTextPrimary,
+        hasTextSuccess,
+        hasTextWarning,
+        hasTextWhite,
+        hasTextWhiteBis,
+        hasTextWhiteTer,
+      }),
     )
 
     return (
-      <textarea
-        {...props}
-        className={className}
-        placeholder={placeholder}
-        rows={rows}
-      />
+      <textarea {...props} className={className} />
     )
   }
 }

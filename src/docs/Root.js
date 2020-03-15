@@ -15,6 +15,8 @@ import ElementsBox from './pages/ElementsBox.js'
 import ElementsButton from './pages/ElementsButton.js'
 import ElementsTag from './pages/ElementsTag.js'
 import FormGeneral from './pages/FormGeneral.js'
+import FormInput from './pages/FormInput.js'
+import FormTextarea from './pages/FormTextarea.js'
 import LayoutContainer from './pages/LayoutContainer.js'
 import LayoutFooter from './pages/LayoutFooter.js'
 import LayoutHero from './pages/LayoutHero.js'
@@ -43,6 +45,8 @@ export default function Root () {
           [ElementsButton, routes.elements.button],
           [ElementsTag, routes.elements.tag],
           [FormGeneral, routes.form.general],
+          [FormInput, routes.form.input],
+          [FormTextarea, routes.form.textarea],
           [LayoutContainer, routes.layout.container],
           [LayoutFooter, routes.layout.footer],
           [LayoutHero, routes.layout.hero],
