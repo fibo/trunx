@@ -18,7 +18,7 @@ export default function LayoutSection ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>

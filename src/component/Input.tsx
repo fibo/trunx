@@ -11,7 +11,6 @@ import {
 interface IInputProps extends IMainColorsProps,
                               ISizeProps,
                               React.InputHTMLAttributes<HTMLInputElement> {
-  inputRef?: React.RefObject<HTMLInputElement>
   isFocused?: boolean
   isHovered?: boolean
   isRounded?: boolean
@@ -21,7 +20,6 @@ interface IInputProps extends IMainColorsProps,
 export default class Input extends React.Component<IInputProps> {
   render() {
     const {
-      inputRef,
       isDanger,
       isFocused,
       isHovered,
@@ -62,7 +60,6 @@ export default class Input extends React.Component<IInputProps> {
     return (
       <input
         className={className}
-        ref={inputRef}
         type={type}
         {...props}
       />

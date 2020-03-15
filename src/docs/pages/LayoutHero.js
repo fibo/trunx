@@ -25,7 +25,7 @@ export default function LayoutHero ({
 }) {
   return (
     <>
-      <Nav pathname={pathname} />
+      <Nav />
 
       <Section>
         <Container>
