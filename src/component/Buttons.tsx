@@ -8,17 +8,34 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface IButtonsProps extends IHelpersProps, ITextColorHelpersProps {}
+interface IButtonsProps extends IHelpersProps, ITextColorHelpersProps {
+  areLarge?: boolean
+  areMedium?: boolean
+  areSmall?: boolean
+}
 
 export default class Buttons extends React.Component<IButtonsProps> {
   render() {
+    const {
+      areLarge,
+      areMedium,
+      areSmall,
+      children,
+      ...props
+    } = this.props
+
     const className = classnames("buttons",
-      helpersPropsToClassnames(this.props),
-      textColorHelpersPropsToClassnames(this.props),
+      {
+        "are-large": areLarge,
+        "are-medium": areMedium,
+        "are-small": areSmall,
+      },
+      helpersPropsToClassnames(props),
+      textColorHelpersPropsToClassnames(props),
     )
 
     return (
-      <div className={className}>{this.props.children}</div>
+      <div className={className}>{children}</div>
     )
   }
 }

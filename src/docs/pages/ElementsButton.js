@@ -6,16 +6,20 @@ import Nav from '../components/Nav.js'
 import indent from '../utils/indent.js'
 
 import {
+  B,
   Button,
   Buttons,
   Column,
   Columns,
   Container,
   Content,
+  Li,
   Notification,
+  P,
   Section,
   Subtitle,
-  Title
+  Title,
+  Ul,
 } from '../../../index.js'
 
 export default function ElementsButton ({
@@ -60,30 +64,30 @@ export default function ElementsButton ({
               The <code>Button</code> component will render as
             </p>
 
-            <ul>
-              <li>
+            <Ul>
+              <Li>
                 <code>{'<button>'}</code> form buttons
-              </li>
+              </Li>
 
-              <li>
+              <Li>
                 <code>{'<a>'}</code> anchor links, if there is an <code>href</code> prop
-              </li>
+              </Li>
 
-              <li>
+              <Li>
                 If there is a <code>type</code> prop:
 
-                <ul>
-                  <li>
+                <Ul>
+                  <Li>
                     <code>{'<input type="submit">'}</code> submit inputs
-                  </li>
+                  </Li>
 
-                  <li>
+                  <Li>
                     <code>{'<input type="reset">'}</code> reset inputs
-                  </li>
-                </ul>
-              </li>
+                  </Li>
+                </Ul>
+              </Li>
 
-            </ul>
+            </Ul>
 
             <Columns>
               <Column isHalf>
@@ -205,10 +209,26 @@ export default function ElementsButton ({
               Sizes
             </Title>
 
+            <P>
+              The button comes in <B>four different sizes</B>.
+            </P>
+
+            <Ul>
+              <Li>small</Li>
+              <Li>normal</Li>
+              <Li>medium</Li>
+              <Li>large</Li>
+            </Ul>
+
+            <P>
+              While the default size is the <B>normal</B> one, the <code>isNormal</code> prop exists in case you need to reset the button to its normal size.
+            </P>
+
             <Columns>
               <Column isHalf>
-                <Buttons>
+                <Buttons areMedium>
                   <Button isSmall>Small</Button>
+                  <Button>Default</Button>
                   <Button isNormal>Normal</Button>
                   <Button isMedium>Medium</Button>
                   <Button isLarge>Large</Button>
@@ -220,11 +240,70 @@ export default function ElementsButton ({
                   {indent`
                   <Buttons>
                     <Button isSmall>Small</Button>
+                    <Button>Default</Button>
                     <Button isNormal>Normal</Button>
                     <Button isMedium>Medium</Button>
                     <Button isLarge>Large</Button>
                   </Buttons>
                 `}
+                </Code>
+              </Column>
+            </Columns>
+
+            <P>
+              You can change the size of <B>multiple buttons</B> at once by wrapping them in a <code>Buttons</code> parent, and applying one of 3 props:
+            </P>
+
+            <Ul>
+              <Li><code>areSmall</code></Li>
+              <Li><code>areMedium</code></Li>
+              <Li><code>areLarge</code></Li>
+            </Ul>
+
+            <Columns>
+              <Column isHalf>
+                <Buttons areMedium>
+                  <Button>All</Button>
+                  <Button>Medium</Button>
+                  <Button>Size</Button>
+                </Buttons>
+              </Column>
+
+              <Column isHalf>
+                <Code language='jsx'>
+                  {indent`
+                    <Buttons areMedium>
+                      <Button>All</Button>
+                      <Button>Medium</Button>
+                      <Button>Size</Button>
+                    </Buttons>
+                  `}
+                </Code>
+              </Column>
+            </Columns>
+
+            <Columns>
+              <Column isHalf>
+                <Buttons areSmall>
+                  <Button>Small</Button>
+                  <Button>Small</Button>
+                  <Button>Small</Button>
+                  <Button isNormal>Normal</Button>
+                  <Button>Small</Button>
+                </Buttons>
+              </Column>
+
+              <Column isHalf>
+                <Code language='jsx'>
+                  {indent`
+                    <Buttons areSmall>
+                      <Button>Small</Button>
+                      <Button>Small</Button>
+                      <Button>Small</Button>
+                      <Button isNormal>Normal</Button>
+                      <Button>Small</Button>
+                    </Buttons>
+                  `}
                 </Code>
               </Column>
             </Columns>
