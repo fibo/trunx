@@ -37,8 +37,6 @@ export default function Overview ({
 
             <Message isInfo>
               <Message.Body>
-                Currently I am migrating documentation you are reading now from <a href='https://g14n.info/trunx/'>this storybook</a>.
-
                 Almost all bulma components are implemented, yet not documented here.
               </Message.Body>
             </Message>
