@@ -104,11 +104,9 @@ export default class Column extends React.Component<IColumnProps> {
         "is-7": is7,
         "is-8": is8,
         "is-9": is9,
-        /* tslint:disable object-literal-sort-keys */
         "is-10": is10,
         "is-11": is11,
         "is-12": is12,
-        /* tslint:enable object-literal-sort-keys */
         "is-centered": isCentered,
         "is-four-fifths": isFourFifths,
         "is-half": isHalf,
@@ -128,7 +126,6 @@ export default class Column extends React.Component<IColumnProps> {
         "is-offset-7": isOffset7,
         "is-offset-8": isOffset8,
         "is-offset-9": isOffset9,
-        /* tslint:disable object-literal-sort-keys */
         "is-offset-10": isOffset10,
         "is-offset-11": isOffset11,
         "is-offset-12": isOffset12,

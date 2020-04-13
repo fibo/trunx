@@ -22,9 +22,7 @@ export interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   is48x48?: boolean
   is64x64?: boolean
   is96x96?: boolean
-  /* tslint:disable object-literal-sort-keys */
   is128x128?: boolean
-  /* tslint:enable object-literal-sort-keys */
   isSquare?: boolean
 }
 
