@@ -100,11 +100,9 @@ export default class Tile extends React.Component<ITileProps> {
       "is-7": is7,
       "is-8": is8,
       "is-9": is9,
-      /* tslint:disable object-literal-sort-keys */
       "is-10": is10,
       "is-11": is11,
       "is-12": is12,
-      /* tslint:enable object-literal-sort-keys */
       "is-parent": isParent,
       "is-vertical": isVertical,
     })
