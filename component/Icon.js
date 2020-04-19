@@ -9,8 +9,8 @@ var IconSvg = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     IconSvg.prototype.render = function () {
-        var _a = this.props, icon = _a.icon, fill = _a.fill, size = _a.size;
-        return (React.createElement("svg", { "aria-hidden": "true", height: size, role: "img", viewBox: icon.viewBox, width: size, xmlns: "http://www.w3.org/2000/svg" },
+        var _a = this.props, className = _a.className, icon = _a.icon, fill = _a.fill, size = _a.size;
+        return (React.createElement("svg", { "aria-hidden": "true", className: className, height: size, role: "img", viewBox: icon.viewBox, width: size, xmlns: "http://www.w3.org/2000/svg" },
             React.createElement("path", { fill: fill, d: icon.d })));
     };
     IconSvg.defaultProps = {

@@ -6,6 +6,7 @@ interface IIconProps extends IBackgroundColorHelpersProps, ITextColorHelpersProp
     onClick?: (event: React.MouseEvent<HTMLSpanElement>) => void;
 }
 interface IIconSvgProps {
+    className?: string;
     fill?: string;
     icon: {
         d: string;
