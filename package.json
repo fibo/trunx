@@ -6,10 +6,11 @@
   "main": "index.js",
   "scripts": {
     "build": "run-s build:*",
-    "build:docs": "run-p generate_docs_bundle_js generate_sitemap",
+    "build:docs": "run-p generate_docs_bundle_js generate_pages generate_sitemap",
     "build:lib": "npm run tsc",
     "eslint": "eslint . --fix",
     "generate_docs_bundle_js": "cross-env NODE_ENV=production browserify src/docs/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/bundle.js",
+    "generate_pages": "node src/npm-scripts/generatePages.js",
     "generate_sitemap": "node src/npm-scripts/generateSitemap.js",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "pretsc": "rimraf component",
