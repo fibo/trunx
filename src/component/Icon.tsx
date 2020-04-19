@@ -19,7 +19,8 @@ interface IIconProps extends IBackgroundColorHelpersProps,
 }
 
 interface IIconSvgProps {
-  fill?: string,
+  className?: string
+  fill?: string
   icon: {
     d: string
     viewBox: string
@@ -35,6 +36,7 @@ class IconSvg extends React.Component<IIconSvgProps> {
 
   render() {
     const {
+      className,
       icon,
       fill,
       size,
@@ -43,6 +45,7 @@ class IconSvg extends React.Component<IIconSvgProps> {
     return (
       <svg
         aria-hidden="true"
+        className={className}
         height={size}
         role="img"
         viewBox={icon.viewBox}
