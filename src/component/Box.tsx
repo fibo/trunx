@@ -16,16 +16,20 @@ export default class Box extends React.Component<IBoxProps> {
   render() {
     const {
       children,
+      className,
       ...props
     } = this.props
 
-    const className = classnames("box",
-      backgroundColorHelpersPropsToClassnames(props),
-      textColorHelpersPropsToClassnames(props),
-    )
-
     return (
-      <div className={className}>{children}</div>
+      <div className={classnames(
+        "box",
+        className,
+        backgroundColorHelpersPropsToClassnames(props),
+        textColorHelpersPropsToClassnames(props),
+       )}
+      >
+       {children}
+      </div>
     )
   }
 }

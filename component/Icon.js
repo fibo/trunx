@@ -25,12 +25,11 @@ var Icon = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Icon.prototype.render = function () {
-        var _a = this.props, onClick = _a.onClick, isLeft = _a.isLeft, isRight = _a.isRight;
-        var className = classnames("icon", {
-            "is-left": isLeft,
-            "is-right": isRight,
-        }, modifiers_1.backgroundColorHelpersPropsToClassnames(this.props), modifiers_1.textColorHelpersPropsToClassnames(this.props), modifiers_1.sizePropsToClassnames(this.props));
-        return (React.createElement("span", { className: className, onClick: onClick }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className, isLeft = _a.isLeft, isRight = _a.isRight, onClick = _a.onClick;
+        return (React.createElement("span", { className: classnames("icon", className, {
+                "is-left": isLeft,
+                "is-right": isRight,
+            }, modifiers_1.backgroundColorHelpersPropsToClassnames(this.props), modifiers_1.textColorHelpersPropsToClassnames(this.props), modifiers_1.sizePropsToClassnames(this.props)), onClick: onClick }, children));
     };
     Icon.Svg = IconSvg;
     return Icon;

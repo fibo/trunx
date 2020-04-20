@@ -9,15 +9,14 @@ var A = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     A.prototype.render = function () {
-        var _a = this.props, children = _a.children, isActive = _a.isActive, isClearfix = _a.isClearfix, isPulledLeft = _a.isPulledLeft, isPulledRight = _a.isPulledRight, props = tslib_1.__rest(_a, ["children", "isActive", "isClearfix", "isPulledLeft", "isPulledRight"]);
-        var className = classnames({
-            "is-active": isActive,
-        }, modifiers_1.floatHelpersPropsToClassnames({
-            isClearfix: isClearfix,
-            isPulledLeft: isPulledLeft,
-            isPulledRight: isPulledRight,
-        }));
-        return (React.createElement("a", tslib_1.__assign({}, props, { className: className }), children));
+        var _a = this.props, children = _a.children, className = _a.className, isActive = _a.isActive, isClearfix = _a.isClearfix, isPulledLeft = _a.isPulledLeft, isPulledRight = _a.isPulledRight, props = tslib_1.__rest(_a, ["children", "className", "isActive", "isClearfix", "isPulledLeft", "isPulledRight"]);
+        return (React.createElement("a", tslib_1.__assign({}, props, { className: classnames(className, {
+                "is-active": isActive,
+            }, modifiers_1.floatHelpersPropsToClassnames({
+                isClearfix: isClearfix,
+                isPulledLeft: isPulledLeft,
+                isPulledRight: isPulledRight,
+            })) }), children));
     };
     return A;
 }(React.Component));

@@ -10,26 +10,29 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface IPProps extends IAlignementHelpersProps,
+interface PProps extends IAlignementHelpersProps,
                           IBackgroundColorHelpersProps,
                           ITextColorHelpersProps,
                           React.HTMLAttributes<HTMLParagraphElement> {}
 
-export default class P extends React.Component<IPProps> {
+export default class P extends React.Component<PProps> {
   render() {
     const {
       children,
+      className,
       ...props
     } = this.props
 
-    const className = classnames(
-      alignementPropsToClassnames(props),
-      backgroundColorHelpersPropsToClassnames(props),
-      textColorHelpersPropsToClassnames(props),
-    )
-
     return (
-      <p className={className}>{children}</p>
+      <p
+        className={classnames(
+          alignementPropsToClassnames(props),
+          backgroundColorHelpersPropsToClassnames(props),
+          textColorHelpersPropsToClassnames(props),
+        )}
+      >
+        {children}
+      </p>
     )
   }
 }

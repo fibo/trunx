@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ISizeProps } from "./modifiers";
-interface IBreadcrumbProps extends ISizeProps, React.HTMLAttributes<HTMLElement> {
+interface IBreadcrumbProps extends React.HTMLAttributes<HTMLElement>, ISizeProps {
     hasArrowSeparator?: boolean;
     hasBulletSeparator?: boolean;
     hasDotSeparator?: boolean;
