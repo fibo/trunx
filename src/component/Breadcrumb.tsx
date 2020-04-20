@@ -6,8 +6,8 @@ import {
   sizePropsToClassnames,
 } from "./modifiers"
 
-interface IBreadcrumbProps extends ISizeProps,
-                            React.HTMLAttributes<HTMLElement> {
+interface IBreadcrumbProps extends React.HTMLAttributes<HTMLElement>,
+                                   ISizeProps {
   hasArrowSeparator?: boolean
   hasBulletSeparator?: boolean
   hasDotSeparator?: boolean
@@ -45,6 +45,7 @@ export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
   render() {
     const {
       children,
+      className,
       hasArrowSeparator,
       hasBulletSeparator,
       hasDotSeparator,
@@ -56,24 +57,27 @@ export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
       isSmall,
     } = this.props
 
-    const className = classnames("breadcrumb",
-      {
-        "has-arrow-separator": hasArrowSeparator,
-        "has-bullet-separator": hasBulletSeparator,
-        "has-dot-separator": hasDotSeparator,
-        "has-succedes-separator": hasSuccedesSeparator,
-        "is-centered": isCentered,
-        "is-right": isRight,
-        },
-      sizePropsToClassnames({
-        isLarge,
-        isMedium,
-        isSmall,
-      }),
-    )
-
     return (
-      <nav aria-label="breadcrumbs" className={className}>
+      <nav
+        aria-label="breadcrumbs"
+        className={classnames(
+          "breadcrumb",
+          className,
+          {
+            "has-arrow-separator": hasArrowSeparator,
+            "has-bullet-separator": hasBulletSeparator,
+            "has-dot-separator": hasDotSeparator,
+            "has-succedes-separator": hasSuccedesSeparator,
+            "is-centered": isCentered,
+            "is-right": isRight,
+          },
+          sizePropsToClassnames({
+            isLarge,
+            isMedium,
+            isSmall,
+          }),
+        )}
+      >
         <ul>
           {children}
         </ul>

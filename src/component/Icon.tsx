@@ -13,6 +13,8 @@ import {
 interface IIconProps extends IBackgroundColorHelpersProps,
                              ITextColorHelpersProps,
                              ISizeProps {
+  children?: React.ReactNode
+  className?: string
   isLeft?: boolean
   isRight?: boolean
   onClick?: (event: React.MouseEvent<HTMLSpanElement>) => void
@@ -66,23 +68,29 @@ export default class Icon extends React.Component<IIconProps> {
 
   render() {
     const {
-      onClick,
+      children,
+      className,
       isLeft,
       isRight,
+      onClick,
     } = this.props
 
-    const className = classnames("icon",
-      {
-        "is-left": isLeft,
-        "is-right": isRight,
-      },
-      backgroundColorHelpersPropsToClassnames(this.props),
-      textColorHelpersPropsToClassnames(this.props),
-      sizePropsToClassnames(this.props),
-    )
-
     return (
-      <span className={className} onClick={onClick}>{this.props.children}</span>
+      <span className={classnames(
+        "icon",
+        className,
+        {
+          "is-left": isLeft,
+          "is-right": isRight,
+        },
+        backgroundColorHelpersPropsToClassnames(this.props),
+        textColorHelpersPropsToClassnames(this.props),
+        sizePropsToClassnames(this.props),
+      )}
+      onClick={onClick}
+      >
+       {children}
+      </span>
    )
   }
 }

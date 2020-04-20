@@ -8,23 +8,28 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface IBProps extends IBackgroundColorHelpersProps,
+interface IBProps extends React.AnchorHTMLAttributes<HTMLElement>,
+                          IBackgroundColorHelpersProps,
                           ITextColorHelpersProps {}
 
 export default class B extends React.Component<IBProps> {
   render() {
     const {
       children,
+      className,
       ...props
     } = this.props
 
-    const className = classnames(
-      backgroundColorHelpersPropsToClassnames(props),
-      textColorHelpersPropsToClassnames(props),
-    )
-
     return (
-      <b className={className}>{children}</b>
+      <b
+        className={classnames(
+          className,
+          backgroundColorHelpersPropsToClassnames(props),
+          textColorHelpersPropsToClassnames(props),
+        )}
+      >
+        {children}
+      </b>
     )
   }
 }

@@ -1,3 +1,4 @@
+import * as classnames from "classnames"
 import * as React from "react"
 
 interface IRadioProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -8,12 +9,13 @@ export default class Radio extends React.Component<IRadioProps> {
   render() {
     const {
       children,
+      className,
       inputRef,
       ...props
     } = this.props
 
     return (
-      <label className="radio">
+      <label className={classnames("radio", className)}>
         <input {...props} type="radio" />
 
         {children}

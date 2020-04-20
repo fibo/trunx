@@ -1,7 +1,7 @@
 import * as React from "react";
 import { IAnchorProps } from "./Anchor";
 import { IHelpersProps, IMainColorsProps, IShadeColorsProps, ISizeProps, ITextColorHelpersProps } from "./modifiers";
-interface IButtonProps extends IHelpersProps, IMainColorsProps, IShadeColorsProps, ISizeProps, ITextColorHelpersProps, React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, IHelpersProps, IMainColorsProps, IShadeColorsProps, ISizeProps, ITextColorHelpersProps {
     download?: IAnchorProps["download"];
     href?: IAnchorProps["href"];
     isActive?: boolean;

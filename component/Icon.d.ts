@@ -1,6 +1,8 @@
 import * as React from "react";
 import { IBackgroundColorHelpersProps, ISizeProps, ITextColorHelpersProps } from "./modifiers";
 interface IIconProps extends IBackgroundColorHelpersProps, ITextColorHelpersProps, ISizeProps {
+    children?: React.ReactNode;
+    className?: string;
     isLeft?: boolean;
     isRight?: boolean;
     onClick?: (event: React.MouseEvent<HTMLSpanElement>) => void;

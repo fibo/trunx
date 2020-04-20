@@ -19,12 +19,12 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface IButtonProps extends IHelpersProps,
+interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+                               IHelpersProps,
                                IMainColorsProps,
                                IShadeColorsProps,
                                ISizeProps,
-                               ITextColorHelpersProps,
-                               React.ButtonHTMLAttributes<HTMLButtonElement> {
+                               ITextColorHelpersProps {
   download?: IAnchorProps["download"]
   href?: IAnchorProps["href"]
   isActive?: boolean

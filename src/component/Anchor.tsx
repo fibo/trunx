@@ -1,8 +1,6 @@
 import * as React from "react"
 
-export interface IAnchorProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  className: string
-}
+export interface IAnchorProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
 
 export function Anchor({
   children,

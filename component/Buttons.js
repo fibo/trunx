@@ -9,13 +9,12 @@ var Buttons = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Buttons.prototype.render = function () {
-        var _a = this.props, areLarge = _a.areLarge, areMedium = _a.areMedium, areSmall = _a.areSmall, children = _a.children, props = tslib_1.__rest(_a, ["areLarge", "areMedium", "areSmall", "children"]);
-        var className = classnames("buttons", {
-            "are-large": areLarge,
-            "are-medium": areMedium,
-            "are-small": areSmall,
-        }, modifiers_1.helpersPropsToClassnames(props), modifiers_1.textColorHelpersPropsToClassnames(props));
-        return (React.createElement("div", { className: className }, children));
+        var _a = this.props, areLarge = _a.areLarge, areMedium = _a.areMedium, areSmall = _a.areSmall, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["areLarge", "areMedium", "areSmall", "children", "className"]);
+        return (React.createElement("div", { className: classnames("buttons", className, {
+                "are-large": areLarge,
+                "are-medium": areMedium,
+                "are-small": areSmall,
+            }, modifiers_1.helpersPropsToClassnames(props), modifiers_1.textColorHelpersPropsToClassnames(props)) }, children));
     };
     return Buttons;
 }(React.Component));

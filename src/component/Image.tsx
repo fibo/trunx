@@ -29,7 +29,6 @@ export interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 export default class Image extends React.Component<IImageProps> {
   render() {
     const {
-      /* tslint:disable object-literal-sort-keys */
       is1by1,
       is1by2,
       is1by3,
@@ -51,13 +50,11 @@ export default class Image extends React.Component<IImageProps> {
       is64x64,
       is96x96,
       is128x128,
-      /* tslint:enable object-literal-sort-keys */
       isSquare,
       ...props
     } = this.props
 
     const className = classnames("image", {
-      /* tslint:disable object-literal-sort-keys */
       "is-1by1": is1by1,
       "is-1by2": is1by2,
       "is-1by3": is1by3,
@@ -78,7 +75,6 @@ export default class Image extends React.Component<IImageProps> {
       "is-64x64": is64x64,
       "is-96x96": is96x96,
       "is-128x128": is128x128,
-      /* tslint:enable object-literal-sort-keys */
       "is-square": isSquare,
     })
 
