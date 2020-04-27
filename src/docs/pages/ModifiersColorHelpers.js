@@ -178,89 +178,30 @@ export default function ModifiersColorHelpers ({
             </p>
 
             <ul>
-              <li>
-                <code>
-                  Box
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Breadcrumb
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Buttons
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Button
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Card.Content
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Card.Footer
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Footer
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Heading
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Help
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Label
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Level
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Strong
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Textarea
-                </code>
-              </li>
-
-              <li>
-                <code>
-                  Title
-                </code>
-              </li>
+              {[
+                'B',
+                'Box',
+                'Button',
+                'Buttons',
+                'Breadcrumb',
+                'Card.Content',
+                'Card.Footer',
+                'Footer',
+                'Heading',
+                'Help',
+                'Label',
+                'Level',
+                'P',
+                'Strong',
+                'Textarea',
+                'Title'
+              ].map((component, i) => (
+                <li key={i}>
+                  <code>
+                    {component}
+                  </code>
+                </li>
+              ))}
             </ul>
           </Content>
         </Container>

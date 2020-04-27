@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 
 import ColumnsBasics from './pages/ColumnsBasics.js'
+import ColumnsNesting from './pages/ColumnsNesting.js'
 import ColumnsResponsiveness from './pages/ColumnsResponsiveness.js'
 import ColumnsSizes from './pages/ColumnsSizes.js'
 import ComponentsBreadcrumb from './pages/ComponentsBreadcrumb.js'
@@ -37,6 +38,7 @@ export default function Root () {
         {[
           [Overview, routes.home],
           [ColumnsBasics, routes.columns.basics],
+          [ColumnsNesting, routes.columns.nesting],
           [ColumnsResponsiveness, routes.columns.responsiveness],
           [ColumnsSizes, routes.columns.sizes],
           [ComponentsBreadcrumb, routes.components.breadcrumb],

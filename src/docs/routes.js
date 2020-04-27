@@ -1,6 +1,7 @@
 export default {
   columns: {
     basics: '/columns/basics',
+    nesting: '/columns/nesting',
     responsiveness: '/columns/responsiveness',
     sizes: '/columns/sizes'
   },

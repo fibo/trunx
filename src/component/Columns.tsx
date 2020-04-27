@@ -1,7 +1,10 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
+import { trunxPropsToClassnames } from './utils'
+
 interface IColumnsProps {
+  className?: string,
   isDesktop?: boolean
   isGapless?: boolean
   isMobile?: boolean
@@ -11,21 +14,21 @@ interface IColumnsProps {
 export default class Columns extends React.Component<IColumnsProps> {
   render() {
     const {
-      isDesktop,
-      isGapless,
-      isMobile,
-      isMultiline,
+      children,
+      className,
+      ...props
     } = this.props
 
-    const className = classnames("columns", {
-      "is-desktop": isDesktop,
-      "is-gapless": isGapless,
-      "is-mobile": isMobile,
-      "is-multiline": isMultiline,
-    })
-
     return (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={classnames(
+          "columns",
+          className,
+          trunxPropsToClassnames(props),
+        )}
+      >
+       {children}
+      </div>
     )
   }
 }
