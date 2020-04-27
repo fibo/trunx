@@ -18,6 +18,7 @@
     "start": "budo src/docs/index.js --dir docs --serve bundle.js --open --live --pushstate -- -t babelify",
     "test": "run-p test:*",
     "test:bulma-version": "node test/bulma-version.js",
+    "test:no-prop-is-required": "tsc --jsx react --noEmit --lib dom,es2015 test/no-prop-is-required.tsx",
     "test:types": "tsc --declaration --project . --noemit",
     "tsc": "tsc --declaration --project ."
   },
