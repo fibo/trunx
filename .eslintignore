@@ -1,4 +1,5 @@
 component
 docs
 index.js
+index.d.ts
 test
