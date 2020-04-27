@@ -5,6 +5,7 @@ import { trunxPropsToClassnames } from './utils'
 
 interface IColumnProps {
   className?: string
+  isCentered?: boolean
   is1?: boolean
   is2?: boolean
   is3?: boolean
@@ -17,7 +18,6 @@ interface IColumnProps {
   is10?: boolean
   is11?: boolean
   is12?: boolean
-  isCentered?: boolean
   isFull?: boolean
   isHalf?: boolean
   isNarrow?: boolean
@@ -51,6 +51,20 @@ interface IColumnProps {
   isOffsetThreeQuarters?: boolean
   isOffsetThreeFifths?: boolean
   isOffsetFourFifths?: boolean
+  is1Desktop?: boolean
+  is2Desktop?: boolean
+  is3Desktop?: boolean
+  is4Desktop?: boolean
+  is5Desktop?: boolean
+  is6Desktop?: boolean
+  is7Desktop?: boolean
+  is8Desktop?: boolean
+  is9Desktop?: boolean
+  is10Desktop?: boolean
+  is11Desktop?: boolean
+  is12Desktop?: boolean
+  isFullDesktop?: boolean
+  isHalfDesktop?: boolean
   isNarrowDesktop?: boolean
   isOneQuarterDesktop?: boolean
   isOneThirdDesktop?: boolean
@@ -82,6 +96,20 @@ interface IColumnProps {
   isOffsetThreeQuartersDesktop?: boolean
   isOffsetThreeFifthsDesktop?: boolean
   isOffsetFourFifthsDesktop?: boolean
+  is1Fullhd?: boolean
+  is2Fullhd?: boolean
+  is3Fullhd?: boolean
+  is4Fullhd?: boolean
+  is5Fullhd?: boolean
+  is6Fullhd?: boolean
+  is7Fullhd?: boolean
+  is8Fullhd?: boolean
+  is9Fullhd?: boolean
+  is10Fullhd?: boolean
+  is11Fullhd?: boolean
+  is12Fullhd?: boolean
+  isFullFullhd?: boolean
+  isHalfFullhd?: boolean
   isNarrowFullhd?: boolean
   isOneQuarterFullhd?: boolean
   isOneThirdFullhd?: boolean
@@ -113,6 +141,20 @@ interface IColumnProps {
   isOffsetThreeQuartersFullhd?: boolean
   isOffsetThreeFifthsFullhd?: boolean
   isOffsetFourFifthsFullhd?: boolean
+  is1Mobile?: boolean
+  is2Mobile?: boolean
+  is3Mobile?: boolean
+  is4Mobile?: boolean
+  is5Mobile?: boolean
+  is6Mobile?: boolean
+  is7Mobile?: boolean
+  is8Mobile?: boolean
+  is9Mobile?: boolean
+  is10Mobile?: boolean
+  is11Mobile?: boolean
+  is12Mobile?: boolean
+  isFullMobile?: boolean
+  isHalfMobile?: boolean
   isNarrowMobile?: boolean
   isOneQuarterMobile?: boolean
   isOneThirdMobile?: boolean
@@ -135,6 +177,20 @@ interface IColumnProps {
   isOffset10Mobile?: boolean
   isOffset11Mobile?: boolean
   isOffset12Mobile?: boolean
+  is1Tablet?: boolean
+  is2Tablet?: boolean
+  is3Tablet?: boolean
+  is4Tablet?: boolean
+  is5Tablet?: boolean
+  is6Tablet?: boolean
+  is7Tablet?: boolean
+  is8Tablet?: boolean
+  is9Tablet?: boolean
+  is10Tablet?: boolean
+  is11Tablet?: boolean
+  is12Tablet?: boolean
+  isFullTablet?: boolean
+  isHalfTablet?: boolean
   isNarrowTablet?: boolean
   isOneQuarterTablet?: boolean
   isOneThirdTablet?: boolean
@@ -166,6 +222,20 @@ interface IColumnProps {
   isOffsetThreeQuartersTablet?: boolean
   isOffsetThreeFifthsTablet?: boolean
   isOffsetFourFifthsTablet?: boolean
+  is1Touch?: boolean
+  is2Touch?: boolean
+  is3Touch?: boolean
+  is4Touch?: boolean
+  is5Touch?: boolean
+  is6Touch?: boolean
+  is7Touch?: boolean
+  is8Touch?: boolean
+  is9Touch?: boolean
+  is10Touch?: boolean
+  is11Touch?: boolean
+  is12Touch?: boolean
+  isFullTouch?: boolean
+  isHalfTouch?: boolean
   isNarrowTouch?: boolean
   isOneQuarterTouch?: boolean
   isOneThirdTouch?: boolean
@@ -197,6 +267,20 @@ interface IColumnProps {
   isOffsetThreeQuartersTouch?: boolean
   isOffsetThreeFifthsTouch?: boolean
   isOffsetFourFifthsTouch?: boolean
+  is1Widescreen?: boolean
+  is2Widescreen?: boolean
+  is3Widescreen?: boolean
+  is4Widescreen?: boolean
+  is5Widescreen?: boolean
+  is6Widescreen?: boolean
+  is7Widescreen?: boolean
+  is8Widescreen?: boolean
+  is9Widescreen?: boolean
+  is10Widescreen?: boolean
+  is11Widescreen?: boolean
+  is12Widescreen?: boolean
+  isFullWidescreen?: boolean
+  isHalfWidescreen?: boolean
   isNarrowWidescreen?: boolean
   isOneQuarterWidescreen?: boolean
   isOneThirdWidescreen?: boolean
