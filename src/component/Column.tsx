@@ -48,7 +48,7 @@ interface IColumnProps {
   isOffsetOneFifth?: boolean
   isOffsetTwoThirds?: boolean
   isOffsetTwoFifths?: boolean
-  isOffsetThreeQuarters: boolean
+  isOffsetThreeQuarters?: boolean
   isOffsetThreeFifths?: boolean
   isOffsetFourFifths?: boolean
   isNarrowDesktop?: boolean
@@ -79,7 +79,7 @@ interface IColumnProps {
   isOffsetOneFifthDesktop?: boolean
   isOffsetTwoThirdsDesktop?: boolean
   isOffsetTwoFifthsDesktop?: boolean
-  isOffsetThreeQuartersDesktop: boolean
+  isOffsetThreeQuartersDesktop?: boolean
   isOffsetThreeFifthsDesktop?: boolean
   isOffsetFourFifthsDesktop?: boolean
   isNarrowFullhd?: boolean
@@ -110,7 +110,7 @@ interface IColumnProps {
   isOffsetOneFifthFullhd?: boolean
   isOffsetTwoThirdsFullhd?: boolean
   isOffsetTwoFifthsFullhd?: boolean
-  isOffsetThreeQuartersFullhd: boolean
+  isOffsetThreeQuartersFullhd?: boolean
   isOffsetThreeFifthsFullhd?: boolean
   isOffsetFourFifthsFullhd?: boolean
   isNarrowMobile?: boolean
@@ -163,7 +163,7 @@ interface IColumnProps {
   isOffsetOneFifthTablet?: boolean
   isOffsetTwoThirdsTablet?: boolean
   isOffsetTwoFifthsTablet?: boolean
-  isOffsetThreeQuartersTablet: boolean
+  isOffsetThreeQuartersTablet?: boolean
   isOffsetThreeFifthsTablet?: boolean
   isOffsetFourFifthsTablet?: boolean
   isNarrowTouch?: boolean
@@ -194,7 +194,7 @@ interface IColumnProps {
   isOffsetOneFifthTouch?: boolean
   isOffsetTwoThirdsTouch?: boolean
   isOffsetTwoFifthsTouch?: boolean
-  isOffsetThreeQuartersTouch: boolean
+  isOffsetThreeQuartersTouch?: boolean
   isOffsetThreeFifthsTouch?: boolean
   isOffsetFourFifthsTouch?: boolean
   isNarrowWidescreen?: boolean
@@ -225,7 +225,7 @@ interface IColumnProps {
   isOffsetOneFifthWidescreen?: boolean
   isOffsetTwoThirdsWidescreen?: boolean
   isOffsetTwoFifthsWidescreen?: boolean
-  isOffsetThreeQuartersWidescreen: boolean
+  isOffsetThreeQuartersWidescreen?: boolean
   isOffsetThreeFifthsWidescreen?: boolean
   isOffsetFourFifthsWidescreen?: boolean
 }

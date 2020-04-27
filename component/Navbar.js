@@ -144,7 +144,7 @@ var Navbar = (function (_super) {
         if (isFixedTop) {
             document.body.classList.add("has-navbar-fixed-top");
         }
-        else if (isFixedBottom) {
+        if (isFixedBottom) {
             document.body.classList.add("has-navbar-fixed-bottom");
         }
     };
@@ -153,7 +153,7 @@ var Navbar = (function (_super) {
         if (isFixedBottom) {
             document.body.classList.remove("has-navbar-fixed-bottom");
         }
-        else if (isFixedTop) {
+        if (isFixedTop) {
             document.body.classList.remove("has-navbar-fixed-top");
         }
     };
