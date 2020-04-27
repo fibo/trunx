@@ -32,7 +32,7 @@ export default function ModifiersSyntax ({
             </Title>
 
             <Subtitle>
-              Most Bulma elements have <b>alternative</b> styles. To apply them, you only need to append one of the <b>modifier props</b>. They all start with <code>is</code> or <code>has</code>.
+              Most Trunx elements have <b>alternative</b> styles. To apply them, you only need to append one of the <b>modifier props</b>. They all start with <code>is</code> or <code>has</code>.
             </Subtitle>
 
             <hr />

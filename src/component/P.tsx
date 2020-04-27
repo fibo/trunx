@@ -10,10 +10,10 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface PProps extends IAlignementHelpersProps,
-                          IBackgroundColorHelpersProps,
-                          ITextColorHelpersProps,
-                          React.HTMLAttributes<HTMLParagraphElement> {}
+interface PProps extends React.HTMLAttributes<HTMLParagraphElement>,
+                         IAlignementHelpersProps,
+                         IBackgroundColorHelpersProps,
+                         ITextColorHelpersProps {}
 
 export default class P extends React.Component<PProps> {
   render() {

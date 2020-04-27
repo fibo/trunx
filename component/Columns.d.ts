@@ -1,5 +1,6 @@
 import * as React from "react";
 interface IColumnsProps {
+    className?: string;
     isDesktop?: boolean;
     isGapless?: boolean;
     isMobile?: boolean;

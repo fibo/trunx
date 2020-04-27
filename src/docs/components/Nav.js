@@ -63,6 +63,7 @@ export default function Nav () {
               label: 'Columns',
               items: [
                 { label: 'Basics', route: routes.columns.basics },
+                { label: 'Nesting', route: routes.columns.nesting },
                 { label: 'Sizes', route: routes.columns.sizes },
                 { label: 'Responsiveness', route: routes.columns.responsiveness }
               ]
