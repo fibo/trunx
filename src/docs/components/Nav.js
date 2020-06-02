@@ -83,7 +83,8 @@ export default function Nav () {
               items: [
                 { label: 'General', route: routes.form.general },
                 { label: 'Input', route: routes.form.input },
-                { label: 'Textarea', route: routes.form.textarea }
+                { label: 'Textarea', route: routes.form.textarea },
+                { label: 'Radio', route: routes.form.radio }
               ]
             },
             {

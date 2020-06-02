@@ -17,6 +17,7 @@ import ElementsButton from './pages/ElementsButton.js'
 import ElementsTag from './pages/ElementsTag.js'
 import FormGeneral from './pages/FormGeneral.js'
 import FormInput from './pages/FormInput.js'
+import FormRadio from './pages/FormRadio.js'
 import FormTextarea from './pages/FormTextarea.js'
 import LayoutContainer from './pages/LayoutContainer.js'
 import LayoutFooter from './pages/LayoutFooter.js'
@@ -48,6 +49,7 @@ export default function Root () {
           [ElementsTag, routes.elements.tag],
           [FormGeneral, routes.form.general],
           [FormInput, routes.form.input],
+          [FormRadio, routes.form.radio],
           [FormTextarea, routes.form.textarea],
           [LayoutContainer, routes.layout.container],
           [LayoutFooter, routes.layout.footer],
