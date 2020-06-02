@@ -13,6 +13,7 @@ export default {
   form: {
     general: '/form/general',
     input: '/form/input',
+    radio: '/form/radio',
     textarea: '/form/textarea'
   },
   elements: {

@@ -15,8 +15,13 @@ export default class Radio extends React.Component<IRadioProps> {
     } = this.props
 
     return (
-      <label className={classnames("radio", className)}>
-        <input {...props} type="radio" />
+      <label
+        className={classnames("radio", className)}
+      >
+        <input
+          {...props}
+          type="radio"
+        />
 
         {children}
       </label>
