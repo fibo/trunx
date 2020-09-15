@@ -16,6 +16,7 @@ import {
 interface INavbarProps extends IMainColorsProps,
                                IShadeColorsProps,
                                React.HTMLAttributes<HTMLElement> {
+  className?: string
   hasShadow?: boolean
   isFixedBottom?: boolean
   isFixedTop?: boolean
@@ -23,32 +24,66 @@ interface INavbarProps extends IMainColorsProps,
   isUnselectable?: boolean
 }
 
+interface INavbarBrandProps {
+  className?: string
+}
+
+interface INavbarDividerProps {
+  className?: string
+}
+
+interface INavbarDropdownProps {
+  className?: string
+}
+
+interface INavbarEndProps {
+  className?: string
+}
+
 interface INavbarBurgerProps {
+  className?: string
   isActive?: boolean
   onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
 }
 
 interface INavbarItemDivProps {
+  className?: string
   hasDropdown?: boolean
   isActive?: boolean
   isHoverable?: boolean
 }
 
 interface INavbarItemProps extends INavbarItemDivProps {
+  className?: string
   download?: IAnchorProps["download"]
   href?: IAnchorProps["href"]
   onClick?: IAnchorProps["onClick"]
   target?: IAnchorProps["target"]
 }
 
+interface INavbarLinkProps {
+  className?: string
+}
+
 interface INavbarMenuProps {
+  className?: string
   isActive?: boolean
 }
 
-class NavbarBrand extends React.Component {
+interface INavbarStartProps {
+  className?: string
+}
+
+class NavbarBrand extends React.Component<React.PropsWithChildren<INavbarBrandProps>> {
   render() {
+    const {
+      className,
+      children,
+    } = this.props
     return (
-      <div className="navbar-brand">{this.props.children}</div>
+      <div className={classnames("navbar-brand", className)}>
+        {children}
+      </div>
     )
   }
 }
@@ -56,17 +91,20 @@ class NavbarBrand extends React.Component {
 class NavbarBurger extends React.Component<INavbarBurgerProps> {
   render() {
     const {
+      className,
       isActive,
       onClick,
     } = this.props
 
-    const className = classnames("navbar-burger", {
-      "is-active": isActive,
-    })
-
     return (
       <a
-        className={className}
+        className={classnames(
+          "navbar-burger",
+          className,
+          {
+            "is-active": isActive,
+          },
+        )}
         role="button"
         aria-label="menu"
         aria-expanded={isActive ? "true" : "false"}
@@ -80,28 +118,37 @@ class NavbarBurger extends React.Component<INavbarBurgerProps> {
   }
 }
 
-class NavbarDivider extends React.Component {
+class NavbarDivider extends React.Component<INavbarDividerProps> {
   render() {
+    const { className } = this.props
     return (
-      <hr className="navbar-divider" />
+      <hr className={classnames("navbar-divider", className)} />
     )
   }
 
   shouldComponentUpdate() { return false }
 }
 
-class NavbarDropdown extends React.Component {
+class NavbarDropdown extends React.Component<React.PropsWithChildren<INavbarDropdownProps>> {
   render() {
+    const {
+      className,
+      children,
+    } = this.props
     return (
-      <div className="navbar-dropdown">{this.props.children}</div>
+      <div className={classnames("navbar-dropdown", className)}>{children}</div>
     )
   }
 }
 
-class NavbarEnd extends React.Component {
+class NavbarEnd extends React.Component<React.PropsWithChildren<INavbarEndProps>> {
   render() {
+    const {
+      className,
+      children,
+    } = this.props
     return (
-      <div className="navbar-end">{this.props.children}</div>
+      <div className={classnames("navbar-end", className)}>{children}</div>
     )
   }
 }
@@ -109,33 +156,38 @@ class NavbarEnd extends React.Component {
 class NavbarItemDiv extends React.Component<INavbarItemDivProps> {
   render() {
     const {
+      className,
       hasDropdown,
       isActive,
       isHoverable,
       ...props
     } = this.props
 
-    const className = classnames("navbar-item",
-      {
-        "has-dropdown": hasDropdown,
-        "is-active": isActive,
-        "is-hoverable": isHoverable,
-      },
-    )
-
     return (
-      <div {...props} className={className}>
+      <div
+        className={classnames(
+          "navbar-item",
+          className,
+          {
+            "has-dropdown": hasDropdown,
+            "is-active": isActive,
+            "is-hoverable": isHoverable,
+          },
+        )}
+        {...props}
+      >
         {this.props.children}
       </div>
     )
   }
 }
 
-class NavbarItem extends React.Component<INavbarItemProps> {
+class NavbarItem extends React.Component<React.PropsWithChildren<INavbarItemProps>> {
   static Div = NavbarItemDiv
 
   render() {
     const {
+      className,
       download,
       hasDropdown,
       href,
@@ -143,10 +195,13 @@ class NavbarItem extends React.Component<INavbarItemProps> {
       isHoverable,
       onClick,
       target,
+      children,
       ...props
     } = this.props
 
-    const className = classnames("navbar-item",
+    const classNameProp = classnames(
+      "navbar-item",
+      className,
       {
         "has-dropdown": hasDropdown,
         "is-active": isActive,
@@ -156,58 +211,73 @@ class NavbarItem extends React.Component<INavbarItemProps> {
 
     if (hasDropdown) {
       return (
-        <div className={className}>{this.props.children}</div>
+        <div className={classNameProp}>{children}</div>
       )
     } else {
       return (
         <Anchor
           {...props}
-          className={className}
+          className={classNameProp}
           download={download}
           href={href}
           onClick={onClick}
           target={target}
         >
-          {this.props.children}
+          {children}
         </Anchor>
       )
     }
   }
 }
 
-class NavbarLink extends React.Component {
-  render() {
-    return (
-      <a className="navbar-link">{this.props.children}</a>
-    )
-  }
-}
-
-class NavbarMenu extends React.Component<INavbarMenuProps> {
+class NavbarLink extends React.Component<React.PropsWithChildren<INavbarLinkProps>> {
   render() {
     const {
-      isActive
+      className,
+      children,
+    } = this.props
+    return (
+      <a className={classnames("navbar-link", className)}>{children}</a>
+    )
+  }
+}
+
+class NavbarMenu extends React.Component<React.PropsWithChildren<INavbarMenuProps>> {
+  render() {
+    const {
+      className,
+      isActive,
+      children,
     } = this.props
 
-    const className = classnames("navbar-menu", {
-      "is-active": isActive,
-    })
-
     return (
-      <div className={className}>{this.props.children}</div>
+      <div className={classnames(
+        "navbar-menu",
+        className,
+        {
+          "is-active": isActive,
+        }
+      )}
+      >
+        {children}
+      </div>
     )
   }
 }
 
-class NavbarStart extends React.Component {
+class NavbarStart extends React.Component<React.PropsWithChildren<INavbarStartProps>> {
   render() {
+    const {
+      className,
+      children,
+    } = this.props
     return (
-      <div className="navbar-start">{this.props.children}</div>
+      <div className={classnames("navbar-start", className)}>{children}</div>
     )
   }
 }
 
-export default class Navbar extends React.Component<INavbarProps> {
+export default class Navbar extends React.Component<React.PropsWithChildren<INavbarProps>> {
   static Brand = NavbarBrand
   static Burger = NavbarBurger
   static Divider = NavbarDivider
@@ -250,6 +320,7 @@ export default class Navbar extends React.Component<INavbarProps> {
 
   render() {
     const {
+      className,
       isBlack,
       isDark,
       isDanger,
@@ -264,10 +335,12 @@ export default class Navbar extends React.Component<INavbarProps> {
       isUnselectable,
       isWarning,
       isWhite,
+      children,
       ...props
     } = this.props
 
-    const className = classnames("navbar",
+    const classNameProp = classnames("navbar",
+      className,
       {
         "is-fixed-bottom": isFixedBottom,
         "is-fixed-top": isFixedTop,
@@ -291,7 +364,7 @@ export default class Navbar extends React.Component<INavbarProps> {
     )
 
     return (
-      <nav {...props} className={className}>{this.props.children}</nav>
+      <nav {...props} className={classNameProp}>{children}</nav>
     )
   }
 }
