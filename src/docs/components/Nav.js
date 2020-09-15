@@ -92,6 +92,7 @@ export default function Nav () {
               items: [
                 { label: 'Box', route: routes.elements.box },
                 { label: 'Button', route: routes.elements.button },
+                { label: 'Delete', route: routes.elements.delete },
                 { label: 'Tag', route: routes.elements.tag }
               ]
             },

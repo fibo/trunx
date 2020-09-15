@@ -17,7 +17,7 @@ import {
 
 interface ITagProps extends IMainColorsProps,
                             IShadeColorsProps,
-                            ISizeProps {
+                            Pick<ISizeProps, "isMedium" | "isLarge"> {
   href?: IAnchorProps["href"]
   isDelete?: boolean
   isNormal?: boolean
@@ -43,7 +43,6 @@ export default class Tag extends React.Component<ITagProps> {
       isNormal,
       isPrimary,
       isRounded,
-      isSmall,
       isSuccess,
       isWarning,
       isWhite,
@@ -76,7 +75,6 @@ export default class Tag extends React.Component<ITagProps> {
       sizePropsToClassnames({
         isLarge,
         isMedium,
-        isSmall,
       }),
     )
 

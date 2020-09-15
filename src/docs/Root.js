@@ -14,6 +14,7 @@ import ComponentsBreadcrumb from './pages/ComponentsBreadcrumb.js'
 import ComponentsNavbar from './pages/ComponentsNavbar.js'
 import ElementsBox from './pages/ElementsBox.js'
 import ElementsButton from './pages/ElementsButton.js'
+import ElementsDelete from './pages/ElementsDelete.js'
 import ElementsTag from './pages/ElementsTag.js'
 import FormGeneral from './pages/FormGeneral.js'
 import FormInput from './pages/FormInput.js'
@@ -46,6 +47,7 @@ export default function Root () {
           [ComponentsNavbar, routes.components.navbar],
           [ElementsBox, routes.elements.box],
           [ElementsButton, routes.elements.button],
+          [ElementsDelete, routes.elements.delete],
           [ElementsTag, routes.elements.tag],
           [FormGeneral, routes.form.general],
           [FormInput, routes.form.input],
