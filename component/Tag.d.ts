@@ -1,12 +1,10 @@
 import * as React from "react";
 import { IAnchorProps } from "./Anchor";
-import { IMainColorsProps, IShadeColorsProps} from "./modifiers";
-interface ITagProps extends IMainColorsProps, IShadeColorsProps {
+import { IMainColorsProps, IShadeColorsProps, ISizeProps } from "./modifiers";
+interface ITagProps extends IMainColorsProps, IShadeColorsProps, Pick<ISizeProps, "isMedium" | "isLarge"> {
     href?: IAnchorProps["href"];
     isDelete?: boolean;
     isNormal?: boolean;
-    isLarge?: boolean;
-    isMedium?: boolean;
     isRounded?: boolean;
     onClick?: IAnchorProps["onClick"];
     target?: IAnchorProps["target"];

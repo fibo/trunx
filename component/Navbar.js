@@ -10,7 +10,8 @@ var NavbarBrand = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarBrand.prototype.render = function () {
-        return (React.createElement("div", { className: "navbar-brand" }, this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children;
+        return (React.createElement("div", { className: classnames("navbar-brand", className) }, children));
     };
     return NavbarBrand;
 }(React.Component));
@@ -20,11 +21,10 @@ var NavbarBurger = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarBurger.prototype.render = function () {
-        var _a = this.props, isActive = _a.isActive, onClick = _a.onClick;
-        var className = classnames("navbar-burger", {
-            "is-active": isActive,
-        });
-        return (React.createElement("a", { className: className, role: "button", "aria-label": "menu", "aria-expanded": isActive ? "true" : "false", onClick: onClick },
+        var _a = this.props, className = _a.className, isActive = _a.isActive, onClick = _a.onClick;
+        return (React.createElement("a", { className: classnames("navbar-burger", className, {
+                "is-active": isActive,
+            }), role: "button", "aria-label": "menu", "aria-expanded": isActive ? "true" : "false", onClick: onClick },
             React.createElement("span", { "aria-hidden": "true" }),
             React.createElement("span", { "aria-hidden": "true" }),
             React.createElement("span", { "aria-hidden": "true" })));
@@ -37,9 +37,9 @@ var NavbarDivider = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarDivider.prototype.render = function () {
-        return (React.createElement("hr", { className: "navbar-divider" }));
+        var className = this.props.className;
+        return (React.createElement("hr", { className: classnames("navbar-divider", className) }));
     };
-    NavbarDivider.prototype.shouldComponentUpdate = function () { return false; };
     return NavbarDivider;
 }(React.Component));
 var NavbarDropdown = (function (_super) {
@@ -48,7 +48,8 @@ var NavbarDropdown = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarDropdown.prototype.render = function () {
-        return (React.createElement("div", { className: "navbar-dropdown" }, this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children;
+        return (React.createElement("div", { className: classnames("navbar-dropdown", className) }, children));
     };
     return NavbarDropdown;
 }(React.Component));
@@ -58,7 +59,8 @@ var NavbarEnd = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarEnd.prototype.render = function () {
-        return (React.createElement("div", { className: "navbar-end" }, this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children;
+        return (React.createElement("div", { className: classnames("navbar-end", className) }, children));
     };
     return NavbarEnd;
 }(React.Component));
@@ -68,13 +70,12 @@ var NavbarItemDiv = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarItemDiv.prototype.render = function () {
-        var _a = this.props, hasDropdown = _a.hasDropdown, isActive = _a.isActive, isHoverable = _a.isHoverable, props = tslib_1.__rest(_a, ["hasDropdown", "isActive", "isHoverable"]);
-        var className = classnames("navbar-item", {
-            "has-dropdown": hasDropdown,
-            "is-active": isActive,
-            "is-hoverable": isHoverable,
-        });
-        return (React.createElement("div", tslib_1.__assign({}, props, { className: className }), this.props.children));
+        var _a = this.props, className = _a.className, hasDropdown = _a.hasDropdown, isActive = _a.isActive, isHoverable = _a.isHoverable, props = tslib_1.__rest(_a, ["className", "hasDropdown", "isActive", "isHoverable"]);
+        return (React.createElement("div", tslib_1.__assign({ className: classnames("navbar-item", className, {
+                "has-dropdown": hasDropdown,
+                "is-active": isActive,
+                "is-hoverable": isHoverable,
+            }) }, props), this.props.children));
     };
     return NavbarItemDiv;
 }(React.Component));
@@ -84,17 +85,17 @@ var NavbarItem = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarItem.prototype.render = function () {
-        var _a = this.props, download = _a.download, hasDropdown = _a.hasDropdown, href = _a.href, isActive = _a.isActive, isHoverable = _a.isHoverable, onClick = _a.onClick, target = _a.target, props = tslib_1.__rest(_a, ["download", "hasDropdown", "href", "isActive", "isHoverable", "onClick", "target"]);
-        var className = classnames("navbar-item", {
+        var _a = this.props, classNameProp = _a.className, download = _a.download, hasDropdown = _a.hasDropdown, href = _a.href, isActive = _a.isActive, isHoverable = _a.isHoverable, onClick = _a.onClick, target = _a.target, children = _a.children, props = tslib_1.__rest(_a, ["className", "download", "hasDropdown", "href", "isActive", "isHoverable", "onClick", "target", "children"]);
+        var className = classnames("navbar-item", classNameProp, {
             "has-dropdown": hasDropdown,
             "is-active": isActive,
             "is-hoverable": isHoverable,
         });
         if (hasDropdown) {
-            return (React.createElement("div", { className: className }, this.props.children));
+            return (React.createElement("div", { className: className }, children));
         }
         else {
-            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), this.props.children));
+            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), children));
         }
     };
     NavbarItem.Div = NavbarItemDiv;
@@ -106,7 +107,8 @@ var NavbarLink = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarLink.prototype.render = function () {
-        return (React.createElement("a", { className: "navbar-link" }, this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children;
+        return (React.createElement("a", { className: classnames("navbar-link", className) }, children));
     };
     return NavbarLink;
 }(React.Component));
@@ -116,11 +118,10 @@ var NavbarMenu = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarMenu.prototype.render = function () {
-        var isActive = this.props.isActive;
-        var className = classnames("navbar-menu", {
-            "is-active": isActive,
-        });
-        return (React.createElement("div", { className: className }, this.props.children));
+        var _a = this.props, className = _a.className, isActive = _a.isActive, children = _a.children;
+        return (React.createElement("div", { className: classnames("navbar-menu", className, {
+                "is-active": isActive,
+            }) }, children));
     };
     return NavbarMenu;
 }(React.Component));
@@ -130,7 +131,8 @@ var NavbarStart = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     NavbarStart.prototype.render = function () {
-        return (React.createElement("div", { className: "navbar-start" }, this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children;
+        return (React.createElement("div", { className: classnames("navbar-start", className) }, children));
     };
     return NavbarStart;
 }(React.Component));
@@ -158,26 +160,25 @@ var Navbar = (function (_super) {
         }
     };
     Navbar.prototype.render = function () {
-        var _a = this.props, isBlack = _a.isBlack, isDark = _a.isDark, isDanger = _a.isDanger, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isLight = _a.isLight, isLink = _a.isLink, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, isWarning = _a.isWarning, isWhite = _a.isWhite, props = tslib_1.__rest(_a, ["isBlack", "isDark", "isDanger", "isFixedBottom", "isFixedTop", "isLight", "isLink", "isInfo", "isPrimary", "isSuccess", "isTransparent", "isUnselectable", "isWarning", "isWhite"]);
-        var className = classnames("navbar", {
-            "is-fixed-bottom": isFixedBottom,
-            "is-fixed-top": isFixedTop,
-            "is-transparent": isTransparent,
-            "is-unselectable": isUnselectable,
-        }, modifiers_1.mainColorsPropsToClassnames({
-            isDanger: isDanger,
-            isInfo: isInfo,
-            isLink: isLink,
-            isPrimary: isPrimary,
-            isSuccess: isSuccess,
-            isWarning: isWarning,
-        }), modifiers_1.shadeColorsPropsToClassnames({
-            isBlack: isBlack,
-            isDark: isDark,
-            isLight: isLight,
-            isWhite: isWhite,
-        }));
-        return (React.createElement("nav", tslib_1.__assign({}, props, { className: className }), this.props.children));
+        var _a = this.props, className = _a.className, isBlack = _a.isBlack, isDark = _a.isDark, isDanger = _a.isDanger, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isLight = _a.isLight, isLink = _a.isLink, isInfo = _a.isInfo, isPrimary = _a.isPrimary, isSuccess = _a.isSuccess, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, isWarning = _a.isWarning, isWhite = _a.isWhite, children = _a.children, props = tslib_1.__rest(_a, ["className", "isBlack", "isDark", "isDanger", "isFixedBottom", "isFixedTop", "isLight", "isLink", "isInfo", "isPrimary", "isSuccess", "isTransparent", "isUnselectable", "isWarning", "isWhite", "children"]);
+        return (React.createElement("nav", tslib_1.__assign({}, props, { className: classnames("navbar", className, {
+                "is-fixed-bottom": isFixedBottom,
+                "is-fixed-top": isFixedTop,
+                "is-transparent": isTransparent,
+                "is-unselectable": isUnselectable,
+            }, modifiers_1.mainColorsPropsToClassnames({
+                isDanger: isDanger,
+                isInfo: isInfo,
+                isLink: isLink,
+                isPrimary: isPrimary,
+                isSuccess: isSuccess,
+                isWarning: isWarning,
+            }), modifiers_1.shadeColorsPropsToClassnames({
+                isBlack: isBlack,
+                isDark: isDark,
+                isLight: isLight,
+                isWhite: isWhite,
+            })) }), children));
     };
     Navbar.Brand = NavbarBrand;
     Navbar.Burger = NavbarBurger;

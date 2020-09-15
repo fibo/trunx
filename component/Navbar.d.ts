@@ -2,63 +2,85 @@ import * as React from "react";
 import { IAnchorProps } from "./Anchor";
 import { IMainColorsProps, IShadeColorsProps } from "./modifiers";
 interface INavbarProps extends IMainColorsProps, IShadeColorsProps, React.HTMLAttributes<HTMLElement> {
+    className?: string;
     hasShadow?: boolean;
     isFixedBottom?: boolean;
     isFixedTop?: boolean;
     isTransparent?: boolean;
     isUnselectable?: boolean;
 }
+interface INavbarBrandProps {
+    className?: string;
+}
+interface INavbarDividerProps {
+    className?: string;
+}
+interface INavbarDropdownProps {
+    className?: string;
+}
+interface INavbarEndProps {
+    className?: string;
+}
 interface INavbarBurgerProps {
+    className?: string;
     isActive?: boolean;
     onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 interface INavbarItemDivProps {
+    className?: string;
     hasDropdown?: boolean;
     isActive?: boolean;
     isHoverable?: boolean;
 }
 interface INavbarItemProps extends INavbarItemDivProps {
+    className?: string;
     download?: IAnchorProps["download"];
     href?: IAnchorProps["href"];
     onClick?: IAnchorProps["onClick"];
     target?: IAnchorProps["target"];
 }
+interface INavbarLinkProps {
+    className?: string;
+}
 interface INavbarMenuProps {
+    className?: string;
     isActive?: boolean;
 }
-declare class NavbarBrand extends React.Component {
+interface INavbarStartProps {
+    className?: string;
+}
+declare class NavbarBrand extends React.Component<React.PropsWithChildren<INavbarBrandProps>> {
     render(): JSX.Element;
 }
 declare class NavbarBurger extends React.Component<INavbarBurgerProps> {
     render(): JSX.Element;
 }
-declare class NavbarDivider extends React.Component {
-    render(): JSX.Element;
-    shouldComponentUpdate(): boolean;
-}
-declare class NavbarDropdown extends React.Component {
+declare class NavbarDivider extends React.Component<INavbarDividerProps> {
     render(): JSX.Element;
 }
-declare class NavbarEnd extends React.Component {
+declare class NavbarDropdown extends React.Component<React.PropsWithChildren<INavbarDropdownProps>> {
+    render(): JSX.Element;
+}
+declare class NavbarEnd extends React.Component<React.PropsWithChildren<INavbarEndProps>> {
     render(): JSX.Element;
 }
 declare class NavbarItemDiv extends React.Component<INavbarItemDivProps> {
     render(): JSX.Element;
 }
-declare class NavbarItem extends React.Component<INavbarItemProps> {
+declare class NavbarItem extends React.Component<React.PropsWithChildren<INavbarItemProps>> {
     static Div: typeof NavbarItemDiv;
     render(): JSX.Element;
 }
-declare class NavbarLink extends React.Component {
+declare class NavbarLink extends React.Component<React.PropsWithChildren<INavbarLinkProps>> {
     render(): JSX.Element;
 }
-declare class NavbarMenu extends React.Component<INavbarMenuProps> {
+declare class NavbarMenu extends React.Component<React.PropsWithChildren<INavbarMenuProps>> {
     render(): JSX.Element;
 }
-declare class NavbarStart extends React.Component {
+declare class NavbarStart extends React.Component<React.PropsWithChildren<INavbarStartProps>> {
     render(): JSX.Element;
 }
-export default class Navbar extends React.Component<INavbarProps> {
+export default class Navbar extends React.Component<React.PropsWithChildren<INavbarProps>> {
     static Brand: typeof NavbarBrand;
     static Burger: typeof NavbarBurger;
     static Divider: typeof NavbarDivider;

@@ -19,6 +19,7 @@ export default {
   elements: {
     box: '/elements/box',
     button: '/elements/button',
+    delete: '/elements/delete',
     tag: '/elements/tag'
   },
   layout: {

@@ -80,6 +80,7 @@ class NavbarBrand extends React.Component<React.PropsWithChildren<INavbarBrandPr
       className,
       children,
     } = this.props
+
     return (
       <div className={classnames("navbar-brand", className)}>
         {children}
@@ -121,12 +122,11 @@ class NavbarBurger extends React.Component<INavbarBurgerProps> {
 class NavbarDivider extends React.Component<INavbarDividerProps> {
   render() {
     const { className } = this.props
+
     return (
       <hr className={classnames("navbar-divider", className)} />
     )
   }
-
-  shouldComponentUpdate() { return false }
 }
 
 class NavbarDropdown extends React.Component<React.PropsWithChildren<INavbarDropdownProps>> {
@@ -135,6 +135,7 @@ class NavbarDropdown extends React.Component<React.PropsWithChildren<INavbarDrop
       className,
       children,
     } = this.props
+
     return (
       <div className={classnames("navbar-dropdown", className)}>{children}</div>
     )
@@ -147,6 +148,7 @@ class NavbarEnd extends React.Component<React.PropsWithChildren<INavbarEndProps>
       className,
       children,
     } = this.props
+
     return (
       <div className={classnames("navbar-end", className)}>{children}</div>
     )
@@ -187,7 +189,7 @@ class NavbarItem extends React.Component<React.PropsWithChildren<INavbarItemProp
 
   render() {
     const {
-      className,
+      className: classNameProp,
       download,
       hasDropdown,
       href,
@@ -199,9 +201,9 @@ class NavbarItem extends React.Component<React.PropsWithChildren<INavbarItemProp
       ...props
     } = this.props
 
-    const classNameProp = classnames(
+    const className = classnames(
       "navbar-item",
-      className,
+      classNameProp,
       {
         "has-dropdown": hasDropdown,
         "is-active": isActive,
@@ -211,13 +213,13 @@ class NavbarItem extends React.Component<React.PropsWithChildren<INavbarItemProp
 
     if (hasDropdown) {
       return (
-        <div className={classNameProp}>{children}</div>
+        <div className={className}>{children}</div>
       )
     } else {
       return (
         <Anchor
           {...props}
-          className={classNameProp}
+          className={className}
           download={download}
           href={href}
           onClick={onClick}
@@ -236,6 +238,7 @@ class NavbarLink extends React.Component<React.PropsWithChildren<INavbarLinkProp
       className,
       children,
     } = this.props
+
     return (
       <a className={classnames("navbar-link", className)}>{children}</a>
     )
@@ -271,6 +274,7 @@ class NavbarStart extends React.Component<React.PropsWithChildren<INavbarStartPr
       className,
       children,
     } = this.props
+
     return (
       <div className={classnames("navbar-start", className)}>{children}</div>
     )
@@ -339,32 +343,33 @@ export default class Navbar extends React.Component<React.PropsWithChildren<INav
       ...props
     } = this.props
 
-    const classNameProp = classnames("navbar",
-      className,
-      {
-        "is-fixed-bottom": isFixedBottom,
-        "is-fixed-top": isFixedTop,
-        "is-transparent": isTransparent,
-        "is-unselectable": isUnselectable,
-      },
-      mainColorsPropsToClassnames({
-        isDanger,
-        isInfo,
-        isLink,
-        isPrimary,
-        isSuccess,
-        isWarning,
-      }),
-      shadeColorsPropsToClassnames({
-        isBlack,
-        isDark,
-        isLight,
-        isWhite,
-      }),
-    )
-
     return (
-      <nav {...props} className={classNameProp}>{children}</nav>
+      <nav
+        {...props}
+        className={classnames("navbar",
+          className,
+          {
+            "is-fixed-bottom": isFixedBottom,
+            "is-fixed-top": isFixedTop,
+            "is-transparent": isTransparent,
+            "is-unselectable": isUnselectable,
+          },
+          mainColorsPropsToClassnames({
+            isDanger,
+            isInfo,
+            isLink,
+            isPrimary,
+            isSuccess,
+            isWarning,
+          }),
+          shadeColorsPropsToClassnames({
+            isBlack,
+            isDark,
+            isLight,
+            isWhite,
+          }),
+        )}
+      >{children}</nav>
     )
   }
 }
