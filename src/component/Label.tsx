@@ -8,17 +8,27 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface ILabelProps extends ISizeProps, ITextColorHelpersProps {}
+interface ILabelProps extends ISizeProps, ITextColorHelpersProps {
+  children?: React.ReactNode
+  className?: string
+}
 
 export default class Label extends React.Component<ILabelProps> {
   render() {
-    const className = classnames("label",
-      sizePropsToClassnames(this.props),
-      textColorHelpersPropsToClassnames(this.props),
-    )
+    const {
+      children,
+      className,
+    } = this.props
 
     return (
-      <label className={className}>{this.props.children}</label>
+      <label
+        className={classnames(
+          "label",
+          className,
+          sizePropsToClassnames(this.props),
+          textColorHelpersPropsToClassnames(this.props),
+        )}
+      >{children}</label>
     )
   }
 }

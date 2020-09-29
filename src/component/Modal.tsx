@@ -2,46 +2,120 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 interface IModalProps {
+  children?: React.ReactNode
+  className?: string
   isActive?: boolean
 }
 
 interface IModalBackgroundProps {
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void,
+  className?: string
+  onClick?: React.MouseEventHandler<HTMLDivElement>
+}
+
+interface IModalCardProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+interface IModalCardBodyProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+interface IModalCardFootProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+interface IModalCardHeadProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+interface IModalCardTitleProps {
+  children?: React.ReactNode
+  className?: string
 }
 
 interface IModalCloseProps {
+  className?: string
   isLarge?: boolean,
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void,
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-class ModalCardBody extends React.Component {
+interface IModalContentProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+class ModalCardBody extends React.Component<IModalCardBodyProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <section className="modal-card-body">{this.props.children}</section>
+      <section
+        className={classnames(
+          "modal-card-body",
+          className,
+        )}
+      >{children}</section>
     )
   }
 }
 
-class ModalCardFoot extends React.Component {
+class ModalCardFoot extends React.Component<IModalCardFootProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <footer className="modal-card-foot">{this.props.children}</footer>
+      <footer
+        className={classnames(
+          "modal-card-foot",
+          className,
+        )}
+      >{children}</footer>
     )
   }
 }
 
-class ModalCardHead extends React.Component {
+class ModalCardHead extends React.Component<IModalCardHeadProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <header className="modal-card-head">{this.props.children}</header>
+      <header
+        className={classnames(
+          "modal-card-head",
+          className,
+        )}
+      >{children}</header>
     )
   }
 }
 
-class ModalCardTitle extends React.Component {
+class ModalCardTitle extends React.Component<IModalCardTitleProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <p className="modal-card-title">{this.props.children}</p>
+      <p
+        className={classnames(
+          "modal-card-title",
+          className,
+        )}
+      >{children}</p>
     )
   }
 }
@@ -49,24 +123,41 @@ class ModalCardTitle extends React.Component {
 class ModalBackground extends React.Component<IModalBackgroundProps> {
   render() {
     const {
+      className,
       onClick
     } = this.props
 
     return (
-      <div className="modal-background" onClick={onClick} />
+      <div
+        className={classnames(
+          "modal-background",
+          className,
+        )}
+        onClick={onClick}
+      />
     )
   }
 }
 
-class ModalCard extends React.Component {
+class ModalCard extends React.Component<IModalCardProps> {
   static Body = ModalCardBody
   static Foot = ModalCardFoot
   static Head = ModalCardHead
   static Title = ModalCardTitle
 
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <div className="modal-card">{this.props.children}</div>
+      <div
+        className={classnames(
+          "modal-card",
+          className,
+        )}
+      >{children}</div>
     )
   }
 }
@@ -74,28 +165,41 @@ class ModalCard extends React.Component {
 class ModalClose extends React.Component<IModalCloseProps> {
   render() {
     const {
+      className,
       isLarge,
       onClick,
     } = this.props
 
-    const className = classnames("modal-close", {
-      "is-large": isLarge,
-    })
-
     return (
       <button
         aria-label="close"
-        className={className}
+        className={classnames(
+          "modal-close",
+          className,
+          {
+            "is-large": isLarge,
+          }
+        )}
         onClick={onClick}
       />
     )
   }
 }
 
-class ModalContent extends React.Component {
+class ModalContent extends React.Component<IModalContentProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <div className="modal-content">{this.props.children}</div>
+      <div
+        className={classnames(
+          "modal-content",
+          className,
+        )}
+      >{children}</div>
     )
   }
 }
@@ -108,17 +212,21 @@ export default class Modal extends React.Component<IModalProps> {
 
   render() {
     const {
+      className,
+      children,
       isActive,
     } = this.props
 
-    const className = classnames("modal", {
-      "is-active": isActive,
-    })
-
     return (
-      <div className={className}>
-        {this.props.children}
-      </div>
+      <div
+        className={classnames(
+          "modal",
+          className,
+          {
+            "is-active": isActive,
+          }
+        )}
+      >{children}</div>
     )
   }
 }

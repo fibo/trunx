@@ -9,6 +9,8 @@ import {
 } from "./modifiers"
 
 interface IFieldProps extends IHelpersProps {
+  children?: React.ReactNode
+  className?: string
   hasAddons?: boolean
   hasAddonsCentered?: boolean
   isGrouped?: boolean
@@ -16,24 +18,50 @@ interface IFieldProps extends IHelpersProps {
   isHorizontal?: boolean
 }
 
-interface IFieldLabelProps extends ISizeProps {}
+interface IFieldBodyProps {
+  children?: React.ReactNode
+  className?: string
+}
 
-class FieldBody extends React.Component {
+interface IFieldLabelProps extends ISizeProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+class FieldBody extends React.Component<IFieldBodyProps> {
   render() {
+    const {
+      children,
+      className
+    } = this.props
+
     return (
-      <div className="field-body">{this.props.children}</div>
+      <div
+        className={classnames(
+          "field-body",
+          className,
+        )}
+      >{children}</div>
     )
   }
 }
 
 class FieldLabel extends React.Component<IFieldLabelProps> {
   render() {
-    const className = classnames("field-label",
-      sizePropsToClassnames(this.props),
-    )
+    const {
+      children,
+      className,
+      ...props
+    } = this.props
 
     return (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={classnames(
+          "field-label",
+          className,
+          sizePropsToClassnames(props),
+        )}
+      >{children}</div>
     )
   }
 }
@@ -44,6 +72,8 @@ export default class Field extends React.Component<IFieldProps> {
 
   render() {
     const {
+      children,
+      className,
       hasAddons,
       hasAddonsCentered,
       isGrouped,
@@ -55,24 +85,26 @@ export default class Field extends React.Component<IFieldProps> {
       isSrOnly,
     } = this.props
 
-    const className = classnames("field",
-      {
-        "has-addons": hasAddons,
-        "has-addons-centered": hasAddonsCentered,
-        "is-grouped": isGrouped,
-        "is-grouped-multiline": isGroupedMultiline,
-        "is-horizontal": isHorizontal,
-      },
-      helpersPropsToClassnames({
-        isInvisible,
-        isMarginLess,
-        isPaddingLess,
-        isSrOnly,
-      }),
-    )
-
     return (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={classnames(
+          "field",
+          className,
+          {
+            "has-addons": hasAddons,
+            "has-addons-centered": hasAddonsCentered,
+            "is-grouped": isGrouped,
+            "is-grouped-multiline": isGroupedMultiline,
+            "is-horizontal": isHorizontal,
+          },
+          helpersPropsToClassnames({
+            isInvisible,
+            isMarginLess,
+            isPaddingLess,
+            isSrOnly,
+          }),
+        )}
+      >{children}</div>
     )
   }
 }

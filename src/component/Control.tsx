@@ -7,6 +7,8 @@ import {
 } from "./modifiers"
 
 interface IControlProps extends ISizeProps {
+  children?: React.ReactNode
+  className?: string
   hasIconsLeft?: boolean
   hasIconsRight?: boolean
   isExpanded?: boolean
@@ -16,24 +18,28 @@ interface IControlProps extends ISizeProps {
 export default class Control extends React.Component<IControlProps> {
   render() {
     const {
+      children,
+      className,
       hasIconsLeft,
       hasIconsRight,
       isExpanded,
       isLoading,
     } = this.props
 
-    const className = classnames("control",
-      {
-        "has-icons-left": hasIconsLeft,
-        "has-icons-right": hasIconsRight,
-        "is-expanded": isExpanded,
-        "is-loading": isLoading,
-      },
-      sizePropsToClassnames(this.props),
-    )
-
     return (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={classnames(
+          "control",
+          className,
+          {
+            "has-icons-left": hasIconsLeft,
+            "has-icons-right": hasIconsRight,
+            "is-expanded": isExpanded,
+            "is-loading": isLoading,
+          },
+          sizePropsToClassnames(this.props),
+        )}
+      >{children}</div>
     )
   }
 }

@@ -7,56 +7,85 @@ import {
 } from "./modifiers"
 
 interface ILevelItemProps extends ITextColorHelpersProps {
+  children?: React.ReactNode
+  className?: string
   hasTextCentered?: boolean
 }
 
-interface ILevelLeftProps extends ITextColorHelpersProps {}
+interface ILevelLeftProps extends ITextColorHelpersProps {
+  children?: React.ReactNode
+  className?: string
+}
 
 interface ILevelProps extends ITextColorHelpersProps {
+  children?: React.ReactNode
+  className?: string
   isMobile?: boolean
 }
 
-interface ILevelRightProps extends ITextColorHelpersProps {}
+interface ILevelRightProps extends ITextColorHelpersProps {
+  children?: React.ReactNode
+  className?: string
+}
 
 class LevelItem extends React.Component<ILevelItemProps> {
   render() {
     const {
-      hasTextCentered
+      className,
+      children,
+      hasTextCentered,
+      ...props
     } = this.props
 
-    const className = classnames("level-item",
-      {
-        "has-text-centered": hasTextCentered,
-      },
-      textColorHelpersPropsToClassnames(this.props),
-    )
-
     return (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={classnames(
+          "level-item",
+          className,
+          {
+            "has-text-centered": hasTextCentered,
+          },
+          textColorHelpersPropsToClassnames(props),
+        )}
+      >{children}</div>
     )
   }
 }
 
 class LevelLeft extends React.Component<ILevelLeftProps> {
   render() {
-    const className = classnames("level-left",
-      textColorHelpersPropsToClassnames(this.props),
-    )
+    const {
+      children,
+      className,
+    } = this.props
 
     return (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={classnames(
+          "level-left",
+          className,
+          textColorHelpersPropsToClassnames(this.props),
+        )}
+      >{children}</div>
     )
   }
 }
 
 class LevelRight extends React.Component<ILevelRightProps> {
   render() {
-    const className = classnames("level-right",
-      textColorHelpersPropsToClassnames(this.props),
-    )
+    const {
+      children,
+      className,
+    } = this.props
 
     return (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={classnames(
+          "level-right",
+          className,
+          textColorHelpersPropsToClassnames(this.props),
+        )}
+      >{children}</div>
     )
   }
 }
@@ -68,18 +97,22 @@ export default class Level extends React.Component<ILevelProps> {
 
   render() {
     const {
+      children,
+      className,
       isMobile,
     } = this.props
 
-    const className = classnames("level",
-      {
-        "is-mobile": isMobile,
-      },
-      textColorHelpersPropsToClassnames(this.props),
-    )
-
     return (
-      <nav className={className}>{this.props.children}</nav>
+      <nav
+        className={classnames(
+          "level",
+          className,
+          {
+            "is-mobile": isMobile,
+          },
+          textColorHelpersPropsToClassnames(this.props),
+        )}
+      >{children}</nav>
     )
   }
 }

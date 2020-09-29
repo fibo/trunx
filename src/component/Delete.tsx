@@ -7,21 +7,28 @@ import {
 } from "./modifiers"
 
 interface IDeleteProps extends ISizeProps {
-  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void
+  children?: React.ReactNode
+  className?: string
+  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export default class Delete extends React.Component<IDeleteProps> {
   render() {
     const {
+      className,
       onClick,
     } = this.props
 
-    const className = classnames("delete",
-      sizePropsToClassnames(this.props),
-    )
-
     return (
-      <button aria-label="delete" className={className} onClick={onClick}/>
+      <button aria-label="delete"
+        className={classnames(
+          className,
+          "delete",
+          className,
+          sizePropsToClassnames(this.props),
+        )}
+        onClick={onClick}
+      />
     )
   }
 }

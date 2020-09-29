@@ -13,21 +13,53 @@ import {
 interface IMessageProps extends IHelpersProps,
                                 IMainColorsProps,
                                 ISizeProps {
+  children?: React.ReactNode
+  className?: string
   isDark?: boolean
 }
 
-class MessageBody extends React.Component {
+interface IMessageBodyProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+interface IMessageHeaderProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+class MessageBody extends React.Component<IMessageBodyProps> {
   render() {
+    const {
+      className,
+      children,
+    } = this.props
+
     return (
-      <div className="message-body">{this.props.children}</div>
+      <div
+        className={classnames(
+          "message-body",
+          className,
+        )}
+      >{children}</div>
     )
   }
 }
 
-class MessageHeader extends React.Component {
+class MessageHeader extends React.Component<IMessageHeaderProps> {
   render() {
+    const {
+      className,
+      children,
+    } = this.props
+
     return (
-      <div className="message-header">{this.props.children}</div>
+      <div
+        className={classnames(
+          "message-header",
+          className,
+        )}
+      >{children}</div>
     )
   }
 }
@@ -38,6 +70,8 @@ export default class Message extends React.Component<IMessageProps> {
 
   render() {
     const {
+      className,
+      children,
       isDark,
       isInvisible,
       isMarginLess,
@@ -45,22 +79,24 @@ export default class Message extends React.Component<IMessageProps> {
       isSrOnly,
     } = this.props
 
-    const className = classnames("message",
-      {
-        "is-dark": isDark,
-      },
-      helpersPropsToClassnames({
-        isInvisible,
-        isMarginLess,
-        isPaddingLess,
-        isSrOnly,
-      }),
-      mainColorsPropsToClassnames(this.props),
-      sizePropsToClassnames(this.props)
-    )
-
     return (
-      <article className={className}>{this.props.children}</article>
+      <article
+        className={classnames(
+          "message",
+          className,
+          {
+            "is-dark": isDark,
+          },
+          helpersPropsToClassnames({
+            isInvisible,
+            isMarginLess,
+            isPaddingLess,
+            isSrOnly,
+          }),
+          mainColorsPropsToClassnames(this.props),
+          sizePropsToClassnames(this.props)
+        )}
+      >{children}</article>
     )
   }
 }

@@ -43,7 +43,7 @@ interface INavbarEndProps {
 interface INavbarBurgerProps {
   className?: string
   isActive?: boolean
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
 interface INavbarItemDivProps {
@@ -82,9 +82,10 @@ class NavbarBrand extends React.Component<React.PropsWithChildren<INavbarBrandPr
     } = this.props
 
     return (
-      <div className={classnames("navbar-brand", className)}>
-        {children}
-      </div>
+      <div className={classnames(
+        "navbar-brand",
+        className
+      )}>{children}</div>
     )
   }
 }
@@ -121,7 +122,9 @@ class NavbarBurger extends React.Component<INavbarBurgerProps> {
 
 class NavbarDivider extends React.Component<INavbarDividerProps> {
   render() {
-    const { className } = this.props
+    const {
+      className,
+    } = this.props
 
     return (
       <hr className={classnames("navbar-divider", className)} />
