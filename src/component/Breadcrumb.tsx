@@ -24,16 +24,19 @@ class BreadcrumbItem extends React.Component<IBreadcrumbItemProps> {
   render() {
     const {
       children,
+      className,
       isActive,
       ...props
     } = this.props
 
-    const className = classnames({
-      "is-active": isActive,
-    })
-
     return (
-      <li {...props} className={className}>{children}</li>
+      <li
+        {...props}
+        className={classnames({
+          className,
+          "is-active": isActive,
+        })}
+      >{children}</li>
 
     )
   }

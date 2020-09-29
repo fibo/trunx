@@ -7,6 +7,8 @@ import {
 } from "./modifiers"
 
 interface IContentProps extends ISizeProps {
+  children?: React.ReactNode
+  className?: string;
   hasTextCentered?: boolean
   hasTextJustified?: boolean
   hasTextLeft?: boolean
@@ -16,24 +18,28 @@ interface IContentProps extends ISizeProps {
 export default class Content extends React.Component<IContentProps> {
   render() {
     const {
+      children,
+      className,
       hasTextCentered,
       hasTextJustified,
       hasTextLeft,
       hasTextRight,
     } = this.props
 
-    const className = classnames("content",
-      {
-        "has-text-centered": hasTextCentered,
-        "has-text-justified": hasTextJustified,
-        "has-text-left": hasTextLeft,
-        "has-text-right": hasTextRight,
-      },
-      sizePropsToClassnames(this.props),
-    )
-
     return (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={classnames(
+          "content",
+          className,
+          {
+            "has-text-centered": hasTextCentered,
+            "has-text-justified": hasTextJustified,
+            "has-text-left": hasTextLeft,
+            "has-text-right": hasTextRight,
+          },
+          sizePropsToClassnames(this.props),
+        )}
+      >{children}</div>
     )
   }
 }

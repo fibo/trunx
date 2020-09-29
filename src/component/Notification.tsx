@@ -7,16 +7,25 @@ import {
 } from "./modifiers"
 
 interface INotificationProps extends IMainColorsProps {
+  children?: React.ReactNode
+  className?: string
 }
 
 export default class Notification extends React.Component<INotificationProps> {
   render() {
-    const className = classnames("notification",
-      mainColorsPropsToClassnames(this.props),
-    )
+    const {
+      className,
+      children,
+    } = this.props
 
     return (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={classnames(
+          "notification",
+          className,
+          mainColorsPropsToClassnames(this.props),
+        )}
+      >{children}</div>
     )
   }
 }

@@ -8,17 +8,28 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface IHelpProps extends IMainColorsProps, ITextColorHelpersProps {}
+interface IHelpProps extends IMainColorsProps, ITextColorHelpersProps {
+  children?: React.ReactNode
+  className?: string
+}
 
 export default class Help extends React.Component<IHelpProps> {
   render() {
-    const className = classnames("help",
-      mainColorsPropsToClassnames(this.props),
-      textColorHelpersPropsToClassnames(this.props),
-    )
+    const {
+      children,
+      className,
+      ...props
+    } = this.props
 
     return (
-      <p className={className}>{this.props.children}</p>
+      <p
+        className={classnames(
+          "help",
+          className,
+          mainColorsPropsToClassnames(props),
+          textColorHelpersPropsToClassnames(props),
+        )}
+      >{children}</p>
     )
   }
 }

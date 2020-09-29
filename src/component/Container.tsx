@@ -2,6 +2,8 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 interface IContainerProps {
+  children?: React.ReactNode
+  className?: string
   isFluid?: boolean
   isFullhd?: boolean
   isWidescreen?: boolean
@@ -10,19 +12,25 @@ interface IContainerProps {
 export default class Container extends React.Component<IContainerProps> {
   render() {
     const {
+      children,
+      className,
       isFluid,
       isFullhd,
       isWidescreen,
     } = this.props
 
-    const className = classnames("container", {
-      "is-fluid": isFluid,
-      "is-fullhd": isFullhd,
-      "is-widescreen": isWidescreen,
-    })
-
     return (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={classnames(
+          "container",
+          className,
+          {
+            "is-fluid": isFluid,
+            "is-fullhd": isFullhd,
+            "is-widescreen": isWidescreen,
+          },
+        )}
+      >{children}</div>
     )
   }
 }
