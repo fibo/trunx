@@ -20,6 +20,7 @@ interface IInputProps extends IMainColorsProps,
 export default class Input extends React.Component<IInputProps> {
   render() {
     const {
+      className,
       isDanger,
       isFocused,
       isHovered,
@@ -36,30 +37,30 @@ export default class Input extends React.Component<IInputProps> {
       ...props
     } = this.props
 
-    const className = classnames("input",
-      {
-        "is-focused": isFocused,
-        "is-hovered": isHovered,
-        "is-rounded": isRounded,
-        "is-static": isStatic,
-      },
-      mainColorsPropsToClassnames({
-        isDanger,
-        isInfo,
-        isPrimary,
-        isSuccess,
-        isWarning,
-      }),
-      sizePropsToClassnames({
-        isLarge,
-        isMedium,
-        isSmall,
-      }),
-    )
-
     return (
       <input
-        className={className}
+        className={classnames(
+          "input",
+          className,
+          {
+            "is-focused": isFocused,
+            "is-hovered": isHovered,
+            "is-rounded": isRounded,
+            "is-static": isStatic,
+          },
+          mainColorsPropsToClassnames({
+            isDanger,
+            isInfo,
+            isPrimary,
+            isSuccess,
+            isWarning,
+          }),
+          sizePropsToClassnames({
+            isLarge,
+            isMedium,
+            isSmall,
+          }),
+        )}
         type={type}
         {...props}
       />

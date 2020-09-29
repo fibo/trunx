@@ -24,7 +24,7 @@ interface INavbarEndProps {
 interface INavbarBurgerProps {
     className?: string;
     isActive?: boolean;
-    onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+    onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 interface INavbarItemDivProps {
     className?: string;

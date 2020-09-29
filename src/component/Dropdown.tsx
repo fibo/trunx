@@ -7,30 +7,74 @@ import {
 } from "./Anchor"
 
 interface IDropdownProps {
+  children?: React.ReactNode
+  className?: string
   isActive?: boolean
   isHoverable?: boolean
   isRight?: boolean
   isUp?: boolean
 }
 
+interface IDropdownContentProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+interface IDropdownDividerProps {
+  children?: React.ReactNode
+  className?: string
+}
+
 interface IDropdownItemProps {
+  children?: React.ReactNode
+  className?: string
   href?: IAnchorProps["href"]
   isActive?: boolean
   onClick?: IAnchorProps["onClick"]
 }
 
-class DropdownContent extends React.Component {
+interface IDropdownMenuProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+interface IDropdownTriggerProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+class DropdownContent extends React.Component<IDropdownContentProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <div className="dropdown-content">{this.props.children}</div>
+      <div
+        className={classnames(
+          "dropdown-content",
+          className,
+        )}
+      >{children}</div>
     )
   }
 }
 
-class DropdownDivider extends React.Component {
+class DropdownDivider extends React.Component<IDropdownDividerProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <div className="dropdown-divider">{this.props.children}</div>
+      <div
+        className={classnames(
+          "dropdown-divider",
+          className,
+        )}
+      >{children}</div>
     )
   }
 }
@@ -38,43 +82,66 @@ class DropdownDivider extends React.Component {
 class DropdownItem extends React.Component<IDropdownItemProps> {
   render() {
     const {
+      className,
+      children,
       href,
       isActive,
       onClick,
       ...props
     } = this.props
 
-    const className = classnames("dropdown-item",
-      {
-        "is-active": isActive,
-      },
-    )
-
     return (
       <Anchor
         {...props}
-        className={className}
+        className={classnames(
+          "dropdown-item",
+          className,
+          {
+            "is-active": isActive,
+          },
+        )}
         href={href}
         onClick={onClick}
       >
-        {this.props.children}
+        {children}
       </Anchor>
     )
   }
 }
 
-class DropdownMenu extends React.Component {
+class DropdownMenu extends React.Component<IDropdownMenuProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <div className="dropdown-menu" role="menu">{this.props.children}</div>
+      <div
+        className={classnames(
+          "dropdown-menu",
+          className,
+        )}
+        role="menu"
+      >{children}</div>
     )
   }
 }
 
-class DropdownTrigger extends React.Component {
+class DropdownTrigger extends React.Component<IDropdownTriggerProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <div className="dropdown-trigger">{this.props.children}</div>
+      <div
+        className={classnames(
+          "dropdown-trigger",
+          className,
+        )}
+      >{children}</div>
     )
   }
 }
@@ -88,23 +155,27 @@ export default class Dropdown extends React.Component<IDropdownProps> {
 
   render() {
     const {
+      children,
+      className,
       isActive,
       isHoverable,
       isRight,
       isUp,
     } = this.props
 
-    const className = classnames("dropdown",
-      {
-        "is-active": isActive,
-        "is-hoverable": isHoverable,
-        "is-right": isRight,
-        "is-up": isUp,
-      },
-    )
-
     return (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={classnames(
+          "dropdown",
+          className,
+          {
+            "is-active": isActive,
+            "is-hoverable": isHoverable,
+            "is-right": isRight,
+            "is-up": isUp,
+          },
+        )}
+      >{children}</div>
     )
   }
 }

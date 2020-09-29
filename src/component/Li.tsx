@@ -2,6 +2,8 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 interface ILiProps extends React.LiHTMLAttributes<HTMLLIElement> {
+  children?: React.ReactNode
+  className?: string
   isActive?: boolean
 }
 
@@ -9,18 +11,21 @@ export default class Li extends React.Component<ILiProps> {
   render() {
     const {
       children,
+      className,
       isActive,
       ...props
     } = this.props
 
-    const className = classnames(
-      {
-        "is-active": isActive,
-      },
-    )
-
     return (
-      <li {...props} className={className}>{children}</li>
+      <li
+        className={classnames(
+          className,
+          {
+            "is-active": isActive,
+          },
+        )}
+        {...props}
+      >{children}</li>
     )
   }
 }

@@ -10,50 +10,124 @@ import {
 
 interface IFileUploadProps extends IMainColorsProps,
                                    ISizeProps {
+  className?: string;
+  children?: React.ReactNode
   hasName?: boolean
   isBoxed?: boolean
   isFullwidth?: boolean
   isRight?: boolean
 }
 
+interface IFileUploadCta {
+  className?: string;
+  children?: React.ReactNode
+}
+
+interface IFileUploadIcon {
+  className?: string;
+  children?: React.ReactNode
+}
+
 interface IFileUploadInputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-class FileUploadCta extends React.Component {
+interface IFileUploadLabel {
+  className?: string;
+  children?: React.ReactNode
+}
+
+interface IFileUploadName {
+  className?: string;
+  children?: React.ReactNode
+}
+
+class FileUploadCta extends React.Component<IFileUploadCta> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <span className="file-cta">{this.props.children}</span>
+      <span
+        className={classnames(
+          "file-cta",
+          className,
+        )}
+      >{children}</span>
     )
   }
 }
 
-class FileUploadIcon extends React.Component {
+class FileUploadIcon extends React.Component<IFileUploadIcon> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <span className="file-icon">{this.props.children}</span>
+      <span
+        className={classnames(
+          "file-icon",
+          className,
+        )}
+      >{children}</span>
     )
   }
 }
 
 class FileUploadInput extends React.Component<IFileUploadInputProps> {
   render() {
+    const {
+      className,
+      ...props
+    } = this.props
+
     return (
-      <input className="file-input" type="file" {...this.props} />
+      <input
+        className={classnames(
+          "file-input",
+          className,
+        )}
+        type="file"
+        {...props}
+      />
     )
   }
 }
 
-class FileUploadLabel extends React.Component {
+class FileUploadLabel extends React.Component<IFileUploadLabel> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <span className="file-label">{this.props.children}</span>
+      <span
+        className={classnames(
+          "file-label",
+          className,
+        )}
+      >{children}</span>
     )
   }
 }
 
-class FileUploadName extends React.Component {
+class FileUploadName extends React.Component<IFileUploadName> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <span className="file-name">{this.props.children}</span>
+      <span
+        className={classnames(
+          "file-name",
+          className,
+        )}
+      >{children}</span>
     )
   }
 }
@@ -67,6 +141,8 @@ export default class FileUpload extends React.Component<IFileUploadProps> {
 
   render() {
     const {
+      children,
+      className,
       hasName,
       isBoxed,
       isDanger,
@@ -81,31 +157,33 @@ export default class FileUpload extends React.Component<IFileUploadProps> {
       isWarning,
     } = this.props
 
-    const className = classnames("file",
-      {
-        "has-name": hasName,
-        "is-boxed": isBoxed,
-        "is-fullwidth": isFullwidth,
-        "is-right": isRight,
-      },
-      mainColorsPropsToClassnames({
-        isDanger,
-        isInfo,
-        isPrimary,
-        isSuccess,
-        isWarning,
-      }),
-      sizePropsToClassnames({
-        isLarge,
-        isMedium,
-        isSmall,
-      }),
-    )
-
     return (
-      <div className={className}>
+      <div
+        className={classnames(
+          "file",
+          className,
+          {
+            "has-name": hasName,
+            "is-boxed": isBoxed,
+            "is-fullwidth": isFullwidth,
+            "is-right": isRight,
+          },
+          mainColorsPropsToClassnames({
+            isDanger,
+            isInfo,
+            isPrimary,
+            isSuccess,
+            isWarning,
+          }),
+          sizePropsToClassnames({
+            isLarge,
+            isMedium,
+            isSmall,
+          }),
+        )}
+      >
         <label className="file-label">
-          {this.props.children}
+          {children}
         </label>
       </div>
     )

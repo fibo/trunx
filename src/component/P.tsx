@@ -26,13 +26,12 @@ export default class P extends React.Component<PProps> {
     return (
       <p
         className={classnames(
+          className,
           alignementPropsToClassnames(props),
           backgroundColorHelpersPropsToClassnames(props),
           textColorHelpersPropsToClassnames(props),
         )}
-      >
-        {children}
-      </p>
+      >{children}</p>
     )
   }
 }

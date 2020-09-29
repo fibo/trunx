@@ -37,7 +37,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
   isRounded?: boolean
   isStatic?: boolean
   isText?: boolean
-  onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void
+  onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
   target?: IAnchorProps["target"]
   type?: "reset" | "submit"
   value?: React.InputHTMLAttributes<HTMLInputElement>["value"]
@@ -46,6 +46,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 export default class Button extends React.Component<IButtonProps> {
   render() {
     const {
+      className: classNameProp,
       disabled,
       download,
       hasTextBlack,
@@ -103,6 +104,7 @@ export default class Button extends React.Component<IButtonProps> {
     } = this.props
 
     const className = classnames("button",
+      classNameProp,
       {
         "is-active": isActive,
         "is-focused": isFocused,

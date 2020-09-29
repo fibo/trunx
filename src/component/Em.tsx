@@ -9,22 +9,27 @@ import {
 } from "./modifiers"
 
 interface IEmProps extends IBackgroundColorHelpersProps,
-                           ITextColorHelpersProps {}
+                           ITextColorHelpersProps {
+  children?: React.ReactNode
+  className?: string
+}
 
 export default class Em extends React.Component<IEmProps> {
   render() {
     const {
       children,
+      className,
       ...props
     } = this.props
 
-    const className = classnames(
-      backgroundColorHelpersPropsToClassnames(props),
-      textColorHelpersPropsToClassnames(props),
-    )
-
     return (
-      <em className={className}>{children}</em>
+      <em
+        className={classnames(
+          className,
+          backgroundColorHelpersPropsToClassnames(props),
+          textColorHelpersPropsToClassnames(props),
+        )}
+      >{children}</em>
     )
   }
 }
