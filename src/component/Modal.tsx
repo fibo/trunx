@@ -13,7 +13,7 @@ interface IModalBackgroundProps {
 }
 
 interface IModalCardProps {
-  children?: React.ReactNode
+  cthildren?: React.ReactNode
   className?: string
 }
 

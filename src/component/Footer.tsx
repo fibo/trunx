@@ -6,10 +6,8 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface IFooterProps extends ITextColorHelpersProps {
-  className?: string;
-  children?: React.ReactNode
-}
+interface IFooterProps extends React.HTMLAttributes<HTMLElement>,
+                               ITextColorHelpersProps {}
 
 export default class Footer extends React.Component<IFooterProps> {
   render() {

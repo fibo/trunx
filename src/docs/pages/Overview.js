@@ -8,14 +8,18 @@ import indent from '../utils/indent.js'
 import {
   A,
   B,
+  Column,
+  Columns,
   Em,
   Container,
   Content,
+  Li,
   Message,
   P,
   Section,
   Strong,
-  Title
+  Title,
+  Ul
 } from '../../../index.js'
 
 import pkg from '../../../package.json'
@@ -87,7 +91,7 @@ export default function Overview ({
 
             <Code language='bash'>
               {indent`
-                npm install node-sass
+                npm install node-sass --save-dev
               `}
             </Code>
 
@@ -238,15 +242,21 @@ export default function Overview ({
               Actually, there is a <code>Strong</code> component in this case
             </p>
 
-            <Code language='jsx'>
-              {indent`
-                You are <Strong hasTextSuccess>successful</Strong>!
-              `}
-            </Code>
+            <Columns>
+              <Column isHalf>
+                <Code language='jsx'>
+                  {indent`
+                    You are <Strong hasTextSuccess>successful</Strong>!
+                  `}
+                </Code>
+              </Column>
 
-            <P>
-              You are <Strong hasTextSuccess>successful</Strong>!
-            </P>
+              <Column isHalf>
+                <P>
+                  You are <Strong hasTextSuccess>successful</Strong>!
+                </P>
+              </Column>
+            </Columns>
 
             <P>
               Notice also that every Trunx component accepts a <code>className</code> prop which will be appended to Bulma classes in order to customize the component style.
@@ -492,9 +502,9 @@ export default function Overview ({
                 {
                   component: 'Tile',
                   subComponents: [
-                    'Ancestor'
-                    'Child'
-                    'Child.Box'
+                    'Ancestor',
+                    'Child',
+                    'Child.Box',
                     'Child.Notification'
                   ]
                 },
@@ -507,13 +517,13 @@ export default function Overview ({
               ].map(({ component, subComponents = [] }, i) => (
                 <Li key={i}>
                   <A href={`https://github.com/fibo/trunx/blob/master/src/component/${component}.tsx`} target="_blank">
-                    <code>{component}</code>
+                    {component}
                   </A>
 
                   {subComponents.length > 0 && (
                     <Ul>
                       {subComponents.map((subComponent, i) => (
-                        <Li><code>`${component}.${subComponent}`</code></Li>
+                        <Li key={i}>{`${component}.${subComponent}`}</Li>
 
                       ))}
                     </Ul>

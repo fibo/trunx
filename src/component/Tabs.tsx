@@ -7,6 +7,8 @@ import {
 } from "./modifiers"
 
 interface ITabsProps extends ISizeProps {
+  children?: React.ReactNode
+  className?: string
   isBoxed?: boolean
   isCentered?: boolean
   isFullwidth?: boolean
@@ -18,6 +20,7 @@ interface ITabsProps extends ISizeProps {
 export default class Tabs extends React.Component<ITabsProps> {
   render() {
     const {
+      className,
       isBoxed,
       isCentered,
       isFullwidth,
@@ -30,24 +33,27 @@ export default class Tabs extends React.Component<ITabsProps> {
       ...props
     } = this.props
 
-    const className = classnames("tabs",
-      {
-        "is-boxed": isBoxed,
-        "is-centered": isCentered,
-        "is-fullwidth": isFullwidth,
-        "is-right": isRight,
-        "is-toggle": isToggle,
-        "is-toggle-rounded": isToggleRounded,
-      },
-      sizePropsToClassnames({
-        isLarge,
-        isMedium,
-        isSmall,
-      }),
-    )
-
     return (
-      <nav {...props} className={className}>{this.props.children}</nav>
+      <nav
+        {...props}
+        className={classnames(
+          "tabs",
+          className,
+          {
+            "is-boxed": isBoxed,
+            "is-centered": isCentered,
+            "is-fullwidth": isFullwidth,
+            "is-right": isRight,
+            "is-toggle": isToggle,
+            "is-toggle-rounded": isToggleRounded,
+          },
+          sizePropsToClassnames({
+            isLarge,
+            isMedium,
+            isSmall,
+          }),
+        )}
+      >{this.props.children}</nav>
     )
   }
 }
