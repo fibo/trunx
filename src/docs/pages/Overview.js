@@ -6,9 +6,13 @@ import Nav from '../components/Nav.js'
 import indent from '../utils/indent.js'
 
 import {
+  A,
+  B,
+  Em,
   Container,
   Content,
   Message,
+  P,
   Section,
   Strong,
   Title
@@ -30,10 +34,10 @@ export default function Overview ({
               Getting started with Trunx
             </Title>
 
-            <p>
-              <em>Trunx</em> is an open source collection of <em>React</em> components built on top of <em>Bulma</em> CSS framework and implemented with <em>TypeScript</em>.
-              GitHub repo here: <a href='https://github.com/fibo/trunx'>github.com/fibo/trunx</a>.
-            </p>
+            <P>
+              <Em>Trunx</Em> is an open source collection of <Em>React</Em> components built on top of <Em>Bulma</Em> CSS framework and implEmented with <Em>TypeScript</Em>.
+              GitHub repo here: <A href='https://github.com/fibo/trunx'>github.com/fibo/trunx</A>.
+            </P>
 
             <Message isInfo>
               <Message.Body>
@@ -45,9 +49,9 @@ export default function Overview ({
               Installation
             </Title>
 
-            <p>
-              Use <b>npm</b> to install Trunx package. React is required as a peer dependency.
-            </p>
+            <P>
+              Use <B>npm</B> to install Trunx package. React is required as a peer dependency.
+            </P>
 
             <Code language='bash'>
               {indent`
@@ -56,19 +60,19 @@ export default function Overview ({
               `}
             </Code>
 
-            <p>
+            <P>
               It is also required to add Bulma CSS. You can use the bulma npm package that Trunx includes as a dependency.
               Note that trunx npm package major version will be the same as bulma npm package major version.
               Current bulma npm package version included is <code>v{pkg.dependencies.bulma.substring(1)}</code>.
-            </p>
+            </P>
 
-            <p>
+            <P>
               The good new is that it is easy to customize your Bulma build to create your own theme.
-            </p>
+            </P>
 
-            <p>
+            <P>
               It is also easy to add Bulma via webpack: in your entry JS file or wherever, import Bulma CSS.
-            </p>
+            </P>
 
             <Code language='css'>
               {indent`
@@ -76,10 +80,10 @@ export default function Overview ({
               `}
             </Code>
 
-            <p>
+            <P>
               The good new is that you can use Sass to customize your Bulma build to create your own theme.
               Install Sass using npm.
-            </p>
+            </P>
 
             <Code language='bash'>
               {indent`
@@ -87,9 +91,9 @@ export default function Overview ({
               `}
             </Code>
 
-            <p>
-              Create, for example, a <em>_colors.scss</em> file like the following
-            </p>
+            <P>
+              Create, for example, a <Em>_colors.scss</Em> file like the following
+            </P>
 
             <Code language='css'>
               {indent`
@@ -110,9 +114,9 @@ export default function Overview ({
               `}
             </Code>
 
-            <p>
+            <P>
               In your entry Sass file import first customizations and then Bulma.
-            </p>
+            </P>
 
             <Code>
               {indent`
@@ -123,10 +127,10 @@ export default function Overview ({
               `}
             </Code>
 
-            <p>
-              Note that you can also tweek and import individual Bulma modules, checkout <a href='https://bulma.io/documentation/'>official Bulma documentation</a>.
-              See also <a href='https://jenil.github.io/bulmaswatch/'>Bulmaswatch</a> for custom Bulma themes.
-            </p>
+            <P>
+              Note that you can also tweek and import individual Bulma modules, checkout <A href='https://bulma.io/documentation/'>official Bulma documentation</A>.
+              See also <A href='https://jenil.github.io/bulmaswatch/'>Bulmaswatch</A> for custom Bulma themes.
+            </P>
 
             <hr />
 
@@ -134,13 +138,13 @@ export default function Overview ({
               HTML code requirements
             </Title>
 
-            <p>
-              Trunx is son of awesome <a href='https://bulma.io/' target='_blank'>Bulma</a> which to work correctly need a <b>responsive</b> webpage.
-            </p>
+            <P>
+              Trunx is son of awesome <A href='https://bulma.io/' target='_blank'>Bulma</A> which to work correctly need a <B>responsive</B> webpage.
+            </P>
 
-            <p>
+            <P>
               Use the HTML5 doctype
-            </p>
+            </P>
 
             <Code language='html'>
               {indent`
@@ -148,9 +152,9 @@ export default function Overview ({
               `}
             </Code>
 
-            <p>
+            <P>
               Add the responsive viewport meta tag
-            </p>
+            </P>
 
             <Code language='html'>
               {indent`
@@ -158,11 +162,11 @@ export default function Overview ({
               `}
             </Code>
 
-            <p>
+            <P>
               To import components, the following syntaxes are supported.
               For example to import the <code>Button</code> component you can use
               both ES6 or CommonJS syntaxes.
-            </p>
+            </P>
 
             <Code language='jsx'>
               {indent`
@@ -176,11 +180,11 @@ export default function Overview ({
               `}
             </Code>
 
-            <p>
+            <P>
               It is also possible to import components directly.
-              If you do not have <em>Tree shaking</em> setup in your build, the
-              following imports will create lighter bundles <b>out of the box</b>.
-            </p>
+              If you do not have <Em>Tree shaking</Em> setup in your build, the
+              following imports will create lighter bundles <B>out of the box</B>.
+            </P>
 
             <Code language='jsx'>
               {indent`
@@ -200,9 +204,9 @@ export default function Overview ({
               How it works
             </Title>
 
-            <p>
+            <P>
               Trunx React components wrap Bulma CSS classes. For instance, this JSX code
-            </p>
+            </P>
 
             <Code language='jsx'>
               {indent`
@@ -210,9 +214,9 @@ export default function Overview ({
               `}
             </Code>
 
-            <p>
+            <P>
               is equivalent to
-            </p>
+            </P>
 
             <Code language='jsx'>
               {indent`
@@ -220,9 +224,9 @@ export default function Overview ({
               `}
             </Code>
 
-            <p>
+            <P>
               Note that you can still use Bulma directly if some feature or HTML tag is not implemented by Trunx, for example
-            </p>
+            </P>
 
             <Code language='jsx'>
               {indent`
@@ -240,9 +244,283 @@ export default function Overview ({
               `}
             </Code>
 
-            <p>
+            <P>
               You are <Strong hasTextSuccess>successful</Strong>!
-            </p>
+            </P>
+
+            <P>
+              Notice also that every Trunx component accepts a <code>className</code> prop which will be appended to Bulma classes in order to customize the component style.
+            </P>
+
+            <P>
+              Trunx component props are <B>all optional</B>. Follows a list of all component currently implemented.
+            </P>
+
+            <Ul>
+              {[
+                {
+                  component: 'A'
+                },
+                {
+                  component: 'B'
+                },
+                {
+                  component: 'Box'
+                },
+                {
+                  component: 'Breadcrumb',
+                  subComponents: [
+                    'Item'
+                  ]
+                },
+                {
+                  component: 'Button'
+                },
+                {
+                  component: 'Buttons'
+                },
+                {
+                  component: 'Card',
+                  subComponents: [
+                    'Content',
+                    'Footer',
+                    'Header',
+                    'Image'
+                  ]
+                },
+                {
+                  component: 'Checkbox'
+                },
+                {
+                  component: 'Column'
+                },
+                {
+                  component: 'Columns'
+                },
+                {
+                  component: 'Container'
+                },
+                {
+                  component: 'Content'
+                },
+                {
+                  component: 'Control'
+                },
+                {
+                  component: 'Delete'
+                },
+                {
+                  component: 'Dropdown',
+                  subComponents: [
+                    'Content',
+                    'Divider',
+                    'Item',
+                    'Menu',
+                    'Trigger'
+                  ]
+                },
+                {
+                  component: 'Em'
+                },
+                {
+                  component: 'Field',
+                  subComponents: [
+                    'Body',
+                    'Label;'
+                  ]
+                },
+                {
+                  component: 'FileUpload',
+                  subComponents: [
+                    'Cta',
+                    'Icon',
+                    'Input',
+                    'Label',
+                    'Name'
+                  ]
+                },
+                {
+                  component: 'Footer'
+                },
+                {
+                  component: 'Heading'
+                },
+                {
+                  component: 'Help'
+                },
+                {
+                  component: 'Hero',
+                  subComponents: [
+                    'Body',
+                    'Foot',
+                    'Head'
+                  ]
+                },
+                {
+                  component: 'Icon',
+                  subComponents: [
+                    'Svg'
+                  ]
+                },
+                {
+                  component: 'Image'
+                },
+                {
+                  component: 'Input'
+                },
+                {
+                  component: 'Label'
+                },
+                {
+                  component: 'Level',
+                  subComponents: [
+                    'Item',
+                    'Left',
+                    'Right'
+                  ]
+                },
+                {
+                  component: 'Li'
+                },
+                {
+                  component: 'Media',
+                  subComponents: [
+                    'Content',
+                    'Left',
+                    'Right'
+                  ]
+                },
+                {
+                  component: 'Message',
+                  subComponents: [
+                    'Body',
+                    'Header'
+                  ]
+                },
+                {
+                  component: 'Modal',
+                  subComponents: [
+                    'Background',
+                    'Card',
+                    'Card.Body',
+                    'Card.Foot',
+                    'Card.Head',
+                    'Card.Title',
+                    'Close',
+                    'Content',
+                  ]
+                },
+                {
+                  component: 'Navbar',
+                  subComponents: [
+                    'Brand',
+                    'Burger',
+                    'Divider',
+                    'Dropdown',
+                    'End',
+                    'Item',
+                    'Item.Div',
+                    'Link',
+                    'Menu',
+                    'Start',
+                  ]
+                },
+                {
+                  component: 'Notification'
+                },
+                {
+                  component: 'P'
+                },
+                {
+                  component: 'Pagination',
+                  subComponents: [
+                    'Ellipsis',
+                    'Link',
+                    'List',
+                    'Next',
+                    'Previous'
+                  ]
+                },
+                {
+                  component: 'Panel',
+                  subComponents: [
+                    'Block',
+                    'Heading',
+                    'Icon',
+                    'Tabs'
+                  ]
+                },
+                {
+                  component: 'Progress'
+                },
+                {
+                  component: 'Radio'
+                },
+                {
+                  component: 'Section'
+                },
+                {
+                  component: 'Select'
+                },
+                {
+                  component: 'Span'
+                },
+                {
+                  component: 'Strong'
+                },
+                {
+                  component: 'Subtitle'
+                },
+                {
+                  component: 'Table',
+                  subComponents: [
+                    'Container'
+                  ]
+                },
+                {
+                  component: 'Tabs'
+                },
+                {
+                  component: 'Tag'
+                },
+                {
+                  component: 'Tags'
+                },
+                {
+                  component: 'Textarea'
+                },
+                {
+                  component: 'Tile',
+                  subComponents: [
+                    'Ancestor'
+                    'Child'
+                    'Child.Box'
+                    'Child.Notification'
+                  ]
+                },
+                {
+                  component: 'Title'
+                },
+                {
+                  component: 'Ul'
+                }
+              ].map(({ component, subComponents = [] }, i) => (
+                <Li key={i}>
+                  <A href={`https://github.com/fibo/trunx/blob/master/src/component/${component}.tsx`} target="_blank">
+                    <code>{component}</code>
+                  </A>
+
+                  {subComponents.length > 0 && (
+                    <Ul>
+                      {subComponents.map((subComponent, i) => (
+                        <Li><code>`${component}.${subComponent}`</code></Li>
+
+                      ))}
+                    </Ul>
+                  )}
+                </Li>
+              ))}
+            </Ul>
           </Content>
         </Container>
       </Section>
