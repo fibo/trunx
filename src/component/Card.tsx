@@ -16,12 +16,12 @@ import {
 import Image, { IImageProps } from "./Image"
 
 interface ICardContentProps extends ITextColorHelpersProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   className?: string
 }
 
 interface ICardFooterItemProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   className?: string
   download?: IAnchorProps["download"]
   href?: IAnchorProps["href"]
@@ -30,17 +30,17 @@ interface ICardFooterItemProps {
 }
 
 interface ICardFooterProps extends ITextColorHelpersProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   className?: string
 }
 
 interface ICardHeader {
-  children: React.ReactNode
+  children?: React.ReactNode
   className?: string
 }
 
 interface ICardHeaderIconProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   className?: string
   download?: IAnchorProps["download"]
   href?: IAnchorProps["href"]
@@ -49,7 +49,7 @@ interface ICardHeaderIconProps {
 }
 
 interface ICardHeaderTitleProps {
-  children: React.ReactNode
+  children?: React.ReactNode
   className?: string
   isCentered?: boolean
 }
