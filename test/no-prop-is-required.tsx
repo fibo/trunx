@@ -60,9 +60,14 @@ function noPropIsRequired () {
       <B />
       <Box />
       <Breadcrumb />
+      <Breadcrumb.Item />
       <Button />
       <Buttons />
       <Card />
+      <Card.Content />
+      <Card.Footer />
+      <Card.Header />
+      <Card.Image />
       <Checkbox />
       <Column />
       <Columns />
@@ -71,28 +76,81 @@ function noPropIsRequired () {
       <Control />
       <Delete />
       <Dropdown />
+      <Dropdown.Content />
+      <Dropdown.Divider />
+      <Dropdown.Item />
+      <Dropdown.Menu />
+      <Dropdown.Trigger />
       <Em />
       <Field />
+      <Field.Body />
+      <Field.Label />
       <FileUpload />
+      <FileUpload.Cta />
+      <FileUpload.Icon />
+      <FileUpload.Input />
+      <FileUpload.Label />
+      <FileUpload.Name />
       <Footer />
       <Heading />
       <Help />
       <Hero />
+      <Hero.Body />
+      <Hero.Foot />
+      <Hero.Head />
       <Icon />
+      <Icon.Svg />
       <Image />
       <Input />
       <Label />
       <Level />
+      <Level.Item />
+      <Level.Left />
+      <Level.Right />
       <Li />
       <Media />
+      <Media.Content />
+      <Media.Left />
+      <Media.Right />
       <Menu />
+      <Menu.Label />
+      <Menu.List />
       <Message />
+      <Message.Body />
+      <Message.Header />
       <Modal />
+      <Modal.Background />
+      <Modal.Card />
+      <Modal.Card.Body />
+      <Modal.Card.Foot />
+      <Modal.Card.Head />
+      <Modal.Card.Title />
+      <Modal.Close />
+      <Modal.Content />
       <Navbar />
+      <Navbar.Brand />
+      <Navbar.Burger />
+      <Navbar.Divider />
+      <Navbar.Dropdown />
+      <Navbar.End />
+      <Navbar.Item />
+      <Navbar.Item.Div />
+      <Navbar.Link />
+      <Navbar.Menu />
+      <Navbar.Start />
       <Notification />
       <P />
       <Pagination />
+      <Pagination.Ellipsis />
+      <Pagination.Link />
+      <Pagination.List />
+      <Pagination.Next />
+      <Pagination.Previous />
       <Panel />
+      <Panel.Block />
+      <Panel.Heading />
+      <Panel.Icon />
+      <Panel.Tabs />
       <Progress />
       <Radio />
       <Section />
@@ -101,11 +159,16 @@ function noPropIsRequired () {
       <Strong />
       <Subtitle />
       <Table />
+      <Table.Container />
       <Tabs />
       <Tag />
       <Tags />
       <Textarea />
       <Tile />
+      <Tile.Ancestor />
+      <Tile.Child />
+      <Tile.Child.Box />
+      <Tile.Child.Notification />
       <Title />
       <Ul />
     </>
