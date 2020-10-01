@@ -8,23 +8,26 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface IStrongProps extends IBackgroundColorHelpersProps,
+interface IStrongProps extends React.HTMLAttributes<HTMLElement>,
+                               IBackgroundColorHelpersProps,
                                ITextColorHelpersProps {}
 
 export default class Strong extends React.Component<IStrongProps> {
   render() {
     const {
       children,
+      className,
       ...props
     } = this.props
 
-    const className = classnames(
-      backgroundColorHelpersPropsToClassnames(props),
-      textColorHelpersPropsToClassnames(props),
-    )
-
     return (
-      <strong className={className}>{children}</strong>
+      <strong
+        className={classnames(
+          className,
+          backgroundColorHelpersPropsToClassnames(props),
+          textColorHelpersPropsToClassnames(props),
+        )}
+      >{children}</strong>
     )
   }
 }

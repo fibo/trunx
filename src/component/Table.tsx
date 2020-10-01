@@ -9,10 +9,25 @@ interface ITableProps extends React.TableHTMLAttributes<HTMLTableElement> {
   isStriped?: boolean
 }
 
-class TableContainer extends React.Component {
+interface ITableContainerProps {
+  className?: string
+  children?: string
+}
+
+class TableContainer extends React.Component<ITableContainerProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <div className="table-container">{this.props.children}</div>
+      <div
+        className={classnames(
+          "table-container",
+          className,
+        )}
+      >{children}</div>
     )
   }
 }
@@ -23,6 +38,7 @@ export default class Table extends React.Component<ITableProps> {
   render() {
     const {
       children,
+      className,
       isBordered,
       isFullwidth,
       isHoverable,
@@ -31,16 +47,21 @@ export default class Table extends React.Component<ITableProps> {
       ...props
     } = this.props
 
-    const className = classnames("table", {
-      "is-bordered": isBordered,
-      "is-fullwidth": isFullwidth,
-      "is-hoverable": isHoverable,
-      "is-narrow": isNarrow,
-      "is-striped": isStriped,
-    })
-
     return (
-      <table {...props} className={className}>{children}</table>
+      <table
+        {...props}
+        className={classnames(
+          "table",
+          className,
+          {
+            "is-bordered": isBordered,
+            "is-fullwidth": isFullwidth,
+            "is-hoverable": isHoverable,
+            "is-narrow": isNarrow,
+            "is-striped": isStriped,
+          }
+        )}
+      >{children}</table>
     )
   }
 }

@@ -21,6 +21,7 @@ interface ITextareaProps extends IMainColorsProps,
 export default class Textarea extends React.Component<ITextareaProps> {
   render() {
     const {
+      className,
       hasTextBlack,
       hasTextBlackBis,
       hasTextBlackTer,
@@ -53,48 +54,51 @@ export default class Textarea extends React.Component<ITextareaProps> {
       ...props
     } = this.props
 
-    const className = classnames("textarea",
-      {
-        "is-focused": isFocused,
-        "is-hovered": isHovered,
-      },
-      mainColorsPropsToClassnames({
-        isDanger,
-        isInfo,
-        isPrimary,
-        isSuccess,
-        isWarning,
-      }),
-      sizePropsToClassnames({
-        isLarge,
-        isMedium,
-        isSmall,
-      }),
-      textColorHelpersPropsToClassnames({
-        hasTextBlack,
-        hasTextBlackBis,
-        hasTextBlackTer,
-        hasTextDanger,
-        hasTextDark,
-        hasTextGrey,
-        hasTextGreyDark,
-        hasTextGreyDarker,
-        hasTextGreyLight,
-        hasTextGreyLighter,
-        hasTextInfo,
-        hasTextLight,
-        hasTextLink,
-        hasTextPrimary,
-        hasTextSuccess,
-        hasTextWarning,
-        hasTextWhite,
-        hasTextWhiteBis,
-        hasTextWhiteTer,
-      }),
-    )
-
     return (
-      <textarea {...props} className={className} />
+      <textarea
+        {...props}
+        className={classnames(
+          "textarea",
+          className,
+          {
+            "is-focused": isFocused,
+            "is-hovered": isHovered,
+          },
+          mainColorsPropsToClassnames({
+            isDanger,
+            isInfo,
+            isPrimary,
+            isSuccess,
+            isWarning,
+          }),
+          sizePropsToClassnames({
+            isLarge,
+            isMedium,
+            isSmall,
+          }),
+          textColorHelpersPropsToClassnames({
+            hasTextBlack,
+            hasTextBlackBis,
+            hasTextBlackTer,
+            hasTextDanger,
+            hasTextDark,
+            hasTextGrey,
+            hasTextGreyDark,
+            hasTextGreyDarker,
+            hasTextGreyLight,
+            hasTextGreyLighter,
+            hasTextInfo,
+            hasTextLight,
+            hasTextLink,
+            hasTextPrimary,
+            hasTextSuccess,
+            hasTextWarning,
+            hasTextWhite,
+            hasTextWhiteBis,
+            hasTextWhiteTer,
+          }),
+        )}
+      />
     )
   }
 }

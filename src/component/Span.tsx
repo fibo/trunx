@@ -16,16 +16,19 @@ export default class Span extends React.Component<ISpanProps> {
   render() {
     const {
       children,
+      className,
       ...props
     } = this.props
 
-    const className = classnames(
-      backgroundColorHelpersPropsToClassnames(props),
-      textColorHelpersPropsToClassnames(props),
-    )
-
     return (
-      <span {...props} className={className}>{children}</span>
+      <span
+        {...props}
+        className={classnames(
+          className,
+          backgroundColorHelpersPropsToClassnames(props),
+          textColorHelpersPropsToClassnames(props),
+        )}
+      >{children}</span>
     )
   }
 }

@@ -7,6 +7,8 @@ import {
 } from "./modifiers"
 
 interface ISectionProps extends IHelpersProps {
+  children?: React.ReactNode
+  className?: string
   isLarge?: boolean
   isMedium?: boolean
 }
@@ -14,6 +16,8 @@ interface ISectionProps extends IHelpersProps {
 export default class Section extends React.Component<ISectionProps> {
   render() {
     const {
+      children,
+      className,
       isInvisible,
       isLarge,
       isMarginLess,
@@ -22,21 +26,23 @@ export default class Section extends React.Component<ISectionProps> {
       isSrOnly,
     } = this.props
 
-    const className = classnames("section",
-      {
-        "is-large": isLarge,
-        "is-medium": isMedium,
-      },
-      helpersPropsToClassnames({
-        isInvisible,
-        isMarginLess,
-        isPaddingLess,
-        isSrOnly,
-      }),
-    )
-
     return (
-      <div className={className}>{this.props.children}</div>
+      <div
+        className={classnames(
+          "section",
+          className,
+          {
+            "is-large": isLarge,
+            "is-medium": isMedium,
+          },
+          helpersPropsToClassnames({
+            isInvisible,
+            isMarginLess,
+            isPaddingLess,
+            isSrOnly,
+          }),
+        )}
+      >{children}</div>
     )
   }
 }
