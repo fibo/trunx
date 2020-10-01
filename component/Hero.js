@@ -9,7 +9,8 @@ var HeroBody = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     HeroBody.prototype.render = function () {
-        return (React.createElement("div", { className: "hero-body" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("div", { className: classnames("hero-body", className) }, children));
     };
     return HeroBody;
 }(React.Component));
@@ -19,7 +20,8 @@ var HeroFoot = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     HeroFoot.prototype.render = function () {
-        return (React.createElement("div", { className: "hero-foot" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("div", { className: classnames("hero-foot", className) }, children));
     };
     return HeroFoot;
 }(React.Component));
@@ -29,7 +31,8 @@ var HeroHead = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     HeroHead.prototype.render = function () {
-        return (React.createElement("div", { className: "hero-head" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("div", { className: classnames("hero-head", className) }, children));
     };
     return HeroHead;
 }(React.Component));
@@ -39,16 +42,15 @@ var Hero = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Hero.prototype.render = function () {
-        var _a = this.props, isBold = _a.isBold, isDark = _a.isDark, isFullheight = _a.isFullheight, isFullheightWithNavbar = _a.isFullheightWithNavbar, isLarge = _a.isLarge, isMedium = _a.isMedium;
-        var className = classnames("hero", {
-            "is-bold": isBold,
-            "is-dark": isDark,
-            "is-fullheight": isFullheight,
-            "is-fullheight-with-navbar": isFullheightWithNavbar,
-            "is-large": isLarge,
-            "is-medium": isMedium,
-        }, modifiers_1.mainColorsPropsToClassnames(this.props));
-        return (React.createElement("section", { className: className }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className, isBold = _a.isBold, isDark = _a.isDark, isFullheight = _a.isFullheight, isFullheightWithNavbar = _a.isFullheightWithNavbar, isLarge = _a.isLarge, isMedium = _a.isMedium;
+        return (React.createElement("section", { className: classnames("hero", className, {
+                "is-bold": isBold,
+                "is-dark": isDark,
+                "is-fullheight": isFullheight,
+                "is-fullheight-with-navbar": isFullheightWithNavbar,
+                "is-large": isLarge,
+                "is-medium": isMedium,
+            }, modifiers_1.mainColorsPropsToClassnames(this.props)) }, children));
     };
     Hero.Body = HeroBody;
     Hero.Foot = HeroFoot;

@@ -1,6 +1,8 @@
 import * as React from "react";
 import { ITextColorHelpersProps } from "./modifiers";
 interface ITitleProps extends ITextColorHelpersProps {
+    children?: React.ReactNode;
+    className?: string;
     is1?: boolean;
     is2?: boolean;
     is3?: boolean;

@@ -9,11 +9,11 @@ var BreadcrumbItem = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     BreadcrumbItem.prototype.render = function () {
-        var _a = this.props, children = _a.children, isActive = _a.isActive, props = tslib_1.__rest(_a, ["children", "isActive"]);
-        var className = classnames({
-            "is-active": isActive,
-        });
-        return (React.createElement("li", tslib_1.__assign({}, props, { className: className }), children));
+        var _a = this.props, children = _a.children, className = _a.className, isActive = _a.isActive, props = tslib_1.__rest(_a, ["children", "className", "isActive"]);
+        return (React.createElement("li", tslib_1.__assign({}, props, { className: classnames({
+                className: className,
+                "is-active": isActive,
+            }) }), children));
     };
     return BreadcrumbItem;
 }(React.Component));

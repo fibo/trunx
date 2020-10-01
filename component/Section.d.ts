@@ -1,6 +1,8 @@
 import * as React from "react";
 import { IHelpersProps } from "./modifiers";
 interface ISectionProps extends IHelpersProps {
+    children?: React.ReactNode;
+    className?: string;
     isLarge?: boolean;
     isMedium?: boolean;
 }

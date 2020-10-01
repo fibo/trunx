@@ -14,7 +14,7 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, IH
     isRounded?: boolean;
     isStatic?: boolean;
     isText?: boolean;
-    onClick?: (event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void;
+    onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
     target?: IAnchorProps["target"];
     type?: "reset" | "submit";
     value?: React.InputHTMLAttributes<HTMLInputElement>["value"];

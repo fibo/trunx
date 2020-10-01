@@ -9,7 +9,8 @@ var MessageBody = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     MessageBody.prototype.render = function () {
-        return (React.createElement("div", { className: "message-body" }, this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children;
+        return (React.createElement("div", { className: classnames("message-body", className) }, children));
     };
     return MessageBody;
 }(React.Component));
@@ -19,7 +20,8 @@ var MessageHeader = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     MessageHeader.prototype.render = function () {
-        return (React.createElement("div", { className: "message-header" }, this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children;
+        return (React.createElement("div", { className: classnames("message-header", className) }, children));
     };
     return MessageHeader;
 }(React.Component));
@@ -29,16 +31,15 @@ var Message = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Message.prototype.render = function () {
-        var _a = this.props, isDark = _a.isDark, isInvisible = _a.isInvisible, isMarginLess = _a.isMarginLess, isPaddingLess = _a.isPaddingLess, isSrOnly = _a.isSrOnly;
-        var className = classnames("message", {
-            "is-dark": isDark,
-        }, modifiers_1.helpersPropsToClassnames({
-            isInvisible: isInvisible,
-            isMarginLess: isMarginLess,
-            isPaddingLess: isPaddingLess,
-            isSrOnly: isSrOnly,
-        }), modifiers_1.mainColorsPropsToClassnames(this.props), modifiers_1.sizePropsToClassnames(this.props));
-        return (React.createElement("article", { className: className }, this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children, isDark = _a.isDark, isInvisible = _a.isInvisible, isMarginLess = _a.isMarginLess, isPaddingLess = _a.isPaddingLess, isSrOnly = _a.isSrOnly;
+        return (React.createElement("article", { className: classnames("message", className, {
+                "is-dark": isDark,
+            }, modifiers_1.helpersPropsToClassnames({
+                isInvisible: isInvisible,
+                isMarginLess: isMarginLess,
+                isPaddingLess: isPaddingLess,
+                isSrOnly: isSrOnly,
+            }), modifiers_1.mainColorsPropsToClassnames(this.props), modifiers_1.sizePropsToClassnames(this.props)) }, children));
     };
     Message.Body = MessageBody;
     Message.Header = MessageHeader;
