@@ -1,15 +1,50 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
+interface IPaginationProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+interface IPaginationEllipsisProps {
+  className?: string
+}
+
 interface IPaginationLinkProps {
+  children?: React.ReactNode
+  className?: string
   isCurrent?: boolean
 }
 
-class PaginationEllipsis extends React.Component {
+interface IPaginationListProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+interface IPaginationNextProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+interface IPaginationPreviousProps {
+  children?: React.ReactNode
+  className?: string
+}
+
+class PaginationEllipsis extends React.Component<IPaginationEllipsisProps> {
   render() {
+    const {
+      className,
+    } = this.props
+
     return (
       <li>
-        <span className="pagination-ellipsis">&hellip;</span>
+        <span
+          className={classnames(
+            "pagination-ellipsis",
+            className,
+          )}
+        >&hellip;</span>
       </li>
     )
   }
@@ -18,47 +53,84 @@ class PaginationEllipsis extends React.Component {
 class PaginationLink extends React.Component<IPaginationLinkProps> {
   render() {
     const {
+      className,
+      children,
       isCurrent,
       ...props
     } = this.props
 
-    const className = classnames("pagination-link", {
-      "is-current": isCurrent,
-    })
-
     return (
       <li>
-        <a className={className} {...props}>{this.props.children}</a>
+        <a
+          {...props}
+          className={classnames(
+            "pagination-link",
+            className,
+            {
+              "is-current": isCurrent,
+            })
+          }
+        >{children}</a>
       </li>
     )
   }
 }
 
-class PaginationList extends React.Component {
+class PaginationList extends React.Component<IPaginationListProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <ul className="pagination-list">{this.props.children}</ul>
+      <ul
+        className={classnames(
+          "pagination-list",
+          className,
+        )}
+      >{children}</ul>
     )
   }
 }
 
-class PaginationNext extends React.Component {
+class PaginationNext extends React.Component<IPaginationNextProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <a className="pagination-next">{this.props.children}</a>
+      <a
+        className={classnames(
+          "pagination-next",
+          className,
+        )}
+      >{children}</a>
     )
   }
 }
 
-class PaginationPrevious extends React.Component {
+class PaginationPrevious extends React.Component<IPaginationPreviousProps> {
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <a className="pagination-previous">{this.props.children}</a>
+      <a
+        className={classnames(
+          "pagination-previous",
+          className,
+        )}
+      >{children}</a>
     )
   }
 }
 
-export default class Pagination extends React.Component {
+export default class Pagination extends React.Component<IPaginationProps> {
   static Ellipsis = PaginationEllipsis
   static Link = PaginationLink
   static List = PaginationList
@@ -66,8 +138,20 @@ export default class Pagination extends React.Component {
   static Previous = PaginationPrevious
 
   render() {
+    const {
+      children,
+      className,
+    } = this.props
+
     return (
-      <nav aria-label="pagination" className="pagination" role="navigation">{this.props.children}</nav>
+      <nav
+        aria-label="pagination"
+        className={classnames(
+          "pagination",
+          className,
+        )}
+        role="navigation"
+      >{children}</nav>
     )
   }
 }

@@ -6,11 +6,12 @@ export default class Ul extends React.Component<IUlProps> {
   render() {
     const {
       children,
+      className,
       ...props
     } = this.props
 
     return (
-      <ul {...props}>{children}</ul>
+      <ul {...props} className={className}>{children}</ul>
     )
   }
 }

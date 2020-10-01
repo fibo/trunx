@@ -19,6 +19,7 @@
     "test": "run-p test:*",
     "test:bulma-version": "node test/bulma-version.js",
     "test:no-prop-is-required": "tsc --jsx react --noEmit --lib dom,es2015 test/no-prop-is-required.tsx",
+    "test:className-prop": "tsc --jsx react --noEmit --lib dom,es2015 test/className-prop.tsx",
     "test:types": "tsc --declaration --project . --noemit",
     "tsc": "tsc --declaration --project ."
   },

@@ -18,6 +18,8 @@ import {
 interface ITagProps extends IMainColorsProps,
                             IShadeColorsProps,
                             Pick<ISizeProps, "isMedium" | "isLarge"> {
+  children?: React.ReactNode
+  className?: string
   href?: IAnchorProps["href"]
   isDelete?: boolean
   isNormal?: boolean
@@ -30,6 +32,7 @@ export default class Tag extends React.Component<ITagProps> {
   render() {
     const {
       children,
+      className: classNameProp,
       href,
       isBlack,
       isDanger,
@@ -51,7 +54,9 @@ export default class Tag extends React.Component<ITagProps> {
       ...props
     } = this.props
 
-    const className = classnames("tag",
+    const className = classnames(
+      "tag",
+      classNameProp,
       {
         "is-delete": isDelete,
         "is-light": isLight,

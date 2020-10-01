@@ -8,7 +8,7 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface IBProps extends React.AnchorHTMLAttributes<HTMLElement>,
+interface IBProps extends React.HTMLAttributes<HTMLElement>,
                           IBackgroundColorHelpersProps,
                           ITextColorHelpersProps {}
 

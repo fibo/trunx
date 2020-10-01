@@ -7,6 +7,8 @@ import {
 } from "./modifiers"
 
 interface ITitleProps extends ITextColorHelpersProps {
+  children?: React.ReactNode
+  className?: string
   is1?: boolean
   is2?: boolean
   is3?: boolean
@@ -19,6 +21,8 @@ interface ITitleProps extends ITextColorHelpersProps {
 export default class Title extends React.Component<ITitleProps> {
   render() {
     const {
+      children,
+      className: classNameProp,
       is1,
       is2,
       is3,
@@ -26,45 +30,51 @@ export default class Title extends React.Component<ITitleProps> {
       is5,
       is6,
       isSpaced,
+      ...props
     } = this.props
 
-    const className = classnames("title", {
-      "is-1": is1,
-      "is-2": is2,
-      "is-3": is3,
-      "is-4": is4,
-      "is-5": is5,
-      "is-6": is6,
-      "is-spaced": isSpaced,
-    }, textColorHelpersPropsToClassnames(this.props))
+    const className = classnames(
+      "title",
+      classNameProp,
+      {
+        "is-1": is1,
+        "is-2": is2,
+        "is-3": is3,
+        "is-4": is4,
+        "is-5": is5,
+        "is-6": is6,
+        "is-spaced": isSpaced,
+      },
+      textColorHelpersPropsToClassnames(props)
+    )
 
     if (is1) {
       return (
-        <h1 className={className}>{this.props.children}</h1>
+        <h1 className={className}>{children}</h1>
       )
     } else if (is2) {
       return (
-        <h2 className={className}>{this.props.children}</h2>
+        <h2 className={className}>{children}</h2>
       )
     } else if (is3) {
       return (
-        <h3 className={className}>{this.props.children}</h3>
+        <h3 className={className}>{children}</h3>
       )
     } else if (is4) {
       return (
-        <h4 className={className}>{this.props.children}</h4>
+        <h4 className={className}>{children}</h4>
       )
     } else if (is5) {
       return (
-        <h5 className={className}>{this.props.children}</h5>
+        <h5 className={className}>{children}</h5>
       )
     } else if (is6) {
       return (
-        <h6 className={className}>{this.props.children}</h6>
+        <h6 className={className}>{children}</h6>
       )
     } else {
       return (
-        <p className={className}>{this.props.children}</p>
+        <p className={className}>{children}</p>
       )
     }
   }

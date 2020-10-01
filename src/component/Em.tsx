@@ -8,11 +8,9 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface IEmProps extends IBackgroundColorHelpersProps,
-                           ITextColorHelpersProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface IEmProps extends React.HTMLAttributes<HTMLElement>,
+                           IBackgroundColorHelpersProps,
+                           ITextColorHelpersProps {}
 
 export default class Em extends React.Component<IEmProps> {
   render() {
