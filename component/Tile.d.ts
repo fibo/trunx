@@ -16,18 +16,32 @@ interface ITileProps extends React.HTMLAttributes<HTMLDivElement> {
     isParent?: boolean;
     isVertical?: boolean;
 }
-interface ITileChildNotificationProps extends IMainColorsProps {
+interface ITileAncestorProps {
+    children?: React.ReactNode;
+    className?: string;
 }
-declare class TileAncestor extends React.Component {
+interface ITileChildProps {
+    children?: React.ReactNode;
+    className?: string;
+}
+interface ITileChildBoxProps {
+    children?: React.ReactNode;
+    className?: string;
+}
+interface ITileChildNotificationProps extends IMainColorsProps {
+    children?: React.ReactNode;
+    className?: string;
+}
+declare class TileAncestor extends React.Component<ITileAncestorProps> {
     render(): JSX.Element;
 }
-declare class TileChildBox extends React.Component {
+declare class TileChildBox extends React.Component<ITileChildBoxProps> {
     render(): JSX.Element;
 }
 declare class TileChildNotification extends React.Component<ITileChildNotificationProps> {
     render(): JSX.Element;
 }
-declare class TileChild extends React.Component {
+declare class TileChild extends React.Component<ITileChildProps> {
     static Box: typeof TileChildBox;
     static Notification: typeof TileChildNotification;
     render(): JSX.Element;

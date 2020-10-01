@@ -2,6 +2,8 @@ import * as React from "react";
 import { IAnchorProps } from "./Anchor";
 import { IMainColorsProps, IShadeColorsProps, ISizeProps } from "./modifiers";
 interface ITagProps extends IMainColorsProps, IShadeColorsProps, Pick<ISizeProps, "isMedium" | "isLarge"> {
+    children?: React.ReactNode;
+    className?: string;
     href?: IAnchorProps["href"];
     isDelete?: boolean;
     isNormal?: boolean;

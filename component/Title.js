@@ -9,8 +9,8 @@ var Title = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Title.prototype.render = function () {
-        var _a = this.props, is1 = _a.is1, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6, isSpaced = _a.isSpaced;
-        var className = classnames("title", {
+        var _a = this.props, children = _a.children, classNameProp = _a.className, is1 = _a.is1, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6, isSpaced = _a.isSpaced, props = tslib_1.__rest(_a, ["children", "className", "is1", "is2", "is3", "is4", "is5", "is6", "isSpaced"]);
+        var className = classnames("title", classNameProp, {
             "is-1": is1,
             "is-2": is2,
             "is-3": is3,
@@ -18,27 +18,27 @@ var Title = (function (_super) {
             "is-5": is5,
             "is-6": is6,
             "is-spaced": isSpaced,
-        }, modifiers_1.textColorHelpersPropsToClassnames(this.props));
+        }, modifiers_1.textColorHelpersPropsToClassnames(props));
         if (is1) {
-            return (React.createElement("h1", { className: className }, this.props.children));
+            return (React.createElement("h1", { className: className }, children));
         }
         else if (is2) {
-            return (React.createElement("h2", { className: className }, this.props.children));
+            return (React.createElement("h2", { className: className }, children));
         }
         else if (is3) {
-            return (React.createElement("h3", { className: className }, this.props.children));
+            return (React.createElement("h3", { className: className }, children));
         }
         else if (is4) {
-            return (React.createElement("h4", { className: className }, this.props.children));
+            return (React.createElement("h4", { className: className }, children));
         }
         else if (is5) {
-            return (React.createElement("h5", { className: className }, this.props.children));
+            return (React.createElement("h5", { className: className }, children));
         }
         else if (is6) {
-            return (React.createElement("h6", { className: className }, this.props.children));
+            return (React.createElement("h6", { className: className }, children));
         }
         else {
-            return (React.createElement("p", { className: className }, this.props.children));
+            return (React.createElement("p", { className: className }, children));
         }
     };
     return Title;

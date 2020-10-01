@@ -1,5 +1,7 @@
 import * as React from "react";
 interface IContainerProps {
+    children?: React.ReactNode;
+    className?: string;
     isFluid?: boolean;
     isFullhd?: boolean;
     isWidescreen?: boolean;

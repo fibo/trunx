@@ -9,9 +9,8 @@ var Strong = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Strong.prototype.render = function () {
-        var _a = this.props, children = _a.children, props = tslib_1.__rest(_a, ["children"]);
-        var className = classnames(modifiers_1.backgroundColorHelpersPropsToClassnames(props), modifiers_1.textColorHelpersPropsToClassnames(props));
-        return (React.createElement("strong", { className: className }, children));
+        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
+        return (React.createElement("strong", { className: classnames(className, modifiers_1.backgroundColorHelpersPropsToClassnames(props), modifiers_1.textColorHelpersPropsToClassnames(props)) }, children));
     };
     return Strong;
 }(React.Component));

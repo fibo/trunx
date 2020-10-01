@@ -10,16 +10,20 @@ interface IIconProps extends IBackgroundColorHelpersProps, ITextColorHelpersProp
 interface IIconSvgProps {
     className?: string;
     fill?: string;
-    icon: {
+    icon?: {
         d: string;
         viewBox: string;
     };
-    size: string;
+    size?: string;
 }
 declare class IconSvg extends React.Component<IIconSvgProps> {
     static defaultProps: {
         fill: string;
         size: string;
+        icon: {
+            d: string;
+            viewBox: string;
+        };
     };
     render(): JSX.Element;
 }

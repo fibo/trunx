@@ -8,7 +8,8 @@ var TableContainer = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     TableContainer.prototype.render = function () {
-        return (React.createElement("div", { className: "table-container" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("div", { className: classnames("table-container", className) }, children));
     };
     return TableContainer;
 }(React.Component));
@@ -18,15 +19,14 @@ var Table = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Table.prototype.render = function () {
-        var _a = this.props, children = _a.children, isBordered = _a.isBordered, isFullwidth = _a.isFullwidth, isHoverable = _a.isHoverable, isNarrow = _a.isNarrow, isStriped = _a.isStriped, props = tslib_1.__rest(_a, ["children", "isBordered", "isFullwidth", "isHoverable", "isNarrow", "isStriped"]);
-        var className = classnames("table", {
-            "is-bordered": isBordered,
-            "is-fullwidth": isFullwidth,
-            "is-hoverable": isHoverable,
-            "is-narrow": isNarrow,
-            "is-striped": isStriped,
-        });
-        return (React.createElement("table", tslib_1.__assign({}, props, { className: className }), children));
+        var _a = this.props, children = _a.children, className = _a.className, isBordered = _a.isBordered, isFullwidth = _a.isFullwidth, isHoverable = _a.isHoverable, isNarrow = _a.isNarrow, isStriped = _a.isStriped, props = tslib_1.__rest(_a, ["children", "className", "isBordered", "isFullwidth", "isHoverable", "isNarrow", "isStriped"]);
+        return (React.createElement("table", tslib_1.__assign({}, props, { className: classnames("table", className, {
+                "is-bordered": isBordered,
+                "is-fullwidth": isFullwidth,
+                "is-hoverable": isHoverable,
+                "is-narrow": isNarrow,
+                "is-striped": isStriped,
+            }) }), children));
     };
     Table.Container = TableContainer;
     return Table;

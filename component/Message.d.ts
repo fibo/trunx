@@ -1,12 +1,22 @@
 import * as React from "react";
 import { IHelpersProps, IMainColorsProps, ISizeProps } from "./modifiers";
 interface IMessageProps extends IHelpersProps, IMainColorsProps, ISizeProps {
+    children?: React.ReactNode;
+    className?: string;
     isDark?: boolean;
 }
-declare class MessageBody extends React.Component {
+interface IMessageBodyProps {
+    children?: React.ReactNode;
+    className?: string;
+}
+interface IMessageHeaderProps {
+    children?: React.ReactNode;
+    className?: string;
+}
+declare class MessageBody extends React.Component<IMessageBodyProps> {
     render(): JSX.Element;
 }
-declare class MessageHeader extends React.Component {
+declare class MessageHeader extends React.Component<IMessageHeaderProps> {
     render(): JSX.Element;
 }
 export default class Message extends React.Component<IMessageProps> {

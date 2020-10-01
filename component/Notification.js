@@ -9,8 +9,8 @@ var Notification = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Notification.prototype.render = function () {
-        var className = classnames("notification", modifiers_1.mainColorsPropsToClassnames(this.props));
-        return (React.createElement("div", { className: className }, this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children;
+        return (React.createElement("div", { className: classnames("notification", className, modifiers_1.mainColorsPropsToClassnames(this.props)) }, children));
     };
     return Notification;
 }(React.Component));

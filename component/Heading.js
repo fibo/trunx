@@ -3,15 +3,15 @@ var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
 var modifiers_1 = require("./modifiers");
-var Footer = (function (_super) {
-    tslib_1.__extends(Footer, _super);
-    function Footer() {
+var Heading = (function (_super) {
+    tslib_1.__extends(Heading, _super);
+    function Heading() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    Footer.prototype.render = function () {
-        var className = classnames("heading", modifiers_1.textColorHelpersPropsToClassnames(this.props));
-        return (React.createElement("p", { className: className }, this.props.children));
+    Heading.prototype.render = function () {
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("p", { className: classnames("heading", className, modifiers_1.textColorHelpersPropsToClassnames(this.props)) }, children));
     };
-    return Footer;
+    return Heading;
 }(React.Component));
-exports.default = Footer;
+exports.default = Heading;

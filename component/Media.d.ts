@@ -1,13 +1,27 @@
 import * as React from "react";
 interface IMediaProps extends React.HTMLAttributes<HTMLDivElement> {
+    children?: React.ReactNode;
+    className?: string;
 }
-declare class MediaContent extends React.Component {
+interface IMediaContentProps {
+    children?: React.ReactNode;
+    className?: string;
+}
+interface IMediaLeftProps {
+    children?: React.ReactNode;
+    className?: string;
+}
+interface IMediaRightProps {
+    children?: React.ReactNode;
+    className?: string;
+}
+declare class MediaContent extends React.Component<IMediaContentProps> {
     render(): JSX.Element;
 }
-declare class MediaLeft extends React.Component {
+declare class MediaLeft extends React.Component<IMediaLeftProps> {
     render(): JSX.Element;
 }
-declare class MediaRight extends React.Component {
+declare class MediaRight extends React.Component<IMediaRightProps> {
     render(): JSX.Element;
 }
 export default class Media extends React.Component<IMediaProps> {

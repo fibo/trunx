@@ -1,5 +1,6 @@
 import * as React from "react";
 export interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+    className?: string;
     is1by1?: boolean;
     is1by2?: boolean;
     is1by3?: boolean;

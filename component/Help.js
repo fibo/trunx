@@ -9,8 +9,8 @@ var Help = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Help.prototype.render = function () {
-        var className = classnames("help", modifiers_1.mainColorsPropsToClassnames(this.props), modifiers_1.textColorHelpersPropsToClassnames(this.props));
-        return (React.createElement("p", { className: className }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
+        return (React.createElement("p", { className: classnames("help", className, modifiers_1.mainColorsPropsToClassnames(props), modifiers_1.textColorHelpersPropsToClassnames(props)) }, children));
     };
     return Help;
 }(React.Component));

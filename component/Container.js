@@ -8,13 +8,12 @@ var Container = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Container.prototype.render = function () {
-        var _a = this.props, isFluid = _a.isFluid, isFullhd = _a.isFullhd, isWidescreen = _a.isWidescreen;
-        var className = classnames("container", {
-            "is-fluid": isFluid,
-            "is-fullhd": isFullhd,
-            "is-widescreen": isWidescreen,
-        });
-        return (React.createElement("div", { className: className }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className, isFluid = _a.isFluid, isFullhd = _a.isFullhd, isWidescreen = _a.isWidescreen;
+        return (React.createElement("div", { className: classnames("container", className, {
+                "is-fluid": isFluid,
+                "is-fullhd": isFullhd,
+                "is-widescreen": isWidescreen,
+            }) }, children));
     };
     return Container;
 }(React.Component));

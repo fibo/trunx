@@ -31,6 +31,9 @@
     <loc>https://trunx.dev/form/input</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>,  <url>
+    <loc>https://trunx.dev/form/radio</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>,  <url>
     <loc>https://trunx.dev/form/textarea</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>,  <url>
@@ -38,6 +41,9 @@
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>,  <url>
     <loc>https://trunx.dev/elements/button</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>,  <url>
+    <loc>https://trunx.dev/elements/delete</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>,  <url>
     <loc>https://trunx.dev/elements/tag</loc>

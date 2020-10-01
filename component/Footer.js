@@ -9,8 +9,8 @@ var Footer = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Footer.prototype.render = function () {
-        var className = classnames("footer", modifiers_1.textColorHelpersPropsToClassnames(this.props));
-        return (React.createElement("footer", { className: className }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
+        return (React.createElement("footer", { className: classnames("footer", className, modifiers_1.textColorHelpersPropsToClassnames(props)) }, children));
     };
     return Footer;
 }(React.Component));

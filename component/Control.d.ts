@@ -1,6 +1,8 @@
 import * as React from "react";
 import { ISizeProps } from "./modifiers";
 interface IControlProps extends ISizeProps {
+    children?: React.ReactNode;
+    className?: string;
     hasIconsLeft?: boolean;
     hasIconsRight?: boolean;
     isExpanded?: boolean;
