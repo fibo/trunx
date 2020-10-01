@@ -9,11 +9,10 @@ var LevelItem = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     LevelItem.prototype.render = function () {
-        var hasTextCentered = this.props.hasTextCentered;
-        var className = classnames("level-item", {
-            "has-text-centered": hasTextCentered,
-        }, modifiers_1.textColorHelpersPropsToClassnames(this.props));
-        return (React.createElement("div", { className: className }, this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children, hasTextCentered = _a.hasTextCentered, props = tslib_1.__rest(_a, ["className", "children", "hasTextCentered"]);
+        return (React.createElement("div", { className: classnames("level-item", className, {
+                "has-text-centered": hasTextCentered,
+            }, modifiers_1.textColorHelpersPropsToClassnames(props)) }, children));
     };
     return LevelItem;
 }(React.Component));
@@ -23,8 +22,8 @@ var LevelLeft = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     LevelLeft.prototype.render = function () {
-        var className = classnames("level-left", modifiers_1.textColorHelpersPropsToClassnames(this.props));
-        return (React.createElement("div", { className: className }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("div", { className: classnames("level-left", className, modifiers_1.textColorHelpersPropsToClassnames(this.props)) }, children));
     };
     return LevelLeft;
 }(React.Component));
@@ -34,8 +33,8 @@ var LevelRight = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     LevelRight.prototype.render = function () {
-        var className = classnames("level-right", modifiers_1.textColorHelpersPropsToClassnames(this.props));
-        return (React.createElement("div", { className: className }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("div", { className: classnames("level-right", className, modifiers_1.textColorHelpersPropsToClassnames(this.props)) }, children));
     };
     return LevelRight;
 }(React.Component));
@@ -45,11 +44,10 @@ var Level = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Level.prototype.render = function () {
-        var isMobile = this.props.isMobile;
-        var className = classnames("level", {
-            "is-mobile": isMobile,
-        }, modifiers_1.textColorHelpersPropsToClassnames(this.props));
-        return (React.createElement("nav", { className: className }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className, isMobile = _a.isMobile;
+        return (React.createElement("nav", { className: classnames("level", className, {
+                "is-mobile": isMobile,
+            }, modifiers_1.textColorHelpersPropsToClassnames(this.props)) }, children));
     };
     Level.Item = LevelItem;
     Level.Left = LevelLeft;

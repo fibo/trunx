@@ -9,7 +9,8 @@ var DropdownContent = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     DropdownContent.prototype.render = function () {
-        return (React.createElement("div", { className: "dropdown-content" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("div", { className: classnames("dropdown-content", className) }, children));
     };
     return DropdownContent;
 }(React.Component));
@@ -19,7 +20,8 @@ var DropdownDivider = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     DropdownDivider.prototype.render = function () {
-        return (React.createElement("div", { className: "dropdown-divider" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("div", { className: classnames("dropdown-divider", className) }, children));
     };
     return DropdownDivider;
 }(React.Component));
@@ -29,11 +31,10 @@ var DropdownItem = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     DropdownItem.prototype.render = function () {
-        var _a = this.props, href = _a.href, isActive = _a.isActive, onClick = _a.onClick, props = tslib_1.__rest(_a, ["href", "isActive", "onClick"]);
-        var className = classnames("dropdown-item", {
-            "is-active": isActive,
-        });
-        return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, href: href, onClick: onClick }), this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children, href = _a.href, isActive = _a.isActive, onClick = _a.onClick, props = tslib_1.__rest(_a, ["className", "children", "href", "isActive", "onClick"]);
+        return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: classnames("dropdown-item", className, {
+                "is-active": isActive,
+            }), href: href, onClick: onClick }), children));
     };
     return DropdownItem;
 }(React.Component));
@@ -43,7 +44,8 @@ var DropdownMenu = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     DropdownMenu.prototype.render = function () {
-        return (React.createElement("div", { className: "dropdown-menu", role: "menu" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("div", { className: classnames("dropdown-menu", className), role: "menu" }, children));
     };
     return DropdownMenu;
 }(React.Component));
@@ -53,7 +55,8 @@ var DropdownTrigger = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     DropdownTrigger.prototype.render = function () {
-        return (React.createElement("div", { className: "dropdown-trigger" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("div", { className: classnames("dropdown-trigger", className) }, children));
     };
     return DropdownTrigger;
 }(React.Component));
@@ -63,14 +66,13 @@ var Dropdown = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Dropdown.prototype.render = function () {
-        var _a = this.props, isActive = _a.isActive, isHoverable = _a.isHoverable, isRight = _a.isRight, isUp = _a.isUp;
-        var className = classnames("dropdown", {
-            "is-active": isActive,
-            "is-hoverable": isHoverable,
-            "is-right": isRight,
-            "is-up": isUp,
-        });
-        return (React.createElement("div", { className: className }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className, isActive = _a.isActive, isHoverable = _a.isHoverable, isRight = _a.isRight, isUp = _a.isUp;
+        return (React.createElement("div", { className: classnames("dropdown", className, {
+                "is-active": isActive,
+                "is-hoverable": isHoverable,
+                "is-right": isRight,
+                "is-up": isUp,
+            }) }, children));
     };
     Dropdown.Content = DropdownContent;
     Dropdown.Divider = DropdownDivider;

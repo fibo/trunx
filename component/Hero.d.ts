@@ -1,6 +1,8 @@
 import * as React from "react";
 import { IMainColorsProps } from "./modifiers";
 interface IHeroProps extends IMainColorsProps {
+    children?: React.ReactNode;
+    className?: string;
     isBold?: boolean;
     isDark?: boolean;
     isFullheightWithNavbar?: boolean;
@@ -9,13 +11,25 @@ interface IHeroProps extends IMainColorsProps {
     isLight?: boolean;
     isMedium?: boolean;
 }
-declare class HeroBody extends React.Component {
+interface IHeroBodyProps {
+    children?: React.ReactNode;
+    className?: string;
+}
+interface IHeroFootProps {
+    children?: React.ReactNode;
+    className?: string;
+}
+interface IHeroHeadProps {
+    children?: React.ReactNode;
+    className?: string;
+}
+declare class HeroBody extends React.Component<IHeroBodyProps> {
     render(): JSX.Element;
 }
-declare class HeroFoot extends React.Component {
+declare class HeroFoot extends React.Component<IHeroFootProps> {
     render(): JSX.Element;
 }
-declare class HeroHead extends React.Component {
+declare class HeroHead extends React.Component<IHeroHeadProps> {
     render(): JSX.Element;
 }
 export default class Hero extends React.Component<IHeroProps> {

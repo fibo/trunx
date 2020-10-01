@@ -1,14 +1,22 @@
 import * as React from "react";
 import { ITextColorHelpersProps } from "./modifiers";
 interface ILevelItemProps extends ITextColorHelpersProps {
+    children?: React.ReactNode;
+    className?: string;
     hasTextCentered?: boolean;
 }
 interface ILevelLeftProps extends ITextColorHelpersProps {
+    children?: React.ReactNode;
+    className?: string;
 }
 interface ILevelProps extends ITextColorHelpersProps {
+    children?: React.ReactNode;
+    className?: string;
     isMobile?: boolean;
 }
 interface ILevelRightProps extends ITextColorHelpersProps {
+    children?: React.ReactNode;
+    className?: string;
 }
 declare class LevelItem extends React.Component<ILevelItemProps> {
     render(): JSX.Element;

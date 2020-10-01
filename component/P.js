@@ -10,7 +10,7 @@ var P = (function (_super) {
     }
     P.prototype.render = function () {
         var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
-        return (React.createElement("p", { className: classnames(modifiers_1.alignementPropsToClassnames(props), modifiers_1.backgroundColorHelpersPropsToClassnames(props), modifiers_1.textColorHelpersPropsToClassnames(props)) }, children));
+        return (React.createElement("p", { className: classnames(className, modifiers_1.alignementPropsToClassnames(props), modifiers_1.backgroundColorHelpersPropsToClassnames(props), modifiers_1.textColorHelpersPropsToClassnames(props)) }, children));
     };
     return P;
 }(React.Component));

@@ -8,7 +8,8 @@ var ModalCardBody = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalCardBody.prototype.render = function () {
-        return (React.createElement("section", { className: "modal-card-body" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("section", { className: classnames("modal-card-body", className) }, children));
     };
     return ModalCardBody;
 }(React.Component));
@@ -18,7 +19,8 @@ var ModalCardFoot = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalCardFoot.prototype.render = function () {
-        return (React.createElement("footer", { className: "modal-card-foot" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("footer", { className: classnames("modal-card-foot", className) }, children));
     };
     return ModalCardFoot;
 }(React.Component));
@@ -28,7 +30,8 @@ var ModalCardHead = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalCardHead.prototype.render = function () {
-        return (React.createElement("header", { className: "modal-card-head" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("header", { className: classnames("modal-card-head", className) }, children));
     };
     return ModalCardHead;
 }(React.Component));
@@ -38,7 +41,8 @@ var ModalCardTitle = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalCardTitle.prototype.render = function () {
-        return (React.createElement("p", { className: "modal-card-title" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("p", { className: classnames("modal-card-title", className) }, children));
     };
     return ModalCardTitle;
 }(React.Component));
@@ -48,8 +52,8 @@ var ModalBackground = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalBackground.prototype.render = function () {
-        var onClick = this.props.onClick;
-        return (React.createElement("div", { className: "modal-background", onClick: onClick }));
+        var _a = this.props, className = _a.className, onClick = _a.onClick;
+        return (React.createElement("div", { className: classnames("modal-background", className), onClick: onClick }));
     };
     return ModalBackground;
 }(React.Component));
@@ -59,7 +63,8 @@ var ModalCard = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalCard.prototype.render = function () {
-        return (React.createElement("div", { className: "modal-card" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("div", { className: classnames("modal-card", className) }, children));
     };
     ModalCard.Body = ModalCardBody;
     ModalCard.Foot = ModalCardFoot;
@@ -73,11 +78,10 @@ var ModalClose = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalClose.prototype.render = function () {
-        var _a = this.props, isLarge = _a.isLarge, onClick = _a.onClick;
-        var className = classnames("modal-close", {
-            "is-large": isLarge,
-        });
-        return (React.createElement("button", { "aria-label": "close", className: className, onClick: onClick }));
+        var _a = this.props, className = _a.className, isLarge = _a.isLarge, onClick = _a.onClick;
+        return (React.createElement("button", { "aria-label": "close", className: classnames("modal-close", className, {
+                "is-large": isLarge,
+            }), onClick: onClick }));
     };
     return ModalClose;
 }(React.Component));
@@ -87,7 +91,8 @@ var ModalContent = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalContent.prototype.render = function () {
-        return (React.createElement("div", { className: "modal-content" }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className;
+        return (React.createElement("div", { className: classnames("modal-content", className) }, children));
     };
     return ModalContent;
 }(React.Component));
@@ -97,11 +102,10 @@ var Modal = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Modal.prototype.render = function () {
-        var isActive = this.props.isActive;
-        var className = classnames("modal", {
-            "is-active": isActive,
-        });
-        return (React.createElement("div", { className: className }, this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children, isActive = _a.isActive;
+        return (React.createElement("div", { className: classnames("modal", className, {
+                "is-active": isActive,
+            }) }, children));
     };
     Modal.Background = ModalBackground;
     Modal.Card = ModalCard;

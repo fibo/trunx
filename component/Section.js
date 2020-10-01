@@ -9,17 +9,16 @@ var Section = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Section.prototype.render = function () {
-        var _a = this.props, isInvisible = _a.isInvisible, isLarge = _a.isLarge, isMarginLess = _a.isMarginLess, isMedium = _a.isMedium, isPaddingLess = _a.isPaddingLess, isSrOnly = _a.isSrOnly;
-        var className = classnames("section", {
-            "is-large": isLarge,
-            "is-medium": isMedium,
-        }, modifiers_1.helpersPropsToClassnames({
-            isInvisible: isInvisible,
-            isMarginLess: isMarginLess,
-            isPaddingLess: isPaddingLess,
-            isSrOnly: isSrOnly,
-        }));
-        return (React.createElement("div", { className: className }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className, isInvisible = _a.isInvisible, isLarge = _a.isLarge, isMarginLess = _a.isMarginLess, isMedium = _a.isMedium, isPaddingLess = _a.isPaddingLess, isSrOnly = _a.isSrOnly;
+        return (React.createElement("div", { className: classnames("section", className, {
+                "is-large": isLarge,
+                "is-medium": isMedium,
+            }, modifiers_1.helpersPropsToClassnames({
+                isInvisible: isInvisible,
+                isMarginLess: isMarginLess,
+                isPaddingLess: isPaddingLess,
+                isSrOnly: isSrOnly,
+            })) }, children));
     };
     return Section;
 }(React.Component));

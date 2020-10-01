@@ -1,6 +1,8 @@
 import * as React from "react";
 import { ISizeProps } from "./modifiers";
 interface IContentProps extends ISizeProps {
+    children?: React.ReactNode;
+    className?: string;
     hasTextCentered?: boolean;
     hasTextJustified?: boolean;
     hasTextLeft?: boolean;

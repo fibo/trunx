@@ -11,8 +11,8 @@ var CardContent = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardContent.prototype.render = function () {
-        var className = classnames("card-content", modifiers_1.textColorHelpersPropsToClassnames(this.props));
-        return (React.createElement("div", { className: className }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
+        return (React.createElement("div", { className: classnames("card-content", className, modifiers_1.textColorHelpersPropsToClassnames(props)) }, children));
     };
     return CardContent;
 }(React.Component));
@@ -22,13 +22,13 @@ var CardFooterItem = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardFooterItem.prototype.render = function () {
-        var _a = this.props, download = _a.download, href = _a.href, onClick = _a.onClick, target = _a.target, props = tslib_1.__rest(_a, ["download", "href", "onClick", "target"]);
-        var className = "card-footer-item";
+        var _a = this.props, classNameProp = _a.className, children = _a.children, download = _a.download, href = _a.href, onClick = _a.onClick, target = _a.target, props = tslib_1.__rest(_a, ["className", "children", "download", "href", "onClick", "target"]);
+        var className = classnames("card-footer-item", classNameProp);
         if (href || onClick) {
-            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), this.props.children));
+            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), children));
         }
         else {
-            return (React.createElement("div", tslib_1.__assign({}, props, { className: className }), this.props.children));
+            return (React.createElement("div", { className: className }, children));
         }
     };
     return CardFooterItem;
@@ -39,8 +39,8 @@ var CardFooter = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardFooter.prototype.render = function () {
-        var className = classnames("card-footer", modifiers_1.textColorHelpersPropsToClassnames(this.props));
-        return (React.createElement("footer", { className: className }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
+        return (React.createElement("footer", { className: classnames("card-footer", className, modifiers_1.textColorHelpersPropsToClassnames(props)) }, children));
     };
     CardFooter.Item = CardFooterItem;
     return CardFooter;
@@ -51,13 +51,13 @@ var CardHeaderIcon = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardHeaderIcon.prototype.render = function () {
-        var _a = this.props, download = _a.download, href = _a.href, onClick = _a.onClick, target = _a.target, props = tslib_1.__rest(_a, ["download", "href", "onClick", "target"]);
-        var className = "card-header-icon";
+        var _a = this.props, children = _a.children, classNameProp = _a.className, download = _a.download, href = _a.href, onClick = _a.onClick, target = _a.target, props = tslib_1.__rest(_a, ["children", "className", "download", "href", "onClick", "target"]);
+        var className = classnames("card-header-icon", classNameProp);
         if (href || onClick) {
-            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), this.props.children));
+            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), children));
         }
         else {
-            return (React.createElement("div", tslib_1.__assign({}, props, { className: className }), this.props.children));
+            return (React.createElement("div", tslib_1.__assign({}, props, { className: className }), children));
         }
     };
     return CardHeaderIcon;
@@ -68,11 +68,10 @@ var CardHeaderTitle = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardHeaderTitle.prototype.render = function () {
-        var isCentered = this.props.isCentered;
-        var className = classnames("card-header-title", {
-            "is-centered": isCentered,
-        });
-        return (React.createElement("div", { className: className }, this.props.children));
+        var _a = this.props, children = _a.children, className = _a.className, isCentered = _a.isCentered;
+        return (React.createElement("div", { className: classnames("card-header-title", className, {
+                "is-centered": isCentered,
+            }) }, children));
     };
     return CardHeaderTitle;
 }(React.Component));
@@ -82,7 +81,8 @@ var CardHeader = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardHeader.prototype.render = function () {
-        return (React.createElement("header", { className: "card-header" }, this.props.children));
+        var _a = this.props, className = _a.className, children = _a.children;
+        return (React.createElement("header", { className: classnames("card-header", className) }, children));
     };
     CardHeader.Icon = CardHeaderIcon;
     CardHeader.Title = CardHeaderTitle;
@@ -94,8 +94,9 @@ var CardImage = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardImage.prototype.render = function () {
-        return (React.createElement("div", { className: "card-image" },
-            React.createElement(Image_1.default, tslib_1.__assign({}, this.props))));
+        var _a = this.props, className = _a.className, props = tslib_1.__rest(_a, ["className"]);
+        return (React.createElement("div", { className: classnames("card-image", className) },
+            React.createElement(Image_1.default, tslib_1.__assign({}, props))));
     };
     return CardImage;
 }(React.Component));
@@ -105,9 +106,8 @@ var Card = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Card.prototype.render = function () {
-        var _a = this.props, children = _a.children, props = tslib_1.__rest(_a, ["children"]);
-        var className = classnames("card", modifiers_1.backgroundColorHelpersPropsToClassnames(props));
-        return (React.createElement("div", { className: className }, children));
+        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
+        return (React.createElement("div", { className: classnames("card", className, modifiers_1.backgroundColorHelpersPropsToClassnames(props)) }, children));
     };
     Card.Content = CardContent;
     Card.Footer = CardFooter;

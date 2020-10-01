@@ -6,7 +6,11 @@ interface ITableProps extends React.TableHTMLAttributes<HTMLTableElement> {
     isNarrow?: boolean;
     isStriped?: boolean;
 }
-declare class TableContainer extends React.Component {
+interface ITableContainerProps {
+    className?: string;
+    children?: string;
+}
+declare class TableContainer extends React.Component<ITableContainerProps> {
     render(): JSX.Element;
 }
 export default class Table extends React.Component<ITableProps> {
