@@ -3,31 +3,32 @@ import * as React from "react"
 
 import {
   ISizeProps,
+  extractModifiersProps,
   sizePropsToClassnames,
 } from "./modifiers"
 
-interface IDeleteProps extends ISizeProps {
+interface IDeleteProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+                               ISizeProps {
   children?: React.ReactNode
   className?: string
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 export default class Delete extends React.Component<IDeleteProps> {
   render() {
-    const {
+    const [{
       className,
-      onClick,
-    } = this.props
+      ...props
+    }, modifiersProps] = extractModifiersProps(this.props)
 
     return (
-      <button aria-label="delete"
+      <button
         className={classnames(
           className,
           "delete",
           className,
-          sizePropsToClassnames(this.props),
+          sizePropsToClassnames(modifiersProps),
         )}
-        onClick={onClick}
+        {...props}
       />
     )
   }

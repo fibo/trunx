@@ -417,7 +417,7 @@ export default function Overview ({
                     'Card.Head',
                     'Card.Title',
                     'Close',
-                    'Content',
+                    'Content'
                   ]
                 },
                 {
@@ -432,7 +432,7 @@ export default function Overview ({
                     'Item.Div',
                     'Link',
                     'Menu',
-                    'Start',
+                    'Start'
                   ]
                 },
                 {
@@ -516,7 +516,7 @@ export default function Overview ({
                 }
               ].map(({ component, subComponents = [] }, i) => (
                 <Li key={i}>
-                  <A href={`https://github.com/fibo/trunx/blob/master/src/component/${component}.tsx`} target="_blank">
+                  <A href={`https://github.com/fibo/trunx/blob/master/src/component/${component}.tsx`} target='_blank'>
                     {component}
                   </A>
 

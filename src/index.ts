@@ -39,6 +39,7 @@ import Progress from './component/Progress'
 import Radio from './component/Radio'
 import Section from './component/Section'
 import Select from './component/Select'
+import Small from './component/Small'
 import Span from './component/Span'
 import Strong from './component/Strong'
 import Subtitle from './component/Subtitle'
@@ -93,6 +94,7 @@ export {
   Radio,
   Section,
   Select,
+  Small,
   Span,
   Strong,
   Subtitle,

@@ -24,10 +24,10 @@ class ClassicNavbarExample extends Component {
       isActive: false
     }
 
-    this.onClickBurger = this.onClickBurger.bind(this)
+    this.handleOnClickBurger = this.handleOnClickBurger.bind(this)
   }
 
-  onClickBurger () {
+  handleOnClickBurger () {
     this.setState({ isActive: !this.state.isActive })
   }
 
@@ -43,7 +43,7 @@ class ClassicNavbarExample extends Component {
 
           <Navbar.Burger
             isActive={isActive}
-            onClick={this.onClickBurger}
+            onClick={this.handleOnClickBurger}
           />
         </Navbar.Brand>
 

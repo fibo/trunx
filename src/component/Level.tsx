@@ -2,15 +2,16 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
+  IAlignementHelpersProps,
   ITextColorHelpersProps,
+  alignementPropsToClassnames,
+  extractModifiersProps,
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface ILevelItemProps extends ITextColorHelpersProps {
-  children?: React.ReactNode
-  className?: string
-  hasTextCentered?: boolean
-}
+interface ILevelItemProps extends React.HTMLAttributes<HTMLDivElement>,
+                                  IAlignementHelpersProps,
+                                  ITextColorHelpersProps {}
 
 interface ILevelLeftProps extends ITextColorHelpersProps {
   children?: React.ReactNode
@@ -30,23 +31,21 @@ interface ILevelRightProps extends ITextColorHelpersProps {
 
 class LevelItem extends React.Component<ILevelItemProps> {
   render() {
-    const {
+    const [{
       className,
       children,
-      hasTextCentered,
       ...props
-    } = this.props
+    }, modifiersProps] = extractModifiersProps(this.props)
 
     return (
       <div
         className={classnames(
           "level-item",
           className,
-          {
-            "has-text-centered": hasTextCentered,
-          },
-          textColorHelpersPropsToClassnames(props),
+          alignementPropsToClassnames(modifiersProps),
+          textColorHelpersPropsToClassnames(modifiersProps),
         )}
+        {...props}
       >{children}</div>
     )
   }

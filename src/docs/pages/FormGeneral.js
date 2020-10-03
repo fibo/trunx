@@ -81,7 +81,7 @@ export default function FormGeneral () {
 
             <p>
               Each of them should be wrapped in a <code>Control</code> component.
-    When combining several controls in a <b>form</b>, use the <code>Field</code> component as a <b>container</b>, to keep the spacing consistent.
+              When combining several controls in a <b>form</b>, use the <code>Field</code> component as a <b>container</b>, to keep the spacing consistent.
             </p>
 
             <Columns>
@@ -311,4 +311,3 @@ export default function FormGeneral () {
     </>
   )
 }
-
