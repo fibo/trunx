@@ -8,6 +8,7 @@ export default {
   home: '/',
   components: {
     breadcrumb: '/components/breadcrumb',
+    modal: '/component/modal',
     navbar: '/components/navbar'
   },
   form: {
