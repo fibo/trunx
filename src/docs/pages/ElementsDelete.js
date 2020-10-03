@@ -48,13 +48,13 @@ export default function ElementsDelete ({
 
             <Columns>
               <Column isHalf>
-                <Delete />
+                <Delete aria-label='delete' />
               </Column>
 
               <Column isHalf>
                 <Code language='jsx'>
                   {indent`
-                    <Delete />
+                    <Delete arial-label='delete' />
                   `}
                 </Code>
               </Column>

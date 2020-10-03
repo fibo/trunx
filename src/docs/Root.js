@@ -63,13 +63,13 @@ export default function Root () {
           [LayoutSection, routes.layout.section],
           [LayoutTiles, routes.layout.tiles],
           [ModifiersSyntax, routes.modifiers.syntax],
-          [ModifiersColorHelpers, routes.modifiers.colorHelpers],
+          [ModifiersColorHelpers, routes.modifiers.colorHelpers]
         ].map(([component, path], i) => (
           <Route key={i} component={component} exact path={path} />
         ))}
 
-        <Redirect from="*" to={routes.home} />
+        <Redirect from='*' to={routes.home} />
       </Switch>
     </BrowserRouter>
-  );
+  )
 }

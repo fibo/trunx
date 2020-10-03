@@ -154,3 +154,4 @@ export declare function textColorHelpersPropsToClassnames(props: ITextColorHelpe
     "has-text-white-bis": boolean | undefined;
     "has-text-white-ter": boolean | undefined;
 };
+export declare function extractModifiersProps(props: any): any[];

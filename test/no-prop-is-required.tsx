@@ -41,6 +41,7 @@ import Progress from '../src/component/Progress'
 import Radio from '../src/component/Radio'
 import Section from '../src/component/Section'
 import Select from '../src/component/Select'
+import Small from '../src/component/Small'
 import Span from '../src/component/Span'
 import Strong from '../src/component/Strong'
 import Subtitle from '../src/component/Subtitle'
@@ -155,6 +156,7 @@ function noPropIsRequired () {
       <Radio />
       <Section />
       <Select />
+      <Small />
       <Span />
       <Strong />
       <Subtitle />

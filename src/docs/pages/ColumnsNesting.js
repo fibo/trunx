@@ -11,7 +11,6 @@ import {
   Container,
   Content,
   Li,
-  Notification,
   P,
   Section,
   Subtitle,

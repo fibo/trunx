@@ -40,7 +40,6 @@ export default function Nav () {
           <img src='/assets/trunx-logotype-white.png' />
         </Navbar.Item>
 
-
         <Navbar.Burger
           isActive={expanded}
           onClick={onClickBurger}
@@ -75,7 +74,7 @@ export default function Nav () {
                 { label: 'Level', route: routes.layout.level },
                 { label: 'Media Object', route: routes.layout.mediaObject },
                 { label: 'Footer', route: routes.layout.footer },
-                { label: 'Tiles', route: routes.layout.tiles },
+                { label: 'Tiles', route: routes.layout.tiles }
               ]
             },
             {
@@ -101,7 +100,7 @@ export default function Nav () {
               items: [
                 { label: 'Breadcrumb', route: routes.components.breadcrumb },
                 { label: 'Navbar', route: routes.components.navbar },
-                {label: 'Modal', route: routes.components.modal}
+                { label: 'Modal', route: routes.components.modal }
               ]
             }
           ].map(({ label, items }, i) => (

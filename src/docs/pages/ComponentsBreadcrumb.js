@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import Code from '../components/Code.js'
 import Nav from '../components/Nav.js'
@@ -9,7 +9,6 @@ import {
   Breadcrumb,
   Container,
   Content,
-  Navbar,
   Section,
   Subtitle,
   Title
@@ -50,21 +49,21 @@ export default function ComponentsBreadcrumb ({
 
           <Content>
             <Breadcrumb>
-                <Breadcrumb.Item>
-                  <a href='#'>Bulma</a>
-                </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a href='#'>Bulma</a>
+              </Breadcrumb.Item>
 
-                <Breadcrumb.Item>
-                  <a href='#'>Documentation</a>
-                </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a href='#'>Documentation</a>
+              </Breadcrumb.Item>
 
-                <Breadcrumb.Item>
-                  <a href='#'>Components</a>
-                </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a href='#'>Components</a>
+              </Breadcrumb.Item>
 
-                <Breadcrumb.Item isActive>
-                  <a href='#' aria-current='page'>Breadcrumb</a>
-                </Breadcrumb.Item>
+              <Breadcrumb.Item isActive>
+                <a href='#' aria-current='page'>Breadcrumb</a>
+              </Breadcrumb.Item>
             </Breadcrumb>
 
             <Code language='jsx'>

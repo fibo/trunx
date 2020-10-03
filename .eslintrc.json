@@ -2,6 +2,7 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "extends": [
-    "standard"
+    "standard",
+    "standard-jsx"
   ]
 }
