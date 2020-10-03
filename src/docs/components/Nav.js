@@ -99,8 +99,9 @@ export default function Nav () {
             {
               label: 'Components',
               items: [
-                { label: 'Box', route: routes.components.breadcrumb },
-                { label: 'Navbar', route: routes.components.navbar }
+                { label: 'Breadcrumb', route: routes.components.breadcrumb },
+                { label: 'Navbar', route: routes.components.navbar },
+                {label: 'Modal', route: routes.components.modal}
               ]
             }
           ].map(({ label, items }, i) => (
