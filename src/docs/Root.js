@@ -12,6 +12,7 @@ import ColumnsResponsiveness from './pages/ColumnsResponsiveness.js'
 import ColumnsSizes from './pages/ColumnsSizes.js'
 import ComponentsBreadcrumb from './pages/ComponentsBreadcrumb.js'
 import ComponentsNavbar from './pages/ComponentsNavbar.js'
+import ComponentsModal from './pages/ComponentsModal.js'
 import ElementsBox from './pages/ElementsBox.js'
 import ElementsButton from './pages/ElementsButton.js'
 import ElementsDelete from './pages/ElementsDelete.js'
@@ -45,6 +46,7 @@ export default function Root () {
           [ColumnsSizes, routes.columns.sizes],
           [ComponentsBreadcrumb, routes.components.breadcrumb],
           [ComponentsNavbar, routes.components.navbar],
+          [ComponentsModal, routes.components.modal],
           [ElementsBox, routes.elements.box],
           [ElementsButton, routes.elements.button],
           [ElementsDelete, routes.elements.delete],
@@ -61,13 +63,13 @@ export default function Root () {
           [LayoutSection, routes.layout.section],
           [LayoutTiles, routes.layout.tiles],
           [ModifiersSyntax, routes.modifiers.syntax],
-          [ModifiersColorHelpers, routes.modifiers.colorHelpers]
+          [ModifiersColorHelpers, routes.modifiers.colorHelpers],
         ].map(([component, path], i) => (
           <Route key={i} component={component} exact path={path} />
         ))}
 
-        <Redirect from='*' to={routes.home} />
+        <Redirect from="*" to={routes.home} />
       </Switch>
     </BrowserRouter>
-  )
+  );
 }
