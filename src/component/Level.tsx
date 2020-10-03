@@ -11,7 +11,9 @@ import {
 
 interface ILevelItemProps extends React.HTMLAttributes<HTMLDivElement>,
                                   IAlignementHelpersProps,
-                                  ITextColorHelpersProps {}
+                                  ITextColorHelpersProps {
+  tag?: 'a' | 'div'
+}
 
 interface ILevelLeftProps extends ITextColorHelpersProps {
   children?: React.ReactNode
@@ -34,20 +36,19 @@ class LevelItem extends React.Component<ILevelItemProps> {
     const [{
       className,
       children,
+      tag = 'div',
       ...props
     }, modifiersProps] = extractModifiersProps(this.props)
 
-    return (
-      <div
-        className={classnames(
-          "level-item",
-          className,
-          alignementPropsToClassnames(modifiersProps),
-          textColorHelpersPropsToClassnames(modifiersProps),
-        )}
-        {...props}
-      >{children}</div>
-    )
+    return React.createElement(tag, {
+      className: classnames(
+        "level-item",
+        className,
+        alignementPropsToClassnames(modifiersProps),
+        textColorHelpersPropsToClassnames(modifiersProps),
+      ),
+      ...props
+    }, children)
   }
 }
 
