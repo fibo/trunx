@@ -42,7 +42,7 @@ var ModalCardTitle = (function (_super) {
     }
     ModalCardTitle.prototype.render = function () {
         var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("p", { className: classnames("modal-card-title", className) }, children));
+        return (React.createElement("div", { className: classnames("modal-card-title", className) }, children));
     };
     return ModalCardTitle;
 }(React.Component));

@@ -271,3 +271,57 @@ export function textColorHelpersPropsToClassnames(props: ITextColorHelpersProps)
     "has-text-white-ter": hasTextWhiteTer,
   }
 }
+
+export function extractModifiersProps (props) {
+  const {
+    hasTextBlack,
+    hasTextBlackBis,
+    hasTextBlackTer,
+    hasTextDanger,
+    hasTextDark,
+    hasTextGrey,
+    hasTextGreyDark,
+    hasTextGreyDarker,
+    hasTextGreyLight,
+    hasTextGreyLighter,
+    hasTextInfo,
+    hasTextLight,
+    hasTextLink,
+    hasTextPrimary,
+    hasTextSuccess,
+    hasTextWarning,
+    hasTextWhite,
+    hasTextWhiteBis,
+    hasTextWhiteTer,
+    isLarge,
+    isMedium,
+    isSmall,
+    ...rest
+  } = props
+
+  return [
+    rest, {
+    hasTextBlack,
+    hasTextBlackBis,
+    hasTextBlackTer,
+    hasTextDanger,
+    hasTextDark,
+    hasTextGrey,
+    hasTextGreyDark,
+    hasTextGreyDarker,
+    hasTextGreyLight,
+    hasTextGreyLighter,
+    hasTextInfo,
+    hasTextLight,
+    hasTextLink,
+    hasTextPrimary,
+    hasTextSuccess,
+    hasTextWarning,
+    hasTextWhite,
+    hasTextWhiteBis,
+    hasTextWhiteTer,
+    isLarge,
+    isMedium,
+    isSmall,
+  }]
+}

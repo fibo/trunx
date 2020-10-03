@@ -9,10 +9,8 @@ var LevelItem = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     LevelItem.prototype.render = function () {
-        var _a = this.props, className = _a.className, children = _a.children, hasTextCentered = _a.hasTextCentered, props = tslib_1.__rest(_a, ["className", "children", "hasTextCentered"]);
-        return (React.createElement("div", { className: classnames("level-item", className, {
-                "has-text-centered": hasTextCentered,
-            }, modifiers_1.textColorHelpersPropsToClassnames(props)) }, children));
+        var _a = modifiers_1.extractModifiersProps(this.props), _b = _a[0], modifiersProps = _a[1], className = _b.className, children = _b.children, props = tslib_1.__rest(_b, ["className", "children"]);
+        return (React.createElement("div", tslib_1.__assign({ className: classnames("level-item", className, modifiers_1.alignementPropsToClassnames(modifiersProps), modifiers_1.textColorHelpersPropsToClassnames(modifiersProps)) }, props), children));
     };
     return LevelItem;
 }(React.Component));

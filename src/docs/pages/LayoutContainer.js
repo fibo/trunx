@@ -128,12 +128,12 @@ export default function LayoutContainer ({
             </Title>
 
             <p>
-        With the two props <code>isWidescreen</code> and <code>isFullhd</code>, you can have a <em>fullwidth</em> container <b>until</b> those specific breakpoints.
+              With the two props <code>isWidescreen</code> and <code>isFullhd</code>, you can have a <em>fullwidth</em> container <b>until</b> those specific breakpoints.
             </p>
 
             <Container isWidescreen>
               <Notification>
-              This container is <strong>fullwidth</strong> <em>until</em> the <code>$widescreen</code> breakpoint.
+                This container is <strong>fullwidth</strong> <em>until</em> the <code>$widescreen</code> breakpoint.
               </Notification>
             </Container>
 
@@ -149,7 +149,7 @@ export default function LayoutContainer ({
 
             <Container isFullhd>
               <Notification>
-              This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint.
+                This container is <strong>fullwidth</strong> <em>until</em> the <code>$fullhd</code> breakpoint.
               </Notification>
             </Container>
 

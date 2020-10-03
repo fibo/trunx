@@ -9,8 +9,8 @@ var Delete = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Delete.prototype.render = function () {
-        var _a = this.props, className = _a.className, onClick = _a.onClick;
-        return (React.createElement("button", { "aria-label": "delete", className: classnames(className, "delete", className, modifiers_1.sizePropsToClassnames(this.props)), onClick: onClick }));
+        var _a = modifiers_1.extractModifiersProps(this.props), _b = _a[0], modifiersProps = _a[1], className = _b.className, props = tslib_1.__rest(_b, ["className"]);
+        return (React.createElement("button", tslib_1.__assign({ className: classnames(className, "delete", className, modifiers_1.sizePropsToClassnames(modifiersProps)) }, props)));
     };
     return Delete;
 }(React.Component));

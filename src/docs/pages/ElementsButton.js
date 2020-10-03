@@ -14,12 +14,11 @@ import {
   Container,
   Content,
   Li,
-  Notification,
   P,
   Section,
   Subtitle,
   Title,
-  Ul,
+  Ul
 } from '../../../index.js'
 
 export default function ElementsButton ({

@@ -8,15 +8,12 @@ import indent from '../utils/indent.js'
 
 import {
   Box,
-  Column,
-  Columns,
   Container,
   Content,
   Level,
   Icon,
   Image,
   Media,
-  Notification,
   Section,
   Subtitle,
   Title

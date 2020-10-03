@@ -1,4 +1,5 @@
 Object.defineProperty(exports, "__esModule", { value: true });
+var tslib_1 = require("tslib");
 function alignementPropsToClassnames(props) {
     var hasTextCentered = props.hasTextCentered, hasTextJustified = props.hasTextJustified, hasTextLeft = props.hasTextLeft, hasTextRight = props.hasTextRight;
     return {
@@ -109,3 +110,33 @@ function textColorHelpersPropsToClassnames(props) {
     };
 }
 exports.textColorHelpersPropsToClassnames = textColorHelpersPropsToClassnames;
+function extractModifiersProps(props) {
+    var hasTextBlack = props.hasTextBlack, hasTextBlackBis = props.hasTextBlackBis, hasTextBlackTer = props.hasTextBlackTer, hasTextDanger = props.hasTextDanger, hasTextDark = props.hasTextDark, hasTextGrey = props.hasTextGrey, hasTextGreyDark = props.hasTextGreyDark, hasTextGreyDarker = props.hasTextGreyDarker, hasTextGreyLight = props.hasTextGreyLight, hasTextGreyLighter = props.hasTextGreyLighter, hasTextInfo = props.hasTextInfo, hasTextLight = props.hasTextLight, hasTextLink = props.hasTextLink, hasTextPrimary = props.hasTextPrimary, hasTextSuccess = props.hasTextSuccess, hasTextWarning = props.hasTextWarning, hasTextWhite = props.hasTextWhite, hasTextWhiteBis = props.hasTextWhiteBis, hasTextWhiteTer = props.hasTextWhiteTer, isLarge = props.isLarge, isMedium = props.isMedium, isSmall = props.isSmall, rest = tslib_1.__rest(props, ["hasTextBlack", "hasTextBlackBis", "hasTextBlackTer", "hasTextDanger", "hasTextDark", "hasTextGrey", "hasTextGreyDark", "hasTextGreyDarker", "hasTextGreyLight", "hasTextGreyLighter", "hasTextInfo", "hasTextLight", "hasTextLink", "hasTextPrimary", "hasTextSuccess", "hasTextWarning", "hasTextWhite", "hasTextWhiteBis", "hasTextWhiteTer", "isLarge", "isMedium", "isSmall"]);
+    return [
+        rest, {
+            hasTextBlack: hasTextBlack,
+            hasTextBlackBis: hasTextBlackBis,
+            hasTextBlackTer: hasTextBlackTer,
+            hasTextDanger: hasTextDanger,
+            hasTextDark: hasTextDark,
+            hasTextGrey: hasTextGrey,
+            hasTextGreyDark: hasTextGreyDark,
+            hasTextGreyDarker: hasTextGreyDarker,
+            hasTextGreyLight: hasTextGreyLight,
+            hasTextGreyLighter: hasTextGreyLighter,
+            hasTextInfo: hasTextInfo,
+            hasTextLight: hasTextLight,
+            hasTextLink: hasTextLink,
+            hasTextPrimary: hasTextPrimary,
+            hasTextSuccess: hasTextSuccess,
+            hasTextWarning: hasTextWarning,
+            hasTextWhite: hasTextWhite,
+            hasTextWhiteBis: hasTextWhiteBis,
+            hasTextWhiteTer: hasTextWhiteTer,
+            isLarge: isLarge,
+            isMedium: isMedium,
+            isSmall: isSmall,
+        }
+    ];
+}
+exports.extractModifiersProps = extractModifiersProps;

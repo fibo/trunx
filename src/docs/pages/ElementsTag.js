@@ -7,13 +7,11 @@ import indent from '../utils/indent.js'
 
 import {
   B,
-  Box,
   Column,
   Columns,
   Container,
   Content,
   Field,
-  Media,
   P,
   Section,
   Subtitle,
@@ -189,7 +187,7 @@ export default function ElementsTag ({
                   </P>
 
                   <P>
-                  While the default size is the <B>normal</B> one, the <code>isNormal</code> modifier prop exists in case you need to reset the tag to its normal size.
+                    While the default size is the <B>normal</B> one, the <code>isNormal</code> modifier prop exists in case you need to reset the tag to its normal size.
                     The tag comes in <B>3 different</B> sizes.
                   </P>
                 </Content>

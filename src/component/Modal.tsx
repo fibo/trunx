@@ -110,12 +110,12 @@ class ModalCardTitle extends React.Component<IModalCardTitleProps> {
     } = this.props
 
     return (
-      <p
+      <div
         className={classnames(
           "modal-card-title",
           className,
         )}
-      >{children}</p>
+      >{children}</div>
     )
   }
 }

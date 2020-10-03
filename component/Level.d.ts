@@ -1,9 +1,6 @@
 import * as React from "react";
-import { ITextColorHelpersProps } from "./modifiers";
-interface ILevelItemProps extends ITextColorHelpersProps {
-    children?: React.ReactNode;
-    className?: string;
-    hasTextCentered?: boolean;
+import { IAlignementHelpersProps, ITextColorHelpersProps } from "./modifiers";
+interface ILevelItemProps extends React.HTMLAttributes<HTMLDivElement>, IAlignementHelpersProps, ITextColorHelpersProps {
 }
 interface ILevelLeftProps extends ITextColorHelpersProps {
     children?: React.ReactNode;
