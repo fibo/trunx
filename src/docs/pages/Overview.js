@@ -476,6 +476,9 @@ export default function Overview ({
                   component: 'Span'
                 },
                 {
+                  component: 'Small'
+                },
+                {
                   component: 'Strong'
                 },
                 {
