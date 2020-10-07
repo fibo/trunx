@@ -76,6 +76,9 @@ export interface ITextColorHelpersProps {
     hasTextWhiteBis?: boolean;
     hasTextWhiteTer?: boolean;
 }
+interface IExtractModifiersPropsArg extends IAlignementHelpersProps, IBackgroundColorHelpersProps, IFloatHelpersProps, IHelpersProps, IMainColorsProps, IShadeColorsProps, ISizeProps, ITextColorHelpersProps {
+    [prop: string]: any;
+}
 export declare function alignementPropsToClassnames(props: IAlignementHelpersProps): {
     "has-text-centered": boolean | undefined;
     "has-text-justified": boolean | undefined;
@@ -154,4 +157,7 @@ export declare function textColorHelpersPropsToClassnames(props: ITextColorHelpe
     "has-text-white-bis": boolean | undefined;
     "has-text-white-ter": boolean | undefined;
 };
-export declare function extractModifiersProps(props: any): any[];
+export declare function extractModifiersProps({ hasTextCentered, hasTextJustified, hasTextLeft, hasTextRight, hasBackgroundBlack, hasBackgroundBlackBis, hasBackgroundBlackTer, hasBackgroundDanger, hasBackgroundDark, hasBackgroundGrey, hasBackgroundGreyDark, hasBackgroundGreyDarker, hasBackgroundGreyLight, hasBackgroundGreyLighter, hasBackgroundLight, hasBackgroundLink, hasBackgroundInfo, hasBackgroundPrimary, hasBackgroundSuccess, hasBackgroundWarning, hasBackgroundWhite, hasBackgroundWhiteBis, hasBackgroundWhiteTer, isClearfix, isPulledLeft, isPulledRight, isInvisible, isMarginLess, isPaddingLess, isSrOnly, isDanger, isInfo, isLink, isPrimary, isSuccess, isWarning, isBlack, isDark, isLight, isWhite, isLarge, isMedium, isSmall, hasTextBlack, hasTextBlackBis, hasTextBlackTer, hasTextDanger, hasTextDark, hasTextGrey, hasTextGreyDark, hasTextGreyDarker, hasTextGreyLight, hasTextGreyLighter, hasTextLight, hasTextLink, hasTextInfo, hasTextPrimary, hasTextSuccess, hasTextWarning, hasTextWhite, hasTextWhiteBis, hasTextWhiteTer, ...props }: IExtractModifiersPropsArg): {
+    [prop: string]: any;
+}[];
+export {};

@@ -2,14 +2,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
+var classNames_1 = require("./classNames");
+var commonRenders_1 = require("./commonRenders");
 var ModalCardBody = (function (_super) {
     tslib_1.__extends(ModalCardBody, _super);
     function ModalCardBody() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalCardBody.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("section", { className: classnames("modal-card-body", className) }, children));
+        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
+        return (React.createElement("section", { className: classnames.apply(void 0, tslib_1.__spreadArrays([classNames_1.bulmaClassName.modalCardBody,
+                className], props)) }, children));
     };
     return ModalCardBody;
 }(React.Component));
@@ -19,8 +22,8 @@ var ModalCardFoot = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalCardFoot.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("footer", { className: classnames("modal-card-foot", className) }, children));
+        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
+        return (React.createElement("footer", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.modalCardFoot, className) }, props), children));
     };
     return ModalCardFoot;
 }(React.Component));
@@ -30,8 +33,7 @@ var ModalCardHead = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalCardHead.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("header", { className: classnames("modal-card-head", className) }, children));
+        return commonRenders_1.renderHeader(this.props, classNames_1.bulmaClassName.modalCardHead);
     };
     return ModalCardHead;
 }(React.Component));
@@ -63,8 +65,7 @@ var ModalCard = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     ModalCard.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("div", { className: classnames("modal-card", className) }, children));
+        return commonRenders_1.renderDiv(this.props, classNames_1.bulmaClassName.modalCard);
     };
     ModalCard.Body = ModalCardBody;
     ModalCard.Foot = ModalCardFoot;
@@ -79,7 +80,7 @@ var ModalClose = (function (_super) {
     }
     ModalClose.prototype.render = function () {
         var _a = this.props, className = _a.className, isLarge = _a.isLarge, onClick = _a.onClick;
-        return (React.createElement("button", { "aria-label": "close", className: classnames("modal-close", className, {
+        return (React.createElement("button", { "aria-label": "close", className: classnames(classNames_1.bulmaClassName.modalClose, className, {
                 "is-large": isLarge,
             }), onClick: onClick }));
     };

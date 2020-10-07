@@ -2,6 +2,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
+var commonRenders_1 = require("./commonRenders");
 var Anchor_1 = require("./Anchor");
 var modifiers_1 = require("./modifiers");
 var Image_1 = require("./Image");
@@ -11,8 +12,8 @@ var CardContent = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardContent.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
-        return (React.createElement("div", { className: classnames("card-content", className, modifiers_1.textColorHelpersPropsToClassnames(props)) }, children));
+        var _a = modifiers_1.extractModifiersProps(this.props), textColorHelpersProps = _a[0].textColorHelpersProps, _b = _a[1], children = _b.children, className = _b.className, props = tslib_1.__rest(_b, ["children", "className"]);
+        return (React.createElement("div", tslib_1.__assign({ className: classnames("card-content", className, modifiers_1.textColorHelpersPropsToClassnames(textColorHelpersProps)) }, props), children));
     };
     return CardContent;
 }(React.Component));
@@ -25,10 +26,10 @@ var CardFooterItem = (function (_super) {
         var _a = this.props, classNameProp = _a.className, children = _a.children, download = _a.download, href = _a.href, onClick = _a.onClick, target = _a.target, props = tslib_1.__rest(_a, ["className", "children", "download", "href", "onClick", "target"]);
         var className = classnames("card-footer-item", classNameProp);
         if (href || onClick) {
-            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({}, props, { className: className, download: download, href: href, onClick: onClick, target: target }), children));
+            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({ className: className, download: download, href: href, onClick: onClick, target: target }, props), children));
         }
         else {
-            return (React.createElement("div", { className: className }, children));
+            return (React.createElement("div", tslib_1.__assign({ className: className }, props), children));
         }
     };
     return CardFooterItem;
@@ -39,8 +40,8 @@ var CardFooter = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardFooter.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
-        return (React.createElement("footer", { className: classnames("card-footer", className, modifiers_1.textColorHelpersPropsToClassnames(props)) }, children));
+        var _a = modifiers_1.extractModifiersProps(this.props), textColorHelpersProps = _a[0].textColorHelpersProps, _b = _a[1], children = _b.children, className = _b.className, props = tslib_1.__rest(_b, ["children", "className"]);
+        return (React.createElement("footer", tslib_1.__assign({ className: classnames("card-footer", className, modifiers_1.textColorHelpersPropsToClassnames(textColorHelpersProps)) }, props), children));
     };
     CardFooter.Item = CardFooterItem;
     return CardFooter;
@@ -68,10 +69,10 @@ var CardHeaderTitle = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardHeaderTitle.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className, isCentered = _a.isCentered;
-        return (React.createElement("div", { className: classnames("card-header-title", className, {
+        var _a = this.props, children = _a.children, className = _a.className, isCentered = _a.isCentered, props = tslib_1.__rest(_a, ["children", "className", "isCentered"]);
+        return (React.createElement("div", tslib_1.__assign({ className: classnames("card-header-title", className, {
                 "is-centered": isCentered,
-            }) }, children));
+            }) }, props), children));
     };
     return CardHeaderTitle;
 }(React.Component));
@@ -81,8 +82,7 @@ var CardHeader = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     CardHeader.prototype.render = function () {
-        var _a = this.props, className = _a.className, children = _a.children;
-        return (React.createElement("header", { className: classnames("card-header", className) }, children));
+        return commonRenders_1.renderHeader(this.props, "card-header");
     };
     CardHeader.Icon = CardHeaderIcon;
     CardHeader.Title = CardHeaderTitle;

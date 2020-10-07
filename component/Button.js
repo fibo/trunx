@@ -10,7 +10,7 @@ var Button = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Button.prototype.render = function () {
-        var _a = this.props, classNameProp = _a.className, disabled = _a.disabled, download = _a.download, hasTextBlack = _a.hasTextBlack, hasTextBlackBis = _a.hasTextBlackBis, hasTextBlackTer = _a.hasTextBlackTer, hasTextDanger = _a.hasTextDanger, hasTextDark = _a.hasTextDark, hasTextGrey = _a.hasTextGrey, hasTextGreyDark = _a.hasTextGreyDark, hasTextGreyDarker = _a.hasTextGreyDarker, hasTextGreyLight = _a.hasTextGreyLight, hasTextGreyLighter = _a.hasTextGreyLighter, hasTextInfo = _a.hasTextInfo, hasTextLight = _a.hasTextLight, hasTextLink = _a.hasTextLink, hasTextPrimary = _a.hasTextPrimary, hasTextSuccess = _a.hasTextSuccess, hasTextWarning = _a.hasTextWarning, hasTextWhite = _a.hasTextWhite, hasTextWhiteBis = _a.hasTextWhiteBis, hasTextWhiteTer = _a.hasTextWhiteTer, href = _a.href, isActive = _a.isActive, isBlack = _a.isBlack, isDanger = _a.isDanger, isDark = _a.isDark, isFocused = _a.isFocused, isFullwidth = _a.isFullwidth, isInfo = _a.isInfo, isInverted = _a.isInverted, isInvisible = _a.isInvisible, isLarge = _a.isLarge, isLight = _a.isLight, isLink = _a.isLink, isLoading = _a.isLoading, isMarginLess = _a.isMarginLess, isMedium = _a.isMedium, isNormal = _a.isNormal, isOutlined = _a.isOutlined, isPaddingLess = _a.isPaddingLess, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSrOnly = _a.isSrOnly, isSuccess = _a.isSuccess, isRounded = _a.isRounded, isStatic = _a.isStatic, isText = _a.isText, isWarning = _a.isWarning, isWhite = _a.isWhite, onClick = _a.onClick, target = _a.target, type = _a.type, value = _a.value, props = tslib_1.__rest(_a, ["className", "disabled", "download", "hasTextBlack", "hasTextBlackBis", "hasTextBlackTer", "hasTextDanger", "hasTextDark", "hasTextGrey", "hasTextGreyDark", "hasTextGreyDarker", "hasTextGreyLight", "hasTextGreyLighter", "hasTextInfo", "hasTextLight", "hasTextLink", "hasTextPrimary", "hasTextSuccess", "hasTextWarning", "hasTextWhite", "hasTextWhiteBis", "hasTextWhiteTer", "href", "isActive", "isBlack", "isDanger", "isDark", "isFocused", "isFullwidth", "isInfo", "isInverted", "isInvisible", "isLarge", "isLight", "isLink", "isLoading", "isMarginLess", "isMedium", "isNormal", "isOutlined", "isPaddingLess", "isPrimary", "isSmall", "isSrOnly", "isSuccess", "isRounded", "isStatic", "isText", "isWarning", "isWhite", "onClick", "target", "type", "value"]);
+        var _a = modifiers_1.extractModifiersProps(this.props), _b = _a[0], helpersProps = _b.helpersProps, mainColorsProps = _b.mainColorsProps, shadeColorsProps = _b.shadeColorsProps, sizeProps = _b.sizeProps, textColorHelpersProps = _b.textColorHelpersProps, _c = _a[1], children = _c.children, classNameProp = _c.className, disabled = _c.disabled, download = _c.download, href = _c.href, isActive = _c.isActive, isFocused = _c.isFocused, isFullwidth = _c.isFullwidth, isInverted = _c.isInverted, isLoading = _c.isLoading, isNormal = _c.isNormal, isOutlined = _c.isOutlined, isRounded = _c.isRounded, isStatic = _c.isStatic, isText = _c.isText, onClick = _c.onClick, target = _c.target, type = _c.type, value = _c.value, props = tslib_1.__rest(_c, ["children", "className", "disabled", "download", "href", "isActive", "isFocused", "isFullwidth", "isInverted", "isLoading", "isNormal", "isOutlined", "isRounded", "isStatic", "isText", "onClick", "target", "type", "value"]);
         var className = classnames("button", classNameProp, {
             "is-active": isActive,
             "is-focused": isFocused,
@@ -22,57 +22,16 @@ var Button = (function (_super) {
             "is-rounded": isRounded,
             "is-static": isStatic,
             "is-text": isText,
-        }, modifiers_1.helpersPropsToClassnames({
-            isInvisible: isInvisible,
-            isMarginLess: isMarginLess,
-            isPaddingLess: isPaddingLess,
-            isSrOnly: isSrOnly,
-        }), modifiers_1.mainColorsPropsToClassnames({
-            isDanger: isDanger,
-            isInfo: isInfo,
-            isLink: isLink,
-            isPrimary: isPrimary,
-            isSuccess: isSuccess,
-            isWarning: isWarning,
-        }), modifiers_1.shadeColorsPropsToClassnames({
-            isBlack: isBlack,
-            isDark: isDark,
-            isLight: isLight,
-            isWhite: isWhite,
-        }), modifiers_1.sizePropsToClassnames({
-            isLarge: isLarge,
-            isMedium: isMedium,
-            isSmall: isSmall,
-        }), modifiers_1.textColorHelpersPropsToClassnames({
-            hasTextBlack: hasTextBlack,
-            hasTextBlackBis: hasTextBlackBis,
-            hasTextBlackTer: hasTextBlackTer,
-            hasTextDanger: hasTextDanger,
-            hasTextDark: hasTextDark,
-            hasTextGrey: hasTextGrey,
-            hasTextGreyDark: hasTextGreyDark,
-            hasTextGreyDarker: hasTextGreyDarker,
-            hasTextGreyLight: hasTextGreyLight,
-            hasTextGreyLighter: hasTextGreyLighter,
-            hasTextInfo: hasTextInfo,
-            hasTextLight: hasTextLight,
-            hasTextLink: hasTextLink,
-            hasTextPrimary: hasTextPrimary,
-            hasTextSuccess: hasTextSuccess,
-            hasTextWarning: hasTextWarning,
-            hasTextWhite: hasTextWhite,
-            hasTextWhiteBis: hasTextWhiteBis,
-            hasTextWhiteTer: hasTextWhiteTer,
-        }));
+        }, modifiers_1.helpersPropsToClassnames(helpersProps), modifiers_1.mainColorsPropsToClassnames(mainColorsProps), modifiers_1.shadeColorsPropsToClassnames(shadeColorsProps), modifiers_1.sizePropsToClassnames(sizeProps), modifiers_1.textColorHelpersPropsToClassnames(textColorHelpersProps));
         if (href) {
-            return (React.createElement(Anchor_1.Anchor, { className: className, download: download, href: href, onClick: onClick, target: target }, this.props.children));
+            return (React.createElement(Anchor_1.Anchor, tslib_1.__assign({ className: className, download: download, href: href, onClick: onClick, target: target }, props), children));
         }
         if (type) {
             if (disabled || isLoading) {
-                return (React.createElement("button", { className: className, disabled: disabled }, value));
+                return (React.createElement("button", tslib_1.__assign({ className: className, disabled: disabled }, props), value));
             }
             else {
-                return (React.createElement("input", { className: className, type: type, value: value }));
+                return (React.createElement("input", tslib_1.__assign({ className: className, type: type, value: value }, props)));
             }
         }
         return (React.createElement("button", tslib_1.__assign({ className: className, disabled: disabled, onClick: onClick }, props), this.props.children));

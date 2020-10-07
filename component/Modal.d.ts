@@ -8,21 +8,13 @@ interface IModalBackgroundProps {
     className?: string;
     onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
-interface IModalCardProps {
-    cthildren?: React.ReactNode;
-    className?: string;
+interface IModalCardProps extends React.HTMLAttributes<HTMLDivElement> {
 }
-interface IModalCardBodyProps {
-    children?: React.ReactNode;
-    className?: string;
+interface IModalCardBodyProps extends React.HTMLAttributes<HTMLElement> {
 }
-interface IModalCardFootProps {
-    children?: React.ReactNode;
-    className?: string;
+interface IModalCardFootProps extends React.HTMLAttributes<HTMLElement> {
 }
-interface IModalCardHeadProps {
-    children?: React.ReactNode;
-    className?: string;
+interface IModalCardHeadProps extends React.HTMLAttributes<HTMLElement> {
 }
 interface IModalCardTitleProps {
     children?: React.ReactNode;
@@ -44,7 +36,7 @@ declare class ModalCardFoot extends React.Component<IModalCardFootProps> {
     render(): JSX.Element;
 }
 declare class ModalCardHead extends React.Component<IModalCardHeadProps> {
-    render(): JSX.Element;
+    render(): any;
 }
 declare class ModalCardTitle extends React.Component<IModalCardTitleProps> {
     render(): JSX.Element;
@@ -57,7 +49,7 @@ declare class ModalCard extends React.Component<IModalCardProps> {
     static Foot: typeof ModalCardFoot;
     static Head: typeof ModalCardHead;
     static Title: typeof ModalCardTitle;
-    render(): JSX.Element;
+    render(): any;
 }
 declare class ModalClose extends React.Component<IModalCloseProps> {
     render(): JSX.Element;
