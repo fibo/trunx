@@ -1,29 +1,22 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
+import { renderDiv } from './commonRenders'
 import {
   Anchor,
   IAnchorProps,
 } from "./Anchor"
 
-interface IDropdownProps {
-  children?: React.ReactNode
-  className?: string
+interface IDropdownProps extends React.HTMLAttributes<HTMLDivElement> {
   isActive?: boolean
   isHoverable?: boolean
   isRight?: boolean
   isUp?: boolean
 }
 
-interface IDropdownContentProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface IDropdownContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface IDropdownDividerProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface IDropdownDividerProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 interface IDropdownItemProps {
   children?: React.ReactNode
@@ -33,49 +26,19 @@ interface IDropdownItemProps {
   onClick?: IAnchorProps["onClick"]
 }
 
-interface IDropdownMenuProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface IDropdownMenuProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface IDropdownTriggerProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface IDropdownTriggerProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 class DropdownContent extends React.Component<IDropdownContentProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "dropdown-content",
-          className,
-        )}
-      >{children}</div>
-    )
+    return renderDiv("dropdown-content", this.props)
   }
 }
 
 class DropdownDivider extends React.Component<IDropdownDividerProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "dropdown-divider",
-          className,
-        )}
-      >{children}</div>
-    )
+    return renderDiv("dropdown-divider", this.props)
   }
 }
 
@@ -92,7 +55,6 @@ class DropdownItem extends React.Component<IDropdownItemProps> {
 
     return (
       <Anchor
-        {...props}
         className={classnames(
           "dropdown-item",
           className,
@@ -102,6 +64,7 @@ class DropdownItem extends React.Component<IDropdownItemProps> {
         )}
         href={href}
         onClick={onClick}
+        {...props}
       >
         {children}
       </Anchor>
@@ -111,38 +74,13 @@ class DropdownItem extends React.Component<IDropdownItemProps> {
 
 class DropdownMenu extends React.Component<IDropdownMenuProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "dropdown-menu",
-          className,
-        )}
-        role="menu"
-      >{children}</div>
-    )
+    return renderDiv("dropdown-menu", { role: "menu", ...this.props })
   }
 }
 
 class DropdownTrigger extends React.Component<IDropdownTriggerProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "dropdown-trigger",
-          className,
-        )}
-      >{children}</div>
-    )
+    return renderDiv("dropdown-trigger", this.props)
   }
 }
 
@@ -161,6 +99,7 @@ export default class Dropdown extends React.Component<IDropdownProps> {
       isHoverable,
       isRight,
       isUp,
+      ...props
     } = this.props
 
     return (
@@ -175,7 +114,10 @@ export default class Dropdown extends React.Component<IDropdownProps> {
             "is-up": isUp,
           },
         )}
-      >{children}</div>
+        {...props}
+      >
+        {children}
+      </div>
     )
   }
 }

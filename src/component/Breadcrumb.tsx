@@ -3,6 +3,7 @@ import * as React from "react"
 
 import {
   ISizeProps,
+  extractModifiersProps,
   sizePropsToClassnames,
 } from "./modifiers"
 
@@ -31,13 +32,14 @@ class BreadcrumbItem extends React.Component<IBreadcrumbItemProps> {
 
     return (
       <li
-        {...props}
         className={classnames({
           className,
           "is-active": isActive,
         })}
-      >{children}</li>
-
+        {...props}
+      >
+        {children}
+      </li>
     )
   }
 }
@@ -46,7 +48,9 @@ export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
   static Item = BreadcrumbItem
 
   render() {
-    const {
+    const [{
+      sizeProps,
+    }, {
       children,
       className,
       hasArrowSeparator,
@@ -54,11 +58,9 @@ export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
       hasDotSeparator,
       hasSuccedesSeparator,
       isCentered,
-      isLarge,
-      isMedium,
       isRight,
-      isSmall,
-    } = this.props
+      ...props
+    }] = extractModifiersProps(this.props)
 
     return (
       <nav
@@ -74,12 +76,9 @@ export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
             "is-centered": isCentered,
             "is-right": isRight,
           },
-          sizePropsToClassnames({
-            isLarge,
-            isMedium,
-            isSmall,
-          }),
+          sizePropsToClassnames(sizeProps)
         )}
+        {...props}
       >
         <ul>
           {children}

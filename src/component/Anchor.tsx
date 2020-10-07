@@ -8,6 +8,11 @@ export function Anchor({
   ...props
 }: IAnchorProps) {
   return (
-    <a {...props} className={className}>{children}</a>
+    <a
+      className={className}
+      {...props}
+    >
+      {children}
+    </a>
   )
 }

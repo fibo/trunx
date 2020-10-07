@@ -3,12 +3,12 @@ import * as React from "react"
 
 import {
   ISizeProps,
+  extractModifiersProps,
   sizePropsToClassnames,
 } from "./modifiers"
 
-interface IContentProps extends ISizeProps {
-  children?: React.ReactNode
-  className?: string;
+interface IContentProps extends ISizeProps,
+                                React.HTMLAttributes<HTMLDivElement> {
   hasTextCentered?: boolean
   hasTextJustified?: boolean
   hasTextLeft?: boolean
@@ -17,14 +17,17 @@ interface IContentProps extends ISizeProps {
 
 export default class Content extends React.Component<IContentProps> {
   render() {
-    const {
+    const [{
+      sizeProps,
+    }, {
       children,
       className,
       hasTextCentered,
       hasTextJustified,
       hasTextLeft,
       hasTextRight,
-    } = this.props
+      ...props
+    }] = extractModifiersProps(this.props)
 
     return (
       <div
@@ -37,9 +40,12 @@ export default class Content extends React.Component<IContentProps> {
             "has-text-left": hasTextLeft,
             "has-text-right": hasTextRight,
           },
-          sizePropsToClassnames(this.props),
+          sizePropsToClassnames(sizeProps),
+          {...props}
         )}
-      >{children}</div>
+      >
+        {children}
+      </div>
     )
   }
 }

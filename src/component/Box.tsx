@@ -5,6 +5,7 @@ import {
   IBackgroundColorHelpersProps,
   ITextColorHelpersProps,
   backgroundColorHelpersPropsToClassnames,
+  extractModifiersProps,
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
@@ -14,19 +15,25 @@ interface IBoxProps extends IBackgroundColorHelpersProps,
 
 export default class Box extends React.Component<IBoxProps> {
   render() {
-    const {
+    const [{
+      backgroundColorHelpersProps,
+      textColorHelpersProps,
+    },
+    {
       children,
       className,
       ...props
-    } = this.props
+    }] = extractModifiersProps(this.props)
 
     return (
-      <div className={classnames(
-        "box",
-        className,
-        backgroundColorHelpersPropsToClassnames(props),
-        textColorHelpersPropsToClassnames(props),
-       )}
+      <div
+        className={classnames(
+          "box",
+          className,
+          backgroundColorHelpersPropsToClassnames(backgroundColorHelpersProps),
+          textColorHelpersPropsToClassnames(textColorHelpersProps),
+        )}
+        {...props}
       >
        {children}
       </div>

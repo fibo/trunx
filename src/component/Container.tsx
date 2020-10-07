@@ -30,7 +30,9 @@ export default class Container extends React.Component<IContainerProps> {
             "is-widescreen": isWidescreen,
           },
         )}
-      >{children}</div>
+      >
+        {children}
+      </div>
     )
   }
 }

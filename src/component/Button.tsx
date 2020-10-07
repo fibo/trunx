@@ -12,6 +12,7 @@ import {
   IShadeColorsProps,
   ISizeProps,
   ITextColorHelpersProps,
+  extractModifiersProps,
   helpersPropsToClassnames,
   mainColorsPropsToClassnames,
   shadeColorsPropsToClassnames,
@@ -45,63 +46,35 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 
 export default class Button extends React.Component<IButtonProps> {
   render() {
-    const {
+    const [{
+      helpersProps,
+      mainColorsProps,
+      shadeColorsProps,
+      sizeProps,
+      textColorHelpersProps,
+    },
+    {
+      children,
       className: classNameProp,
       disabled,
       download,
-      hasTextBlack,
-      hasTextBlackBis,
-      hasTextBlackTer,
-      hasTextDanger,
-      hasTextDark,
-      hasTextGrey,
-      hasTextGreyDark,
-      hasTextGreyDarker,
-      hasTextGreyLight,
-      hasTextGreyLighter,
-      hasTextInfo,
-      hasTextLight,
-      hasTextLink,
-      hasTextPrimary,
-      hasTextSuccess,
-      hasTextWarning,
-      hasTextWhite,
-      hasTextWhiteBis,
-      hasTextWhiteTer,
       href,
       isActive,
-      isBlack,
-      isDanger,
-      isDark,
       isFocused,
       isFullwidth,
-      isInfo,
       isInverted,
-      isInvisible,
-      isLarge,
-      isLight,
-      isLink,
       isLoading,
-      isMarginLess,
-      isMedium,
       isNormal,
       isOutlined,
-      isPaddingLess,
-      isPrimary,
-      isSmall,
-      isSrOnly,
-      isSuccess,
       isRounded,
       isStatic,
       isText,
-      isWarning,
-      isWhite,
       onClick,
       target,
       type,
       value,
       ...props
-    } = this.props
+    }] = extractModifiersProps(this.props)
 
     const className = classnames("button",
       classNameProp,
@@ -117,52 +90,11 @@ export default class Button extends React.Component<IButtonProps> {
         "is-static": isStatic,
         "is-text": isText,
       },
-      helpersPropsToClassnames({
-        isInvisible,
-        isMarginLess,
-        isPaddingLess,
-        isSrOnly,
-      }),
-      mainColorsPropsToClassnames({
-        isDanger,
-        isInfo,
-        isLink,
-        isPrimary,
-        isSuccess,
-        isWarning,
-      }),
-      shadeColorsPropsToClassnames({
-        isBlack,
-        isDark,
-        isLight,
-        isWhite,
-      }),
-      sizePropsToClassnames({
-        isLarge,
-        isMedium,
-        isSmall,
-      }),
-      textColorHelpersPropsToClassnames({
-        hasTextBlack,
-        hasTextBlackBis,
-        hasTextBlackTer,
-        hasTextDanger,
-        hasTextDark,
-        hasTextGrey,
-        hasTextGreyDark,
-        hasTextGreyDarker,
-        hasTextGreyLight,
-        hasTextGreyLighter,
-        hasTextInfo,
-        hasTextLight,
-        hasTextLink,
-        hasTextPrimary,
-        hasTextSuccess,
-        hasTextWarning,
-        hasTextWhite,
-        hasTextWhiteBis,
-        hasTextWhiteTer,
-      }),
+      helpersPropsToClassnames(helpersProps),
+      mainColorsPropsToClassnames(mainColorsProps),
+      shadeColorsPropsToClassnames(shadeColorsProps),
+      sizePropsToClassnames(sizeProps),
+      textColorHelpersPropsToClassnames(textColorHelpersProps),
     )
 
     if (href) {
@@ -173,8 +105,9 @@ export default class Button extends React.Component<IButtonProps> {
           href={href}
           onClick={onClick}
           target={target}
+          {...props}
         >
-          {this.props.children}
+          {children}
         </Anchor>
       )
     }
@@ -185,6 +118,7 @@ export default class Button extends React.Component<IButtonProps> {
           <button
             className={className}
             disabled={disabled}
+            {...props}
           >
             {value}
           </button>
@@ -195,6 +129,7 @@ export default class Button extends React.Component<IButtonProps> {
             className={className}
             type={type}
             value={value}
+            {...props}
           />
         )
       }
