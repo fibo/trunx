@@ -9,13 +9,13 @@ var Content = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Content.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className, hasTextCentered = _a.hasTextCentered, hasTextJustified = _a.hasTextJustified, hasTextLeft = _a.hasTextLeft, hasTextRight = _a.hasTextRight;
+        var _a = modifiers_1.extractModifiersProps(this.props), sizeProps = _a[0].sizeProps, _b = _a[1], children = _b.children, className = _b.className, hasTextCentered = _b.hasTextCentered, hasTextJustified = _b.hasTextJustified, hasTextLeft = _b.hasTextLeft, hasTextRight = _b.hasTextRight, props = tslib_1.__rest(_b, ["children", "className", "hasTextCentered", "hasTextJustified", "hasTextLeft", "hasTextRight"]);
         return (React.createElement("div", { className: classnames("content", className, {
                 "has-text-centered": hasTextCentered,
                 "has-text-justified": hasTextJustified,
                 "has-text-left": hasTextLeft,
                 "has-text-right": hasTextRight,
-            }, modifiers_1.sizePropsToClassnames(this.props)) }, children));
+            }, modifiers_1.sizePropsToClassnames(sizeProps), tslib_1.__assign({}, props)) }, children));
     };
     return Content;
 }(React.Component));
