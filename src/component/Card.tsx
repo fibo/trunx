@@ -221,7 +221,7 @@ class CardHeader extends React.Component<ICardHeader> {
   static Title = CardHeaderTitle
 
   render() {
-    return renderHeader("card-header", this.props)
+    return renderHeader(this.props, "card-header")
   }
 }
 

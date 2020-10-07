@@ -1,7 +1,11 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-import { renderHeader } from './commonRenders'
+import { bulmaClassName } from './classNames'
+import {
+  renderDiv,
+  renderHeader,
+} from './commonRenders'
 
 interface IModalProps {
   children?: React.ReactNode
@@ -14,20 +18,11 @@ interface IModalBackgroundProps {
   onClick?: React.MouseEventHandler<HTMLDivElement>
 }
 
-interface IModalCardProps {
-  cthildren?: React.ReactNode
-  className?: string
-}
+interface IModalCardProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface IModalCardBodyProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface IModalCardBodyProps extends React.HTMLAttributes<HTMLElement> {}
 
-interface IModalCardFootProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface IModalCardFootProps extends React.HTMLAttributes<HTMLElement> {}
 
 interface IModalCardHeadProps extends React.HTMLAttributes<HTMLElement> {}
 
@@ -52,15 +47,19 @@ class ModalCardBody extends React.Component<IModalCardBodyProps> {
     const {
       children,
       className,
+      ...props
     } = this.props
 
     return (
       <section
         className={classnames(
-          "modal-card-body",
+          bulmaClassName.modalCardBody,
           className,
         )}
-      >{children}</section>
+        {...props}
+      >
+        {children}
+      </section>
     )
   }
 }
@@ -70,22 +69,23 @@ class ModalCardFoot extends React.Component<IModalCardFootProps> {
     const {
       children,
       className,
+      ...props
     } = this.props
 
     return (
       <footer
-        className={classnames(
-          "modal-card-foot",
-          className,
-        )}
-      >{children}</footer>
+        className={classnames(bulmaClassName.modalCardFoot, className)}
+        {...props}
+      >
+        {children}
+      </footer>
     )
   }
 }
 
 class ModalCardHead extends React.Component<IModalCardHeadProps> {
   render() {
-    return renderHeader("modal-card-head", this.props)
+    return renderHeader(this.props, bulmaClassName.modalCardHead)
   }
 }
 
@@ -133,19 +133,7 @@ class ModalCard extends React.Component<IModalCardProps> {
   static Title = ModalCardTitle
 
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "modal-card",
-          className,
-        )}
-      >{children}</div>
-    )
+    return renderDiv(this.props, bulmaClassName.modalCard)
   }
 }
 
@@ -161,7 +149,7 @@ class ModalClose extends React.Component<IModalCloseProps> {
       <button
         aria-label="close"
         className={classnames(
-          "modal-close",
+          bulmaClassName.modalClose,
           className,
           {
             "is-large": isLarge,

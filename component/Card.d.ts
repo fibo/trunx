@@ -2,9 +2,7 @@ import * as React from "react";
 import { IAnchorProps } from "./Anchor";
 import { IBackgroundColorHelpersProps, ITextColorHelpersProps } from "./modifiers";
 import { IImageProps } from "./Image";
-interface ICardContentProps extends ITextColorHelpersProps {
-    children?: React.ReactNode;
-    className?: string;
+interface ICardContentProps extends ITextColorHelpersProps, React.HTMLAttributes<HTMLDivElement> {
 }
 interface ICardFooterItemProps {
     children?: React.ReactNode;
@@ -14,13 +12,9 @@ interface ICardFooterItemProps {
     onClick?: IAnchorProps["onClick"];
     target?: IAnchorProps["target"];
 }
-interface ICardFooterProps extends ITextColorHelpersProps {
-    children?: React.ReactNode;
-    className?: string;
+interface ICardFooterProps extends React.HTMLAttributes<HTMLElement> {
 }
-interface ICardHeader {
-    children?: React.ReactNode;
-    className?: string;
+interface ICardHeader extends React.HTMLAttributes<HTMLElement> {
 }
 interface ICardHeaderIconProps {
     children?: React.ReactNode;
@@ -30,9 +24,7 @@ interface ICardHeaderIconProps {
     onClick?: IAnchorProps["onClick"];
     target?: IAnchorProps["target"];
 }
-interface ICardHeaderTitleProps {
-    children?: React.ReactNode;
-    className?: string;
+interface ICardHeaderTitleProps extends React.HTMLAttributes<HTMLElement> {
     isCentered?: boolean;
 }
 interface ICardImageProps extends IImageProps {
@@ -60,7 +52,7 @@ declare class CardHeaderTitle extends React.Component<ICardHeaderTitleProps> {
 declare class CardHeader extends React.Component<ICardHeader> {
     static Icon: typeof CardHeaderIcon;
     static Title: typeof CardHeaderTitle;
-    render(): JSX.Element;
+    render(): any;
 }
 declare class CardImage extends React.Component<ICardImageProps> {
     render(): JSX.Element;
