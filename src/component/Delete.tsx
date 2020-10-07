@@ -16,9 +16,11 @@ interface IDeleteProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 export default class Delete extends React.Component<IDeleteProps> {
   render() {
     const [{
+      sizeProps,
+    }, {
       className,
       ...props
-    }, modifiersProps] = extractModifiersProps(this.props)
+    }] = extractModifiersProps(this.props)
 
     return (
       <button
@@ -26,7 +28,7 @@ export default class Delete extends React.Component<IDeleteProps> {
           className,
           "delete",
           className,
-          sizePropsToClassnames(modifiersProps),
+          sizePropsToClassnames(sizeProps),
         )}
         {...props}
       />

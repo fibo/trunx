@@ -4,6 +4,7 @@ import * as React from "react"
 import {
   IHelpersProps,
   ITextColorHelpersProps,
+  extractModifiersProps,
   helpersPropsToClassnames,
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
@@ -18,14 +19,17 @@ interface IButtonsProps extends IHelpersProps,
 
 export default class Buttons extends React.Component<IButtonsProps> {
   render() {
-    const {
+    const [{
+      helpersProps,
+      textColorHelpersProps,
+    }, {
       areLarge,
       areMedium,
       areSmall,
       children,
       className,
       ...props
-    } = this.props
+    }] = extractModifiersProps(this.props)
 
     return (
       <div
@@ -37,9 +41,10 @@ export default class Buttons extends React.Component<IButtonsProps> {
             "are-medium": areMedium,
             "are-small": areSmall,
           },
-          helpersPropsToClassnames(props),
-          textColorHelpersPropsToClassnames(props),
+          helpersPropsToClassnames(helpersProps),
+          textColorHelpersPropsToClassnames(textColorHelpersProps),
         )}
+        {...props}
       >
        {children}
       </div>

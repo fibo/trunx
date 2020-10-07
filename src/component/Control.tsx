@@ -3,12 +3,12 @@ import * as React from "react"
 
 import {
   ISizeProps,
+  extractModifiersProps,
   sizePropsToClassnames,
 } from "./modifiers"
 
-interface IControlProps extends ISizeProps {
-  children?: React.ReactNode
-  className?: string
+interface IControlProps extends ISizeProps,
+                                React.HTMLAttributes<HTMLDivElement> {
   hasIconsLeft?: boolean
   hasIconsRight?: boolean
   isExpanded?: boolean
@@ -17,14 +17,17 @@ interface IControlProps extends ISizeProps {
 
 export default class Control extends React.Component<IControlProps> {
   render() {
-    const {
+    const [{
+      sizeProps,
+    }, {
       children,
       className,
       hasIconsLeft,
       hasIconsRight,
       isExpanded,
       isLoading,
-    } = this.props
+      ...props
+    }] = extractModifiersProps(this.props)
 
     return (
       <div
@@ -37,9 +40,12 @@ export default class Control extends React.Component<IControlProps> {
             "is-expanded": isExpanded,
             "is-loading": isLoading,
           },
-          sizePropsToClassnames(this.props),
+          sizePropsToClassnames(sizeProps),
         )}
-      >{children}</div>
+        {...props}
+      >
+        {children}
+      </div>
     )
   }
 }

@@ -2,6 +2,9 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
+  renderHeader
+} from './commonRenders'
+import {
   Anchor,
   IAnchorProps,
 } from "./Anchor"
@@ -9,16 +12,15 @@ import {
 import {
   IBackgroundColorHelpersProps,
   ITextColorHelpersProps,
+  extractModifiersProps,
   backgroundColorHelpersPropsToClassnames,
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
 import Image, { IImageProps } from "./Image"
 
-interface ICardContentProps extends ITextColorHelpersProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface ICardContentProps extends ITextColorHelpersProps,
+                                    React.HTMLAttributes<HTMLDivElement> {}
 
 interface ICardFooterItemProps {
   children?: React.ReactNode
@@ -29,15 +31,9 @@ interface ICardFooterItemProps {
   target?: IAnchorProps["target"]
 }
 
-interface ICardFooterProps extends ITextColorHelpersProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface ICardFooterProps extends React.HTMLAttributes<HTMLElement> {}
 
-interface ICardHeader {
-  children?: React.ReactNode
-  className?: string
-}
+interface ICardHeader extends React.HTMLAttributes<HTMLElement> {}
 
 interface ICardHeaderIconProps {
   children?: React.ReactNode
@@ -48,9 +44,7 @@ interface ICardHeaderIconProps {
   target?: IAnchorProps["target"]
 }
 
-interface ICardHeaderTitleProps {
-  children?: React.ReactNode
-  className?: string
+interface ICardHeaderTitleProps extends React.HTMLAttributes<HTMLElement> {
   isCentered?: boolean
 }
 
@@ -65,20 +59,25 @@ interface ICardProps extends IBackgroundColorHelpersProps,
 
 class CardContent extends React.Component<ICardContentProps> {
   render() {
-    const {
+    const [{
+      textColorHelpersProps
+    }, {
       children,
       className,
       ...props
-    } = this.props
+    }] = extractModifiersProps(this.props)
 
     return (
       <div
         className={classnames(
           "card-content",
           className,
-          textColorHelpersPropsToClassnames(props),
+          textColorHelpersPropsToClassnames(textColorHelpersProps),
         )}
-      >{children}</div>
+        {...props}
+      >
+        {children}
+      </div>
     )
   }
 }
@@ -103,19 +102,24 @@ class CardFooterItem extends React.Component<ICardFooterItemProps> {
     if (href || onClick) {
       return (
         <Anchor
-          {...props}
           className={className}
           download={download}
           href={href}
           onClick={onClick}
           target={target}
+          {...props}
         >
           {children}
         </Anchor>
       )
     } else {
       return (
-        <div className={className}>{children}</div>
+        <div
+          className={className}
+          {...props}
+        >
+          {children}
+        </div>
       )
     }
   }
@@ -125,20 +129,25 @@ class CardFooter extends React.Component<ICardFooterProps> {
   static Item = CardFooterItem
 
   render() {
-    const {
+    const [{
+      textColorHelpersProps,
+    }, {
       children,
       className,
       ...props
-    } = this.props
+    }] = extractModifiersProps(this.props)
 
     return (
       <footer
         className={classnames(
           "card-footer",
           className,
-          textColorHelpersPropsToClassnames(props),
+          textColorHelpersPropsToClassnames(textColorHelpersProps),
         )}
-      >{children}</footer>
+        {...props}
+      >
+        {children}
+      </footer>
     )
   }
 }
@@ -187,6 +196,7 @@ class CardHeaderTitle extends React.Component<ICardHeaderTitleProps> {
       children,
       className,
       isCentered,
+      ...props
     } = this.props
 
     return (
@@ -198,7 +208,10 @@ class CardHeaderTitle extends React.Component<ICardHeaderTitleProps> {
             "is-centered": isCentered,
           },
         )}
-      >{children}</div>
+        {...props}
+      >
+        {children}
+      </div>
     )
   }
 }
@@ -208,19 +221,7 @@ class CardHeader extends React.Component<ICardHeader> {
   static Title = CardHeaderTitle
 
   render() {
-    const {
-      className,
-      children,
-    } = this.props
-
-    return (
-      <header
-        className={classnames(
-          "card-header",
-          className
-        )}
-      >{children}</header>
-    )
+    return renderHeader("card-header", this.props)
   }
 }
 
