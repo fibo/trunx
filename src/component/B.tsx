@@ -5,6 +5,7 @@ import {
   IBackgroundColorHelpersProps,
   ITextColorHelpersProps,
   backgroundColorHelpersPropsToClassnames,
+  extractModifiersProps,
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
@@ -14,19 +15,23 @@ interface IBProps extends React.HTMLAttributes<HTMLElement>,
 
 export default class B extends React.Component<IBProps> {
   render() {
-    const {
+    const [{
+      backgroundColorHelpersProps,
+      textColorHelpersProps,
+    }, {
       children,
       className,
       ...props
-    } = this.props
+    }] = extractModifiersProps(this.props)
 
     return (
       <b
         className={classnames(
           className,
-          backgroundColorHelpersPropsToClassnames(props),
-          textColorHelpersPropsToClassnames(props),
+          backgroundColorHelpersPropsToClassnames(backgroundColorHelpersProps),
+          textColorHelpersPropsToClassnames(textColorHelpersProps),
         )}
+        {...props}
       >
         {children}
       </b>

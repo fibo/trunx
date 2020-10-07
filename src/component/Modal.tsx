@@ -1,6 +1,8 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
+import { renderHeader } from './commonRenders'
+
 interface IModalProps {
   children?: React.ReactNode
   className?: string
@@ -27,10 +29,7 @@ interface IModalCardFootProps {
   className?: string
 }
 
-interface IModalCardHeadProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface IModalCardHeadProps extends React.HTMLAttributes<HTMLElement> {}
 
 interface IModalCardTitleProps {
   children?: React.ReactNode
@@ -86,19 +85,7 @@ class ModalCardFoot extends React.Component<IModalCardFootProps> {
 
 class ModalCardHead extends React.Component<IModalCardHeadProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <header
-        className={classnames(
-          "modal-card-head",
-          className,
-        )}
-      >{children}</header>
-    )
+    return renderHeader("modal-card-head", this.props)
   }
 }
 
