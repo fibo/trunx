@@ -2,26 +2,37 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
+  bulmaClassName,
+  BulmaClassModifiers,
+} from "./classNames"
+import {
   ISizeProps,
   extractModifiersProps,
   sizePropsToClassnames,
 } from "./modifiers"
 
-interface IBreadcrumbProps extends React.HTMLAttributes<HTMLElement>,
-                                   ISizeProps {
-  hasArrowSeparator?: boolean
-  hasBulletSeparator?: boolean
-  hasDotSeparator?: boolean
-  hasSuccedesSeparator?: boolean
-  isCentered?: boolean
-  isRight?: boolean
+interface BreadcrumbModifiers extends Pick<
+  BulmaClassModifiers, 'hasArrowSeparator'
+                     | 'hasBulletSeparator'
+                     | 'hasDotSeparator'
+                     | 'hasSuccedesSeparator'
+                     | 'isCentered'
+                     | 'isRight'
+>
+
+export interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement>,
+                                         ISizeProps,
+                                         BreadcrumbModifiers
+{}
 }
 
-interface IBreadcrumbItemProps extends React.LiHTMLAttributes<HTMLLIElement> {
-  isActive?: boolean
-}
+interface BreadcrumbItemModifiers extends Pick<BulmaClassModifiers, 'isActive'>
 
-class BreadcrumbItem extends React.Component<IBreadcrumbItemProps> {
+export interface BreadcrumbItemProps extends React.LiHTMLAttributes<HTMLLIElement>,
+                                             BreadcrumbItemModifiers
+{}
+
+class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
   render() {
     const {
       children,
@@ -44,7 +55,7 @@ class BreadcrumbItem extends React.Component<IBreadcrumbItemProps> {
   }
 }
 
-export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
+export default class Breadcrumb extends React.Component<BreadcrumbProps> {
   static Item = BreadcrumbItem
 
   render() {
@@ -66,7 +77,7 @@ export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
       <nav
         aria-label="breadcrumbs"
         className={classnames(
-          "breadcrumb",
+          bulmaClassName.breadcrumb
           className,
           {
             "has-arrow-separator": hasArrowSeparator,

@@ -1,8 +1,9 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-export interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  className?: string
+import { bulmaClassName } from "./classNames"
+
+export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   is1by1?: boolean
   is1by2?: boolean
   is1by3?: boolean
@@ -27,7 +28,7 @@ export interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   isSquare?: boolean
 }
 
-export default class Image extends React.Component<IImageProps> {
+export class Image extends React.Component<ImageProps> {
   render() {
     const {
       className,
@@ -59,7 +60,7 @@ export default class Image extends React.Component<IImageProps> {
     return (
       <figure
         className={classnames(
-          "image",
+          bulmaClassName.image,
           className,
           {
             "is-1by1": is1by1,

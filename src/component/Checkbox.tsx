@@ -1,9 +1,11 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface ICheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-export default class Checkbox extends React.Component<ICheckboxProps> {
+import { bulmaClassName } from "./classNames"
+
+export class Checkbox extends React.Component<CheckboxProps> {
   render() {
     const {
       children,
@@ -14,7 +16,7 @@ export default class Checkbox extends React.Component<ICheckboxProps> {
     return (
       <label
         className={classnames(
-          "checkbox",
+          bulmaClassName.checkbox
           className,
         )}
       >

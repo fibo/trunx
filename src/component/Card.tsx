@@ -2,6 +2,11 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
+  bulmaClassName,
+  BulmaClassModifiers,
+} from "./classNames"
+import {
+  renderDiv,
   renderHeader
 } from './commonRenders'
 import {
@@ -17,10 +22,12 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-import Image, { IImageProps } from "./Image"
+import { Image, ImageProps } from "./Image"
 
-interface ICardContentProps extends ITextColorHelpersProps,
-                                    React.HTMLAttributes<HTMLDivElement> {}
+interface ICardContentProps
+extends React.HTMLAttributes<HTMLDivElement>,
+        ITextColorHelpersProps
+{}
 
 interface ICardFooterItemProps {
   children?: React.ReactNode
@@ -44,11 +51,14 @@ interface ICardHeaderIconProps {
   target?: IAnchorProps["target"]
 }
 
-interface ICardHeaderTitleProps extends React.HTMLAttributes<HTMLElement> {
-  isCentered?: boolean
-}
+interface CardHeaderTitleModifiers extends Pick<BulmaClassModifiers, 'isCentered'>
 
-interface ICardImageProps extends IImageProps {
+export interface CardHeaderTitleProps extends
+  React.HTMLAttributes<HTMLElement>
+  CardHeaderTitleModifiers
+{}
+
+interface ICardImageProps extends ImageProps {
   className?: string
 }
 
@@ -70,7 +80,7 @@ class CardContent extends React.Component<ICardContentProps> {
     return (
       <div
         className={classnames(
-          "card-content",
+          bulmaClassNames.cardContent,
           className,
           textColorHelpersPropsToClassnames(textColorHelpersProps),
         )}
@@ -165,7 +175,7 @@ class CardHeaderIcon extends React.Component<ICardHeaderIconProps> {
     } = this.props
 
     const className = classnames(
-      "card-header-icon",
+      bulmaClassName.cardHeaderIcon,
       classNameProp
     )
 
@@ -184,13 +194,13 @@ class CardHeaderIcon extends React.Component<ICardHeaderIconProps> {
       )
     } else {
       return (
-        <div {...props} className={className}>{children}</div>
+        renderDiv({ className, ...props })
       )
     }
   }
 }
 
-class CardHeaderTitle extends React.Component<ICardHeaderTitleProps> {
+class CardHeaderTitle extends React.Component<CardHeaderTitleProps> {
   render() {
     const {
       children,
@@ -202,7 +212,7 @@ class CardHeaderTitle extends React.Component<ICardHeaderTitleProps> {
     return (
       <div
         className={classnames(
-          "card-header-title",
+          bulmaClassName.cardHeaderTitle
           className,
           {
             "is-centered": isCentered,
