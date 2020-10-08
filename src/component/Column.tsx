@@ -1,9 +1,12 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-import { trunxPropsToClassnames } from './utils'
+import {
+  bulmaClassName,
+  trunxPropsToClassnamesObject,
+} from './classNames'
 
-interface IColumnProps {
+export interface ColumnProps {
   className?: string
   isCentered?: boolean
   is1?: boolean
@@ -314,7 +317,7 @@ interface IColumnProps {
   isOffsetFourFifthsWidescreen?: boolean
 }
 
-export default class Column extends React.Component<IColumnProps> {
+export class Column extends React.Component<ColumnProps> {
   render() {
     const {
       children,
@@ -326,9 +329,9 @@ export default class Column extends React.Component<IColumnProps> {
     return (
       <div
         className={classnames(
-          "column",
+          bulmaClassName.column,
           className,
-          trunxPropsToClassnames(props),
+          trunxPropsToClassnamesObject(props),
         )}
       >
         {children}

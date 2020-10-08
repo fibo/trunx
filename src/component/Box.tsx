@@ -1,6 +1,7 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
+import { bulmaClassName } from "./classNames"
 import {
   IBackgroundColorHelpersProps,
   ITextColorHelpersProps,
@@ -9,11 +10,13 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface IBoxProps extends IBackgroundColorHelpersProps,
-                            ITextColorHelpersProps,
-                            React.HTMLAttributes<HTMLDivElement> {}
+export interface BoxProps
+extends React.HTMLAttributes<HTMLDivElement>,
+        IBackgroundColorHelpersProps,
+        ITextColorHelpersProps
+{}
 
-export default class Box extends React.Component<IBoxProps> {
+export default class Box extends React.Component<BoxProps> {
   render() {
     const [{
       backgroundColorHelpersProps,
@@ -28,7 +31,7 @@ export default class Box extends React.Component<IBoxProps> {
     return (
       <div
         className={classnames(
-          "box",
+          bulmaClassName.box,
           className,
           backgroundColorHelpersPropsToClassnames(backgroundColorHelpersProps),
           textColorHelpersPropsToClassnames(textColorHelpersProps),
