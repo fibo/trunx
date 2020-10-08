@@ -2,10 +2,10 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import {
-  Anchor,
-  IAnchorProps,
-} from "./Anchor"
-
+  bulmaClassName,
+  BulmaClassModifiers,
+} from "./classNames"
+import { renderA } from "./commonRenders"
 import {
   IHelpersProps,
   IMainColorsProps,
@@ -20,14 +20,20 @@ import {
   textColorHelpersPropsToClassnames,
 } from "./modifiers"
 
-interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-                               IHelpersProps,
-                               IMainColorsProps,
-                               IShadeColorsProps,
-                               ISizeProps,
-                               ITextColorHelpersProps {
-  download?: IAnchorProps["download"]
-  href?: IAnchorProps["href"]
+interface ButtonModifiers extends Pick<
+  BulmaClassModifiers, 'isActive'
+                     | 'isFocused'
+>
+
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+                              React.InputHTMLAttributes<HTMLInputElement>,
+                              IHelpersProps,
+                              IMainColorsProps,
+                              IShadeColorsProps,
+                              ISizeProps,
+                              ITextColorHelpersProps,
+                              ButtonModifiers
+{}
   isActive?: boolean
   isFocused?: boolean
   isFullwidth?: boolean
@@ -38,13 +44,8 @@ interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
   isRounded?: boolean
   isStatic?: boolean
   isText?: boolean
-  onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
-  target?: IAnchorProps["target"]
-  type?: "reset" | "submit"
-  value?: React.InputHTMLAttributes<HTMLInputElement>["value"]
-}
 
-export default class Button extends React.Component<IButtonProps> {
+export default class Button extends React.Component<ButtonProps> {
   render() {
     const [{
       helpersProps,
@@ -57,7 +58,6 @@ export default class Button extends React.Component<IButtonProps> {
       children,
       className: classNameProp,
       disabled,
-      download,
       href,
       isActive,
       isFocused,
@@ -76,7 +76,8 @@ export default class Button extends React.Component<IButtonProps> {
       ...props
     }] = extractModifiersProps(this.props)
 
-    const className = classnames("button",
+    const className = classnames(
+      bulmaClassName.button,
       classNameProp,
       {
         "is-active": isActive,
@@ -99,16 +100,7 @@ export default class Button extends React.Component<IButtonProps> {
 
     if (href) {
       return (
-        <Anchor
-          className={className}
-          download={download}
-          href={href}
-          onClick={onClick}
-          target={target}
-          {...props}
-        >
-          {children}
-        </Anchor>
+        renderA({ className, href, ...props })
       )
     }
 

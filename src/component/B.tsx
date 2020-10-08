@@ -11,7 +11,8 @@ import {
 
 interface IBProps extends React.HTMLAttributes<HTMLElement>,
                           IBackgroundColorHelpersProps,
-                          ITextColorHelpersProps {}
+                          ITextColorHelpersProps
+{}
 
 export default class B extends React.Component<IBProps> {
   render() {
