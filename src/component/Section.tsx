@@ -1,48 +1,23 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  IHelpersProps,
-  helpersPropsToClassnames,
-} from "./modifiers"
+import { bulmaClassName } from './classNames'
+import { HelpersProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface ISectionProps extends IHelpersProps {
-  children?: React.ReactNode
-  className?: string
+interface SectionProps extends React.HTMLAttributes<HTMLElement>,
+ HelpersProps {
   isLarge?: boolean
   isMedium?: boolean
 }
 
-export default class Section extends React.Component<ISectionProps> {
+export class Section extends React.Component<SectionProps> {
   render() {
     const {
-      children,
-      className,
-      isInvisible,
       isLarge,
-      isMarginLess,
       isMedium,
-      isPaddingLess,
-      isSrOnly,
+      ...props
     } = this.props
 
-    return (
-      <div
-        className={classnames(
-          "section",
-          className,
-          {
-            "is-large": isLarge,
-            "is-medium": isMedium,
-          },
-          helpersPropsToClassnames({
-            isInvisible,
-            isMarginLess,
-            isPaddingLess,
-            isSrOnly,
-          }),
-        )}
-      >{children}</div>
-    )
+    return renderElement('section', props, bulmaClassName.section, { isLarge, isMedium })
   }
 }

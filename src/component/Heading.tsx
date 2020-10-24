@@ -1,31 +1,14 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  ITextColorHelpersProps,
-  textColorHelpersPropsToClassnames,
-} from "./modifiers"
+import { bulmaClassName }from './classNames'
+import { TextColorHelpersProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface IHeadingProps extends ITextColorHelpersProps {
-  className?: string;
-  children?: React.ReactNode
-}
+interface HeadingProps extends React.HTMLAttributes<HTMLParagraphElement>,
+TextColorHelpersProps  {}
 
-export default class Heading extends React.Component<IHeadingProps> {
+export default class Heading extends React.Component<HeadingProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <p
-        className={classnames(
-          "heading",
-          className,
-          textColorHelpersPropsToClassnames(this.props),
-        )}
-      >{children}</p>
-    )
+    return renderElement('p', this.props, bulmaClassName.heading)
   }
 }

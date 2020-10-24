@@ -1,37 +1,16 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  IAlignementHelpersProps,
-  IBackgroundColorHelpersProps,
-  ITextColorHelpersProps,
-  alignementPropsToClassnames,
-  backgroundColorHelpersPropsToClassnames,
-  textColorHelpersPropsToClassnames,
-} from "./modifiers"
+import { AlignementHelpersProps, BackgroundColorHelpersProps, TextColorHelpersProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
 interface PProps extends React.HTMLAttributes<HTMLParagraphElement>,
-                         IAlignementHelpersProps,
-                         IBackgroundColorHelpersProps,
-                         ITextColorHelpersProps {}
+                         AlignementHelpersProps,
+                         BackgroundColorHelpersProps,
+                         TextColorHelpersProps {}
 
-export default class P extends React.Component<PProps> {
+export class P extends React.Component<PProps> {
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <p
-        className={classnames(
-          className,
-          alignementPropsToClassnames(props),
-          backgroundColorHelpersPropsToClassnames(props),
-          textColorHelpersPropsToClassnames(props),
-        )}
-      >{children}</p>
-    )
+    return renderElement('p', this.props)
   }
 }

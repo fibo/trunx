@@ -1,100 +1,40 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-interface IMediaProps extends React.HTMLAttributes<HTMLDivElement> {
-  children?: React.ReactNode
-  className?: string
-}
+import { bulmaClassName } from './classNames'
+import { renderElement } from './renderElement'
 
-interface IMediaContentProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface MediaProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface IMediaLeftProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface MediaContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface IMediaRightProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface MediaLeftProps  extends React.HTMLAttributes<HTMLDivElement> {}
 
-class MediaContent extends React.Component<IMediaContentProps> {
+interface MediaRightProps  extends React.HTMLAttributes<HTMLDivElement> {}
+
+class MediaContent extends React.Component<MediaContentProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "media-content",
-          className,
-        )}
-      >{children}</div>
-    )
+return renderElement('div', this.props, bulmaClassName.mediaContent)
   }
 }
 
-class MediaLeft extends React.Component<IMediaLeftProps> {
+class MediaLeft extends React.Component<MediaLeftProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "media-left",
-          className,
-        )}
-      >{children}</div>
-    )
+return renderElement('div', this.props, bulmaClassName.mediaLeft)
   }
 }
 
-class MediaRight extends React.Component<IMediaRightProps> {
+class MediaRight extends React.Component<MediaRightProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "media-right",
-          className,
-        )}
-      >{children}</div>
-    )
+return renderElement('div', this.props, bulmaClassName.mediaRight)
   }
 }
 
-export default class Media extends React.Component<IMediaProps> {
+export default class Media extends React.Component<MediaProps> {
   static Content = MediaContent
   static Left = MediaLeft
   static Right = MediaRight
 
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "media",
-          className,
-        )}
-        {...props}
-      >{children}</div>
-    )
+return renderElement('div', this.props, bulmaClassName.media)
   }
 }

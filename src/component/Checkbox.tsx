@@ -16,7 +16,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
     return (
       <label
         className={classnames(
-          bulmaClassName.checkbox
+          bulmaClassName.checkbox,
           className,
         )}
       >

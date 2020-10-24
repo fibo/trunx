@@ -3,34 +3,29 @@ import * as React from "react"
 
 import {
   bulmaClassName,
-  BulmaClassModifiers,
+  trunxPropsToClassnamesObject
 } from "./classNames"
 import {
-  ISizeProps,
+  SizeProps,
   extractModifiersProps,
-  sizePropsToClassnames,
+modifierPropsToClassnamesObject,
 } from "./modifiers"
 
-interface BreadcrumbModifiers extends Pick<
-  BulmaClassModifiers, 'hasArrowSeparator'
-                     | 'hasBulletSeparator'
-                     | 'hasDotSeparator'
-                     | 'hasSuccedesSeparator'
-                     | 'isCentered'
-                     | 'isRight'
->
-
 export interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement>,
-                                         ISizeProps,
-                                         BreadcrumbModifiers
-{}
+                                         SizeProps
+{
+  hasArrowSeparator?: boolean
+  hasBulletSeparator?: boolean
+  hasDotSeparator?: boolean
+  hasSuccedesSeparator?: boolean
+  isCentered?: boolean
+  isRight?: boolean
 }
 
-interface BreadcrumbItemModifiers extends Pick<BulmaClassModifiers, 'isActive'>
-
-export interface BreadcrumbItemProps extends React.LiHTMLAttributes<HTMLLIElement>,
-                                             BreadcrumbItemModifiers
-{}
+export interface BreadcrumbItemProps extends React.LiHTMLAttributes<HTMLLIElement>
+{
+  isActive?: boolean
+}
 
 class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
   render() {
@@ -43,10 +38,10 @@ class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
 
     return (
       <li
-        className={classnames({
+        className={classnames(
           className,
-          "is-active": isActive,
-        })}
+          trunxPropsToClassnamesObject({ isActive }),
+        )}
         {...props}
       >
         {children}
@@ -59,9 +54,9 @@ export default class Breadcrumb extends React.Component<BreadcrumbProps> {
   static Item = BreadcrumbItem
 
   render() {
-    const [{
-      sizeProps,
-    }, {
+    const [
+modifiersProps,
+    {
       children,
       className,
       hasArrowSeparator,
@@ -77,17 +72,17 @@ export default class Breadcrumb extends React.Component<BreadcrumbProps> {
       <nav
         aria-label="breadcrumbs"
         className={classnames(
-          bulmaClassName.breadcrumb
+          bulmaClassName.breadcrumb,
           className,
-          {
-            "has-arrow-separator": hasArrowSeparator,
-            "has-bullet-separator": hasBulletSeparator,
-            "has-dot-separator": hasDotSeparator,
-            "has-succedes-separator": hasSuccedesSeparator,
-            "is-centered": isCentered,
-            "is-right": isRight,
-          },
-          sizePropsToClassnames(sizeProps)
+          trunxPropsToClassnamesObject({
+            hasArrowSeparator,
+            hasBulletSeparator,
+            hasDotSeparator,
+            hasSuccedesSeparator,
+            isCentered,
+            isRight
+          }),
+          modifierPropsToClassnamesObject(modifiersProps),
         )}
         {...props}
       >

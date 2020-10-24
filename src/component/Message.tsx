@@ -1,102 +1,37 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  IHelpersProps,
-  IMainColorsProps,
-  ISizeProps,
-  helpersPropsToClassnames,
-  mainColorsPropsToClassnames,
-  sizePropsToClassnames,
-} from "./modifiers"
+import { renderElement } from './renderElement'
+import { HelpersProps, MainColorsProps, ShadeColorsProps, SizeProps } from "./modifiers"
+import {bulmaClassName}from './classNames'
 
-interface IMessageProps extends IHelpersProps,
-                                IMainColorsProps,
-                                ISizeProps {
+interface MessageProps extends React.HTMLAttributes<HTMLElement>, HelpersProps, MainColorsProps, ShadeColorsProps, SizeProps {
   children?: React.ReactNode
   className?: string
   isDark?: boolean
 }
 
-interface IMessageBodyProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface MessageBodyProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface IMessageHeaderProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface MessageHeaderProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-class MessageBody extends React.Component<IMessageBodyProps> {
+class MessageBody extends React.Component<MessageBodyProps> {
   render() {
-    const {
-      className,
-      children,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "message-body",
-          className,
-        )}
-      >{children}</div>
-    )
+    return renderElement('div', this.props, bulmaClassName.messageBody)
   }
 }
 
-class MessageHeader extends React.Component<IMessageHeaderProps> {
+class MessageHeader extends React.Component<MessageHeaderProps> {
   render() {
-    const {
-      className,
-      children,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "message-header",
-          className,
-        )}
-      >{children}</div>
-    )
+    return renderElement('div', this.props, bulmaClassName.messageHeader)
   }
 }
 
-export default class Message extends React.Component<IMessageProps> {
+export default class Message extends React.Component<MessageProps> {
   static Body = MessageBody
   static Header = MessageHeader
 
   render() {
-    const {
-      className,
-      children,
-      isDark,
-      isInvisible,
-      isMarginLess,
-      isPaddingLess,
-      isSrOnly,
-    } = this.props
-
-    return (
-      <article
-        className={classnames(
-          "message",
-          className,
-          {
-            "is-dark": isDark,
-          },
-          helpersPropsToClassnames({
-            isInvisible,
-            isMarginLess,
-            isPaddingLess,
-            isSrOnly,
-          }),
-          mainColorsPropsToClassnames(this.props),
-          sizePropsToClassnames(this.props)
-        )}
-      >{children}</article>
-    )
+return renderElement('article', this.props, bulmaClassName.message)
   }
 }

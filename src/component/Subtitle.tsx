@@ -1,14 +1,9 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  ITextColorHelpersProps,
-  textColorHelpersPropsToClassnames,
-} from "./modifiers"
+import { TextColorHelpersProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface ISubtitleProps extends ITextColorHelpersProps {
-  children?: React.ReactNode
-  className?: string
+interface SubtitleProps extends React.HTMLAttributes<HTMLParagraphElement>, TextColorHelpersProps {
   is1?: boolean
   is2?: boolean
   is3?: boolean
@@ -17,11 +12,9 @@ interface ISubtitleProps extends ITextColorHelpersProps {
   is6?: boolean
 }
 
-export default class Subtitle extends React.Component<ISubtitleProps> {
+export default class Subtitle extends React.Component<SubtitleProps> {
   render() {
     const {
-      children,
-      className,
       is1,
       is2,
       is3,
@@ -31,22 +24,6 @@ export default class Subtitle extends React.Component<ISubtitleProps> {
       ...props
     } = this.props
 
-    return (
-      <p
-        className={classnames(
-          "subtitle",
-          className,
-          {
-            "is-1": is1,
-            "is-2": is2,
-            "is-3": is3,
-            "is-4": is4,
-            "is-5": is5,
-            "is-6": is6,
-          },
-          textColorHelpersPropsToClassnames(props),
-        )}
-      >{children}</p>
-    )
+return renderElement('p', props, bulmaClassName.subtitle, { is1, is2, is3, is4, is5, is6 })
   }
 }

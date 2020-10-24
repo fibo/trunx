@@ -1,73 +1,31 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-interface IMenuProps extends React.HTMLAttributes<HTMLElement> {}
+import { bulmaClassName } from './classNames'
+import { renderElement } from './renderElement'
 
-interface IMenuLabelProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface MenuProps extends React.HTMLAttributes<HTMLElement> {}
 
-interface IMenuListProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface MenuLabelProps  extends React.HTMLAttributes<HTMLParagraphElement> {}
 
-class MenuLabel extends React.Component<IMenuLabelProps> {
+interface MenuListProps  extends React.HTMLAttributes<HTMLUListElement> {}
+
+class MenuLabel extends React.Component<MenuLabelProps> {
   render() {
-    const {
-      className,
-      children,
-    } = this.props
-
-    return (
-      <p
-        className={classnames(
-          "menu-label",
-          className,
-        )}
-      >{children}</p>
-    )
+    return renderElement('p', this.props, bulmaClassName.menuLabel)
   }
 }
 
-class MenuList extends React.Component<IMenuListProps> {
+class MenuList extends React.Component<MenuListProps> {
   render() {
-    const {
-      className,
-      children,
-    } = this.props
-
-    return (
-      <ul
-        className={classnames(
-          "menu-list",
-          className,
-        )}
-      >{children}</ul>
-    )
+    return renderElement('ul', this.props, bulmaClassName.menuList)
   }
 }
 
-export default class Menu extends React.Component<IMenuProps> {
+export default class Menu extends React.Component<MenuProps> {
   static Label = MenuLabel
   static List = MenuList
 
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <aside
-        className={classnames(
-          "menu",
-          className,
-        )}
-        {...props}
-      >{children}</aside>
-    )
+    return renderElement('aside', this.props, bulmaClassName.menu)
   }
 }

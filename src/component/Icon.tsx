@@ -1,26 +1,19 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
+import { bulmaClassName } from './classNames'
 import {
-  IBackgroundColorHelpersProps,
-  ISizeProps,
-  ITextColorHelpersProps,
-  backgroundColorHelpersPropsToClassnames,
-  sizePropsToClassnames,
-  textColorHelpersPropsToClassnames,
+  BackgroundColorHelpersProps,
+  SizeProps,
+  TextColorHelpersProps,
 } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface IIconProps extends IBackgroundColorHelpersProps,
-                             ITextColorHelpersProps,
-                             ISizeProps {
-  children?: React.ReactNode
-  className?: string
+interface IconProps extends React.HTMLAttributes<HTMLSpanElement>, BackgroundColorHelpersProps, TextColorHelpersProps, SizeProps {
   isLeft?: boolean
   isRight?: boolean
-  onClick?: (event: React.MouseEvent<HTMLSpanElement>) => void
 }
 
-interface IIconSvgProps {
+interface IconSvgProps {
   className?: string
   fill?: string
   icon?: {
@@ -30,7 +23,7 @@ interface IIconSvgProps {
   size?: string
 }
 
-class IconSvg extends React.Component<IIconSvgProps> {
+class IconSvg extends React.Component<IconSvgProps> {
   static defaultProps = {
     fill: "currentColor",
     size: "1em",
@@ -67,34 +60,16 @@ class IconSvg extends React.Component<IIconSvgProps> {
   }
 }
 
-export default class Icon extends React.Component<IIconProps> {
+export default class Icon extends React.Component<IconProps> {
   static Svg = IconSvg
 
   render() {
     const {
-      children,
-      className,
       isLeft,
       isRight,
-      onClick,
+...props
     } = this.props
 
-    return (
-      <span className={classnames(
-        "icon",
-        className,
-        {
-          "is-left": isLeft,
-          "is-right": isRight,
-        },
-        backgroundColorHelpersPropsToClassnames(this.props),
-        textColorHelpersPropsToClassnames(this.props),
-        sizePropsToClassnames(this.props),
-      )}
-      onClick={onClick}
-      >
-       {children}
-      </span>
-   )
+return renderElement('span', props, bulmaClassName.icon, { isLeft, isRight })
   }
 }

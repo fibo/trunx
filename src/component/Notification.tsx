@@ -1,31 +1,13 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  IMainColorsProps,
-  mainColorsPropsToClassnames,
-} from "./modifiers"
+import { bulmaClassName } from "./classNames"
+import { MainColorsProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface INotificationProps extends IMainColorsProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface NotificationProps extends React.HTMLAttributes<HTMLDivElement>, MainColorsProps {}
 
-export default class Notification extends React.Component<INotificationProps> {
+export class Notification extends React.Component<NotificationProps> {
   render() {
-    const {
-      className,
-      children,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "notification",
-          className,
-          mainColorsPropsToClassnames(this.props),
-        )}
-      >{children}</div>
-    )
+    return renderElement('div', this.props, bulmaClassName.navbar)
   }
 }

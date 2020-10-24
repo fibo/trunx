@@ -1,30 +1,13 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  ITextColorHelpersProps,
-  textColorHelpersPropsToClassnames,
-} from "./modifiers"
+import { bulmaClassName } from './classNames'
+import { renderElement } from './renderElement'
 
-interface IFooterProps extends React.HTMLAttributes<HTMLElement>,
-                               ITextColorHelpersProps {}
+interface FooterProps extends React.HTMLAttributes<HTMLElement>,
+                               TextColorHelpersProps {}
 
-export default class Footer extends React.Component<IFooterProps> {
+export default class Footer extends React.Component<FooterProps> {
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <footer
-        className={classnames(
-          "footer",
-          className,
-          textColorHelpersPropsToClassnames(props),
-        )}
-      >{children}</footer>
-    )
+    return renderElement('footer', this.props, bulmaClassName.footer)
   }
 }

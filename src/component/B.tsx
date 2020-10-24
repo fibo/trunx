@@ -1,41 +1,18 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
 import {
-  IBackgroundColorHelpersProps,
-  ITextColorHelpersProps,
-  backgroundColorHelpersPropsToClassnames,
-  extractModifiersProps,
-  textColorHelpersPropsToClassnames,
+  BackgroundColorHelpersProps,
+  TextColorHelpersProps,
 } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface IBProps extends React.HTMLAttributes<HTMLElement>,
-                          IBackgroundColorHelpersProps,
-                          ITextColorHelpersProps
+interface BProps extends React.HTMLAttributes<HTMLElement>,
+                          BackgroundColorHelpersProps,
+                          TextColorHelpersProps
 {}
 
-export default class B extends React.Component<IBProps> {
+export default class B extends React.Component<BProps> {
   render() {
-    const [{
-      backgroundColorHelpersProps,
-      textColorHelpersProps,
-    }, {
-      children,
-      className,
-      ...props
-    }] = extractModifiersProps(this.props)
-
-    return (
-      <b
-        className={classnames(
-          className,
-          backgroundColorHelpersPropsToClassnames(backgroundColorHelpersProps),
-          textColorHelpersPropsToClassnames(textColorHelpersProps),
-        )}
-        {...props}
-      >
-        {children}
-      </b>
-    )
+return renderElement('b', this.props)
   }
 }

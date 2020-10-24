@@ -1,16 +1,13 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
+import { bulmaClassName } from './classNames'
 import {
-  IHelpersProps,
-  ISizeProps,
-  helpersPropsToClassnames,
-  sizePropsToClassnames,
+  HelpersProps,
+  SizeProps,
 } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface IFieldProps extends IHelpersProps {
-  children?: React.ReactNode
-  className?: string
+interface FieldProps extends React.HTMLAttributes<HTMLDivElement>, HelpersProps, SizeProps {
   hasAddons?: boolean
   hasAddonsCentered?: boolean
   isGrouped?: boolean
@@ -18,93 +15,42 @@ interface IFieldProps extends IHelpersProps {
   isHorizontal?: boolean
 }
 
-interface IFieldBodyProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface FieldBodyProps  extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface IFieldLabelProps extends ISizeProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface FieldLabelProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-class FieldBody extends React.Component<IFieldBodyProps> {
+class FieldBody extends React.Component<FieldBodyProps> {
   render() {
-    const {
-      children,
-      className
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "field-body",
-          className,
-        )}
-      >{children}</div>
-    )
+    return renderElement('div', this.props, bulmaClassName.fieldBody)
   }
 }
 
-class FieldLabel extends React.Component<IFieldLabelProps> {
+class FieldLabel extends React.Component<FieldLabelProps> {
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "field-label",
-          className,
-          sizePropsToClassnames(props),
-        )}
-      >{children}</div>
-    )
+    return renderElement('div', this.props, bulmaClassName.fieldLabel)
   }
 }
 
-export default class Field extends React.Component<IFieldProps> {
+export default class Field extends React.Component<FieldProps> {
   static Body = FieldBody
   static Label = FieldLabel
 
   render() {
     const {
-      children,
-      className,
       hasAddons,
       hasAddonsCentered,
       isGrouped,
       isGroupedMultiline,
       isHorizontal,
-      isInvisible,
-      isMarginLess,
-      isPaddingLess,
-      isSrOnly,
+      ...props
     } = this.props
 
-    return (
-      <div
-        className={classnames(
-          "field",
-          className,
-          {
-            "has-addons": hasAddons,
-            "has-addons-centered": hasAddonsCentered,
-            "is-grouped": isGrouped,
-            "is-grouped-multiline": isGroupedMultiline,
-            "is-horizontal": isHorizontal,
-          },
-          helpersPropsToClassnames({
-            isInvisible,
-            isMarginLess,
-            isPaddingLess,
-            isSrOnly,
-          }),
-        )}
-      >{children}</div>
-    )
+    return renderElement('div', props, bulmaClassName.fieldLabel, {
+      hasAddons,
+      hasAddonsCentered,
+      isGrouped,
+      isGroupedMultiline,
+      isHorizontal,
+    })
   }
 }

@@ -1,13 +1,15 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-interface ITagsProps extends React.HTMLAttributes<HTMLDivElement> {
+import { bulmaClassName } from "./classNames"
+import { renderElement } from './renderElement'
+
+interface TagsProps extends React.HTMLAttributes<HTMLDivElement> {
   areLarge?: boolean
   areMedium?: boolean
   hasAddons?: boolean
 }
 
-export default class Tags extends React.Component<ITagsProps> {
+export class Tags extends React.Component<TagsProps> {
   render() {
     const {
       areLarge,
@@ -17,14 +19,6 @@ export default class Tags extends React.Component<ITagsProps> {
       ...props
     } = this.props
 
-    const className = classnames("tags", {
-      "are-large": areLarge,
-      "are-medium": areMedium,
-      "has-addons": hasAddons,
-    })
-
-    return (
-      <div {...props} className={className}>{children}</div>
-    )
+    return renderElement('div', props, bulmaClassName.tags,{ areLarge, areMedium, hasAddons })
   }
 }

@@ -1,33 +1,12 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  IBackgroundColorHelpersProps,
-  ITextColorHelpersProps,
-  backgroundColorHelpersPropsToClassnames,
-  textColorHelpersPropsToClassnames,
-} from "./modifiers"
+import { BackgroundColorHelpersProps, TextColorHelpersProps } from "./modifiers"
+import { renderElement} from './renderElement'
 
-interface ISmallProps extends React.HTMLAttributes<HTMLElement>,
-                               IBackgroundColorHelpersProps,
-                               ITextColorHelpersProps {}
+interface SmallProps extends React.HTMLAttributes<HTMLElement>, BackgroundColorHelpersProps, TextColorHelpersProps {}
 
-export default class Small extends React.Component<ISmallProps> {
+export default class Small extends React.Component<SmallProps> {
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <small
-        className={classnames(
-          className,
-          backgroundColorHelpersPropsToClassnames(props),
-          textColorHelpersPropsToClassnames(props),
-        )}
-      >{children}</small>
-    )
+    return renderElement('small', this.props)
   }
 }

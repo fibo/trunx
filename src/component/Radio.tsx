@@ -1,22 +1,21 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-interface IRadioProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  inputRef?: React.RefObject<HTMLInputElement>
-}
+import { bulmaClassName } from "./classNames"
 
-export default class Radio extends React.Component<IRadioProps> {
+export interface RadioProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+
+export class Radio extends React.Component<RadioProps> {
   render() {
     const {
       children,
       className,
-      inputRef,
       ...props
     } = this.props
 
     return (
       <label
-        className={classnames("radio", className)}
+        className={classnames(bulmaClassName.radio, className)}
       >
         <input
           {...props}
