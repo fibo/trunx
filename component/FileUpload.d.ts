@@ -1,5 +1,6 @@
-import * as React from "react";
-import { IMainColorsProps, ISizeProps } from "./modifiers";
+import * as React from 'react'
+
+import { IMainColorsProps, ISizeProps } from './modifiers'
 interface IFileUploadProps extends IMainColorsProps, ISizeProps {
     className?: string;
     children?: React.ReactNode;
@@ -27,19 +28,19 @@ interface IFileUploadName {
     children?: React.ReactNode;
 }
 declare class FileUploadCta extends React.Component<IFileUploadCta> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class FileUploadIcon extends React.Component<IFileUploadIcon> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class FileUploadInput extends React.Component<IFileUploadInputProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class FileUploadLabel extends React.Component<IFileUploadLabel> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class FileUploadName extends React.Component<IFileUploadName> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 export default class FileUpload extends React.Component<IFileUploadProps> {
     static Cta: typeof FileUploadCta;
@@ -49,4 +50,4 @@ export default class FileUpload extends React.Component<IFileUploadProps> {
     static Name: typeof FileUploadName;
     render(): JSX.Element;
 }
-export {};
+export {}

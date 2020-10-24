@@ -1,10 +1,5 @@
 import React from 'react'
 
-import Code from '../components/Code.js'
-import Nav from '../components/Nav.js'
-
-import indent from '../utils/indent.js'
-
 import {
   A,
   B,
@@ -20,11 +15,13 @@ import {
   Strong,
   Title,
   Ul
-} from '../../../index.js'
-
+} from '../../../index'
 import pkg from '../../../package.json'
+import { Code } from '../components/Code'
+import { Nav } from '../components/Nav'
+import { indent } from '../utils/indents'
 
-export default function Overview ({
+export function Overview ({
   location: { pathname }
 }) {
   return (

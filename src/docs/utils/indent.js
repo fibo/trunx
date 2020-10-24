@@ -5,7 +5,7 @@
  * be rendered without leading spaces.
  */
 
-export default function indent (strings) {
+export function indent (strings) {
   const code = strings[0]
 
   const rows = code.split('\n')

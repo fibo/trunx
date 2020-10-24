@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 interface IColumnsProps {
     className?: string;
     isDesktop?: boolean;
@@ -7,6 +7,6 @@ interface IColumnsProps {
     isMultiline?: boolean;
 }
 export default class Columns extends React.Component<IColumnsProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}

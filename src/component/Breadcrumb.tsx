@@ -1,34 +1,34 @@
-import * as classnames from "classnames"
-import * as React from "react"
+import * as classnames from 'classnames'
+import * as React from 'react'
 
 import {
   bulmaClassName,
   trunxPropsToClassnamesObject
-} from "./classNames"
+} from './classNames'
 import {
   SizeProps,
   extractModifiersProps,
-modifierPropsToClassnamesObject,
-} from "./modifiers"
+  modifierPropsToClassnamesObject
+} from './modifiers'
 
 export interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement>,
                                          SizeProps
 {
-  hasArrowSeparator?: boolean
-  hasBulletSeparator?: boolean
-  hasDotSeparator?: boolean
-  hasSuccedesSeparator?: boolean
-  isCentered?: boolean
-  isRight?: boolean
+  hasArrowSeparator?: boolean;
+  hasBulletSeparator?: boolean;
+  hasDotSeparator?: boolean;
+  hasSuccedesSeparator?: boolean;
+  isCentered?: boolean;
+  isRight?: boolean;
 }
 
 export interface BreadcrumbItemProps extends React.LiHTMLAttributes<HTMLLIElement>
 {
-  isActive?: boolean
+  isActive?: boolean;
 }
 
 class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
-  render() {
+  render (): React.ReactNode {
     const {
       children,
       className,
@@ -40,7 +40,7 @@ class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
       <li
         className={classnames(
           className,
-          trunxPropsToClassnamesObject({ isActive }),
+          trunxPropsToClassnamesObject({ isActive })
         )}
         {...props}
       >
@@ -50,27 +50,27 @@ class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
   }
 }
 
-export default class Breadcrumb extends React.Component<BreadcrumbProps> {
+export class Breadcrumb extends React.Component<BreadcrumbProps> {
   static Item = BreadcrumbItem
 
-  render() {
+  render () :React.RactNode{
     const [
-modifiersProps,
-    {
-      children,
-      className,
-      hasArrowSeparator,
-      hasBulletSeparator,
-      hasDotSeparator,
-      hasSuccedesSeparator,
-      isCentered,
-      isRight,
-      ...props
-    }] = extractModifiersProps(this.props)
+      modifiersProps,
+      {
+        children,
+        className,
+        hasArrowSeparator,
+        hasBulletSeparator,
+        hasDotSeparator,
+        hasSuccedesSeparator,
+        isCentered,
+        isRight,
+        ...props
+      }] = extractModifiersProps(this.props)
 
     return (
       <nav
-        aria-label="breadcrumbs"
+        aria-label='breadcrumbs'
         className={classnames(
           bulmaClassName.breadcrumb,
           className,
@@ -82,7 +82,7 @@ modifiersProps,
             isCentered,
             isRight
           }),
-          modifierPropsToClassnamesObject(modifiersProps),
+          modifierPropsToClassnamesObject(modifiersProps)
         )}
         {...props}
       >

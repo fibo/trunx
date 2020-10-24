@@ -1,57 +1,57 @@
-import * as classnames from "classnames"
-import * as React from "react"
+import * as classnames from 'classnames'
+import * as React from 'react'
 
-import { bulmaClassName } from './classNames'
-import { OtherHelpersProps, MainColorsProps, ShadeColorsProps } from "./modifiers"
+import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
+import { OtherHelpersProps, MainColorsProps, ShadeColorsProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface NavbarProps extends React.HTMLAttributes<HTMLElement>,
 Pick<OtherHelpersProps, 'isUnselectable'>, MainColorsProps, ShadeColorsProps {
-  isHoverable?: boolean
-  isFixedBottom?: boolean
-  isFixedTop?: boolean
-  isSpaced?:boolean
-  isTransparent?:boolean
+  isHoverable?: boolean;
+  isFixedBottom?: boolean;
+  isFixedTop?: boolean;
+  isSpaced?: boolean;
+  isTransparent?: boolean;
 }
 
-interface NavbarBrandProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type NavbarBrandProps = React.HTMLAttributes<HTMLDivElement>
 
-interface NavbarDividerProps extends React.HTMLAttributes<HTMLHRElement> {}
+export type NavbarDividerProps = React.HTMLAttributes<HTMLHRElement>
 
-interface NavbarDropdownProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type NavbarDropdownProps = React.HTMLAttributes<HTMLDivElement>
 
-interface NavbarEndProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type NavbarEndProps = React.HTMLAttributes<HTMLDivElement>
 
-interface NavbarBurgerProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  isActive?: boolean
+export interface NavbarBurgerProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  isActive?: boolean;
 }
 
-export interface NavbarItemProps extends Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'onAbort'>, Omit<React.HTMLAttributes<HTMLDivElement>, 'onAbort'> {
-  hasDropdown?: boolean
-  hasDropdownUp?: boolean
-  isActive?: boolean
-  isHoverable?: boolean
+export interface NavbarItemProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  hasDropdown?: boolean;
+  hasDropdownUp?: boolean;
+  isActive?: boolean;
+  isHoverable?: boolean;
 }
 
-interface NavbarLinkProps  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
+export type NavbarLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-interface NavbarMenuProps extends React.HTMLAttributes<HTMLDivElement> {isActive?:boolean}
+export interface NavbarMenuProps extends React.HTMLAttributes<HTMLDivElement> {isActive?: boolean}
 
-interface NavbarStartProps extends React.HTMLAttributes<HTMLDivElement> {}
+export type NavbarStartProps = React.HTMLAttributes<HTMLDivElement>
 
 class NavbarBrand extends React.Component<NavbarBrandProps> {
-  render() {
-    return renderElement('div',this.props, bulmaClassName.navbarBrand)
+  render (): React.ReactNode {
+    return renderElement('div', this.props, bulmaClassName.navbarBrand)
   }
 }
 
 class NavbarBurger extends React.Component<NavbarBurgerProps> {
   static defaultProps = {
-    'aria-label':"menu",
-    role:"button",
+    'aria-label': 'menu',
+    role: 'button'
   }
 
-  render() {
+  render (): React.ReactNode {
     const {
       className,
       isActive,
@@ -60,42 +60,42 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
 
     return (
       <a
-        aria-expanded={isActive ? "true" : "false"}
+        aria-expanded={isActive ? 'true' : 'false'}
         className={classnames(
           bulmaClassName.navbarBurger,
           className,
-          trunxPropsToClassnamesObject({isActive})
+          trunxPropsToClassnamesObject({ isActive })
         )}
         {...props}
       >
-        <span aria-hidden="true"/>
-        <span aria-hidden="true"/>
-        <span aria-hidden="true"/>
+        <span aria-hidden='true' />
+        <span aria-hidden='true' />
+        <span aria-hidden='true' />
       </a>
     )
   }
 }
 
 class NavbarDivider extends React.Component<NavbarDividerProps> {
-  render() {
+  render () : React.ReactNode{
     return renderElement('hr', this.props, bulmaClassName.navbarDivider)
   }
 }
 
 class NavbarDropdown extends React.Component<NavbarDropdownProps> {
-  render() {
+  render () : React.ReactNode{
     return renderElement('div', this.props, bulmaClassName.navbarDropdown)
   }
 }
 
 class NavbarEnd extends React.Component<NavbarEndProps> {
-  render() {
-    return renderElement('div',this.props, bulmaClassName.navbarEnd)
+  render () : React.ReactNode{
+    return renderElement('div', this.props, bulmaClassName.navbarEnd)
   }
 }
 
 class NavbarItem extends React.Component<NavbarItemProps> {
-  render() {
+  render () : React.ReactNode{
     const {
       hasDropdown,
       hasDropdownUp,
@@ -116,26 +116,26 @@ class NavbarItem extends React.Component<NavbarItemProps> {
 }
 
 class NavbarLink extends React.Component<React.PropsWithChildren<NavbarLinkProps>> {
-  render() {
+  render () : React.ReactNode{
     return renderElement('a', this.props, bulmaClassName.navbarLink)
   }
 }
 
 class NavbarMenu extends React.Component<NavbarMenuProps> {
-  render() {
-    const {isActive, ...props}= this.props
+  render () : React.ReactNode{
+    const { isActive, ...props } = this.props
 
-    return renderElement('div', props, bulmaClassName.navbarMenu, {isActive})
+    return renderElement('div', props, bulmaClassName.navbarMenu, { isActive })
   }
 }
 
 class NavbarStart extends React.Component<NavbarStartProps> {
-  render() {
+  render () : React.ReactNode{
     return renderElement('div', this.props, bulmaClassName.navbarStart)
   }
 }
 
-export  class Navbar extends React.Component<NavbarProps> {
+export class Navbar extends React.Component<NavbarProps> {
   static Brand = NavbarBrand
   static Burger = NavbarBurger
   static Divider = NavbarDivider
@@ -146,45 +146,45 @@ export  class Navbar extends React.Component<NavbarProps> {
   static Menu = NavbarMenu
   static Start = NavbarStart
 
-  componentDidMount() {
+  componentDidMount ():void {
     const {
       isFixedBottom,
-      isFixedTop,
+      isFixedTop
     } = this.props
 
     if (isFixedTop) {
-      document.body.classList.add("has-navbar-fixed-top")
+      document.body.classList.add('has-navbar-fixed-top')
     }
 
     if (isFixedBottom) {
-      document.body.classList.add("has-navbar-fixed-bottom")
+      document.body.classList.add('has-navbar-fixed-bottom')
     }
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () :void{
     const {
       isFixedBottom,
-      isFixedTop,
+      isFixedTop
     } = this.props
 
     if (isFixedBottom) {
-      document.body.classList.remove("has-navbar-fixed-bottom")
+      document.body.classList.remove('has-navbar-fixed-bottom')
     }
 
     if (isFixedTop) {
-      document.body.classList.remove("has-navbar-fixed-top")
+      document.body.classList.remove('has-navbar-fixed-top')
     }
   }
 
-  render() {
+  render () :React.ReactNode{
     const {
       isFixedBottom,
       isFixedTop,
       isTransparent,
-isUnselectable,
+      isUnselectable,
       ...props
     } = this.props
 
-return renderElement('nav', props, bulmaClassName.navbar, {isFixedBottom, isFixedTop, isTransparent, isUnselectable})
+    return renderElement('nav', props, bulmaClassName.navbar, { isFixedBottom, isFixedTop, isTransparent, isUnselectable })
   }
 }

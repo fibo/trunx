@@ -1,5 +1,6 @@
-import * as React from "react";
-import { IMainColorsProps, ISizeProps } from "./modifiers";
+import * as React from 'react'
+
+import { IMainColorsProps, ISizeProps } from './modifiers'
 interface IInputProps extends IMainColorsProps, ISizeProps, React.InputHTMLAttributes<HTMLInputElement> {
     isFocused?: boolean;
     isHovered?: boolean;
@@ -7,6 +8,6 @@ interface IInputProps extends IMainColorsProps, ISizeProps, React.InputHTMLAttri
     isStatic?: boolean;
 }
 export default class Input extends React.Component<IInputProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}

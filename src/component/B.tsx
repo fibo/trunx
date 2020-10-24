@@ -1,18 +1,18 @@
-import * as React from "react"
+import * as React from 'react'
 
 import {
   BackgroundColorHelpersProps,
-  TextColorHelpersProps,
-} from "./modifiers"
+  TextColorHelpersProps
+} from './modifiers'
 import { renderElement } from './renderElement'
 
-interface BProps extends React.HTMLAttributes<HTMLElement>,
+export interface BProps extends React.HTMLAttributes<HTMLElement>,
                           BackgroundColorHelpersProps,
                           TextColorHelpersProps
 {}
 
-export default class B extends React.Component<BProps> {
-  render() {
-return renderElement('b', this.props)
+export class B extends React.Component<BProps> {
+  render (): React.ReactNode {
+    return renderElement('b', this.props)
   }
 }

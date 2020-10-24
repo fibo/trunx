@@ -1,20 +1,20 @@
-import * as React from "react"
+import * as React from 'react'
 
-import { bulmaClassName } from "./classNames"
+import { bulmaClassName } from './classNames'
 import { renderElement } from './renderElement'
 
 interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {
-  isBordered?: boolean
-  isFullwidth?: boolean
-  isHoverable?: boolean
-  isNarrow?: boolean
-  isStriped?: boolean
+  isBordered?: boolean;
+  isFullwidth?: boolean;
+  isHoverable?: boolean;
+  isNarrow?: boolean;
+  isStriped?: boolean;
 }
 
-interface TableContainerProps extends React.HTMLAttributes<HTMLDivElement>{}
+type TableContainerProps = React.HTMLAttributes<HTMLDivElement>
 
 class TableContainer extends React.Component<TableContainerProps> {
-  render() {
+  render (): React.ReactNode {
     return renderElement('div', this.props, bulmaClassName.tableContainer)
   }
 }
@@ -22,7 +22,7 @@ class TableContainer extends React.Component<TableContainerProps> {
 export class Table extends React.Component<TableProps> {
   static Container = TableContainer
 
-  render() {
+  render (): React.ReactNode {
     const {
       isBordered,
       isFullwidth,
@@ -32,12 +32,12 @@ export class Table extends React.Component<TableProps> {
       ...props
     } = this.props
 
-return renderElement('table', props, bulmaClassName.table, {
+    return renderElement('table', props, bulmaClassName.table, {
       isBordered,
       isFullwidth,
       isHoverable,
       isNarrow,
-      isStriped,
-})
+      isStriped
+    })
   }
 }

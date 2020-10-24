@@ -1,6 +1,6 @@
-import * as React from "react"
+import * as React from 'react'
 
-import { BackgroundColorHelpersProps, TextColorHelpersProps } from "./modifiers"
+import { BackgroundColorHelpersProps, TextColorHelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 interface StrongProps extends React.HTMLAttributes<HTMLElement>,
@@ -8,7 +8,7 @@ interface StrongProps extends React.HTMLAttributes<HTMLElement>,
                                TextColorHelpersProps {}
 
 export class Strong extends React.Component<StrongProps> {
-  render() {
-    return renderElement('strong' , this.props)
+  render () {
+    return renderElement('strong', this.props)
   }
 }

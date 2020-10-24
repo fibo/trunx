@@ -1,36 +1,36 @@
-import * as classnames from "classnames"
-import * as React from "react"
+import * as classnames from 'classnames'
+import * as React from 'react'
 
 import { trunxPropsToClassnamesObject } from './classNames'
 import {
   FloatHelpersProps,
   extractModifiersProps,
   modifierPropsToClassnamesObject
-} from "./modifiers"
+} from './modifiers'
 
-interface AProps
+export interface AProps
 extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
         FloatHelpersProps
 {
-  isActive?: boolean
+  isActive?: boolean;
 }
 
-export default class A extends React.Component<AProps> {
-  render() {
+export class A extends React.Component<AProps> {
+  render () :React.ReactNode{
     const [
       modifiersProps,
-    {
-      children,
-      className,
-      isActive,
-      ...props
-    }] = extractModifiersProps(this.props)
+      {
+        children,
+        className,
+        isActive,
+        ...props
+      }] = extractModifiersProps(this.props)
 
     return (
       <a
         className={classnames(
           className,
-trunxPropsToClassnamesObject({ isActive }),
+          trunxPropsToClassnamesObject({ isActive }),
           modifierPropsToClassnamesObject(modifiersProps)
         )}
         {...props}

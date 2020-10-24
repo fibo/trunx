@@ -1,5 +1,6 @@
-import * as React from "react";
-import { IMainColorsProps } from "./modifiers";
+import * as React from 'react'
+
+import { IMainColorsProps } from './modifiers'
 interface ITileProps extends React.HTMLAttributes<HTMLDivElement> {
     is1?: boolean;
     is2?: boolean;
@@ -33,13 +34,13 @@ interface ITileChildNotificationProps extends IMainColorsProps {
     className?: string;
 }
 declare class TileAncestor extends React.Component<ITileAncestorProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class TileChildBox extends React.Component<ITileChildBoxProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class TileChildNotification extends React.Component<ITileChildNotificationProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class TileChild extends React.Component<ITileChildProps> {
     static Box: typeof TileChildBox;
@@ -51,4 +52,4 @@ export default class Tile extends React.Component<ITileProps> {
     static Child: typeof TileChild;
     render(): JSX.Element;
 }
-export {};
+export {}

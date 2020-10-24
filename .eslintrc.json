@@ -1,52 +1,12 @@
-{
+ {
   "root": true,
   "parser": "@typescript-eslint/parser",
+   "plugins": ["@typescript-eslint"],
   "extends": [
-    "react-app"
+      "standard",
+      "standard-jsx"
   ],
   "rules": {
-    "@typescript-eslint/member-delimiter-style": ["error", {
-      "multiline": {
-        "delimiter": "none",
-        "requireLast": false
-      },
-      "singleline": {
-        "delimiter": "semi",
-        "requireLast": false
-      },
-      "overrides": {
-        "interface": {
-            "multiline": {
-                "delimiter": "none",
-                "requireLast": false
-           }
-        }
-      }
-    }],
-    "camelcase": "error",
-    "comma-dangle": ["error", "always-multiline"],
-    "no-multiple-empty-lines": ["error", {
-      "max": 1,
-      "maxEOF": 1
-    }],
-    "no-var": "error",
-    "import/extensions": ["error", "never"],
-    "import/order": [
-      "error",
-      {
-        "alphabetize": {
-          "caseInsensitive": false,
-          "order": "asc"
-        },
-        "newlines-between": "always"
-      }
-    ],
-    "no-console": [
-      "error",
-      {
-        "allow": ["warn", "error"]
-      }
-    ],
-    "sort-keys": ["error", "asc", {"caseSensitive": true, "natural": true, "minKeys": 4}]
+    "no-use-before-define": "off"
   }
 }

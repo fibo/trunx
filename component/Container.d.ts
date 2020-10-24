@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 interface IContainerProps {
     children?: React.ReactNode;
     className?: string;
@@ -7,6 +7,6 @@ interface IContainerProps {
     isWidescreen?: boolean;
 }
 export default class Container extends React.Component<IContainerProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}

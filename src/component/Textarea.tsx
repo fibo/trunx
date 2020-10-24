@@ -1,17 +1,16 @@
-import * as classnames from "classnames"
-import * as React from "react"
+import * as React from 'react'
 
+import { bulmaClassName } from './classNames'
+import { MainColorsProps, SizeProps, TextColorHelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
-import { MainColorsProps, SizeProps, TextColorHelpersProps } from "./modifiers"
-import {bulmaClassName}from './classNames'
 
 export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement>, MainColorsProps, SizeProps, TextColorHelpersProps {
-  isFocused?: boolean
-  isHovered?: boolean
+  isFocused?: boolean;
+  isHovered?: boolean;
 }
 
 export class Textarea extends React.Component<TextareaProps> {
-  render() {
+  render () :React.ReactNode{
     const {
       isFocused,
       isHovered,
@@ -20,7 +19,7 @@ export class Textarea extends React.Component<TextareaProps> {
 
     return renderElement('textarea', props, bulmaClassName.textarea, {
       isFocused,
-      isHovered,
+      isHovered
     })
   }
 }

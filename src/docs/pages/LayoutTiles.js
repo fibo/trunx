@@ -1,7 +1,5 @@
 import React from 'react'
 
-import Nav from '../components/Nav.js'
-
 import {
   Container,
   Content,
@@ -10,9 +8,10 @@ import {
   Subtitle,
   Tile,
   Title
-} from '../../../index.js'
+} from '../../../index'
+import { Nav } from '../components/Nav'
 
-export default function LayoutTiles ({
+export function LayoutTiles ({
   location: { pathname }
 }) {
   return (

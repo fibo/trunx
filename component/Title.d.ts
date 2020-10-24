@@ -1,5 +1,6 @@
-import * as React from "react";
-import { ITextColorHelpersProps } from "./modifiers";
+import * as React from 'react'
+
+import { ITextColorHelpersProps } from './modifiers'
 interface ITitleProps extends ITextColorHelpersProps {
     children?: React.ReactNode;
     className?: string;
@@ -12,6 +13,6 @@ interface ITitleProps extends ITextColorHelpersProps {
     isSpaced?: boolean;
 }
 export default class Title extends React.Component<ITitleProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}

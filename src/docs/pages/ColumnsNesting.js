@@ -1,10 +1,5 @@
 import React from 'react'
 
-import Code from '../components/Code.js'
-import Nav from '../components/Nav.js'
-
-import indent from '../utils/indent.js'
-
 import {
   Column,
   Columns,
@@ -17,6 +12,9 @@ import {
   Title,
   Ul
 } from '../../../index.js'
+import Code from '../components/Code.js'
+import Nav from '../components/Nav.js'
+import indent from '../utils/indent.js'
 
 export default function ColumnsNesting ({
   location: { pathname }

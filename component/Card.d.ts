@@ -1,16 +1,17 @@
-import * as React from "react";
-import { IAnchorProps } from "./Anchor";
-import { IBackgroundColorHelpersProps, ITextColorHelpersProps } from "./modifiers";
-import { IImageProps } from "./Image";
+import * as React from 'react'
+
+import { IAnchorProps } from './Anchor'
+import { IImageProps } from './Image'
+import { IBackgroundColorHelpersProps, ITextColorHelpersProps } from './modifiers'
 interface ICardContentProps extends ITextColorHelpersProps, React.HTMLAttributes<HTMLDivElement> {
 }
 interface ICardFooterItemProps {
     children?: React.ReactNode;
     className?: string;
-    download?: IAnchorProps["download"];
-    href?: IAnchorProps["href"];
-    onClick?: IAnchorProps["onClick"];
-    target?: IAnchorProps["target"];
+    download?: IAnchorProps['download'];
+    href?: IAnchorProps['href'];
+    onClick?: IAnchorProps['onClick'];
+    target?: IAnchorProps['target'];
 }
 interface ICardFooterProps extends React.HTMLAttributes<HTMLElement> {
 }
@@ -19,10 +20,10 @@ interface ICardHeader extends React.HTMLAttributes<HTMLElement> {
 interface ICardHeaderIconProps {
     children?: React.ReactNode;
     className?: string;
-    download?: IAnchorProps["download"];
-    href?: IAnchorProps["href"];
-    onClick?: IAnchorProps["onClick"];
-    target?: IAnchorProps["target"];
+    download?: IAnchorProps['download'];
+    href?: IAnchorProps['href'];
+    onClick?: IAnchorProps['onClick'];
+    target?: IAnchorProps['target'];
 }
 interface ICardHeaderTitleProps extends React.HTMLAttributes<HTMLElement> {
     isCentered?: boolean;
@@ -34,20 +35,20 @@ interface ICardProps extends IBackgroundColorHelpersProps, React.HTMLAttributes<
     className?: string;
 }
 declare class CardContent extends React.Component<ICardContentProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class CardFooterItem extends React.Component<ICardFooterItemProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class CardFooter extends React.Component<ICardFooterProps> {
     static Item: typeof CardFooterItem;
     render(): JSX.Element;
 }
 declare class CardHeaderIcon extends React.Component<ICardHeaderIconProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class CardHeaderTitle extends React.Component<ICardHeaderTitleProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class CardHeader extends React.Component<ICardHeader> {
     static Icon: typeof CardHeaderIcon;
@@ -55,7 +56,7 @@ declare class CardHeader extends React.Component<ICardHeader> {
     render(): any;
 }
 declare class CardImage extends React.Component<ICardImageProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 export default class Card extends React.Component<ICardProps> {
     static Content: typeof CardContent;
@@ -64,4 +65,4 @@ export default class Card extends React.Component<ICardProps> {
     static Image: typeof CardImage;
     render(): JSX.Element;
 }
-export {};
+export {}

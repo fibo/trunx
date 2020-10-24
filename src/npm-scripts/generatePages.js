@@ -1,5 +1,6 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
+
 import writeFile from 'write-file-utf8'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))

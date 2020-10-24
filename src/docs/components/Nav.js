@@ -1,13 +1,12 @@
 import React from 'react'
 import { Redirect, useLocation } from 'react-router-dom'
 
-import routes from '../routes.js'
-
 import {
   Navbar
 } from '../../../index.js'
+import routes from '../routes.js'
 
-export default function Nav () {
+export function Nav () {
   const { pathname } = useLocation()
 
   const [expanded, setExpanded] = React.useState(false)

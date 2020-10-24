@@ -1,50 +1,49 @@
-import * as classnames from "classnames"
-import * as React from "react"
+import * as classnames from 'classnames'
+import * as React from 'react'
 
+import { Image, ImageProps } from './Image'
 import {
-  bulmaClassName,
-} from "./classNames"
+  bulmaClassName
+} from './classNames'
 import {
   TextColorHelpersProps,
   extractModifiersProps,
-modifierPropsToClassnamesObject,
-} from "./modifiers"
+  modifierPropsToClassnamesObject
+} from './modifiers'
 import { renderElement } from './renderElement'
 
-import { Image, ImageProps } from "./Image"
-
-interface CardContentProps
+export interface CardContentProps
 extends React.HTMLAttributes<HTMLDivElement>,
         TextColorHelpersProps
 {}
 
-interface CardFooterItemProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
+export type CardFooterItemProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-interface CardFooterProps extends React.HTMLAttributes<HTMLElement> {}
+export type CardFooterProps = React.HTMLAttributes<HTMLElement>
 
-interface CardHeader extends React.HTMLAttributes<HTMLElement> {}
+export type CardHeaderProps = React.HTMLAttributes<HTMLElement>
 
-interface CardHeaderIconProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
+export type CardHeaderIconProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 export interface CardHeaderTitleProps extends
   React.HTMLAttributes<HTMLElement>
   {
-    isCentered?: boolean
+    isCentered?: boolean;
   }
 
-interface CardImageProps extends ImageProps {}
+export type CardImageProps = ImageProps
 
-interface CardProps extends extends React.HTMLAttributes<HTMLDivElement> {}
+export type CardProps = React.HTMLAttributes<HTMLDivElement>
 
 class CardContent extends React.Component<CardContentProps> {
-  render() {
+  render () : React.ReactNode{
     const [
       modifiersProps,
-    {
-      children,
-      className,
-      ...props
-    }] = extractModifiersProps(this.props)
+      {
+        children,
+        className,
+        ...props
+      }] = extractModifiersProps(this.props)
 
     return (
       <div
@@ -62,7 +61,7 @@ class CardContent extends React.Component<CardContentProps> {
 }
 
 class CardFooterItem extends React.Component<CardFooterItemProps> {
-  render() {
+  render () : React.ReactNode{
     const {
       href,
       onClick,
@@ -80,13 +79,13 @@ class CardFooterItem extends React.Component<CardFooterItemProps> {
 class CardFooter extends React.Component<CardFooterProps> {
   static Item = CardFooterItem
 
-  render() {
-return renderElement('footer', this.props, bulmaClassName.cardFooter)
+  render () : React.ReactNode{
+    return renderElement('footer', this.props, bulmaClassName.cardFooter)
   }
 }
 
 class CardHeaderIcon extends React.Component<CardHeaderIconProps> {
-  render() {
+  render () : React.ReactNode{
     const {
       href,
       onClick,
@@ -94,35 +93,35 @@ class CardHeaderIcon extends React.Component<CardHeaderIconProps> {
     } = this.props
 
     if (href || onClick) {
-      return renderElement('a', {href, onClick, ...props}, bulmaClassName.cardHeaderIcon)
+      return renderElement('a', { href, onClick, ...props }, bulmaClassName.cardHeaderIcon)
     } else {
-return renderElement('div', props, bulmaClassName.cardHeaderIcon)
+      return renderElement('div', props, bulmaClassName.cardHeaderIcon)
     }
   }
 }
 
 class CardHeaderTitle extends React.Component<CardHeaderTitleProps> {
-  render() {
+  render () : React.ReactNode{
     const {
       isCentered,
       ...props
     } = this.props
 
-return renderElement('div', props, bulmaClassName.cardHeaderTitle, { isCentered })
+    return renderElement('div', props, bulmaClassName.cardHeaderTitle, { isCentered })
   }
 }
 
-class CardHeader extends React.Component<CardHeader> {
+class CardHeader extends React.Component<CardHeaderProps> {
   static Icon = CardHeaderIcon
   static Title = CardHeaderTitle
 
-  render() {
+  render (): React.ReactNode {
     return renderElement('header', this.props, bulmaClassName.cardHeader)
   }
 }
 
 class CardImage extends React.Component<CardImageProps> {
-  render() {
+  render () : React.ReactNode{
     const {
       className,
       ...props
@@ -144,7 +143,7 @@ export class Card extends React.Component<CardProps> {
   static Header = CardHeader
   static Image = CardImage
 
-  render() {
+  render ():React.ReactNode {
     return renderElement('div', this.props, bulmaClassName.card)
   }
 }

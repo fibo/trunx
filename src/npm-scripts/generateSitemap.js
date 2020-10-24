@@ -1,7 +1,8 @@
 import path from 'path'
+import { fileURLToPath } from 'url'
+
 import readFile from 'read-file-utf8'
 import writeFile from 'write-file-utf8'
-import { fileURLToPath } from 'url'
 
 import { route } from '../docs/routes'
 

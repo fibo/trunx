@@ -1,5 +1,6 @@
-import * as React from "react";
-import { ISizeProps } from "./modifiers";
+import * as React from 'react'
+
+import { ISizeProps } from './modifiers'
 interface IContentProps extends ISizeProps, React.HTMLAttributes<HTMLDivElement> {
     hasTextCentered?: boolean;
     hasTextJustified?: boolean;
@@ -7,6 +8,6 @@ interface IContentProps extends ISizeProps, React.HTMLAttributes<HTMLDivElement>
     hasTextRight?: boolean;
 }
 export default class Content extends React.Component<IContentProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}

@@ -1,19 +1,17 @@
 import React from 'react'
 
-import Code from '../components/Code.js'
-import Nav from '../components/Nav.js'
-
-import indent from '../utils/indent.js'
-
 import {
   Container,
   Content,
   Section,
   Title,
   Subtitle
-} from '../../../index.js'
+} from '../../../index'
+import { Code } from '../components/Code'
+import { Nav } from '../components/Nav'
+import { indent } from '../utils/indent'
 
-export default function LayoutSection ({
+export function LayoutSection ({
   location: { pathname }
 }) {
   return (
