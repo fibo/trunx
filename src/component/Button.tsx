@@ -3,37 +3,24 @@ import * as React from "react"
 
 import {
   bulmaClassName,
-  BulmaClassModifiers,
 } from "./classNames"
-import { renderA } from "./commonRenders"
 import {
-  IHelpersProps,
-  IMainColorsProps,
-  IShadeColorsProps,
-  ISizeProps,
-  ITextColorHelpersProps,
+  HelpersProps,
+  MainColorsProps,
+  ShadeColorsProps,
+  SizeProps,
+  TextColorHelpersProps,
   extractModifiersProps,
-  helpersPropsToClassnames,
-  mainColorsPropsToClassnames,
-  shadeColorsPropsToClassnames,
-  sizePropsToClassnames,
-  textColorHelpersPropsToClassnames,
+  modifierPropsToClassnamesObject,
 } from "./modifiers"
 
-interface ButtonModifiers extends Pick<
-  BulmaClassModifiers, 'isActive'
-                     | 'isFocused'
->
-
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-                              React.InputHTMLAttributes<HTMLInputElement>,
-                              IHelpersProps,
-                              IMainColorsProps,
-                              IShadeColorsProps,
-                              ISizeProps,
-                              ITextColorHelpersProps,
-                              ButtonModifiers
-{}
+export interface ButtonProps extends Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onAbort'>, Omit<React.InputHTMLAttributes<HTMLInputElement>, 'onAbort' >,
+                              HelpersProps,
+                              MainColorsProps,
+                              ShadeColorsProps,
+                              SizeProps,
+                              TextColorHelpersProps
+                              {
   isActive?: boolean
   isFocused?: boolean
   isFullwidth?: boolean
@@ -44,16 +31,12 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   isRounded?: boolean
   isStatic?: boolean
   isText?: boolean
+                              }
 
 export default class Button extends React.Component<ButtonProps> {
   render() {
-    const [{
-      helpersProps,
-      mainColorsProps,
-      shadeColorsProps,
-      sizeProps,
-      textColorHelpersProps,
-    },
+    const [
+      modifiersProps,
     {
       children,
       className: classNameProp,
@@ -69,7 +52,6 @@ export default class Button extends React.Component<ButtonProps> {
       isRounded,
       isStatic,
       isText,
-      onClick,
       target,
       type,
       value,
@@ -91,16 +73,18 @@ export default class Button extends React.Component<ButtonProps> {
         "is-static": isStatic,
         "is-text": isText,
       },
-      helpersPropsToClassnames(helpersProps),
-      mainColorsPropsToClassnames(mainColorsProps),
-      shadeColorsPropsToClassnames(shadeColorsProps),
-      sizePropsToClassnames(sizeProps),
-      textColorHelpersPropsToClassnames(textColorHelpersProps),
+      modifierPropsToClassnamesObject(modifiersProps)
     )
 
     if (href) {
       return (
-        renderA({ className, href, ...props })
+        <a
+        className={className}
+          href={href}
+          {...props}
+        >
+          {children}
+        </a>
       )
     }
 
@@ -131,7 +115,6 @@ export default class Button extends React.Component<ButtonProps> {
       <button
         className={className}
         disabled={disabled}
-        onClick={onClick}
         {...props}
       >
         {this.props.children}

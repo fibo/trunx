@@ -1,51 +1,25 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  ISizeProps,
-  extractModifiersProps,
-  sizePropsToClassnames,
-} from "./modifiers"
+import { SizeProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface IContentProps extends ISizeProps,
-                                React.HTMLAttributes<HTMLDivElement> {
+interface ContentProps extends React.HTMLAttributes<HTMLDivElement>, SizeProps {
   hasTextCentered?: boolean
   hasTextJustified?: boolean
   hasTextLeft?: boolean
   hasTextRight?: boolean
 }
 
-export default class Content extends React.Component<IContentProps> {
+export default class Content extends React.Component<ContentProps> {
   render() {
-    const [{
-      sizeProps,
-    }, {
-      children,
-      className,
+    const {
       hasTextCentered,
       hasTextJustified,
       hasTextLeft,
       hasTextRight,
       ...props
-    }] = extractModifiersProps(this.props)
+    } = this.props
 
-    return (
-      <div
-        className={classnames(
-          "content",
-          className,
-          {
-            "has-text-centered": hasTextCentered,
-            "has-text-justified": hasTextJustified,
-            "has-text-left": hasTextLeft,
-            "has-text-right": hasTextRight,
-          },
-          sizePropsToClassnames(sizeProps),
-          {...props}
-        )}
-      >
-        {children}
-      </div>
-    )
+    return renderElement('div', props, bulmaClassName.content, { hasTextCentered, hasTextJustified, hasTextLeft, hasTextRight })
   }
 }

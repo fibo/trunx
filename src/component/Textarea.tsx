@@ -1,104 +1,26 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  IMainColorsProps,
-  ISizeProps,
-  ITextColorHelpersProps,
-  mainColorsPropsToClassnames,
-  sizePropsToClassnames,
-  textColorHelpersPropsToClassnames,
-} from "./modifiers"
+import { renderElement } from './renderElement'
+import { MainColorsProps, SizeProps, TextColorHelpersProps } from "./modifiers"
+import {bulmaClassName}from './classNames'
 
-interface ITextareaProps extends IMainColorsProps,
-                                 ISizeProps,
-                                 ITextColorHelpersProps,
-                                 React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement>, MainColorsProps, SizeProps, TextColorHelpersProps {
   isFocused?: boolean
   isHovered?: boolean
 }
 
-export default class Textarea extends React.Component<ITextareaProps> {
+export class Textarea extends React.Component<TextareaProps> {
   render() {
     const {
-      className,
-      hasTextBlack,
-      hasTextBlackBis,
-      hasTextBlackTer,
-      hasTextDanger,
-      hasTextDark,
-      hasTextGrey,
-      hasTextGreyDark,
-      hasTextGreyDarker,
-      hasTextGreyLight,
-      hasTextGreyLighter,
-      hasTextInfo,
-      hasTextLight,
-      hasTextLink,
-      hasTextPrimary,
-      hasTextSuccess,
-      hasTextWarning,
-      hasTextWhite,
-      hasTextWhiteBis,
-      hasTextWhiteTer,
-      isDanger,
       isFocused,
       isHovered,
-      isInfo,
-      isLarge,
-      isMedium,
-      isPrimary,
-      isSmall,
-      isSuccess,
-      isWarning,
       ...props
     } = this.props
 
-    return (
-      <textarea
-        {...props}
-        className={classnames(
-          "textarea",
-          className,
-          {
-            "is-focused": isFocused,
-            "is-hovered": isHovered,
-          },
-          mainColorsPropsToClassnames({
-            isDanger,
-            isInfo,
-            isPrimary,
-            isSuccess,
-            isWarning,
-          }),
-          sizePropsToClassnames({
-            isLarge,
-            isMedium,
-            isSmall,
-          }),
-          textColorHelpersPropsToClassnames({
-            hasTextBlack,
-            hasTextBlackBis,
-            hasTextBlackTer,
-            hasTextDanger,
-            hasTextDark,
-            hasTextGrey,
-            hasTextGreyDark,
-            hasTextGreyDarker,
-            hasTextGreyLight,
-            hasTextGreyLighter,
-            hasTextInfo,
-            hasTextLight,
-            hasTextLink,
-            hasTextPrimary,
-            hasTextSuccess,
-            hasTextWarning,
-            hasTextWhite,
-            hasTextWhiteBis,
-            hasTextWhiteTer,
-          }),
-        )}
-      />
-    )
+    return renderElement('textarea', props, bulmaClassName.textarea, {
+      isFocused,
+      isHovered,
+    })
   }
 }

@@ -1,82 +1,40 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  IMainColorsProps,
-  ISizeProps,
-  mainColorsPropsToClassnames,
-  sizePropsToClassnames,
-} from "./modifiers"
+import { bulmaClassName, trunxPropsToClassnamesObject }from './classNames'
+import { MainColorsProps, SizeProps, extractModifiersProps, modifierPropsToClassnamesObject } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface IFileUploadProps extends IMainColorsProps,
-                                   ISizeProps {
-  className?: string;
-  children?: React.ReactNode
+export interface FileUploadProps extends React.HTMLAttributes<HTMLDivElement>, MainColorsProps, SizeProps {
   hasName?: boolean
   isBoxed?: boolean
   isFullwidth?: boolean
   isRight?: boolean
 }
 
-interface IFileUploadCta {
-  className?: string;
-  children?: React.ReactNode
-}
+export interface FileUploadCtaProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
-interface IFileUploadIcon {
-  className?: string;
-  children?: React.ReactNode
-}
+export interface FileUploadIconProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
-interface IFileUploadInputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+export interface FileUploadInputProps extends React.InputHTMLAttributes<HTMLInputElement> {}
 
-interface IFileUploadLabel {
-  className?: string;
-  children?: React.ReactNode
-}
+export interface IFileUploadLabel extends React.HTMLAttributes<HTMLSpanElement> {}
 
-interface IFileUploadName {
-  className?: string;
-  children?: React.ReactNode
-}
+export interface FileUploadNameProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
-class FileUploadCta extends React.Component<IFileUploadCta> {
+class FileUploadCta extends React.Component<FileUploadCtaProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <span
-        className={classnames(
-          "file-cta",
-          className,
-        )}
-      >{children}</span>
-    )
+return renderElement('span', this.props, bulmaClassName.fileCta)
   }
 }
 
-class FileUploadIcon extends React.Component<IFileUploadIcon> {
+class FileUploadIcon extends React.Component<FileUploadIconProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <span
-        className={classnames(
-          "file-icon",
-          className,
-        )}
-      >{children}</span>
-    )
+return renderElement('span', this.props, bulmaClassName.fileIcon)
   }
 }
 
-class FileUploadInput extends React.Component<IFileUploadInputProps> {
+class FileUploadInput extends React.Component<FileUploadInputProps> {
   render() {
     const {
       className,
@@ -86,7 +44,7 @@ class FileUploadInput extends React.Component<IFileUploadInputProps> {
     return (
       <input
         className={classnames(
-          "file-input",
+bulmaClassName.fileInput,
           className,
         )}
         type="file"
@@ -98,41 +56,17 @@ class FileUploadInput extends React.Component<IFileUploadInputProps> {
 
 class FileUploadLabel extends React.Component<IFileUploadLabel> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <span
-        className={classnames(
-          "file-label",
-          className,
-        )}
-      >{children}</span>
-    )
+return renderElement('span', this.props, bulmaClassName.fileLabel)
   }
 }
 
-class FileUploadName extends React.Component<IFileUploadName> {
+class FileUploadName extends React.Component<FileUploadNameProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <span
-        className={classnames(
-          "file-name",
-          className,
-        )}
-      >{children}</span>
-    )
+    return renderElement('span', this.props, bulmaClassName.fileName)
   }
 }
 
-export default class FileUpload extends React.Component<IFileUploadProps> {
+export default class FileUpload extends React.Component<FileUploadProps> {
   static Cta = FileUploadCta
   static Icon = FileUploadIcon
   static Input = FileUploadInput
@@ -140,49 +74,27 @@ export default class FileUpload extends React.Component<IFileUploadProps> {
   static Name = FileUploadName
 
   render() {
-    const {
+    const [modifiersProps, {
       children,
       className,
       hasName,
       isBoxed,
-      isDanger,
-      isFullwidth,
-      isInfo,
-      isLarge,
-      isMedium,
-      isPrimary,
-      isSmall,
-      isSuccess,
-      isRight,
-      isWarning,
-    } = this.props
+isFullwidth,
+isRight,
+      ...props
+    }] = extractModifiersProps(this.props)
 
     return (
       <div
         className={classnames(
-          "file",
           className,
-          {
-            "has-name": hasName,
-            "is-boxed": isBoxed,
-            "is-fullwidth": isFullwidth,
-            "is-right": isRight,
-          },
-          mainColorsPropsToClassnames({
-            isDanger,
-            isInfo,
-            isPrimary,
-            isSuccess,
-            isWarning,
-          }),
-          sizePropsToClassnames({
-            isLarge,
-            isMedium,
-            isSmall,
-          }),
+bulmaClassName.file,
+modifierPropsToClassnamesObject(modifiersProps),
+trunxPropsToClassnamesObject({hasName, isBoxed, isFullwidth, isRight}),
         )}
+        {...props}
       >
-        <label className="file-label">
+        <label className={bulmaClassName.fileLabel}>
           {children}
         </label>
       </div>

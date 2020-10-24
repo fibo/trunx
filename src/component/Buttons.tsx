@@ -1,37 +1,28 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
+import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
 import {
-  bulmaClassName,
-  BulmaClassModifiers,
-}
-import {
-  IHelpersProps,
-  ITextColorHelpersProps,
+  HelpersProps,
+  TextColorHelpersProps,
   extractModifiersProps,
-  helpersPropsToClassnames,
-  textColorHelpersPropsToClassnames,
+modifierPropsToClassnamesObject
 } from "./modifiers"
-
-interface ButtonsModifers extends Pick<
-  BulmaClassModifiers, 'areLarge'
-                     | 'areMedium',
-                     | 'areSmall'
->
 
 export interface ButtonsProps
 extends React.HTMLAttributes<HTMLDivElement>,
-        ButtonsModifers,
-        IHelpersProps,
-        ITextColorHelpersProps
-{}
+        HelpersProps,
+        TextColorHelpersProps
+{
+  areLarge?: boolean
+  areMedium?: boolean
+  areSmall?: boolean
+}
 
 export class Buttons extends React.Component<ButtonsProps> {
   render() {
-    const [{
-      helpersProps,
-      textColorHelpersProps,
-    }, {
+    const [modifiersProps
+    , {
       areLarge,
       areMedium,
       areSmall,
@@ -45,13 +36,8 @@ export class Buttons extends React.Component<ButtonsProps> {
         className={classnames(
           bulmaClassName.buttons,
           className,
-          {
-            "are-large": areLarge,
-            "are-medium": areMedium,
-            "are-small": areSmall,
-          },
-          helpersPropsToClassnames(helpersProps),
-          textColorHelpersPropsToClassnames(textColorHelpersProps),
+modifierPropsToClassnamesObject(modifiersProps),
+          trunxPropsToClassnamesObject({ areLarge, areMedium, areSmall }),
         )}
         {...props}
       >

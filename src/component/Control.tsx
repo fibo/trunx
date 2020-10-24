@@ -1,51 +1,26 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  ISizeProps,
-  extractModifiersProps,
-  sizePropsToClassnames,
-} from "./modifiers"
+import { bulmaClassName } from './classNames'
+import { SizeProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface IControlProps extends ISizeProps,
-                                React.HTMLAttributes<HTMLDivElement> {
+interface ControlProps extends React.HTMLAttributes<HTMLDivElement>, SizeProps {
   hasIconsLeft?: boolean
   hasIconsRight?: boolean
   isExpanded?: boolean
   isLoading?: boolean
 }
 
-export default class Control extends React.Component<IControlProps> {
+export default class Control extends React.Component<ControlProps> {
   render() {
-    const [{
-      sizeProps,
-    }, {
-      children,
-      className,
+    const {
       hasIconsLeft,
       hasIconsRight,
       isExpanded,
       isLoading,
       ...props
-    }] = extractModifiersProps(this.props)
+    }= this.props
 
-    return (
-      <div
-        className={classnames(
-          "control",
-          className,
-          {
-            "has-icons-left": hasIconsLeft,
-            "has-icons-right": hasIconsRight,
-            "is-expanded": isExpanded,
-            "is-loading": isLoading,
-          },
-          sizePropsToClassnames(sizeProps),
-        )}
-        {...props}
-      >
-        {children}
-      </div>
-    )
+    return renderElement('div', props, bulmaClassName.control, { hasIconsLeft, hasIconsRight, isExpanded, isLoading })
   }
 }

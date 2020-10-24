@@ -1,22 +1,24 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
+import { trunxPropsToClassnamesObject } from './classNames'
 import {
-  IFloatHelpersProps,
+  FloatHelpersProps,
   extractModifiersProps,
-  floatHelpersPropsToClassnames,
+  modifierPropsToClassnamesObject
 } from "./modifiers"
 
-interface IAProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-                          IFloatHelpersProps {
+interface AProps
+extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+        FloatHelpersProps
+{
   isActive?: boolean
 }
 
-export default class A extends React.Component<IAProps> {
+export default class A extends React.Component<AProps> {
   render() {
-    const [{
-      floatHelpersProps,
-    },
+    const [
+      modifiersProps,
     {
       children,
       className,
@@ -28,10 +30,8 @@ export default class A extends React.Component<IAProps> {
       <a
         className={classnames(
           className,
-          {
-            "is-active": isActive,
-          },
-          floatHelpersPropsToClassnames(floatHelpersProps),
+trunxPropsToClassnamesObject({ isActive }),
+          modifierPropsToClassnamesObject(modifiersProps)
         )}
         {...props}
       >

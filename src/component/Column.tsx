@@ -1,10 +1,7 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  bulmaClassName,
-  trunxPropsToClassnamesObject,
-} from './classNames'
+import { bulmaClassName } from './classNames'
+import { renderElement }from './renderElement'
 
 export interface ColumnProps {
   className?: string
@@ -319,23 +316,6 @@ export interface ColumnProps {
 
 export class Column extends React.Component<ColumnProps> {
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-
-    return (
-      <div
-        className={classnames(
-          bulmaClassName.column,
-          className,
-          trunxPropsToClassnamesObject(props),
-        )}
-      >
-        {children}
-      </div>
-    )
+    return renderElement('div', this.props, bulmaClassName.column)
   }
 }

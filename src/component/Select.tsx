@@ -1,46 +1,36 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  IMainColorsProps,
-  ISizeProps,
-  mainColorsPropsToClassnames,
-  sizePropsToClassnames,
-} from "./modifiers"
+import { bulmaClassName, trunxPropsToClassnamesObject } from "./classNames"
+import { MainColorsProps, SizeProps, extractModifiersProps, modifierPropsToClassnamesObject } from "./modifiers"
 
-interface ISelectProps extends IMainColorsProps,
-                               ISizeProps,
-                               React.SelectHTMLAttributes<HTMLSelectElement> {
+interface SelectProps extends React.SelectHTMLAttributes<HTMLSelectElement>, MainColorsProps, SizeProps {
   isFocused?: boolean
   isHovered?: boolean
   isLoading?: boolean
   isMultiple?: boolean
 }
 
-export default class Select extends React.Component<ISelectProps> {
+export default class Select extends React.Component<SelectProps> {
   render() {
-    const {
+    const [modifiersProps, {
+      children,
+      className,
       isFocused,
       isHovered,
       isLoading,
       isMultiple,
       ...props
-    } = this.props
-
-    const className = classnames("select",
-      {
-        "is-focused": isFocused,
-        "is-hovered": isHovered,
-        "is-loading": isLoading,
-        "is-multiple": isMultiple,
-      },
-      mainColorsPropsToClassnames(this.props),
-      sizePropsToClassnames(this.props),
-    )
+    }] = extractModifiersProps(this.props)
 
     return (
-      <div className={className}>
-        <select {...props} multiple={isMultiple}>{this.props.children}</select>
+      <div className={classnames( bulmaClassName.select, className, modifierPropsToClassnamesObject(modifiersProps), trunxPropsToClassnamesObject({
+      isFocused,
+      isHovered,
+      isLoading,
+      isMultiple,
+}))}>
+        <select {...props} multiple={isMultiple}>{children}</select>
       </div>
     )
   }

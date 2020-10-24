@@ -3,75 +3,44 @@ import * as React from "react"
 
 import {
   bulmaClassName,
-  BulmaClassModifiers,
 } from "./classNames"
 import {
-  renderDiv,
-  renderHeader
-} from './commonRenders'
-import {
-  Anchor,
-  IAnchorProps,
-} from "./Anchor"
-
-import {
-  IBackgroundColorHelpersProps,
-  ITextColorHelpersProps,
+  TextColorHelpersProps,
   extractModifiersProps,
-  backgroundColorHelpersPropsToClassnames,
-  textColorHelpersPropsToClassnames,
+modifierPropsToClassnamesObject,
 } from "./modifiers"
+import { renderElement } from './renderElement'
 
 import { Image, ImageProps } from "./Image"
 
-interface ICardContentProps
+interface CardContentProps
 extends React.HTMLAttributes<HTMLDivElement>,
-        ITextColorHelpersProps
+        TextColorHelpersProps
 {}
 
-interface ICardFooterItemProps {
-  children?: React.ReactNode
-  className?: string
-  download?: IAnchorProps["download"]
-  href?: IAnchorProps["href"]
-  onClick?: IAnchorProps["onClick"]
-  target?: IAnchorProps["target"]
-}
+interface CardFooterItemProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
 
-interface ICardFooterProps extends React.HTMLAttributes<HTMLElement> {}
+interface CardFooterProps extends React.HTMLAttributes<HTMLElement> {}
 
-interface ICardHeader extends React.HTMLAttributes<HTMLElement> {}
+interface CardHeader extends React.HTMLAttributes<HTMLElement> {}
 
-interface ICardHeaderIconProps {
-  children?: React.ReactNode
-  className?: string
-  download?: IAnchorProps["download"]
-  href?: IAnchorProps["href"]
-  onClick?: IAnchorProps["onClick"]
-  target?: IAnchorProps["target"]
-}
-
-interface CardHeaderTitleModifiers extends Pick<BulmaClassModifiers, 'isCentered'>
+interface CardHeaderIconProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {}
 
 export interface CardHeaderTitleProps extends
   React.HTMLAttributes<HTMLElement>
-  CardHeaderTitleModifiers
-{}
+  {
+    isCentered?: boolean
+  }
 
-interface ICardImageProps extends ImageProps {
-  className?: string
-}
+interface CardImageProps extends ImageProps {}
 
-interface ICardProps extends IBackgroundColorHelpersProps,
-                             React.HTMLAttributes<HTMLDivElement> {
-  className?: string
-}
+interface CardProps extends extends React.HTMLAttributes<HTMLDivElement> {}
 
-class CardContent extends React.Component<ICardContentProps> {
+class CardContent extends React.Component<CardContentProps> {
   render() {
-    const [{
-      textColorHelpersProps
-    }, {
+    const [
+      modifiersProps,
+    {
       children,
       className,
       ...props
@@ -80,9 +49,9 @@ class CardContent extends React.Component<ICardContentProps> {
     return (
       <div
         className={classnames(
-          bulmaClassNames.cardContent,
+          bulmaClassName.cardContent,
           className,
-          textColorHelpersPropsToClassnames(textColorHelpersProps),
+          modifierPropsToClassnamesObject(modifiersProps)
         )}
         {...props}
       >
@@ -92,110 +61,42 @@ class CardContent extends React.Component<ICardContentProps> {
   }
 }
 
-class CardFooterItem extends React.Component<ICardFooterItemProps> {
+class CardFooterItem extends React.Component<CardFooterItemProps> {
   render() {
     const {
-      className: classNameProp,
-      children,
-      download,
       href,
       onClick,
-      target,
       ...props
     } = this.props
 
-    const className = classnames(
-      "card-footer-item",
-      classNameProp,
-    )
-
     if (href || onClick) {
-      return (
-        <Anchor
-          className={className}
-          download={download}
-          href={href}
-          onClick={onClick}
-          target={target}
-          {...props}
-        >
-          {children}
-        </Anchor>
-      )
+      return renderElement('a', { href, onClick, ...props }, bulmaClassName.cardFooterItem)
     } else {
-      return (
-        <div
-          className={className}
-          {...props}
-        >
-          {children}
-        </div>
-      )
+      return renderElement('div', props, bulmaClassName.cardFooterItem)
     }
   }
 }
 
-class CardFooter extends React.Component<ICardFooterProps> {
+class CardFooter extends React.Component<CardFooterProps> {
   static Item = CardFooterItem
 
   render() {
-    const [{
-      textColorHelpersProps,
-    }, {
-      children,
-      className,
-      ...props
-    }] = extractModifiersProps(this.props)
-
-    return (
-      <footer
-        className={classnames(
-          "card-footer",
-          className,
-          textColorHelpersPropsToClassnames(textColorHelpersProps),
-        )}
-        {...props}
-      >
-        {children}
-      </footer>
-    )
+return renderElement('footer', this.props, bulmaClassName.cardFooter)
   }
 }
 
-class CardHeaderIcon extends React.Component<ICardHeaderIconProps> {
+class CardHeaderIcon extends React.Component<CardHeaderIconProps> {
   render() {
     const {
-      children,
-      className: classNameProp,
-      download,
       href,
       onClick,
-      target,
       ...props
     } = this.props
 
-    const className = classnames(
-      bulmaClassName.cardHeaderIcon,
-      classNameProp
-    )
-
     if (href || onClick) {
-      return (
-        <Anchor
-          {...props}
-          className={className}
-          download={download}
-          href={href}
-          onClick={onClick}
-          target={target}
-        >
-          {children}
-        </Anchor>
-      )
+      return renderElement('a', {href, onClick, ...props}, bulmaClassName.cardHeaderIcon)
     } else {
-      return (
-        renderDiv({ className, ...props })
-      )
+return renderElement('div', props, bulmaClassName.cardHeaderIcon)
     }
   }
 }
@@ -203,39 +104,24 @@ class CardHeaderIcon extends React.Component<ICardHeaderIconProps> {
 class CardHeaderTitle extends React.Component<CardHeaderTitleProps> {
   render() {
     const {
-      children,
-      className,
       isCentered,
       ...props
     } = this.props
 
-    return (
-      <div
-        className={classnames(
-          bulmaClassName.cardHeaderTitle
-          className,
-          {
-            "is-centered": isCentered,
-          },
-        )}
-        {...props}
-      >
-        {children}
-      </div>
-    )
+return renderElement('div', props, bulmaClassName.cardHeaderTitle, { isCentered })
   }
 }
 
-class CardHeader extends React.Component<ICardHeader> {
+class CardHeader extends React.Component<CardHeader> {
   static Icon = CardHeaderIcon
   static Title = CardHeaderTitle
 
   render() {
-    return renderHeader(this.props, "card-header")
+    return renderElement('header', this.props, bulmaClassName.cardHeader)
   }
 }
 
-class CardImage extends React.Component<ICardImageProps> {
+class CardImage extends React.Component<CardImageProps> {
   render() {
     const {
       className,
@@ -244,36 +130,21 @@ class CardImage extends React.Component<ICardImageProps> {
 
     return (
       <div
-        className={classnames(
-          "card-image",
-          className,
-        )}
-      ><Image {...props} /></div>
+        className={classnames(bulmaClassName.cardImage, className)}
+      >
+        <Image {...props} />
+      </div>
     )
   }
 }
 
-export default class Card extends React.Component<ICardProps> {
+export class Card extends React.Component<CardProps> {
   static Content = CardContent
   static Footer = CardFooter
   static Header = CardHeader
   static Image = CardImage
 
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "card",
-          className,
-          backgroundColorHelpersPropsToClassnames(props),
-        )}
-      >{children}</div>
-    )
+    return renderElement('div', this.props, bulmaClassName.card)
   }
 }

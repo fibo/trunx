@@ -6,69 +6,69 @@ import {
   Switch
 } from 'react-router-dom'
 
-import ColumnsBasics from './pages/ColumnsBasics.js'
-import ColumnsNesting from './pages/ColumnsNesting.js'
-import ColumnsResponsiveness from './pages/ColumnsResponsiveness.js'
-import ColumnsSizes from './pages/ColumnsSizes.js'
-import ComponentsBreadcrumb from './pages/ComponentsBreadcrumb.js'
-import ComponentsNavbar from './pages/ComponentsNavbar.js'
-import ComponentsModal from './pages/ComponentsModal.js'
-import ElementsBox from './pages/ElementsBox.js'
-import ElementsButton from './pages/ElementsButton.js'
-import ElementsDelete from './pages/ElementsDelete.js'
-import ElementsTag from './pages/ElementsTag.js'
-import FormGeneral from './pages/FormGeneral.js'
-import FormInput from './pages/FormInput.js'
-import FormRadio from './pages/FormRadio.js'
-import FormTextarea from './pages/FormTextarea.js'
-import LayoutContainer from './pages/LayoutContainer.js'
-import LayoutFooter from './pages/LayoutFooter.js'
-import LayoutHero from './pages/LayoutHero.js'
-import LayoutLevel from './pages/LayoutLevel.js'
-import LayoutMediaObject from './pages/LayoutMediaObject.js'
-import LayoutSection from './pages/LayoutSection.js'
-import LayoutTiles from './pages/LayoutTiles.js'
-import Overview from './pages/Overview.js'
-import ModifiersColorHelpers from './pages/ModifiersColorHelpers.js'
-import ModifiersSyntax from './pages/ModifiersSyntax.js'
+import ColumnsBasics from './pages/ColumnsBasics'
+import ColumnsNesting from './pages/ColumnsNesting'
+import ColumnsResponsiveness from './pages/ColumnsResponsiveness'
+import ColumnsSizes from './pages/ColumnsSizes'
+import ComponentsBreadcrumb from './pages/ComponentsBreadcrumb'
+import ComponentsNavbar from './pages/ComponentsNavbar'
+import ComponentsModal from './pages/ComponentsModal'
+import ElementsBox from './pages/ElementsBox'
+import ElementsButton from './pages/ElementsButton'
+import ElementsDelete from './pages/ElementsDelete'
+import ElementsTag from './pages/ElementsTag'
+import FormGeneral from './pages/FormGeneral'
+import FormInput from './pages/FormInput'
+import FormRadio from './pages/FormRadio'
+import FormTextarea from './pages/FormTextarea'
+import LayoutContainer from './pages/LayoutContainer'
+import LayoutFooter from './pages/LayoutFooter'
+import LayoutHero from './pages/LayoutHero'
+import LayoutLevel from './pages/LayoutLevel'
+import LayoutMediaObject from './pages/LayoutMediaObject'
+import LayoutSection from './pages/LayoutSection'
+import LayoutTiles from './pages/LayoutTiles'
+import Overview from './pages/Overview'
+import ModifiersColorHelpers from './pages/ModifiersColorHelpers'
+import ModifiersSyntax from './pages/ModifiersSyntax'
 
-import routes from './routes.js'
+import { route } from './routes'
 
 export default function Root () {
   return (
     <BrowserRouter>
       <Switch>
         {[
-          [Overview, routes.home],
-          [ColumnsBasics, routes.columns.basics],
-          [ColumnsNesting, routes.columns.nesting],
-          [ColumnsResponsiveness, routes.columns.responsiveness],
-          [ColumnsSizes, routes.columns.sizes],
-          [ComponentsBreadcrumb, routes.components.breadcrumb],
-          [ComponentsNavbar, routes.components.navbar],
-          [ComponentsModal, routes.components.modal],
-          [ElementsBox, routes.elements.box],
-          [ElementsButton, routes.elements.button],
-          [ElementsDelete, routes.elements.delete],
-          [ElementsTag, routes.elements.tag],
-          [FormGeneral, routes.form.general],
-          [FormInput, routes.form.input],
-          [FormRadio, routes.form.radio],
-          [FormTextarea, routes.form.textarea],
-          [LayoutContainer, routes.layout.container],
-          [LayoutFooter, routes.layout.footer],
-          [LayoutHero, routes.layout.hero],
-          [LayoutLevel, routes.layout.level],
-          [LayoutMediaObject, routes.layout.mediaObject],
-          [LayoutSection, routes.layout.section],
-          [LayoutTiles, routes.layout.tiles],
-          [ModifiersSyntax, routes.modifiers.syntax],
-          [ModifiersColorHelpers, routes.modifiers.colorHelpers]
+          [Overview, route.home],
+          [ColumnsBasics, route.columns.basics],
+          [ColumnsNesting, route.columns.nesting],
+          [ColumnsResponsiveness, route.columns.responsiveness],
+          [ColumnsSizes, route.columns.sizes],
+          [ComponentsBreadcrumb, route.components.breadcrumb],
+          [ComponentsNavbar, route.components.navbar],
+          [ComponentsModal, route.components.modal],
+          [ElementsBox, route.elements.box],
+          [ElementsButton, route.elements.button],
+          [ElementsDelete, route.elements.delete],
+          [ElementsTag, route.elements.tag],
+          [FormGeneral, route.form.general],
+          [FormInput, route.form.input],
+          [FormRadio, route.form.radio],
+          [FormTextarea, route.form.textarea],
+          [LayoutContainer, route.layout.container],
+          [LayoutFooter, route.layout.footer],
+          [LayoutHero, route.layout.hero],
+          [LayoutLevel, route.layout.level],
+          [LayoutMediaObject, route.layout.mediaObject],
+          [LayoutSection, route.layout.section],
+          [LayoutTiles, route.layout.tiles],
+          [ModifiersSyntax, route.modifiers.syntax],
+          [ModifiersColorHelpers, route.modifiers.colorHelpers]
         ].map(([component, path], i) => (
           <Route key={i} component={component} exact path={path} />
         ))}
 
-        <Redirect from='*' to={routes.home} />
+        <Redirect from='*' to={route.home} />
       </Switch>
     </BrowserRouter>
   )

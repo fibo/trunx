@@ -1,38 +1,23 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-interface IContainerProps {
-  children?: React.ReactNode
-  className?: string
+import { bulmaClassName } from './classNames'
+import { renderElement } from './renderElement'
+
+interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   isFluid?: boolean
   isFullhd?: boolean
   isWidescreen?: boolean
 }
 
-export default class Container extends React.Component<IContainerProps> {
+export default class Container extends React.Component<ContainerProps> {
   render() {
     const {
-      children,
-      className,
       isFluid,
       isFullhd,
       isWidescreen,
+      ...props
     } = this.props
 
-    return (
-      <div
-        className={classnames(
-          "container",
-          className,
-          {
-            "is-fluid": isFluid,
-            "is-fullhd": isFullhd,
-            "is-widescreen": isWidescreen,
-          },
-        )}
-      >
-        {children}
-      </div>
-    )
+    return renderElement('div', props, bulmaClassName.container, {isFluid, isFullhd, isWidescreen})
   }
 }

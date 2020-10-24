@@ -1,45 +1,17 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
 import { bulmaClassName } from "./classNames"
-import {
-  IBackgroundColorHelpersProps,
-  ITextColorHelpersProps,
-  backgroundColorHelpersPropsToClassnames,
-  extractModifiersProps,
-  textColorHelpersPropsToClassnames,
-} from "./modifiers"
+import { BackgroundColorHelpersProps, TextColorHelpersProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
 export interface BoxProps
 extends React.HTMLAttributes<HTMLDivElement>,
-        IBackgroundColorHelpersProps,
-        ITextColorHelpersProps
+        BackgroundColorHelpersProps,
+        TextColorHelpersProps
 {}
 
-export default class Box extends React.Component<BoxProps> {
+export class Box extends React.Component<BoxProps> {
   render() {
-    const [{
-      backgroundColorHelpersProps,
-      textColorHelpersProps,
-    },
-    {
-      children,
-      className,
-      ...props
-    }] = extractModifiersProps(this.props)
-
-    return (
-      <div
-        className={classnames(
-          bulmaClassName.box,
-          className,
-          backgroundColorHelpersPropsToClassnames(backgroundColorHelpersProps),
-          textColorHelpersPropsToClassnames(textColorHelpersProps),
-        )}
-        {...props}
-      >
-       {children}
-      </div>
-    )
+    return renderElement('div', this.props, bulmaClassName.box)
   }
 }

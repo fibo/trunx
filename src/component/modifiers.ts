@@ -1,11 +1,13 @@
-export interface IAlignementHelpersProps {
+import { trunxPropsToClassnamesObject } from './classNames'
+
+export interface AlignementHelpersProps {
   hasTextCentered?: boolean
   hasTextJustified?: boolean
   hasTextLeft?: boolean
   hasTextRight?: boolean
 }
 
-export interface IBackgroundColorHelpersProps {
+export interface BackgroundColorHelpersProps {
   hasBackgroundBlack?: boolean
   hasBackgroundBlackBis?: boolean
   hasBackgroundBlackTer?: boolean
@@ -27,20 +29,27 @@ export interface IBackgroundColorHelpersProps {
   hasBackgroundWhiteTer?: boolean
 }
 
-export interface IFloatHelpersProps {
+export interface FloatHelpersProps {
   isClearfix?: boolean
   isPulledLeft?: boolean
   isPulledRight?: boolean
 }
 
-export interface IHelpersProps {
+export interface HelpersProps {
   isInvisible?: boolean
   isMarginLess?: boolean
   isPaddingLess?: boolean
   isSrOnly?: boolean
 }
 
-export interface IMainColorsProps {
+export interface OtherHelpersProps {
+isClickable?:boolean
+isRadiusLess?:boolean
+isShadowLess?:boolean
+isUnselectable?:boolean
+}
+
+export interface MainColorsProps {
   isDanger?: boolean
   isInfo?: boolean
   isLink?: boolean
@@ -49,20 +58,20 @@ export interface IMainColorsProps {
   isWarning?: boolean
 }
 
-export interface IShadeColorsProps {
+export interface ShadeColorsProps {
   isBlack?: boolean
   isDark?: boolean
   isLight?: boolean
   isWhite?: boolean
 }
 
-export interface ISizeProps {
+export interface SizeProps {
   isLarge?: boolean
   isMedium?: boolean
   isSmall?: boolean
 }
 
-export interface ITextColorHelpersProps {
+export interface TextColorHelpersProps {
   hasTextBlack?: boolean
   hasTextBlackBis?: boolean
   hasTextBlackTer?: boolean
@@ -84,211 +93,23 @@ export interface ITextColorHelpersProps {
   hasTextWhiteTer?: boolean
 }
 
-interface ModifiersProps extends
-  IAlignementHelpersProps,
-  IBackgroundColorHelpersProps,
-  IFloatHelpersProps,
-  IHelpersProps,
-  IMainColorsProps,
-  IShadeColorsProps,
-  ISizeProps,
-  ITextColorHelpersProps
+export interface ModifiersProps extends
+  AlignementHelpersProps,
+  BackgroundColorHelpersProps,
+  FloatHelpersProps,
+  HelpersProps,
+  MainColorsProps,
+  ShadeColorsProps,
+  SizeProps,
+  TextColorHelpersProps
 {}
 
 interface ExtractModifiersPropsArg extends ModifiersProps {
   [prop: string]: any
 }
 
-export function trunxModifierPropsToClassnamesObject (props: ModifiersProps) {
+export function modifierPropsToClassnamesObject (props?: ModifiersProps) {
   return trunxPropsToClassnamesObject(props)
-}
-
-export function alignementPropsToClassnames(props: IAlignementHelpersProps) {
-  const {
-    hasTextCentered,
-    hasTextJustified,
-    hasTextLeft,
-    hasTextRight,
-  } = props
-
-  return {
-    "has-text-centered": hasTextCentered,
-    "has-text-justified": hasTextJustified,
-    "has-text-left": hasTextLeft,
-    "has-text-right": hasTextRight,
-  }
-}
-
-export function backgroundColorHelpersPropsToClassnames(props: IBackgroundColorHelpersProps) {
-  const {
-    hasBackgroundBlack,
-    hasBackgroundBlackBis,
-    hasBackgroundBlackTer,
-    hasBackgroundDanger,
-    hasBackgroundDark,
-    hasBackgroundGrey,
-    hasBackgroundGreyDark,
-    hasBackgroundGreyDarker,
-    hasBackgroundGreyLight,
-    hasBackgroundGreyLighter,
-    hasBackgroundInfo,
-    hasBackgroundLight,
-    hasBackgroundLink,
-    hasBackgroundPrimary,
-    hasBackgroundSuccess,
-    hasBackgroundWarning,
-    hasBackgroundWhite,
-    hasBackgroundWhiteBis,
-    hasBackgroundWhiteTer,
-  } = props
-
-  return {
-    "has-background-black": hasBackgroundBlack,
-    "has-background-black-bis": hasBackgroundBlackBis,
-    "has-background-black-ter": hasBackgroundBlackTer,
-    "has-background-danger": hasBackgroundDanger,
-    "has-background-dark": hasBackgroundDark,
-    "has-background-grey": hasBackgroundGrey,
-    "has-background-grey-dark": hasBackgroundGreyDark,
-    "has-background-grey-darker": hasBackgroundGreyDarker,
-    "has-background-grey-light": hasBackgroundGreyLight,
-    "has-background-grey-lighter": hasBackgroundGreyLighter,
-    "has-background-info": hasBackgroundInfo,
-    "has-background-light": hasBackgroundLight,
-    "has-background-link": hasBackgroundLink,
-    "has-background-primary": hasBackgroundPrimary,
-    "has-background-success": hasBackgroundSuccess,
-    "has-background-warning": hasBackgroundWarning,
-    "has-background-white": hasBackgroundWhite,
-    "has-background-white-bis": hasBackgroundWhiteBis,
-    "has-background-white-ter": hasBackgroundWhiteTer,
-  }
-}
-
-export function floatHelpersPropsToClassnames(props: IFloatHelpersProps) {
-  const {
-    isClearfix,
-    isPulledLeft,
-    isPulledRight,
-  } = props
-
-  return {
-    "is-clearfix": isClearfix,
-    "is-pulled-left": isPulledLeft,
-    "is-pulled-right": isPulledRight,
-  }
-}
-
-export function helpersPropsToClassnames(props: IHelpersProps) {
-  const {
-    isInvisible,
-    isMarginLess,
-    isPaddingLess,
-    isSrOnly,
-  } = props
-
-  return {
-    "is-marginless": isMarginLess,
-    "is-invisible": isInvisible,
-    "is-paddingless": isPaddingLess,
-    "is-sr-only": isSrOnly,
-  }
-}
-
-export function mainColorsPropsToClassnames(props: IMainColorsProps) {
-  const {
-    isDanger,
-    isInfo,
-    isLink,
-    isPrimary,
-    isSuccess,
-    isWarning,
-  } = props
-
-  return {
-    "is-danger": isDanger,
-    "is-info": isInfo,
-    "is-link": isLink,
-    "is-primary": isPrimary,
-    "is-success": isSuccess,
-    "is-warning": isWarning,
-  }
-}
-
-export function shadeColorsPropsToClassnames(props: IShadeColorsProps) {
-  const {
-    isBlack,
-    isDark,
-    isLight,
-    isWhite,
-  } = props
-
-  return {
-    "is-black": isBlack,
-    "is-dark": isDark,
-    "is-light": isLight,
-    "is-white": isWhite,
-  }
-}
-
-export function sizePropsToClassnames(props: ISizeProps) {
-  const {
-    isLarge,
-    isMedium,
-    isSmall,
-  } = props
-
-  return {
-    "is-large": isLarge,
-    "is-medium": isMedium,
-    "is-small": isSmall,
-  }
-}
-
-export function textColorHelpersPropsToClassnames(props: ITextColorHelpersProps) {
-  const {
-    hasTextBlack,
-    hasTextBlackBis,
-    hasTextBlackTer,
-    hasTextDanger,
-    hasTextDark,
-    hasTextGrey,
-    hasTextGreyDark,
-    hasTextGreyDarker,
-    hasTextGreyLight,
-    hasTextGreyLighter,
-    hasTextInfo,
-    hasTextLight,
-    hasTextLink,
-    hasTextPrimary,
-    hasTextSuccess,
-    hasTextWarning,
-    hasTextWhite,
-    hasTextWhiteBis,
-    hasTextWhiteTer,
-  } = props
-
-  return {
-    "has-text-black": hasTextBlack,
-    "has-text-black-bis": hasTextBlackBis,
-    "has-text-black-ter": hasTextBlackTer,
-    "has-text-danger": hasTextDanger,
-    "has-text-dark": hasTextDark,
-    "has-text-grey": hasTextGrey,
-    "has-text-grey-dark": hasTextGreyDark,
-    "has-text-grey-darker": hasTextGreyDarker,
-    "has-text-grey-light": hasTextGreyLight,
-    "has-text-grey-lighter": hasTextGreyLighter,
-    "has-text-info": hasTextInfo,
-    "has-text-light": hasTextLight,
-    "has-text-link": hasTextLink,
-    "has-text-primary": hasTextPrimary,
-    "has-text-success": hasTextSuccess,
-    "has-text-warning": hasTextWarning,
-    "has-text-white": hasTextWhite,
-    "has-text-white-bis": hasTextWhiteBis,
-    "has-text-white-ter": hasTextWhiteTer,
-  }
 }
 
 export function extractModifiersProps ({
@@ -326,6 +147,11 @@ export function extractModifiersProps ({
   isMarginLess,
   isPaddingLess,
   isSrOnly,
+// otherHelpersProps
+isClickable,
+isRadiusLess,
+isShadowLess,
+isUnselectable,
   // mainColorsHelperProps
   isDanger,
   isInfo,
@@ -365,76 +191,83 @@ export function extractModifiersProps ({
   ...props
 }: ExtractModifiersPropsArg) {
   return ([
-    // alignementHelpersProps
-    hasTextCentered,
-    hasTextJustified,
-    hasTextLeft,
-    hasTextRight,
-    // backgroundColorHelpersProps
-    hasBackgroundBlack,
-    hasBackgroundBlackBis,
-    hasBackgroundBlackTer,
-    hasBackgroundDanger,
-    hasBackgroundDark,
-    hasBackgroundGrey,
-    hasBackgroundGreyDark,
-    hasBackgroundGreyDarker,
-    hasBackgroundGreyLight,
-    hasBackgroundGreyLighter,
-    hasBackgroundLight,
-    hasBackgroundLink,
-    hasBackgroundInfo,
-    hasBackgroundPrimary,
-    hasBackgroundSuccess,
-    hasBackgroundWarning,
-    hasBackgroundWhite,
-    hasBackgroundWhiteBis,
-    hasBackgroundWhiteTer,
-    // floatHelpersProps
-    isClearfix,
-    isPulledLeft,
-    isPulledRight,
-    // helpersProps
-    isInvisible,
-    isMarginLess,
-    isPaddingLess,
-    isSrOnly,
-    // mainColorsHelperProps
-    isDanger,
-    isInfo,
-    isLink,
-    isPrimary,
-    isSuccess,
-    isWarning,
-    // shadeColorsHelperProps
-    isBlack,
-    isDark,
-    isLight,
-    isWhite,
-    // sizeProps
-    isLarge,
-    isMedium,
-    isSmall,
-    // textColorHelpersProps
-    hasTextBlack,
-    hasTextBlackBis,
-    hasTextBlackTer,
-    hasTextDanger,
-    hasTextDark,
-    hasTextGrey,
-    hasTextGreyDark,
-    hasTextGreyDarker,
-    hasTextGreyLight,
-    hasTextGreyLighter,
-    hasTextLight,
-    hasTextLink,
-    hasTextInfo,
-    hasTextPrimary,
-    hasTextSuccess,
-    hasTextWarning,
-    hasTextWhite,
-    hasTextWhiteBis,
-    hasTextWhiteTer,
+    {
+      // alignementHelpersProps
+      hasTextCentered,
+      hasTextJustified,
+      hasTextLeft,
+      hasTextRight,
+      // backgroundColorHelpersProps
+      hasBackgroundBlack,
+      hasBackgroundBlackBis,
+      hasBackgroundBlackTer,
+      hasBackgroundDanger,
+      hasBackgroundDark,
+      hasBackgroundGrey,
+      hasBackgroundGreyDark,
+      hasBackgroundGreyDarker,
+      hasBackgroundGreyLight,
+      hasBackgroundGreyLighter,
+      hasBackgroundInfo,
+      hasBackgroundLight,
+      hasBackgroundLink,
+      hasBackgroundPrimary,
+      hasBackgroundSuccess,
+      hasBackgroundWarning,
+      hasBackgroundWhite,
+      hasBackgroundWhiteBis,
+      hasBackgroundWhiteTer,
+      // floatHelpersProps
+      isClearfix,
+      isPulledLeft,
+      isPulledRight,
+      // helpersProps
+      isInvisible,
+      isMarginLess,
+      isPaddingLess,
+      isSrOnly,
+// otherHelpersProps
+isClickable,
+isRadiusLess,
+isShadowLess,
+isUnselectable,
+      // mainColorsHelperProps
+      isDanger,
+      isInfo,
+      isLink,
+      isPrimary,
+      isSuccess,
+      isWarning,
+      // shadeColorsHelperProps
+      isBlack,
+      isDark,
+      isLight,
+      isWhite,
+      // sizeProps
+      isLarge,
+      isMedium,
+      isSmall,
+      // textColorHelpersProps
+      hasTextBlack,
+      hasTextBlackBis,
+      hasTextBlackTer,
+      hasTextDanger,
+      hasTextDark,
+      hasTextGrey,
+      hasTextGreyDark,
+      hasTextGreyDarker,
+      hasTextGreyLight,
+      hasTextGreyLighter,
+      hasTextLight,
+      hasTextLink,
+      hasTextInfo,
+      hasTextPrimary,
+      hasTextSuccess,
+      hasTextWarning,
+      hasTextWhite,
+      hasTextWhiteBis,
+      hasTextWhiteTer,
+    },
     props
   ])
 }

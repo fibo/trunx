@@ -1,17 +1,11 @@
 import * as React from "react"
 
-interface IUlProps extends React.HTMLAttributes<HTMLUListElement> {}
+import { renderElement } from './renderElement'
 
-export default class Ul extends React.Component<IUlProps> {
+interface UlProps extends React.HTMLAttributes<HTMLUListElement> {}
+
+export  class Ul extends React.Component<UlProps> {
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <ul {...props} className={className}>{children}</ul>
-    )
+return renderElement('ul', this.props)
   }
 }

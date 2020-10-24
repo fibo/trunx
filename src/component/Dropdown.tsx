@@ -1,22 +1,18 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
 import { bulmaClassName } from './classNames'
-import {
-  renderA,
-  renderDiv,
-} from './commonRenders'
+import { renderElement } from './renderElement'
 
-interface IDropdownProps extends React.HTMLAttributes<HTMLDivElement> {
+interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
   isActive?: boolean
   isHoverable?: boolean
   isRight?: boolean
   isUp?: boolean
 }
 
-interface IDropdownContentProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface DropdownContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface IDropdownDividerProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface DropdownDividerProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 interface IDropdownItemProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   isActive?: boolean
@@ -24,59 +20,46 @@ interface IDropdownItemProps extends React.AnchorHTMLAttributes<HTMLAnchorElemen
 
 interface IDropdownMenuProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface IDropdownTriggerProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface DropdownTriggerProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-class DropdownContent extends React.Component<IDropdownContentProps> {
+class DropdownContent extends React.Component<DropdownContentProps> {
   render() {
-    return renderDiv(this.props, bulmaClassName.dropdownContent)
+    return renderElement('div', this.props, bulmaClassName.dropdownContent)
   }
 }
 
-class DropdownDivider extends React.Component<IDropdownDividerProps> {
+class DropdownDivider extends React.Component<DropdownDividerProps> {
   render() {
-    return renderDiv(this.props, bulmaClassName.dropdownDivider)
+    return renderElement('div', this.props, bulmaClassName.dropdownDivider)
   }
 }
 
 class DropdownItem extends React.Component<IDropdownItemProps> {
   render() {
     const {
-      className,
       isActive,
       ...props
     } = this.props
 
-    return renderA(
-      {
-        className: classnames(
-          className,
-          {
-            "is-active": isActive,
-          },
-        ),
-        ...props
-      },
-      bulmaClassName.dropdownItem,
-    )
+    return renderElement('a', props, bulmaClassName.dropdownItem, {isActive})
   }
 }
 
 class DropdownMenu extends React.Component<IDropdownMenuProps> {
+  static defaultProps ={role: "menu"}
+
   render() {
-    return renderDiv(
-      { role: "menu", ...this.props },
-      bulmaClassName.dropdownMenu,
-    )
+    return renderElement('div', this.props, bulmaClassName.dropdownMenu)
   }
 }
 
-class DropdownTrigger extends React.Component<IDropdownTriggerProps> {
+class DropdownTrigger extends React.Component<DropdownTriggerProps> {
   render() {
-    return renderDiv(this.props, bulmaClassName.dropdownTrigger)
+    return renderElement('div', this.props, bulmaClassName.dropdownTrigger)
   }
 }
 
-export default class Dropdown extends React.Component<IDropdownProps> {
+export default class Dropdown extends React.Component<DropdownProps> {
   static Content = DropdownContent
   static Divider = DropdownDivider
   static Item = DropdownItem
@@ -85,8 +68,6 @@ export default class Dropdown extends React.Component<IDropdownProps> {
 
   render() {
     const {
-      children,
-      className,
       isActive,
       isHoverable,
       isRight,
@@ -94,18 +75,6 @@ export default class Dropdown extends React.Component<IDropdownProps> {
       ...props
     } = this.props
 
-    return renderDiv({
-      className: classnames(
-        bulmaClassName.dropdown,
-        className,
-        {
-          "is-active": isActive,
-          "is-hoverable": isHoverable,
-          "is-right": isRight,
-          "is-up": isUp,
-        },
-      ),
-      ...props
-    })
+    return renderElement('div', props, bulmaClassName.dropdown, {isActive, isHoverable, isRight, isUp})
   }
 }

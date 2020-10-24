@@ -1,118 +1,59 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  IAlignementHelpersProps,
-  ITextColorHelpersProps,
-  alignementPropsToClassnames,
-  extractModifiersProps,
-  textColorHelpersPropsToClassnames,
-} from "./modifiers"
+import { bulmaClassName } from './classNames'
+import { AlignementHelpersProps, TextColorHelpersProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface ILevelItemProps extends React.HTMLAttributes<HTMLDivElement>,
-                                  IAlignementHelpersProps,
-                                  ITextColorHelpersProps {
-  tag?: 'a' | 'div'
-}
-
-interface ILevelLeftProps extends ITextColorHelpersProps {
-  children?: React.ReactNode
-  className?: string
-}
-
-interface ILevelProps extends ITextColorHelpersProps {
-  children?: React.ReactNode
-  className?: string
+interface LevelProps extends React.HTMLAttributes<HTMLDivElement>, TextColorHelpersProps {
   isMobile?: boolean
 }
 
-interface ILevelRightProps extends ITextColorHelpersProps {
-  children?: React.ReactNode
-  className?: string
+interface LevelItemProps extends React.HTMLAttributes<HTMLDivElement>,
+                                  AlignementHelpersProps,
+                                  TextColorHelpersProps {
+  as?: 'a' | 'div'
 }
 
-class LevelItem extends React.Component<ILevelItemProps> {
-  render() {
-    const [{
-      className,
-      children,
-      tag = 'div',
-      ...props
-    }, modifiersProps] = extractModifiersProps(this.props)
+interface LevelLeftProps extends React.HTMLAttributes<HTMLDivElement>, TextColorHelpersProps {}
 
-    return React.createElement(tag, {
-      className: classnames(
-        "level-item",
-        className,
-        alignementPropsToClassnames(modifiersProps),
-        textColorHelpersPropsToClassnames(modifiersProps),
-      ),
-      ...props
-    }, children)
-  }
-}
+interface LevelRightProps extends React.HTMLAttributes<HTMLDivElement>, TextColorHelpersProps {}
 
-class LevelLeft extends React.Component<ILevelLeftProps> {
+class LevelItem extends React.Component<LevelItemProps> {
+  static defaultProps ={as: 'div'}
+
   render() {
     const {
-      children,
-      className,
+      as: tag,
+      ...props
     } = this.props
 
-    return (
-      <div
-        className={classnames(
-          "level-left",
-          className,
-          textColorHelpersPropsToClassnames(this.props),
-        )}
-      >{children}</div>
-    )
+return renderElement(tag as string, props,bulmaClassName.levelItem)
   }
 }
 
-class LevelRight extends React.Component<ILevelRightProps> {
+class LevelLeft extends React.Component<LevelLeftProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "level-right",
-          className,
-          textColorHelpersPropsToClassnames(this.props),
-        )}
-      >{children}</div>
-    )
+    return renderElement('div', this.props, bulmaClassName.levelLeft)
   }
 }
 
-export default class Level extends React.Component<ILevelProps> {
+class LevelRight extends React.Component<LevelRightProps> {
+  render() {
+    return renderElement('div', this.props, bulmaClassName.levelRight)
+  }
+}
+
+export default class Level extends React.Component<LevelProps> {
   static Item = LevelItem
   static Left = LevelLeft
   static Right = LevelRight
 
   render() {
     const {
-      children,
-      className,
       isMobile,
+...props
     } = this.props
 
-    return (
-      <nav
-        className={classnames(
-          "level",
-          className,
-          {
-            "is-mobile": isMobile,
-          },
-          textColorHelpersPropsToClassnames(this.props),
-        )}
-      >{children}</nav>
-    )
+return renderElement('nav', props, bulmaClassName.level, { isMobile })
   }
 }
