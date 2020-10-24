@@ -1,15 +1,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var classnames = require("classnames");
 var React = require("react");
+var classNames_1 = require("./classNames");
+var renderElement_1 = require("./renderElement");
 var MenuLabel = (function (_super) {
     tslib_1.__extends(MenuLabel, _super);
     function MenuLabel() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     MenuLabel.prototype.render = function () {
-        var _a = this.props, className = _a.className, children = _a.children;
-        return (React.createElement("p", { className: classnames("menu-label", className) }, children));
+        return renderElement_1.renderElement('p', this.props, classNames_1.bulmaClassName.menuLabel);
     };
     return MenuLabel;
 }(React.Component));
@@ -19,8 +19,7 @@ var MenuList = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     MenuList.prototype.render = function () {
-        var _a = this.props, className = _a.className, children = _a.children;
-        return (React.createElement("ul", { className: classnames("menu-list", className) }, children));
+        return renderElement_1.renderElement('ul', this.props, classNames_1.bulmaClassName.menuList);
     };
     return MenuList;
 }(React.Component));
@@ -30,11 +29,10 @@ var Menu = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Menu.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
-        return (React.createElement("aside", tslib_1.__assign({ className: classnames("menu", className) }, props), children));
+        return renderElement_1.renderElement('aside', this.props, classNames_1.bulmaClassName.menu);
     };
     Menu.Label = MenuLabel;
     Menu.List = MenuList;
     return Menu;
 }(React.Component));
-exports.default = Menu;
+exports.Menu = Menu;

@@ -15,7 +15,7 @@ import {
   Section,
   Subtitle,
   Title
-} from '../../../index.js'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
@@ -33,8 +33,7 @@ function ClickToEditExample () {
     }
   }, [editing, inputRef])
 
-  return editing ?
-    (
+  return editing ? (
     <Input
       inputRef={inputRef}
       isPrimary
@@ -44,9 +43,7 @@ function ClickToEditExample () {
       value={value}
     />
   ) : (
-    <Button
-      onClick={() => setEditing(true)}
-    >
+    <Button onClick={() => setEditing(true)}>
       {value === '' ? initialValue : value}
     </Button>
   )
@@ -60,9 +57,7 @@ export function FormInput () {
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Input
-            </Title>
+            <Title is2>Input</Title>
 
             <Subtitle>
               The <b>text input</b> and its variations
@@ -75,17 +70,11 @@ export function FormInput () {
             </p>
 
             <ul>
-              <li>
-                color
-              </li>
+              <li>color</li>
 
-              <li>
-                size
-              </li>
+              <li>size</li>
 
-              <li>
-                state
-              </li>
+              <li>state</li>
             </ul>
 
             <p>
@@ -94,35 +83,25 @@ export function FormInput () {
 
             <ul>
               <li>
-                <code>
-                  type="text"
-                </code>
+                <code>type="text"</code>
               </li>
 
               <li>
-                <code>
-                  type="password"
-                </code>
+                <code>type="password"</code>
               </li>
 
               <li>
-                <code>
-                  type="email"
-                </code>
+                <code>type="email"</code>
               </li>
 
               <li>
-                <code>
-                  type="tel"
-                </code>
+                <code>type="tel"</code>
               </li>
             </ul>
 
             <hr />
 
-            <Title is4>
-              Colors
-            </Title>
+            <Title is4>Colors</Title>
 
             <Columns>
               <Column isHalf>
@@ -196,9 +175,7 @@ export function FormInput () {
 
             <hr />
 
-            <Title is4>
-              Sizes
-            </Title>
+            <Title is4>Sizes</Title>
 
             <Columns>
               <Column isHalf>
@@ -260,9 +237,7 @@ export function FormInput () {
 
             <hr />
 
-            <Title is4>
-              States
-            </Title>
+            <Title is4>States</Title>
 
             <Columns>
               <Column isHalf>
@@ -280,13 +255,9 @@ export function FormInput () {
 
             <hr />
 
-            <Title is4>
-              Styles
-            </Title>
+            <Title is4>Styles</Title>
 
-            <Subtitle>
-              Normal
-            </Subtitle>
+            <Subtitle>Normal</Subtitle>
 
             <Columns>
               <Column isHalf>
@@ -306,9 +277,7 @@ export function FormInput () {
               </Column>
             </Columns>
 
-            <Subtitle>
-              Hover
-            </Subtitle>
+            <Subtitle>Hover</Subtitle>
 
             <Columns>
               <Column isHalf>
@@ -328,9 +297,7 @@ export function FormInput () {
               </Column>
             </Columns>
 
-            <Subtitle>
-              Focus
-            </Subtitle>
+            <Subtitle>Focus</Subtitle>
 
             <Columns>
               <Column isHalf>
@@ -350,9 +317,7 @@ export function FormInput () {
               </Column>
             </Columns>
 
-            <Subtitle>
-              Loading
-            </Subtitle>
+            <Subtitle>Loading</Subtitle>
 
             <Columns>
               <Column isHalf>
@@ -375,12 +340,19 @@ export function FormInput () {
             <Columns>
               <Column isHalf>
                 <p>
-                  You can resize the loading spinner by addding <code>isSmall</code>, <code>isMedium</code> or <code>isLarge</code> props to the <code>Control</code> container.
+                  You can resize the loading spinner by addding{' '}
+                  <code>isSmall</code>, <code>isMedium</code> or{' '}
+                  <code>isLarge</code> props to the <code>Control</code>{' '}
+                  container.
                 </p>
 
                 <Field>
                   <Control isSmall isLoading>
-                    <Input isSmall type='text' placeholder='Small loading input' />
+                    <Input
+                      isSmall
+                      type='text'
+                      placeholder='Small loading input'
+                    />
                   </Control>
                 </Field>
 
@@ -392,13 +364,21 @@ export function FormInput () {
 
                 <Field>
                   <Control isMedium isLoading>
-                    <Input isMedium type='text' placeholder='Medium loading input' />
+                    <Input
+                      isMedium
+                      type='text'
+                      placeholder='Medium loading input'
+                    />
                   </Control>
                 </Field>
 
                 <Field>
                   <Control isLarge isLoading>
-                    <Input isLarge type='text' placeholder='Large loading input' />
+                    <Input
+                      isLarge
+                      type='text'
+                      placeholder='Large loading input'
+                    />
                   </Control>
                 </Field>
               </Column>
@@ -434,9 +414,7 @@ export function FormInput () {
               </Column>
             </Columns>
 
-            <Subtitle>
-              Disabled
-            </Subtitle>
+            <Subtitle>Disabled</Subtitle>
 
             <Columns>
               <Column isHalf>
@@ -456,18 +434,21 @@ export function FormInput () {
               </Column>
             </Columns>
 
-            <Subtitle>
-              Read only and static inputs
-            </Subtitle>
+            <Subtitle>Read only and static inputs</Subtitle>
 
             <p>
-              If you use the <code>readOnly</code> prop, the input will look similar to a normal one, but is not editable and has no shadow.
+              If you use the <code>readOnly</code> prop, the input will look
+              similar to a normal one, but is not editable and has no shadow.
             </p>
 
             <Columns>
               <Column isHalf>
                 <Control>
-                  <Input type='text' defaultValue='This text is read only' readOnly />
+                  <Input
+                    type='text'
+                    defaultValue='This text is read only'
+                    readOnly
+                  />
                 </Control>
               </Column>
 
@@ -483,7 +464,10 @@ export function FormInput () {
             </Columns>
 
             <p>
-              If you <em>also</em> add the <code>isStatic</code> prop, it removes the background, border, shadow, and horizontal padding, while maintaining the vertical spacing so you can easily align the input in any context, like a horizontal form.
+              If you <em>also</em> add the <code>isStatic</code> prop, it
+              removes the background, border, shadow, and horizontal padding,
+              while maintaining the vertical spacing so you can easily align the
+              input in any context, like a horizontal form.
             </p>
 
             <Columns>
@@ -496,7 +480,12 @@ export function FormInput () {
                   <Field.Body>
                     <Field>
                       <Control>
-                        <Input isStatic type='email' defaultValue='me@example.com' readOnly />
+                        <Input
+                          isStatic
+                          type='email'
+                          defaultValue='me@example.com'
+                          readOnly
+                        />
                       </Control>
                     </Field>
                   </Field.Body>
@@ -554,12 +543,11 @@ export function FormInput () {
 
             <hr />
 
-            <Title is4>
-              With Font Awesome icons
-            </Title>
+            <Title is4>With Font Awesome icons</Title>
 
             <p>
-              You can use one of 2 <b>modifier</b> props on a <code>Control</code> component:
+              You can use one of 2 <b>modifier</b> props on a{' '}
+              <code>Control</code> component:
             </p>
 
             <ul>
@@ -573,7 +561,8 @@ export function FormInput () {
             </ul>
 
             <p>
-              You also need to add a <b>modifier</b> prop on the <code>Icon</code> component:
+              You also need to add a <b>modifier</b> prop on the{' '}
+              <code>Icon</code> component:
             </p>
 
             <ul>
@@ -587,7 +576,8 @@ export function FormInput () {
             </ul>
 
             <p>
-              The size of the <code>Input</code> component will define the size of the icon container.
+              The size of the <code>Input</code> component will define the size
+              of the icon container.
             </p>
 
             <Columns>
@@ -649,7 +639,9 @@ export function FormInput () {
             </Columns>
 
             <p>
-              If the control contains an icon, Bulma (the mother of Trunx :) will make sure the icon remains <b>centered</b>, no matter the size of the input <em>or</em> of the icon.
+              If the control contains an icon, Bulma (the mother of Trunx :)
+              will make sure the icon remains <b>centered</b>, no matter the
+              size of the input <em>or</em> of the icon.
             </p>
 
             <Columns>
@@ -790,13 +782,12 @@ export function FormInput () {
 
             <hr />
 
-            <Title is4>
-              Example
-            </Title>
+            <Title is4>Example</Title>
 
             <p>
-              The <code>inputRef</code> prop accepts a React ref, created with <code>React.createRef()</code>.
-              Other than that it accepts all props you can pass to a React <code>input</code> element.
+              The <code>inputRef</code> prop accepts a React ref, created with{' '}
+              <code>React.createRef()</code>. Other than that it accepts all
+              props you can pass to a React <code>input</code> element.
             </p>
 
             <ClickToEditExample />

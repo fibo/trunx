@@ -10,14 +10,12 @@ import {
   Section,
   Subtitle,
   Title
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ModifiersSyntax ({
-  location: { pathname }
-}) {
+export function ModifiersSyntax ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -25,12 +23,12 @@ export function ModifiersSyntax ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Modifiers syntax
-            </Title>
+            <Title is2>Modifiers syntax</Title>
 
             <Subtitle>
-              Most Trunx elements have <b>alternative</b> styles. To apply them, you only need to append one of the <b>modifier props</b>. They all start with <code>is</code> or <code>has</code>.
+              Most Trunx elements have <b>alternative</b> styles. To apply them,
+              you only need to append one of the <b>modifier props</b>. They all
+              start with <code>is</code> or <code>has</code>.
             </Subtitle>
 
             <hr />
@@ -58,7 +56,8 @@ export function ModifiersSyntax ({
             <Columns>
               <Column>
                 <p>
-                  By adding the <code>isPrimary</code> prop you can modify the color.
+                  By adding the <code>isPrimary</code> prop you can modify the
+                  color.
                 </p>
               </Column>
 
@@ -78,38 +77,29 @@ export function ModifiersSyntax ({
             <Columns>
               <Column>
                 <p>
-                  You can use one of the <b>6 main colors</b>, applying the following modifier props:
+                  You can use one of the <b>6 main colors</b>, applying the
+                  following modifier props:
                 </p>
 
                 <ul>
                   <li>
-                    <code>
-                      isPrimary
-                    </code>
+                    <code>isPrimary</code>
                   </li>
 
                   <li>
-                    <code>
-                      isInfo
-                    </code>
+                    <code>isInfo</code>
                   </li>
 
                   <li>
-                    <code>
-                      isSuccess
-                    </code>
+                    <code>isSuccess</code>
                   </li>
 
                   <li>
-                    <code>
-                      isWarning
-                    </code>
+                    <code>isWarning</code>
                   </li>
 
                   <li>
-                    <code>
-                      isDanger
-                    </code>
+                    <code>isDanger</code>
                   </li>
 
                   <li>
@@ -164,26 +154,21 @@ export function ModifiersSyntax ({
             </Columns>
 
             <p>
-              Please note that <code>isLink</code> prop is available only for the following components:
+              Please note that <code>isLink</code> prop is available only for
+              the following components:
             </p>
 
             <ul>
               <li>
-                <code>
-                  Button
-                </code>
+                <code>Button</code>
               </li>
 
               <li>
-                <code>
-                  Message
-                </code>
+                <code>Message</code>
               </li>
 
               <li>
-                <code>
-                  Tag
-                </code>
+                <code>Tag</code>
               </li>
             </ul>
 
@@ -195,21 +180,15 @@ export function ModifiersSyntax ({
 
                 <ul>
                   <li>
-                    <code>
-                      isSmall
-                    </code>
+                    <code>isSmall</code>
                   </li>
 
                   <li>
-                    <code>
-                      isMedium
-                    </code>
+                    <code>isMedium</code>
                   </li>
 
                   <li>
-                    <code>
-                      isLarge
-                    </code>
+                    <code>isLarge</code>
                   </li>
                 </ul>
               </Column>

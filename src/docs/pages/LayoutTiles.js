@@ -8,12 +8,10 @@ import {
   Subtitle,
   Tile,
   Title
-} from '../../../index'
+} from '../../../component/index'
 import { Nav } from '../components/Nav'
 
-export function LayoutTiles ({
-  location: { pathname }
-}) {
+export function LayoutTiles ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -21,12 +19,11 @@ export function LayoutTiles ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Tiles powered by Flexbox
-            </Title>
+            <Title is2>Tiles powered by Flexbox</Title>
 
             <Subtitle>
-              A <b>single tile</b> element to build 2-dimensional Metro-like, Pinterest-like, or whatever-you-like grids
+              A <b>single tile</b> element to build 2-dimensional Metro-like,
+              Pinterest-like, or whatever-you-like grids
             </Subtitle>
 
             <hr />
@@ -76,7 +73,10 @@ export function LayoutTiles ({
                     <Tile.Child.Notification isInfo>
                       <Title>Middle tile</Title>
                       <Subtitle>With an image</Subtitle>
-                      <Image is4by3 src='http://via.placeholder.com/640x480.png' />
+                      <Image
+                        is4by3
+                        src='http://via.placeholder.com/640x480.png'
+                      />
                     </Tile.Child.Notification>
                   </Tile>
                 </Tile>
@@ -87,7 +87,10 @@ export function LayoutTiles ({
                     <Subtitle>Aligned with the right tile</Subtitle>
                     <Content>
                       <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Proin ornare magna eros, eu pellentesque tortor
+                        vestibulum ut. Maecenas non massa sem. Etiam finibus
+                        odio quis feugiat facilisis.
                       </p>
                     </Content>
                   </Tile.Child.Notification>
@@ -100,15 +103,29 @@ export function LayoutTiles ({
                   <Subtitle>With even more content</Subtitle>
                   <Content>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Proin ornare magna eros, eu pellentesque tortor vestibulum
+                      ut. Maecenas non massa sem. Etiam finibus odio quis
+                      feugiat facilisis.
                     </p>
 
                     <p>
-                      Suspendisse varius ligula in molestie lacinia. Maecenas varius eget ligula a sagittis. Pellentesque interdum, nisl nec interdum maximus, augue diam porttitor lorem, et sollicitudin felis neque sit amet erat. Maecenas imperdiet felis nisi, fringilla luctus felis hendrerit sit amet. Aenean vitae gravida diam, finibus dignissim turpis. Sed eget varius ligula, at volutpat tortor.
+                      Suspendisse varius ligula in molestie lacinia. Maecenas
+                      varius eget ligula a sagittis. Pellentesque interdum, nisl
+                      nec interdum maximus, augue diam porttitor lorem, et
+                      sollicitudin felis neque sit amet erat. Maecenas imperdiet
+                      felis nisi, fringilla luctus felis hendrerit sit amet.
+                      Aenean vitae gravida diam, finibus dignissim turpis. Sed
+                      eget varius ligula, at volutpat tortor.
                     </p>
 
                     <p>
-                      Integer sollicitudin, tortor a mattis commodo, velit urna rhoncus erat, vitae congue lectus dolor consequat libero. Donec leo ligula, maximus et pellentesque sed, gravida a metus. Cras ullamcorper a nunc ac porta. Aliquam ut aliquet lacus, quis faucibus libero. Quisque non semper leo.
+                      Integer sollicitudin, tortor a mattis commodo, velit urna
+                      rhoncus erat, vitae congue lectus dolor consequat libero.
+                      Donec leo ligula, maximus et pellentesque sed, gravida a
+                      metus. Cras ullamcorper a nunc ac porta. Aliquam ut
+                      aliquet lacus, quis faucibus libero. Quisque non semper
+                      leo.
                     </p>
                   </Content>
                 </Tile.Child.Notification>

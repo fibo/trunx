@@ -1,115 +1,114 @@
-import { trunxPropsToClassnamesObject } from './classNames'
+import { TrunxProps, trunxPropsToClassnamesObject } from './classNames'
 
 export interface AlignementHelpersProps {
-  hasTextCentered?: boolean;
-  hasTextJustified?: boolean;
-  hasTextLeft?: boolean;
-  hasTextRight?: boolean;
+  hasTextCentered?: boolean
+  hasTextJustified?: boolean
+  hasTextLeft?: boolean
+  hasTextRight?: boolean
 }
 
 export interface BackgroundColorHelpersProps {
-  hasBackgroundBlack?: boolean;
-  hasBackgroundBlackBis?: boolean;
-  hasBackgroundBlackTer?: boolean;
-  hasBackgroundDanger?: boolean;
-  hasBackgroundDark?: boolean;
-  hasBackgroundGrey?: boolean;
-  hasBackgroundGreyDark?: boolean;
-  hasBackgroundGreyDarker?: boolean;
-  hasBackgroundGreyLight?: boolean;
-  hasBackgroundGreyLighter?: boolean;
-  hasBackgroundLight?: boolean;
-  hasBackgroundLink?: boolean;
-  hasBackgroundInfo?: boolean;
-  hasBackgroundPrimary?: boolean;
-  hasBackgroundSuccess?: boolean;
-  hasBackgroundWarning?: boolean;
-  hasBackgroundWhite?: boolean;
-  hasBackgroundWhiteBis?: boolean;
-  hasBackgroundWhiteTer?: boolean;
+  hasBackgroundBlack?: boolean
+  hasBackgroundBlackBis?: boolean
+  hasBackgroundBlackTer?: boolean
+  hasBackgroundDanger?: boolean
+  hasBackgroundDark?: boolean
+  hasBackgroundGrey?: boolean
+  hasBackgroundGreyDark?: boolean
+  hasBackgroundGreyDarker?: boolean
+  hasBackgroundGreyLight?: boolean
+  hasBackgroundGreyLighter?: boolean
+  hasBackgroundLight?: boolean
+  hasBackgroundLink?: boolean
+  hasBackgroundInfo?: boolean
+  hasBackgroundPrimary?: boolean
+  hasBackgroundSuccess?: boolean
+  hasBackgroundWarning?: boolean
+  hasBackgroundWhite?: boolean
+  hasBackgroundWhiteBis?: boolean
+  hasBackgroundWhiteTer?: boolean
 }
 
 export interface FloatHelpersProps {
-  isClearfix?: boolean;
-  isPulledLeft?: boolean;
-  isPulledRight?: boolean;
+  isClearfix?: boolean
+  isPulledLeft?: boolean
+  isPulledRight?: boolean
 }
 
 export interface HelpersProps {
-  isInvisible?: boolean;
-  isMarginLess?: boolean;
-  isPaddingLess?: boolean;
-  isSrOnly?: boolean;
+  isInvisible?: boolean
+  isMarginLess?: boolean
+  isPaddingLess?: boolean
+  isSrOnly?: boolean
 }
 
 export interface OtherHelpersProps {
-isClickable?: boolean;
-isRadiusLess?: boolean;
-isShadowLess?: boolean;
-isUnselectable?: boolean;
+  isClickable?: boolean
+  isRadiusLess?: boolean
+  isShadowLess?: boolean
+  isUnselectable?: boolean
 }
 
 export interface MainColorsProps {
-  isDanger?: boolean;
-  isInfo?: boolean;
-  isLink?: boolean;
-  isPrimary?: boolean;
-  isSuccess?: boolean;
-  isWarning?: boolean;
+  isDanger?: boolean
+  isInfo?: boolean
+  isLink?: boolean
+  isPrimary?: boolean
+  isSuccess?: boolean
+  isWarning?: boolean
 }
 
 export interface ShadeColorsProps {
-  isBlack?: boolean;
-  isDark?: boolean;
-  isLight?: boolean;
-  isWhite?: boolean;
+  isBlack?: boolean
+  isDark?: boolean
+  isLight?: boolean
+  isWhite?: boolean
 }
 
 export interface SizeProps {
-  isLarge?: boolean;
-  isMedium?: boolean;
-  isSmall?: boolean;
+  isLarge?: boolean
+  isMedium?: boolean
+  isSmall?: boolean
 }
 
 export interface TextColorHelpersProps {
-  hasTextBlack?: boolean;
-  hasTextBlackBis?: boolean;
-  hasTextBlackTer?: boolean;
-  hasTextDanger?: boolean;
-  hasTextDark?: boolean;
-  hasTextGrey?: boolean;
-  hasTextGreyDark?: boolean;
-  hasTextGreyDarker?: boolean;
-  hasTextGreyLight?: boolean;
-  hasTextGreyLighter?: boolean;
-  hasTextLight?: boolean;
-  hasTextLink?: boolean;
-  hasTextInfo?: boolean;
-  hasTextPrimary?: boolean;
-  hasTextSuccess?: boolean;
-  hasTextWarning?: boolean;
-  hasTextWhite?: boolean;
-  hasTextWhiteBis?: boolean;
-  hasTextWhiteTer?: boolean;
+  hasTextBlack?: boolean
+  hasTextBlackBis?: boolean
+  hasTextBlackTer?: boolean
+  hasTextDanger?: boolean
+  hasTextDark?: boolean
+  hasTextGrey?: boolean
+  hasTextGreyDark?: boolean
+  hasTextGreyDarker?: boolean
+  hasTextGreyLight?: boolean
+  hasTextGreyLighter?: boolean
+  hasTextLight?: boolean
+  hasTextLink?: boolean
+  hasTextInfo?: boolean
+  hasTextPrimary?: boolean
+  hasTextSuccess?: boolean
+  hasTextWarning?: boolean
+  hasTextWhite?: boolean
+  hasTextWhiteBis?: boolean
+  hasTextWhiteTer?: boolean
 }
 
-export interface ModifiersProps extends
-  AlignementHelpersProps,
-  BackgroundColorHelpersProps,
-  FloatHelpersProps,
-  HelpersProps,
-  MainColorsProps,
-  ShadeColorsProps,
-  SizeProps,
-  TextColorHelpersProps
-{}
+export interface ModifiersProps
+  extends AlignementHelpersProps,
+    BackgroundColorHelpersProps,
+    FloatHelpersProps,
+    HelpersProps,
+    MainColorsProps,
+    ShadeColorsProps,
+    SizeProps,
+    TextColorHelpersProps {}
 
-interface ExtractModifiersPropsArg extends ModifiersProps {
-  [prop: string]: any;
+export interface ExtractModifiersPropsArg extends ModifiersProps {
+  [prop: string]: any
 }
 
 export function modifierPropsToClassnamesObject (props?: ModifiersProps) {
-  return trunxPropsToClassnamesObject(props)
+  return trunxPropsToClassnamesObject(props as TrunxProps)
 }
 
 export function extractModifiersProps ({
@@ -190,7 +189,7 @@ export function extractModifiersProps ({
   hasTextWhiteTer,
   ...props
 }: ExtractModifiersPropsArg) {
-  return ([
+  return [
     {
       // alignementHelpersProps
       hasTextCentered,
@@ -269,5 +268,5 @@ export function extractModifiersProps ({
       hasTextWhiteTer
     },
     props
-  ])
+  ]
 }

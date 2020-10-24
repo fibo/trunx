@@ -1,15 +1,24 @@
+export interface TrunxProps {
+  [props: string]: boolean | undefined
+}
+
 function kebabCaseToCamelCase (value: string): string {
-  return value.split('-').map(
-    (part, index) => (
-      index > 0 ? (part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()) : part
+  return value
+    .split('-')
+    .map((part, index) =>
+      index > 0
+        ? part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()
+        : part
     )
-  ).join('')
+    .join('')
 }
 
 // Credits:
 // https://gist.github.com/nblackburn/875e6ff75bc8ce171c758bf75f304707
 export function camelCaseToKebabCase (inputString: string): string {
-  return inputString.replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2').toLowerCase()
+  return inputString
+    .replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2')
+    .toLowerCase()
 }
 
 /**
@@ -18,18 +27,23 @@ export function camelCaseToKebabCase (inputString: string): string {
  *
  * ['a', 'b', 'foo-bar'] ---> { a: 'a', b: 'b', fooBar: 'foo-bar' }
  */
-function listToKeyValues<T extends string> (list: readonly T[]): {[key: string]: T} {
-  return list.reduce((obj: {[key: string]: T}, key: T) => ({ ...obj, [kebabCaseToCamelCase(key)]: key }), {})
-}
-
-function isBulmaModifier (modifier: string) {
-  return (
-    modifier.substring(0, 3) === 'has' ||
-    modifier.substring(0, 2) === 'is'
+function listToKeyValues<T extends string> (
+  list: readonly T[]
+): { [key: string]: T } {
+  return list.reduce(
+    (obj: { [key: string]: T }, key: T) => ({
+      ...obj,
+      [kebabCaseToCamelCase(key)]: key
+    }),
+    {}
   )
 }
 
-export function trunxPropsToClassnamesObject (props?: Record<string, unknown>) {
+function isBulmaModifier (modifier: string) {
+  return modifier.substring(0, 3) === 'has' || modifier.substring(0, 2) === 'is'
+}
+
+export function trunxPropsToClassnamesObject (props?: TrunxProps) {
   if (typeof props === 'undefined') return {}
 
   return Object.keys(props).reduce((obj, key) => {
@@ -57,6 +71,7 @@ export const bulmaClassNames = [
   'card-header-title',
   'card-image',
   'checkbox',
+  'column',
   'columns',
   'container',
   'content',

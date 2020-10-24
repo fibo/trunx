@@ -7,14 +7,12 @@ import {
   Section,
   Title,
   Subtitle
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function LayoutFooter ({
-  location: { pathname }
-}) {
+export function LayoutFooter ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -22,12 +20,11 @@ export function LayoutFooter ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Footer
-            </Title>
+            <Title is2>Footer</Title>
 
             <Subtitle>
-              A simple responsive <b>footer</b> which can include anything: lists, headings, columns, icons, buttons, etc.
+              A simple responsive <b>footer</b> which can include anything:
+              lists, headings, columns, icons, buttons, etc.
             </Subtitle>
 
             <hr />
@@ -35,7 +32,10 @@ export function LayoutFooter ({
             <Footer>
               <Content hasTextCentered>
                 <p>
-                  <strong>Trunx</strong> by <a href='http://g14n.info'>Gianluca Casati</a>. The source code is licensed <a href='http://g14n.info/mit-license'>MIT</a>.
+                  <strong>Trunx</strong> by{' '}
+                  <a href='http://g14n.info'>Gianluca Casati</a>. The source
+                  code is licensed{' '}
+                  <a href='http://g14n.info/mit-license'>MIT</a>.
                 </p>
               </Content>
             </Footer>
@@ -51,7 +51,6 @@ export function LayoutFooter ({
                 </Footer>
               `}
             </Code>
-
           </Content>
         </Container>
       </Section>

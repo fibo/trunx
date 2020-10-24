@@ -1,13 +1,15 @@
 import * as React from 'react'
-
-import { IMainColorsProps, ISizeProps } from './modifiers'
-interface IInputProps extends IMainColorsProps, ISizeProps, React.InputHTMLAttributes<HTMLInputElement> {
-    isFocused?: boolean;
-    isHovered?: boolean;
-    isRounded?: boolean;
-    isStatic?: boolean;
+import { MainColorsProps, SizeProps } from './modifiers'
+interface IInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement>,
+    MainColorsProps,
+    SizeProps {
+  isFocused?: boolean
+  isHovered?: boolean
+  isRounded?: boolean
+  isStatic?: boolean
 }
-export default class Input extends React.Component<IInputProps> {
-  render(): JSX.Element;
+export declare class Input extends React.Component<IInputProps> {
+  render(): React.ReactNode
 }
 export {}

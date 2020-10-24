@@ -2,15 +2,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
+var classNames_1 = require("./classNames");
 var modifiers_1 = require("./modifiers");
+var renderElement_1 = require("./renderElement");
 var FileUploadCta = (function (_super) {
     tslib_1.__extends(FileUploadCta, _super);
     function FileUploadCta() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     FileUploadCta.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("span", { className: classnames("file-cta", className) }, children));
+        return renderElement_1.renderElement('span', this.props, classNames_1.bulmaClassName.fileCta);
     };
     return FileUploadCta;
 }(React.Component));
@@ -20,8 +21,7 @@ var FileUploadIcon = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     FileUploadIcon.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("span", { className: classnames("file-icon", className) }, children));
+        return renderElement_1.renderElement('span', this.props, classNames_1.bulmaClassName.fileIcon);
     };
     return FileUploadIcon;
 }(React.Component));
@@ -31,8 +31,7 @@ var FileUploadInput = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     FileUploadInput.prototype.render = function () {
-        var _a = this.props, className = _a.className, props = tslib_1.__rest(_a, ["className"]);
-        return (React.createElement("input", tslib_1.__assign({ className: classnames("file-input", className), type: "file" }, props)));
+        return renderElement_1.renderElement('input', tslib_1.__assign(tslib_1.__assign({}, this.props), { type: 'file' }), classNames_1.bulmaClassName.fileInput);
     };
     return FileUploadInput;
 }(React.Component));
@@ -42,8 +41,7 @@ var FileUploadLabel = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     FileUploadLabel.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("span", { className: classnames("file-label", className) }, children));
+        return renderElement_1.renderElement('span', this.props, classNames_1.bulmaClassName.fileLabel);
     };
     return FileUploadLabel;
 }(React.Component));
@@ -53,8 +51,7 @@ var FileUploadName = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     FileUploadName.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("span", { className: classnames("file-name", className) }, children));
+        return renderElement_1.renderElement('span', this.props, classNames_1.bulmaClassName.fileName);
     };
     return FileUploadName;
 }(React.Component));
@@ -64,24 +61,9 @@ var FileUpload = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     FileUpload.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className, hasName = _a.hasName, isBoxed = _a.isBoxed, isDanger = _a.isDanger, isFullwidth = _a.isFullwidth, isInfo = _a.isInfo, isLarge = _a.isLarge, isMedium = _a.isMedium, isPrimary = _a.isPrimary, isSmall = _a.isSmall, isSuccess = _a.isSuccess, isRight = _a.isRight, isWarning = _a.isWarning;
-        return (React.createElement("div", { className: classnames("file", className, {
-                "has-name": hasName,
-                "is-boxed": isBoxed,
-                "is-fullwidth": isFullwidth,
-                "is-right": isRight,
-            }, modifiers_1.mainColorsPropsToClassnames({
-                isDanger: isDanger,
-                isInfo: isInfo,
-                isPrimary: isPrimary,
-                isSuccess: isSuccess,
-                isWarning: isWarning,
-            }), modifiers_1.sizePropsToClassnames({
-                isLarge: isLarge,
-                isMedium: isMedium,
-                isSmall: isSmall,
-            })) },
-            React.createElement("label", { className: "file-label" }, children)));
+        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, hasName = _b.hasName, isBoxed = _b.isBoxed, isFullwidth = _b.isFullwidth, isRight = _b.isRight, props = tslib_1.__rest(_b, ["children", "className", "hasName", "isBoxed", "isFullwidth", "isRight"]);
+        return (React.createElement("div", tslib_1.__assign({ className: classnames(className, classNames_1.bulmaClassName.file, modifiers_1.modifierPropsToClassnamesObject(modifiersProps), classNames_1.trunxPropsToClassnamesObject({ hasName: hasName, isBoxed: isBoxed, isFullwidth: isFullwidth, isRight: isRight })) }, props),
+            React.createElement("label", { className: classNames_1.bulmaClassName.fileLabel }, children)));
     };
     FileUpload.Cta = FileUploadCta;
     FileUpload.Icon = FileUploadIcon;
@@ -90,4 +72,4 @@ var FileUpload = (function (_super) {
     FileUpload.Name = FileUploadName;
     return FileUpload;
 }(React.Component));
-exports.default = FileUpload;
+exports.FileUpload = FileUpload;

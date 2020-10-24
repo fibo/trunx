@@ -4,24 +4,17 @@
     "charset": "utf8",
     "importHelpers": true,
     "jsx": "react",
-    "lib": [
-      "dom",
-      "es2015"
-    ],
+    "lib": ["dom", "es2015"],
     "module": "commonjs",
     "noImplicitUseStrict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": ".",
+    "outDir": "./component",
     "removeComments": true,
     "sourceMap": false,
     "strictNullChecks": true,
     "target": "es5"
   },
-  "exclude": [
-    "**/stories"
-  ],
-  "include": [
-    "./src/**/*"
-  ]
+  "exclude": ["**/stories"],
+  "include": ["./src/**/*"]
 }

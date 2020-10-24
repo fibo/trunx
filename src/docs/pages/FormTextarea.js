@@ -11,10 +11,10 @@ import {
   Subtitle,
   Textarea,
   Title
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
-import { indent } from '../utils/indents'
+import { indent } from '../utils/indent'
 
 export function FormTextarea () {
   return (
@@ -24,9 +24,7 @@ export function FormTextarea () {
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Textarea
-            </Title>
+            <Title is2>Textarea</Title>
 
             <Subtitle>
               The multiline <b>textarea</b> and its variations
@@ -49,7 +47,8 @@ export function FormTextarea () {
             </Columns>
 
             <p>
-              You can set the height of the textarea using the <code>rows</code> prop which sets the homonym HTML attribute.
+              You can set the height of the textarea using the <code>rows</code>{' '}
+              prop which sets the homonym HTML attribute.
             </p>
 
             <Columns>
@@ -68,9 +67,7 @@ export function FormTextarea () {
 
             <hr />
 
-            <Title is4>
-              Colors
-            </Title>
+            <Title is4>Colors</Title>
 
             <Columns>
               <Column isHalf>

@@ -11,14 +11,12 @@ import {
   Section,
   Subtitle,
   Title
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ElementsDelete ({
-  location: { pathname }
-}) {
+export function ElementsDelete ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -26,9 +24,7 @@ export function ElementsDelete ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Delete
-            </Title>
+            <Title is2>Delete</Title>
 
             <Subtitle>
               A versatile <B>delete</B> cross
@@ -37,12 +33,11 @@ export function ElementsDelete ({
             <hr />
 
             <P>
-              The <code>Delete</code> component is a stand-alone element that can be used in different contexts.
+              The <code>Delete</code> component is a stand-alone element that
+              can be used in different contexts.
             </P>
 
-            <P>
-              On its own, it's a simple circle with a cross:
-            </P>
+            <P>On its own, it's a simple circle with a cross:</P>
 
             <Columns>
               <Column isHalf>

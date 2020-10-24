@@ -1,12 +1,11 @@
 import * as React from 'react'
-interface IColumnsProps {
-    className?: string;
-    isDesktop?: boolean;
-    isGapless?: boolean;
-    isMobile?: boolean;
-    isMultiline?: boolean;
+export interface ColumnsProps extends React.HTMLAttributes<HTMLDivElement> {
+  className?: string
+  isDesktop?: boolean
+  isGapless?: boolean
+  isMobile?: boolean
+  isMultiline?: boolean
 }
-export default class Columns extends React.Component<IColumnsProps> {
-  render(): JSX.Element;
+export declare class Columns extends React.Component<ColumnsProps> {
+  render(): React.ReactNode
 }
-export {}

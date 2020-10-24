@@ -2,15 +2,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
+var classNames_1 = require("./classNames");
+var renderElement_1 = require("./renderElement");
 var PaginationEllipsis = (function (_super) {
     tslib_1.__extends(PaginationEllipsis, _super);
     function PaginationEllipsis() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     PaginationEllipsis.prototype.render = function () {
-        var className = this.props.className;
+        var _a = this.props, className = _a.className, props = tslib_1.__rest(_a, ["className"]);
         return (React.createElement("li", null,
-            React.createElement("span", { className: classnames("pagination-ellipsis", className) }, "\u2026")));
+            React.createElement("span", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.paginationEllipsis, className) }, props), "\u2026")));
     };
     return PaginationEllipsis;
 }(React.Component));
@@ -20,11 +22,8 @@ var PaginationLink = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     PaginationLink.prototype.render = function () {
-        var _a = this.props, className = _a.className, children = _a.children, isCurrent = _a.isCurrent, props = tslib_1.__rest(_a, ["className", "children", "isCurrent"]);
-        return (React.createElement("li", null,
-            React.createElement("a", tslib_1.__assign({}, props, { className: classnames("pagination-link", className, {
-                    "is-current": isCurrent,
-                }) }), children)));
+        var _a = this.props, isCurrent = _a.isCurrent, props = tslib_1.__rest(_a, ["isCurrent"]);
+        return (React.createElement("li", null, renderElement_1.renderElement('a', props, classNames_1.bulmaClassName.paginationLink, { isCurrent: isCurrent })));
     };
     return PaginationLink;
 }(React.Component));
@@ -34,8 +33,7 @@ var PaginationList = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     PaginationList.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("ul", { className: classnames("pagination-list", className) }, children));
+        return renderElement_1.renderElement('ul', this.props, classNames_1.bulmaClassName.paginationList);
     };
     return PaginationList;
 }(React.Component));
@@ -45,8 +43,7 @@ var PaginationNext = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     PaginationNext.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("a", { className: classnames("pagination-next", className) }, children));
+        return renderElement_1.renderElement('a', this.props, classNames_1.bulmaClassName.paginationNext);
     };
     return PaginationNext;
 }(React.Component));
@@ -56,8 +53,7 @@ var PaginationPrevious = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     PaginationPrevious.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("a", { className: classnames("pagination-previous", className) }, children));
+        return renderElement_1.renderElement('a', this.props, classNames_1.bulmaClassName.paginationPrevious);
     };
     return PaginationPrevious;
 }(React.Component));
@@ -67,8 +63,11 @@ var Pagination = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Pagination.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("nav", { "aria-label": "pagination", className: classnames("pagination", className), role: "navigation" }, children));
+        return renderElement_1.renderElement('nav', this.props, classNames_1.bulmaClassName.pagination);
+    };
+    Pagination.defaultProps = {
+        'aria-label': 'pagination',
+        role: 'navigation'
     };
     Pagination.Ellipsis = PaginationEllipsis;
     Pagination.Link = PaginationLink;
@@ -77,4 +76,4 @@ var Pagination = (function (_super) {
     Pagination.Previous = PaginationPrevious;
     return Pagination;
 }(React.Component));
-exports.default = Pagination;
+exports.Pagination = Pagination;

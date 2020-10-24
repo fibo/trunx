@@ -1,9 +1,9 @@
 import * as React from 'react'
-
-import { IBackgroundColorHelpersProps, ITextColorHelpersProps } from './modifiers'
-interface IEmProps extends React.HTMLAttributes<HTMLElement>, IBackgroundColorHelpersProps, ITextColorHelpersProps {
+import { BackgroundColorHelpersProps, TextColorHelpersProps } from './modifiers'
+export interface EmProps
+  extends React.HTMLAttributes<HTMLElement>,
+    BackgroundColorHelpersProps,
+    TextColorHelpersProps {}
+export declare class Em extends React.Component<EmProps> {
+  render(): React.ReactNode
 }
-export default class Em extends React.Component<IEmProps> {
-  render(): JSX.Element;
-}
-export {}

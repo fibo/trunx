@@ -1,11 +1,13 @@
 import * as React from 'react'
-
-import { IMainColorsProps, ISizeProps, ITextColorHelpersProps } from './modifiers'
-interface ITextareaProps extends IMainColorsProps, ISizeProps, ITextColorHelpersProps, React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-    isFocused?: boolean;
-    isHovered?: boolean;
+import { MainColorsProps, SizeProps, TextColorHelpersProps } from './modifiers'
+export interface TextareaProps
+  extends React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+    MainColorsProps,
+    SizeProps,
+    TextColorHelpersProps {
+  isFocused?: boolean
+  isHovered?: boolean
 }
-export default class Textarea extends React.Component<ITextareaProps> {
-  render(): JSX.Element;
+export declare class Textarea extends React.Component<TextareaProps> {
+  render(): React.ReactNode
 }
-export {}

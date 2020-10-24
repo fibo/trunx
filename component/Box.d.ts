@@ -1,9 +1,9 @@
 import * as React from 'react'
-
-import { IBackgroundColorHelpersProps, ITextColorHelpersProps } from './modifiers'
-interface IBoxProps extends IBackgroundColorHelpersProps, ITextColorHelpersProps, React.HTMLAttributes<HTMLDivElement> {
+import { BackgroundColorHelpersProps, TextColorHelpersProps } from './modifiers'
+export interface BoxProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    BackgroundColorHelpersProps,
+    TextColorHelpersProps {}
+export declare class Box extends React.Component<BoxProps> {
+  render(): React.ReactNode
 }
-export default class Box extends React.Component<IBoxProps> {
-  render(): JSX.Element;
-}
-export {}

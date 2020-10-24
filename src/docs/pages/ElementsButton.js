@@ -14,14 +14,12 @@ import {
   Subtitle,
   Title,
   Ul
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ElementsButton ({
-  location: { pathname }
-}) {
+export function ElementsButton ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -29,9 +27,7 @@ export function ElementsButton ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Button
-            </Title>
+            <Title is2>Button</Title>
 
             <Subtitle>
               The classic <b>button</b>, in different colors, sizes, and states
@@ -40,7 +36,9 @@ export function ElementsButton ({
             <hr />
 
             <p>
-              The <b>button</b> is an essential element of any design. It's meant to look and behave as an <b>interactive</b> element of your page.
+              The <b>button</b> is an essential element of any design. It's
+              meant to look and behave as an <b>interactive</b> element of your
+              page.
             </p>
 
             <Columns>
@@ -67,12 +65,12 @@ export function ElementsButton ({
               </Li>
 
               <Li>
-                <code>{'<a>'}</code> anchor links, if there is an <code>href</code> prop
+                <code>{'<a>'}</code> anchor links, if there is an{' '}
+                <code>href</code> prop
               </Li>
 
               <Li>
                 If there is a <code>type</code> prop:
-
                 <Ul>
                   <Li>
                     <code>{'<input type="submit">'}</code> submit inputs
@@ -83,7 +81,6 @@ export function ElementsButton ({
                   </Li>
                 </Ul>
               </Li>
-
             </Ul>
 
             <Columns>
@@ -117,7 +114,10 @@ export function ElementsButton ({
             </Columns>
 
             <p>
-              Despite in Bulma it is not possible, in Trunx you can set a <em>submit</em> or <em>reset</em> type <code>Button</code> component to <code>disabled</code> or even set it to <code>isLoading</code> state.
+              Despite in Bulma it is not possible, in Trunx you can set a{' '}
+              <em>submit</em> or <em>reset</em> type <code>Button</code>{' '}
+              component to <code>disabled</code> or even set it to{' '}
+              <code>isLoading</code> state.
             </p>
 
             <Columns>
@@ -142,9 +142,7 @@ export function ElementsButton ({
 
             <hr />
 
-            <Title is4>
-              Colors
-            </Title>
+            <Title is4>Colors</Title>
 
             <Columns>
               <Column isHalf>
@@ -202,9 +200,7 @@ export function ElementsButton ({
 
             <hr />
 
-            <Title is4>
-              Sizes
-            </Title>
+            <Title is4>Sizes</Title>
 
             <P>
               The button comes in <B>four different sizes</B>.
@@ -218,7 +214,9 @@ export function ElementsButton ({
             </Ul>
 
             <P>
-              While the default size is the <B>normal</B> one, the <code>isNormal</code> prop exists in case you need to reset the button to its normal size.
+              While the default size is the <B>normal</B> one, the{' '}
+              <code>isNormal</code> prop exists in case you need to reset the
+              button to its normal size.
             </P>
 
             <Columns>
@@ -248,13 +246,21 @@ export function ElementsButton ({
             </Columns>
 
             <P>
-              You can change the size of <B>multiple buttons</B> at once by wrapping them in a <code>Buttons</code> parent, and applying one of 3 props:
+              You can change the size of <B>multiple buttons</B> at once by
+              wrapping them in a <code>Buttons</code> parent, and applying one
+              of 3 props:
             </P>
 
             <Ul>
-              <Li><code>areSmall</code></Li>
-              <Li><code>areMedium</code></Li>
-              <Li><code>areLarge</code></Li>
+              <Li>
+                <code>areSmall</code>
+              </Li>
+              <Li>
+                <code>areMedium</code>
+              </Li>
+              <Li>
+                <code>areLarge</code>
+              </Li>
             </Ul>
 
             <Columns>
@@ -307,17 +313,23 @@ export function ElementsButton ({
 
             <hr />
 
-            <Title is4>
-              Displays
-            </Title>
+            <Title is4>Displays</Title>
 
             <Columns>
               <Column isHalf>
                 <Buttons>
-                  <Button isSmall isFullwidth>Small</Button>
-                  <Button isNormal isFullwidth>Normal</Button>
-                  <Button isMedium isFullwidth>Medium</Button>
-                  <Button isLarge isFullwidth>Large</Button>
+                  <Button isSmall isFullwidth>
+                    Small
+                  </Button>
+                  <Button isNormal isFullwidth>
+                    Normal
+                  </Button>
+                  <Button isMedium isFullwidth>
+                    Medium
+                  </Button>
+                  <Button isLarge isFullwidth>
+                    Large
+                  </Button>
                 </Buttons>
               </Column>
 

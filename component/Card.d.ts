@@ -1,68 +1,52 @@
 import * as React from 'react'
-
-import { IAnchorProps } from './Anchor'
-import { IImageProps } from './Image'
-import { IBackgroundColorHelpersProps, ITextColorHelpersProps } from './modifiers'
-interface ICardContentProps extends ITextColorHelpersProps, React.HTMLAttributes<HTMLDivElement> {
+import { ImageProps } from './Image'
+import { TextColorHelpersProps } from './modifiers'
+export interface CardContentProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    TextColorHelpersProps {}
+export declare type CardFooterItemProps = React.AnchorHTMLAttributes<
+  HTMLAnchorElement
+>
+export declare type CardFooterProps = React.HTMLAttributes<HTMLElement>
+export declare type CardHeaderProps = React.HTMLAttributes<HTMLElement>
+export declare type CardHeaderIconProps = React.AnchorHTMLAttributes<
+  HTMLAnchorElement
+>
+export interface CardHeaderTitleProps
+  extends React.HTMLAttributes<HTMLElement> {
+  isCentered?: boolean
 }
-interface ICardFooterItemProps {
-    children?: React.ReactNode;
-    className?: string;
-    download?: IAnchorProps['download'];
-    href?: IAnchorProps['href'];
-    onClick?: IAnchorProps['onClick'];
-    target?: IAnchorProps['target'];
+export declare type CardImageProps = ImageProps
+export declare type CardProps = React.HTMLAttributes<HTMLDivElement>
+declare class CardContent extends React.Component<CardContentProps> {
+  render(): React.ReactNode
 }
-interface ICardFooterProps extends React.HTMLAttributes<HTMLElement> {
+declare class CardFooterItem extends React.Component<CardFooterItemProps> {
+  render(): React.ReactNode
 }
-interface ICardHeader extends React.HTMLAttributes<HTMLElement> {
+declare class CardFooter extends React.Component<CardFooterProps> {
+  static Item: typeof CardFooterItem
+  render(): React.ReactNode
 }
-interface ICardHeaderIconProps {
-    children?: React.ReactNode;
-    className?: string;
-    download?: IAnchorProps['download'];
-    href?: IAnchorProps['href'];
-    onClick?: IAnchorProps['onClick'];
-    target?: IAnchorProps['target'];
+declare class CardHeaderIcon extends React.Component<CardHeaderIconProps> {
+  render(): React.ReactNode
 }
-interface ICardHeaderTitleProps extends React.HTMLAttributes<HTMLElement> {
-    isCentered?: boolean;
+declare class CardHeaderTitle extends React.Component<CardHeaderTitleProps> {
+  render(): React.ReactNode
 }
-interface ICardImageProps extends IImageProps {
-    className?: string;
+declare class CardHeader extends React.Component<CardHeaderProps> {
+  static Icon: typeof CardHeaderIcon
+  static Title: typeof CardHeaderTitle
+  render(): React.ReactNode
 }
-interface ICardProps extends IBackgroundColorHelpersProps, React.HTMLAttributes<HTMLDivElement> {
-    className?: string;
+declare class CardImage extends React.Component<CardImageProps> {
+  render(): React.ReactNode
 }
-declare class CardContent extends React.Component<ICardContentProps> {
-  render(): JSX.Element;
-}
-declare class CardFooterItem extends React.Component<ICardFooterItemProps> {
-  render(): JSX.Element;
-}
-declare class CardFooter extends React.Component<ICardFooterProps> {
-    static Item: typeof CardFooterItem;
-    render(): JSX.Element;
-}
-declare class CardHeaderIcon extends React.Component<ICardHeaderIconProps> {
-  render(): JSX.Element;
-}
-declare class CardHeaderTitle extends React.Component<ICardHeaderTitleProps> {
-  render(): JSX.Element;
-}
-declare class CardHeader extends React.Component<ICardHeader> {
-    static Icon: typeof CardHeaderIcon;
-    static Title: typeof CardHeaderTitle;
-    render(): any;
-}
-declare class CardImage extends React.Component<ICardImageProps> {
-  render(): JSX.Element;
-}
-export default class Card extends React.Component<ICardProps> {
-    static Content: typeof CardContent;
-    static Footer: typeof CardFooter;
-    static Header: typeof CardHeader;
-    static Image: typeof CardImage;
-    render(): JSX.Element;
+export declare class Card extends React.Component<CardProps> {
+  static Content: typeof CardContent
+  static Footer: typeof CardFooter
+  static Header: typeof CardHeader
+  static Image: typeof CardImage
+  render(): React.ReactNode
 }
 export {}

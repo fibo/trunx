@@ -1,13 +1,13 @@
 import * as React from 'react'
-
-import { IHelpersProps, ITextColorHelpersProps } from './modifiers'
-interface IButtonsProps extends IHelpersProps, ITextColorHelpersProps {
-    areLarge?: boolean;
-    areMedium?: boolean;
-    areSmall?: boolean;
-    className?: string;
+import { HelpersProps, TextColorHelpersProps } from './modifiers'
+export interface ButtonsProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps,
+    TextColorHelpersProps {
+  areLarge?: boolean
+  areMedium?: boolean
+  areSmall?: boolean
 }
-export default class Buttons extends React.Component<IButtonsProps> {
-  render(): JSX.Element;
+export declare class Buttons extends React.Component<ButtonsProps> {
+  render(): JSX.Element
 }
-export {}
