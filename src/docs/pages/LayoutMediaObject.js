@@ -17,14 +17,12 @@ import {
   Textarea,
   Title,
   Subtitle
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function LayoutMediaObject ({
-  location: { pathname }
-}) {
+export function LayoutMediaObject ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -32,18 +30,21 @@ export function LayoutMediaObject ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Media Object
-            </Title>
+            <Title is2>Media Object</Title>
 
             <Subtitle>
-              The famous <b>media object</b> prevalent in social media interfaces, but useful in any context
+              The famous <b>media object</b> prevalent in social media
+              interfaces, but useful in any context
             </Subtitle>
 
             <hr />
 
             <p>
-              The <a href='http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code'>media object</a> is a UI element perfect for repeatable and nestable content.
+              The{' '}
+              <a href='http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code'>
+                media object
+              </a>{' '}
+              is a UI element perfect for repeatable and nestable content.
             </p>
 
             <Media>
@@ -54,9 +55,12 @@ export function LayoutMediaObject ({
               <Media.Content>
                 <Content>
                   <p>
-                    <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                    <strong>John Smith</strong> <small>@johnsmith</small>{' '}
+                    <small>31m</small>
                     <br />
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Aenean efficitur sit amet massa fringilla egestas. Nullam
+                    condimentum luctus turpis.
                   </p>
                 </Content>
 
@@ -135,7 +139,8 @@ export function LayoutMediaObject ({
             </Code>
 
             <p>
-              You can include <em>any</em> other Trunx component, like inputs, textareas, icons, buttons... or even a <b>nav bar</b>.
+              You can include <em>any</em> other Trunx component, like inputs,
+              textareas, icons, buttons... or even a <b>nav bar</b>.
             </p>
 
             <Media>

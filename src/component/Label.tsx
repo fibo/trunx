@@ -4,7 +4,10 @@ import { bulmaClassName } from './classNames'
 import { SizeProps, TextColorHelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface LabelProps extends extends React.LabelHTMLAttributes<HTMLLabelElement>, SizeProps, TextColorHelpersProps {}
+interface LabelProps
+  extends React.LabelHTMLAttributes<HTMLLabelElement>,
+    SizeProps,
+    TextColorHelpersProps {}
 
 export class Label extends React.Component<LabelProps> {
   render () {

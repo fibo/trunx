@@ -8,14 +8,12 @@ import {
   Section,
   Subtitle,
   Title
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ModifiersColorHelpers ({
-  location: { pathname }
-}) {
+export function ModifiersColorHelpers ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -23,9 +21,7 @@ export function ModifiersColorHelpers ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Color helpers
-            </Title>
+            <Title is2>Color helpers</Title>
 
             <Subtitle>
               Change the <b>color</b> of the text and/or background
@@ -33,9 +29,7 @@ export function ModifiersColorHelpers ({
 
             <hr />
 
-            <Title is4>
-              Text color
-            </Title>
+            <Title is4>Text color</Title>
 
             <Columns>
               <Column isHalf>
@@ -52,128 +46,89 @@ export function ModifiersColorHelpers ({
             </Columns>
 
             <p>
-              You can set some components to one of the <b>9 colors</b> or <b>9 shades of grey</b>:
+              You can set some components to one of the <b>9 colors</b> or{' '}
+              <b>9 shades of grey</b>:
             </p>
 
             <ul>
               <li>
-                <code>
-                  hasTextBlack
-                </code>
+                <code>hasTextBlack</code>
               </li>
 
               <li>
-                <code>
-                  hasTextBlackBis
-                </code>
+                <code>hasTextBlackBis</code>
               </li>
 
               <li>
-                <code>
-                  hasTextBlackTer
-                </code>
+                <code>hasTextBlackTer</code>
               </li>
 
               <li>
-                <code>
-                  hasTextDanger
-                </code>
+                <code>hasTextDanger</code>
               </li>
 
               <li>
-                <code>
-                  hasTextDark
-                </code>
+                <code>hasTextDark</code>
               </li>
 
               <li>
-                <code>
-                  hasTextGrey
-                </code>
+                <code>hasTextGrey</code>
               </li>
 
               <li>
-                <code>
-                  hasTextGreyDark
-                </code>
+                <code>hasTextGreyDark</code>
               </li>
 
               <li>
-                <code>
-                  hasTextGreyDarker
-                </code>
+                <code>hasTextGreyDarker</code>
               </li>
 
               <li>
-                <code>
-                  hasTextGreyLight
-                </code>
+                <code>hasTextGreyLight</code>
               </li>
 
               <li>
-                <code>
-                  hasTextGreyLighter
-                </code>
+                <code>hasTextGreyLighter</code>
               </li>
 
               <li>
-                <code>
-                  hasTextLight
-                </code>
+                <code>hasTextLight</code>
               </li>
 
               <li>
-                <code>
-                  hasTextLink
-                </code>
+                <code>hasTextLink</code>
               </li>
 
               <li>
-                <code>
-                  hasTextInfo
-                </code>
+                <code>hasTextInfo</code>
               </li>
 
               <li>
-                <code>
-                  hasTextPrimary
-                </code>
+                <code>hasTextPrimary</code>
               </li>
 
               <li>
-                <code>
-                  hasTextSuccess
-                </code>
+                <code>hasTextSuccess</code>
               </li>
 
               <li>
-                <code>
-                  hasTextWarning
-                </code>
+                <code>hasTextWarning</code>
               </li>
 
               <li>
-                <code>
-                  hasTextWhite
-                </code>
+                <code>hasTextWhite</code>
               </li>
 
               <li>
-                <code>
-                  hasTextWhiteBis
-                </code>
+                <code>hasTextWhiteBis</code>
               </li>
 
               <li>
-                <code>
-                  hasTextWhiteTer
-                </code>
+                <code>hasTextWhiteTer</code>
               </li>
             </ul>
 
-            <p>
-              The following components support text color modifiers:
-            </p>
+            <p>The following components support text color modifiers:</p>
 
             <ul>
               {[
@@ -195,9 +150,7 @@ export function ModifiersColorHelpers ({
                 'Title'
               ].map((component, i) => (
                 <li key={i}>
-                  <code>
-                    {component}
-                  </code>
+                  <code>{component}</code>
                 </li>
               ))}
             </ul>

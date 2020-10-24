@@ -12,14 +12,12 @@ import {
   Section,
   Title,
   Subtitle
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function LayoutLevel ({
-  location: { pathname }
-}) {
+export function LayoutLevel ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -27,12 +25,11 @@ export function LayoutLevel ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Level
-            </Title>
+            <Title is2>Level</Title>
 
             <Subtitle>
-              A multi-purpose <b>horizontal level</b>, which can contain almost any other element
+              A multi-purpose <b>horizontal level</b>, which can contain almost
+              any other element
             </Subtitle>
 
             <hr />
@@ -44,7 +41,6 @@ export function LayoutLevel ({
             <ul>
               <li>
                 <code>Level</code>: main container
-
                 <ul>
                   <li>
                     <code>Level.Left</code> for the left side
@@ -52,7 +48,6 @@ export function LayoutLevel ({
 
                   <li>
                     <code>Level.Right</code> for the right side
-
                     <ul>
                       <li>
                         <code>Level.Left</code> for the left side
@@ -64,7 +59,11 @@ export function LayoutLevel ({
             </ul>
 
             <p>
-              In a <code>Level.Item</code>, you can then insert almost <em>anything</em> you want: a title, a button, a text input, or just simple text. No matter what elements you put inside a Trunx <code>Level</code>, they will always be <b>vertically centered</b>.
+              In a <code>Level.Item</code>, you can then insert almost{' '}
+              <em>anything</em> you want: a title, a button, a text input, or
+              just simple text. No matter what elements you put inside a Trunx{' '}
+              <code>Level</code>, they will always be <b>vertically centered</b>
+              .
             </p>
 
             <Level>
@@ -161,12 +160,12 @@ export function LayoutLevel ({
 
             <hr />
 
-            <Title is4>
-              Centered level
-            </Title>
+            <Title is4>Centered level</Title>
 
             <p>
-              If you want a <b>centered level</b>, you can use as many <code>Level.Item</code> as you want, as long as they are <b>direct</b> children of the <code>Level</code> component.
+              If you want a <b>centered level</b>, you can use as many{' '}
+              <code>Level.Item</code> as you want, as long as they are{' '}
+              <b>direct</b> children of the <code>Level</code> component.
             </p>
 
             <Level>
@@ -253,7 +252,11 @@ export function LayoutLevel ({
               </Level.Item>
 
               <Level.Item hasTextCentered>
-                <img src='https://bulma.io/images/bulma-type.png' alt='' style={{ height: '30px' }} />
+                <img
+                  src='https://bulma.io/images/bulma-type.png'
+                  alt=''
+                  style={{ height: '30px' }}
+                />
               </Level.Item>
 
               <Level.Item hasTextCentered>
@@ -293,12 +296,12 @@ export function LayoutLevel ({
 
             <hr />
 
-            <Title is4>
-              Mobile level
-            </Title>
+            <Title is4>Mobile level</Title>
 
             <p>
-              By default, for space concerns, the level is vertical on mobile. If you want the level to be horizontal on mobile as well, add the <code>isMobile</code> prop on the <code>Level</code> component.
+              By default, for space concerns, the level is vertical on mobile.
+              If you want the level to be horizontal on mobile as well, add the{' '}
+              <code>isMobile</code> prop on the <code>Level</code> component.
             </p>
 
             <Level isMobile>

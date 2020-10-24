@@ -1,13 +1,10 @@
 import * as React from 'react'
-
-import { IHelpersProps } from './modifiers'
-interface ISectionProps extends IHelpersProps {
-    children?: React.ReactNode;
-    className?: string;
-    isLarge?: boolean;
-    isMedium?: boolean;
+import { HelpersProps } from './modifiers'
+interface SectionProps extends React.HTMLAttributes<HTMLElement>, HelpersProps {
+  isLarge?: boolean
+  isMedium?: boolean
 }
-export default class Section extends React.Component<ISectionProps> {
-  render(): JSX.Element;
+export declare class Section extends React.Component<SectionProps> {
+  render(): React.ReactNode
 }
 export {}

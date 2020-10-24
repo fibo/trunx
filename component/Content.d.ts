@@ -1,13 +1,13 @@
 import * as React from 'react'
-
-import { ISizeProps } from './modifiers'
-interface IContentProps extends ISizeProps, React.HTMLAttributes<HTMLDivElement> {
-    hasTextCentered?: boolean;
-    hasTextJustified?: boolean;
-    hasTextLeft?: boolean;
-    hasTextRight?: boolean;
+import { SizeProps } from './modifiers'
+export interface ContentProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    SizeProps {
+  hasTextCentered?: boolean
+  hasTextJustified?: boolean
+  hasTextLeft?: boolean
+  hasTextRight?: boolean
 }
-export default class Content extends React.Component<IContentProps> {
-  render(): JSX.Element;
+export declare class Content extends React.Component<ContentProps> {
+  render(): React.ReactNode
 }
-export {}

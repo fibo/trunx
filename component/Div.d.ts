@@ -1,14 +1,14 @@
 import * as React from 'react'
 import {
-  AlignementHelpersProps,
   BackgroundColorHelpersProps,
+  FloatHelpersProps,
   TextColorHelpersProps,
 } from './modifiers'
-export interface PProps
-  extends React.HTMLAttributes<HTMLParagraphElement>,
-    AlignementHelpersProps,
+export interface DivProps
+  extends React.HTMLAttributes<HTMLDivElement>,
     BackgroundColorHelpersProps,
+    FloatHelpersProps,
     TextColorHelpersProps {}
-export declare class P extends React.Component<PProps> {
+export declare class Div extends React.Component<DivProps> {
   render(): React.ReactNode
 }

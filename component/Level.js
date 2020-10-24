@@ -1,17 +1,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
-var classnames = require("classnames");
 var React = require("react");
-var modifiers_1 = require("./modifiers");
+var classNames_1 = require("./classNames");
+var renderElement_1 = require("./renderElement");
 var LevelItem = (function (_super) {
     tslib_1.__extends(LevelItem, _super);
     function LevelItem() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     LevelItem.prototype.render = function () {
-        var _a = modifiers_1.extractModifiersProps(this.props), _b = _a[0], modifiersProps = _a[1], className = _b.className, children = _b.children, _c = _b.tag, tag = _c === void 0 ? 'div' : _c, props = tslib_1.__rest(_b, ["className", "children", "tag"]);
-        return React.createElement(tag, tslib_1.__assign({ className: classnames("level-item", className, modifiers_1.alignementPropsToClassnames(modifiersProps), modifiers_1.textColorHelpersPropsToClassnames(modifiersProps)) }, props), children);
+        var _a = this.props, tag = _a.as, props = tslib_1.__rest(_a, ["as"]);
+        return renderElement_1.renderElement(tag, props, classNames_1.bulmaClassName.levelItem);
     };
+    LevelItem.defaultProps = { as: 'div' };
     return LevelItem;
 }(React.Component));
 var LevelLeft = (function (_super) {
@@ -20,8 +21,7 @@ var LevelLeft = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     LevelLeft.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("div", { className: classnames("level-left", className, modifiers_1.textColorHelpersPropsToClassnames(this.props)) }, children));
+        return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.levelLeft);
     };
     return LevelLeft;
 }(React.Component));
@@ -31,8 +31,7 @@ var LevelRight = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     LevelRight.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className;
-        return (React.createElement("div", { className: classnames("level-right", className, modifiers_1.textColorHelpersPropsToClassnames(this.props)) }, children));
+        return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.levelRight);
     };
     return LevelRight;
 }(React.Component));
@@ -42,14 +41,12 @@ var Level = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Level.prototype.render = function () {
-        var _a = this.props, children = _a.children, className = _a.className, isMobile = _a.isMobile;
-        return (React.createElement("nav", { className: classnames("level", className, {
-                "is-mobile": isMobile,
-            }, modifiers_1.textColorHelpersPropsToClassnames(this.props)) }, children));
+        var _a = this.props, isMobile = _a.isMobile, props = tslib_1.__rest(_a, ["isMobile"]);
+        return renderElement_1.renderElement('nav', props, classNames_1.bulmaClassName.level, { isMobile: isMobile });
     };
     Level.Item = LevelItem;
     Level.Left = LevelLeft;
     Level.Right = LevelRight;
     return Level;
 }(React.Component));
-exports.default = Level;
+exports.Level = Level;

@@ -1,9 +1,9 @@
 import * as React from 'react'
-
-import { IBackgroundColorHelpersProps, ITextColorHelpersProps } from './modifiers'
-interface ISpanProps extends IBackgroundColorHelpersProps, ITextColorHelpersProps, React.HTMLAttributes<HTMLSpanElement> {
+import { BackgroundColorHelpersProps, TextColorHelpersProps } from './modifiers'
+export interface SpanProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    BackgroundColorHelpersProps,
+    TextColorHelpersProps {}
+export declare class Span extends React.Component<SpanProps> {
+  render(): React.ReactNode
 }
-export default class Span extends React.Component<ISpanProps> {
-  render(): JSX.Element;
-}
-export {}

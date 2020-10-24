@@ -2,14 +2,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var React = require("react");
 var renderElement_1 = require("./renderElement");
-var P = (function (_super) {
-    tslib_1.__extends(P, _super);
-    function P() {
+var Div = (function (_super) {
+    tslib_1.__extends(Div, _super);
+    function Div() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    P.prototype.render = function () {
-        return renderElement_1.renderElement('p', this.props);
+    Div.prototype.render = function () {
+        return renderElement_1.renderElement('div', this.props);
     };
-    return P;
+    return Div;
 }(React.Component));
-exports.P = P;
+exports.Div = Div;

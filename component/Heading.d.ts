@@ -1,11 +1,8 @@
 import * as React from 'react'
-
-import { ITextColorHelpersProps } from './modifiers'
-interface IHeadingProps extends ITextColorHelpersProps {
-    className?: string;
-    children?: React.ReactNode;
+import { TextColorHelpersProps } from './modifiers'
+export interface HeadingProps
+  extends React.HTMLAttributes<HTMLParagraphElement>,
+    TextColorHelpersProps {}
+export declare class Heading extends React.Component<HeadingProps> {
+  render(): React.ReactNode
 }
-export default class Heading extends React.Component<IHeadingProps> {
-  render(): JSX.Element;
-}
-export {}

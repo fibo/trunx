@@ -1,22 +1,24 @@
 import * as React from 'react'
-
-import { ISizeProps } from './modifiers'
-interface IBreadcrumbProps extends React.HTMLAttributes<HTMLElement>, ISizeProps {
-    hasArrowSeparator?: boolean;
-    hasBulletSeparator?: boolean;
-    hasDotSeparator?: boolean;
-    hasSuccedesSeparator?: boolean;
-    isCentered?: boolean;
-    isRight?: boolean;
+import { SizeProps } from './modifiers'
+export interface BreadcrumbProps
+  extends React.HTMLAttributes<HTMLElement>,
+    SizeProps {
+  hasArrowSeparator?: boolean
+  hasBulletSeparator?: boolean
+  hasDotSeparator?: boolean
+  hasSuccedesSeparator?: boolean
+  isCentered?: boolean
+  isRight?: boolean
 }
-interface IBreadcrumbItemProps extends React.LiHTMLAttributes<HTMLLIElement> {
-    isActive?: boolean;
+export interface BreadcrumbItemProps
+  extends React.LiHTMLAttributes<HTMLLIElement> {
+  isActive?: boolean
 }
-declare class BreadcrumbItem extends React.Component<IBreadcrumbItemProps> {
-  render(): JSX.Element;
+declare class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
+  render(): React.ReactNode
 }
-export default class Breadcrumb extends React.Component<IBreadcrumbProps> {
-    static Item: typeof BreadcrumbItem;
-    render(): JSX.Element;
+export declare class Breadcrumb extends React.Component<BreadcrumbProps> {
+  static Item: typeof BreadcrumbItem
+  render(): React.ReactNode
 }
 export {}

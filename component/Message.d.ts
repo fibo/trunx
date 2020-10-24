@@ -1,28 +1,29 @@
 import * as React from 'react'
-
-import { IHelpersProps, IMainColorsProps, ISizeProps } from './modifiers'
-interface IMessageProps extends IHelpersProps, IMainColorsProps, ISizeProps {
-    children?: React.ReactNode;
-    className?: string;
-    isDark?: boolean;
+import {
+  HelpersProps,
+  MainColorsProps,
+  ShadeColorsProps,
+  SizeProps,
+} from './modifiers'
+interface MessageProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps,
+    MainColorsProps,
+    ShadeColorsProps,
+    SizeProps {
+  isDark?: boolean
 }
-interface IMessageBodyProps {
-    children?: React.ReactNode;
-    className?: string;
+export declare type MessageBodyProps = React.HTMLAttributes<HTMLDivElement>
+export declare type MessageHeaderProps = React.HTMLAttributes<HTMLDivElement>
+declare class MessageBody extends React.Component<MessageBodyProps> {
+  render(): React.ReactNode
 }
-interface IMessageHeaderProps {
-    children?: React.ReactNode;
-    className?: string;
+declare class MessageHeader extends React.Component<MessageHeaderProps> {
+  render(): React.ReactNode
 }
-declare class MessageBody extends React.Component<IMessageBodyProps> {
-  render(): JSX.Element;
-}
-declare class MessageHeader extends React.Component<IMessageHeaderProps> {
-  render(): JSX.Element;
-}
-export default class Message extends React.Component<IMessageProps> {
-    static Body: typeof MessageBody;
-    static Header: typeof MessageHeader;
-    render(): JSX.Element;
+export declare class Message extends React.Component<MessageProps> {
+  static Body: typeof MessageBody
+  static Header: typeof MessageHeader
+  render(): React.ReactNode
 }
 export {}

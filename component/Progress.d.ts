@@ -1,9 +1,10 @@
 import * as React from 'react'
-
-import { IMainColorsProps, IShadeColorsProps, ISizeProps } from './modifiers'
-interface IProgressProps extends IMainColorsProps, IShadeColorsProps, ISizeProps, React.ProgressHTMLAttributes<HTMLProgressElement> {
+import { MainColorsProps, ShadeColorsProps, SizeProps } from './modifiers'
+export interface ProgressProps
+  extends React.ProgressHTMLAttributes<HTMLProgressElement>,
+    MainColorsProps,
+    ShadeColorsProps,
+    SizeProps {}
+export declare class Progress extends React.Component<ProgressProps> {
+  render(): React.ReactNode
 }
-export default class Progress extends React.Component<IProgressProps> {
-  render(): JSX.Element;
-}
-export {}

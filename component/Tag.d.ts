@@ -1,18 +1,14 @@
 import * as React from 'react'
-
-import { IAnchorProps } from './Anchor'
-import { IMainColorsProps, IShadeColorsProps, ISizeProps } from './modifiers'
-interface ITagProps extends IMainColorsProps, IShadeColorsProps, Pick<ISizeProps, 'isMedium' | 'isLarge'> {
-    children?: React.ReactNode;
-    className?: string;
-    href?: IAnchorProps['href'];
-    isDelete?: boolean;
-    isNormal?: boolean;
-    isRounded?: boolean;
-    onClick?: IAnchorProps['onClick'];
-    target?: IAnchorProps['target'];
+import { MainColorsProps, ShadeColorsProps, SizeProps } from './modifiers'
+export interface TagProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    MainColorsProps,
+    ShadeColorsProps,
+    Pick<SizeProps, 'isMedium' | 'isLarge'> {
+  isDelete?: boolean
+  isNormal?: boolean
+  isRounded?: boolean
 }
-export default class Tag extends React.Component<ITagProps> {
-  render(): JSX.Element;
+export declare class Tag extends React.Component<TagProps> {
+  render(): React.ReactNode
 }
-export {}

@@ -1,11 +1,10 @@
 import * as React from 'react'
-
-import { IMainColorsProps, ITextColorHelpersProps } from './modifiers'
-interface IHelpProps extends IMainColorsProps, ITextColorHelpersProps {
-    children?: React.ReactNode;
-    className?: string;
-}
-export default class Help extends React.Component<IHelpProps> {
-  render(): JSX.Element;
+import { MainColorsProps, TextColorHelpersProps } from './modifiers'
+interface HelpProps
+  extends React.HTMLAttributes<HTMLParagraphElement>,
+    MainColorsProps,
+    TextColorHelpersProps {}
+export declare class Help extends React.Component<HelpProps> {
+  render(): React.ReactNode
 }
 export {}

@@ -1,10 +1,7 @@
 import * as React from 'react'
-interface ILiProps extends React.LiHTMLAttributes<HTMLLIElement> {
-    children?: React.ReactNode;
-    className?: string;
-    isActive?: boolean;
+export interface LiProps extends React.LiHTMLAttributes<HTMLLIElement> {
+  isActive?: boolean
 }
-export default class Li extends React.Component<ILiProps> {
-  render(): JSX.Element;
+export declare class Li extends React.Component<LiProps> {
+  render(): React.ReactNode
 }
-export {}

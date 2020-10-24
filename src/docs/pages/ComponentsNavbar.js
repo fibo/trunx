@@ -9,7 +9,7 @@ import {
   Section,
   Subtitle,
   Title
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
@@ -30,9 +30,7 @@ class ClassicNavbarExample extends Component {
   }
 
   render () {
-    const {
-      isActive
-    } = this.state
+    const { isActive } = this.state
 
     return (
       <Navbar aria-label='main navigation'>
@@ -45,9 +43,7 @@ class ClassicNavbarExample extends Component {
           />
         </Navbar.Brand>
 
-        <Navbar.Menu isActive={isActive}>
-          {this.props.children}
-        </Navbar.Menu>
+        <Navbar.Menu isActive={isActive}>{this.props.children}</Navbar.Menu>
 
         <Navbar.End>
           <Navbar.Item>Foo</Navbar.Item>
@@ -62,7 +58,11 @@ const NavbarExample = (props) => (
   <Navbar {...props}>
     <Navbar.Brand>
       <Navbar.Item href='https://bulma.io'>
-        <img src='https://bulma.io/images/bulma-logo.png' width='112' height='28' />
+        <img
+          src='https://bulma.io/images/bulma-logo.png'
+          width='112'
+          height='28'
+        />
       </Navbar.Item>
     </Navbar.Brand>
 
@@ -70,37 +70,23 @@ const NavbarExample = (props) => (
 
     <Navbar.Menu>
       <Navbar.Start>
-        <Navbar.Item>
-          Home
-        </Navbar.Item>
+        <Navbar.Item>Home</Navbar.Item>
 
-        <Navbar.Item>
-          Documentation
-        </Navbar.Item>
+        <Navbar.Item>Documentation</Navbar.Item>
 
         <Navbar.Item hasDropdown isHoverable>
-          <Navbar.Link>
-            More
-          </Navbar.Link>
+          <Navbar.Link>More</Navbar.Link>
 
           <Navbar.Dropdown>
-            <Navbar.Item>
-              About
-            </Navbar.Item>
+            <Navbar.Item>About</Navbar.Item>
 
-            <Navbar.Item>
-              Jobs
-            </Navbar.Item>
+            <Navbar.Item>Jobs</Navbar.Item>
 
-            <Navbar.Item>
-              Contact
-            </Navbar.Item>
+            <Navbar.Item>Contact</Navbar.Item>
 
             <Navbar.Divider />
 
-            <Navbar.Item>
-              Report an issue
-            </Navbar.Item>
+            <Navbar.Item>Report an issue</Navbar.Item>
           </Navbar.Dropdown>
         </Navbar.Item>
       </Navbar.Start>
@@ -108,13 +94,9 @@ const NavbarExample = (props) => (
       <Navbar.End>
         <Navbar.Item>
           <Buttons>
-            <Button isPrimary>
-              Tweet
-            </Button>
+            <Button isPrimary>Tweet</Button>
 
-            <Button isLight>
-              Download
-            </Button>
+            <Button isLight>Download</Button>
           </Buttons>
         </Navbar.Item>
       </Navbar.End>
@@ -122,9 +104,7 @@ const NavbarExample = (props) => (
   </Navbar>
 )
 
-export function ComponentsNavbar ({
-  location: { pathname }
-}) {
+export function ComponentsNavbar ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -132,61 +112,70 @@ export function ComponentsNavbar ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Navbar
-            </Title>
+            <Title is2>Navbar</Title>
 
             <Subtitle>
-              A responsive horizontal <b>navbar</b> that can support images, links, buttons, and dropdowns
+              A responsive horizontal <b>navbar</b> that can support images,
+              links, buttons, and dropdowns
             </Subtitle>
 
             <hr />
 
             <p>
-              The <code>Navbar</code> component is a responsive and versatile horizontal navigation bar with the following structure:
+              The <code>Navbar</code> component is a responsive and versatile
+              horizontal navigation bar with the following structure:
             </p>
 
             <ul>
               <li>
                 <code>Navbar</code>: the <b>main</b> container
-
                 <ul>
                   <li>
-                    <code>Navbar.Brand</code>: the <b>left side</b>, <strong className='has-text-success'>always visible</strong>, which usually contains the logo and optionally some links or icons
-
+                    <code>Navbar.Brand</code>: the <b>left side</b>,{' '}
+                    <strong className='has-text-success'>always visible</strong>
+                    , which usually contains the logo and optionally some links
+                    or icons
                     <ul>
                       <li>
-                        <code>Navbar.Burger</code>: the <b>hamburger</b> icon, which toggles the navbar menu on touch devices
+                        <code>Navbar.Burger</code>: the <b>hamburger</b> icon,
+                        which toggles the navbar menu on touch devices
                       </li>
                     </ul>
                   </li>
 
                   <li>
-                    <code>Navbar.Menu</code>: the <b>right side</b>, hidden on touch devices, visible on desktop
-
+                    <code>Navbar.Menu</code>: the <b>right side</b>, hidden on
+                    touch devices, visible on desktop
                     <ul>
                       <li>
-                        <code>Navbar.Start</code>: the <b>left part</b> of the menu, which appears next to the navbar brand on desktop
+                        <code>Navbar.Start</code>: the <b>left part</b> of the
+                        menu, which appears next to the navbar brand on desktop
                       </li>
 
                       <li>
-                        <code>Navbar.End</code>: the <b>right part</b> of the menu, which appears at the end of the navbar
-
+                        <code>Navbar.End</code>: the <b>right part</b> of the
+                        menu, which appears at the end of the navbar
                         <ul>
                           <li>
-                            <code>Navbar.Item</code>: each <b>single item</b> of the navbar, rendered with an <code>a</code> tag; if you want to render an item as a <code>div</code> use <code>Navbar.Item.Div</code>.
-
+                            <code>Navbar.Item</code>: each <b>single item</b> of
+                            the navbar, rendered with an <code>a</code> tag; if
+                            you want to render an item as a <code>div</code> use{' '}
+                            <code>{"<Navbar.Item as='div'/>"}</code>.
                             <ul>
                               <li>
-                                <code>Navbar.Link</code>: a <b>link</b> as the sibling of a dropdown, with an arrow
+                                <code>Navbar.Link</code>: a <b>link</b> as the
+                                sibling of a dropdown, with an arrow
                               </li>
 
                               <li>
-                                <code>Navbar.Dropdown</code>: the <b>dropdown menu</b>, which can include navbar items and dividers
-
+                                <code>Navbar.Dropdown</code>: the{' '}
+                                <b>dropdown menu</b>, which can include navbar
+                                items and dividers
                                 <ul>
                                   <li>
-                                    <code>Navbar.Divider</code>: a <b>horizontal line</b> to separate navbar items
+                                    <code>Navbar.Divider</code>: a{' '}
+                                    <b>horizontal line</b> to separate navbar
+                                    items
                                   </li>
                                 </ul>
                               </li>
@@ -202,18 +191,21 @@ export function ComponentsNavbar ({
 
             <hr />
 
-            <Title is4>
-              Basic Navbar
-            </Title>
+            <Title is4>Basic Navbar</Title>
 
             <p>
-              To <b>get started quickly</b>, here is what a complete basic navbar looks like:
+              To <b>get started quickly</b>, here is what a complete basic
+              navbar looks like:
             </p>
 
             <Navbar>
               <Navbar.Brand>
                 <Navbar.Item href='https://bulma.io'>
-                  <img src='https://bulma.io/images/bulma-logo.png' width='112' height='28' />
+                  <img
+                    src='https://bulma.io/images/bulma-logo.png'
+                    width='112'
+                    height='28'
+                  />
                 </Navbar.Item>
               </Navbar.Brand>
 
@@ -221,37 +213,23 @@ export function ComponentsNavbar ({
 
               <Navbar.Menu>
                 <Navbar.Start>
-                  <Navbar.Item>
-                    Home
-                  </Navbar.Item>
+                  <Navbar.Item>Home</Navbar.Item>
 
-                  <Navbar.Item>
-                    Documentation
-                  </Navbar.Item>
+                  <Navbar.Item>Documentation</Navbar.Item>
 
                   <Navbar.Item hasDropdown isHoverable>
-                    <Navbar.Link>
-                      More
-                    </Navbar.Link>
+                    <Navbar.Link>More</Navbar.Link>
 
                     <Navbar.Dropdown>
-                      <Navbar.Item>
-                        About
-                      </Navbar.Item>
+                      <Navbar.Item>About</Navbar.Item>
 
-                      <Navbar.Item>
-                        Jobs
-                      </Navbar.Item>
+                      <Navbar.Item>Jobs</Navbar.Item>
 
-                      <Navbar.Item>
-                        Contact
-                      </Navbar.Item>
+                      <Navbar.Item>Contact</Navbar.Item>
 
                       <Navbar.Divider />
 
-                      <Navbar.Item>
-                        Report an issue
-                      </Navbar.Item>
+                      <Navbar.Item>Report an issue</Navbar.Item>
                     </Navbar.Dropdown>
                   </Navbar.Item>
                 </Navbar.Start>
@@ -263,9 +241,7 @@ export function ComponentsNavbar ({
                         <strong>Sign up</strong>
                       </Button>
 
-                      <Button isLight>
-                        Log in
-                      </Button>
+                      <Button isLight>Log in</Button>
                     </Buttons>
                   </Navbar.Item>
                 </Navbar.End>
@@ -340,9 +316,7 @@ export function ComponentsNavbar ({
 
             <hr />
 
-            <Title is4>
-              Navbar brand
-            </Title>
+            <Title is4>Navbar brand</Title>
 
             <p>
               The navbar-brand is the left side of the navbar. It can contain:
@@ -360,10 +334,7 @@ export function ComponentsNavbar ({
 
             <Navbar>
               <Navbar.Brand>
-                <Navbar.Item
-                  href='https://g14n.info/trunx'
-                >Trunx
-                </Navbar.Item>
+                <Navbar.Item href='https://g14n.info/trunx'>Trunx</Navbar.Item>
                 <Navbar.Burger />
               </Navbar.Brand>
             </Navbar>
@@ -383,19 +354,17 @@ export function ComponentsNavbar ({
 
             <hr />
 
-            <Title is4>
-              Colors
-            </Title>
+            <Title is4>Colors</Title>
 
             <p>
-              You can change the background color of the <code>Navbar</code> by using one of the <b>9 color modifiers</b>:
+              You can change the background color of the <code>Navbar</code> by
+              using one of the <b>9 color modifiers</b>:
             </p>
 
             <ul>
               <li>
                 <code>isPrimary</code>
               </li>
-
             </ul>
 
             <Code language='jsx'>
@@ -448,12 +417,12 @@ export function ComponentsNavbar ({
 
             <hr />
 
-            <Title is4>
-              Classic Navbar example
-            </Title>
+            <Title is4>Classic Navbar example</Title>
 
             <p>
-              Probably you need a common <em>navbar</em> on top, with a classic <em>hamburger icon</em>. You can start with the following sample code.
+              Probably you need a common <em>navbar</em> on top, with a classic{' '}
+              <em>hamburger icon</em>. You can start with the following sample
+              code.
             </p>
 
             <ClassicNavbarExample />
@@ -507,7 +476,6 @@ export function ComponentsNavbar ({
             </Code>
 
             <hr />
-
           </Content>
         </Container>
       </Section>

@@ -1,7 +1,6 @@
 import * as React from 'react'
-interface IUlProps extends React.HTMLAttributes<HTMLUListElement> {
-}
-export default class Ul extends React.Component<IUlProps> {
-  render(): JSX.Element;
+declare type UlProps = React.HTMLAttributes<HTMLUListElement>
+export declare class Ul extends React.Component<UlProps> {
+  render(): React.ReactNode
 }
 export {}

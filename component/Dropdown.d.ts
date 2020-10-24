@@ -1,45 +1,46 @@
 import * as React from 'react'
-interface IDropdownProps extends React.HTMLAttributes<HTMLDivElement> {
-    isActive?: boolean;
-    isHoverable?: boolean;
-    isRight?: boolean;
-    isUp?: boolean;
+export interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
+  isActive?: boolean
+  isHoverable?: boolean
+  isRight?: boolean
+  isUp?: boolean
 }
-interface IDropdownContentProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface DropdownContentProps
+  extends React.HTMLAttributes<HTMLDivElement> {}
+export interface DropdownDividerProps
+  extends React.HTMLAttributes<HTMLDivElement> {}
+export interface DropdownItemProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  isActive?: boolean
 }
-interface IDropdownDividerProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface DropdownMenuProps
+  extends React.HTMLAttributes<HTMLDivElement> {}
+export interface DropdownTriggerProps
+  extends React.HTMLAttributes<HTMLDivElement> {}
+declare class DropdownContent extends React.Component<DropdownContentProps> {
+  render(): React.ReactNode
 }
-interface IDropdownItemProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-    isActive?: boolean;
+declare class DropdownDivider extends React.Component<DropdownDividerProps> {
+  render(): React.ReactNode
 }
-interface IDropdownMenuProps extends React.HTMLAttributes<HTMLDivElement> {
+declare class DropdownItem extends React.Component<DropdownItemProps> {
+  render(): React.ReactNode
 }
-interface IDropdownTriggerProps extends React.HTMLAttributes<HTMLDivElement> {
+declare class DropdownMenu extends React.Component<DropdownMenuProps> {
+  static defaultProps: {
+    role: string
+  }
+  render(): React.ReactNode
 }
-declare class DropdownContent extends React.Component<IDropdownContentProps> {
-  render(): any;
+declare class DropdownTrigger extends React.Component<DropdownTriggerProps> {
+  render(): React.ReactNode
 }
-declare class DropdownDivider extends React.Component<IDropdownDividerProps> {
-  render(): any;
-}
-declare class DropdownItem extends React.Component<IDropdownItemProps> {
-  static getClassNames({ className, isActive }: {
-        className: any;
-        isActive: any;
-    }): any;
-}
-declare class DropdownMenu extends React.Component<IDropdownMenuProps> {
-  render(): any;
-}
-declare class DropdownTrigger extends React.Component<IDropdownTriggerProps> {
-  render(): any;
-}
-export default class Dropdown extends React.Component<IDropdownProps> {
-    static Content: typeof DropdownContent;
-    static Divider: typeof DropdownDivider;
-    static Item: typeof DropdownItem;
-    static Menu: typeof DropdownMenu;
-    static Trigger: typeof DropdownTrigger;
-    render(): any;
+export declare class Dropdown extends React.Component<DropdownProps> {
+  static Content: typeof DropdownContent
+  static Divider: typeof DropdownDivider
+  static Item: typeof DropdownItem
+  static Menu: typeof DropdownMenu
+  static Trigger: typeof DropdownTrigger
+  render(): React.ReactNode
 }
 export {}

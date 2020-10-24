@@ -16,7 +16,7 @@ import {
   Section,
   Subtitle,
   Title
-} from '../../../index.js'
+} from '../../../component/index.js'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
@@ -29,9 +29,7 @@ export function FormGeneral () {
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Form controls
-            </Title>
+            <Title is2>Form controls</Title>
 
             <Subtitle>
               All generic <b>form controls</b>, designed for consistency
@@ -78,8 +76,10 @@ export function FormGeneral () {
             </ul>
 
             <p>
-              Each of them should be wrapped in a <code>Control</code> component.
-              When combining several controls in a <b>form</b>, use the <code>Field</code> component as a <b>container</b>, to keep the spacing consistent.
+              Each of them should be wrapped in a <code>Control</code>{' '}
+              component. When combining several controls in a <b>form</b>, use
+              the <code>Field</code> component as a <b>container</b>, to keep
+              the spacing consistent.
             </p>
 
             <Columns>
@@ -96,11 +96,14 @@ export function FormGeneral () {
                   <Label>Username</Label>
 
                   <Control>
-                    <Input isSuccess type='text' placeholder='Text input' defaultValue='trunx' />
+                    <Input
+                      isSuccess
+                      type='text'
+                      placeholder='Text input'
+                      defaultValue='trunx'
+                    />
 
-                    <Help isSuccess>
-                      This username is available
-                    </Help>
+                    <Help isSuccess>This username is available</Help>
                   </Control>
                 </Field>
 
@@ -108,11 +111,14 @@ export function FormGeneral () {
                   <Label>Email</Label>
 
                   <Control>
-                    <Input isDanger type='email' placeholder='Email input' defaultValue='hello@' />
+                    <Input
+                      isDanger
+                      type='email'
+                      placeholder='Email input'
+                      defaultValue='hello@'
+                    />
 
-                    <Help isDanger>
-                      This email is invalid
-                    </Help>
+                    <Help isDanger>This email is invalid</Help>
                   </Control>
                 </Field>
 
@@ -126,13 +132,9 @@ export function FormGeneral () {
 
                 <Field>
                   <Control>
-                    <Radio name='question'>
-                      Yes
-                    </Radio>
+                    <Radio name='question'>Yes</Radio>
 
-                    <Radio name='question'>
-                      No
-                    </Radio>
+                    <Radio name='question'>No</Radio>
                   </Control>
                 </Field>
 
@@ -206,9 +208,7 @@ export function FormGeneral () {
 
             <hr />
 
-            <Title is4>
-              Form field
-            </Title>
+            <Title is4>Form field</Title>
 
             <p>
               The <code>Field</code> component is a simple container for:
@@ -259,7 +259,8 @@ export function FormGeneral () {
             </Columns>
 
             <p>
-              This container allows form fields to be <b>spaced consistently</b>.
+              This container allows form fields to be <b>spaced consistently</b>
+              .
             </p>
 
             <Columns>
@@ -276,7 +277,10 @@ export function FormGeneral () {
                   <Label>Email</Label>
 
                   <Control>
-                    <Input type='password' placeholder='e.g. alexsmith@gmail.com' />
+                    <Input
+                      type='password'
+                      placeholder='e.g. alexsmith@gmail.com'
+                    />
                   </Control>
                 </Field>
               </Column>

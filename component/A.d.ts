@@ -1,10 +1,10 @@
 import * as React from 'react'
-
-import { IFloatHelpersProps } from './modifiers'
-interface IAProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>, IFloatHelpersProps {
-    isActive?: boolean;
+import { FloatHelpersProps } from './modifiers'
+export interface AProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    FloatHelpersProps {
+  isActive?: boolean
 }
-export default class A extends React.Component<IAProps> {
-  render(): JSX.Element;
+export declare class A extends React.Component<AProps> {
+  render(): React.ReactNode
 }
-export {}

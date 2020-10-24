@@ -1,7 +1,5 @@
 import * as React from 'react'
-interface ICheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export declare type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement>
+export declare class Checkbox extends React.Component<CheckboxProps> {
+  render(): JSX.Element
 }
-export default class Checkbox extends React.Component<ICheckboxProps> {
-  render(): JSX.Element;
-}
-export {}

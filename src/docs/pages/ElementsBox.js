@@ -12,14 +12,12 @@ import {
   Section,
   Subtitle,
   Title
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ElementsBox ({
-  location: { pathname }
-}) {
+export function ElementsBox ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -27,9 +25,7 @@ export function ElementsBox ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Box
-            </Title>
+            <Title is2>Box</Title>
 
             <Subtitle>
               A white <b>box</b> to contain other elements
@@ -38,8 +34,9 @@ export function ElementsBox ({
             <hr />
 
             <p>
-              The <code>box</code> element is simply a container with a shadow, a border, a radius, and some padding.
-              For example, you can include a media object:
+              The <code>box</code> element is simply a container with a shadow,
+              a border, a radius, and some padding. For example, you can include
+              a media object:
             </p>
 
             <Box>
@@ -51,9 +48,12 @@ export function ElementsBox ({
                 <Media.Content>
                   <Content>
                     <p>
-                      <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+                      <strong>John Smith</strong> <small>@johnsmith</small>{' '}
+                      <small>31m</small>
                       <br />
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Aenean efficitur sit amet massa fringilla egestas. Nullam
+                      condimentum luctus turpis.
                     </p>
                   </Content>
 

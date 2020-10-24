@@ -9,14 +9,12 @@ import {
   Section,
   Subtitle,
   Title
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
-import { indent } from '../utils/inden'
+import { indent } from '../utils/indent'
 
-export function ColumnSizes ({
-  location: { pathname }
-}) {
+export function ColumnSizes ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -24,9 +22,7 @@ export function ColumnSizes ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Column sizes
-            </Title>
+            <Title is2>Column sizes</Title>
 
             <Subtitle>
               Define the <b>size</b> of each column <b>individually</b>
@@ -35,31 +31,50 @@ export function ColumnSizes ({
             <hr />
 
             <p>
-              If you want to change the <b>size</b> of a single column, you can use one of the following props:
+              If you want to change the <b>size</b> of a single column, you can
+              use one of the following props:
             </p>
 
             <ul>
-              <li><code>isThreeQuarters</code></li>
-              <li><code>isTwoThirds</code></li>
-              <li><code>isHalf</code></li>
-              <li><code>isOneThird</code></li>
-              <li><code>isOneQuarter</code></li>
+              <li>
+                <code>isThreeQuarters</code>
+              </li>
+              <li>
+                <code>isTwoThirds</code>
+              </li>
+              <li>
+                <code>isHalf</code>
+              </li>
+              <li>
+                <code>isOneThird</code>
+              </li>
+              <li>
+                <code>isOneQuarter</code>
+              </li>
             </ul>
 
-            <p>
-              You can also use the following multiples of 20% as well:
-            </p>
+            <p>You can also use the following multiples of 20% as well:</p>
 
             <ul>
-              <li><code>isFourFifths</code></li>
-              <li><code>isThreeFifths</code></li>
-              <li><code>isTwoFifths</code></li>
-              <li><code>isOneFifth</code></li>
+              <li>
+                <code>isFourFifths</code>
+              </li>
+              <li>
+                <code>isThreeFifths</code>
+              </li>
+              <li>
+                <code>isTwoFifths</code>
+              </li>
+              <li>
+                <code>isOneFifth</code>
+              </li>
             </ul>
 
             <Columns>
               <Column isFourFifths>
-                <Notification isPrimary><code>isFourFifths</code></Notification>
+                <Notification isPrimary>
+                  <code>isFourFifths</code>
+                </Notification>
               </Column>
               <Column>Auto</Column>
               <Column>Auto</Column>
@@ -67,7 +82,9 @@ export function ColumnSizes ({
 
             <Columns>
               <Column isThreeQuarters>
-                <Notification isPrimary><code>isThreeQuarters</code></Notification>
+                <Notification isPrimary>
+                  <code>isThreeQuarters</code>
+                </Notification>
               </Column>
               <Column>Auto</Column>
               <Column>Auto</Column>
@@ -75,7 +92,9 @@ export function ColumnSizes ({
 
             <Columns>
               <Column isTwoThirds>
-                <Notification isPrimary><code>isTwoThirds</code></Notification>
+                <Notification isPrimary>
+                  <code>isTwoThirds</code>
+                </Notification>
               </Column>
               <Column>Auto</Column>
               <Column>Auto</Column>
@@ -83,7 +102,9 @@ export function ColumnSizes ({
 
             <Columns>
               <Column isThreeFifths>
-                <Notification isPrimary><code>isThreeFifths</code></Notification>
+                <Notification isPrimary>
+                  <code>isThreeFifths</code>
+                </Notification>
               </Column>
               <Column>Auto</Column>
               <Column>Auto</Column>
@@ -91,7 +112,9 @@ export function ColumnSizes ({
 
             <Columns>
               <Column isHalf>
-                <Notification isPrimary><code>isHalf</code></Notification>
+                <Notification isPrimary>
+                  <code>isHalf</code>
+                </Notification>
               </Column>
               <Column>Auto</Column>
               <Column>Auto</Column>
@@ -99,7 +122,9 @@ export function ColumnSizes ({
 
             <Columns>
               <Column isTwoFifths>
-                <Notification isPrimary><code>isTwoFifths</code></Notification>
+                <Notification isPrimary>
+                  <code>isTwoFifths</code>
+                </Notification>
               </Column>
               <Column>Auto</Column>
               <Column>Auto</Column>
@@ -107,7 +132,9 @@ export function ColumnSizes ({
 
             <Columns>
               <Column isOneThird>
-                <Notification isPrimary><code>isOneThird</code></Notification>
+                <Notification isPrimary>
+                  <code>isOneThird</code>
+                </Notification>
               </Column>
               <Column>Auto</Column>
               <Column>Auto</Column>
@@ -115,7 +142,9 @@ export function ColumnSizes ({
 
             <Columns>
               <Column isOneQuarter>
-                <Notification isPrimary><code>isOneQuarter</code></Notification>
+                <Notification isPrimary>
+                  <code>isOneQuarter</code>
+                </Notification>
               </Column>
               <Column>Auto</Column>
               <Column>Auto</Column>
@@ -123,7 +152,9 @@ export function ColumnSizes ({
 
             <Columns>
               <Column isOneFifth>
-                <Notification isPrimary><code>isOneFifth</code></Notification>
+                <Notification isPrimary>
+                  <code>isOneFifth</code>
+                </Notification>
               </Column>
               <Column>Auto</Column>
               <Column>Auto</Column>

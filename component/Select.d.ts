@@ -1,13 +1,14 @@
 import * as React from 'react'
-
-import { IMainColorsProps, ISizeProps } from './modifiers'
-interface ISelectProps extends IMainColorsProps, ISizeProps, React.SelectHTMLAttributes<HTMLSelectElement> {
-    isFocused?: boolean;
-    isHovered?: boolean;
-    isLoading?: boolean;
-    isMultiple?: boolean;
+import { MainColorsProps, SizeProps } from './modifiers'
+export interface SelectProps
+  extends React.SelectHTMLAttributes<HTMLSelectElement>,
+    MainColorsProps,
+    SizeProps {
+  isFocused?: boolean
+  isHovered?: boolean
+  isLoading?: boolean
+  isMultiple?: boolean
 }
-export default class Select extends React.Component<ISelectProps> {
-  render(): JSX.Element;
+export declare class Select extends React.Component<SelectProps> {
+  render(): React.ReactNode
 }
-export {}

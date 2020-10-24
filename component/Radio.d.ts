@@ -1,8 +1,5 @@
 import * as React from 'react'
-interface IRadioProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    inputRef?: React.RefObject<HTMLInputElement>;
+export declare type RadioProps = React.InputHTMLAttributes<HTMLInputElement>
+export declare class Radio extends React.Component<RadioProps> {
+  render(): React.ReactNode
 }
-export default class Radio extends React.Component<IRadioProps> {
-  render(): JSX.Element;
-}
-export {}

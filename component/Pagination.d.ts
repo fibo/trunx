@@ -1,49 +1,48 @@
 import * as React from 'react'
-interface IPaginationProps {
-    children?: React.ReactNode;
-    className?: string;
+export declare type PaginationProps = React.HTMLAttributes<HTMLElement>
+export declare type PaginationEllipsisProps = React.HTMLAttributes<
+  HTMLSpanElement
+>
+export interface PaginationLinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  isCurrent?: boolean
 }
-interface IPaginationEllipsisProps {
-    className?: string;
+export declare type PaginationListProps = React.HTMLAttributes<HTMLUListElement>
+export declare type IPaginationNextProps = React.AnchorHTMLAttributes<
+  HTMLAnchorElement
+>
+export declare type PaginationPreviousProps = React.AnchorHTMLAttributes<
+  HTMLAnchorElement
+>
+declare class PaginationEllipsis extends React.Component<
+  PaginationEllipsisProps
+> {
+  render(): React.ReactNode
 }
-interface IPaginationLinkProps {
-    children?: React.ReactNode;
-    className?: string;
-    isCurrent?: boolean;
+declare class PaginationLink extends React.Component<PaginationLinkProps> {
+  render(): React.ReactNode
 }
-interface IPaginationListProps {
-    children?: React.ReactNode;
-    className?: string;
-}
-interface IPaginationNextProps {
-    children?: React.ReactNode;
-    className?: string;
-}
-interface IPaginationPreviousProps {
-    children?: React.ReactNode;
-    className?: string;
-}
-declare class PaginationEllipsis extends React.Component<IPaginationEllipsisProps> {
-  render(): JSX.Element;
-}
-declare class PaginationLink extends React.Component<IPaginationLinkProps> {
-  render(): JSX.Element;
-}
-declare class PaginationList extends React.Component<IPaginationListProps> {
-  render(): JSX.Element;
+declare class PaginationList extends React.Component<PaginationListProps> {
+  render(): React.ReactNode
 }
 declare class PaginationNext extends React.Component<IPaginationNextProps> {
-  render(): JSX.Element;
+  render(): React.ReactNode
 }
-declare class PaginationPrevious extends React.Component<IPaginationPreviousProps> {
-  render(): JSX.Element;
+declare class PaginationPrevious extends React.Component<
+  PaginationPreviousProps
+> {
+  render(): React.ReactNode
 }
-export default class Pagination extends React.Component<IPaginationProps> {
-    static Ellipsis: typeof PaginationEllipsis;
-    static Link: typeof PaginationLink;
-    static List: typeof PaginationList;
-    static Next: typeof PaginationNext;
-    static Previous: typeof PaginationPrevious;
-    render(): JSX.Element;
+export declare class Pagination extends React.Component<PaginationProps> {
+  static defaultProps: {
+    'aria-label': string
+    role: string
+  }
+  static Ellipsis: typeof PaginationEllipsis
+  static Link: typeof PaginationLink
+  static List: typeof PaginationList
+  static Next: typeof PaginationNext
+  static Previous: typeof PaginationPrevious
+  render(): React.ReactNode
 }
 export {}
