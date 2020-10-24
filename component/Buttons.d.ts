@@ -1,5 +1,6 @@
-import * as React from "react";
-import { IHelpersProps, ITextColorHelpersProps } from "./modifiers";
+import * as React from 'react'
+
+import { IHelpersProps, ITextColorHelpersProps } from './modifiers'
 interface IButtonsProps extends IHelpersProps, ITextColorHelpersProps {
     areLarge?: boolean;
     areMedium?: boolean;
@@ -7,6 +8,6 @@ interface IButtonsProps extends IHelpersProps, ITextColorHelpersProps {
     className?: string;
 }
 export default class Buttons extends React.Component<IButtonsProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}

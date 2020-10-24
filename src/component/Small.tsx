@@ -1,12 +1,12 @@
-import * as React from "react"
+import * as React from 'react'
 
-import { BackgroundColorHelpersProps, TextColorHelpersProps } from "./modifiers"
-import { renderElement} from './renderElement'
+import { BackgroundColorHelpersProps, TextColorHelpersProps } from './modifiers'
+import { renderElement } from './renderElement'
 
-interface SmallProps extends React.HTMLAttributes<HTMLElement>, BackgroundColorHelpersProps, TextColorHelpersProps {}
+export interface SmallProps extends React.HTMLAttributes<HTMLElement>, BackgroundColorHelpersProps, TextColorHelpersProps {}
 
-export default class Small extends React.Component<SmallProps> {
-  render() {
+export class Small extends React.Component<SmallProps> {
+  render ():React.ReactNode {
     return renderElement('small', this.props)
   }
 }

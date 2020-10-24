@@ -1,20 +1,20 @@
-import * as React from "react"
+import * as React from 'react'
 
-import { bulmaClassName } from "./classNames"
+import { bulmaClassName } from './classNames'
 import { renderElement } from './renderElement'
 
-interface PanelProps extends React.HTMLAttributes<HTMLElement> {}
+export type PanelProps = React.HTMLAttributes<HTMLElement>
 
-interface PanelBlockProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> { isActive?: boolean }
+export interface PanelBlockProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> { isActive?: boolean }
 
-interface PanelHeadingProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+export type PanelHeadingProps = React.HTMLAttributes<HTMLParagraphElement>
 
-interface PanelIconProps extends React.HTMLAttributes<HTMLSpanElement> {}
+export type PanelIconProps = React.HTMLAttributes<HTMLSpanElement>
 
-interface PanelTabsProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+export type PanelTabsProps = React.HTMLAttributes<HTMLParagraphElement>
 
 class PanelBlock extends React.Component<PanelBlockProps> {
-  render() {
+  render ():React.ReactNode {
     const {
       isActive,
       ...props
@@ -25,30 +25,30 @@ class PanelBlock extends React.Component<PanelBlockProps> {
 }
 
 class PanelHeading extends React.Component<PanelHeadingProps> {
-  render() {
+  render () :React.ReactNode{
     return renderElement('p', this.props, bulmaClassName.panelHeading)
   }
 }
 
 class PanelIcon extends React.Component<PanelIconProps> {
-  render() {
+  render () :React.ReactNode{
     return renderElement('span', this.props, bulmaClassName.panelIcon)
   }
 }
 
 class PanelTabs extends React.Component<PanelTabsProps> {
-  render() {
+  render () :React.ReactNode{
     return renderElement('p', this.props, bulmaClassName.panelTabs)
   }
 }
 
-export default class Panel extends React.Component<PanelProps> {
+export class Panel extends React.Component<PanelProps> {
   static Block = PanelBlock
   static Heading = PanelHeading
   static Icon = PanelIcon
   static Tabs = PanelTabs
 
-  render() {
-return renderElement('nav', this.props, bulmaClassName.panel)
+  render () :React.ReactNode{
+    return renderElement('nav', this.props, bulmaClassName.panel)
   }
 }

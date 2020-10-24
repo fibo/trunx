@@ -1,17 +1,17 @@
-import * as React from "react"
+import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import { HelpersProps } from "./modifiers"
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 interface SectionProps extends React.HTMLAttributes<HTMLElement>,
  HelpersProps {
-  isLarge?: boolean
-  isMedium?: boolean
+  isLarge?: boolean;
+  isMedium?: boolean;
 }
 
 export class Section extends React.Component<SectionProps> {
-  render() {
+  render () {
     const {
       isLarge,
       isMedium,

@@ -1,10 +1,5 @@
 import React from 'react'
 
-import Code from '../components/Code.js'
-import Nav from '../components/Nav.js'
-
-import indent from '../utils/indent.js'
-
 import {
   B,
   Column,
@@ -18,9 +13,12 @@ import {
   Tag,
   Tags,
   Title
-} from '../../../index.js'
+} from '../../../index'
+import { Code } from '../components/Code'
+import { Nav } from '../components/Nav'
+import { indent } from '../utils/indent'
 
-export default function ElementsTag ({
+export function ElementsTag ({
   location: { pathname }
 }) {
   return (

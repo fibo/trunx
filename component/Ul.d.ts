@@ -1,7 +1,7 @@
-import * as React from "react";
+import * as React from 'react'
 interface IUlProps extends React.HTMLAttributes<HTMLUListElement> {
 }
 export default class Ul extends React.Component<IUlProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}

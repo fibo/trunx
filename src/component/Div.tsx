@@ -1,11 +1,10 @@
-import * as classnames from "classnames"
-import * as React from "react"
+import * as React from 'react'
 
 import {
   BackgroundColorHelpersProps,
   FloatHelpersProps,
-  TextColorHelpersProps,
-} from "./modifiers"
+  TextColorHelpersProps
+} from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface DivProps
@@ -15,8 +14,8 @@ extends React.HTMLAttributes<HTMLDivElement>,
         TextColorHelpersProps
 {}
 
-export default class Div extends React.Component<DivProps> {
-  render() {
+export class Div extends React.Component<DivProps> {
+  render (): React.ReactNode {
     return renderElement('div', this.props)
   }
 }

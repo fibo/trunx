@@ -1,7 +1,7 @@
-import * as React from "react";
+import * as React from 'react'
 interface ICheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 export default class Checkbox extends React.Component<ICheckboxProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}

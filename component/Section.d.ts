@@ -1,5 +1,6 @@
-import * as React from "react";
-import { IHelpersProps } from "./modifiers";
+import * as React from 'react'
+
+import { IHelpersProps } from './modifiers'
 interface ISectionProps extends IHelpersProps {
     children?: React.ReactNode;
     className?: string;
@@ -7,6 +8,6 @@ interface ISectionProps extends IHelpersProps {
     isMedium?: boolean;
 }
 export default class Section extends React.Component<ISectionProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}

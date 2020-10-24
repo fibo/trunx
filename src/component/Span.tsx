@@ -1,12 +1,12 @@
-import * as React from "react"
+import * as React from 'react'
 
-import { BackgroundColorHelpersProps, TextColorHelpersProps } from "./modifiers"
+import { BackgroundColorHelpersProps, TextColorHelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface SpanProps extends React.HTMLAttributes<HTMLSpanElement>, BackgroundColorHelpersProps, TextColorHelpersProps {}
+export interface SpanProps extends React.HTMLAttributes<HTMLSpanElement>, BackgroundColorHelpersProps, TextColorHelpersProps {}
 
-export default class Span extends React.Component<SpanProps> {
-  render() {
-return renderElement('span', this.props)
+export class Span extends React.Component<SpanProps> {
+  render (): React.ReactNode {
+    return renderElement('span', this.props)
   }
 }

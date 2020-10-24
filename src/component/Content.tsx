@@ -1,17 +1,18 @@
-import * as React from "react"
+import * as React from 'react'
 
-import { SizeProps } from "./modifiers"
+import { bulmaClassName } from './classNames'
+import { SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface ContentProps extends React.HTMLAttributes<HTMLDivElement>, SizeProps {
-  hasTextCentered?: boolean
-  hasTextJustified?: boolean
-  hasTextLeft?: boolean
-  hasTextRight?: boolean
+export interface ContentProps extends React.HTMLAttributes<HTMLDivElement>, SizeProps {
+  hasTextCentered?: boolean;
+  hasTextJustified?: boolean;
+  hasTextLeft?: boolean;
+  hasTextRight?: boolean;
 }
 
-export default class Content extends React.Component<ContentProps> {
-  render() {
+export class Content extends React.Component<ContentProps> {
+  render (): React.ReactNode {
     const {
       hasTextCentered,
       hasTextJustified,

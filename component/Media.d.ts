@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 interface IMediaProps extends React.HTMLAttributes<HTMLDivElement> {
     children?: React.ReactNode;
     className?: string;
@@ -16,13 +16,13 @@ interface IMediaRightProps {
     className?: string;
 }
 declare class MediaContent extends React.Component<IMediaContentProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class MediaLeft extends React.Component<IMediaLeftProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class MediaRight extends React.Component<IMediaRightProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 export default class Media extends React.Component<IMediaProps> {
     static Content: typeof MediaContent;
@@ -30,4 +30,4 @@ export default class Media extends React.Component<IMediaProps> {
     static Right: typeof MediaRight;
     render(): JSX.Element;
 }
-export {};
+export {}

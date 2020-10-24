@@ -1,5 +1,6 @@
-import * as React from "react";
-import { IMainColorsProps } from "./modifiers";
+import * as React from 'react'
+
+import { IMainColorsProps } from './modifiers'
 interface IHeroProps extends IMainColorsProps {
     children?: React.ReactNode;
     className?: string;
@@ -24,13 +25,13 @@ interface IHeroHeadProps {
     className?: string;
 }
 declare class HeroBody extends React.Component<IHeroBodyProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class HeroFoot extends React.Component<IHeroFootProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class HeroHead extends React.Component<IHeroHeadProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 export default class Hero extends React.Component<IHeroProps> {
     static Body: typeof HeroBody;
@@ -38,4 +39,4 @@ export default class Hero extends React.Component<IHeroProps> {
     static Head: typeof HeroHead;
     render(): JSX.Element;
 }
-export {};
+export {}

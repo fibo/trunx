@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 interface IPanelProps {
     children?: React.ReactNode;
     className?: string;
@@ -21,16 +21,16 @@ interface IPanelTabsProps {
     className?: string;
 }
 declare class PanelBlock extends React.Component<IPanelBlockProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class PanelHeading extends React.Component<IPanelHeadingProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class PanelIcon extends React.Component<IPanelIconProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class PanelTabs extends React.Component<IPanelTabsProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 export default class Panel extends React.Component<IPanelProps> {
     static Block: typeof PanelBlock;
@@ -39,4 +39,4 @@ export default class Panel extends React.Component<IPanelProps> {
     static Tabs: typeof PanelTabs;
     render(): JSX.Element;
 }
-export {};
+export {}

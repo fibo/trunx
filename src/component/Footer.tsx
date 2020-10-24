@@ -1,13 +1,14 @@
-import * as React from "react"
+import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { TextColorHelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface FooterProps extends React.HTMLAttributes<HTMLElement>,
+export interface FooterProps extends React.HTMLAttributes<HTMLElement>,
                                TextColorHelpersProps {}
 
-export default class Footer extends React.Component<FooterProps> {
-  render() {
+export class Footer extends React.Component<FooterProps> {
+  render () :React.ReactNode{
     return renderElement('footer', this.props, bulmaClassName.footer)
   }
 }

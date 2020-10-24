@@ -1,12 +1,12 @@
-import * as classnames from "classnames"
-import * as React from "react"
+import * as classnames from 'classnames'
+import * as React from 'react'
 
-import { bulmaClassName } from "./classNames"
+import { bulmaClassName } from './classNames'
 
-export interface RadioProps extends React.InputHTMLAttributes<HTMLInputElement> {}
+export type RadioProps = React.InputHTMLAttributes<HTMLInputElement>
 
 export class Radio extends React.Component<RadioProps> {
-  render() {
+  render (): React.ReactNode {
     const {
       children,
       className,
@@ -19,7 +19,7 @@ export class Radio extends React.Component<RadioProps> {
       >
         <input
           {...props}
-          type="radio"
+          type='radio'
         />
 
         {children}

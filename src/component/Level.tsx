@@ -1,59 +1,59 @@
-import * as React from "react"
+import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import { AlignementHelpersProps, TextColorHelpersProps } from "./modifiers"
+import { AlignementHelpersProps, TextColorHelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface LevelProps extends React.HTMLAttributes<HTMLDivElement>, TextColorHelpersProps {
-  isMobile?: boolean
+export interface LevelProps extends React.HTMLAttributes<HTMLDivElement>, TextColorHelpersProps {
+  isMobile?: boolean;
 }
 
-interface LevelItemProps extends React.HTMLAttributes<HTMLDivElement>,
+export interface LevelItemProps extends React.HTMLAttributes<HTMLDivElement>,
                                   AlignementHelpersProps,
                                   TextColorHelpersProps {
-  as?: 'a' | 'div'
+  as?: 'a' | 'div';
 }
 
-interface LevelLeftProps extends React.HTMLAttributes<HTMLDivElement>, TextColorHelpersProps {}
+export interface LevelLeftProps extends React.HTMLAttributes<HTMLDivElement>, TextColorHelpersProps {}
 
-interface LevelRightProps extends React.HTMLAttributes<HTMLDivElement>, TextColorHelpersProps {}
+export interface LevelRightProps extends React.HTMLAttributes<HTMLDivElement>, TextColorHelpersProps {}
 
 class LevelItem extends React.Component<LevelItemProps> {
-  static defaultProps ={as: 'div'}
+  static defaultProps ={ as: 'div' }
 
-  render() {
+  render (): React.ReactNode {
     const {
       as: tag,
       ...props
     } = this.props
 
-return renderElement(tag as string, props,bulmaClassName.levelItem)
+    return renderElement(tag as string, props, bulmaClassName.levelItem)
   }
 }
 
 class LevelLeft extends React.Component<LevelLeftProps> {
-  render() {
+  render (): React.ReactNode {
     return renderElement('div', this.props, bulmaClassName.levelLeft)
   }
 }
 
 class LevelRight extends React.Component<LevelRightProps> {
-  render() {
+  render (): React.ReactNode {
     return renderElement('div', this.props, bulmaClassName.levelRight)
   }
 }
 
-export default class Level extends React.Component<LevelProps> {
+export class Level extends React.Component<LevelProps> {
   static Item = LevelItem
   static Left = LevelLeft
   static Right = LevelRight
 
-  render() {
+  render () : React.ReactNode{
     const {
       isMobile,
-...props
+      ...props
     } = this.props
 
-return renderElement('nav', props, bulmaClassName.level, { isMobile })
+    return renderElement('nav', props, bulmaClassName.level, { isMobile })
   }
 }

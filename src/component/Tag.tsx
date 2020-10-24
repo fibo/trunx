@@ -1,20 +1,20 @@
-import * as React from "react"
+import * as React from 'react'
 
-import { bulmaClassName } from "./classNames"
-import { MainColorsProps, ShadeColorsProps, SizeProps } from "./modifiers"
+import { bulmaClassName } from './classNames'
+import { MainColorsProps, ShadeColorsProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface TagProps extends React.HTMLAttributes<HTMLSpanElement>,
+export interface TagProps extends React.HTMLAttributes<HTMLSpanElement>,
 MainColorsProps,
                             ShadeColorsProps,
-                            Pick<SizeProps, "isMedium" | "isLarge"> {
-  isDelete?: boolean
-  isNormal?: boolean
-  isRounded?: boolean
+                            Pick<SizeProps, 'isMedium' | 'isLarge'> {
+  isDelete?: boolean;
+  isNormal?: boolean;
+  isRounded?: boolean;
 }
 
-export default class Tag extends React.Component<TagProps> {
-  render() {
+export class Tag extends React.Component<TagProps> {
+  render () :React.ReactNode{
     const {
       href,
       onClick,
@@ -29,7 +29,7 @@ export default class Tag extends React.Component<TagProps> {
     return renderElement(tag, props, bulmaClassName.tag, {
       isDelete,
       isNormal,
-      isRounded,
+      isRounded
     })
   }
 }

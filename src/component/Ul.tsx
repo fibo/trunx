@@ -1,11 +1,11 @@
-import * as React from "react"
+import * as React from 'react'
 
 import { renderElement } from './renderElement'
 
-interface UlProps extends React.HTMLAttributes<HTMLUListElement> {}
+type UlProps = React.HTMLAttributes<HTMLUListElement>
 
-export  class Ul extends React.Component<UlProps> {
-  render() {
-return renderElement('ul', this.props)
+export class Ul extends React.Component<UlProps> {
+  render (): React.ReactNode {
+    return renderElement('ul', this.props)
   }
 }

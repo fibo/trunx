@@ -1,11 +1,6 @@
 import solidIcon from 'fa-svg-icon/solid'
 import React, { useState } from 'react'
 
-import Code from '../components/Code.js'
-import Nav from '../components/Nav.js'
-
-import indent from '../utils/indent.js'
-
 import {
   Box,
   Button,
@@ -23,9 +18,12 @@ import {
   Strong,
   Subtitle,
   Title
-} from '../../../index.js'
+} from '../../../index'
+import { Code } from '../components/Code'
+import { Nav } from '../components/Nav'
+import { indent } from '../utils/indent'
 
-export default function ComponentsModal ({ location: { pathname } }) {
+export function ComponentsModal ({ location: { pathname } }) {
   const [isExampleModalActive, setIsExampleModalActive] = useState(false)
   const [isImageModalActive, setIsImageModalActive] = useState(false)
   const [isCardModalActive, setIsCardModalActive] = useState(false)
