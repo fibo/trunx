@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 interface IModalProps {
     children?: React.ReactNode;
     className?: string;
@@ -30,19 +30,19 @@ interface IModalContentProps {
     className?: string;
 }
 declare class ModalCardBody extends React.Component<IModalCardBodyProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class ModalCardFoot extends React.Component<IModalCardFootProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class ModalCardHead extends React.Component<IModalCardHeadProps> {
-    render(): any;
+  render(): any;
 }
 declare class ModalCardTitle extends React.Component<IModalCardTitleProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class ModalBackground extends React.Component<IModalBackgroundProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class ModalCard extends React.Component<IModalCardProps> {
     static Body: typeof ModalCardBody;
@@ -52,10 +52,10 @@ declare class ModalCard extends React.Component<IModalCardProps> {
     render(): any;
 }
 declare class ModalClose extends React.Component<IModalCloseProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class ModalContent extends React.Component<IModalContentProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 export default class Modal extends React.Component<IModalProps> {
     static Background: typeof ModalBackground;
@@ -64,4 +64,4 @@ export default class Modal extends React.Component<IModalProps> {
     static Content: typeof ModalContent;
     render(): JSX.Element;
 }
-export {};
+export {}

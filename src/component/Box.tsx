@@ -1,7 +1,7 @@
-import * as React from "react"
+import * as React from 'react'
 
-import { bulmaClassName } from "./classNames"
-import { BackgroundColorHelpersProps, TextColorHelpersProps } from "./modifiers"
+import { bulmaClassName } from './classNames'
+import { BackgroundColorHelpersProps, TextColorHelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface BoxProps
@@ -11,7 +11,7 @@ extends React.HTMLAttributes<HTMLDivElement>,
 {}
 
 export class Box extends React.Component<BoxProps> {
-  render() {
+  render () {
     return renderElement('div', this.props, bulmaClassName.box)
   }
 }

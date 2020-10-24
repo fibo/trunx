@@ -1,10 +1,5 @@
 import React, { Component } from 'react'
 
-import Code from '../components/Code.js'
-import Nav from '../components/Nav.js'
-
-import indent from '../utils/indent.js'
-
 import {
   Buttons,
   Button,
@@ -14,7 +9,10 @@ import {
   Section,
   Subtitle,
   Title
-} from '../../../index.js'
+} from '../../../index'
+import { Code } from '../components/Code'
+import { Nav } from '../components/Nav'
+import { indent } from '../utils/indent'
 
 class ClassicNavbarExample extends Component {
   constructor (props) {
@@ -124,7 +122,7 @@ const NavbarExample = (props) => (
   </Navbar>
 )
 
-export default function ComponentsNavbar ({
+export function ComponentsNavbar ({
   location: { pathname }
 }) {
   return (

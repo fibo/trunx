@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 interface IPaginationProps {
     children?: React.ReactNode;
     className?: string;
@@ -24,19 +24,19 @@ interface IPaginationPreviousProps {
     className?: string;
 }
 declare class PaginationEllipsis extends React.Component<IPaginationEllipsisProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class PaginationLink extends React.Component<IPaginationLinkProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class PaginationList extends React.Component<IPaginationListProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class PaginationNext extends React.Component<IPaginationNextProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class PaginationPrevious extends React.Component<IPaginationPreviousProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 export default class Pagination extends React.Component<IPaginationProps> {
     static Ellipsis: typeof PaginationEllipsis;
@@ -46,4 +46,4 @@ export default class Pagination extends React.Component<IPaginationProps> {
     static Previous: typeof PaginationPrevious;
     render(): JSX.Element;
 }
-export {};
+export {}

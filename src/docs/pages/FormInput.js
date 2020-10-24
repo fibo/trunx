@@ -1,11 +1,6 @@
 import solidIcon from 'fa-svg-icon/solid'
 import React, { useEffect, useRef, useState } from 'react'
 
-import Code from '../components/Code.js'
-import Nav from '../components/Nav.js'
-
-import indent from '../utils/indent.js'
-
 import {
   Button,
   Column,
@@ -21,6 +16,9 @@ import {
   Subtitle,
   Title
 } from '../../../index.js'
+import { Code } from '../components/Code'
+import { Nav } from '../components/Nav'
+import { indent } from '../utils/indent'
 
 function ClickToEditExample () {
   const initialValue = 'Click to edit'
@@ -35,7 +33,8 @@ function ClickToEditExample () {
     }
   }, [editing, inputRef])
 
-  return editing ? (
+  return editing ?
+    (
     <Input
       inputRef={inputRef}
       isPrimary
@@ -53,7 +52,7 @@ function ClickToEditExample () {
   )
 }
 
-export default function FormInput () {
+export function FormInput () {
   return (
     <>
       <Nav />

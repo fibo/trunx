@@ -1,16 +1,16 @@
-import * as React from "react"
+import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
 import { renderElement } from './renderElement'
 
-interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
-  isFluid?: boolean
-  isFullhd?: boolean
-  isWidescreen?: boolean
+export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+  isFluid?: boolean;
+  isFullhd?: boolean;
+  isWidescreen?: boolean;
 }
 
-export default class Container extends React.Component<ContainerProps> {
-  render() {
+export class Container extends React.Component<ContainerProps> {
+  render (): React.ReactNode {
     const {
       isFluid,
       isFullhd,
@@ -18,6 +18,6 @@ export default class Container extends React.Component<ContainerProps> {
       ...props
     } = this.props
 
-    return renderElement('div', props, bulmaClassName.container, {isFluid, isFullhd, isWidescreen})
+    return renderElement('div', props, bulmaClassName.container, { isFluid, isFullhd, isWidescreen })
   }
 }

@@ -1,5 +1,6 @@
-import * as React from "react";
-import { ISizeProps } from "./modifiers";
+import * as React from 'react'
+
+import { ISizeProps } from './modifiers'
 interface IControlProps extends ISizeProps, React.HTMLAttributes<HTMLDivElement> {
     hasIconsLeft?: boolean;
     hasIconsRight?: boolean;
@@ -7,6 +8,6 @@ interface IControlProps extends ISizeProps, React.HTMLAttributes<HTMLDivElement>
     isLoading?: boolean;
 }
 export default class Control extends React.Component<IControlProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}

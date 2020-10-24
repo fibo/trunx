@@ -1,5 +1,6 @@
-import * as React from "react";
-import { IBackgroundColorHelpersProps, ISizeProps, ITextColorHelpersProps } from "./modifiers";
+import * as React from 'react'
+
+import { IBackgroundColorHelpersProps, ISizeProps, ITextColorHelpersProps } from './modifiers'
 interface IIconProps extends IBackgroundColorHelpersProps, ITextColorHelpersProps, ISizeProps {
     children?: React.ReactNode;
     className?: string;
@@ -25,10 +26,11 @@ declare class IconSvg extends React.Component<IIconSvgProps> {
             viewBox: string;
         };
     };
+
     render(): JSX.Element;
 }
 export default class Icon extends React.Component<IIconProps> {
     static Svg: typeof IconSvg;
     render(): JSX.Element;
 }
-export {};
+export {}

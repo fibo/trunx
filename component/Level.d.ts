@@ -1,5 +1,6 @@
-import * as React from "react";
-import { IAlignementHelpersProps, ITextColorHelpersProps } from "./modifiers";
+import * as React from 'react'
+
+import { IAlignementHelpersProps, ITextColorHelpersProps } from './modifiers'
 interface ILevelItemProps extends React.HTMLAttributes<HTMLDivElement>, IAlignementHelpersProps, ITextColorHelpersProps {
     tag?: 'a' | 'div';
 }
@@ -17,13 +18,13 @@ interface ILevelRightProps extends ITextColorHelpersProps {
     className?: string;
 }
 declare class LevelItem extends React.Component<ILevelItemProps> {
-    render(): React.DetailedReactHTMLElement<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+  render(): React.DetailedReactHTMLElement<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 }
 declare class LevelLeft extends React.Component<ILevelLeftProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 declare class LevelRight extends React.Component<ILevelRightProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
 export default class Level extends React.Component<ILevelProps> {
     static Item: typeof LevelItem;
@@ -31,4 +32,4 @@ export default class Level extends React.Component<ILevelProps> {
     static Right: typeof LevelRight;
     render(): JSX.Element;
 }
-export {};
+export {}

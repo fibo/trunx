@@ -1,5 +1,6 @@
-import * as React from "react";
-import { ITextColorHelpersProps } from "./modifiers";
+import * as React from 'react'
+
+import { ITextColorHelpersProps } from './modifiers'
 interface ISubtitleProps extends ITextColorHelpersProps {
     children?: React.ReactNode;
     className?: string;
@@ -11,6 +12,6 @@ interface ISubtitleProps extends ITextColorHelpersProps {
     is6?: boolean;
 }
 export default class Subtitle extends React.Component<ISubtitleProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}

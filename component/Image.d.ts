@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 export interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     className?: string;
     is1by1?: boolean;
@@ -25,5 +25,5 @@ export interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     isSquare?: boolean;
 }
 export default class Image extends React.Component<IImageProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }

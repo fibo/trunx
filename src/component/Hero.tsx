@@ -1,49 +1,49 @@
-import * as React from "react"
+import * as React from 'react'
 
-import { bulmaClassName }from './classNames'
-import { MainColorsProps } from "./modifiers"
+import { bulmaClassName } from './classNames'
+import { MainColorsProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface HeroProps extends React.HTMLAttributes<HTMLDivElement>, MainColorsProps {
-  isBold?: boolean
-  isDark?: boolean
-  isFullheightWithNavbar?: boolean
-  isFullheight?: boolean
-  isLarge?: boolean
-  isLight?: boolean
-  isMedium?: boolean
+export interface HeroProps extends React.HTMLAttributes<HTMLDivElement>, MainColorsProps {
+  isBold?: boolean;
+  isDark?: boolean;
+  isFullheightWithNavbar?: boolean;
+  isFullheight?: boolean;
+  isLarge?: boolean;
+  isLight?: boolean;
+  isMedium?: boolean;
 }
 
-interface HeroBodyProps extends React.HTMLAttributes<HTMLDivElement> {}
+type HeroBodyProps = React.HTMLAttributes<HTMLDivElement>
 
-interface HeroFootProps extends React.HTMLAttributes<HTMLDivElement> {}
+type HeroFootProps = React.HTMLAttributes<HTMLDivElement>
 
-interface HeroHeadProps  extends React.HTMLAttributes<HTMLDivElement> {}
+type HeroHeadProps = React.HTMLAttributes<HTMLDivElement>
 
 class HeroBody extends React.Component<HeroBodyProps> {
-  render() {
+  render ():React.ReactNode {
     return renderElement('div', this.props, bulmaClassName.heroBody)
   }
 }
 
 class HeroFoot extends React.Component<HeroFootProps> {
-  render() {
+  render ():React.ReactNode {
     return renderElement('div', this.props, bulmaClassName.heroFoot)
   }
 }
 
 class HeroHead extends React.Component<HeroHeadProps> {
-  render() {
+  render ():React.ReactNode {
     return renderElement('div', this.props, bulmaClassName.heroHead)
   }
 }
 
-export default class Hero extends React.Component<HeroProps> {
+export class Hero extends React.Component<HeroProps> {
   static Body = HeroBody
   static Foot = HeroFoot
   static Head = HeroHead
 
-  render () {
+  render ():React.ReactNode {
     const {
       isBold,
       isDark,
@@ -51,16 +51,16 @@ export default class Hero extends React.Component<HeroProps> {
       isFullheightWithNavbar,
       isLarge,
       isMedium,
-...props
+      ...props
     } = this.props
 
-renderElement('section', props, bulmaClassName.hero, {
+    renderElement('section', props, bulmaClassName.hero, {
       isBold,
       isDark,
       isFullheight,
       isFullheightWithNavbar,
       isLarge,
-      isMedium,
-})
+      isMedium
+    })
   }
 }

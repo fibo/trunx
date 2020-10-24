@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 interface IColumnProps {
     className?: string;
     isCentered?: boolean;
@@ -310,6 +310,6 @@ interface IColumnProps {
     isOffsetFourFifthsWidescreen?: boolean;
 }
 export default class Column extends React.Component<IColumnProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}

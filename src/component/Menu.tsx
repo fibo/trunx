@@ -1,31 +1,31 @@
-import * as React from "react"
+import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
 import { renderElement } from './renderElement'
 
-interface MenuProps extends React.HTMLAttributes<HTMLElement> {}
+export type MenuProps = React.HTMLAttributes<HTMLElement>
 
-interface MenuLabelProps  extends React.HTMLAttributes<HTMLParagraphElement> {}
+export type MenuLabelProps = React.HTMLAttributes<HTMLParagraphElement>
 
-interface MenuListProps  extends React.HTMLAttributes<HTMLUListElement> {}
+export type MenuListProps = React.HTMLAttributes<HTMLUListElement>
 
 class MenuLabel extends React.Component<MenuLabelProps> {
-  render() {
+  render () :React.ReactNode{
     return renderElement('p', this.props, bulmaClassName.menuLabel)
   }
 }
 
 class MenuList extends React.Component<MenuListProps> {
-  render() {
+  render ():React.ReactNode {
     return renderElement('ul', this.props, bulmaClassName.menuList)
   }
 }
 
-export default class Menu extends React.Component<MenuProps> {
+export class Menu extends React.Component<MenuProps> {
   static Label = MenuLabel
   static List = MenuList
 
-  render() {
+  render ():React.ReactNode {
     return renderElement('aside', this.props, bulmaClassName.menu)
   }
 }

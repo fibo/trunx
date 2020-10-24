@@ -1,11 +1,6 @@
 import solidIcon from 'fa-svg-icon/solid'
 import React from 'react'
 
-import Code from '../components/Code.js'
-import Nav from '../components/Nav.js'
-
-import indent from '../utils/indent.js'
-
 import {
   Button,
   Checkbox,
@@ -22,9 +17,12 @@ import {
   Textarea,
   Title,
   Subtitle
-} from '../../../index.js'
+} from '../../../index'
+import { Code } from '../components/Code'
+import { Nav } from '../components/Nav'
+import { indent } from '../utils/indent'
 
-export default function LayoutMediaObject ({
+export function LayoutMediaObject ({
   location: { pathname }
 }) {
   return (

@@ -1,5 +1,6 @@
-import * as React from "react";
-import { ISizeProps } from "./modifiers";
+import * as React from 'react'
+
+import { ISizeProps } from './modifiers'
 interface ITabsProps extends ISizeProps {
     children?: React.ReactNode;
     className?: string;
@@ -11,6 +12,6 @@ interface ITabsProps extends ISizeProps {
     isToggleRounded?: boolean;
 }
 export default class Tabs extends React.Component<ITabsProps> {
-    render(): JSX.Element;
+  render(): JSX.Element;
 }
-export {};
+export {}
