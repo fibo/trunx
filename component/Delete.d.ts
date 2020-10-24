@@ -1,11 +1,8 @@
 import * as React from 'react'
-
-import { ISizeProps } from './modifiers'
-interface IDeleteProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ISizeProps {
-    children?: React.ReactNode;
-    className?: string;
+import { SizeProps } from './modifiers'
+export interface DeleteProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    SizeProps {}
+export declare class Delete extends React.Component<DeleteProps> {
+  render(): React.ReactNode
 }
-export default class Delete extends React.Component<IDeleteProps> {
-  render(): JSX.Element;
-}
-export {}

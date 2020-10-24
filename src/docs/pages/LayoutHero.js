@@ -13,14 +13,12 @@ import {
   Tabs,
   Title,
   Subtitle
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function LayoutHero ({
-  location: { pathname }
-}) {
+export function LayoutHero ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -28,9 +26,7 @@ export function LayoutHero ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Hero
-            </Title>
+            <Title is2>Hero</Title>
 
             <Subtitle>
               An imposing <b>hero</b> banner to showcase something
@@ -39,26 +35,28 @@ export function LayoutHero ({
             <hr />
 
             <p>
-              The hero component allows you to add a <b>full width banner</b> to your webpage, which can optionally cover the full height of the page as well.
+              The hero component allows you to add a <b>full width banner</b> to
+              your webpage, which can optionally cover the full height of the
+              page as well.
             </p>
 
-            <p>
-              The basic requirement of this component are:
-            </p>
+            <p>The basic requirement of this component are:</p>
 
             <ul>
               <li>
                 <code>Hero</code> as the main container
                 <ul>
                   <li>
-                    <code>Hero.Body</code> as a direct child, in which you can put all your content
+                    <code>Hero.Body</code> as a direct child, in which you can
+                    put all your content
                   </li>
                 </ul>
               </li>
             </ul>
 
             <p>
-              For the full height hero to work, you will also need a <code>Hero.Head</code> and a <code>Hero.Foot</code> component.
+              For the full height hero to work, you will also need a{' '}
+              <code>Hero.Head</code> and a <code>Hero.Foot</code> component.
             </p>
           </Content>
         </Container>
@@ -93,12 +91,11 @@ export function LayoutHero ({
       <Section>
         <Container>
           <Content>
-            <Title is4>
-              Colors
-            </Title>
+            <Title is4>Colors</Title>
 
             <p>
-              As with buttons, you can choose one of the <b>7 different colors</b>:
+              As with buttons, you can choose one of the{' '}
+              <b>7 different colors</b>:
             </p>
           </Content>
         </Container>
@@ -187,12 +184,11 @@ export function LayoutHero ({
       <Section>
         <Container>
           <Content>
-            <Title is4>
-              Gradients
-            </Title>
+            <Title is4>Gradients</Title>
 
             <p>
-              By adding the <code>isBold</code> prop, you can generate a subtle <b>gradient</b>.
+              By adding the <code>isBold</code> prop, you can generate a subtle{' '}
+              <b>gradient</b>.
             </p>
           </Content>
         </Container>
@@ -281,13 +277,9 @@ export function LayoutHero ({
       <Section>
         <Container>
           <Content>
-            <Title is4>
-              Full height hero
-            </Title>
+            <Title is4>Full height hero</Title>
 
-            <Subtitle is6>
-              And vertically centered
-            </Subtitle>
+            <Subtitle is6>And vertically centered</Subtitle>
 
             <p>
               You can split the hero in <b>3 vertical parts</b>:
@@ -314,7 +306,8 @@ export function LayoutHero ({
             </ul>
 
             <p>
-              In the following code samples, the <code>brandsIcon</code> variable is created with
+              In the following code samples, the <code>brandsIcon</code>{' '}
+              variable is created with
             </p>
 
             <Container>

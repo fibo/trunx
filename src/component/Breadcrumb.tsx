@@ -1,40 +1,32 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
 
-import {
-  bulmaClassName,
-  trunxPropsToClassnamesObject
-} from './classNames'
+import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
 import {
   SizeProps,
   extractModifiersProps,
   modifierPropsToClassnamesObject
 } from './modifiers'
 
-export interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement>,
-                                         SizeProps
-{
-  hasArrowSeparator?: boolean;
-  hasBulletSeparator?: boolean;
-  hasDotSeparator?: boolean;
-  hasSuccedesSeparator?: boolean;
-  isCentered?: boolean;
-  isRight?: boolean;
+export interface BreadcrumbProps
+  extends React.HTMLAttributes<HTMLElement>,
+    SizeProps {
+  hasArrowSeparator?: boolean
+  hasBulletSeparator?: boolean
+  hasDotSeparator?: boolean
+  hasSuccedesSeparator?: boolean
+  isCentered?: boolean
+  isRight?: boolean
 }
 
-export interface BreadcrumbItemProps extends React.LiHTMLAttributes<HTMLLIElement>
-{
-  isActive?: boolean;
+export interface BreadcrumbItemProps
+  extends React.LiHTMLAttributes<HTMLLIElement> {
+  isActive?: boolean
 }
 
 class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
   render (): React.ReactNode {
-    const {
-      children,
-      className,
-      isActive,
-      ...props
-    } = this.props
+    const { children, className, isActive, ...props } = this.props
 
     return (
       <li
@@ -53,7 +45,7 @@ class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
 export class Breadcrumb extends React.Component<BreadcrumbProps> {
   static Item = BreadcrumbItem
 
-  render () :React.RactNode{
+  render (): React.ReactNode {
     const [
       modifiersProps,
       {
@@ -66,7 +58,8 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
         isCentered,
         isRight,
         ...props
-      }] = extractModifiersProps(this.props)
+      }
+    ] = extractModifiersProps(this.props)
 
     return (
       <nav
@@ -86,9 +79,7 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
         )}
         {...props}
       >
-        <ul>
-          {children}
-        </ul>
+        <ul>{children}</ul>
       </nav>
     )
   }

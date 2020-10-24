@@ -1,36 +1,39 @@
 import * as React from 'react'
-
-import { IBackgroundColorHelpersProps, ISizeProps, ITextColorHelpersProps } from './modifiers'
-interface IIconProps extends IBackgroundColorHelpersProps, ITextColorHelpersProps, ISizeProps {
-    children?: React.ReactNode;
-    className?: string;
-    isLeft?: boolean;
-    isRight?: boolean;
-    onClick?: (event: React.MouseEvent<HTMLSpanElement>) => void;
+import {
+  BackgroundColorHelpersProps,
+  SizeProps,
+  TextColorHelpersProps,
+} from './modifiers'
+export interface IconProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    BackgroundColorHelpersProps,
+    TextColorHelpersProps,
+    SizeProps {
+  isLeft?: boolean
+  isRight?: boolean
 }
-interface IIconSvgProps {
-    className?: string;
-    fill?: string;
-    icon?: {
-        d: string;
-        viewBox: string;
-    };
-    size?: string;
+export interface IconSvgProps {
+  className?: string
+  fill?: string
+  icon?: {
+    d: string
+    viewBox: string
+  }
+  size?: string
 }
-declare class IconSvg extends React.Component<IIconSvgProps> {
-    static defaultProps: {
-        fill: string;
-        size: string;
-        icon: {
-            d: string;
-            viewBox: string;
-        };
-    };
-
-    render(): JSX.Element;
+declare class IconSvg extends React.Component<IconSvgProps> {
+  static defaultProps: {
+    fill: string
+    size: string
+    icon: {
+      d: string
+      viewBox: string
+    }
+  }
+  render(): React.ReactNode
 }
-export default class Icon extends React.Component<IIconProps> {
-    static Svg: typeof IconSvg;
-    render(): JSX.Element;
+export declare class Icon extends React.Component<IconProps> {
+  static Svg: typeof IconSvg
+  render(): React.ReactNode
 }
 export {}

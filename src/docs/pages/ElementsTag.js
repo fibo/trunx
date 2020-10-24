@@ -13,14 +13,12 @@ import {
   Tag,
   Tags,
   Title
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ElementsTag ({
-  location: { pathname }
-}) {
+export function ElementsTag ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -28,9 +26,7 @@ export function ElementsTag ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Tags
-            </Title>
+            <Title is2>Tags</Title>
 
             <Subtitle>
               Small <B>tag labels</B> to insert anywhere
@@ -58,13 +54,12 @@ export function ElementsTag ({
 
             <hr />
 
-            <Title is4>
-              Colors
-            </Title>
+            <Title is4>Colors</Title>
 
             <Columns>
               <Column is4>
-                Like with buttons, there are <B>10 different</B> <B>colors</B> available.
+                Like with buttons, there are <B>10 different</B> <B>colors</B>{' '}
+                available.
               </Column>
 
               <Column is2>
@@ -134,27 +129,39 @@ export function ElementsTag ({
 
               <Column is2>
                 <Field>
-                  <Tag isPrimary isLight>Primary</Tag>
+                  <Tag isPrimary isLight>
+                    Primary
+                  </Tag>
                 </Field>
 
                 <Field>
-                  <Tag isLink isLight>Link</Tag>
+                  <Tag isLink isLight>
+                    Link
+                  </Tag>
                 </Field>
 
                 <Field>
-                  <Tag isInfo isLight>Info</Tag>
+                  <Tag isInfo isLight>
+                    Info
+                  </Tag>
                 </Field>
 
                 <Field>
-                  <Tag isSuccess isLight>Success</Tag>
+                  <Tag isSuccess isLight>
+                    Success
+                  </Tag>
                 </Field>
 
                 <Field>
-                  <Tag isWarning isLight>Warning</Tag>
+                  <Tag isWarning isLight>
+                    Warning
+                  </Tag>
                 </Field>
 
                 <Field>
-                  <Tag isDanger isLight>Danger</Tag>
+                  <Tag isDanger isLight>
+                    Danger
+                  </Tag>
                 </Field>
               </Column>
 
@@ -173,9 +180,7 @@ export function ElementsTag ({
             </Columns>
             <hr />
 
-            <Title is4>
-              Sizes
-            </Title>
+            <Title is4>Sizes</Title>
 
             <Columns>
               <Column is4>
@@ -185,23 +190,31 @@ export function ElementsTag ({
                   </P>
 
                   <P>
-                    While the default size is the <B>normal</B> one, the <code>isNormal</code> modifier prop exists in case you need to reset the tag to its normal size.
-                    The tag comes in <B>3 different</B> sizes.
+                    While the default size is the <B>normal</B> one, the{' '}
+                    <code>isNormal</code> modifier prop exists in case you need
+                    to reset the tag to its normal size. The tag comes in{' '}
+                    <B>3 different</B> sizes.
                   </P>
                 </Content>
               </Column>
 
               <Column is2>
                 <Field>
-                  <Tag isLink isNormal>Normal</Tag>
+                  <Tag isLink isNormal>
+                    Normal
+                  </Tag>
                 </Field>
 
                 <Field>
-                  <Tag isPrimary isMedium>Medium</Tag>
+                  <Tag isPrimary isMedium>
+                    Medium
+                  </Tag>
                 </Field>
 
                 <Field>
-                  <Tag isInfo isLarge>Large</Tag>
+                  <Tag isInfo isLarge>
+                    Large
+                  </Tag>
                 </Field>
               </Column>
 
@@ -265,7 +278,8 @@ export function ElementsTag ({
             </Columns>
 
             <P>
-              You can however keep the original size of a <B>subset</B> of tags, simply by applying one of its modifier class:
+              You can however keep the original size of a <B>subset</B> of tags,
+              simply by applying one of its modifier class:
             </P>
 
             <Columns>
@@ -296,12 +310,11 @@ export function ElementsTag ({
 
             <hr />
 
-            <Title is4>
-              List of tags
-            </Title>
+            <Title is4>List of tags</Title>
 
             <P>
-              You can <B>attach tags together</B> with the <code>hasAddons</code> modifier.
+              You can <B>attach tags together</B> with the{' '}
+              <code>hasAddons</code> modifier.
             </P>
 
             <Columns>

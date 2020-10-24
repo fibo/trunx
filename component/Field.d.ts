@@ -1,32 +1,26 @@
 import * as React from 'react'
-
-import { IHelpersProps, ISizeProps } from './modifiers'
-interface IFieldProps extends IHelpersProps {
-    children?: React.ReactNode;
-    className?: string;
-    hasAddons?: boolean;
-    hasAddonsCentered?: boolean;
-    isGrouped?: boolean;
-    isGroupedMultiline?: boolean;
-    isHorizontal?: boolean;
+import { HelpersProps, SizeProps } from './modifiers'
+interface FieldProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps,
+    SizeProps {
+  hasAddons?: boolean
+  hasAddonsCentered?: boolean
+  isGrouped?: boolean
+  isGroupedMultiline?: boolean
+  isHorizontal?: boolean
 }
-interface IFieldBodyProps {
-    children?: React.ReactNode;
-    className?: string;
+declare type FieldBodyProps = React.HTMLAttributes<HTMLDivElement>
+declare type FieldLabelProps = React.HTMLAttributes<HTMLDivElement>
+declare class FieldBody extends React.Component<FieldBodyProps> {
+  render(): React.ReactNode
 }
-interface IFieldLabelProps extends ISizeProps {
-    children?: React.ReactNode;
-    className?: string;
+declare class FieldLabel extends React.Component<FieldLabelProps> {
+  render(): React.ReactNode
 }
-declare class FieldBody extends React.Component<IFieldBodyProps> {
-  render(): JSX.Element;
-}
-declare class FieldLabel extends React.Component<IFieldLabelProps> {
-  render(): JSX.Element;
-}
-export default class Field extends React.Component<IFieldProps> {
-    static Body: typeof FieldBody;
-    static Label: typeof FieldLabel;
-    render(): JSX.Element;
+export declare class Field extends React.Component<FieldProps> {
+  static Body: typeof FieldBody
+  static Label: typeof FieldLabel
+  render(): React.ReactNode
 }
 export {}

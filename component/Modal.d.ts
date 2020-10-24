@@ -1,67 +1,54 @@
 import * as React from 'react'
-interface IModalProps {
-    children?: React.ReactNode;
-    className?: string;
-    isActive?: boolean;
+export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
+  isActive?: boolean
 }
-interface IModalBackgroundProps {
-    className?: string;
-    onClick?: React.MouseEventHandler<HTMLDivElement>;
+export declare type ModalBackgroundProps = React.HTMLAttributes<HTMLDivElement>
+export declare type ModalCardProps = React.HTMLAttributes<HTMLDivElement>
+export declare type ModalCardBodyProps = React.HTMLAttributes<HTMLElement>
+export declare type ModalCardFootProps = React.HTMLAttributes<HTMLElement>
+export declare type ModalCardHeadProps = React.HTMLAttributes<HTMLElement>
+export declare type ModalCardTitleProps = React.HTMLAttributes<HTMLElement>
+export interface ModalCloseProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  isLarge?: boolean
 }
-interface IModalCardProps extends React.HTMLAttributes<HTMLDivElement> {
+export declare type ModalContentProps = React.HTMLAttributes<HTMLDivElement>
+declare class ModalCardBody extends React.Component<ModalCardBodyProps> {
+  render(): React.ReactNode
 }
-interface IModalCardBodyProps extends React.HTMLAttributes<HTMLElement> {
+declare class ModalCardFoot extends React.Component<ModalCardFootProps> {
+  render(): React.ReactNode
 }
-interface IModalCardFootProps extends React.HTMLAttributes<HTMLElement> {
+declare class ModalCardHead extends React.Component<ModalCardHeadProps> {
+  render(): React.ReactNode
 }
-interface IModalCardHeadProps extends React.HTMLAttributes<HTMLElement> {
+declare class ModalCardTitle extends React.Component<ModalCardTitleProps> {
+  render(): React.ReactNode
 }
-interface IModalCardTitleProps {
-    children?: React.ReactNode;
-    className?: string;
+declare class ModalBackground extends React.Component<ModalBackgroundProps> {
+  render(): React.ReactNode
 }
-interface IModalCloseProps {
-    className?: string;
-    isLarge?: boolean;
-    onClick?: React.MouseEventHandler<HTMLButtonElement>;
+declare class ModalCard extends React.Component<ModalCardProps> {
+  static Body: typeof ModalCardBody
+  static Foot: typeof ModalCardFoot
+  static Head: typeof ModalCardHead
+  static Title: typeof ModalCardTitle
+  render(): React.ReactNode
 }
-interface IModalContentProps {
-    children?: React.ReactNode;
-    className?: string;
+declare class ModalClose extends React.Component<ModalCloseProps> {
+  static defaultProps: {
+    'aria-label': string
+  }
+  render(): React.ReactNode
 }
-declare class ModalCardBody extends React.Component<IModalCardBodyProps> {
-  render(): JSX.Element;
+declare class ModalContent extends React.Component<ModalContentProps> {
+  render(): React.ReactNode
 }
-declare class ModalCardFoot extends React.Component<IModalCardFootProps> {
-  render(): JSX.Element;
-}
-declare class ModalCardHead extends React.Component<IModalCardHeadProps> {
-  render(): any;
-}
-declare class ModalCardTitle extends React.Component<IModalCardTitleProps> {
-  render(): JSX.Element;
-}
-declare class ModalBackground extends React.Component<IModalBackgroundProps> {
-  render(): JSX.Element;
-}
-declare class ModalCard extends React.Component<IModalCardProps> {
-    static Body: typeof ModalCardBody;
-    static Foot: typeof ModalCardFoot;
-    static Head: typeof ModalCardHead;
-    static Title: typeof ModalCardTitle;
-    render(): any;
-}
-declare class ModalClose extends React.Component<IModalCloseProps> {
-  render(): JSX.Element;
-}
-declare class ModalContent extends React.Component<IModalContentProps> {
-  render(): JSX.Element;
-}
-export default class Modal extends React.Component<IModalProps> {
-    static Background: typeof ModalBackground;
-    static Card: typeof ModalCard;
-    static Close: typeof ModalClose;
-    static Content: typeof ModalContent;
-    render(): JSX.Element;
+export declare class Modal extends React.Component<ModalProps> {
+  static Background: typeof ModalBackground
+  static Card: typeof ModalCard
+  static Close: typeof ModalClose
+  static Content: typeof ModalContent
+  render(): React.ReactNode
 }
 export {}

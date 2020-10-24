@@ -1,11 +1,10 @@
 import * as React from 'react'
-
-import { ISizeProps, ITextColorHelpersProps } from './modifiers'
-interface ILabelProps extends ISizeProps, ITextColorHelpersProps {
-    children?: React.ReactNode;
-    className?: string;
-}
-export default class Label extends React.Component<ILabelProps> {
-  render(): JSX.Element;
+import { SizeProps, TextColorHelpersProps } from './modifiers'
+interface LabelProps
+  extends React.LabelHTMLAttributes<HTMLLabelElement>,
+    SizeProps,
+    TextColorHelpersProps {}
+export declare class Label extends React.Component<LabelProps> {
+  render(): React.ReactNode
 }
 export {}

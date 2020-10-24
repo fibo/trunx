@@ -24,23 +24,10 @@
     "test:types": "tsc --declaration --project . --noemit",
     "tsc": "tsc --declaration --project ."
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "ie 11",
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "lint-staged": {
     "**/*.{js,scss,ts,tsx}": [
       "prettier --write",
-      "eslint --ext .ts,.tsx,.js,.jsx --fix"
+      "eslint --quiet --ext .ts,.tsx,.js,.jsx --fix"
     ],
     "*.{json,md}": "prettier --write"
   },

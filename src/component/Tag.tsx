@@ -4,17 +4,18 @@ import { bulmaClassName } from './classNames'
 import { MainColorsProps, ShadeColorsProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-export interface TagProps extends React.HTMLAttributes<HTMLSpanElement>,
-MainColorsProps,
-                            ShadeColorsProps,
-                            Pick<SizeProps, 'isMedium' | 'isLarge'> {
-  isDelete?: boolean;
-  isNormal?: boolean;
-  isRounded?: boolean;
+export interface TagProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    MainColorsProps,
+    ShadeColorsProps,
+    Pick<SizeProps, 'isMedium' | 'isLarge'> {
+  isDelete?: boolean
+  isNormal?: boolean
+  isRounded?: boolean
 }
 
 export class Tag extends React.Component<TagProps> {
-  render () :React.ReactNode{
+  render (): React.ReactNode {
     const {
       href,
       onClick,
@@ -24,7 +25,7 @@ export class Tag extends React.Component<TagProps> {
       ...props
     } = this.props
 
-    const tag = (href || onClick) ? 'a' : 'span'
+    const tag = href || onClick ? 'a' : 'span'
 
     return renderElement(tag, props, bulmaClassName.tag, {
       isDelete,

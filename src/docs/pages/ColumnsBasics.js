@@ -9,14 +9,12 @@ import {
   Section,
   Subtitle,
   Title
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ColumnBasics ({
-  location: { pathname }
-}) {
+export function ColumnBasics ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -24,13 +22,9 @@ export function ColumnBasics ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Columns powered by Flexbox
-            </Title>
+            <Title is2>Columns powered by Flexbox</Title>
 
-            <Subtitle>
-              A simple way to build responsive columns
-            </Subtitle>
+            <Subtitle>A simple way to build responsive columns</Subtitle>
 
             <hr />
 
@@ -39,13 +33,18 @@ export function ColumnBasics ({
             </p>
 
             <ol>
-              <li>Add a <code>Columns</code> component as container.</li>
+              <li>
+                Add a <code>Columns</code> component as container.
+              </li>
 
-              <li>Add as many <code>Column</code> components as children.</li>
+              <li>
+                Add as many <code>Column</code> components as children.
+              </li>
             </ol>
 
             <p>
-              Each column will have an <b>equal width</b>, no matter the number of columns.
+              Each column will have an <b>equal width</b>, no matter the number
+              of columns.
             </p>
 
             <Columns>

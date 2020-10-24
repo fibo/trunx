@@ -1,42 +1,31 @@
 import * as React from 'react'
-interface IPanelProps {
-    children?: React.ReactNode;
-    className?: string;
+export declare type PanelProps = React.HTMLAttributes<HTMLElement>
+export interface PanelBlockProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  isActive?: boolean
 }
-interface IPanelBlockProps {
-    children?: React.ReactNode;
-    className?: string;
-    isActive?: boolean;
+export declare type PanelHeadingProps = React.HTMLAttributes<
+  HTMLParagraphElement
+>
+export declare type PanelIconProps = React.HTMLAttributes<HTMLSpanElement>
+export declare type PanelTabsProps = React.HTMLAttributes<HTMLParagraphElement>
+declare class PanelBlock extends React.Component<PanelBlockProps> {
+  render(): React.ReactNode
 }
-interface IPanelHeadingProps {
-    children?: React.ReactNode;
-    className?: string;
+declare class PanelHeading extends React.Component<PanelHeadingProps> {
+  render(): React.ReactNode
 }
-interface IPanelIconProps {
-    children?: React.ReactNode;
-    className?: string;
+declare class PanelIcon extends React.Component<PanelIconProps> {
+  render(): React.ReactNode
 }
-interface IPanelTabsProps {
-    children?: React.ReactNode;
-    className?: string;
+declare class PanelTabs extends React.Component<PanelTabsProps> {
+  render(): React.ReactNode
 }
-declare class PanelBlock extends React.Component<IPanelBlockProps> {
-  render(): JSX.Element;
-}
-declare class PanelHeading extends React.Component<IPanelHeadingProps> {
-  render(): JSX.Element;
-}
-declare class PanelIcon extends React.Component<IPanelIconProps> {
-  render(): JSX.Element;
-}
-declare class PanelTabs extends React.Component<IPanelTabsProps> {
-  render(): JSX.Element;
-}
-export default class Panel extends React.Component<IPanelProps> {
-    static Block: typeof PanelBlock;
-    static Heading: typeof PanelHeading;
-    static Icon: typeof PanelIcon;
-    static Tabs: typeof PanelTabs;
-    render(): JSX.Element;
+export declare class Panel extends React.Component<PanelProps> {
+  static Block: typeof PanelBlock
+  static Heading: typeof PanelHeading
+  static Icon: typeof PanelIcon
+  static Tabs: typeof PanelTabs
+  render(): React.ReactNode
 }
 export {}

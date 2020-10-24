@@ -9,14 +9,12 @@ import {
   Section,
   Subtitle,
   Title
-} from '../../../index'
+} from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ColumnsResponsiveness ({
-  location: { pathname }
-}) {
+export function ColumnsResponsiveness ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -24,9 +22,7 @@ export function ColumnsResponsiveness ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Columns responsiveness
-            </Title>
+            <Title is2>Columns responsiveness</Title>
 
             <Subtitle>
               Handle <b>different</b> column layouts for each <b>breakpoint</b>
@@ -34,13 +30,14 @@ export function ColumnsResponsiveness ({
 
             <hr />
 
-            <Title is4>
-              Mobile columns
-            </Title>
+            <Title is4>Mobile columns</Title>
 
             <p>
-              By default, columns are only activated from <b>tablet</b> onwards. This means columns are stacked on top of each other on <b>mobile</b>.
-              If you want columns to work on <b>mobile too</b>, just add the <code>isMobile</code> prop to the <code>Columns</code> component:
+              By default, columns are only activated from <b>tablet</b> onwards.
+              This means columns are stacked on top of each other on{' '}
+              <b>mobile</b>. If you want columns to work on <b>mobile too</b>,
+              just add the <code>isMobile</code> prop to the{' '}
+              <code>Columns</code> component:
             </p>
 
             <Columns isMobile>
@@ -78,7 +75,9 @@ export function ColumnsResponsiveness ({
             </Code>
 
             <p>
-              If you <em>only</em> want columns on <b>desktop</b> upwards, just use the <code>isDesktop</code> prop to the <code>Columns</code> component:
+              If you <em>only</em> want columns on <b>desktop</b> upwards, just
+              use the <code>isDesktop</code> prop to the <code>Columns</code>{' '}
+              component:
             </p>
 
             <Columns isDesktop>

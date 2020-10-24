@@ -1,11 +1,9 @@
 import * as React from 'react'
-
-import { IMainColorsProps } from './modifiers'
-interface INotificationProps extends IMainColorsProps {
-    children?: React.ReactNode;
-    className?: string;
-}
-export default class Notification extends React.Component<INotificationProps> {
-  render(): JSX.Element;
+import { MainColorsProps } from './modifiers'
+interface NotificationProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    MainColorsProps {}
+export declare class Notification extends React.Component<NotificationProps> {
+  render(): React.ReactNode
 }
 export {}

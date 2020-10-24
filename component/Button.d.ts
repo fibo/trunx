@@ -1,26 +1,29 @@
 import * as React from 'react'
-
-import { IAnchorProps } from './Anchor'
-import { IHelpersProps, IMainColorsProps, IShadeColorsProps, ISizeProps, ITextColorHelpersProps } from './modifiers'
-interface IButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, IHelpersProps, IMainColorsProps, IShadeColorsProps, ISizeProps, ITextColorHelpersProps {
-    download?: IAnchorProps['download'];
-    href?: IAnchorProps['href'];
-    isActive?: boolean;
-    isFocused?: boolean;
-    isFullwidth?: boolean;
-    isInverted?: boolean;
-    isLoading?: boolean;
-    isNormal?: boolean;
-    isOutlined?: boolean;
-    isRounded?: boolean;
-    isStatic?: boolean;
-    isText?: boolean;
-    onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
-    target?: IAnchorProps['target'];
-    type?: 'reset' | 'submit';
-    value?: React.InputHTMLAttributes<HTMLInputElement>['value'];
+import {
+  HelpersProps,
+  MainColorsProps,
+  ShadeColorsProps,
+  SizeProps,
+  TextColorHelpersProps,
+} from './modifiers'
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HelpersProps,
+    MainColorsProps,
+    ShadeColorsProps,
+    SizeProps,
+    TextColorHelpersProps {
+  isActive?: boolean
+  isFocused?: boolean
+  isFullwidth?: boolean
+  isInverted?: boolean
+  isLoading?: boolean
+  isNormal?: boolean
+  isOutlined?: boolean
+  isRounded?: boolean
+  isStatic?: boolean
+  isText?: boolean
 }
-export default class Button extends React.Component<IButtonProps> {
-  render(): JSX.Element;
+export declare class Button extends React.Component<ButtonProps> {
+  render(): React.ReactNode
 }
-export {}

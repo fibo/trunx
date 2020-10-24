@@ -11,14 +11,12 @@ import {
   Subtitle,
   Title,
   Ul
-} from '../../../index.js'
-import Code from '../components/Code.js'
-import Nav from '../components/Nav.js'
-import indent from '../utils/indent.js'
+} from '../../../component/index'
+import { Code } from '../components/Code'
+import { Nav } from '../components/Nav'
+import { indent } from '../utils/indent'
 
-export default function ColumnsNesting ({
-  location: { pathname }
-}) {
+export default function ColumnsNesting ({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -26,9 +24,7 @@ export default function ColumnsNesting ({
       <Section>
         <Container>
           <Content>
-            <Title is2>
-              Nesting columns
-            </Title>
+            <Title is2>Nesting columns</Title>
 
             <Subtitle>
               A simple way to build <b>responsive columns</b>
@@ -36,18 +32,16 @@ export default function ColumnsNesting ({
 
             <hr />
 
-            <Title is4>
-              Mobile columns
-            </Title>
+            <Title is4>Mobile columns</Title>
 
             <P>
-              You can <b>nest</b> columns to have more flexibility in your design. You only need to follow this structure:
+              You can <b>nest</b> columns to have more flexibility in your
+              design. You only need to follow this structure:
             </P>
 
             <Ul>
               <Li>
                 <code>columns</code>: top level columns container
-
                 <Ul>
                   <Li>
                     <code>column</code>
@@ -55,7 +49,6 @@ export default function ColumnsNesting ({
                     <Ul>
                       <Li>
                         <code>columns</code>: nested columns
-
                         <Ul>
                           <Li>
                             <code>column</code> and so on...
