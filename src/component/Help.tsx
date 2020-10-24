@@ -1,35 +1,14 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  IMainColorsProps,
-  ITextColorHelpersProps,
-  mainColorsPropsToClassnames,
-  textColorHelpersPropsToClassnames,
-} from "./modifiers"
+import { bulmaClassName }from './classNames'
+import { MainColorsProps, TextColorHelpersProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface IHelpProps extends IMainColorsProps, ITextColorHelpersProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface HelpProps extends React.HTMLAttributes<HTMLParagraphElement>, MainColorsProps, TextColorHelpersProps { }
 
-export default class Help extends React.Component<IHelpProps> {
+export default class Help extends React.Component<HelpProps> {
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <p
-        className={classnames(
-          "help",
-          className,
-          mainColorsPropsToClassnames(props),
-          textColorHelpersPropsToClassnames(props),
-        )}
-      >{children}</p>
-    )
+    return renderElement('p', this.props, bulmaClassName.help)
   }
 }

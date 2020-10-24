@@ -1,12 +1,10 @@
 import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  IMainColorsProps,
-  mainColorsPropsToClassnames,
-} from "./modifiers"
+import { bulmaClassName } from "./classNames"
+import { MainColorsProps, extractModifiersProps, modifierPropsToClassnamesObject } from "./modifiers"
 
-interface ITileProps extends React.HTMLAttributes<HTMLDivElement> {
+interface TileProps extends React.HTMLAttributes<HTMLDivElement> {
   is1?: boolean
   is2?: boolean
   is3?: boolean
@@ -23,82 +21,66 @@ interface ITileProps extends React.HTMLAttributes<HTMLDivElement> {
   isVertical?: boolean
 }
 
-interface ITileAncestorProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface TileAncestorProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface ITileChildProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface TileChildProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface ITileChildBoxProps {
-  children?: React.ReactNode
-  className?: string
-}
-interface ITileChildNotificationProps extends IMainColorsProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface TileChildBoxProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+interface TileChildNotificationProps extends React.HTMLAttributes<HTMLElement>, MainColorsProps {}
 
 
-class TileAncestor extends React.Component<ITileAncestorProps> {
+class TileAncestor extends React.Component<TileAncestorProps> {
   render() {
     const {
       children,
       className,
+...props
     } = this.props
 
     return (
       <div
-        className={classnames(
-          "tile is-ancestor",
-          className,
-        )}
+        className={classnames(bulmaClassName.tile, "is-ancestor", className)}
+        {...props}
       >{children}</div>
     )
   }
 }
 
-class TileChildBox extends React.Component<ITileChildBoxProps> {
+class TileChildBox extends React.Component<TileChildBoxProps> {
   render() {
     const {
       children,
       className,
+...props
     } = this.props
 
     return (
       <div
-        className={classnames(
-          "tile is-child box",
-          className,
-        )}
+        className={classnames(bulmaClassName.tile, 'is-child', bulmaClassName.box, className)}
+        {...props}
       >{children}</div>
     )
   }
 }
 
-class TileChildNotification extends React.Component<ITileChildNotificationProps> {
+class TileChildNotification extends React.Component<TileChildNotificationProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
+const [modifiersProps, {className, ...props}] = extractModifiersProps(this.props)
 
     return (
       <article
-        className={classnames(
-          "tile is-child notification",
+        className={classnames(bulmaClassName.tile, 'is-child', bulmaClassName.notification,
           className,
-          mainColorsPropsToClassnames(this.props),
+          modifierPropsToClassnamesObject(modifiersProps),
         )}
+        {...props}
       >{children}</article>
     )
   }
 }
 
-class TileChild extends React.Component<ITileChildProps> {
+class TileChild extends React.Component<TileChildProps> {
   static Box = TileChildBox
   static Notification = TileChildNotification
 
@@ -106,20 +88,19 @@ class TileChild extends React.Component<ITileChildProps> {
     const {
       children,
       className,
+...props
     } = this.props
 
     return (
       <div
-        className={classnames(
-          "tile is-child",
-          className,
-        )}
+        className={classnames(bulmaClassName.tile, "is-child", className)}
+        {...props}
       >{children}</div>
     )
   }
 }
 
-export default class Tile extends React.Component<ITileProps> {
+export default class Tile extends React.Component<TileProps> {
   static Ancestor = TileAncestor
   static Child = TileChild
 

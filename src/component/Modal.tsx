@@ -2,184 +2,93 @@ import * as classnames from "classnames"
 import * as React from "react"
 
 import { bulmaClassName } from './classNames'
-import {
-  renderDiv,
-  renderHeader,
-} from './commonRenders'
+import { renderElement } from './renderElement'
 
-interface IModalProps {
-  children?: React.ReactNode
-  className?: string
+interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
   isActive?: boolean
 }
 
-interface IModalBackgroundProps {
-  className?: string
-  onClick?: React.MouseEventHandler<HTMLDivElement>
+interface ModalBackgroundProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+interface ModalCardProps extends React.HTMLAttributes<HTMLDivElement> {}
+
+interface ModalCardBodyProps extends React.HTMLAttributes<HTMLElement> {}
+
+interface ModalCardFootProps extends React.HTMLAttributes<HTMLElement> {}
+
+interface ModalCardHeadProps extends React.HTMLAttributes<HTMLElement> {}
+
+interface ModalCardTitleProps  extends React.HTMLAttributes<HTMLElement> {}
+
+interface ModalCloseProps extends React.MouseEventHandler<HTMLButtonElement> {
+  isLarge?: boolean
 }
 
-interface IModalCardProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface ModalContentProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-interface IModalCardBodyProps extends React.HTMLAttributes<HTMLElement> {}
-
-interface IModalCardFootProps extends React.HTMLAttributes<HTMLElement> {}
-
-interface IModalCardHeadProps extends React.HTMLAttributes<HTMLElement> {}
-
-interface IModalCardTitleProps {
-  children?: React.ReactNode
-  className?: string
-}
-
-interface IModalCloseProps {
-  className?: string
-  isLarge?: boolean,
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
-}
-
-interface IModalContentProps {
-  children?: React.ReactNode
-  className?: string
-}
-
-class ModalCardBody extends React.Component<IModalCardBodyProps> {
+class ModalCardBody extends React.Component<ModalCardBodyProps> {
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <section
-        className={classnames(
-          bulmaClassName.modalCardBody,
-          className,
-        )}
-        {...props}
-      >
-        {children}
-      </section>
-    )
+return renderElement('section', this.props, bulmaClassName.modalCardFoot)
   }
 }
 
-class ModalCardFoot extends React.Component<IModalCardFootProps> {
+class ModalCardFoot extends React.Component<ModalCardFootProps> {
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <footer
-        className={classnames(bulmaClassName.modalCardFoot, className)}
-        {...props}
-      >
-        {children}
-      </footer>
-    )
+return renderElement('footer', this.props, bulmaClassName.modalCardFoot)
   }
 }
 
-class ModalCardHead extends React.Component<IModalCardHeadProps> {
+class ModalCardHead extends React.Component<ModalCardHeadProps> {
   render() {
-    return renderHeader(this.props, bulmaClassName.modalCardHead)
+    return renderElement('header', this.props, bulmaClassName.modalCardHead)
   }
 }
 
-class ModalCardTitle extends React.Component<IModalCardTitleProps> {
+class ModalCardTitle extends React.Component<ModalCardTitleProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "modal-card-title",
-          className,
-        )}
-      >{children}</div>
-    )
+    return renderElement('div', this.props, bulmaClassName.modalCardTitle)
   }
 }
 
-class ModalBackground extends React.Component<IModalBackgroundProps> {
+class ModalBackground extends React.Component<ModalBackgroundProps> {
   render() {
-    const {
-      className,
-      onClick
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "modal-background",
-          className,
-        )}
-        onClick={onClick}
-      />
-    )
+    return renderElement('div', this.props, bulmaClassName.modalBackground)
   }
 }
 
-class ModalCard extends React.Component<IModalCardProps> {
+class ModalCard extends React.Component<ModalCardProps> {
   static Body = ModalCardBody
   static Foot = ModalCardFoot
   static Head = ModalCardHead
   static Title = ModalCardTitle
 
   render() {
-    return renderDiv(this.props, bulmaClassName.modalCard)
+    return renderElement('div',this.props, bulmaClassName.modalCard)
   }
 }
 
-class ModalClose extends React.Component<IModalCloseProps> {
+class ModalClose extends React.Component<ModalCloseProps> {
+static defaultProps = {
+'aria-label':"close"
+}
+
   render() {
     const {
-      className,
       isLarge,
-      onClick,
+...props
     } = this.props
 
-    return (
-      <button
-        aria-label="close"
-        className={classnames(
-          bulmaClassName.modalClose,
-          className,
-          {
-            "is-large": isLarge,
-          }
-        )}
-        onClick={onClick}
-      />
-    )
+return renderElement('button', props, bulmaClassName.modalClose, {isLarge})
   }
 }
 
-class ModalContent extends React.Component<IModalContentProps> {
+class ModalContent extends React.Component<ModalContentProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "modal-content",
-          className,
-        )}
-      >{children}</div>
-    )
+return renderElement('div', this.props, bulmaClassName.modalContent)
   }
 }
 
-export default class Modal extends React.Component<IModalProps> {
+export default class Modal extends React.Component<ModalProps> {
   static Background = ModalBackground
   static Card = ModalCard
   static Close = ModalClose
@@ -187,21 +96,10 @@ export default class Modal extends React.Component<IModalProps> {
 
   render() {
     const {
-      className,
-      children,
       isActive,
+...props
     } = this.props
 
-    return (
-      <div
-        className={classnames(
-          "modal",
-          className,
-          {
-            "is-active": isActive,
-          }
-        )}
-      >{children}</div>
-    )
+return renderElement('div', props, bulmaClassName.modal)
   }
 }

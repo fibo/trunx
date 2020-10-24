@@ -1,37 +1,12 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  ISizeProps,
-  extractModifiersProps,
-  sizePropsToClassnames,
-} from "./modifiers"
+import { SizeProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface IDeleteProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-                               ISizeProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface DeleteProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, SizeProps { }
 
-export default class Delete extends React.Component<IDeleteProps> {
+export default class Delete extends React.Component<DeleteProps> {
   render() {
-    const [{
-      sizeProps,
-    }, {
-      className,
-      ...props
-    }] = extractModifiersProps(this.props)
-
-    return (
-      <button
-        className={classnames(
-          className,
-          "delete",
-          className,
-          sizePropsToClassnames(sizeProps),
-        )}
-        {...props}
-      />
-    )
+    return renderElement('button', this.props, bulmaClassName.delete)
   }
 }

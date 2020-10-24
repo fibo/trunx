@@ -1,9 +1,9 @@
 import path from 'path'
-import { fileURLToPath } from 'url'
 import readFile from 'read-file-utf8'
 import writeFile from 'write-file-utf8'
+import { fileURLToPath } from 'url'
 
-import routes from '../docs/routes.js'
+import { route } from '../docs/routes'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -20,21 +20,21 @@ function urlTagContent ({ baseUrl, routePath }) {
   ].join('\n')
 }
 
-function routePaths ({ routes }) {
-  return [routes.home].concat(
-    Object.keys(routes).map(level1 => (
-      Object.keys(routes[level1]).map(level2 => (
-        routes[level1][level2]
+function routePaths ({ route }) {
+  return [route.home].concat(
+    Object.keys(route).map(level1 => (
+      Object.keys(route[level1]).map(level2 => (
+        route[level1][level2]
       ))
     ))
   ).flat()
 }
 
-function sitemapContent ({ baseUrl, routes }) {
+function sitemapContent ({ baseUrl, route }) {
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    routePaths({ routes }).map(routePath => urlTagContent({ baseUrl, routePath })),
+    routePaths({ route }).map(routePath => urlTagContent({ baseUrl, routePath })),
     '</urlset>'
   ].join('\n')
 }
@@ -42,7 +42,7 @@ function sitemapContent ({ baseUrl, routes }) {
 async function generateSitemap () {
   const { homepage: baseUrl } = await readFile(packageJsonFilepath).then(content => JSON.parse(content))
 
-  await writeFile(sitemapFilepath, sitemapContent({ baseUrl, routes }))
+  await writeFile(sitemapFilepath, sitemapContent({ baseUrl, route }))
 }
 
 generateSitemap()

@@ -1,21 +1,14 @@
-export default {
+export const route = {
   columns: {
     basics: '/columns/basics',
     nesting: '/columns/nesting',
     responsiveness: '/columns/responsiveness',
     sizes: '/columns/sizes'
   },
-  home: '/',
   components: {
     breadcrumb: '/components/breadcrumb',
     modal: '/component/modal',
     navbar: '/components/navbar'
-  },
-  form: {
-    general: '/form/general',
-    input: '/form/input',
-    radio: '/form/radio',
-    textarea: '/form/textarea'
   },
   elements: {
     box: '/elements/box',
@@ -23,6 +16,13 @@ export default {
     delete: '/elements/delete',
     tag: '/elements/tag'
   },
+  form: {
+    general: '/form/general',
+    input: '/form/input',
+    radio: '/form/radio',
+    textarea: '/form/textarea'
+  },
+  home: '/',
   layout: {
     container: '/layout/container',
     footer: '/layout/footer',

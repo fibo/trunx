@@ -1,7 +1,9 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-interface ITableProps extends React.TableHTMLAttributes<HTMLTableElement> {
+import { bulmaClassName } from "./classNames"
+import { renderElement } from './renderElement'
+
+interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {
   isBordered?: boolean
   isFullwidth?: boolean
   isHoverable?: boolean
@@ -9,36 +11,19 @@ interface ITableProps extends React.TableHTMLAttributes<HTMLTableElement> {
   isStriped?: boolean
 }
 
-interface ITableContainerProps {
-  className?: string
-  children?: string
-}
+interface TableContainerProps extends React.HTMLAttributes<HTMLDivElement>{}
 
-class TableContainer extends React.Component<ITableContainerProps> {
+class TableContainer extends React.Component<TableContainerProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <div
-        className={classnames(
-          "table-container",
-          className,
-        )}
-      >{children}</div>
-    )
+    return renderElement('div', this.props, bulmaClassName.tableContainer)
   }
 }
 
-export default class Table extends React.Component<ITableProps> {
+export class Table extends React.Component<TableProps> {
   static Container = TableContainer
 
   render() {
     const {
-      children,
-      className,
       isBordered,
       isFullwidth,
       isHoverable,
@@ -47,21 +32,12 @@ export default class Table extends React.Component<ITableProps> {
       ...props
     } = this.props
 
-    return (
-      <table
-        {...props}
-        className={classnames(
-          "table",
-          className,
-          {
-            "is-bordered": isBordered,
-            "is-fullwidth": isFullwidth,
-            "is-hoverable": isHoverable,
-            "is-narrow": isNarrow,
-            "is-striped": isStriped,
-          }
-        )}
-      >{children}</table>
-    )
+return renderElement('table', props, bulmaClassName.table, {
+      isBordered,
+      isFullwidth,
+      isHoverable,
+      isNarrow,
+      isStriped,
+})
   }
 }

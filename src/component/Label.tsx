@@ -1,34 +1,13 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  ISizeProps,
-  ITextColorHelpersProps,
-  sizePropsToClassnames,
-  textColorHelpersPropsToClassnames,
-} from "./modifiers"
+import { bulmaClassName } from './classNames'
+import { SizeProps, TextColorHelpersProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface ILabelProps extends ISizeProps, ITextColorHelpersProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface LabelProps extends extends React.LabelHTMLAttributes<HTMLLabelElement>, SizeProps, TextColorHelpersProps {}
 
-export default class Label extends React.Component<ILabelProps> {
+export class Label extends React.Component<LabelProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <label
-        className={classnames(
-          "label",
-          className,
-          sizePropsToClassnames(this.props),
-          textColorHelpersPropsToClassnames(this.props),
-        )}
-      >{children}</label>
-    )
+return renderElement('label', this.props, bulmaClassName.label)
   }
 }

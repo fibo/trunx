@@ -1,14 +1,10 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  ISizeProps,
-  sizePropsToClassnames,
-} from "./modifiers"
+import { bulmaClassName } from "./classNames"
+import { SizeProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface ITabsProps extends ISizeProps {
-  children?: React.ReactNode
-  className?: string
+interface TabsProps extends React.HTMLAttributes<HTMLElement>, SizeProps {
   isBoxed?: boolean
   isCentered?: boolean
   isFullwidth?: boolean
@@ -17,10 +13,9 @@ interface ITabsProps extends ISizeProps {
   isToggleRounded?: boolean
 }
 
-export default class Tabs extends React.Component<ITabsProps> {
+export default class Tabs extends React.Component<TabsProps> {
   render() {
     const {
-      className,
       isBoxed,
       isCentered,
       isFullwidth,
@@ -33,27 +28,16 @@ export default class Tabs extends React.Component<ITabsProps> {
       ...props
     } = this.props
 
-    return (
-      <nav
-        {...props}
-        className={classnames(
-          "tabs",
-          className,
-          {
-            "is-boxed": isBoxed,
-            "is-centered": isCentered,
-            "is-fullwidth": isFullwidth,
-            "is-right": isRight,
-            "is-toggle": isToggle,
-            "is-toggle-rounded": isToggleRounded,
-          },
-          sizePropsToClassnames({
-            isLarge,
-            isMedium,
-            isSmall,
-          }),
-        )}
-      >{this.props.children}</nav>
-    )
+    return renderElement('nav', props, bulmaClassName.tabs, {
+      isBoxed,
+      isCentered,
+      isFullwidth,
+      isLarge,
+      isMedium,
+      isRight,
+      isSmall,
+      isToggle,
+      isToggleRounded,
+    })
   }
 }

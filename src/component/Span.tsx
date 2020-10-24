@@ -1,34 +1,12 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-import {
-  IBackgroundColorHelpersProps,
-  ITextColorHelpersProps,
-  backgroundColorHelpersPropsToClassnames,
-  textColorHelpersPropsToClassnames,
-} from "./modifiers"
+import { BackgroundColorHelpersProps, TextColorHelpersProps } from "./modifiers"
+import { renderElement } from './renderElement'
 
-interface ISpanProps extends IBackgroundColorHelpersProps,
-                             ITextColorHelpersProps,
-                             React.HTMLAttributes<HTMLSpanElement> {}
+interface SpanProps extends React.HTMLAttributes<HTMLSpanElement>, BackgroundColorHelpersProps, TextColorHelpersProps {}
 
-export default class Span extends React.Component<ISpanProps> {
+export default class Span extends React.Component<SpanProps> {
   render() {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
-
-    return (
-      <span
-        {...props}
-        className={classnames(
-          className,
-          backgroundColorHelpersPropsToClassnames(props),
-          textColorHelpersPropsToClassnames(props),
-        )}
-      >{children}</span>
-    )
+return renderElement('span', this.props)
   }
 }

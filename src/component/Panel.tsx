@@ -1,127 +1,54 @@
-import * as classnames from "classnames"
 import * as React from "react"
 
-interface IPanelProps {
-  children?: React.ReactNode
-  className?: string
-}
+import { bulmaClassName } from "./classNames"
+import { renderElement } from './renderElement'
 
-interface IPanelBlockProps {
-  children?: React.ReactNode
-  className?: string
-  isActive?: boolean
-}
+interface PanelProps extends React.HTMLAttributes<HTMLElement> {}
 
-interface IPanelHeadingProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface PanelBlockProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> { isActive?: boolean }
 
-interface IPanelIconProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface PanelHeadingProps extends React.HTMLAttributes<HTMLParagraphElement> {}
 
-interface IPanelTabsProps {
-  children?: React.ReactNode
-  className?: string
-}
+interface PanelIconProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
-class PanelBlock extends React.Component<IPanelBlockProps> {
+interface PanelTabsProps extends React.HTMLAttributes<HTMLParagraphElement> {}
+
+class PanelBlock extends React.Component<PanelBlockProps> {
   render() {
     const {
-      children,
-      className,
       isActive,
+      ...props
     } = this.props
 
-    return (
-      <a
-        className={classnames(
-          "panel-block",
-          className,
-          {
-            "is-active": isActive,
-          }
-        )}
-      >{children}</a>
-    )
+    return renderElement('a', props, bulmaClassName.panelBlock, { isActive })
   }
 }
 
-class PanelHeading extends React.Component<IPanelHeadingProps> {
+class PanelHeading extends React.Component<PanelHeadingProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <p
-        className={classnames(
-          "panel-heading",
-          className,
-        )}
-      >{children}</p>
-    )
+    return renderElement('p', this.props, bulmaClassName.panelHeading)
   }
 }
 
-class PanelIcon extends React.Component<IPanelIconProps> {
+class PanelIcon extends React.Component<PanelIconProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <span
-        className={classnames(
-          "panel-icon",
-          className,
-        )}
-      >{children}</span>
-    )
+    return renderElement('span', this.props, bulmaClassName.panelIcon)
   }
 }
 
-class PanelTabs extends React.Component<IPanelTabsProps> {
+class PanelTabs extends React.Component<PanelTabsProps> {
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <p
-        className={classnames(
-          "panel-tabs",
-          className,
-        )}
-      >{children}</p>
-    )
+    return renderElement('p', this.props, bulmaClassName.panelTabs)
   }
 }
 
-export default class Panel extends React.Component<IPanelProps> {
+export default class Panel extends React.Component<PanelProps> {
   static Block = PanelBlock
   static Heading = PanelHeading
   static Icon = PanelIcon
   static Tabs = PanelTabs
 
   render() {
-    const {
-      children,
-      className,
-    } = this.props
-
-    return (
-      <nav
-        className={classnames(
-          "panel",
-          className,
-        )}
-      >{children}</nav>
-    )
+return renderElement('nav', this.props, bulmaClassName.panel)
   }
 }
