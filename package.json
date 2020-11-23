@@ -14,7 +14,7 @@
     "generate_pages": "node src/npm-scripts/generatePages.js",
     "generate_sitemap": "node src/npm-scripts/generateSitemap.js",
     "lint-staged": "lint-staged",
-    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
+    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin main",
     "pretsc": "rimraf component",
     "start": "budo src/docs/index.js --dir docs --serve bundle.js --open --live --pushstate -- -t babelify",
     "test": "run-p test:*",
