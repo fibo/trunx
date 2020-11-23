@@ -22,6 +22,7 @@ export declare const bulmaClassNames: readonly [
   'container',
   'content',
   'control',
+  'delete',
   'dropdown',
   'dropdown-divider',
   'dropdown-content',
@@ -124,13 +125,6 @@ export declare const bulmaClassName: {
     | 'textarea'
     | 'title'
     | 'image'
-    | 'checkbox'
-    | 'radio'
-    | 'column'
-    | 'content'
-    | 'help'
-    | 'icon'
-    | 'columns'
     | 'box'
     | 'breadcrumb'
     | 'buttons'
@@ -142,8 +136,13 @@ export declare const bulmaClassName: {
     | 'card-header-icon'
     | 'card-header-title'
     | 'card-image'
+    | 'checkbox'
+    | 'column'
+    | 'columns'
     | 'container'
+    | 'content'
     | 'control'
+    | 'delete'
     | 'dropdown'
     | 'dropdown-divider'
     | 'dropdown-content'
@@ -160,10 +159,12 @@ export declare const bulmaClassName: {
     | 'file-label'
     | 'file-name'
     | 'heading'
+    | 'help'
     | 'hero'
     | 'hero-body'
     | 'hero-foot'
     | 'hero-head'
+    | 'icon'
     | 'level'
     | 'level-item'
     | 'level-left'
@@ -206,6 +207,7 @@ export declare const bulmaClassName: {
     | 'panel-heading'
     | 'panel-icon'
     | 'panel-tabs'
+    | 'radio'
     | 'subtitle'
     | 'table-container'
     | 'tabs'

@@ -14,14 +14,14 @@ import {
   Section,
   Strong,
   Title,
-  Ul
+  Ul,
 } from '../../../component/index'
 import pkg from '../../../package.json'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function Overview ({ location: { pathname } }) {
+export function Overview({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -34,7 +34,7 @@ export function Overview ({ location: { pathname } }) {
             <P>
               <Em>Trunx</Em> is an open source collection of <Em>React</Em>{' '}
               components built on top of <Em>Bulma</Em> CSS framework and
-              implEmented with <Em>TypeScript</Em>. GitHub repo here:{' '}
+              implemented with <Em>TypeScript</Em>. GitHub repo here:
               <A href='https://github.com/fibo/trunx'>github.com/fibo/trunx</A>.
             </P>
 
@@ -275,48 +275,48 @@ export function Overview ({ location: { pathname } }) {
             <Ul>
               {[
                 {
-                  component: 'A'
+                  component: 'A',
                 },
                 {
-                  component: 'B'
+                  component: 'B',
                 },
                 {
-                  component: 'Box'
+                  component: 'Box',
                 },
                 {
                   component: 'Breadcrumb',
-                  subComponents: ['Item']
+                  subComponents: ['Item'],
                 },
                 {
-                  component: 'Button'
+                  component: 'Button',
                 },
                 {
-                  component: 'Buttons'
+                  component: 'Buttons',
                 },
                 {
                   component: 'Card',
-                  subComponents: ['Content', 'Footer', 'Header', 'Image']
+                  subComponents: ['Content', 'Footer', 'Header', 'Image'],
                 },
                 {
-                  component: 'Checkbox'
+                  component: 'Checkbox',
                 },
                 {
-                  component: 'Column'
+                  component: 'Column',
                 },
                 {
-                  component: 'Columns'
+                  component: 'Columns',
                 },
                 {
-                  component: 'Container'
+                  component: 'Container',
                 },
                 {
-                  component: 'Content'
+                  component: 'Content',
                 },
                 {
-                  component: 'Control'
+                  component: 'Control',
                 },
                 {
-                  component: 'Delete'
+                  component: 'Delete',
                 },
                 {
                   component: 'Dropdown',
@@ -325,60 +325,60 @@ export function Overview ({ location: { pathname } }) {
                     'Divider',
                     'Item',
                     'Menu',
-                    'Trigger'
-                  ]
+                    'Trigger',
+                  ],
                 },
                 {
-                  component: 'Em'
+                  component: 'Em',
                 },
                 {
                   component: 'Field',
-                  subComponents: ['Body', 'Label;']
+                  subComponents: ['Body', 'Label;'],
                 },
                 {
                   component: 'FileUpload',
-                  subComponents: ['Cta', 'Icon', 'Input', 'Label', 'Name']
+                  subComponents: ['Cta', 'Icon', 'Input', 'Label', 'Name'],
                 },
                 {
-                  component: 'Footer'
+                  component: 'Footer',
                 },
                 {
-                  component: 'Heading'
+                  component: 'Heading',
                 },
                 {
-                  component: 'Help'
+                  component: 'Help',
                 },
                 {
                   component: 'Hero',
-                  subComponents: ['Body', 'Foot', 'Head']
+                  subComponents: ['Body', 'Foot', 'Head'],
                 },
                 {
                   component: 'Icon',
-                  subComponents: ['Svg']
+                  subComponents: ['Svg'],
                 },
                 {
-                  component: 'Image'
+                  component: 'Image',
                 },
                 {
-                  component: 'Input'
+                  component: 'Input',
                 },
                 {
-                  component: 'Label'
+                  component: 'Label',
                 },
                 {
                   component: 'Level',
-                  subComponents: ['Item', 'Left', 'Right']
+                  subComponents: ['Item', 'Left', 'Right'],
                 },
                 {
-                  component: 'Li'
+                  component: 'Li',
                 },
                 {
                   component: 'Media',
-                  subComponents: ['Content', 'Left', 'Right']
+                  subComponents: ['Content', 'Left', 'Right'],
                 },
                 {
                   component: 'Message',
-                  subComponents: ['Body', 'Header']
+                  subComponents: ['Body', 'Header'],
                 },
                 {
                   component: 'Modal',
@@ -390,8 +390,8 @@ export function Overview ({ location: { pathname } }) {
                     'Card.Head',
                     'Card.Title',
                     'Close',
-                    'Content'
-                  ]
+                    'Content',
+                  ],
                 },
                 {
                   component: 'Navbar',
@@ -404,14 +404,14 @@ export function Overview ({ location: { pathname } }) {
                     'Item',
                     'Link',
                     'Menu',
-                    'Start'
-                  ]
+                    'Start',
+                  ],
                 },
                 {
-                  component: 'Notification'
+                  component: 'Notification',
                 },
                 {
-                  component: 'P'
+                  component: 'P',
                 },
                 {
                   component: 'Pagination',
@@ -420,52 +420,52 @@ export function Overview ({ location: { pathname } }) {
                     'Link',
                     'List',
                     'Next',
-                    'Previous'
-                  ]
+                    'Previous',
+                  ],
                 },
                 {
                   component: 'Panel',
-                  subComponents: ['Block', 'Heading', 'Icon', 'Tabs']
+                  subComponents: ['Block', 'Heading', 'Icon', 'Tabs'],
                 },
                 {
-                  component: 'Progress'
+                  component: 'Progress',
                 },
                 {
-                  component: 'Radio'
+                  component: 'Radio',
                 },
                 {
-                  component: 'Section'
+                  component: 'Section',
                 },
                 {
-                  component: 'Select'
+                  component: 'Select',
                 },
                 {
-                  component: 'Span'
+                  component: 'Span',
                 },
                 {
-                  component: 'Small'
+                  component: 'Small',
                 },
                 {
-                  component: 'Strong'
+                  component: 'Strong',
                 },
                 {
-                  component: 'Subtitle'
+                  component: 'Subtitle',
                 },
                 {
                   component: 'Table',
-                  subComponents: ['Container']
+                  subComponents: ['Container'],
                 },
                 {
-                  component: 'Tabs'
+                  component: 'Tabs',
                 },
                 {
-                  component: 'Tag'
+                  component: 'Tag',
                 },
                 {
-                  component: 'Tags'
+                  component: 'Tags',
                 },
                 {
-                  component: 'Textarea'
+                  component: 'Textarea',
                 },
                 {
                   component: 'Tile',
@@ -473,15 +473,15 @@ export function Overview ({ location: { pathname } }) {
                     'Ancestor',
                     'Child',
                     'Child.Box',
-                    'Child.Notification'
-                  ]
+                    'Child.Notification',
+                  ],
                 },
                 {
-                  component: 'Title'
+                  component: 'Title',
                 },
                 {
-                  component: 'Ul'
-                }
+                  component: 'Ul',
+                },
               ].map(({ component, subComponents = [] }, i) => (
                 <Li key={i}>
                   <A

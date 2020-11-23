@@ -5,18 +5,14 @@ export interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
   isRight?: boolean
   isUp?: boolean
 }
-export interface DropdownContentProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
-export interface DropdownDividerProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export declare type DropdownContentProps = React.HTMLAttributes<HTMLDivElement>
+export declare type DropdownDividerProps = React.HTMLAttributes<HTMLDivElement>
 export interface DropdownItemProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   isActive?: boolean
 }
-export interface DropdownMenuProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
-export interface DropdownTriggerProps
-  extends React.HTMLAttributes<HTMLDivElement> {}
+export declare type DropdownMenuProps = React.HTMLAttributes<HTMLDivElement>
+export declare type DropdownTriggerProps = React.HTMLAttributes<HTMLDivElement>
 declare class DropdownContent extends React.Component<DropdownContentProps> {
   render(): React.ReactNode
 }

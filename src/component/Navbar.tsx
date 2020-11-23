@@ -2,16 +2,23 @@ import * as classnames from 'classnames'
 import * as React from 'react'
 
 import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
-import { OtherHelpersProps, MainColorsProps, ShadeColorsProps } from './modifiers'
+import {
+  OtherHelpersProps,
+  MainColorsProps,
+  ShadeColorsProps,
+} from './modifiers'
 import { renderElement } from './renderElement'
 
-export interface NavbarProps extends React.HTMLAttributes<HTMLElement>,
-Pick<OtherHelpersProps, 'isUnselectable'>, MainColorsProps, ShadeColorsProps {
-  isHoverable?: boolean;
-  isFixedBottom?: boolean;
-  isFixedTop?: boolean;
-  isSpaced?: boolean;
-  isTransparent?: boolean;
+export interface NavbarProps
+  extends React.HTMLAttributes<HTMLElement>,
+    Pick<OtherHelpersProps, 'isUnselectable'>,
+    MainColorsProps,
+    ShadeColorsProps {
+  isHoverable?: boolean
+  isFixedBottom?: boolean
+  isFixedTop?: boolean
+  isSpaced?: boolean
+  isTransparent?: boolean
 }
 
 export type NavbarBrandProps = React.HTMLAttributes<HTMLDivElement>
@@ -22,25 +29,29 @@ export type NavbarDropdownProps = React.HTMLAttributes<HTMLDivElement>
 
 export type NavbarEndProps = React.HTMLAttributes<HTMLDivElement>
 
-export interface NavbarBurgerProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  isActive?: boolean;
+export interface NavbarBurgerProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  isActive?: boolean
 }
 
-export interface NavbarItemProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  hasDropdown?: boolean;
-  hasDropdownUp?: boolean;
-  isActive?: boolean;
-  isHoverable?: boolean;
+export interface NavbarItemProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  hasDropdown?: boolean
+  hasDropdownUp?: boolean
+  isActive?: boolean
+  isHoverable?: boolean
 }
 
 export type NavbarLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-export interface NavbarMenuProps extends React.HTMLAttributes<HTMLDivElement> {isActive?: boolean}
+export interface NavbarMenuProps extends React.HTMLAttributes<HTMLDivElement> {
+  isActive?: boolean
+}
 
 export type NavbarStartProps = React.HTMLAttributes<HTMLDivElement>
 
 class NavbarBrand extends React.Component<NavbarBrandProps> {
-  render (): React.ReactNode {
+  render(): React.ReactNode {
     return renderElement('div', this.props, bulmaClassName.navbarBrand)
   }
 }
@@ -48,15 +59,11 @@ class NavbarBrand extends React.Component<NavbarBrandProps> {
 class NavbarBurger extends React.Component<NavbarBurgerProps> {
   static defaultProps = {
     'aria-label': 'menu',
-    role: 'button'
+    role: 'button',
   }
 
-  render (): React.ReactNode {
-    const {
-      className,
-      isActive,
-      ...props
-    } = this.props
+  render(): React.ReactNode {
+    const { className, isActive, ...props } = this.props
 
     return (
       <a
@@ -77,25 +84,25 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
 }
 
 class NavbarDivider extends React.Component<NavbarDividerProps> {
-  render () : React.ReactNode{
+  render(): React.ReactNode {
     return renderElement('hr', this.props, bulmaClassName.navbarDivider)
   }
 }
 
 class NavbarDropdown extends React.Component<NavbarDropdownProps> {
-  render () : React.ReactNode{
+  render(): React.ReactNode {
     return renderElement('div', this.props, bulmaClassName.navbarDropdown)
   }
 }
 
 class NavbarEnd extends React.Component<NavbarEndProps> {
-  render () : React.ReactNode{
+  render(): React.ReactNode {
     return renderElement('div', this.props, bulmaClassName.navbarEnd)
   }
 }
 
 class NavbarItem extends React.Component<NavbarItemProps> {
-  render () : React.ReactNode{
+  render(): React.ReactNode {
     const {
       hasDropdown,
       hasDropdownUp,
@@ -110,19 +117,21 @@ class NavbarItem extends React.Component<NavbarItemProps> {
       hasDropdown,
       hasDropdownUp,
       isActive,
-      isHoverable
+      isHoverable,
     })
   }
 }
 
-class NavbarLink extends React.Component<React.PropsWithChildren<NavbarLinkProps>> {
-  render () : React.ReactNode{
+class NavbarLink extends React.Component<
+  React.PropsWithChildren<NavbarLinkProps>
+> {
+  render(): React.ReactNode {
     return renderElement('a', this.props, bulmaClassName.navbarLink)
   }
 }
 
 class NavbarMenu extends React.Component<NavbarMenuProps> {
-  render () : React.ReactNode{
+  render(): React.ReactNode {
     const { isActive, ...props } = this.props
 
     return renderElement('div', props, bulmaClassName.navbarMenu, { isActive })
@@ -130,7 +139,7 @@ class NavbarMenu extends React.Component<NavbarMenuProps> {
 }
 
 class NavbarStart extends React.Component<NavbarStartProps> {
-  render () : React.ReactNode{
+  render(): React.ReactNode {
     return renderElement('div', this.props, bulmaClassName.navbarStart)
   }
 }
@@ -146,11 +155,8 @@ export class Navbar extends React.Component<NavbarProps> {
   static Menu = NavbarMenu
   static Start = NavbarStart
 
-  componentDidMount ():void {
-    const {
-      isFixedBottom,
-      isFixedTop
-    } = this.props
+  componentDidMount(): void {
+    const { isFixedBottom, isFixedTop } = this.props
 
     if (isFixedTop) {
       document.body.classList.add('has-navbar-fixed-top')
@@ -161,11 +167,8 @@ export class Navbar extends React.Component<NavbarProps> {
     }
   }
 
-  componentWillUnmount () :void{
-    const {
-      isFixedBottom,
-      isFixedTop
-    } = this.props
+  componentWillUnmount(): void {
+    const { isFixedBottom, isFixedTop } = this.props
 
     if (isFixedBottom) {
       document.body.classList.remove('has-navbar-fixed-bottom')
@@ -176,7 +179,7 @@ export class Navbar extends React.Component<NavbarProps> {
     }
   }
 
-  render () :React.ReactNode{
+  render(): React.ReactNode {
     const {
       isFixedBottom,
       isFixedTop,
@@ -185,6 +188,11 @@ export class Navbar extends React.Component<NavbarProps> {
       ...props
     } = this.props
 
-    return renderElement('nav', props, bulmaClassName.navbar, { isFixedBottom, isFixedTop, isTransparent, isUnselectable })
+    return renderElement('nav', props, bulmaClassName.navbar, {
+      isFixedBottom,
+      isFixedTop,
+      isTransparent,
+      isUnselectable,
+    })
   }
 }

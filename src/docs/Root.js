@@ -10,6 +10,7 @@ import { ComponentsModal } from './pages/ComponentsModal'
 import { ComponentsNavbar } from './pages/ComponentsNavbar'
 import { ElementsBox } from './pages/ElementsBox'
 import { ElementsButton } from './pages/ElementsButton'
+import { ElementsContent } from './pages/ElementsContent'
 import { ElementsDelete } from './pages/ElementsDelete'
 import { ElementsTag } from './pages/ElementsTag'
 import { FormGeneral } from './pages/FormGeneral'
@@ -28,7 +29,7 @@ import { ModifiersSyntax } from './pages/ModifiersSyntax'
 import { Overview } from './pages/Overview'
 import { route } from './routes'
 
-export default function Root () {
+export default function Root() {
   return (
     <BrowserRouter>
       <Switch>
@@ -43,6 +44,7 @@ export default function Root () {
           [ComponentsModal, route.components.modal],
           [ElementsBox, route.elements.box],
           [ElementsButton, route.elements.button],
+          [ElementsContent, route.elements.content],
           [ElementsDelete, route.elements.delete],
           [ElementsTag, route.elements.tag],
           [FormGeneral, route.form.general],
@@ -57,7 +59,7 @@ export default function Root () {
           [LayoutSection, route.layout.section],
           [LayoutTiles, route.layout.tiles],
           [ModifiersSyntax, route.modifiers.syntax],
-          [ModifiersColorHelpers, route.modifiers.colorHelpers]
+          [ModifiersColorHelpers, route.modifiers.colorHelpers],
         ].map(([component, path], i) => (
           <Route key={i} component={component} exact path={path} />
         ))}

@@ -8,32 +8,30 @@ export type PaginationProps = React.HTMLAttributes<HTMLElement>
 
 export type PaginationEllipsisProps = React.HTMLAttributes<HTMLSpanElement>
 
-export interface PaginationLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  isCurrent?: boolean;
+export interface PaginationLinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  isCurrent?: boolean
 }
 
 export type PaginationListProps = React.HTMLAttributes<HTMLUListElement>
 
 export type IPaginationNextProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
 
-export type PaginationPreviousProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
+export type PaginationPreviousProps = React.AnchorHTMLAttributes<
+  HTMLAnchorElement
+>
 
 class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
-  render (): React.ReactNode {
-    const {
-      className,
-      ...props
-    } = this.props
+  render(): React.ReactNode {
+    const { className, ...props } = this.props
 
     return (
       <li>
         <span
-          className={classnames(
-            bulmaClassName.paginationEllipsis,
-            className
-          )}
+          className={classnames(bulmaClassName.paginationEllipsis, className)}
           {...props}
-        >&hellip;
+        >
+          &hellip;
         </span>
       </li>
     )
@@ -41,43 +39,42 @@ class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
 }
 
 class PaginationLink extends React.Component<PaginationLinkProps> {
-  render () : React.ReactNode{
-    const {
-      isCurrent,
-      ...props
-    } = this.props
+  render(): React.ReactNode {
+    const { isCurrent, ...props } = this.props
 
     return (
       <li>
-        {renderElement('a', props, bulmaClassName.paginationLink, { isCurrent })}
+        {renderElement('a', props, bulmaClassName.paginationLink, {
+          isCurrent,
+        })}
       </li>
     )
   }
 }
 
 class PaginationList extends React.Component<PaginationListProps> {
-  render () : React.ReactNode{
+  render(): React.ReactNode {
     return renderElement('ul', this.props, bulmaClassName.paginationList)
   }
 }
 
 class PaginationNext extends React.Component<IPaginationNextProps> {
-  render () : React.ReactNode{
+  render(): React.ReactNode {
     return renderElement('a', this.props, bulmaClassName.paginationNext)
   }
 }
 
 class PaginationPrevious extends React.Component<PaginationPreviousProps> {
-  render () : React.ReactNode{
+  render(): React.ReactNode {
     return renderElement('a', this.props, bulmaClassName.paginationPrevious)
   }
 }
 
 export class Pagination extends React.Component<PaginationProps> {
-static defaultProps = {
-  'aria-label': 'pagination',
-  role: 'navigation'
-}
+  static defaultProps = {
+    'aria-label': 'pagination',
+    role: 'navigation',
+  }
 
   static Ellipsis = PaginationEllipsis
   static Link = PaginationLink
@@ -85,7 +82,7 @@ static defaultProps = {
   static Next = PaginationNext
   static Previous = PaginationPrevious
 
-  render () : React.ReactNode{
+  render(): React.ReactNode {
     return renderElement('nav', this.props, bulmaClassName.pagination)
   }
 }

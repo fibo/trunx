@@ -10,13 +10,13 @@ import {
   Section,
   Subtitle,
   Title,
-  Ul
+  Ul,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export default function ColumnsNesting ({ location: { pathname } }) {
+export function ColumnsNesting({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -63,19 +63,19 @@ export default function ColumnsNesting ({ location: { pathname } }) {
 
             <Columns>
               <Column>
-                <P hasBackgroundInfo hasTextWhite>
+                <P p4 hasBackgroundInfo hasTextWhite>
                   First column
                 </P>
 
                 <Columns isMobile>
                   <Column>
-                    <P hasBackgroundInfo hasTextWhite>
+                    <P p4 hasBackgroundInfo hasTextWhite>
                       First nested column
                     </P>
                   </Column>
 
                   <Column>
-                    <P hasBackgroundInfo hasTextWhite>
+                    <P p4 hasBackgroundInfo hasTextWhite>
                       Second nested column
                     </P>
                   </Column>
@@ -87,19 +87,19 @@ export default function ColumnsNesting ({ location: { pathname } }) {
               {indent`
                 <Columns>
                   <Column>
-                    <P hasBackgroundInfo hasTextWhite>
+                    <P p4 hasBackgroundInfo hasTextWhite>
                       First column
                     </P>
 
                     <Columns isMobile>
                       <Column>
-                        <P hasBackgroundInfo hasTextWhite>
+                        <P p4 hasBackgroundInfo hasTextWhite>
                           First nested column
                         </P>
                       </Column>
 
                       <Column>
-                        <P hasBackgroundInfo hasTextWhite>
+                        <P p4 hasBackgroundInfo hasTextWhite>
                           Second nested column
                         </P>
                       </Column>
