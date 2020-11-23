@@ -8,13 +8,13 @@ import {
   Notification,
   Section,
   Subtitle,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ColumnBasics ({ location: { pathname } }) {
+export function ColumnsBasics({ location: { pathname } }) {
   return (
     <>
       <Nav />

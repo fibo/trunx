@@ -4,7 +4,7 @@ import { Redirect, useLocation } from 'react-router-dom'
 import { Navbar } from '../../../component/index'
 import { route } from '../routes'
 
-export function Nav () {
+export function Nav() {
   const { pathname } = useLocation()
 
   const [expanded, setExpanded] = React.useState(false)
@@ -41,8 +41,8 @@ export function Nav () {
               label: 'Modifiers',
               items: [
                 { label: 'Syntax', route: route.modifiers.syntax },
-                { label: 'Color helpers', route: route.modifiers.colorHelpers }
-              ]
+                { label: 'Color helpers', route: route.modifiers.colorHelpers },
+              ],
             },
             {
               label: 'Columns',
@@ -52,9 +52,9 @@ export function Nav () {
                 { label: 'Sizes', route: route.columns.sizes },
                 {
                   label: 'Responsiveness',
-                  route: route.columns.responsiveness
-                }
-              ]
+                  route: route.columns.responsiveness,
+                },
+              ],
             },
             {
               label: 'Layout',
@@ -63,8 +63,8 @@ export function Nav () {
                 { label: 'Level', route: route.layout.level },
                 { label: 'Media Object', route: route.layout.mediaObject },
                 { label: 'Footer', route: route.layout.footer },
-                { label: 'Tiles', route: route.layout.tiles }
-              ]
+                { label: 'Tiles', route: route.layout.tiles },
+              ],
             },
             {
               label: 'Form',
@@ -72,26 +72,27 @@ export function Nav () {
                 { label: 'General', route: route.form.general },
                 { label: 'Input', route: route.form.input },
                 { label: 'Textarea', route: route.form.textarea },
-                { label: 'Radio', route: route.form.radio }
-              ]
+                { label: 'Radio', route: route.form.radio },
+              ],
             },
             {
               label: 'Elements',
               items: [
                 { label: 'Box', route: route.elements.box },
                 { label: 'Button', route: route.elements.button },
+                { label: 'Content', route: route.elements.content },
                 { label: 'Delete', route: route.elements.delete },
-                { label: 'Tag', route: route.elements.tag }
-              ]
+                { label: 'Tag', route: route.elements.tag },
+              ],
             },
             {
               label: 'Components',
               items: [
                 { label: 'Breadcrumb', route: route.components.breadcrumb },
                 { label: 'Navbar', route: route.components.navbar },
-                { label: 'Modal', route: route.components.modal }
-              ]
-            }
+                { label: 'Modal', route: route.components.modal },
+              ],
+            },
           ].map(({ label, items }, i) => (
             <Navbar.Item hasDropdown isHoverable key={i}>
               <Navbar.Link>{label}</Navbar.Link>

@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "allowJs": false,
+    "allowJs": true,
     "charset": "utf8",
     "importHelpers": true,
     "jsx": "react",
@@ -15,6 +15,5 @@
     "strictNullChecks": true,
     "target": "es5"
   },
-  "exclude": ["**/stories"],
-  "include": ["./src/**/*"]
+  "files": ["src/component/index.ts"]
 }

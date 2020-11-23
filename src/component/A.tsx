@@ -5,26 +5,21 @@ import { trunxPropsToClassnamesObject } from './classNames'
 import {
   FloatHelpersProps,
   extractModifiersProps,
-  modifierPropsToClassnamesObject
+  modifierPropsToClassnamesObject,
 } from './modifiers'
 
 export interface AProps
-extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-        FloatHelpersProps
-{
-  isActive?: boolean;
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    FloatHelpersProps {
+  isActive?: boolean
 }
 
 export class A extends React.Component<AProps> {
-  render () :React.ReactNode{
+  render(): React.ReactNode {
     const [
       modifiersProps,
-      {
-        children,
-        className,
-        isActive,
-        ...props
-      }] = extractModifiersProps(this.props)
+      { children, className, isActive, ...props },
+    ] = extractModifiersProps(this.props)
 
     return (
       <a

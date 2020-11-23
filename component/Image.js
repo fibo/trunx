@@ -1,4 +1,5 @@
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Image = void 0;
 var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");

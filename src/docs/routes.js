@@ -3,24 +3,25 @@ export const route = {
     basics: '/columns/basics',
     nesting: '/columns/nesting',
     responsiveness: '/columns/responsiveness',
-    sizes: '/columns/sizes'
+    sizes: '/columns/sizes',
   },
   components: {
     breadcrumb: '/components/breadcrumb',
     modal: '/component/modal',
-    navbar: '/components/navbar'
+    navbar: '/components/navbar',
   },
   elements: {
     box: '/elements/box',
     button: '/elements/button',
+    content: '/elements/content',
     delete: '/elements/delete',
-    tag: '/elements/tag'
+    tag: '/elements/tag',
   },
   form: {
     general: '/form/general',
     input: '/form/input',
     radio: '/form/radio',
-    textarea: '/form/textarea'
+    textarea: '/form/textarea',
   },
   home: '/',
   layout: {
@@ -30,10 +31,10 @@ export const route = {
     level: '/layout/level',
     mediaObject: '/layout/media-object',
     section: '/layout/section',
-    tiles: '/layout/tiles'
+    tiles: '/layout/tiles',
   },
   modifiers: {
     colorHelpers: '/modifiers/color-helpers',
-    syntax: '/modifiers/syntax'
-  }
+    syntax: '/modifiers/syntax',
+  },
 }

@@ -1,4 +1,5 @@
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.bulmaClassName = exports.bulmaClassNames = exports.trunxPropsToClassnamesObject = exports.camelCaseToKebabCase = void 0;
 var tslib_1 = require("tslib");
 function kebabCaseToCamelCase(value) {
     return value
@@ -22,15 +23,16 @@ function listToKeyValues(list) {
         return (tslib_1.__assign(tslib_1.__assign({}, obj), (_a = {}, _a[kebabCaseToCamelCase(key)] = key, _a)));
     }, {});
 }
-function isBulmaModifier(modifier) {
-    return modifier.substring(0, 3) === 'has' || modifier.substring(0, 2) === 'is';
-}
 function trunxPropsToClassnamesObject(props) {
     if (typeof props === 'undefined')
         return {};
     return Object.keys(props).reduce(function (obj, key) {
-        if (isBulmaModifier(key)) {
+        if (key.substring(0, 3) === 'has' || key.substring(0, 2) === 'is') {
             var className = camelCaseToKebabCase(key);
+            obj[className] = props[key];
+        }
+        if (key.match(/[mp][trblxy]?[0-6]/)) {
+            var className = key.replace(/([0-6])/, '-$1');
             obj[className] = props[key];
         }
         return obj;
@@ -56,6 +58,7 @@ exports.bulmaClassNames = [
     'container',
     'content',
     'control',
+    'delete',
     'dropdown',
     'dropdown-divider',
     'dropdown-content',

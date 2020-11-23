@@ -16,9 +16,6 @@
     <loc>https://trunx.dev/columns/sizes</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>,  <url>
-    <loc>https://trunx.dev/</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
-  </url>,  <url>
     <loc>https://trunx.dev/components/breadcrumb</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>,  <url>
@@ -26,6 +23,21 @@
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>,  <url>
     <loc>https://trunx.dev/components/navbar</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>,  <url>
+    <loc>https://trunx.dev/elements/box</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>,  <url>
+    <loc>https://trunx.dev/elements/button</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>,  <url>
+    <loc>https://trunx.dev/elements/content</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>,  <url>
+    <loc>https://trunx.dev/elements/delete</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url>,  <url>
+    <loc>https://trunx.dev/elements/tag</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>,  <url>
     <loc>https://trunx.dev/form/general</loc>
@@ -40,16 +52,7 @@
     <loc>https://trunx.dev/form/textarea</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>,  <url>
-    <loc>https://trunx.dev/elements/box</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
-  </url>,  <url>
-    <loc>https://trunx.dev/elements/button</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
-  </url>,  <url>
-    <loc>https://trunx.dev/elements/delete</loc>
-    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
-  </url>,  <url>
-    <loc>https://trunx.dev/elements/tag</loc>
+    <loc>https://trunx.dev/</loc>
     <lastmod>2020-01-01T00:00:00+00:00</lastmod>
   </url>,  <url>
     <loc>https://trunx.dev/layout/container</loc>

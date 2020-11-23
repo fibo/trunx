@@ -54,7 +54,7 @@ import { Tile } from '../src/component/Tile'
 import { Title } from '../src/component/Title'
 import { Ul } from '../src/component/Ul'
 
-function noPropIsRequired () {
+export function noPropIsRequired () {
   return (
     <>
       <A />

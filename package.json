@@ -6,16 +6,16 @@
   "main": "component/index.js",
   "scripts": {
     "build": "run-s build:*",
-    "build:docs": "run-p generate_docs_bundle_js generate_pages generate_sitemap",
+    "build:docs": "run-p generate_docs_bundle_js generate_docs_style generate_pages generate_sitemap",
     "build:lib": "npm run tsc",
-    "eslint": "eslint . --ext .ts,.tsx,.js,.jsx .",
+    "eslint": "eslint --ext .ts,.tsx,.js,.jsx .",
     "generate_docs_bundle_js": "cross-env NODE_ENV=production browserify src/docs/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/bundle.js",
+    "generate_docs_style": "sass src/docs/sass/style.scss docs/style.css --load-path node_modules --style compressed --no-source-map",
     "generate_pages": "node src/npm-scripts/generatePages.js",
     "generate_sitemap": "node src/npm-scripts/generateSitemap.js",
     "lint-staged": "lint-staged",
     "postversion": "git push origin v${npm_package_version}; npm publish; git push origin master",
     "pretsc": "rimraf component",
-    "sass": "node-sass --include-path node_modules src/docs/sass/style.scss --output-style compressed -o docs/",
     "start": "budo src/docs/index.js --dir docs --serve bundle.js --open --live --pushstate -- -t babelify",
     "test": "run-p test:*",
     "test:bulma-version": "node test/bulma-version.js",
@@ -26,8 +26,7 @@
   },
   "lint-staged": {
     "**/*.{js,scss,ts,tsx}": [
-      "prettier --write",
-      "eslint --quiet --ext .ts,.tsx,.js,.jsx --fix"
+      "prettier --write"
     ],
     "*.{json,md}": "prettier --write"
   },
@@ -59,31 +58,31 @@
     "react": "16.x"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.10",
-    "@types/react": "^16.9.53",
-    "@types/react-dom": "^16.9.8",
-    "@typescript-eslint/eslint-plugin": "^4.5.0",
-    "@typescript-eslint/parser": "^4.5.0",
+    "@types/classnames": "^2.2.11",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
     "babel-eslint": "^10.1.0",
     "dot-editorconfig": "^1.1.1",
+    "eslint": "^7.14.0",
     "fa-svg-icon": "^0.3.0",
-    "lint-staged": "^10.4.2",
-    "node-sass": "^4.14.1",
+    "lint-staged": "^10.5.1",
     "npm-run-all": "^4.1.2",
     "pre-commit": "^1.2.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^4.0.0",
+    "react-router-dom": "^5.2.0",
     "react-syntax-highlighter": "^8.0.1",
-    "read-file-utf8": "^2.0.3",
-    "rimraf": "^2.6.3",
-    "standard": "^15.0.0",
-    "typescript": "^3.8.3",
+    "read-file-utf8": "^2.0.4",
+    "rimraf": "^3.0.2",
+    "sass": "^1.29.0",
+    "standard": "^16.0.3",
+    "typescript": "^4.1.0",
     "write-file-utf8": "^2.0.1",
-    "zeroconf-redux": "^5.6.0"
+    "zeroconf-redux": "^5.9.0"
   },
   "dependencies": {
     "bulma": "^0.9.1",
     "classnames": "^2.2.6",
-    "tslib": "^2.0.1"
+    "tslib": "^2.0.3"
   }
 }
