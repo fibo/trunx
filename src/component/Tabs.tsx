@@ -4,17 +4,19 @@ import { bulmaClassName } from './classNames'
 import { SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-export interface TabsProps extends React.HTMLAttributes<HTMLElement>, SizeProps {
-  isBoxed?: boolean;
-  isCentered?: boolean;
-  isFullwidth?: boolean;
-  isRight?: boolean;
-  isToggle?: boolean;
-  isToggleRounded?: boolean;
+export interface TabsProps
+  extends React.HTMLAttributes<HTMLElement>,
+    SizeProps {
+  isBoxed?: boolean
+  isCentered?: boolean
+  isFullwidth?: boolean
+  isRight?: boolean
+  isToggle?: boolean
+  isToggleRounded?: boolean
 }
 
 export class Tabs extends React.Component<TabsProps> {
-  render () :React.ReactNode{
+  render(): React.ReactNode {
     const {
       isBoxed,
       isCentered,
@@ -37,7 +39,7 @@ export class Tabs extends React.Component<TabsProps> {
       isRight,
       isSmall,
       isToggle,
-      isToggleRounded
+      isToggleRounded,
     })
   }
 }

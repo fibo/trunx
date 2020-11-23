@@ -11,7 +11,11 @@ interface FieldProps
   isHorizontal?: boolean
 }
 declare type FieldBodyProps = React.HTMLAttributes<HTMLDivElement>
-declare type FieldLabelProps = React.HTMLAttributes<HTMLDivElement>
+interface FieldLabelProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    SizeProps {
+  isNormal?: boolean
+}
 declare class FieldBody extends React.Component<FieldBodyProps> {
   render(): React.ReactNode
 }

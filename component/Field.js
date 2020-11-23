@@ -1,4 +1,5 @@
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.Field = void 0;
 var tslib_1 = require("tslib");
 var React = require("react");
 var classNames_1 = require("./classNames");
@@ -19,7 +20,8 @@ var FieldLabel = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     FieldLabel.prototype.render = function () {
-        return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.fieldLabel);
+        var _a = this.props, isNormal = _a.isNormal, props = tslib_1.__rest(_a, ["isNormal"]);
+        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.fieldLabel, { isNormal: isNormal });
     };
     return FieldLabel;
 }(React.Component));
