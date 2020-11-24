@@ -8,14 +8,11 @@
 
 Almost all Bulma features are available and documented, few helpers and custom components are already implemented.
 
-I am using **Trunx** component library in production for my [GoSeven](https://go7.li) website.
-It is an open source project, if you want to see code snippets you can check out the repo on GitHub: [github.com/go-seven/go-seven.com](https://github.com/go-seven/go-seven.com).
-
 ## Documentation
 
 To read documentation point your browser to http://trunx.dev
 
-Yes, the website itself is implemented with Trunx: you can read its [source code here](https://github.com/fibo/trunx/tree/master/src/docs).
+Yes, the website itself is implemented with Trunx: you can read its [source code here](https://github.com/fibo/trunx/tree/main/src/docs).
 
 ## Motivation
 
@@ -37,5 +34,5 @@ Tons of kudos to [Bulma] author!
 Trunks full body png comes from [kisspng](https://www.kisspng.com/png-trunks-gohan-goku-goten-bulma-1996965/).
 Then I draw Trunks' head with [Tayasui Sketches](https://tayasui.com/sketches/).
 
-[Bulma]: https://bulma.io "Bulma CSS framework"
-[React]: https://facebook.github.io/react/ "React"
+[bulma]: https://bulma.io 'Bulma CSS framework'
+[react]: https://facebook.github.io/react/ 'React'
