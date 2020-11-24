@@ -485,7 +485,7 @@ export function Overview({ location: { pathname } }) {
               ].map(({ component, subComponents = [] }, i) => (
                 <Li key={i}>
                   <A
-                    href={`https://github.com/fibo/trunx/blob/master/src/component/${component}.tsx`}
+                    href={`https://github.com/fibo/trunx/blob/main/src/component/${component}.tsx`}
                     target='_blank'
                   >
                     {component}
