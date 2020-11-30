@@ -51,7 +51,7 @@ export class Field extends React.Component<FieldProps> {
       ...props
     } = this.props
 
-    return renderElement('div', props, bulmaClassName.fieldLabel, {
+    return renderElement('div', props, bulmaClassName.field, {
       hasAddons,
       hasAddonsCentered,
       isGrouped,
