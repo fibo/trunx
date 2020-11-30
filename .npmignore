@@ -4,7 +4,9 @@
 .editorconfig
 .eslintignore
 .eslintrc.json
+.github
 Development.md
 docs/
 src/
+test/
 tsconfig.json
