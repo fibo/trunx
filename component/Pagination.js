@@ -24,7 +24,9 @@ var PaginationLink = (function (_super) {
     }
     PaginationLink.prototype.render = function () {
         var _a = this.props, isCurrent = _a.isCurrent, props = tslib_1.__rest(_a, ["isCurrent"]);
-        return (React.createElement("li", null, renderElement_1.renderElement('a', props, classNames_1.bulmaClassName.paginationLink, { isCurrent: isCurrent })));
+        return (React.createElement("li", null, renderElement_1.renderElement('a', props, classNames_1.bulmaClassName.paginationLink, {
+            isCurrent: isCurrent,
+        })));
     };
     return PaginationLink;
 }(React.Component));
@@ -68,7 +70,7 @@ var Pagination = (function (_super) {
     };
     Pagination.defaultProps = {
         'aria-label': 'pagination',
-        role: 'navigation'
+        role: 'navigation',
     };
     Pagination.Ellipsis = PaginationEllipsis;
     Pagination.Link = PaginationLink;
