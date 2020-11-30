@@ -37,7 +37,7 @@ var Field = (function (_super) {
             hasAddonsCentered: hasAddonsCentered,
             isGrouped: isGrouped,
             isGroupedMultiline: isGroupedMultiline,
-            isHorizontal: isHorizontal
+            isHorizontal: isHorizontal,
         });
     };
     Field.Body = FieldBody;

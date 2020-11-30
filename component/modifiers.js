@@ -173,9 +173,9 @@ function extractModifiersProps(_a) {
             hasTextWarning: hasTextWarning,
             hasTextWhite: hasTextWhite,
             hasTextWhiteBis: hasTextWhiteBis,
-            hasTextWhiteTer: hasTextWhiteTer
+            hasTextWhiteTer: hasTextWhiteTer,
         },
-        props
+        props,
     ];
 }
 exports.extractModifiersProps = extractModifiersProps;

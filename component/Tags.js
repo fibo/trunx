@@ -10,7 +10,7 @@ var Tags = (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Tags.prototype.render = function () {
-        var _a = this.props, areLarge = _a.areLarge, areMedium = _a.areMedium, children = _a.children, hasAddons = _a.hasAddons, props = tslib_1.__rest(_a, ["areLarge", "areMedium", "children", "hasAddons"]);
+        var _a = this.props, areLarge = _a.areLarge, areMedium = _a.areMedium, hasAddons = _a.hasAddons, props = tslib_1.__rest(_a, ["areLarge", "areMedium", "hasAddons"]);
         return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.tags, { areLarge: areLarge, areMedium: areMedium, hasAddons: hasAddons });
     };
     return Tags;
