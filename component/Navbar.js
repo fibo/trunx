@@ -29,7 +29,7 @@ var NavbarBurger = (function (_super) {
     };
     NavbarBurger.defaultProps = {
         'aria-label': 'menu',
-        role: 'button'
+        role: 'button',
     };
     return NavbarBurger;
 }(React.Component));
@@ -75,7 +75,7 @@ var NavbarItem = (function (_super) {
             hasDropdown: hasDropdown,
             hasDropdownUp: hasDropdownUp,
             isActive: isActive,
-            isHoverable: isHoverable
+            isHoverable: isHoverable,
         });
     };
     return NavbarItem;
@@ -136,7 +136,12 @@ var Navbar = (function (_super) {
     };
     Navbar.prototype.render = function () {
         var _a = this.props, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, props = tslib_1.__rest(_a, ["isFixedBottom", "isFixedTop", "isTransparent", "isUnselectable"]);
-        return renderElement_1.renderElement('nav', props, classNames_1.bulmaClassName.navbar, { isFixedBottom: isFixedBottom, isFixedTop: isFixedTop, isTransparent: isTransparent, isUnselectable: isUnselectable });
+        return renderElement_1.renderElement('nav', props, classNames_1.bulmaClassName.navbar, {
+            isFixedBottom: isFixedBottom,
+            isFixedTop: isFixedTop,
+            isTransparent: isTransparent,
+            isUnselectable: isUnselectable,
+        });
     };
     Navbar.Brand = NavbarBrand;
     Navbar.Burger = NavbarBurger;

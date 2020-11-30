@@ -63,7 +63,12 @@ var Dropdown = (function (_super) {
     }
     Dropdown.prototype.render = function () {
         var _a = this.props, isActive = _a.isActive, isHoverable = _a.isHoverable, isRight = _a.isRight, isUp = _a.isUp, props = tslib_1.__rest(_a, ["isActive", "isHoverable", "isRight", "isUp"]);
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.dropdown, { isActive: isActive, isHoverable: isHoverable, isRight: isRight, isUp: isUp });
+        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.dropdown, {
+            isActive: isActive,
+            isHoverable: isHoverable,
+            isRight: isRight,
+            isUp: isUp,
+        });
     };
     Dropdown.Content = DropdownContent;
     Dropdown.Divider = DropdownDivider;

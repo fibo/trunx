@@ -11,7 +11,12 @@ var Columns = (function (_super) {
     }
     Columns.prototype.render = function () {
         var _a = this.props, isDesktop = _a.isDesktop, isGapless = _a.isGapless, isMobile = _a.isMobile, isMultiline = _a.isMultiline, props = tslib_1.__rest(_a, ["isDesktop", "isGapless", "isMobile", "isMultiline"]);
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.columns, { isDesktop: isDesktop, isGapless: isGapless, isMobile: isMobile, isMultiline: isMultiline });
+        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.columns, {
+            isDesktop: isDesktop,
+            isGapless: isGapless,
+            isMobile: isMobile,
+            isMultiline: isMultiline,
+        });
     };
     return Columns;
 }(React.Component));
