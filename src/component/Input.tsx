@@ -4,15 +4,28 @@ import { bulmaClassName } from './classNames'
 import { MainColorsProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement>, MainColorsProps, SizeProps {
-  isFocused?: boolean;
-  isHovered?: boolean;
-  isRounded?: boolean;
-  isStatic?: boolean;
+interface IInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement>,
+    MainColorsProps,
+    SizeProps {
+  isFocused?: boolean
+  isHovered?: boolean
+  isRounded?: boolean
+  isStatic?: boolean
 }
 
 export class Input extends React.Component<IInputProps> {
-  render () {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const {
       isFocused,
       isHovered,
@@ -26,7 +39,7 @@ export class Input extends React.Component<IInputProps> {
       isFocused,
       isHovered,
       isRounded,
-      isStatic
+      isStatic,
     })
   }
 }

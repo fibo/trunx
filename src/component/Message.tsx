@@ -5,7 +5,7 @@ import {
   HelpersProps,
   MainColorsProps,
   ShadeColorsProps,
-  SizeProps
+  SizeProps,
 } from './modifiers'
 import { renderElement } from './renderElement'
 
@@ -23,13 +23,33 @@ export type MessageBodyProps = React.HTMLAttributes<HTMLDivElement>
 export type MessageHeaderProps = React.HTMLAttributes<HTMLDivElement>
 
 class MessageBody extends React.Component<MessageBodyProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.messageBody)
   }
 }
 
 class MessageHeader extends React.Component<MessageHeaderProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.messageHeader)
   }
 }
@@ -38,7 +58,17 @@ export class Message extends React.Component<MessageProps> {
   static Body = MessageBody
   static Header = MessageHeader
 
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('article', this.props, bulmaClassName.message)
   }
 }

@@ -38,6 +38,12 @@ export interface NavbarMenuProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 export declare type NavbarStartProps = React.HTMLAttributes<HTMLDivElement>
 declare class NavbarBrand extends React.Component<NavbarBrandProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class NavbarBurger extends React.Component<NavbarBurgerProps> {
@@ -45,29 +51,75 @@ declare class NavbarBurger extends React.Component<NavbarBurgerProps> {
     'aria-label': string
     role: string
   }
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class NavbarDivider extends React.Component<NavbarDividerProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class NavbarDropdown extends React.Component<NavbarDropdownProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class NavbarEnd extends React.Component<NavbarEndProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class NavbarItem extends React.Component<NavbarItemProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
-declare class NavbarLink extends React.Component<
-  React.PropsWithChildren<NavbarLinkProps>
-> {
+declare class NavbarLink extends React.Component<NavbarLinkProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class NavbarMenu extends React.Component<NavbarMenuProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class NavbarStart extends React.Component<NavbarStartProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export declare class Navbar extends React.Component<NavbarProps> {
@@ -80,6 +132,12 @@ export declare class Navbar extends React.Component<NavbarProps> {
   static Link: typeof NavbarLink
   static Menu: typeof NavbarMenu
   static Start: typeof NavbarStart
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   componentDidMount(): void
   componentWillUnmount(): void
   render(): React.ReactNode

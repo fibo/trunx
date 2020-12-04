@@ -23,24 +23,54 @@ export interface TileChildNotificationProps
   extends React.HTMLAttributes<HTMLElement>,
     MainColorsProps {}
 declare class TileAncestor extends React.Component<TileAncestorProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class TileChildBox extends React.Component<TileChildBoxProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class TileChildNotification extends React.Component<
   TileChildNotificationProps
 > {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class TileChild extends React.Component<TileChildProps> {
   static Box: typeof TileChildBox
   static Notification: typeof TileChildNotification
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export declare class Tile extends React.Component<TileProps> {
   static Ancestor: typeof TileAncestor
   static Child: typeof TileChild
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export {}

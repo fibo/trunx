@@ -16,7 +16,17 @@ export interface TabsProps
 }
 
 export class Tabs extends React.Component<TabsProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const {
       isBoxed,
       isCentered,

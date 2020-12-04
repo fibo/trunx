@@ -6,9 +6,17 @@ var renderElement_1 = require("./renderElement");
 var P = (function (_super) {
     tslib_1.__extends(P, _super);
     function P() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    P.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     P.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('p', this.props);
     };
     return P;

@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var Notification = (function (_super) {
     tslib_1.__extends(Notification, _super);
     function Notification() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Notification.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Notification.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.navbar);
     };
     return Notification;

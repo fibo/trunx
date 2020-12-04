@@ -15,10 +15,22 @@ export interface BreadcrumbItemProps
   isActive?: boolean
 }
 declare class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export declare class Breadcrumb extends React.Component<BreadcrumbProps> {
   static Item: typeof BreadcrumbItem
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export {}

@@ -10,5 +10,11 @@ export interface TagProps
   isRounded?: boolean
 }
 export declare class Tag extends React.Component<TagProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

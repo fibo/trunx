@@ -8,9 +8,17 @@ var modifiers_1 = require("./modifiers");
 var TileAncestor = (function (_super) {
     tslib_1.__extends(TileAncestor, _super);
     function TileAncestor() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    TileAncestor.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     TileAncestor.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
         return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-ancestor', className) }, props), children));
     };
@@ -19,9 +27,17 @@ var TileAncestor = (function (_super) {
 var TileChildBox = (function (_super) {
     tslib_1.__extends(TileChildBox, _super);
     function TileChildBox() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    TileChildBox.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     TileChildBox.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
         return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-child', classNames_1.bulmaClassName.box, className) }, props), children));
     };
@@ -30,9 +46,17 @@ var TileChildBox = (function (_super) {
 var TileChildNotification = (function (_super) {
     tslib_1.__extends(TileChildNotification, _super);
     function TileChildNotification() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    TileChildNotification.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     TileChildNotification.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], className = _b.className, children = _b.children, props = tslib_1.__rest(_b, ["className", "children"]);
         return (React.createElement("article", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-child', classNames_1.bulmaClassName.notification, className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), children));
     };
@@ -41,9 +65,17 @@ var TileChildNotification = (function (_super) {
 var TileChild = (function (_super) {
     tslib_1.__extends(TileChild, _super);
     function TileChild() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    TileChild.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     TileChild.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
         return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-child', className) }, props), children));
     };
@@ -54,9 +86,17 @@ var TileChild = (function (_super) {
 var Tile = (function (_super) {
     tslib_1.__extends(Tile, _super);
     function Tile() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Tile.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Tile.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, children = _a.children, className = _a.className, is1 = _a.is1, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6, is7 = _a.is7, is8 = _a.is8, is9 = _a.is9, is10 = _a.is10, is11 = _a.is11, is12 = _a.is12, isParent = _a.isParent, isVertical = _a.isVertical, props = tslib_1.__rest(_a, ["children", "className", "is1", "is2", "is3", "is4", "is5", "is6", "is7", "is8", "is9", "is10", "is11", "is12", "isParent", "isVertical"]);
         return (React.createElement("div", tslib_1.__assign({}, props, { className: classnames('tile', className, {
                 'is-1': is1,

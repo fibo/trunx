@@ -16,7 +16,16 @@ export interface PProps
     TextColorHelpersProps {}
 
 export class P extends React.Component<PProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
     return renderElement('p', this.props)
   }
 }

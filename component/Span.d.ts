@@ -5,5 +5,11 @@ export interface SpanProps
     BackgroundColorHelpersProps,
     TextColorHelpersProps {}
 export declare class Span extends React.Component<SpanProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

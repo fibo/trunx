@@ -5,6 +5,12 @@ interface StrongProps
     BackgroundColorHelpersProps,
     TextColorHelpersProps {}
 export declare class Strong extends React.Component<StrongProps> {
-  render(): React.ReactNode
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
+  render(): {} | null | undefined
 }
 export {}

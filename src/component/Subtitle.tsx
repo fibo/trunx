@@ -16,7 +16,17 @@ export interface SubtitleProps
 }
 
 export class Subtitle extends React.Component<SubtitleProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const { is1, is2, is3, is4, is5, is6, ...props } = this.props
 
     return renderElement('p', props, bulmaClassName.subtitle, {

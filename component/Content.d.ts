@@ -9,5 +9,11 @@ export interface ContentProps
   hasTextRight?: boolean
 }
 export declare class Content extends React.Component<ContentProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

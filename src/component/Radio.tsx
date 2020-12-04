@@ -6,21 +6,22 @@ import { bulmaClassName } from './classNames'
 export type RadioProps = React.InputHTMLAttributes<HTMLInputElement>
 
 export class Radio extends React.Component<RadioProps> {
-  render (): React.ReactNode {
-    const {
-      children,
-      className,
-      ...props
-    } = this.props
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
+    const { children, className, ...props } = this.props
 
     return (
-      <label
-        className={classnames(bulmaClassName.radio, className)}
-      >
-        <input
-          {...props}
-          type='radio'
-        />
+      <label className={classnames(bulmaClassName.radio, className)}>
+        <input {...props} type='radio' />
 
         {children}
       </label>

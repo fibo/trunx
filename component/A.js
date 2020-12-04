@@ -8,9 +8,17 @@ var modifiers_1 = require("./modifiers");
 var A = (function (_super) {
     tslib_1.__extends(A, _super);
     function A() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    A.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     A.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, isActive = _b.isActive, props = tslib_1.__rest(_b, ["children", "className", "isActive"]);
         return (React.createElement("a", tslib_1.__assign({ className: classnames(className, classNames_1.trunxPropsToClassnamesObject({ isActive: isActive }), modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), children));
     };

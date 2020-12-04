@@ -5,7 +5,7 @@ import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
 import {
   SizeProps,
   extractModifiersProps,
-  modifierPropsToClassnamesObject
+  modifierPropsToClassnamesObject,
 } from './modifiers'
 
 export interface BreadcrumbProps
@@ -25,7 +25,16 @@ export interface BreadcrumbItemProps
 }
 
 class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const { children, className, isActive, ...props } = this.props
 
     return (
@@ -45,7 +54,17 @@ class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
 export class Breadcrumb extends React.Component<BreadcrumbProps> {
   static Item = BreadcrumbItem
 
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const [
       modifiersProps,
       {
@@ -58,7 +77,7 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
         isCentered,
         isRight,
         ...props
-      }
+      },
     ] = extractModifiersProps(this.props)
 
     return (
@@ -73,7 +92,7 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
             hasDotSeparator,
             hasSuccedesSeparator,
             isCentered,
-            isRight
+            isRight,
           }),
           modifierPropsToClassnamesObject(modifiersProps)
         )}

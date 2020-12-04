@@ -315,7 +315,17 @@ export interface ColumnProps {
 }
 
 export class Column extends React.Component<ColumnProps> {
-  render () {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render() {
+    if (this.state.hasError) {
+      return null
+    }
+
     const {
       isCentered,
       is1,
@@ -934,7 +944,7 @@ export class Column extends React.Component<ColumnProps> {
       isOffsetTwoFifthsWidescreen,
       isOffsetThreeQuartersWidescreen,
       isOffsetThreeFifthsWidescreen,
-      isOffsetFourFifthsWidescreen
+      isOffsetFourFifthsWidescreen,
     })
   }
 }

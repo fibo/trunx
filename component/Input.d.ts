@@ -10,6 +10,12 @@ interface IInputProps
   isStatic?: boolean
 }
 export declare class Input extends React.Component<IInputProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export {}

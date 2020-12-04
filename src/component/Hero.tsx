@@ -23,19 +23,49 @@ type HeroFootProps = React.HTMLAttributes<HTMLDivElement>
 type HeroHeadProps = React.HTMLAttributes<HTMLDivElement>
 
 class HeroBody extends React.Component<HeroBodyProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.heroBody)
   }
 }
 
 class HeroFoot extends React.Component<HeroFootProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.heroFoot)
   }
 }
 
 class HeroHead extends React.Component<HeroHeadProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.heroHead)
   }
 }
@@ -45,7 +75,17 @@ export class Hero extends React.Component<HeroProps> {
   static Foot = HeroFoot
   static Head = HeroHead
 
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const {
       isBold,
       isDark,
@@ -62,7 +102,7 @@ export class Hero extends React.Component<HeroProps> {
       isFullheight,
       isFullheightWithNavbar,
       isLarge,
-      isMedium
+      isMedium,
     })
   }
 }

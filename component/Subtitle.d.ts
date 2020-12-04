@@ -11,5 +11,11 @@ export interface SubtitleProps
   is6?: boolean
 }
 export declare class Subtitle extends React.Component<SubtitleProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
