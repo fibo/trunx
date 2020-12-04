@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { MainColorsProps } from './modifiers'
+import { HelpersProps, MainColorsProps } from './modifiers'
 export interface HeroProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps,
     MainColorsProps {
   isBold?: boolean
   isDark?: boolean
@@ -11,9 +12,15 @@ export interface HeroProps
   isLight?: boolean
   isMedium?: boolean
 }
-declare type HeroBodyProps = React.HTMLAttributes<HTMLDivElement>
-declare type HeroFootProps = React.HTMLAttributes<HTMLDivElement>
-declare type HeroHeadProps = React.HTMLAttributes<HTMLDivElement>
+interface HeroBodyProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
+interface HeroFootProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
+interface HeroHeadProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 declare class HeroBody extends React.Component<HeroBodyProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

@@ -1,7 +1,14 @@
 import * as React from 'react'
-export declare type MenuProps = React.HTMLAttributes<HTMLElement>
-export declare type MenuLabelProps = React.HTMLAttributes<HTMLParagraphElement>
-export declare type MenuListProps = React.HTMLAttributes<HTMLUListElement>
+import { HelpersProps } from './modifiers'
+export interface MenuProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
+export interface MenuLabelProps
+  extends React.HTMLAttributes<HTMLParagraphElement>,
+    HelpersProps {}
+export interface MenuListProps
+  extends React.HTMLAttributes<HTMLUListElement>,
+    HelpersProps {}
 declare class MenuLabel extends React.Component<MenuLabelProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

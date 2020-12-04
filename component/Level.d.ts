@@ -1,22 +1,21 @@
 import * as React from 'react'
-import { AlignementHelpersProps, TextColorHelpersProps } from './modifiers'
+import { HelpersProps } from './modifiers'
 export interface LevelProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    TextColorHelpersProps {
+    HelpersProps {
   isMobile?: boolean
 }
 export interface LevelItemProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    AlignementHelpersProps,
-    TextColorHelpersProps {
+    HelpersProps {
   as?: 'a' | 'div'
 }
 export interface LevelLeftProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    TextColorHelpersProps {}
+    HelpersProps {}
 export interface LevelRightProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    TextColorHelpersProps {}
+    HelpersProps {}
 declare class LevelItem extends React.Component<LevelItemProps> {
   static defaultProps: {
     as: string

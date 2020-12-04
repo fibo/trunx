@@ -1,13 +1,20 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-export type MenuProps = React.HTMLAttributes<HTMLElement>
+export interface MenuProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
 
-export type MenuLabelProps = React.HTMLAttributes<HTMLParagraphElement>
+export interface MenuLabelProps
+  extends React.HTMLAttributes<HTMLParagraphElement>,
+    HelpersProps {}
 
-export type MenuListProps = React.HTMLAttributes<HTMLUListElement>
+export interface MenuListProps
+  extends React.HTMLAttributes<HTMLUListElement>,
+    HelpersProps {}
 
 class MenuLabel extends React.Component<MenuLabelProps> {
   static getDerivedStateFromError() {

@@ -1,9 +1,3 @@
-export interface AlignementHelpersProps {
-  hasTextCentered?: boolean
-  hasTextJustified?: boolean
-  hasTextLeft?: boolean
-  hasTextRight?: boolean
-}
 export interface BackgroundColorHelpersProps {
   hasBackgroundBlack?: boolean
   hasBackgroundBlackBis?: boolean
@@ -25,20 +19,81 @@ export interface BackgroundColorHelpersProps {
   hasBackgroundWhiteBis?: boolean
   hasBackgroundWhiteTer?: boolean
 }
-export interface FloatHelpersProps {
-  isClearfix?: boolean
-  isPulledLeft?: boolean
-  isPulledRight?: boolean
+export interface FlexboxHelpers {
+  isAlignContentBaseline?: boolean
+  isAlignContentCenter?: boolean
+  isAlignContentEnd?: boolean
+  isAlignContentFlexEnd?: boolean
+  isAlignContentFlexStart?: boolean
+  isAlignContentSpaceAround?: boolean
+  isAlignContentSpaceBetween?: boolean
+  isAlignContentSpaceEvenly?: boolean
+  isAlignContentStart?: boolean
+  isAlignContentStretch?: boolean
+  isAlignItemsBaseline?: boolean
+  isAlignItemsCenter?: boolean
+  isAlignItemsEnd?: boolean
+  isAlignItemsFlexEnd?: boolean
+  isAlignItemsFlexStart?: boolean
+  isAlignItemsSelfEnd?: boolean
+  isAlignItemsSelfStart?: boolean
+  isAlignItemsSpaceAround?: boolean
+  isAlignItemsSpaceBetween?: boolean
+  isAlignItemsSpaceEvenly?: boolean
+  isAlignItemsStart?: boolean
+  isAlignItemsStretch?: boolean
+  isAlignSelfAuto?: boolean
+  isAlignSelfBaseline?: boolean
+  isAlignSelfCenter?: boolean
+  isAlignSelfFlexEnd?: boolean
+  isAlignSelfFlexStart?: boolean
+  isAlignSelfStretch?: boolean
+  isFlexDirectionColumn?: boolean
+  isFlexDirectionColumnReverse?: boolean
+  isFlexDirectionRow?: boolean
+  isFlexDirectionRowReverse?: boolean
+  isFlexGrow0?: boolean
+  isFlexGrow1?: boolean
+  isFlexGrow2?: boolean
+  isFlexGrow3?: boolean
+  isFlexGrow4?: boolean
+  isFlexGrow5?: boolean
+  isFlexShrink0?: boolean
+  isFlexShrink1?: boolean
+  isFlexShrink2?: boolean
+  isFlexShrink3?: boolean
+  isFlexShrink4?: boolean
+  isFlexShrink5?: boolean
+  isFlexWrapNowrap?: boolean
+  isFlexWrapWrap?: boolean
+  isFlexWrapWrapReverse?: boolean
+  isJustifyContentCenter?: boolean
+  isJustifyContentEnd?: boolean
+  isJustifyContentFlexEnd?: boolean
+  isJustifyContentFlexStart?: boolean
+  isJustifyContentLeft?: boolean
+  isJustifyContentRight?: boolean
+  isJustifyContentSpaceAround?: boolean
+  isJustifyContentSpaceBetween?: boolean
+  isJustifyContentSpaceEvenly?: boolean
+  isJustifyContentStart?: boolean
 }
-export interface HelpersProps {
-  isInvisible?: boolean
-  isMarginLess?: boolean
-  isPaddingLess?: boolean
-  isSrOnly?: boolean
+export interface FontFamilyHelpersProps {
+  isFamilySansSerif?: boolean
+  isFamilyMonospace?: boolean
+  isFamilyPrimary?: boolean
+  isFamilySecondary?: boolean
+  isFamilycode?: boolean
 }
 export interface OtherHelpersProps {
+  isClearfix?: boolean
   isClickable?: boolean
+  isClipped?: boolean
+  isOverlay?: boolean
+  isPulledLeft?: boolean
+  isPulledRight?: boolean
   isRadiusLess?: boolean
+  isRelative?: boolean
   isShadowLess?: boolean
   isUnselectable?: boolean
 }
@@ -62,6 +117,8 @@ export interface SizeProps {
   isSmall?: boolean
 }
 export interface SpacingHelpersProps {
+  isMarginLess?: boolean
+  isPaddingLess?: boolean
   m0?: boolean
   m1?: boolean
   m2?: boolean
@@ -182,15 +239,194 @@ export interface TextColorHelpersProps {
   hasTextWhiteBis?: boolean
   hasTextWhiteTer?: boolean
 }
+export interface TextTransformationHelpersProps {
+  isCapitalized?: boolean
+  isItalic?: boolean
+  isLowercase?: boolean
+  isUppercase?: boolean
+}
+export interface TextWeightHelpersProps {
+  hasTextWeightLight?: boolean
+  hasTextWeightNormal?: boolean
+  hasTextWeightMedium?: boolean
+  hasTextWeightSemibold?: boolean
+  hasTextWeightBold?: boolean
+}
+export interface TypographyAlignementHelpersProps {
+  hasTextCentered?: boolean
+  hasTextCenteredDesktop?: boolean
+  hasTextCenteredDesktopOnly?: boolean
+  hasTextCenteredFullhd?: boolean
+  hasTextCenteredMobile?: boolean
+  hasTextCenteredTablet?: boolean
+  hasTextCenteredTabletOnly?: boolean
+  hasTextCenteredTouch?: boolean
+  hasTextCenteredWidescreen?: boolean
+  hasTextCenteredWidescreenOnly?: boolean
+  hasTextJustified?: boolean
+  hasTextJustifiedDesktop?: boolean
+  hasTextJustifiedDesktopOnly?: boolean
+  hasTextJustifiedFullhd?: boolean
+  hasTextJustifiedMobile?: boolean
+  hasTextJustifiedTablet?: boolean
+  hasTextJustifiedTabletOnly?: boolean
+  hasTextJustifiedTouch?: boolean
+  hasTextJustifiedWidescreen?: boolean
+  hasTextJustifiedWidescreenOnly?: boolean
+  hasTextLeft?: boolean
+  hasTextLeftDesktop?: boolean
+  hasTextLeftDesktopOnly?: boolean
+  hasTextLeftFullhd?: boolean
+  hasTextLeftMobile?: boolean
+  hasTextLeftTablet?: boolean
+  hasTextLeftTabletOnly?: boolean
+  hasTextLeftTouch?: boolean
+  hasTextLeftWidescreen?: boolean
+  hasTextLeftWidescreenOnly?: boolean
+  hasTextRight?: boolean
+  hasTextRightDesktop?: boolean
+  hasTextRightDesktopOnly?: boolean
+  hasTextRightFullhd?: boolean
+  hasTextRightMobile?: boolean
+  hasTextRightTablet?: boolean
+  hasTextRightTabletOnly?: boolean
+  hasTextRightTouch?: boolean
+  hasTextRightWidescreen?: boolean
+  hasTextRightWidescreenOnly?: boolean
+}
+export interface TypographySizeHelpers {
+  isSize1?: boolean
+  isSize1Mobile?: boolean
+  isSize1Touch?: boolean
+  isSize1Tablet?: boolean
+  isSize1Desktop?: boolean
+  isSize1Widescreen?: boolean
+  isSize1Fullhd?: boolean
+  isSize2?: boolean
+  isSize2Mobile?: boolean
+  isSize2Touch?: boolean
+  isSize2Tablet?: boolean
+  isSize2Desktop?: boolean
+  isSize2Widescreen?: boolean
+  isSize2Fullhd?: boolean
+  isSize3?: boolean
+  isSize3Mobile?: boolean
+  isSize3Touch?: boolean
+  isSize3Tablet?: boolean
+  isSize3Desktop?: boolean
+  isSize3Widescreen?: boolean
+  isSize3Fullhd?: boolean
+  isSize4?: boolean
+  isSize4Mobile?: boolean
+  isSize4Touch?: boolean
+  isSize4Tablet?: boolean
+  isSize4Desktop?: boolean
+  isSize4Widescreen?: boolean
+  isSize4Fullhd?: boolean
+  isSize5?: boolean
+  isSize5Mobile?: boolean
+  isSize5Touch?: boolean
+  isSize5Tablet?: boolean
+  isSize5Desktop?: boolean
+  isSize5Widescreen?: boolean
+  isSize5Fullhd?: boolean
+  isSize6?: boolean
+  isSize6Mobile?: boolean
+  isSize6Touch?: boolean
+  isSize6Tablet?: boolean
+  isSize6Desktop?: boolean
+  isSize6Widescreen?: boolean
+  isSize6Fullhd?: boolean
+  isSize7?: boolean
+  isSize7Mobile?: boolean
+  isSize7Touch?: boolean
+  isSize7Tablet?: boolean
+  isSize7Desktop?: boolean
+  isSize7Widescreen?: boolean
+  isSize7Fullhd?: boolean
+}
+export interface VisibilityHelpersProps {
+  isBlock?: boolean
+  isBlockDesktop?: boolean
+  isBlockDesktopOnly?: boolean
+  isBlockFullhd?: boolean
+  isBlockMobile?: boolean
+  isBlockTablet?: boolean
+  isBlockTabletOnly?: boolean
+  isBlockTouch?: boolean
+  isBlockWidescreen?: boolean
+  isBlockWidescreenOnly?: boolean
+  isFlex?: boolean
+  isFlexDesktop?: boolean
+  isFlexDesktopOnly?: boolean
+  isFlexFullhd?: boolean
+  isFlexMobile?: boolean
+  isFlexTablet?: boolean
+  isFlexTabletOnly?: boolean
+  isFlexTouch?: boolean
+  isFlexWidescreen?: boolean
+  isFlexWidescreenOnly?: boolean
+  isHidden?: boolean
+  isHiddenDesktop?: boolean
+  isHiddenDesktopOnly?: boolean
+  isHiddenFullhd?: boolean
+  isHiddenMobile?: boolean
+  isHiddenTablet?: boolean
+  isHiddenTabletOnly?: boolean
+  isHiddenTouch?: boolean
+  isHiddenWidescreen?: boolean
+  isHiddenWidescreenOnly?: boolean
+  isInline?: boolean
+  isInlineBlock?: boolean
+  isInlineBlockDesktop?: boolean
+  isInlineBlockDesktopOnly?: boolean
+  isInlineBlockFullhd?: boolean
+  isInlineBlockMobile?: boolean
+  isInlineBlockTablet?: boolean
+  isInlineBlockTabletOnly?: boolean
+  isInlineBlockTouch?: boolean
+  isInlineBlockWidescreen?: boolean
+  isInlineBlockWidescreenOnly?: boolean
+  isInlineDesktop?: boolean
+  isInlineDesktopOnly?: boolean
+  isInlineFlex?: boolean
+  isInlineFlexDesktop?: boolean
+  isInlineFlexDesktopOnly?: boolean
+  isInlineFlexFullhd?: boolean
+  isInlineFlexMobile?: boolean
+  isInlineFlexTablet?: boolean
+  isInlineFlexTabletOnly?: boolean
+  isInlineFlexTouch?: boolean
+  isInlineFlexWidescreen?: boolean
+  isInlineFlexWidescreenOnly?: boolean
+  isInlineFullhd?: boolean
+  isInlineMobile?: boolean
+  isInlineTablet?: boolean
+  isInlineTabletOnly?: boolean
+  isInlineTouch?: boolean
+  isInlineWidescreen?: boolean
+  isInlineWidescreenOnly?: boolean
+  isInvisible?: boolean
+  isSrOnly?: boolean
+}
+export interface HelpersProps
+  extends BackgroundColorHelpersProps,
+    FlexboxHelpers,
+    FontFamilyHelpersProps,
+    OtherHelpersProps,
+    SpacingHelpersProps,
+    SizeProps,
+    TextColorHelpersProps,
+    TextTransformationHelpersProps,
+    TextWeightHelpersProps,
+    TypographyAlignementHelpersProps,
+    TypographySizeHelpers,
+    VisibilityHelpersProps {}
 export interface ModifiersProps
-  extends AlignementHelpersProps,
-    BackgroundColorHelpersProps,
-    FloatHelpersProps,
-    HelpersProps,
+  extends HelpersProps,
     MainColorsProps,
     ShadeColorsProps,
-    SizeProps,
-    TextColorHelpersProps {}
+    SizeProps {}
 export interface ExtractModifiersPropsArg extends ModifiersProps {
   [prop: string]: any
 }
@@ -198,10 +434,6 @@ export declare function modifierPropsToClassnamesObject(
   props?: ModifiersProps
 ): {}
 export declare function extractModifiersProps({
-  hasTextCentered,
-  hasTextJustified,
-  hasTextLeft,
-  hasTextRight,
   hasBackgroundBlack,
   hasBackgroundBlackBis,
   hasBackgroundBlackTer,
@@ -221,15 +453,76 @@ export declare function extractModifiersProps({
   hasBackgroundWhite,
   hasBackgroundWhiteBis,
   hasBackgroundWhiteTer,
+  isAlignContentBaseline,
+  isAlignContentCenter,
+  isAlignContentEnd,
+  isAlignContentFlexEnd,
+  isAlignContentFlexStart,
+  isAlignContentSpaceAround,
+  isAlignContentSpaceBetween,
+  isAlignContentSpaceEvenly,
+  isAlignContentStart,
+  isAlignContentStretch,
+  isAlignItemsBaseline,
+  isAlignItemsCenter,
+  isAlignItemsEnd,
+  isAlignItemsFlexEnd,
+  isAlignItemsFlexStart,
+  isAlignItemsSelfEnd,
+  isAlignItemsSelfStart,
+  isAlignItemsSpaceAround,
+  isAlignItemsSpaceBetween,
+  isAlignItemsSpaceEvenly,
+  isAlignItemsStart,
+  isAlignItemsStretch,
+  isAlignSelfAuto,
+  isAlignSelfBaseline,
+  isAlignSelfCenter,
+  isAlignSelfFlexEnd,
+  isAlignSelfFlexStart,
+  isAlignSelfStretch,
+  isFlexDirectionColumn,
+  isFlexDirectionColumnReverse,
+  isFlexDirectionRow,
+  isFlexDirectionRowReverse,
+  isFlexGrow0,
+  isFlexGrow1,
+  isFlexGrow2,
+  isFlexGrow3,
+  isFlexGrow4,
+  isFlexGrow5,
+  isFlexShrink0,
+  isFlexShrink1,
+  isFlexShrink2,
+  isFlexShrink3,
+  isFlexShrink4,
+  isFlexShrink5,
+  isFlexWrapNowrap,
+  isFlexWrapWrap,
+  isFlexWrapWrapReverse,
+  isJustifyContentCenter,
+  isJustifyContentEnd,
+  isJustifyContentFlexEnd,
+  isJustifyContentFlexStart,
+  isJustifyContentLeft,
+  isJustifyContentRight,
+  isJustifyContentSpaceAround,
+  isJustifyContentSpaceBetween,
+  isJustifyContentSpaceEvenly,
+  isJustifyContentStart,
+  isFamilySansSerif,
+  isFamilyMonospace,
+  isFamilyPrimary,
+  isFamilySecondary,
+  isFamilycode,
   isClearfix,
+  isClickable,
+  isClipped,
+  isOverlay,
   isPulledLeft,
   isPulledRight,
-  isInvisible,
-  isMarginLess,
-  isPaddingLess,
-  isSrOnly,
-  isClickable,
   isRadiusLess,
+  isRelative,
   isShadowLess,
   isUnselectable,
   isDanger,
@@ -245,6 +538,8 @@ export declare function extractModifiersProps({
   isLarge,
   isMedium,
   isSmall,
+  isMarginLess,
+  isPaddingLess,
   m0,
   m1,
   m2,
@@ -362,6 +657,166 @@ export declare function extractModifiersProps({
   hasTextWhite,
   hasTextWhiteBis,
   hasTextWhiteTer,
+  isCapitalized,
+  isItalic,
+  isLowercase,
+  isUppercase,
+  hasTextWeightLight,
+  hasTextWeightNormal,
+  hasTextWeightMedium,
+  hasTextWeightSemibold,
+  hasTextWeightBold,
+  hasTextCentered,
+  hasTextCenteredDesktop,
+  hasTextCenteredDesktopOnly,
+  hasTextCenteredFullhd,
+  hasTextCenteredMobile,
+  hasTextCenteredTablet,
+  hasTextCenteredTabletOnly,
+  hasTextCenteredTouch,
+  hasTextCenteredWidescreen,
+  hasTextCenteredWidescreenOnly,
+  hasTextJustified,
+  hasTextJustifiedDesktop,
+  hasTextJustifiedDesktopOnly,
+  hasTextJustifiedFullhd,
+  hasTextJustifiedMobile,
+  hasTextJustifiedTablet,
+  hasTextJustifiedTabletOnly,
+  hasTextJustifiedTouch,
+  hasTextJustifiedWidescreen,
+  hasTextJustifiedWidescreenOnly,
+  hasTextLeft,
+  hasTextLeftDesktop,
+  hasTextLeftDesktopOnly,
+  hasTextLeftFullhd,
+  hasTextLeftMobile,
+  hasTextLeftTablet,
+  hasTextLeftTabletOnly,
+  hasTextLeftTouch,
+  hasTextLeftWidescreen,
+  hasTextLeftWidescreenOnly,
+  hasTextRight,
+  hasTextRightDesktop,
+  hasTextRightDesktopOnly,
+  hasTextRightFullhd,
+  hasTextRightMobile,
+  hasTextRightTablet,
+  hasTextRightTabletOnly,
+  hasTextRightTouch,
+  hasTextRightWidescreen,
+  hasTextRightWidescreenOnly,
+  isSize1,
+  isSize1Mobile,
+  isSize1Touch,
+  isSize1Tablet,
+  isSize1Desktop,
+  isSize1Widescreen,
+  isSize1Fullhd,
+  isSize2,
+  isSize2Mobile,
+  isSize2Touch,
+  isSize2Tablet,
+  isSize2Desktop,
+  isSize2Widescreen,
+  isSize2Fullhd,
+  isSize3,
+  isSize3Mobile,
+  isSize3Touch,
+  isSize3Tablet,
+  isSize3Desktop,
+  isSize3Widescreen,
+  isSize3Fullhd,
+  isSize4,
+  isSize4Mobile,
+  isSize4Touch,
+  isSize4Tablet,
+  isSize4Desktop,
+  isSize4Widescreen,
+  isSize4Fullhd,
+  isSize5,
+  isSize5Mobile,
+  isSize5Touch,
+  isSize5Tablet,
+  isSize5Desktop,
+  isSize5Widescreen,
+  isSize5Fullhd,
+  isSize6,
+  isSize6Mobile,
+  isSize6Touch,
+  isSize6Tablet,
+  isSize6Desktop,
+  isSize6Widescreen,
+  isSize6Fullhd,
+  isSize7,
+  isSize7Mobile,
+  isSize7Touch,
+  isSize7Tablet,
+  isSize7Desktop,
+  isSize7Widescreen,
+  isSize7Fullhd,
+  isBlock,
+  isBlockDesktop,
+  isBlockDesktopOnly,
+  isBlockFullhd,
+  isBlockMobile,
+  isBlockTablet,
+  isBlockTabletOnly,
+  isBlockTouch,
+  isBlockWidescreen,
+  isBlockWidescreenOnly,
+  isFlex,
+  isFlexDesktop,
+  isFlexDesktopOnly,
+  isFlexFullhd,
+  isFlexMobile,
+  isFlexTablet,
+  isFlexTabletOnly,
+  isFlexTouch,
+  isFlexWidescreen,
+  isFlexWidescreenOnly,
+  isHidden,
+  isHiddenDesktop,
+  isHiddenDesktopOnly,
+  isHiddenFullhd,
+  isHiddenMobile,
+  isHiddenTablet,
+  isHiddenTabletOnly,
+  isHiddenTouch,
+  isHiddenWidescreen,
+  isHiddenWidescreenOnly,
+  isInline,
+  isInlineBlock,
+  isInlineBlockDesktop,
+  isInlineBlockDesktopOnly,
+  isInlineBlockFullhd,
+  isInlineBlockMobile,
+  isInlineBlockTablet,
+  isInlineBlockTabletOnly,
+  isInlineBlockTouch,
+  isInlineBlockWidescreen,
+  isInlineBlockWidescreenOnly,
+  isInlineDesktop,
+  isInlineDesktopOnly,
+  isInlineFlex,
+  isInlineFlexDesktop,
+  isInlineFlexDesktopOnly,
+  isInlineFlexFullhd,
+  isInlineFlexMobile,
+  isInlineFlexTablet,
+  isInlineFlexTabletOnly,
+  isInlineFlexTouch,
+  isInlineFlexWidescreen,
+  isInlineFlexWidescreenOnly,
+  isInlineFullhd,
+  isInlineMobile,
+  isInlineTablet,
+  isInlineTabletOnly,
+  isInlineTouch,
+  isInlineWidescreen,
+  isInlineWidescreenOnly,
+  isInvisible,
+  isSrOnly,
   ...props
 }: ExtractModifiersPropsArg): {
   [prop: string]: any

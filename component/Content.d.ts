@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { SizeProps } from './modifiers'
+import { HelpersProps, SizeProps } from './modifiers'
 export interface ContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps,
     SizeProps {
   hasTextCentered?: boolean
   hasTextJustified?: boolean

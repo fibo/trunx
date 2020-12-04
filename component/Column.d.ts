@@ -1,6 +1,8 @@
 import * as React from 'react'
-export interface ColumnProps {
-  className?: string
+import { HelpersProps } from './modifiers'
+export interface ColumnProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {
   isCentered?: boolean
   is1?: boolean
   is2?: boolean

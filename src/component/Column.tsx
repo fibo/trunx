@@ -1,10 +1,12 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-export interface ColumnProps {
-  className?: string
+export interface ColumnProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {
   isCentered?: boolean
   is1?: boolean
   is2?: boolean

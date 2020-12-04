@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { MainColorsProps, TextColorHelpersProps } from './modifiers'
+import { HelpersProps, MainColorsProps } from './modifiers'
 interface HelpProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
-    MainColorsProps,
-    TextColorHelpersProps {}
+    HelpersProps,
+    MainColorsProps {}
 export declare class Help extends React.Component<HelpProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

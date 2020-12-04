@@ -15,10 +15,13 @@ interface FieldProps
   isHorizontal?: boolean
 }
 
-type FieldBodyProps = React.HTMLAttributes<HTMLDivElement>
+interface FieldBodyProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
 interface FieldLabelProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps,
     SizeProps {
   isNormal?: boolean
 }

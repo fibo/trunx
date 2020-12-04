@@ -1,12 +1,12 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import { TextColorHelpersProps } from './modifiers'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface HeadingProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
-    TextColorHelpersProps {}
+    HelpersProps {}
 
 export class Heading extends React.Component<HeadingProps> {
   static getDerivedStateFromError() {

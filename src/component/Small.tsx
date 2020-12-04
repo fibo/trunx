@@ -1,12 +1,11 @@
 import * as React from 'react'
 
-import { BackgroundColorHelpersProps, TextColorHelpersProps } from './modifiers'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface SmallProps
   extends React.HTMLAttributes<HTMLElement>,
-    BackgroundColorHelpersProps,
-    TextColorHelpersProps {}
+    HelpersProps {}
 
 export class Small extends React.Component<SmallProps> {
   static getDerivedStateFromError() {

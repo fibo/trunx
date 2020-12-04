@@ -2,8 +2,15 @@ import * as classnames from 'classnames'
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import {
+  HelpersProps,
+  extractModifiersProps,
+  modifierPropsToClassnamesObject,
+} from './modifiers'
 
-export type CheckboxProps = React.InputHTMLAttributes<HTMLInputElement>
+export interface CheckboxProps
+  extends React.InputHTMLAttributes<HTMLInputElement>,
+    HelpersProps {}
 
 export class Checkbox extends React.Component<CheckboxProps> {
   static getDerivedStateFromError() {
@@ -17,10 +24,19 @@ export class Checkbox extends React.Component<CheckboxProps> {
       return null
     }
 
-    const { children, className, ...props } = this.props
+    const [
+      modifiersProps,
+      { children, className, ...props },
+    ] = extractModifiersProps(this.props)
 
     return (
-      <label className={classnames(bulmaClassName.checkbox, className)}>
+      <label
+        className={classnames(
+          className,
+          bulmaClassName.checkbox,
+          modifierPropsToClassnamesObject(modifiersProps)
+        )}
+      >
         <input type='checkbox' {...props} />
 
         {' ' /* adding a space looks better */}

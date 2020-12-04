@@ -1,9 +1,12 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-export interface ColumnsProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ColumnsProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {
   isDesktop?: boolean
   isGapless?: boolean
   isMobile?: boolean

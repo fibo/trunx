@@ -1,13 +1,13 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import { SizeProps, TextColorHelpersProps } from './modifiers'
+import { HelpersProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 interface LabelProps
   extends React.LabelHTMLAttributes<HTMLLabelElement>,
-    SizeProps,
-    TextColorHelpersProps {}
+    HelpersProps,
+    SizeProps {}
 
 export class Label extends React.Component<LabelProps> {
   static getDerivedStateFromError() {

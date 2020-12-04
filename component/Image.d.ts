@@ -1,5 +1,8 @@
 import * as React from 'react'
-export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+import { HelpersProps } from './modifiers'
+export interface ImageProps
+  extends React.ImgHTMLAttributes<HTMLImageElement>,
+    HelpersProps {
   is1by1?: boolean
   is1by2?: boolean
   is1by3?: boolean

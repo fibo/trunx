@@ -1,12 +1,12 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import { TextColorHelpersProps } from './modifiers'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface SubtitleProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
-    TextColorHelpersProps {
+    HelpersProps {
   is1?: boolean
   is2?: boolean
   is3?: boolean

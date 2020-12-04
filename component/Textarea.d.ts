@@ -1,10 +1,10 @@
 import * as React from 'react'
-import { MainColorsProps, SizeProps, TextColorHelpersProps } from './modifiers'
+import { HelpersProps, MainColorsProps, SizeProps } from './modifiers'
 export interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+    HelpersProps,
     MainColorsProps,
-    SizeProps,
-    TextColorHelpersProps {
+    SizeProps {
   isFocused?: boolean
   isHovered?: boolean
 }

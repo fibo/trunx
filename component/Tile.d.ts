@@ -1,6 +1,8 @@
 import * as React from 'react'
-import { MainColorsProps } from './modifiers'
-export interface TileProps extends React.HTMLAttributes<HTMLDivElement> {
+import { HelpersProps, MainColorsProps } from './modifiers'
+export interface TileProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {
   is1?: boolean
   is2?: boolean
   is3?: boolean
@@ -16,11 +18,18 @@ export interface TileProps extends React.HTMLAttributes<HTMLDivElement> {
   isParent?: boolean
   isVertical?: boolean
 }
-export declare type TileAncestorProps = React.HTMLAttributes<HTMLDivElement>
-export declare type TileChildProps = React.HTMLAttributes<HTMLDivElement>
-export declare type TileChildBoxProps = React.HTMLAttributes<HTMLDivElement>
+export interface TileAncestorProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
+export interface TileChildProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
+export interface TileChildBoxProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 export interface TileChildNotificationProps
   extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps,
     MainColorsProps {}
 declare class TileAncestor extends React.Component<TileAncestorProps> {
   static getDerivedStateFromError(): {

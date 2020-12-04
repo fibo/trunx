@@ -1,8 +1,17 @@
 import * as React from 'react'
-export declare type MediaProps = React.HTMLAttributes<HTMLDivElement>
-export declare type MediaContentProps = React.HTMLAttributes<HTMLDivElement>
-export declare type MediaLeftProps = React.HTMLAttributes<HTMLDivElement>
-export declare type MediaRightProps = React.HTMLAttributes<HTMLDivElement>
+import { HelpersProps } from './modifiers'
+export interface MediaProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
+export interface MediaContentProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
+export interface MediaLeftProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
+export interface MediaRightProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 declare class MediaContent extends React.Component<MediaContentProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

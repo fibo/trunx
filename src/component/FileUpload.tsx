@@ -3,6 +3,7 @@ import * as React from 'react'
 
 import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
 import {
+  HelpersProps,
   MainColorsProps,
   SizeProps,
   extractModifiersProps,
@@ -12,6 +13,7 @@ import { renderElement } from './renderElement'
 
 export interface FileUploadProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps,
     MainColorsProps,
     SizeProps {
   hasName?: boolean
@@ -20,15 +22,25 @@ export interface FileUploadProps
   isRight?: boolean
 }
 
-export type FileUploadCtaProps = React.HTMLAttributes<HTMLSpanElement>
+export interface FileUploadCtaProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    HelpersProps {}
 
-export type FileUploadIconProps = React.HTMLAttributes<HTMLSpanElement>
+export interface FileUploadIconProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    HelpersProps {}
 
-export type FileUploadInputProps = React.InputHTMLAttributes<HTMLInputElement>
+export interface FileUploadInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement>,
+    HelpersProps {}
 
-export type IFileUploadLabel = React.HTMLAttributes<HTMLSpanElement>
+export interface IFileUploadLabel
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    HelpersProps {}
 
-export type FileUploadNameProps = React.HTMLAttributes<HTMLSpanElement>
+export interface FileUploadNameProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    HelpersProps {}
 
 class FileUploadCta extends React.Component<FileUploadCtaProps> {
   static getDerivedStateFromError() {

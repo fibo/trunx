@@ -1,15 +1,24 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-export type MediaProps = React.HTMLAttributes<HTMLDivElement>
+export interface MediaProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
-export type MediaContentProps = React.HTMLAttributes<HTMLDivElement>
+export interface MediaContentProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
-export type MediaLeftProps = React.HTMLAttributes<HTMLDivElement>
+export interface MediaLeftProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
-export type MediaRightProps = React.HTMLAttributes<HTMLDivElement>
+export interface MediaRightProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
 class MediaContent extends React.Component<MediaContentProps> {
   static getDerivedStateFromError() {

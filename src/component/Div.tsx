@@ -1,17 +1,11 @@
 import * as React from 'react'
 
-import {
-  BackgroundColorHelpersProps,
-  FloatHelpersProps,
-  TextColorHelpersProps,
-} from './modifiers'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface DivProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    BackgroundColorHelpersProps,
-    FloatHelpersProps,
-    TextColorHelpersProps {}
+    HelpersProps {}
 
 export class Div extends React.Component<DivProps> {
   static getDerivedStateFromError() {

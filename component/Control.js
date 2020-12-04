@@ -19,7 +19,12 @@ var Control = (function (_super) {
             return null;
         }
         var _a = this.props, hasIconsLeft = _a.hasIconsLeft, hasIconsRight = _a.hasIconsRight, isExpanded = _a.isExpanded, isLoading = _a.isLoading, props = tslib_1.__rest(_a, ["hasIconsLeft", "hasIconsRight", "isExpanded", "isLoading"]);
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.control, { hasIconsLeft: hasIconsLeft, hasIconsRight: hasIconsRight, isExpanded: isExpanded, isLoading: isLoading });
+        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.control, {
+            hasIconsLeft: hasIconsLeft,
+            hasIconsRight: hasIconsRight,
+            isExpanded: isExpanded,
+            isLoading: isLoading,
+        });
     };
     return Control;
 }(React.Component));

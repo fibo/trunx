@@ -1,9 +1,12 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {
+interface TableProps
+  extends React.TableHTMLAttributes<HTMLTableElement>,
+    HelpersProps {
   isBordered?: boolean
   isFullwidth?: boolean
   isHoverable?: boolean

@@ -1,12 +1,8 @@
 import * as React from 'react'
-import {
-  OtherHelpersProps,
-  MainColorsProps,
-  ShadeColorsProps,
-} from './modifiers'
+import { HelpersProps, MainColorsProps, ShadeColorsProps } from './modifiers'
 export interface NavbarProps
   extends React.HTMLAttributes<HTMLElement>,
-    Pick<OtherHelpersProps, 'isUnselectable'>,
+    HelpersProps,
     MainColorsProps,
     ShadeColorsProps {
   isHoverable?: boolean
@@ -15,28 +11,42 @@ export interface NavbarProps
   isSpaced?: boolean
   isTransparent?: boolean
 }
-export declare type NavbarBrandProps = React.HTMLAttributes<HTMLDivElement>
-export declare type NavbarDividerProps = React.HTMLAttributes<HTMLHRElement>
-export declare type NavbarDropdownProps = React.HTMLAttributes<HTMLDivElement>
-export declare type NavbarEndProps = React.HTMLAttributes<HTMLDivElement>
+export interface NavbarBrandProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
+export interface NavbarDividerProps
+  extends React.HTMLAttributes<HTMLHRElement>,
+    HelpersProps {}
+export interface NavbarDropdownProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
+export interface NavbarEndProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 export interface NavbarBurgerProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {
   isActive?: boolean
 }
 export interface NavbarItemProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {
   hasDropdown?: boolean
   hasDropdownUp?: boolean
   isActive?: boolean
   isHoverable?: boolean
 }
-export declare type NavbarLinkProps = React.AnchorHTMLAttributes<
-  HTMLAnchorElement
->
-export interface NavbarMenuProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavbarLinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {}
+export interface NavbarMenuProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {
   isActive?: boolean
 }
-export declare type NavbarStartProps = React.HTMLAttributes<HTMLDivElement>
+export interface NavbarStartProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 declare class NavbarBrand extends React.Component<NavbarBrandProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

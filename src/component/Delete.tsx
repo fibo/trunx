@@ -1,11 +1,12 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import { SizeProps } from './modifiers'
+import { HelpersProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface DeleteProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HelpersProps,
     SizeProps {}
 
 export class Delete extends React.Component<DeleteProps> {

@@ -3,6 +3,7 @@ import * as React from 'react'
 
 import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
 import {
+  HelpersProps,
   MainColorsProps,
   SizeProps,
   extractModifiersProps,
@@ -11,6 +12,7 @@ import {
 
 export interface SelectProps
   extends React.SelectHTMLAttributes<HTMLSelectElement>,
+    HelpersProps,
     MainColorsProps,
     SizeProps {
   isFocused?: boolean

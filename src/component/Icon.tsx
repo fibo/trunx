@@ -1,17 +1,12 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import {
-  BackgroundColorHelpersProps,
-  SizeProps,
-  TextColorHelpersProps,
-} from './modifiers'
+import { HelpersProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface IconProps
   extends React.HTMLAttributes<HTMLSpanElement>,
-    BackgroundColorHelpersProps,
-    TextColorHelpersProps,
+    HelpersProps,
     SizeProps {
   isLeft?: boolean
   isRight?: boolean

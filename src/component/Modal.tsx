@@ -1,30 +1,47 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-export interface ModalProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ModalProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {
   isActive?: boolean
 }
 
-export type ModalBackgroundProps = React.HTMLAttributes<HTMLDivElement>
+export interface ModalBackgroundProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
-export type ModalCardProps = React.HTMLAttributes<HTMLDivElement>
+export interface ModalCardProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
-export type ModalCardBodyProps = React.HTMLAttributes<HTMLElement>
+export interface ModalCardBodyProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
 
-export type ModalCardFootProps = React.HTMLAttributes<HTMLElement>
+export interface ModalCardFootProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
 
-export type ModalCardHeadProps = React.HTMLAttributes<HTMLElement>
+export interface ModalCardHeadProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
 
-export type ModalCardTitleProps = React.HTMLAttributes<HTMLElement>
+export interface ModalCardTitleProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
 
 export interface ModalCloseProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   isLarge?: boolean
 }
 
-export type ModalContentProps = React.HTMLAttributes<HTMLDivElement>
+export interface ModalContentProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
 class ModalCardBody extends React.Component<ModalCardBodyProps> {
   static getDerivedStateFromError() {

@@ -16,6 +16,7 @@ tslib_1.__exportStar(require("./Container"), exports);
 tslib_1.__exportStar(require("./Content"), exports);
 tslib_1.__exportStar(require("./Control"), exports);
 tslib_1.__exportStar(require("./Delete"), exports);
+tslib_1.__exportStar(require("./Div"), exports);
 tslib_1.__exportStar(require("./Dropdown"), exports);
 tslib_1.__exportStar(require("./Em"), exports);
 tslib_1.__exportStar(require("./Field"), exports);

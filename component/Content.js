@@ -19,7 +19,12 @@ var Content = (function (_super) {
             return null;
         }
         var _a = this.props, hasTextCentered = _a.hasTextCentered, hasTextJustified = _a.hasTextJustified, hasTextLeft = _a.hasTextLeft, hasTextRight = _a.hasTextRight, props = tslib_1.__rest(_a, ["hasTextCentered", "hasTextJustified", "hasTextLeft", "hasTextRight"]);
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.content, { hasTextCentered: hasTextCentered, hasTextJustified: hasTextJustified, hasTextLeft: hasTextLeft, hasTextRight: hasTextRight });
+        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.content, {
+            hasTextCentered: hasTextCentered,
+            hasTextJustified: hasTextJustified,
+            hasTextLeft: hasTextLeft,
+            hasTextRight: hasTextRight,
+        });
     };
     return Content;
 }(React.Component));
