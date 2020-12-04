@@ -1,11 +1,12 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import { MainColorsProps } from './modifiers'
+import { HelpersProps, MainColorsProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 interface NotificationProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps,
     MainColorsProps {}
 
 export class Notification extends React.Component<NotificationProps> {

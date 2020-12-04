@@ -4,6 +4,7 @@ var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
 var classNames_1 = require("./classNames");
+var modifiers_1 = require("./modifiers");
 var renderElement_1 = require("./renderElement");
 var PaginationEllipsis = (function (_super) {
     tslib_1.__extends(PaginationEllipsis, _super);
@@ -19,9 +20,9 @@ var PaginationEllipsis = (function (_super) {
         if (this.state.hasError) {
             return null;
         }
-        var _a = this.props, className = _a.className, props = tslib_1.__rest(_a, ["className"]);
+        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], className = _b.className, props = tslib_1.__rest(_b, ["className"]);
         return (React.createElement("li", null,
-            React.createElement("span", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.paginationEllipsis, className) }, props), "\u2026")));
+            React.createElement("span", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.paginationEllipsis, className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), "\u2026")));
     };
     return PaginationEllipsis;
 }(React.Component));

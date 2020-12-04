@@ -1,5 +1,8 @@
 import * as React from 'react'
-export interface ColumnsProps extends React.HTMLAttributes<HTMLDivElement> {
+import { HelpersProps } from './modifiers'
+export interface ColumnsProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {
   isDesktop?: boolean
   isGapless?: boolean
   isMobile?: boolean

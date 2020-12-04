@@ -18,9 +18,13 @@ interface MessageProps
   isDark?: boolean
 }
 
-export type MessageBodyProps = React.HTMLAttributes<HTMLDivElement>
+export interface MessageBodyProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
-export type MessageHeaderProps = React.HTMLAttributes<HTMLDivElement>
+export interface MessageHeaderProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
 class MessageBody extends React.Component<MessageBodyProps> {
   static getDerivedStateFromError() {

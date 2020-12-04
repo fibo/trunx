@@ -1,11 +1,12 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import { MainColorsProps } from './modifiers'
+import { HelpersProps, MainColorsProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface HeroProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps,
     MainColorsProps {
   isBold?: boolean
   isDark?: boolean
@@ -16,11 +17,17 @@ export interface HeroProps
   isMedium?: boolean
 }
 
-type HeroBodyProps = React.HTMLAttributes<HTMLDivElement>
+interface HeroBodyProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
-type HeroFootProps = React.HTMLAttributes<HTMLDivElement>
+interface HeroFootProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
-type HeroHeadProps = React.HTMLAttributes<HTMLDivElement>
+interface HeroHeadProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
 class HeroBody extends React.Component<HeroBodyProps> {
   static getDerivedStateFromError() {

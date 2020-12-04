@@ -3,14 +3,14 @@ import * as React from 'react'
 
 import { trunxPropsToClassnamesObject } from './classNames'
 import {
-  FloatHelpersProps,
+  HelpersProps,
   extractModifiersProps,
   modifierPropsToClassnamesObject,
 } from './modifiers'
 
 export interface AProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    FloatHelpersProps {
+    HelpersProps {
   isActive?: boolean
 }
 

@@ -5,7 +5,6 @@ var classnames = require("classnames");
 var React = require("react");
 var Image_1 = require("./Image");
 var classNames_1 = require("./classNames");
-var modifiers_1 = require("./modifiers");
 var renderElement_1 = require("./renderElement");
 var CardContent = (function (_super) {
     tslib_1.__extends(CardContent, _super);
@@ -21,8 +20,7 @@ var CardContent = (function (_super) {
         if (this.state.hasError) {
             return null;
         }
-        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, props = tslib_1.__rest(_b, ["children", "className"]);
-        return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.cardContent, className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), children));
+        return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.cardContent);
     };
     return CardContent;
 }(React.Component));

@@ -1,5 +1,8 @@
 import * as React from 'react'
-export interface LiProps extends React.LiHTMLAttributes<HTMLLIElement> {
+import { HelpersProps } from './modifiers'
+export interface LiProps
+  extends React.LiHTMLAttributes<HTMLLIElement>,
+    HelpersProps {
   isActive?: boolean
 }
 export declare class Li extends React.Component<LiProps> {

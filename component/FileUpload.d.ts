@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { MainColorsProps, SizeProps } from './modifiers'
+import { HelpersProps, MainColorsProps, SizeProps } from './modifiers'
 export interface FileUploadProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps,
     MainColorsProps,
     SizeProps {
   hasName?: boolean
@@ -9,13 +10,21 @@ export interface FileUploadProps
   isFullwidth?: boolean
   isRight?: boolean
 }
-export declare type FileUploadCtaProps = React.HTMLAttributes<HTMLSpanElement>
-export declare type FileUploadIconProps = React.HTMLAttributes<HTMLSpanElement>
-export declare type FileUploadInputProps = React.InputHTMLAttributes<
-  HTMLInputElement
->
-export declare type IFileUploadLabel = React.HTMLAttributes<HTMLSpanElement>
-export declare type FileUploadNameProps = React.HTMLAttributes<HTMLSpanElement>
+export interface FileUploadCtaProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    HelpersProps {}
+export interface FileUploadIconProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    HelpersProps {}
+export interface FileUploadInputProps
+  extends React.InputHTMLAttributes<HTMLInputElement>,
+    HelpersProps {}
+export interface IFileUploadLabel
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    HelpersProps {}
+export interface FileUploadNameProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    HelpersProps {}
 declare class FileUploadCta extends React.Component<FileUploadCtaProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

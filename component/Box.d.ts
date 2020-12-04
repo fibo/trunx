@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { BackgroundColorHelpersProps, TextColorHelpersProps } from './modifiers'
+import { HelpersProps } from './modifiers'
 export interface BoxProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    BackgroundColorHelpersProps,
-    TextColorHelpersProps {}
+    HelpersProps {}
 export declare class Box extends React.Component<BoxProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

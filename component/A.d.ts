@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { FloatHelpersProps } from './modifiers'
+import { HelpersProps } from './modifiers'
 export interface AProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    FloatHelpersProps {
+    HelpersProps {
   isActive?: boolean
 }
 export declare class A extends React.Component<AProps> {

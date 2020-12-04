@@ -4,6 +4,7 @@ var tslib_1 = require("tslib");
 var classnames = require("classnames");
 var React = require("react");
 var classNames_1 = require("./classNames");
+var modifiers_1 = require("./modifiers");
 var renderElement_1 = require("./renderElement");
 var NavbarBrand = (function (_super) {
     tslib_1.__extends(NavbarBrand, _super);
@@ -37,8 +38,8 @@ var NavbarBurger = (function (_super) {
         if (this.state.hasError) {
             return null;
         }
-        var _a = this.props, className = _a.className, isActive = _a.isActive, props = tslib_1.__rest(_a, ["className", "isActive"]);
-        return (React.createElement("a", tslib_1.__assign({ "aria-expanded": isActive ? 'true' : 'false', className: classnames(classNames_1.bulmaClassName.navbarBurger, className, classNames_1.trunxPropsToClassnamesObject({ isActive: isActive })) }, props),
+        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], className = _b.className, isActive = _b.isActive, props = tslib_1.__rest(_b, ["className", "isActive"]);
+        return (React.createElement("a", tslib_1.__assign({ "aria-expanded": isActive ? 'true' : 'false', className: classnames(classNames_1.bulmaClassName.navbarBurger, className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps), classNames_1.trunxPropsToClassnamesObject({ isActive: isActive })) }, props),
             React.createElement("span", { "aria-hidden": 'true' }),
             React.createElement("span", { "aria-hidden": 'true' }),
             React.createElement("span", { "aria-hidden": 'true' })));

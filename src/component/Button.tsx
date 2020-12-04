@@ -7,7 +7,6 @@ import {
   MainColorsProps,
   ShadeColorsProps,
   SizeProps,
-  TextColorHelpersProps,
   extractModifiersProps,
   modifierPropsToClassnamesObject,
 } from './modifiers'
@@ -17,8 +16,7 @@ export interface ButtonProps
     HelpersProps,
     MainColorsProps,
     ShadeColorsProps,
-    SizeProps,
-    TextColorHelpersProps {
+    SizeProps {
   isActive?: boolean
   isFocused?: boolean
   isFullwidth?: boolean

@@ -13,8 +13,12 @@ interface MessageProps
     SizeProps {
   isDark?: boolean
 }
-export declare type MessageBodyProps = React.HTMLAttributes<HTMLDivElement>
-export declare type MessageHeaderProps = React.HTMLAttributes<HTMLDivElement>
+export interface MessageBodyProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
+export interface MessageHeaderProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 declare class MessageBody extends React.Component<MessageBodyProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

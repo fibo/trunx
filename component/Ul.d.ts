@@ -1,5 +1,8 @@
 import * as React from 'react'
-declare type UlProps = React.HTMLAttributes<HTMLUListElement>
+import { HelpersProps } from './modifiers'
+interface UlProps
+  extends React.HTMLAttributes<HTMLUListElement>,
+    HelpersProps {}
 export declare class Ul extends React.Component<UlProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

@@ -3,15 +3,17 @@ import * as React from 'react'
 
 import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
 import {
-  OtherHelpersProps,
+  HelpersProps,
   MainColorsProps,
   ShadeColorsProps,
+  extractModifiersProps,
+  modifierPropsToClassnamesObject,
 } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface NavbarProps
   extends React.HTMLAttributes<HTMLElement>,
-    Pick<OtherHelpersProps, 'isUnselectable'>,
+    HelpersProps,
     MainColorsProps,
     ShadeColorsProps {
   isHoverable?: boolean
@@ -21,34 +23,50 @@ export interface NavbarProps
   isTransparent?: boolean
 }
 
-export type NavbarBrandProps = React.HTMLAttributes<HTMLDivElement>
+export interface NavbarBrandProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
-export type NavbarDividerProps = React.HTMLAttributes<HTMLHRElement>
+export interface NavbarDividerProps
+  extends React.HTMLAttributes<HTMLHRElement>,
+    HelpersProps {}
 
-export type NavbarDropdownProps = React.HTMLAttributes<HTMLDivElement>
+export interface NavbarDropdownProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
-export type NavbarEndProps = React.HTMLAttributes<HTMLDivElement>
+export interface NavbarEndProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
 export interface NavbarBurgerProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {
   isActive?: boolean
 }
 
 export interface NavbarItemProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {
   hasDropdown?: boolean
   hasDropdownUp?: boolean
   isActive?: boolean
   isHoverable?: boolean
 }
 
-export type NavbarLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
+export interface NavbarLinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {}
 
-export interface NavbarMenuProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface NavbarMenuProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {
   isActive?: boolean
 }
 
-export type NavbarStartProps = React.HTMLAttributes<HTMLDivElement>
+export interface NavbarStartProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
 class NavbarBrand extends React.Component<NavbarBrandProps> {
   static getDerivedStateFromError() {
@@ -83,7 +101,10 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
       return null
     }
 
-    const { className, isActive, ...props } = this.props
+    const [
+      modifiersProps,
+      { className, isActive, ...props },
+    ] = extractModifiersProps(this.props)
 
     return (
       <a
@@ -91,6 +112,7 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
         className={classnames(
           bulmaClassName.navbarBurger,
           className,
+          modifierPropsToClassnamesObject(modifiersProps),
           trunxPropsToClassnamesObject({ isActive })
         )}
         {...props}

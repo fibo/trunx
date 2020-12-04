@@ -1,13 +1,13 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import { MainColorsProps, TextColorHelpersProps } from './modifiers'
+import { HelpersProps, MainColorsProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 interface HelpProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
-    MainColorsProps,
-    TextColorHelpersProps {}
+    HelpersProps,
+    MainColorsProps {}
 
 export class Help extends React.Component<HelpProps> {
   static getDerivedStateFromError() {

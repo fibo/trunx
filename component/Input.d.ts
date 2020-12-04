@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { MainColorsProps, SizeProps } from './modifiers'
+import { HelpersProps, MainColorsProps, SizeProps } from './modifiers'
 interface IInputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
+    HelpersProps,
     MainColorsProps,
     SizeProps {
   isFocused?: boolean

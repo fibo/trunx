@@ -1,19 +1,11 @@
 import * as React from 'react'
 
-import {
-  AlignementHelpersProps,
-  BackgroundColorHelpersProps,
-  SpacingHelpersProps,
-  TextColorHelpersProps,
-} from './modifiers'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface PProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
-    AlignementHelpersProps,
-    BackgroundColorHelpersProps,
-    SpacingHelpersProps,
-    TextColorHelpersProps {}
+    HelpersProps {}
 
 export class P extends React.Component<PProps> {
   static getDerivedStateFromError() {
@@ -26,6 +18,7 @@ export class P extends React.Component<PProps> {
     if (this.state.hasError) {
       return null
     }
+
     return renderElement('p', this.props)
   }
 }

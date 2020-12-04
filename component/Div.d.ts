@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { HelpersProps } from './modifiers'
-export interface FooterProps
-  extends React.HTMLAttributes<HTMLElement>,
+export interface DivProps
+  extends React.HTMLAttributes<HTMLDivElement>,
     HelpersProps {}
-export declare class Footer extends React.Component<FooterProps> {
+export declare class Div extends React.Component<DivProps> {
   static getDerivedStateFromError(): {
     hasError: boolean
   }

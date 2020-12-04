@@ -1,14 +1,22 @@
 import * as React from 'react'
-export declare type PanelProps = React.HTMLAttributes<HTMLElement>
+import { HelpersProps } from './modifiers'
+export interface PanelProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
 export interface PanelBlockProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {
   isActive?: boolean
 }
-export declare type PanelHeadingProps = React.HTMLAttributes<
-  HTMLParagraphElement
->
-export declare type PanelIconProps = React.HTMLAttributes<HTMLSpanElement>
-export declare type PanelTabsProps = React.HTMLAttributes<HTMLParagraphElement>
+export interface PanelHeadingProps
+  extends React.HTMLAttributes<HTMLParagraphElement>,
+    HelpersProps {}
+export interface PanelIconProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    HelpersProps {}
+export interface PanelTabsProps
+  extends React.HTMLAttributes<HTMLParagraphElement>,
+    HelpersProps {}
 declare class PanelBlock extends React.Component<PanelBlockProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

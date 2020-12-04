@@ -1,20 +1,30 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-export type PanelProps = React.HTMLAttributes<HTMLElement>
+export interface PanelProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
 
 export interface PanelBlockProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {
   isActive?: boolean
 }
 
-export type PanelHeadingProps = React.HTMLAttributes<HTMLParagraphElement>
+export interface PanelHeadingProps
+  extends React.HTMLAttributes<HTMLParagraphElement>,
+    HelpersProps {}
 
-export type PanelIconProps = React.HTMLAttributes<HTMLSpanElement>
+export interface PanelIconProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    HelpersProps {}
 
-export type PanelTabsProps = React.HTMLAttributes<HTMLParagraphElement>
+export interface PanelTabsProps
+  extends React.HTMLAttributes<HTMLParagraphElement>,
+    HelpersProps {}
 
 class PanelBlock extends React.Component<PanelBlockProps> {
   static getDerivedStateFromError() {

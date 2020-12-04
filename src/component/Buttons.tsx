@@ -4,15 +4,13 @@ import * as React from 'react'
 import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
 import {
   HelpersProps,
-  TextColorHelpersProps,
   extractModifiersProps,
   modifierPropsToClassnamesObject,
 } from './modifiers'
 
 export interface ButtonsProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    HelpersProps,
-    TextColorHelpersProps {
+    HelpersProps {
   areLarge?: boolean
   areMedium?: boolean
   areSmall?: boolean

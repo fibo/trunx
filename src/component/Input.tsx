@@ -1,11 +1,12 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import { MainColorsProps, SizeProps } from './modifiers'
+import { HelpersProps, MainColorsProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 interface IInputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
+    HelpersProps,
     MainColorsProps,
     SizeProps {
   isFocused?: boolean

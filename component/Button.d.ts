@@ -4,15 +4,13 @@ import {
   MainColorsProps,
   ShadeColorsProps,
   SizeProps,
-  TextColorHelpersProps,
 } from './modifiers'
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     HelpersProps,
     MainColorsProps,
     ShadeColorsProps,
-    SizeProps,
-    TextColorHelpersProps {
+    SizeProps {
   isActive?: boolean
   isFocused?: boolean
   isFullwidth?: boolean

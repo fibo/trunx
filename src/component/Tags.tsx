@@ -1,9 +1,10 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface TagsProps extends React.HTMLAttributes<HTMLDivElement> {
+interface TagsProps extends React.HTMLAttributes<HTMLDivElement>, HelpersProps {
   areLarge?: boolean
   areMedium?: boolean
   hasAddons?: boolean

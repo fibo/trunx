@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { BackgroundColorHelpersProps, TextColorHelpersProps } from './modifiers'
+import { HelpersProps } from './modifiers'
 export interface SpanProps
   extends React.HTMLAttributes<HTMLSpanElement>,
-    BackgroundColorHelpersProps,
-    TextColorHelpersProps {}
+    HelpersProps {}
 export declare class Span extends React.Component<SpanProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

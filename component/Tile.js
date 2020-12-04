@@ -19,8 +19,8 @@ var TileAncestor = (function (_super) {
         if (this.state.hasError) {
             return null;
         }
-        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
-        return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-ancestor', className) }, props), children));
+        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, props = tslib_1.__rest(_b, ["children", "className"]);
+        return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-ancestor', className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), children));
     };
     return TileAncestor;
 }(React.Component));
@@ -38,8 +38,8 @@ var TileChildBox = (function (_super) {
         if (this.state.hasError) {
             return null;
         }
-        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
-        return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-child', classNames_1.bulmaClassName.box, className) }, props), children));
+        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, props = tslib_1.__rest(_b, ["children", "className"]);
+        return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-child', classNames_1.bulmaClassName.box, className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), children));
     };
     return TileChildBox;
 }(React.Component));
@@ -76,8 +76,8 @@ var TileChild = (function (_super) {
         if (this.state.hasError) {
             return null;
         }
-        var _a = this.props, children = _a.children, className = _a.className, props = tslib_1.__rest(_a, ["children", "className"]);
-        return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-child', className) }, props), children));
+        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, props = tslib_1.__rest(_b, ["children", "className"]);
+        return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-child', className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), children));
     };
     TileChild.Box = TileChildBox;
     TileChild.Notification = TileChildNotification;
@@ -97,8 +97,8 @@ var Tile = (function (_super) {
         if (this.state.hasError) {
             return null;
         }
-        var _a = this.props, children = _a.children, className = _a.className, is1 = _a.is1, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6, is7 = _a.is7, is8 = _a.is8, is9 = _a.is9, is10 = _a.is10, is11 = _a.is11, is12 = _a.is12, isParent = _a.isParent, isVertical = _a.isVertical, props = tslib_1.__rest(_a, ["children", "className", "is1", "is2", "is3", "is4", "is5", "is6", "is7", "is8", "is9", "is10", "is11", "is12", "isParent", "isVertical"]);
-        return (React.createElement("div", tslib_1.__assign({}, props, { className: classnames('tile', className, {
+        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, is1 = _b.is1, is2 = _b.is2, is3 = _b.is3, is4 = _b.is4, is5 = _b.is5, is6 = _b.is6, is7 = _b.is7, is8 = _b.is8, is9 = _b.is9, is10 = _b.is10, is11 = _b.is11, is12 = _b.is12, isParent = _b.isParent, isVertical = _b.isVertical, props = tslib_1.__rest(_b, ["children", "className", "is1", "is2", "is3", "is4", "is5", "is6", "is7", "is8", "is9", "is10", "is11", "is12", "isParent", "isVertical"]);
+        return (React.createElement("div", tslib_1.__assign({}, props, { className: classnames(classNames_1.bulmaClassName.tile, className, {
                 'is-1': is1,
                 'is-2': is2,
                 'is-3': is3,
@@ -112,8 +112,8 @@ var Tile = (function (_super) {
                 'is-11': is11,
                 'is-12': is12,
                 'is-parent': isParent,
-                'is-vertical': isVertical
-            }) }), children));
+                'is-vertical': isVertical,
+            }, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }), children));
     };
     Tile.Ancestor = TileAncestor;
     Tile.Child = TileChild;
