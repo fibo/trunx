@@ -5,5 +5,11 @@ export interface BProps
     BackgroundColorHelpersProps,
     TextColorHelpersProps {}
 export declare class B extends React.Component<BProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

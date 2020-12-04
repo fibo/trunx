@@ -5,6 +5,12 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement>, HelpersProps {
   isMedium?: boolean
 }
 export declare class Section extends React.Component<SectionProps> {
-  render(): React.ReactNode
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
+  render(): {} | null | undefined
 }
 export {}

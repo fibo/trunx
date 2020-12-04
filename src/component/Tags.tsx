@@ -10,7 +10,17 @@ interface TagsProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export class Tags extends React.Component<TagsProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render() {
+    if (this.state.hasError) {
+      return null
+    }
+
     const { areLarge, areMedium, hasAddons, ...props } = this.props
 
     return renderElement('div', props, bulmaClassName.tags, {

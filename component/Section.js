@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var Section = (function (_super) {
     tslib_1.__extends(Section, _super);
     function Section() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Section.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Section.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isLarge = _a.isLarge, isMedium = _a.isMedium, props = tslib_1.__rest(_a, ["isLarge", "isMedium"]);
         return renderElement_1.renderElement('section', props, classNames_1.bulmaClassName.section, { isLarge: isLarge, isMedium: isMedium });
     };

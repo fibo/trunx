@@ -10,7 +10,17 @@ interface LabelProps
     TextColorHelpersProps {}
 
 export class Label extends React.Component<LabelProps> {
-  render () {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('label', this.props, bulmaClassName.label)
   }
 }

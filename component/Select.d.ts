@@ -10,5 +10,11 @@ export interface SelectProps
   isMultiple?: boolean
 }
 export declare class Select extends React.Component<SelectProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

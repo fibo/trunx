@@ -12,5 +12,11 @@ export interface TitleProps
   isSpaced?: boolean
 }
 export declare class Title extends React.Component<TitleProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

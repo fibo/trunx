@@ -9,5 +9,11 @@ export interface ControlProps
   isLoading?: boolean
 }
 export declare class Control extends React.Component<ControlProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

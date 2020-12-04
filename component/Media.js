@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var MediaContent = (function (_super) {
     tslib_1.__extends(MediaContent, _super);
     function MediaContent() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    MediaContent.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     MediaContent.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.mediaContent);
     };
     return MediaContent;
@@ -17,9 +25,17 @@ var MediaContent = (function (_super) {
 var MediaLeft = (function (_super) {
     tslib_1.__extends(MediaLeft, _super);
     function MediaLeft() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    MediaLeft.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     MediaLeft.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.mediaLeft);
     };
     return MediaLeft;
@@ -27,9 +43,17 @@ var MediaLeft = (function (_super) {
 var MediaRight = (function (_super) {
     tslib_1.__extends(MediaRight, _super);
     function MediaRight() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    MediaRight.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     MediaRight.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.mediaRight);
     };
     return MediaRight;
@@ -37,9 +61,17 @@ var MediaRight = (function (_super) {
 var Media = (function (_super) {
     tslib_1.__extends(Media, _super);
     function Media() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Media.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Media.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.media);
     };
     Media.Content = MediaContent;

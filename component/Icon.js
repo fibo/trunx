@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var IconSvg = (function (_super) {
     tslib_1.__extends(IconSvg, _super);
     function IconSvg() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    IconSvg.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     IconSvg.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, className = _a.className, icon = _a.icon, fill = _a.fill, size = _a.size;
         return (React.createElement("svg", { "aria-hidden": 'true', className: className, height: size, role: 'img', viewBox: icon === null || icon === void 0 ? void 0 : icon.viewBox, width: size, xmlns: 'http://www.w3.org/2000/svg' },
             React.createElement("path", { fill: fill, d: icon === null || icon === void 0 ? void 0 : icon.d })));
@@ -27,9 +35,17 @@ var IconSvg = (function (_super) {
 var Icon = (function (_super) {
     tslib_1.__extends(Icon, _super);
     function Icon() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Icon.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Icon.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isLeft = _a.isLeft, isRight = _a.isRight, props = tslib_1.__rest(_a, ["isLeft", "isRight"]);
         return renderElement_1.renderElement('span', props, classNames_1.bulmaClassName.icon, { isLeft: isLeft, isRight: isRight });
     };

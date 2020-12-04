@@ -6,5 +6,11 @@ export interface ColumnsProps extends React.HTMLAttributes<HTMLDivElement> {
   isMultiline?: boolean
 }
 export declare class Columns extends React.Component<ColumnsProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

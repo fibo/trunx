@@ -5,6 +5,12 @@ interface TagsProps extends React.HTMLAttributes<HTMLDivElement> {
   hasAddons?: boolean
 }
 export declare class Tags extends React.Component<TagsProps> {
-  render(): React.ReactNode
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
+  render(): {} | null | undefined
 }
 export {}

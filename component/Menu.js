@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var MenuLabel = (function (_super) {
     tslib_1.__extends(MenuLabel, _super);
     function MenuLabel() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    MenuLabel.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     MenuLabel.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('p', this.props, classNames_1.bulmaClassName.menuLabel);
     };
     return MenuLabel;
@@ -17,9 +25,17 @@ var MenuLabel = (function (_super) {
 var MenuList = (function (_super) {
     tslib_1.__extends(MenuList, _super);
     function MenuList() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    MenuList.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     MenuList.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('ul', this.props, classNames_1.bulmaClassName.menuList);
     };
     return MenuList;
@@ -27,9 +43,17 @@ var MenuList = (function (_super) {
 var Menu = (function (_super) {
     tslib_1.__extends(Menu, _super);
     function Menu() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Menu.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Menu.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('aside', this.props, classNames_1.bulmaClassName.menu);
     };
     Menu.Label = MenuLabel;

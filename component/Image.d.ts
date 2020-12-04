@@ -24,5 +24,11 @@ export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   isSquare?: boolean
 }
 export declare class Image extends React.Component<ImageProps> {
-  render(): JSX.Element
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
+  render(): React.ReactNode
 }

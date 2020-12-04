@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var PanelBlock = (function (_super) {
     tslib_1.__extends(PanelBlock, _super);
     function PanelBlock() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    PanelBlock.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     PanelBlock.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isActive = _a.isActive, props = tslib_1.__rest(_a, ["isActive"]);
         return renderElement_1.renderElement('a', props, classNames_1.bulmaClassName.panelBlock, { isActive: isActive });
     };
@@ -18,9 +26,17 @@ var PanelBlock = (function (_super) {
 var PanelHeading = (function (_super) {
     tslib_1.__extends(PanelHeading, _super);
     function PanelHeading() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    PanelHeading.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     PanelHeading.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('p', this.props, classNames_1.bulmaClassName.panelHeading);
     };
     return PanelHeading;
@@ -28,9 +44,17 @@ var PanelHeading = (function (_super) {
 var PanelIcon = (function (_super) {
     tslib_1.__extends(PanelIcon, _super);
     function PanelIcon() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    PanelIcon.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     PanelIcon.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('span', this.props, classNames_1.bulmaClassName.panelIcon);
     };
     return PanelIcon;
@@ -38,9 +62,17 @@ var PanelIcon = (function (_super) {
 var PanelTabs = (function (_super) {
     tslib_1.__extends(PanelTabs, _super);
     function PanelTabs() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    PanelTabs.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     PanelTabs.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('p', this.props, classNames_1.bulmaClassName.panelTabs);
     };
     return PanelTabs;
@@ -48,9 +80,17 @@ var PanelTabs = (function (_super) {
 var Panel = (function (_super) {
     tslib_1.__extends(Panel, _super);
     function Panel() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Panel.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Panel.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('nav', this.props, classNames_1.bulmaClassName.panel);
     };
     Panel.Block = PanelBlock;

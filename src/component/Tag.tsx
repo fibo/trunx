@@ -15,7 +15,17 @@ export interface TagProps
 }
 
 export class Tag extends React.Component<TagProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const {
       href,
       onClick,
@@ -30,7 +40,7 @@ export class Tag extends React.Component<TagProps> {
     return renderElement(tag, props, bulmaClassName.tag, {
       isDelete,
       isNormal,
-      isRounded
+      isRounded,
     })
   }
 }

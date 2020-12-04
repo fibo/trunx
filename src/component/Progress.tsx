@@ -11,7 +11,17 @@ export interface ProgressProps
     SizeProps {}
 
 export class Progress extends React.Component<ProgressProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('progress', this.props, bulmaClassName.progress)
   }
 }

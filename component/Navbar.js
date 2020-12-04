@@ -8,9 +8,17 @@ var renderElement_1 = require("./renderElement");
 var NavbarBrand = (function (_super) {
     tslib_1.__extends(NavbarBrand, _super);
     function NavbarBrand() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    NavbarBrand.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     NavbarBrand.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.navbarBrand);
     };
     return NavbarBrand;
@@ -18,9 +26,17 @@ var NavbarBrand = (function (_super) {
 var NavbarBurger = (function (_super) {
     tslib_1.__extends(NavbarBurger, _super);
     function NavbarBurger() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    NavbarBurger.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     NavbarBurger.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, className = _a.className, isActive = _a.isActive, props = tslib_1.__rest(_a, ["className", "isActive"]);
         return (React.createElement("a", tslib_1.__assign({ "aria-expanded": isActive ? 'true' : 'false', className: classnames(classNames_1.bulmaClassName.navbarBurger, className, classNames_1.trunxPropsToClassnamesObject({ isActive: isActive })) }, props),
             React.createElement("span", { "aria-hidden": 'true' }),
@@ -36,9 +52,17 @@ var NavbarBurger = (function (_super) {
 var NavbarDivider = (function (_super) {
     tslib_1.__extends(NavbarDivider, _super);
     function NavbarDivider() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    NavbarDivider.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     NavbarDivider.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('hr', this.props, classNames_1.bulmaClassName.navbarDivider);
     };
     return NavbarDivider;
@@ -46,9 +70,17 @@ var NavbarDivider = (function (_super) {
 var NavbarDropdown = (function (_super) {
     tslib_1.__extends(NavbarDropdown, _super);
     function NavbarDropdown() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    NavbarDropdown.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     NavbarDropdown.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.navbarDropdown);
     };
     return NavbarDropdown;
@@ -56,9 +88,17 @@ var NavbarDropdown = (function (_super) {
 var NavbarEnd = (function (_super) {
     tslib_1.__extends(NavbarEnd, _super);
     function NavbarEnd() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    NavbarEnd.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     NavbarEnd.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.navbarEnd);
     };
     return NavbarEnd;
@@ -66,9 +106,17 @@ var NavbarEnd = (function (_super) {
 var NavbarItem = (function (_super) {
     tslib_1.__extends(NavbarItem, _super);
     function NavbarItem() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    NavbarItem.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     NavbarItem.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, hasDropdown = _a.hasDropdown, hasDropdownUp = _a.hasDropdownUp, isActive = _a.isActive, isHoverable = _a.isHoverable, props = tslib_1.__rest(_a, ["hasDropdown", "hasDropdownUp", "isActive", "isHoverable"]);
         var tag = hasDropdown ? 'div' : 'a';
         return renderElement_1.renderElement(tag, props, classNames_1.bulmaClassName.navbarItem, {
@@ -83,9 +131,17 @@ var NavbarItem = (function (_super) {
 var NavbarLink = (function (_super) {
     tslib_1.__extends(NavbarLink, _super);
     function NavbarLink() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    NavbarLink.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     NavbarLink.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('a', this.props, classNames_1.bulmaClassName.navbarLink);
     };
     return NavbarLink;
@@ -93,9 +149,17 @@ var NavbarLink = (function (_super) {
 var NavbarMenu = (function (_super) {
     tslib_1.__extends(NavbarMenu, _super);
     function NavbarMenu() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    NavbarMenu.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     NavbarMenu.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isActive = _a.isActive, props = tslib_1.__rest(_a, ["isActive"]);
         return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.navbarMenu, { isActive: isActive });
     };
@@ -104,9 +168,17 @@ var NavbarMenu = (function (_super) {
 var NavbarStart = (function (_super) {
     tslib_1.__extends(NavbarStart, _super);
     function NavbarStart() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    NavbarStart.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     NavbarStart.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.navbarStart);
     };
     return NavbarStart;
@@ -114,8 +186,13 @@ var NavbarStart = (function (_super) {
 var Navbar = (function (_super) {
     tslib_1.__extends(Navbar, _super);
     function Navbar() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Navbar.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Navbar.prototype.componentDidMount = function () {
         var _a = this.props, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop;
         if (isFixedTop) {
@@ -135,6 +212,9 @@ var Navbar = (function (_super) {
         }
     };
     Navbar.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, props = tslib_1.__rest(_a, ["isFixedBottom", "isFixedTop", "isTransparent", "isUnselectable"]);
         return renderElement_1.renderElement('nav', props, classNames_1.bulmaClassName.navbar, {
             isFixedBottom: isFixedBottom,

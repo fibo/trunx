@@ -14,7 +14,17 @@ export interface TextareaProps
 }
 
 export class Textarea extends React.Component<TextareaProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const { isFocused, isHovered, ...props } = this.props
 
     return renderElement('textarea', props, bulmaClassName.textarea, {

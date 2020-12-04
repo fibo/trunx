@@ -272,6 +272,12 @@ export function Overview({ location: { pathname } }) {
               all component currently implemented.
             </P>
 
+            <P>
+              Every trunx component implements a React <Em>Error Boundary</Em>.
+            </P>
+
+            <P>Follows a list of all component currently implemented.</P>
+
             <Ul>
               {[
                 {

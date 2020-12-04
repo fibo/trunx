@@ -9,7 +9,17 @@ interface NotificationProps
     MainColorsProps {}
 
 export class Notification extends React.Component<NotificationProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.navbar)
   }
 }

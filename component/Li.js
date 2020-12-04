@@ -6,9 +6,17 @@ var renderElement_1 = require("./renderElement");
 var Li = (function (_super) {
     tslib_1.__extends(Li, _super);
     function Li() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Li.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Li.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isActive = _a.isActive, props = tslib_1.__rest(_a, ["isActive"]);
         return renderElement_1.renderElement('li', props, undefined, { isActive: isActive });
     };

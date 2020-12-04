@@ -21,18 +21,42 @@ declare class LevelItem extends React.Component<LevelItemProps> {
   static defaultProps: {
     as: string
   }
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class LevelLeft extends React.Component<LevelLeftProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class LevelRight extends React.Component<LevelRightProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export declare class Level extends React.Component<LevelProps> {
   static Item: typeof LevelItem
   static Left: typeof LevelLeft
   static Right: typeof LevelRight
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export {}

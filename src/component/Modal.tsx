@@ -27,31 +27,81 @@ export interface ModalCloseProps
 export type ModalContentProps = React.HTMLAttributes<HTMLDivElement>
 
 class ModalCardBody extends React.Component<ModalCardBodyProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('section', this.props, bulmaClassName.modalCardFoot)
   }
 }
 
 class ModalCardFoot extends React.Component<ModalCardFootProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('footer', this.props, bulmaClassName.modalCardFoot)
   }
 }
 
 class ModalCardHead extends React.Component<ModalCardHeadProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('header', this.props, bulmaClassName.modalCardHead)
   }
 }
 
 class ModalCardTitle extends React.Component<ModalCardTitleProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.modalCardTitle)
   }
 }
 
 class ModalBackground extends React.Component<ModalBackgroundProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.modalBackground)
   }
 }
@@ -62,27 +112,57 @@ class ModalCard extends React.Component<ModalCardProps> {
   static Head = ModalCardHead
   static Title = ModalCardTitle
 
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.modalCard)
   }
 }
 
 class ModalClose extends React.Component<ModalCloseProps> {
   static defaultProps = {
-    'aria-label': 'close'
+    'aria-label': 'close',
   }
 
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const { isLarge, ...props } = this.props
 
     return renderElement('button', props, bulmaClassName.modalClose, {
-      isLarge
+      isLarge,
     })
   }
 }
 
 class ModalContent extends React.Component<ModalContentProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.modalContent)
   }
 }
@@ -93,7 +173,17 @@ export class Modal extends React.Component<ModalProps> {
   static Close = ModalClose
   static Content = ModalContent
 
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const { isActive, ...props } = this.props
 
     return renderElement('div', props, bulmaClassName.modal, { isActive })

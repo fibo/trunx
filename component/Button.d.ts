@@ -25,5 +25,11 @@ export interface ButtonProps
   isText?: boolean
 }
 export declare class Button extends React.Component<ButtonProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

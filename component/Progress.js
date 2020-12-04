@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var Progress = (function (_super) {
     tslib_1.__extends(Progress, _super);
     function Progress() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Progress.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Progress.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('progress', this.props, classNames_1.bulmaClassName.progress);
     };
     return Progress;
