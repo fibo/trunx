@@ -6,30 +6,34 @@ import {
   HelpersProps,
   TextColorHelpersProps,
   extractModifiersProps,
-  modifierPropsToClassnamesObject
+  modifierPropsToClassnamesObject,
 } from './modifiers'
 
 export interface ButtonsProps
-extends React.HTMLAttributes<HTMLDivElement>,
-        HelpersProps,
-        TextColorHelpersProps
-{
-  areLarge?: boolean;
-  areMedium?: boolean;
-  areSmall?: boolean;
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps,
+    TextColorHelpersProps {
+  areLarge?: boolean
+  areMedium?: boolean
+  areSmall?: boolean
 }
 
 export class Buttons extends React.Component<ButtonsProps> {
-  render () {
-    const [modifiersProps
-      , {
-        areLarge,
-        areMedium,
-        areSmall,
-        children,
-        className,
-        ...props
-      }] = extractModifiersProps(this.props)
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render() {
+    if (this.state.hasError) {
+      return null
+    }
+
+    const [
+      modifiersProps,
+      { areLarge, areMedium, areSmall, children, className, ...props },
+    ] = extractModifiersProps(this.props)
 
     return (
       <div

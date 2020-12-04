@@ -9,5 +9,11 @@ export interface ButtonsProps
   areSmall?: boolean
 }
 export declare class Buttons extends React.Component<ButtonsProps> {
-  render(): JSX.Element
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
+  render(): JSX.Element | null
 }

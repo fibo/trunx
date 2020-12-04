@@ -8,9 +8,17 @@ var renderElement_1 = require("./renderElement");
 var PaginationEllipsis = (function (_super) {
     tslib_1.__extends(PaginationEllipsis, _super);
     function PaginationEllipsis() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    PaginationEllipsis.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     PaginationEllipsis.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, className = _a.className, props = tslib_1.__rest(_a, ["className"]);
         return (React.createElement("li", null,
             React.createElement("span", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.paginationEllipsis, className) }, props), "\u2026")));
@@ -20,9 +28,17 @@ var PaginationEllipsis = (function (_super) {
 var PaginationLink = (function (_super) {
     tslib_1.__extends(PaginationLink, _super);
     function PaginationLink() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    PaginationLink.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     PaginationLink.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isCurrent = _a.isCurrent, props = tslib_1.__rest(_a, ["isCurrent"]);
         return (React.createElement("li", null, renderElement_1.renderElement('a', props, classNames_1.bulmaClassName.paginationLink, {
             isCurrent: isCurrent,
@@ -33,9 +49,17 @@ var PaginationLink = (function (_super) {
 var PaginationList = (function (_super) {
     tslib_1.__extends(PaginationList, _super);
     function PaginationList() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    PaginationList.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     PaginationList.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('ul', this.props, classNames_1.bulmaClassName.paginationList);
     };
     return PaginationList;
@@ -43,9 +67,17 @@ var PaginationList = (function (_super) {
 var PaginationNext = (function (_super) {
     tslib_1.__extends(PaginationNext, _super);
     function PaginationNext() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    PaginationNext.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     PaginationNext.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('a', this.props, classNames_1.bulmaClassName.paginationNext);
     };
     return PaginationNext;
@@ -53,9 +85,17 @@ var PaginationNext = (function (_super) {
 var PaginationPrevious = (function (_super) {
     tslib_1.__extends(PaginationPrevious, _super);
     function PaginationPrevious() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    PaginationPrevious.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     PaginationPrevious.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('a', this.props, classNames_1.bulmaClassName.paginationPrevious);
     };
     return PaginationPrevious;
@@ -63,9 +103,17 @@ var PaginationPrevious = (function (_super) {
 var Pagination = (function (_super) {
     tslib_1.__extends(Pagination, _super);
     function Pagination() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Pagination.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Pagination.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('nav', this.props, classNames_1.bulmaClassName.pagination);
     };
     Pagination.defaultProps = {

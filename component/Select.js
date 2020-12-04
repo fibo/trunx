@@ -8,9 +8,17 @@ var modifiers_1 = require("./modifiers");
 var Select = (function (_super) {
     tslib_1.__extends(Select, _super);
     function Select() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Select.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Select.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, isFocused = _b.isFocused, isHovered = _b.isHovered, isLoading = _b.isLoading, isMultiple = _b.isMultiple, props = tslib_1.__rest(_b, ["children", "className", "isFocused", "isHovered", "isLoading", "isMultiple"]);
         return (React.createElement("div", { className: classnames(classNames_1.bulmaClassName.select, className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps), classNames_1.trunxPropsToClassnamesObject({
                 isFocused: isFocused,

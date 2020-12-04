@@ -51,7 +51,17 @@ export interface NavbarMenuProps extends React.HTMLAttributes<HTMLDivElement> {
 export type NavbarStartProps = React.HTMLAttributes<HTMLDivElement>
 
 class NavbarBrand extends React.Component<NavbarBrandProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.navbarBrand)
   }
 }
@@ -62,7 +72,17 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
     role: 'button',
   }
 
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const { className, isActive, ...props } = this.props
 
     return (
@@ -84,25 +104,65 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
 }
 
 class NavbarDivider extends React.Component<NavbarDividerProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('hr', this.props, bulmaClassName.navbarDivider)
   }
 }
 
 class NavbarDropdown extends React.Component<NavbarDropdownProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.navbarDropdown)
   }
 }
 
 class NavbarEnd extends React.Component<NavbarEndProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.navbarEnd)
   }
 }
 
 class NavbarItem extends React.Component<NavbarItemProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const {
       hasDropdown,
       hasDropdownUp,
@@ -122,16 +182,34 @@ class NavbarItem extends React.Component<NavbarItemProps> {
   }
 }
 
-class NavbarLink extends React.Component<
-  React.PropsWithChildren<NavbarLinkProps>
-> {
+class NavbarLink extends React.Component<NavbarLinkProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('a', this.props, bulmaClassName.navbarLink)
   }
 }
 
 class NavbarMenu extends React.Component<NavbarMenuProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const { isActive, ...props } = this.props
 
     return renderElement('div', props, bulmaClassName.navbarMenu, { isActive })
@@ -139,7 +217,17 @@ class NavbarMenu extends React.Component<NavbarMenuProps> {
 }
 
 class NavbarStart extends React.Component<NavbarStartProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.navbarStart)
   }
 }
@@ -154,6 +242,12 @@ export class Navbar extends React.Component<NavbarProps> {
   static Link = NavbarLink
   static Menu = NavbarMenu
   static Start = NavbarStart
+
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
 
   componentDidMount(): void {
     const { isFixedBottom, isFixedTop } = this.props
@@ -180,6 +274,10 @@ export class Navbar extends React.Component<NavbarProps> {
   }
 
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const {
       isFixedBottom,
       isFixedTop,

@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var Footer = (function (_super) {
     tslib_1.__extends(Footer, _super);
     function Footer() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Footer.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Footer.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('footer', this.props, classNames_1.bulmaClassName.footer);
     };
     return Footer;

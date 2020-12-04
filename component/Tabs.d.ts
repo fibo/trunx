@@ -11,5 +11,11 @@ export interface TabsProps
   isToggleRounded?: boolean
 }
 export declare class Tabs extends React.Component<TabsProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

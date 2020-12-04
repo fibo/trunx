@@ -4,17 +4,27 @@ import { bulmaClassName } from './classNames'
 import { renderElement } from './renderElement'
 
 interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {
-  isBordered?: boolean;
-  isFullwidth?: boolean;
-  isHoverable?: boolean;
-  isNarrow?: boolean;
-  isStriped?: boolean;
+  isBordered?: boolean
+  isFullwidth?: boolean
+  isHoverable?: boolean
+  isNarrow?: boolean
+  isStriped?: boolean
 }
 
 type TableContainerProps = React.HTMLAttributes<HTMLDivElement>
 
 class TableContainer extends React.Component<TableContainerProps> {
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.tableContainer)
   }
 }
@@ -22,7 +32,17 @@ class TableContainer extends React.Component<TableContainerProps> {
 export class Table extends React.Component<TableProps> {
   static Container = TableContainer
 
-  render (): React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const {
       isBordered,
       isFullwidth,
@@ -37,7 +57,7 @@ export class Table extends React.Component<TableProps> {
       isFullwidth,
       isHoverable,
       isNarrow,
-      isStriped
+      isStriped,
     })
   }
 }

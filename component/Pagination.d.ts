@@ -17,20 +17,50 @@ export declare type PaginationPreviousProps = React.AnchorHTMLAttributes<
 declare class PaginationEllipsis extends React.Component<
   PaginationEllipsisProps
 > {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class PaginationLink extends React.Component<PaginationLinkProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class PaginationList extends React.Component<PaginationListProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class PaginationNext extends React.Component<IPaginationNextProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 declare class PaginationPrevious extends React.Component<
   PaginationPreviousProps
 > {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export declare class Pagination extends React.Component<PaginationProps> {
@@ -43,6 +73,12 @@ export declare class Pagination extends React.Component<PaginationProps> {
   static List: typeof PaginationList
   static Next: typeof PaginationNext
   static Previous: typeof PaginationPrevious
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export {}

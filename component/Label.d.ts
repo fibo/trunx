@@ -5,6 +5,12 @@ interface LabelProps
     SizeProps,
     TextColorHelpersProps {}
 export declare class Label extends React.Component<LabelProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export {}

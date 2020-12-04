@@ -30,10 +30,22 @@ declare class IconSvg extends React.Component<IconSvgProps> {
       viewBox: string
     }
   }
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export declare class Icon extends React.Component<IconProps> {
   static Svg: typeof IconSvg
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }
 export {}

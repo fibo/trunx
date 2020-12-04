@@ -1,9 +1,7 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
 
-import {
-  bulmaClassName
-} from './classNames'
+import { bulmaClassName } from './classNames'
 import {
   HelpersProps,
   MainColorsProps,
@@ -11,30 +9,40 @@ import {
   SizeProps,
   TextColorHelpersProps,
   extractModifiersProps,
-  modifierPropsToClassnamesObject
+  modifierPropsToClassnamesObject,
 } from './modifiers'
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-                              HelpersProps,
-                              MainColorsProps,
-                              ShadeColorsProps,
-                              SizeProps,
-                              TextColorHelpersProps
-                              {
-  isActive?: boolean;
-  isFocused?: boolean;
-  isFullwidth?: boolean;
-  isInverted?: boolean;
-  isLoading?: boolean;
-  isNormal?: boolean;
-  isOutlined?: boolean;
-  isRounded?: boolean;
-  isStatic?: boolean;
-  isText?: boolean;
-                              }
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HelpersProps,
+    MainColorsProps,
+    ShadeColorsProps,
+    SizeProps,
+    TextColorHelpersProps {
+  isActive?: boolean
+  isFocused?: boolean
+  isFullwidth?: boolean
+  isInverted?: boolean
+  isLoading?: boolean
+  isNormal?: boolean
+  isOutlined?: boolean
+  isRounded?: boolean
+  isStatic?: boolean
+  isText?: boolean
+}
 
 export class Button extends React.Component<ButtonProps> {
-  render ():React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const [
       modifiersProps,
       {
@@ -56,7 +64,8 @@ export class Button extends React.Component<ButtonProps> {
         type,
         value,
         ...props
-      }] = extractModifiersProps(this.props)
+      },
+    ] = extractModifiersProps(this.props)
 
     const className = classnames(
       bulmaClassName.button,
@@ -71,18 +80,14 @@ export class Button extends React.Component<ButtonProps> {
         'is-outlined': isOutlined,
         'is-rounded': isRounded,
         'is-static': isStatic,
-        'is-text': isText
+        'is-text': isText,
       },
       modifierPropsToClassnamesObject(modifiersProps)
     )
 
     if (href) {
       return (
-        <a
-          className={className}
-          href={href}
-          {...props}
-        >
+        <a className={className} href={href} {...props}>
           {children}
         </a>
       )
@@ -91,32 +96,19 @@ export class Button extends React.Component<ButtonProps> {
     if (type) {
       if (disabled || isLoading) {
         return (
-          <button
-            className={className}
-            disabled={disabled}
-            {...props}
-          >
+          <button className={className} disabled={disabled} {...props}>
             {value}
           </button>
         )
       } else {
         return (
-          <input
-            className={className}
-            type={type}
-            value={value}
-            {...props}
-          />
+          <input className={className} type={type} value={value} {...props} />
         )
       }
     }
 
     return (
-      <button
-        className={className}
-        disabled={disabled}
-        {...props}
-      >
+      <button className={className} disabled={disabled} {...props}>
         {children}
       </button>
     )

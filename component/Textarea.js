@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var Textarea = (function (_super) {
     tslib_1.__extends(Textarea, _super);
     function Textarea() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Textarea.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Textarea.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isFocused = _a.isFocused, isHovered = _a.isHovered, props = tslib_1.__rest(_a, ["isFocused", "isHovered"]);
         return renderElement_1.renderElement('textarea', props, classNames_1.bulmaClassName.textarea, {
             isFocused: isFocused,

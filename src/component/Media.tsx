@@ -12,19 +12,49 @@ export type MediaLeftProps = React.HTMLAttributes<HTMLDivElement>
 export type MediaRightProps = React.HTMLAttributes<HTMLDivElement>
 
 class MediaContent extends React.Component<MediaContentProps> {
-  render ():React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.mediaContent)
   }
 }
 
 class MediaLeft extends React.Component<MediaLeftProps> {
-  render ():React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.mediaLeft)
   }
 }
 
 class MediaRight extends React.Component<MediaRightProps> {
-  render ():React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.mediaRight)
   }
 }
@@ -34,7 +64,17 @@ export class Media extends React.Component<MediaProps> {
   static Left = MediaLeft
   static Right = MediaRight
 
-  render ():React.ReactNode {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('div', this.props, bulmaClassName.media)
   }
 }

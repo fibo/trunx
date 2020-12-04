@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var HeroBody = (function (_super) {
     tslib_1.__extends(HeroBody, _super);
     function HeroBody() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    HeroBody.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     HeroBody.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.heroBody);
     };
     return HeroBody;
@@ -17,9 +25,17 @@ var HeroBody = (function (_super) {
 var HeroFoot = (function (_super) {
     tslib_1.__extends(HeroFoot, _super);
     function HeroFoot() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    HeroFoot.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     HeroFoot.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.heroFoot);
     };
     return HeroFoot;
@@ -27,9 +43,17 @@ var HeroFoot = (function (_super) {
 var HeroHead = (function (_super) {
     tslib_1.__extends(HeroHead, _super);
     function HeroHead() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    HeroHead.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     HeroHead.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.heroHead);
     };
     return HeroHead;
@@ -37,9 +61,17 @@ var HeroHead = (function (_super) {
 var Hero = (function (_super) {
     tslib_1.__extends(Hero, _super);
     function Hero() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Hero.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Hero.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isBold = _a.isBold, isDark = _a.isDark, isFullheight = _a.isFullheight, isFullheightWithNavbar = _a.isFullheightWithNavbar, isLarge = _a.isLarge, isMedium = _a.isMedium, props = tslib_1.__rest(_a, ["isBold", "isDark", "isFullheight", "isFullheightWithNavbar", "isLarge", "isMedium"]);
         return renderElement_1.renderElement('section', props, classNames_1.bulmaClassName.hero, {
             isBold: isBold,

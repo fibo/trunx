@@ -5,5 +5,11 @@ export interface EmProps
     BackgroundColorHelpersProps,
     TextColorHelpersProps {}
 export declare class Em extends React.Component<EmProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

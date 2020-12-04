@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var TableContainer = (function (_super) {
     tslib_1.__extends(TableContainer, _super);
     function TableContainer() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    TableContainer.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     TableContainer.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.tableContainer);
     };
     return TableContainer;
@@ -17,9 +25,17 @@ var TableContainer = (function (_super) {
 var Table = (function (_super) {
     tslib_1.__extends(Table, _super);
     function Table() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Table.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Table.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isBordered = _a.isBordered, isFullwidth = _a.isFullwidth, isHoverable = _a.isHoverable, isNarrow = _a.isNarrow, isStriped = _a.isStriped, props = tslib_1.__rest(_a, ["isBordered", "isFullwidth", "isHoverable", "isNarrow", "isStriped"]);
         return renderElement_1.renderElement('table', props, classNames_1.bulmaClassName.table, {
             isBordered: isBordered,

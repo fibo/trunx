@@ -5,5 +5,11 @@ export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
   isWidescreen?: boolean
 }
 export declare class Container extends React.Component<ContainerProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

@@ -5,5 +5,11 @@ export interface BoxProps
     BackgroundColorHelpersProps,
     TextColorHelpersProps {}
 export declare class Box extends React.Component<BoxProps> {
-  render(): React.ReactNode
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
+  render(): {} | null | undefined
 }

@@ -10,9 +10,17 @@ var renderElement_1 = require("./renderElement");
 var CardContent = (function (_super) {
     tslib_1.__extends(CardContent, _super);
     function CardContent() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    CardContent.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     CardContent.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, props = tslib_1.__rest(_b, ["children", "className"]);
         return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.cardContent, className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), children));
     };
@@ -21,9 +29,17 @@ var CardContent = (function (_super) {
 var CardFooterItem = (function (_super) {
     tslib_1.__extends(CardFooterItem, _super);
     function CardFooterItem() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    CardFooterItem.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     CardFooterItem.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, href = _a.href, onClick = _a.onClick, props = tslib_1.__rest(_a, ["href", "onClick"]);
         if (href || onClick) {
             return renderElement_1.renderElement('a', tslib_1.__assign({ href: href, onClick: onClick }, props), classNames_1.bulmaClassName.cardFooterItem);
@@ -37,9 +53,17 @@ var CardFooterItem = (function (_super) {
 var CardFooter = (function (_super) {
     tslib_1.__extends(CardFooter, _super);
     function CardFooter() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    CardFooter.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     CardFooter.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('footer', this.props, classNames_1.bulmaClassName.cardFooter);
     };
     CardFooter.Item = CardFooterItem;
@@ -48,9 +72,17 @@ var CardFooter = (function (_super) {
 var CardHeaderIcon = (function (_super) {
     tslib_1.__extends(CardHeaderIcon, _super);
     function CardHeaderIcon() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    CardHeaderIcon.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     CardHeaderIcon.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, href = _a.href, onClick = _a.onClick, props = tslib_1.__rest(_a, ["href", "onClick"]);
         if (href || onClick) {
             return renderElement_1.renderElement('a', tslib_1.__assign({ href: href, onClick: onClick }, props), classNames_1.bulmaClassName.cardHeaderIcon);
@@ -64,9 +96,17 @@ var CardHeaderIcon = (function (_super) {
 var CardHeaderTitle = (function (_super) {
     tslib_1.__extends(CardHeaderTitle, _super);
     function CardHeaderTitle() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    CardHeaderTitle.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     CardHeaderTitle.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isCentered = _a.isCentered, props = tslib_1.__rest(_a, ["isCentered"]);
         return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.cardHeaderTitle, {
             isCentered: isCentered,
@@ -77,9 +117,17 @@ var CardHeaderTitle = (function (_super) {
 var CardHeader = (function (_super) {
     tslib_1.__extends(CardHeader, _super);
     function CardHeader() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    CardHeader.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     CardHeader.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('header', this.props, classNames_1.bulmaClassName.cardHeader);
     };
     CardHeader.Icon = CardHeaderIcon;
@@ -89,9 +137,17 @@ var CardHeader = (function (_super) {
 var CardImage = (function (_super) {
     tslib_1.__extends(CardImage, _super);
     function CardImage() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    CardImage.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     CardImage.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, className = _a.className, props = tslib_1.__rest(_a, ["className"]);
         return (React.createElement("div", { className: classnames(classNames_1.bulmaClassName.cardImage, className) },
             React.createElement(Image_1.Image, tslib_1.__assign({}, props))));
@@ -101,9 +157,17 @@ var CardImage = (function (_super) {
 var Card = (function (_super) {
     tslib_1.__extends(Card, _super);
     function Card() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Card.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Card.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.card);
     };
     Card.Content = CardContent;

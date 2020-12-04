@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var Content = (function (_super) {
     tslib_1.__extends(Content, _super);
     function Content() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Content.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Content.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, hasTextCentered = _a.hasTextCentered, hasTextJustified = _a.hasTextJustified, hasTextLeft = _a.hasTextLeft, hasTextRight = _a.hasTextRight, props = tslib_1.__rest(_a, ["hasTextCentered", "hasTextJustified", "hasTextLeft", "hasTextRight"]);
         return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.content, { hasTextCentered: hasTextCentered, hasTextJustified: hasTextJustified, hasTextLeft: hasTextLeft, hasTextRight: hasTextRight });
     };

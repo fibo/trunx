@@ -15,7 +15,17 @@ export interface AProps
 }
 
 export class A extends React.Component<AProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const [
       modifiersProps,
       { children, className, isActive, ...props },

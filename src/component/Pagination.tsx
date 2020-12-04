@@ -22,7 +22,17 @@ export type PaginationPreviousProps = React.AnchorHTMLAttributes<
 >
 
 class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const { className, ...props } = this.props
 
     return (
@@ -39,7 +49,17 @@ class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
 }
 
 class PaginationLink extends React.Component<PaginationLinkProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const { isCurrent, ...props } = this.props
 
     return (
@@ -53,19 +73,49 @@ class PaginationLink extends React.Component<PaginationLinkProps> {
 }
 
 class PaginationList extends React.Component<PaginationListProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('ul', this.props, bulmaClassName.paginationList)
   }
 }
 
 class PaginationNext extends React.Component<IPaginationNextProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('a', this.props, bulmaClassName.paginationNext)
   }
 }
 
 class PaginationPrevious extends React.Component<PaginationPreviousProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('a', this.props, bulmaClassName.paginationPrevious)
   }
 }
@@ -82,7 +132,17 @@ export class Pagination extends React.Component<PaginationProps> {
   static Next = PaginationNext
   static Previous = PaginationPrevious
 
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     return renderElement('nav', this.props, bulmaClassName.pagination)
   }
 }

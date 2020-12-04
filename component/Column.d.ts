@@ -310,5 +310,11 @@ export interface ColumnProps {
   isOffsetFourFifthsWidescreen?: boolean
 }
 export declare class Column extends React.Component<ColumnProps> {
-  render(): React.ReactNode
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
+  render(): {} | null | undefined
 }

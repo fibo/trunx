@@ -6,5 +6,11 @@ export interface ProgressProps
     ShadeColorsProps,
     SizeProps {}
 export declare class Progress extends React.Component<ProgressProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

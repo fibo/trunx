@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var LevelItem = (function (_super) {
     tslib_1.__extends(LevelItem, _super);
     function LevelItem() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    LevelItem.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     LevelItem.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, tag = _a.as, props = tslib_1.__rest(_a, ["as"]);
         return renderElement_1.renderElement(tag, props, classNames_1.bulmaClassName.levelItem);
     };
@@ -19,9 +27,17 @@ var LevelItem = (function (_super) {
 var LevelLeft = (function (_super) {
     tslib_1.__extends(LevelLeft, _super);
     function LevelLeft() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    LevelLeft.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     LevelLeft.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.levelLeft);
     };
     return LevelLeft;
@@ -29,9 +45,17 @@ var LevelLeft = (function (_super) {
 var LevelRight = (function (_super) {
     tslib_1.__extends(LevelRight, _super);
     function LevelRight() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    LevelRight.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     LevelRight.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.levelRight);
     };
     return LevelRight;
@@ -39,9 +63,17 @@ var LevelRight = (function (_super) {
 var Level = (function (_super) {
     tslib_1.__extends(Level, _super);
     function Level() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Level.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Level.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isMobile = _a.isMobile, props = tslib_1.__rest(_a, ["isMobile"]);
         return renderElement_1.renderElement('nav', props, classNames_1.bulmaClassName.level, { isMobile: isMobile });
     };

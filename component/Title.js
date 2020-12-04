@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var Title = (function (_super) {
     tslib_1.__extends(Title, _super);
     function Title() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Title.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Title.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, is1 = _a.is1, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6, isSpaced = _a.isSpaced, props = tslib_1.__rest(_a, ["is1", "is2", "is3", "is4", "is5", "is6", "isSpaced"]);
         var tag = 'p';
         if (is1)

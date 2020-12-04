@@ -20,7 +20,17 @@ export interface SelectProps
 }
 
 export class Select extends React.Component<SelectProps> {
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
   render(): React.ReactNode {
+    if (this.state.hasError) {
+      return null
+    }
+
     const [
       modifiersProps,
       {

@@ -5,5 +5,11 @@ export interface SmallProps
     BackgroundColorHelpersProps,
     TextColorHelpersProps {}
 export declare class Small extends React.Component<SmallProps> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
   render(): React.ReactNode
 }

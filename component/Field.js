@@ -7,9 +7,17 @@ var renderElement_1 = require("./renderElement");
 var FieldBody = (function (_super) {
     tslib_1.__extends(FieldBody, _super);
     function FieldBody() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    FieldBody.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     FieldBody.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         return renderElement_1.renderElement('div', this.props, classNames_1.bulmaClassName.fieldBody);
     };
     return FieldBody;
@@ -17,9 +25,17 @@ var FieldBody = (function (_super) {
 var FieldLabel = (function (_super) {
     tslib_1.__extends(FieldLabel, _super);
     function FieldLabel() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    FieldLabel.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     FieldLabel.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, isNormal = _a.isNormal, props = tslib_1.__rest(_a, ["isNormal"]);
         return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.fieldLabel, { isNormal: isNormal });
     };
@@ -28,11 +44,19 @@ var FieldLabel = (function (_super) {
 var Field = (function (_super) {
     tslib_1.__extends(Field, _super);
     function Field() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.state = { hasError: false };
+        return _this;
     }
+    Field.getDerivedStateFromError = function () {
+        return { hasError: true };
+    };
     Field.prototype.render = function () {
+        if (this.state.hasError) {
+            return null;
+        }
         var _a = this.props, hasAddons = _a.hasAddons, hasAddonsCentered = _a.hasAddonsCentered, isGrouped = _a.isGrouped, isGroupedMultiline = _a.isGroupedMultiline, isHorizontal = _a.isHorizontal, props = tslib_1.__rest(_a, ["hasAddons", "hasAddonsCentered", "isGrouped", "isGroupedMultiline", "isHorizontal"]);
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.fieldLabel, {
+        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.field, {
             hasAddons: hasAddons,
             hasAddonsCentered: hasAddonsCentered,
             isGrouped: isGrouped,
