@@ -1,14 +1,14 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import { MainColorsProps, SizeProps, TextColorHelpersProps } from './modifiers'
+import { HelpersProps, MainColorsProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface TextareaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement>,
+    HelpersProps,
     MainColorsProps,
-    SizeProps,
-    TextColorHelpersProps {
+    SizeProps {
   isFocused?: boolean
   isHovered?: boolean
 }

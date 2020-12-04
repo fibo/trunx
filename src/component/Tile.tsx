@@ -3,12 +3,15 @@ import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
 import {
+  HelpersProps,
   MainColorsProps,
   extractModifiersProps,
   modifierPropsToClassnamesObject,
 } from './modifiers'
 
-export interface TileProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface TileProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {
   is1?: boolean
   is2?: boolean
   is3?: boolean
@@ -25,14 +28,21 @@ export interface TileProps extends React.HTMLAttributes<HTMLDivElement> {
   isVertical?: boolean
 }
 
-export type TileAncestorProps = React.HTMLAttributes<HTMLDivElement>
+export interface TileAncestorProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
-export type TileChildProps = React.HTMLAttributes<HTMLDivElement>
+export interface TileChildProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
-export type TileChildBoxProps = React.HTMLAttributes<HTMLDivElement>
+export interface TileChildBoxProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
 export interface TileChildNotificationProps
   extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps,
     MainColorsProps {}
 
 class TileAncestor extends React.Component<TileAncestorProps> {
@@ -47,11 +57,19 @@ class TileAncestor extends React.Component<TileAncestorProps> {
       return null
     }
 
-    const { children, className, ...props } = this.props
+    const [
+      modifiersProps,
+      { children, className, ...props },
+    ] = extractModifiersProps(this.props)
 
     return (
       <div
-        className={classnames(bulmaClassName.tile, 'is-ancestor', className)}
+        className={classnames(
+          bulmaClassName.tile,
+          'is-ancestor',
+          className,
+          modifierPropsToClassnamesObject(modifiersProps)
+        )}
         {...props}
       >
         {children}
@@ -72,7 +90,10 @@ class TileChildBox extends React.Component<TileChildBoxProps> {
       return null
     }
 
-    const { children, className, ...props } = this.props
+    const [
+      modifiersProps,
+      { children, className, ...props },
+    ] = extractModifiersProps(this.props)
 
     return (
       <div
@@ -80,7 +101,8 @@ class TileChildBox extends React.Component<TileChildBoxProps> {
           bulmaClassName.tile,
           'is-child',
           bulmaClassName.box,
-          className
+          className,
+          modifierPropsToClassnamesObject(modifiersProps)
         )}
         {...props}
       >
@@ -141,11 +163,19 @@ class TileChild extends React.Component<TileChildProps> {
       return null
     }
 
-    const { children, className, ...props } = this.props
+    const [
+      modifiersProps,
+      { children, className, ...props },
+    ] = extractModifiersProps(this.props)
 
     return (
       <div
-        className={classnames(bulmaClassName.tile, 'is-child', className)}
+        className={classnames(
+          bulmaClassName.tile,
+          'is-child',
+          className,
+          modifierPropsToClassnamesObject(modifiersProps)
+        )}
         {...props}
       >
         {children}
@@ -169,45 +199,53 @@ export class Tile extends React.Component<TileProps> {
       return null
     }
 
-    const {
-      children,
-      className,
-      is1,
-      is2,
-      is3,
-      is4,
-      is5,
-      is6,
-      is7,
-      is8,
-      is9,
-      is10,
-      is11,
-      is12,
-      isParent,
-      isVertical,
-      ...props
-    } = this.props
+    const [
+      modifiersProps,
+      {
+        children,
+        className,
+        is1,
+        is2,
+        is3,
+        is4,
+        is5,
+        is6,
+        is7,
+        is8,
+        is9,
+        is10,
+        is11,
+        is12,
+        isParent,
+        isVertical,
+        ...props
+      },
+    ] = extractModifiersProps(this.props)
 
     return (
       <div
         {...props}
-        className={classnames('tile', className, {
-          'is-1': is1,
-          'is-2': is2,
-          'is-3': is3,
-          'is-4': is4,
-          'is-5': is5,
-          'is-6': is6,
-          'is-7': is7,
-          'is-8': is8,
-          'is-9': is9,
-          'is-10': is10,
-          'is-11': is11,
-          'is-12': is12,
-          'is-parent': isParent,
-          'is-vertical': isVertical,
-        })}
+        className={classnames(
+          bulmaClassName.tile,
+          className,
+          {
+            'is-1': is1,
+            'is-2': is2,
+            'is-3': is3,
+            'is-4': is4,
+            'is-5': is5,
+            'is-6': is6,
+            'is-7': is7,
+            'is-8': is8,
+            'is-9': is9,
+            'is-10': is10,
+            'is-11': is11,
+            'is-12': is12,
+            'is-parent': isParent,
+            'is-vertical': isVertical,
+          },
+          modifierPropsToClassnamesObject(modifiersProps)
+        )}
       >
         {children}
       </div>

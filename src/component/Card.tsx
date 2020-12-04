@@ -3,33 +3,40 @@ import * as React from 'react'
 
 import { Image, ImageProps } from './Image'
 import { bulmaClassName } from './classNames'
-import {
-  TextColorHelpersProps,
-  extractModifiersProps,
-  modifierPropsToClassnamesObject,
-} from './modifiers'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface CardContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    TextColorHelpersProps {}
+    HelpersProps {}
 
-export type CardFooterItemProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
+export interface CardFooterItemProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {}
 
-export type CardFooterProps = React.HTMLAttributes<HTMLElement>
+export interface CardFooterProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
 
-export type CardHeaderProps = React.HTMLAttributes<HTMLElement>
+export interface CardHeaderProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
 
-export type CardHeaderIconProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
+export interface CardHeaderIconProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {}
 
 export interface CardHeaderTitleProps
-  extends React.HTMLAttributes<HTMLElement> {
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {
   isCentered?: boolean
 }
 
 export type CardImageProps = ImageProps
 
-export type CardProps = React.HTMLAttributes<HTMLDivElement>
+export interface CardProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 
 class CardContent extends React.Component<CardContentProps> {
   static getDerivedStateFromError() {
@@ -43,23 +50,7 @@ class CardContent extends React.Component<CardContentProps> {
       return null
     }
 
-    const [
-      modifiersProps,
-      { children, className, ...props },
-    ] = extractModifiersProps(this.props)
-
-    return (
-      <div
-        className={classnames(
-          bulmaClassName.cardContent,
-          className,
-          modifierPropsToClassnamesObject(modifiersProps)
-        )}
-        {...props}
-      >
-        {children}
-      </div>
-    )
+    return renderElement('div', this.props, bulmaClassName.cardContent)
   }
 }
 

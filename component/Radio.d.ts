@@ -1,5 +1,8 @@
 import * as React from 'react'
-export declare type RadioProps = React.InputHTMLAttributes<HTMLInputElement>
+import { HelpersProps } from './modifiers'
+export interface RadioProps
+  extends React.InputHTMLAttributes<HTMLInputElement>,
+    HelpersProps {}
 export declare class Radio extends React.Component<RadioProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

@@ -2,8 +2,15 @@ import * as classnames from 'classnames'
 import * as React from 'react'
 
 import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
+import {
+  HelpersProps,
+  extractModifiersProps,
+  modifierPropsToClassnamesObject,
+} from './modifiers'
 
-export interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+export interface ImageProps
+  extends React.ImgHTMLAttributes<HTMLImageElement>,
+    HelpersProps {
   is1by1?: boolean
   is1by2?: boolean
   is1by3?: boolean
@@ -40,38 +47,42 @@ export class Image extends React.Component<ImageProps> {
       return null
     }
 
-    const {
-      className,
-      is1by1,
-      is1by2,
-      is1by3,
-      is2by1,
-      is2by3,
-      is3by1,
-      is3by2,
-      is3by4,
-      is3by5,
-      is4by3,
-      is4by5,
-      is5by3,
-      is5by4,
-      is9by16,
-      is16x16,
-      is24x24,
-      is32x32,
-      is48x48,
-      is64x64,
-      is96x96,
-      is128x128,
-      isSquare,
-      ...props
-    } = this.props
+    const [
+      modifiersProps,
+      {
+        className,
+        is1by1,
+        is1by2,
+        is1by3,
+        is2by1,
+        is2by3,
+        is3by1,
+        is3by2,
+        is3by4,
+        is3by5,
+        is4by3,
+        is4by5,
+        is5by3,
+        is5by4,
+        is9by16,
+        is16x16,
+        is24x24,
+        is32x32,
+        is48x48,
+        is64x64,
+        is96x96,
+        is128x128,
+        isSquare,
+        ...props
+      },
+    ] = extractModifiersProps(this.props)
 
     return (
       <figure
         className={classnames(
           bulmaClassName.image,
           className,
+          modifierPropsToClassnamesObject(modifiersProps),
           trunxPropsToClassnamesObject({
             is1by1,
             is1by2,

@@ -1,9 +1,12 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ContainerProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {
   isFluid?: boolean
   isFullhd?: boolean
   isWidescreen?: boolean

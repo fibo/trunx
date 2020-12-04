@@ -1,18 +1,30 @@
 import * as React from 'react'
-export interface DropdownProps extends React.HTMLAttributes<HTMLDivElement> {
+import { HelpersProps } from './modifiers'
+export interface DropdownProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {
   isActive?: boolean
   isHoverable?: boolean
   isRight?: boolean
   isUp?: boolean
 }
-export declare type DropdownContentProps = React.HTMLAttributes<HTMLDivElement>
-export declare type DropdownDividerProps = React.HTMLAttributes<HTMLDivElement>
+export interface DropdownContentProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
+export interface DropdownDividerProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 export interface DropdownItemProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {
   isActive?: boolean
 }
-export declare type DropdownMenuProps = React.HTMLAttributes<HTMLDivElement>
-export declare type DropdownTriggerProps = React.HTMLAttributes<HTMLDivElement>
+export interface DropdownMenuProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
+export interface DropdownTriggerProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 declare class DropdownContent extends React.Component<DropdownContentProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

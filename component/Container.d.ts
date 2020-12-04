@@ -1,5 +1,8 @@
 import * as React from 'react'
-export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
+import { HelpersProps } from './modifiers'
+export interface ContainerProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {
   isFluid?: boolean
   isFullhd?: boolean
   isWidescreen?: boolean

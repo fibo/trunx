@@ -5,6 +5,7 @@ import {
   B,
   Column,
   Columns,
+  Div,
   Em,
   Container,
   Content,
@@ -241,9 +242,9 @@ export function Overview({ location: { pathname } }) {
               `}
             </Code>
 
-            <p>
-              Actually, there is a <code>Strong</code> component in this case
-            </p>
+            <P>
+              Actually, there is a <code>Strong</code> component in this case.
+            </P>
 
             <Columns>
               <Column isHalf>
@@ -255,7 +256,7 @@ export function Overview({ location: { pathname } }) {
               </Column>
 
               <Column isHalf>
-                <P>
+                <P hasTextCentered pt4>
                   You are <Strong hasTextSuccess>successful</Strong>!
                 </P>
               </Column>

@@ -1,12 +1,9 @@
 import * as React from 'react'
 
-import { BackgroundColorHelpersProps, TextColorHelpersProps } from './modifiers'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface StrongProps
-  extends React.HTMLAttributes<HTMLElement>,
-    BackgroundColorHelpersProps,
-    TextColorHelpersProps {}
+interface StrongProps extends React.HTMLAttributes<HTMLElement>, HelpersProps {}
 
 export class Strong extends React.Component<StrongProps> {
   static getDerivedStateFromError() {

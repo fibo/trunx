@@ -1,12 +1,12 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
-import { TextColorHelpersProps } from './modifiers'
+import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface FooterProps
   extends React.HTMLAttributes<HTMLElement>,
-    TextColorHelpersProps {}
+    HelpersProps {}
 
 export class Footer extends React.Component<FooterProps> {
   static getDerivedStateFromError() {

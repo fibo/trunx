@@ -132,11 +132,11 @@ var ModalClose = (function (_super) {
         }
         var _a = this.props, isLarge = _a.isLarge, props = tslib_1.__rest(_a, ["isLarge"]);
         return renderElement_1.renderElement('button', props, classNames_1.bulmaClassName.modalClose, {
-            isLarge: isLarge
+            isLarge: isLarge,
         });
     };
     ModalClose.defaultProps = {
-        'aria-label': 'close'
+        'aria-label': 'close',
     };
     return ModalClose;
 }(React.Component));

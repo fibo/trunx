@@ -1,19 +1,25 @@
 import * as React from 'react'
-export declare type PaginationProps = React.HTMLAttributes<HTMLElement>
-export declare type PaginationEllipsisProps = React.HTMLAttributes<
-  HTMLSpanElement
->
+import { HelpersProps } from './modifiers'
+export interface PaginationProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
+export interface PaginationEllipsisProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    HelpersProps {}
 export interface PaginationLinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {
   isCurrent?: boolean
 }
-export declare type PaginationListProps = React.HTMLAttributes<HTMLUListElement>
-export declare type IPaginationNextProps = React.AnchorHTMLAttributes<
-  HTMLAnchorElement
->
-export declare type PaginationPreviousProps = React.AnchorHTMLAttributes<
-  HTMLAnchorElement
->
+export interface PaginationListProps
+  extends React.HTMLAttributes<HTMLUListElement>,
+    HelpersProps {}
+export interface IPaginationNextProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {}
+export interface PaginationPreviousProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {}
 declare class PaginationEllipsis extends React.Component<
   PaginationEllipsisProps
 > {

@@ -111,7 +111,12 @@ var FileUpload = (function (_super) {
             return null;
         }
         var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, hasName = _b.hasName, isBoxed = _b.isBoxed, isFullwidth = _b.isFullwidth, isRight = _b.isRight, props = tslib_1.__rest(_b, ["children", "className", "hasName", "isBoxed", "isFullwidth", "isRight"]);
-        return (React.createElement("div", tslib_1.__assign({ className: classnames(className, classNames_1.bulmaClassName.file, modifiers_1.modifierPropsToClassnamesObject(modifiersProps), classNames_1.trunxPropsToClassnamesObject({ hasName: hasName, isBoxed: isBoxed, isFullwidth: isFullwidth, isRight: isRight })) }, props),
+        return (React.createElement("div", tslib_1.__assign({ className: classnames(className, classNames_1.bulmaClassName.file, modifiers_1.modifierPropsToClassnamesObject(modifiersProps), classNames_1.trunxPropsToClassnamesObject({
+                hasName: hasName,
+                isBoxed: isBoxed,
+                isFullwidth: isFullwidth,
+                isRight: isRight,
+            })) }, props),
             React.createElement("label", { className: classNames_1.bulmaClassName.fileLabel }, children)));
     };
     FileUpload.Cta = FileUploadCta;

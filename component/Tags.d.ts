@@ -1,5 +1,6 @@
 import * as React from 'react'
-interface TagsProps extends React.HTMLAttributes<HTMLDivElement> {
+import { HelpersProps } from './modifiers'
+interface TagsProps extends React.HTMLAttributes<HTMLDivElement>, HelpersProps {
   areLarge?: boolean
   areMedium?: boolean
   hasAddons?: boolean

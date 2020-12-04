@@ -2,24 +2,38 @@ import * as classnames from 'classnames'
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import {
+  HelpersProps,
+  extractModifiersProps,
+  modifierPropsToClassnamesObject,
+} from './modifiers'
 import { renderElement } from './renderElement'
 
-export type PaginationProps = React.HTMLAttributes<HTMLElement>
+export interface PaginationProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
 
-export type PaginationEllipsisProps = React.HTMLAttributes<HTMLSpanElement>
+export interface PaginationEllipsisProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    HelpersProps {}
 
 export interface PaginationLinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {
   isCurrent?: boolean
 }
 
-export type PaginationListProps = React.HTMLAttributes<HTMLUListElement>
+export interface PaginationListProps
+  extends React.HTMLAttributes<HTMLUListElement>,
+    HelpersProps {}
 
-export type IPaginationNextProps = React.AnchorHTMLAttributes<HTMLAnchorElement>
+export interface IPaginationNextProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {}
 
-export type PaginationPreviousProps = React.AnchorHTMLAttributes<
-  HTMLAnchorElement
->
+export interface PaginationPreviousProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {}
 
 class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
   static getDerivedStateFromError() {
@@ -33,12 +47,18 @@ class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
       return null
     }
 
-    const { className, ...props } = this.props
+    const [modifiersProps, { className, ...props }] = extractModifiersProps(
+      this.props
+    )
 
     return (
       <li>
         <span
-          className={classnames(bulmaClassName.paginationEllipsis, className)}
+          className={classnames(
+            bulmaClassName.paginationEllipsis,
+            className,
+            modifierPropsToClassnamesObject(modifiersProps)
+          )}
           {...props}
         >
           &hellip;

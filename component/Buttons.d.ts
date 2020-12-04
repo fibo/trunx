@@ -1,9 +1,8 @@
 import * as React from 'react'
-import { HelpersProps, TextColorHelpersProps } from './modifiers'
+import { HelpersProps } from './modifiers'
 export interface ButtonsProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    HelpersProps,
-    TextColorHelpersProps {
+    HelpersProps {
   areLarge?: boolean
   areMedium?: boolean
   areSmall?: boolean

@@ -1,23 +1,30 @@
 import * as React from 'react'
 import { ImageProps } from './Image'
-import { TextColorHelpersProps } from './modifiers'
+import { HelpersProps } from './modifiers'
 export interface CardContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    TextColorHelpersProps {}
-export declare type CardFooterItemProps = React.AnchorHTMLAttributes<
-  HTMLAnchorElement
->
-export declare type CardFooterProps = React.HTMLAttributes<HTMLElement>
-export declare type CardHeaderProps = React.HTMLAttributes<HTMLElement>
-export declare type CardHeaderIconProps = React.AnchorHTMLAttributes<
-  HTMLAnchorElement
->
+    HelpersProps {}
+export interface CardFooterItemProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {}
+export interface CardFooterProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
+export interface CardHeaderProps
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {}
+export interface CardHeaderIconProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    HelpersProps {}
 export interface CardHeaderTitleProps
-  extends React.HTMLAttributes<HTMLElement> {
+  extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps {
   isCentered?: boolean
 }
 export declare type CardImageProps = ImageProps
-export declare type CardProps = React.HTMLAttributes<HTMLDivElement>
+export interface CardProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    HelpersProps {}
 declare class CardContent extends React.Component<CardContentProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

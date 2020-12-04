@@ -19,7 +19,11 @@ var Container = (function (_super) {
             return null;
         }
         var _a = this.props, isFluid = _a.isFluid, isFullhd = _a.isFullhd, isWidescreen = _a.isWidescreen, props = tslib_1.__rest(_a, ["isFluid", "isFullhd", "isWidescreen"]);
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.container, { isFluid: isFluid, isFullhd: isFullhd, isWidescreen: isWidescreen });
+        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.container, {
+            isFluid: isFluid,
+            isFullhd: isFullhd,
+            isWidescreen: isWidescreen,
+        });
     };
     return Container;
 }(React.Component));

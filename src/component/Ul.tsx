@@ -1,8 +1,11 @@
 import * as React from 'react'
 
 import { renderElement } from './renderElement'
+import { HelpersProps } from './modifiers'
 
-type UlProps = React.HTMLAttributes<HTMLUListElement>
+interface UlProps
+  extends React.HTMLAttributes<HTMLUListElement>,
+    HelpersProps {}
 
 export class Ul extends React.Component<UlProps> {
   static getDerivedStateFromError() {

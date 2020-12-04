@@ -1,7 +1,8 @@
 import * as React from 'react'
-import { SizeProps } from './modifiers'
+import { HelpersProps, SizeProps } from './modifiers'
 export interface TabsProps
   extends React.HTMLAttributes<HTMLElement>,
+    HelpersProps,
     SizeProps {
   isBoxed?: boolean
   isCentered?: boolean

@@ -1,5 +1,8 @@
 import * as React from 'react'
-interface TableProps extends React.TableHTMLAttributes<HTMLTableElement> {
+import { HelpersProps } from './modifiers'
+interface TableProps
+  extends React.TableHTMLAttributes<HTMLTableElement>,
+    HelpersProps {
   isBordered?: boolean
   isFullwidth?: boolean
   isHoverable?: boolean

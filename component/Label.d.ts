@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { SizeProps, TextColorHelpersProps } from './modifiers'
+import { HelpersProps, SizeProps } from './modifiers'
 interface LabelProps
   extends React.LabelHTMLAttributes<HTMLLabelElement>,
-    SizeProps,
-    TextColorHelpersProps {}
+    HelpersProps,
+    SizeProps {}
 export declare class Label extends React.Component<LabelProps> {
   static getDerivedStateFromError(): {
     hasError: boolean

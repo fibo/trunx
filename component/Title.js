@@ -32,7 +32,15 @@ var Title = (function (_super) {
             tag = 'h5';
         if (is6)
             tag = 'h6';
-        return renderElement_1.renderElement(tag, props, classNames_1.bulmaClassName.title, { is1: is1, is2: is2, is3: is3, is4: is4, is5: is5, is6: is6, isSpaced: isSpaced });
+        return renderElement_1.renderElement(tag, props, classNames_1.bulmaClassName.title, {
+            is1: is1,
+            is2: is2,
+            is3: is3,
+            is4: is4,
+            is5: is5,
+            is6: is6,
+            isSpaced: isSpaced,
+        });
     };
     return Title;
 }(React.Component));

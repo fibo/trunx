@@ -1,7 +1,13 @@
 import * as React from 'react'
-import { MainColorsProps, ShadeColorsProps, SizeProps } from './modifiers'
+import {
+  HelpersProps,
+  MainColorsProps,
+  ShadeColorsProps,
+  SizeProps,
+} from './modifiers'
 export interface ProgressProps
   extends React.ProgressHTMLAttributes<HTMLProgressElement>,
+    HelpersProps,
     MainColorsProps,
     ShadeColorsProps,
     SizeProps {}
