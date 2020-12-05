@@ -22,7 +22,7 @@ var Tags = (function (_super) {
         return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.tags, {
             areLarge: areLarge,
             areMedium: areMedium,
-            hasAddons: hasAddons,
+            hasAddons: hasAddons
         });
     };
     return Tags;

@@ -23,7 +23,7 @@ var Input = (function (_super) {
             isFocused: isFocused,
             isHovered: isHovered,
             isRounded: isRounded,
-            isStatic: isStatic,
+            isStatic: isStatic
         });
     };
     return Input;

@@ -1,18 +1,20 @@
 import React from 'react'
 
 import {
+  A,
   Breadcrumb,
   Container,
   Content,
+  P,
   Section,
   Subtitle,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ComponentsBreadcrumb ({ location: { pathname } }) {
+export function ComponentsBreadcrumb({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -20,31 +22,31 @@ export function ComponentsBreadcrumb ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Breadcrumb</Title>
+            <Title>Breadcrumb</Title>
 
             <Subtitle>
-              A simple <b>breadcrumb</b> component to improve your navigation
+              A simple <B>breadcrumb</B> component to improve your navigation
               experience
             </Subtitle>
 
             <hr />
 
-            <p>
+            <P>
               The <code>Breadcrumb</code> component only requires a{' '}
               <code>Breadcrumb.Item</code> children list.
-            </p>
+            </P>
 
-            <p>
+            <P>
               The dividers are automatically created in the content of the{' '}
               <code>::before</code> pseudo-element of{' '}
               <code>Breadcrumb.Item</code> components.
-            </p>
+            </P>
 
-            <p>
+            <P>
               You can inform the current page using the <code>isActive</code>{' '}
               prop in a <code>Breadcrumb.Item</code> component. It will disable
               the navigation of inner links.
-            </p>
+            </P>
           </Content>
 
           <Content>

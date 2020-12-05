@@ -9,13 +9,13 @@ import {
   Radio,
   Section,
   Subtitle,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function FormRadio () {
+export function FormRadio() {
   return (
     <>
       <Nav />
@@ -23,7 +23,7 @@ export function FormRadio () {
       <Section>
         <Container>
           <Content>
-            <Title is2>Radio</Title>
+            <Title>Radio</Title>
 
             <Subtitle>
               The mutually exclusive <b>radio buttons</b>in their native format

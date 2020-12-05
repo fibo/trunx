@@ -12,13 +12,13 @@ import {
   Section,
   Tabs,
   Title,
-  Subtitle
+  Subtitle,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function LayoutHero ({ location: { pathname } }) {
+export function LayoutHero({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -26,7 +26,7 @@ export function LayoutHero ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Hero</Title>
+            <Title>Hero</Title>
 
             <Subtitle>
               An imposing <b>hero</b> banner to showcase something

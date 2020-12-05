@@ -10,13 +10,13 @@ import {
   P,
   Section,
   Subtitle,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ElementsDelete ({ location: { pathname } }) {
+export function ElementsDelete({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -24,7 +24,7 @@ export function ElementsDelete ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Delete</Title>
+            <Title>Delete</Title>
 
             <Subtitle>
               A versatile <B>delete</B> cross

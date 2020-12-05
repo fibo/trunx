@@ -8,13 +8,13 @@ import {
   Notification,
   Section,
   Subtitle,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ColumnsResponsiveness ({ location: { pathname } }) {
+export function ColumnsResponsiveness({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -22,7 +22,7 @@ export function ColumnsResponsiveness ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Columns responsiveness</Title>
+            <Title>Columns responsiveness</Title>
 
             <Subtitle>
               Handle <b>different</b> column layouts for each <b>breakpoint</b>

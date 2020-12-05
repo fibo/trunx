@@ -6,13 +6,13 @@ import {
   Notification,
   Section,
   Title,
-  Subtitle
+  Subtitle,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function LayoutContainer ({ location: { pathname } }) {
+export function LayoutContainer({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -20,7 +20,7 @@ export function LayoutContainer ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Container</Title>
+            <Title>Container</Title>
 
             <Subtitle>
               A simple <b>container</b> to center your content horizontally

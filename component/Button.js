@@ -30,7 +30,7 @@ var Button = (function (_super) {
             'is-outlined': isOutlined,
             'is-rounded': isRounded,
             'is-static': isStatic,
-            'is-text': isText,
+            'is-text': isText
         }, modifiers_1.modifierPropsToClassnamesObject(modifiersProps));
         if (href) {
             return (React.createElement("a", tslib_1.__assign({ className: className, href: href }, props), children));

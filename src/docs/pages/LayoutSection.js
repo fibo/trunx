@@ -5,13 +5,13 @@ import {
   Content,
   Section,
   Title,
-  Subtitle
+  Subtitle,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function LayoutSection ({ location: { pathname } }) {
+export function LayoutSection({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -19,7 +19,7 @@ export function LayoutSection ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Section</Title>
+            <Title>Section</Title>
 
             <Subtitle>
               A simple container to divide your page into <b>sections</b>, like

@@ -11,13 +11,13 @@ import {
   Media,
   Section,
   Subtitle,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ElementsBox ({ location: { pathname } }) {
+export function ElementsBox({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -25,7 +25,7 @@ export function ElementsBox ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Box</Title>
+            <Title>Box</Title>
 
             <Subtitle>
               A white <b>box</b> to contain other elements

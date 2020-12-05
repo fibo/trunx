@@ -22,7 +22,7 @@ export function ColumnsBasics({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Columns powered by Flexbox</Title>
+            <Title>Columns powered by Flexbox</Title>
 
             <Subtitle>A simple way to build responsive columns</Subtitle>
 

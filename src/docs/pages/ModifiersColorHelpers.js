@@ -7,13 +7,13 @@ import {
   Content,
   Section,
   Subtitle,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ModifiersColorHelpers ({ location: { pathname } }) {
+export function ModifiersColorHelpers({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -21,7 +21,7 @@ export function ModifiersColorHelpers ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Color helpers</Title>
+            <Title>Color helpers</Title>
 
             <Subtitle>
               Change the <b>color</b> of the text and/or background
@@ -147,7 +147,7 @@ export function ModifiersColorHelpers ({ location: { pathname } }) {
                 'P',
                 'Strong',
                 'Textarea',
-                'Title'
+                'Title',
               ].map((component, i) => (
                 <li key={i}>
                   <code>{component}</code>

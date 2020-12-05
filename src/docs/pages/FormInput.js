@@ -14,13 +14,13 @@ import {
   Label,
   Section,
   Subtitle,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-function ClickToEditExample () {
+function ClickToEditExample() {
   const initialValue = 'Click to edit'
 
   const [editing, setEditing] = useState(false)
@@ -49,7 +49,7 @@ function ClickToEditExample () {
   )
 }
 
-export function FormInput () {
+export function FormInput() {
   return (
     <>
       <Nav />
@@ -57,7 +57,7 @@ export function FormInput () {
       <Section>
         <Container>
           <Content>
-            <Title is2>Input</Title>
+            <Title>Input</Title>
 
             <Subtitle>
               The <b>text input</b> and its variations

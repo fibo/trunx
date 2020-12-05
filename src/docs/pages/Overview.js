@@ -30,7 +30,7 @@ export function Overview({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Getting started with Trunx</Title>
+            <Title>Getting started with Trunx</Title>
 
             <P>
               <Em>Trunx</Em> is an open source collection of <Em>React</Em>{' '}

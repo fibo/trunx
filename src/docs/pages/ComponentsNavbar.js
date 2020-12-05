@@ -8,28 +8,28 @@ import {
   Navbar,
   Section,
   Subtitle,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
 class ClassicNavbarExample extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
-      isActive: false
+      isActive: false,
     }
 
     this.handleOnClickBurger = this.handleOnClickBurger.bind(this)
   }
 
-  handleOnClickBurger () {
+  handleOnClickBurger() {
     this.setState({ isActive: !this.state.isActive })
   }
 
-  render () {
+  render() {
     const { isActive } = this.state
 
     return (
@@ -104,7 +104,7 @@ const NavbarExample = (props) => (
   </Navbar>
 )
 
-export function ComponentsNavbar ({ location: { pathname } }) {
+export function ComponentsNavbar({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -112,7 +112,7 @@ export function ComponentsNavbar ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Navbar</Title>
+            <Title>Navbar</Title>
 
             <Subtitle>
               A responsive horizontal <b>navbar</b> that can support images,
