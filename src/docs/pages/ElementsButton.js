@@ -13,13 +13,13 @@ import {
   Section,
   Subtitle,
   Title,
-  Ul
+  Ul,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ElementsButton ({ location: { pathname } }) {
+export function ElementsButton({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -27,7 +27,7 @@ export function ElementsButton ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Button</Title>
+            <Title>Button</Title>
 
             <Subtitle>
               The classic <b>button</b>, in different colors, sizes, and states

@@ -28,6 +28,7 @@ class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
   static getDerivedStateFromError() {
     return { hasError: true }
   }
+
   state = { hasError: false }
 
   render(): React.ReactNode {

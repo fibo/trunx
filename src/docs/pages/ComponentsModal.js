@@ -17,13 +17,13 @@ import {
   Small,
   Strong,
   Subtitle,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ComponentsModal ({ location: { pathname } }) {
+export function ComponentsModal({ location: { pathname } }) {
   const [isExampleModalActive, setIsExampleModalActive] = useState(false)
   const [isImageModalActive, setIsImageModalActive] = useState(false)
   const [isCardModalActive, setIsCardModalActive] = useState(false)
@@ -35,7 +35,7 @@ export function ComponentsModal ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Modal</Title>
+            <Title>Modal</Title>
 
             <Subtitle>
               A classic <b>modal</b> overlay, in which you can include any

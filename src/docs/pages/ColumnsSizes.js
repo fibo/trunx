@@ -1,14 +1,18 @@
 import React from 'react'
 
 import {
+  B,
   Column,
   Columns,
   Container,
   Content,
+  Li,
   Notification,
+  P,
   Section,
   Subtitle,
   Title,
+  Ul,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
@@ -22,53 +26,53 @@ export function ColumnsSizes({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Column sizes</Title>
+            <Title>Column sizes</Title>
 
             <Subtitle>
-              Define the <b>size</b> of each column <b>individually</b>
+              Define the <B>size</B> of each column <B>individually</B>
             </Subtitle>
 
             <hr />
 
-            <p>
+            <P>
               If you want to change the <b>size</b> of a single column, you can
               use one of the following props:
-            </p>
+            </P>
 
-            <ul>
-              <li>
+            <Ul>
+              <Li>
                 <code>isThreeQuarters</code>
-              </li>
-              <li>
+              </Li>
+              <Li>
                 <code>isTwoThirds</code>
-              </li>
-              <li>
+              </Li>
+              <Li>
                 <code>isHalf</code>
-              </li>
-              <li>
+              </Li>
+              <Li>
                 <code>isOneThird</code>
-              </li>
-              <li>
+              </Li>
+              <Li>
                 <code>isOneQuarter</code>
-              </li>
-            </ul>
+              </Li>
+            </Ul>
 
-            <p>You can also use the following multiples of 20% as well:</p>
+            <P>You can also use the following multiples of 20% as well:</P>
 
-            <ul>
-              <li>
+            <Ul>
+              <Li>
                 <code>isFourFifths</code>
-              </li>
-              <li>
+              </Li>
+              <Li>
                 <code>isThreeFifths</code>
-              </li>
-              <li>
+              </Li>
+              <Li>
                 <code>isTwoFifths</code>
-              </li>
-              <li>
+              </Li>
+              <Li>
                 <code>isOneFifth</code>
-              </li>
-            </ul>
+              </Li>
+            </Ul>
 
             <Columns>
               <Column isFourFifths>

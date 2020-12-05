@@ -42,7 +42,7 @@ var Image = (function (_super) {
                 is64x64: is64x64,
                 is96x96: is96x96,
                 is128x128: is128x128,
-                isSquare: isSquare,
+                isSquare: isSquare
             })) },
             React.createElement("img", tslib_1.__assign({}, props))));
     };

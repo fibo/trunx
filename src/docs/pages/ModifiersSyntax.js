@@ -9,13 +9,13 @@ import {
   Field,
   Section,
   Subtitle,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ModifiersSyntax ({ location: { pathname } }) {
+export function ModifiersSyntax({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -23,7 +23,7 @@ export function ModifiersSyntax ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Modifiers syntax</Title>
+            <Title>Modifiers syntax</Title>
 
             <Subtitle>
               Most Trunx elements have <b>alternative</b> styles. To apply them,

@@ -12,13 +12,13 @@ import {
   Subtitle,
   Tag,
   Tags,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ElementsTag ({ location: { pathname } }) {
+export function ElementsTag({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -26,7 +26,7 @@ export function ElementsTag ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Tags</Title>
+            <Title>Tags</Title>
 
             <Subtitle>
               Small <B>tag labels</B> to insert anywhere

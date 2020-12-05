@@ -13,11 +13,19 @@ function kebabCaseToCamelCase(value: string): string {
     .join('')
 }
 
-// Credits:
-// https://gist.github.com/nblackburn/875e6ff75bc8ce171c758bf75f304707
+/**
+ * Convert a string in camel case to its equivalent in kebab case
+ *
+ *     fooBar ==> foo-bar
+ *     isActive ==> is-active
+ *     is1 ==> is-1
+ *
+ * Credits (initial code from here):
+ * https://gist.github.com/nblackburn/875e6ff75bc8ce171c758bf75f304707
+ */
 export function camelCaseToKebabCase(inputString: string): string {
   return inputString
-    .replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2')
+    .replace(/([a-z0-9]|(?=[A-Z]))([A-Z0-9])/g, '$1-$2')
     .toLowerCase()
 }
 

@@ -24,7 +24,7 @@ export function ColumnsNesting({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Nesting columns</Title>
+            <Title>Nesting columns</Title>
 
             <Subtitle>
               A simple way to build <b>responsive columns</b>

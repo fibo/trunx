@@ -7,11 +7,11 @@ import {
   Section,
   Subtitle,
   Tile,
-  Title
+  Title,
 } from '../../../component/index'
 import { Nav } from '../components/Nav'
 
-export function LayoutTiles ({ location: { pathname } }) {
+export function LayoutTiles({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -19,7 +19,7 @@ export function LayoutTiles ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Tiles powered by Flexbox</Title>
+            <Title>Tiles powered by Flexbox</Title>
 
             <Subtitle>
               A <b>single tile</b> element to build 2-dimensional Metro-like,

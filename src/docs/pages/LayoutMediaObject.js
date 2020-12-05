@@ -16,13 +16,13 @@ import {
   Section,
   Textarea,
   Title,
-  Subtitle
+  Subtitle,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function LayoutMediaObject ({ location: { pathname } }) {
+export function LayoutMediaObject({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -30,7 +30,7 @@ export function LayoutMediaObject ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Media Object</Title>
+            <Title>Media Object</Title>
 
             <Subtitle>
               The famous <b>media object</b> prevalent in social media
