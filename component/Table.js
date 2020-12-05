@@ -42,7 +42,7 @@ var Table = (function (_super) {
             isFullwidth: isFullwidth,
             isHoverable: isHoverable,
             isNarrow: isNarrow,
-            isStriped: isStriped,
+            isStriped: isStriped
         });
     };
     Table.Container = TableContainer;

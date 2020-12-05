@@ -10,13 +10,13 @@ import {
   Section,
   Subtitle,
   Textarea,
-  Title
+  Title,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function FormTextarea () {
+export function FormTextarea() {
   return (
     <>
       <Nav />
@@ -24,7 +24,7 @@ export function FormTextarea () {
       <Section>
         <Container>
           <Content>
-            <Title is2>Textarea</Title>
+            <Title>Textarea</Title>
 
             <Subtitle>
               The multiline <b>textarea</b> and its variations

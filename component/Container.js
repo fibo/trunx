@@ -22,7 +22,7 @@ var Container = (function (_super) {
         return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.container, {
             isFluid: isFluid,
             isFullhd: isFullhd,
-            isWidescreen: isWidescreen,
+            isWidescreen: isWidescreen
         });
     };
     return Container;

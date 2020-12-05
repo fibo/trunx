@@ -6,13 +6,13 @@ import {
   Footer,
   Section,
   Title,
-  Subtitle
+  Subtitle,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function LayoutFooter ({ location: { pathname } }) {
+export function LayoutFooter({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -20,7 +20,7 @@ export function LayoutFooter ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Footer</Title>
+            <Title>Footer</Title>
 
             <Subtitle>
               A simple responsive <b>footer</b> which can include anything:

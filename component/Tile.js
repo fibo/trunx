@@ -112,7 +112,7 @@ var Tile = (function (_super) {
                 'is-11': is11,
                 'is-12': is12,
                 'is-parent': isParent,
-                'is-vertical': isVertical,
+                'is-vertical': isVertical
             }, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }), children));
     };
     Tile.Ancestor = TileAncestor;

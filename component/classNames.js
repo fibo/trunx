@@ -13,7 +13,7 @@ function kebabCaseToCamelCase(value) {
 }
 function camelCaseToKebabCase(inputString) {
     return inputString
-        .replace(/([a-z0-9]|(?=[A-Z]))([A-Z])/g, '$1-$2')
+        .replace(/([a-z0-9]|(?=[A-Z]))([A-Z0-9])/g, '$1-$2')
         .toLowerCase();
 }
 exports.camelCaseToKebabCase = camelCaseToKebabCase;
@@ -142,6 +142,6 @@ exports.bulmaClassNames = [
     'tags',
     'textarea',
     'title',
-    'tile',
+    'tile'
 ];
 exports.bulmaClassName = listToKeyValues(exports.bulmaClassNames);

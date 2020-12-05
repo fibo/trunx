@@ -79,7 +79,7 @@ var Hero = (function (_super) {
             isFullheight: isFullheight,
             isFullheightWithNavbar: isFullheightWithNavbar,
             isLarge: isLarge,
-            isMedium: isMedium,
+            isMedium: isMedium
         });
     };
     Hero.Body = HeroBody;

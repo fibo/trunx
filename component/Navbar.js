@@ -46,7 +46,7 @@ var NavbarBurger = (function (_super) {
     };
     NavbarBurger.defaultProps = {
         'aria-label': 'menu',
-        role: 'button',
+        role: 'button'
     };
     return NavbarBurger;
 }(React.Component));
@@ -124,7 +124,7 @@ var NavbarItem = (function (_super) {
             hasDropdown: hasDropdown,
             hasDropdownUp: hasDropdownUp,
             isActive: isActive,
-            isHoverable: isHoverable,
+            isHoverable: isHoverable
         });
     };
     return NavbarItem;
@@ -221,7 +221,7 @@ var Navbar = (function (_super) {
             isFixedBottom: isFixedBottom,
             isFixedTop: isFixedTop,
             isTransparent: isTransparent,
-            isUnselectable: isUnselectable,
+            isUnselectable: isUnselectable
         });
     };
     Navbar.Brand = NavbarBrand;

@@ -24,7 +24,7 @@ var Select = (function (_super) {
                 isFocused: isFocused,
                 isHovered: isHovered,
                 isLoading: isLoading,
-                isMultiple: isMultiple,
+                isMultiple: isMultiple
             })) },
             React.createElement("select", tslib_1.__assign({}, props, { multiple: isMultiple }), children)));
     };

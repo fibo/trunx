@@ -11,13 +11,13 @@ import {
   Input,
   Section,
   Title,
-  Subtitle
+  Subtitle,
 } from '../../../component/index'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function LayoutLevel ({ location: { pathname } }) {
+export function LayoutLevel({ location: { pathname } }) {
   return (
     <>
       <Nav />
@@ -25,7 +25,7 @@ export function LayoutLevel ({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Level</Title>
+            <Title>Level</Title>
 
             <Subtitle>
               A multi-purpose <b>horizontal level</b>, which can contain almost

@@ -15,13 +15,13 @@ import {
   Radio,
   Section,
   Subtitle,
-  Title
+  Title,
 } from '../../../component/index.js'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function FormGeneral () {
+export function FormGeneral() {
   return (
     <>
       <Nav />
@@ -29,7 +29,7 @@ export function FormGeneral () {
       <Section>
         <Container>
           <Content>
-            <Title is2>Form controls</Title>
+            <Title>Form controls</Title>
 
             <Subtitle>
               All generic <b>form controls</b>, designed for consistency

@@ -17,7 +17,7 @@ export function ElementsContent({ location: { pathname } }) {
       <Section>
         <Container>
           <Content>
-            <Title is2>Content</Title>
+            <Title>Content</Title>
 
             <Subtitle>
               A single class to handle <b>WYSIWYG</b> generated content, where

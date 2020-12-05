@@ -23,7 +23,7 @@ var Tag = (function (_super) {
         return renderElement_1.renderElement(tag, props, classNames_1.bulmaClassName.tag, {
             isDelete: isDelete,
             isNormal: isNormal,
-            isRounded: isRounded,
+            isRounded: isRounded
         });
     };
     return Tag;

@@ -13,6 +13,7 @@ import { ElementsButton } from './pages/ElementsButton'
 import { ElementsContent } from './pages/ElementsContent'
 import { ElementsDelete } from './pages/ElementsDelete'
 import { ElementsTag } from './pages/ElementsTag'
+import { ElementsTitle } from './pages/ElementsTitle'
 import { FormGeneral } from './pages/FormGeneral'
 import { FormInput } from './pages/FormInput'
 import { FormRadio } from './pages/FormRadio'
@@ -47,6 +48,7 @@ export default function Root() {
           [ElementsContent, route.elements.content],
           [ElementsDelete, route.elements.delete],
           [ElementsTag, route.elements.tag],
+          [ElementsTitle, route.elements.title],
           [FormGeneral, route.form.general],
           [FormInput, route.form.input],
           [FormRadio, route.form.radio],

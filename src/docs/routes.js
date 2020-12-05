@@ -16,6 +16,7 @@ export const route = {
     content: '/elements/content',
     delete: '/elements/delete',
     tag: '/elements/tag',
+    title: '/elements/title',
   },
   form: {
     general: '/form/general',

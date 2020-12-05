@@ -45,7 +45,7 @@ var Breadcrumb = (function (_super) {
                 hasDotSeparator: hasDotSeparator,
                 hasSuccedesSeparator: hasSuccedesSeparator,
                 isCentered: isCentered,
-                isRight: isRight,
+                isRight: isRight
             }), modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props),
             React.createElement("ul", null, children)));
     };
