@@ -25,7 +25,7 @@ var Subtitle = (function (_super) {
             is3: is3,
             is4: is4,
             is5: is5,
-            is6: is6
+            is6: is6,
         });
     };
     return Subtitle;

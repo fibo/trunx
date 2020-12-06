@@ -115,7 +115,7 @@ var Dropdown = (function (_super) {
             isActive: isActive,
             isHoverable: isHoverable,
             isRight: isRight,
-            isUp: isUp
+            isUp: isUp,
         });
     };
     Dropdown.Content = DropdownContent;

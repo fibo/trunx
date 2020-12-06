@@ -23,7 +23,7 @@ var Columns = (function (_super) {
             isDesktop: isDesktop,
             isGapless: isGapless,
             isMobile: isMobile,
-            isMultiline: isMultiline
+            isMultiline: isMultiline,
         });
     };
     return Columns;

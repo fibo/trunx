@@ -23,7 +23,7 @@ var Content = (function (_super) {
             hasTextCentered: hasTextCentered,
             hasTextJustified: hasTextJustified,
             hasTextLeft: hasTextLeft,
-            hasTextRight: hasTextRight
+            hasTextRight: hasTextRight,
         });
     };
     return Content;

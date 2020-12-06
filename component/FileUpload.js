@@ -115,7 +115,7 @@ var FileUpload = (function (_super) {
                 hasName: hasName,
                 isBoxed: isBoxed,
                 isFullwidth: isFullwidth,
-                isRight: isRight
+                isRight: isRight,
             })) }, props),
             React.createElement("label", { className: classNames_1.bulmaClassName.fileLabel }, children)));
     };
