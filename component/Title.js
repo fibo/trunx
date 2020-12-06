@@ -39,7 +39,7 @@ var Title = (function (_super) {
             is4: is4,
             is5: is5,
             is6: is6,
-            isSpaced: isSpaced
+            isSpaced: isSpaced,
         });
     };
     return Title;

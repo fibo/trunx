@@ -142,6 +142,6 @@ exports.bulmaClassNames = [
     'tags',
     'textarea',
     'title',
-    'tile'
+    'tile',
 ];
 exports.bulmaClassName = listToKeyValues(exports.bulmaClassNames);

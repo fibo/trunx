@@ -107,7 +107,7 @@ var CardHeaderTitle = (function (_super) {
         }
         var _a = this.props, isCentered = _a.isCentered, props = tslib_1.__rest(_a, ["isCentered"]);
         return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.cardHeaderTitle, {
-            isCentered: isCentered
+            isCentered: isCentered,
         });
     };
     return CardHeaderTitle;

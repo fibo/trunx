@@ -28,7 +28,7 @@ var Tabs = (function (_super) {
             isRight: isRight,
             isSmall: isSmall,
             isToggle: isToggle,
-            isToggleRounded: isToggleRounded
+            isToggleRounded: isToggleRounded,
         });
     };
     return Tabs;

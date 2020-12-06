@@ -32,16 +32,9 @@ export class Tag extends React.Component<TagProps> {
       return null
     }
 
-    const {
-      href,
-      onClick,
-      isDelete,
-      isNormal,
-      isRounded,
-      ...props
-    } = this.props
+    const { isDelete, isNormal, isRounded, ...props } = this.props
 
-    const tag = href || onClick ? 'a' : 'span'
+    const tag = props.href || props.onClick ? 'a' : 'span'
 
     return renderElement(tag, props, bulmaClassName.tag, {
       isDelete,

@@ -18,12 +18,12 @@ var Tag = (function (_super) {
         if (this.state.hasError) {
             return null;
         }
-        var _a = this.props, href = _a.href, onClick = _a.onClick, isDelete = _a.isDelete, isNormal = _a.isNormal, isRounded = _a.isRounded, props = tslib_1.__rest(_a, ["href", "onClick", "isDelete", "isNormal", "isRounded"]);
-        var tag = href || onClick ? 'a' : 'span';
+        var _a = this.props, isDelete = _a.isDelete, isNormal = _a.isNormal, isRounded = _a.isRounded, props = tslib_1.__rest(_a, ["isDelete", "isNormal", "isRounded"]);
+        var tag = props.href || props.onClick ? 'a' : 'span';
         return renderElement_1.renderElement(tag, props, classNames_1.bulmaClassName.tag, {
             isDelete: isDelete,
             isNormal: isNormal,
-            isRounded: isRounded
+            isRounded: isRounded,
         });
     };
     return Tag;
