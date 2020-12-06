@@ -23,7 +23,7 @@ var Control = (function (_super) {
             hasIconsLeft: hasIconsLeft,
             hasIconsRight: hasIconsRight,
             isExpanded: isExpanded,
-            isLoading: isLoading
+            isLoading: isLoading,
         });
     };
     return Control;

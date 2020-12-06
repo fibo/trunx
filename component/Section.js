@@ -21,7 +21,7 @@ var Section = (function (_super) {
         var _a = this.props, isLarge = _a.isLarge, isMedium = _a.isMedium, props = tslib_1.__rest(_a, ["isLarge", "isMedium"]);
         return renderElement_1.renderElement('section', props, classNames_1.bulmaClassName.section, {
             isLarge: isLarge,
-            isMedium: isMedium
+            isMedium: isMedium,
         });
     };
     return Section;

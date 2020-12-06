@@ -326,7 +326,7 @@ var Column = (function (_super) {
             isOffsetTwoFifthsWidescreen: isOffsetTwoFifthsWidescreen,
             isOffsetThreeQuartersWidescreen: isOffsetThreeQuartersWidescreen,
             isOffsetThreeFifthsWidescreen: isOffsetThreeFifthsWidescreen,
-            isOffsetFourFifthsWidescreen: isOffsetFourFifthsWidescreen
+            isOffsetFourFifthsWidescreen: isOffsetFourFifthsWidescreen,
         });
     };
     return Column;

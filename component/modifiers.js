@@ -392,9 +392,9 @@ function extractModifiersProps(_a) {
             isInlineWidescreen: isInlineWidescreen,
             isInlineWidescreenOnly: isInlineWidescreenOnly,
             isInvisible: isInvisible,
-            isSrOnly: isSrOnly
+            isSrOnly: isSrOnly,
         },
-        props
+        props,
     ];
 }
 exports.extractModifiersProps = extractModifiersProps;
