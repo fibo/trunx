@@ -5,7 +5,7 @@ import {
   BulmaClassName,
   TrunxProps,
   trunxPropsToClassnamesObject
-} from './classnames'
+} from './classNames'
 import {
   extractModifiersProps,
   modifierPropsToClassnamesObject
