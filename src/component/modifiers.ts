@@ -5,6 +5,8 @@ export interface BackgroundColorHelpersProps {
   hasBackgroundBlackBis?: boolean
   hasBackgroundBlackTer?: boolean
   hasBackgroundDanger?: boolean
+  hasBackgroundDangerDark?: boolean
+  hasBackgroundDangerLight?: boolean
   hasBackgroundDark?: boolean
   hasBackgroundGrey?: boolean
   hasBackgroundGreyDark?: boolean
@@ -13,10 +15,20 @@ export interface BackgroundColorHelpersProps {
   hasBackgroundGreyLighter?: boolean
   hasBackgroundLight?: boolean
   hasBackgroundLink?: boolean
+  hasBackgroundLinkDark?: boolean
+  hasBackgroundLinkLight?: boolean
   hasBackgroundInfo?: boolean
+  hasBackgroundInfoDark?: boolean
+  hasBackgroundInfoLight?: boolean
   hasBackgroundPrimary?: boolean
+  hasBackgroundPrimaryDark?: boolean
+  hasBackgroundPrimaryLight?: boolean
   hasBackgroundSuccess?: boolean
+  hasBackgroundSuccessDark?: boolean
+  hasBackgroundSuccessLight?: boolean
   hasBackgroundWarning?: boolean
+  hasBackgroundWarningDark?: boolean
+  hasBackgroundWarningLight?: boolean
   hasBackgroundWhite?: boolean
   hasBackgroundWhiteBis?: boolean
   hasBackgroundWhiteTer?: boolean
@@ -460,6 +472,8 @@ export function extractModifiersProps({
   hasBackgroundBlackTer,
   hasBackgroundDanger,
   hasBackgroundDark,
+  hasBackgroundDangerDark,
+  hasBackgroundDangerLight,
   hasBackgroundGrey,
   hasBackgroundGreyDark,
   hasBackgroundGreyDarker,
@@ -467,10 +481,20 @@ export function extractModifiersProps({
   hasBackgroundGreyLighter,
   hasBackgroundLight,
   hasBackgroundLink,
+  hasBackgroundLinkDark,
+  hasBackgroundLinkLight,
   hasBackgroundInfo,
+  hasBackgroundInfoDark,
+  hasBackgroundInfoLight,
   hasBackgroundPrimary,
+  hasBackgroundPrimaryDark,
+  hasBackgroundPrimaryLight,
   hasBackgroundSuccess,
+  hasBackgroundSuccessDark,
+  hasBackgroundSuccessLight,
   hasBackgroundWarning,
+  hasBackgroundWarningDark,
+  hasBackgroundWarningLight,
   hasBackgroundWhite,
   hasBackgroundWhiteBis,
   hasBackgroundWhiteTer,
@@ -861,17 +885,29 @@ export function extractModifiersProps({
       hasBackgroundBlackTer,
       hasBackgroundDanger,
       hasBackgroundDark,
+      hasBackgroundDangerDark,
+      hasBackgroundDangerLight,
       hasBackgroundGrey,
       hasBackgroundGreyDark,
       hasBackgroundGreyDarker,
       hasBackgroundGreyLight,
       hasBackgroundGreyLighter,
-      hasBackgroundInfo,
       hasBackgroundLight,
       hasBackgroundLink,
+      hasBackgroundLinkDark,
+      hasBackgroundLinkLight,
+      hasBackgroundInfo,
+      hasBackgroundInfoDark,
+      hasBackgroundInfoLight,
       hasBackgroundPrimary,
+      hasBackgroundPrimaryDark,
+      hasBackgroundPrimaryLight,
       hasBackgroundSuccess,
+      hasBackgroundSuccessDark,
+      hasBackgroundSuccessLight,
       hasBackgroundWarning,
+      hasBackgroundWarningDark,
+      hasBackgroundWarningLight,
       hasBackgroundWhite,
       hasBackgroundWhiteBis,
       hasBackgroundWhiteTer,
