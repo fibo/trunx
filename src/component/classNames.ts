@@ -51,7 +51,11 @@ export function trunxPropsToClassnamesObject(props?: TrunxProps) {
   if (typeof props === 'undefined') return {}
 
   return Object.keys(props).reduce((obj, key) => {
-    if (key.substring(0, 3) === 'has' || key.substring(0, 2) === 'is') {
+    if (
+      key.substring(0, 3) === 'are' ||
+      key.substring(0, 3) === 'has' ||
+      key.substring(0, 2) === 'is'
+    ) {
       const className = camelCaseToKebabCase(key)
 
       obj[className] = props[key]
