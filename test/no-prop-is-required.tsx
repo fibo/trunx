@@ -44,7 +44,9 @@ import { Select } from '../src/component/Select'
 import { Small } from '../src/component/Small'
 import { Span } from '../src/component/Span'
 import { Strong } from '../src/component/Strong'
+import { Sub } from '../src/component/Sub'
 import { Subtitle } from '../src/component/Subtitle'
+import { Sup } from '../src/component/Sup'
 import { Table } from '../src/component/Table'
 import { Tabs } from '../src/component/Tabs'
 import { Tag } from '../src/component/Tag'
@@ -53,6 +55,7 @@ import { Textarea } from '../src/component/Textarea'
 import { Tile } from '../src/component/Tile'
 import { Title } from '../src/component/Title'
 import { Ul } from '../src/component/Ul'
+import { U } from '../src/component/U'
 
 export function noPropIsRequired () {
   return (
@@ -158,7 +161,9 @@ export function noPropIsRequired () {
       <Small />
       <Span />
       <Strong />
+      <Sub />
       <Subtitle />
+      <Sup />
       <Table />
       <Table.Container />
       <Tabs />
@@ -172,6 +177,7 @@ export function noPropIsRequired () {
       <Tile.Child.Notification />
       <Title />
       <Ul />
+      <U />
     </>
   )
 }
