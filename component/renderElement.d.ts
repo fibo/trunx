@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { BulmaClassName, TrunxProps } from './classnames'
+import { BulmaClassName, TrunxProps } from './classNames'
 export declare function renderElement(
   type: string,
   elementProps: {

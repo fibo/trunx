@@ -262,20 +262,24 @@ export function Overview({ location: { pathname } }) {
               </Column>
             </Columns>
 
-            <P>
-              Notice also that every Trunx component accepts a{' '}
-              <code>className</code> prop which will be appended to Bulma
-              classes in order to customize the component style.
-            </P>
+            <P>Notice also that:</P>
 
-            <P>
-              Trunx component props are <B>all optional</B>. Follows a list of
-              all component currently implemented.
-            </P>
+            <Ul>
+              <Li>
+                Every Trunx component accepts a <code>className</code> prop
+                which will be appended to Bulma classes in order to customize
+                the component style.
+              </Li>
 
-            <P>
-              Every trunx component implements a React <Em>Error Boundary</Em>.
-            </P>
+              <Li>
+                Every <Em>prop</Em> in a Trunx component is <B>optional</B>.
+              </Li>
+
+              <Li>
+                Every trunx component implements a React <Em>Error Boundary</Em>
+                .
+              </Li>
+            </Ul>
 
             <P>Follows a list of all component currently implemented.</P>
 
@@ -456,7 +460,13 @@ export function Overview({ location: { pathname } }) {
                   component: 'Strong',
                 },
                 {
+                  component: 'Sub',
+                },
+                {
                   component: 'Subtitle',
+                },
+                {
+                  component: 'Sup',
                 },
                 {
                   component: 'Table',
@@ -485,6 +495,9 @@ export function Overview({ location: { pathname } }) {
                 },
                 {
                   component: 'Title',
+                },
+                {
+                  component: 'U',
                 },
                 {
                   component: 'Ul',
