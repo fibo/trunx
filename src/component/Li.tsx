@@ -1,7 +1,8 @@
+import * as classnames from 'classnames'
 import * as React from 'react'
 
+import { trunxPropsToClassnamesObject } from './classNames'
 import { HelpersProps } from './modifiers'
-import { renderElement } from './renderElement'
 
 export interface LiProps
   extends React.LiHTMLAttributes<HTMLLIElement>,
@@ -21,8 +22,18 @@ export class Li extends React.Component<LiProps> {
       return null
     }
 
-    const { isActive, ...props } = this.props
+    const { children, className, isActive, ...props } = this.props
 
-    return renderElement('li', props, undefined, { isActive })
+    return (
+      <li
+        className={classnames(
+          className,
+          trunxPropsToClassnamesObject({ isActive })
+        )}
+        {...props}
+      >
+        {children}
+      </li>
+    )
   }
 }

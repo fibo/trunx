@@ -2,9 +2,11 @@ import React from 'react'
 
 import {
   A,
+  B,
   Breadcrumb,
   Container,
   Content,
+  Div,
   P,
   Section,
   Subtitle,
@@ -49,7 +51,7 @@ export function ComponentsBreadcrumb({ location: { pathname } }) {
             </P>
           </Content>
 
-          <Content>
+          <Div>
             <Breadcrumb>
               <Breadcrumb.Item>
                 <a href='#'>Bulma</a>
@@ -91,7 +93,7 @@ export function ComponentsBreadcrumb({ location: { pathname } }) {
                 </Breadcrumb>
               `}
             </Code>
-          </Content>
+          </Div>
         </Container>
       </Section>
     </>
