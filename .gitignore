@@ -1,8 +1,7 @@
-# trash files
 *.log
 *.swp
 *.un~
 .DS_Store
-build*
+./component
 node_modules
 npm-debug.log
