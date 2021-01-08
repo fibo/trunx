@@ -4,6 +4,9 @@
   "description": "Super Saiyan React components, son of awesome Bulma, implemented in TypeScript",
   "type": "module",
   "main": "component/index.js",
+  "files": [
+    "component"
+  ],
   "scripts": {
     "build": "run-s build:*",
     "build:docs": "run-p generate_docs_bundle_js generate_docs_style generate_pages generate_sitemap",
