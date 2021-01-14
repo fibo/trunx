@@ -1,11 +1,13 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import { HelpersProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface ContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
+ErrorBoundaryProps,
     HelpersProps,
     SizeProps {
   hasTextCentered?: boolean
@@ -22,10 +24,6 @@ export class Content extends React.Component<ContentProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const {
       hasTextCentered,
       hasTextJustified,
@@ -33,6 +31,8 @@ export class Content extends React.Component<ContentProps> {
       hasTextRight,
       ...props
     } = this.props
+
+    if (this.state.hasError) return null
 
     return renderElement('div', props, bulmaClassName.content, {
       hasTextCentered,

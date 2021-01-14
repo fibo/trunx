@@ -20,14 +20,12 @@ export class Checkbox extends React.Component<CheckboxProps> {
   state = { hasError: false }
 
   render() {
-    if (this.state.hasError) {
-      return null
-    }
-
     const [
       modifiersProps,
-      { children, className, ...props },
+      { children, className, fallbackUI, ...props },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     return (
       <label
@@ -38,9 +36,7 @@ export class Checkbox extends React.Component<CheckboxProps> {
         )}
       >
         <input type='checkbox' {...props} />
-
         {' ' /* adding a space looks better */}
-
         {children}
       </label>
     )
