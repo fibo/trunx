@@ -1,11 +1,13 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import { HelpersProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface ControlProps
   extends React.HTMLAttributes<HTMLDivElement>,
+ErrorBoundaryProps,
     HelpersProps,
     SizeProps {
   hasIconsLeft?: boolean
@@ -22,17 +24,16 @@ export class Control extends React.Component<ControlProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const {
+fallbackUI,
       hasIconsLeft,
       hasIconsRight,
       isExpanded,
       isLoading,
       ...props
     } = this.props
+
+    if (this.state.hasError)  return null
 
     return renderElement('div', props, bulmaClassName.control, {
       hasIconsLeft,

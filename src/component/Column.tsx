@@ -1,11 +1,13 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface ColumnProps
   extends React.HTMLAttributes<HTMLDivElement>,
+ErrorBoundaryProps,
     HelpersProps {
   isCentered?: boolean
   is1?: boolean
@@ -324,11 +326,8 @@ export class Column extends React.Component<ColumnProps> {
   state = { hasError: false }
 
   render() {
-    if (this.state.hasError) {
-      return null
-    }
-
     const {
+fallbackUI,
       isCentered,
       is1,
       is2,
@@ -638,6 +637,8 @@ export class Column extends React.Component<ColumnProps> {
       isOffsetFourFifthsWidescreen,
       ...props
     } = this.props
+
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('div', props, bulmaClassName.column, {
       isCentered,

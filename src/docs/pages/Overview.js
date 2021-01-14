@@ -276,7 +276,7 @@ export function Overview({ location: { pathname } }) {
               </Li>
 
               <Li>
-                Every trunx component implements a React <Em>Error Boundary</Em>
+                Every trunx component implements a React <Em>Error Boundary</Em>: it is possible to customize it using the <code>fallbackUI</code> prop.
                 .
               </Li>
             </Ul>
@@ -310,6 +310,12 @@ export function Overview({ location: { pathname } }) {
                 },
                 {
                   component: 'Checkbox',
+                },
+                {
+                  component: 'Col',
+                },
+                {
+                  component: 'Colgroup',
                 },
                 {
                   component: 'Column',
@@ -482,7 +488,22 @@ export function Overview({ location: { pathname } }) {
                   component: 'Tags',
                 },
                 {
+                  component: 'Tbody',
+                },
+                {
+                  component: 'Td',
+                },
+                {
+                  component: 'Tfoot',
+                },
+                {
                   component: 'Textarea',
+                },
+                {
+                  component: 'Th',
+                },
+                {
+                  component: 'Thead',
                 },
                 {
                   component: 'Tile',
@@ -495,6 +516,9 @@ export function Overview({ location: { pathname } }) {
                 },
                 {
                   component: 'Title',
+                },
+                {
+                  component: 'Tr',
                 },
                 {
                   component: 'U',

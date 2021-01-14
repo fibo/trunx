@@ -2,6 +2,7 @@ import * as classnames from 'classnames'
 import * as React from 'react'
 
 import { trunxPropsToClassnamesObject } from './classNames'
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import {
   HelpersProps,
   extractModifiersProps,
@@ -10,6 +11,7 @@ import {
 
 export interface AProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+ErrorBoundaryProps,
     HelpersProps {
   isActive?: boolean
 }
@@ -22,14 +24,12 @@ export class A extends React.Component<AProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const [
       modifiersProps,
-      { children, className, isActive, ...props },
+      { children, className, fallbackUI, isActive, ...props },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     return (
       <a

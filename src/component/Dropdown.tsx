@@ -1,11 +1,13 @@
 import * as React from 'react'
 import { HelpersProps } from './modifiers'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import { renderElement } from './renderElement'
 
 export interface DropdownProps
   extends React.HTMLAttributes<HTMLDivElement>,
+ErrorBoundaryProps,
     HelpersProps {
   isActive?: boolean
   isHoverable?: boolean
@@ -15,10 +17,12 @@ export interface DropdownProps
 
 export interface DropdownContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
+ErrorBoundaryProps,
     HelpersProps {}
 
 export interface DropdownDividerProps
   extends React.HTMLAttributes<HTMLDivElement>,
+ErrorBoundaryProps,
     HelpersProps {}
 
 export interface DropdownItemProps
@@ -29,10 +33,12 @@ export interface DropdownItemProps
 
 export interface DropdownMenuProps
   extends React.HTMLAttributes<HTMLDivElement>,
+ErrorBoundaryProps,
     HelpersProps {}
 
 export interface DropdownTriggerProps
   extends React.HTMLAttributes<HTMLDivElement>,
+ErrorBoundaryProps,
     HelpersProps {}
 
 class DropdownContent extends React.Component<DropdownContentProps> {
@@ -43,11 +49,11 @@ class DropdownContent extends React.Component<DropdownContentProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.dropdownContent)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.dropdownContent)
   }
 }
 
@@ -59,11 +65,11 @@ class DropdownDivider extends React.Component<DropdownDividerProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.dropdownDivider)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.dropdownDivider)
   }
 }
 
@@ -75,11 +81,7 @@ class DropdownItem extends React.Component<DropdownItemProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
-    const { isActive, ...props } = this.props
+    const { fallbackUI, isActive, ...props } = this.props
 
     return renderElement('a', props, bulmaClassName.dropdownItem, { isActive })
   }
@@ -95,11 +97,11 @@ class DropdownMenu extends React.Component<DropdownMenuProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.dropdownMenu)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.dropdownMenu)
   }
 }
 
@@ -111,11 +113,11 @@ class DropdownTrigger extends React.Component<DropdownTriggerProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.dropdownTrigger)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.dropdownTrigger)
   }
 }
 
@@ -133,11 +135,9 @@ export class Dropdown extends React.Component<DropdownProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, isActive, isHoverable, isRight, isUp, ...props } = this.props
 
-    const { isActive, isHoverable, isRight, isUp, ...props } = this.props
+    if (this.state.hasError)  return null
 
     return renderElement('div', props, bulmaClassName.dropdown, {
       isActive,
