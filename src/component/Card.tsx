@@ -1,6 +1,7 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { Image, ImageProps } from './Image'
 import { bulmaClassName } from './classNames'
 import { HelpersProps } from './modifiers'
@@ -8,26 +9,32 @@ import { renderElement } from './renderElement'
 
 export interface CardContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
+ErrorBoundaryProps,
     HelpersProps {}
 
 export interface CardFooterItemProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+ErrorBoundaryProps,
     HelpersProps {}
 
 export interface CardFooterProps
   extends React.HTMLAttributes<HTMLElement>,
+ErrorBoundaryProps,
     HelpersProps {}
 
 export interface CardHeaderProps
   extends React.HTMLAttributes<HTMLElement>,
+ErrorBoundaryProps,
     HelpersProps {}
 
 export interface CardHeaderIconProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+ErrorBoundaryProps,
     HelpersProps {}
 
 export interface CardHeaderTitleProps
   extends React.HTMLAttributes<HTMLElement>,
+ErrorBoundaryProps,
     HelpersProps {
   isCentered?: boolean
 }
@@ -36,6 +43,7 @@ export type CardImageProps = ImageProps
 
 export interface CardProps
   extends React.HTMLAttributes<HTMLDivElement>,
+ErrorBoundaryProps,
     HelpersProps {}
 
 class CardContent extends React.Component<CardContentProps> {
@@ -46,11 +54,11 @@ class CardContent extends React.Component<CardContentProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.cardContent)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.cardContent)
   }
 }
 
@@ -62,11 +70,9 @@ class CardFooterItem extends React.Component<CardFooterItemProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, href, onClick, ...props } = this.props
 
-    const { href, onClick, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     if (href || onClick) {
       return renderElement(
@@ -90,11 +96,11 @@ class CardFooter extends React.Component<CardFooterProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('footer', this.props, bulmaClassName.cardFooter)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('footer', props, bulmaClassName.cardFooter)
   }
 }
 
@@ -106,11 +112,9 @@ class CardHeaderIcon extends React.Component<CardHeaderIconProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, href, onClick, ...props } = this.props
 
-    const { href, onClick, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     if (href || onClick) {
       return renderElement(
@@ -132,11 +136,9 @@ class CardHeaderTitle extends React.Component<CardHeaderTitleProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, isCentered, ...props } = this.props
 
-    const { isCentered, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('div', props, bulmaClassName.cardHeaderTitle, {
       isCentered,
@@ -155,11 +157,11 @@ class CardHeader extends React.Component<CardHeaderProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('header', this.props, bulmaClassName.cardHeader)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('header', props, bulmaClassName.cardHeader)
   }
 }
 
@@ -171,11 +173,9 @@ class CardImage extends React.Component<CardImageProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { className, fallbackUI, ...props } = this.props
 
-    const { className, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     return (
       <div className={classnames(bulmaClassName.cardImage, className)}>
@@ -198,10 +198,10 @@ export class Card extends React.Component<CardProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.card)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.card)
   }
 }

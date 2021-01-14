@@ -1,6 +1,7 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
 import {
   SizeProps,
@@ -10,6 +11,7 @@ import {
 
 export interface BreadcrumbProps
   extends React.HTMLAttributes<HTMLElement>,
+ErrorBoundaryProps,
     SizeProps {
   hasArrowSeparator?: boolean
   hasBulletSeparator?: boolean
@@ -20,7 +22,7 @@ export interface BreadcrumbProps
 }
 
 export interface BreadcrumbItemProps
-  extends React.LiHTMLAttributes<HTMLLIElement> {
+  extends React.LiHTMLAttributes<HTMLLIElement>, ErrorBoundaryProps {
   isActive?: boolean
 }
 
@@ -32,11 +34,9 @@ class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { children, className, fallbackUI, isActive, ...props } = this.props
 
-    const { children, className, isActive, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     return (
       <li
@@ -71,6 +71,7 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
       {
         children,
         className,
+fallbackUI,
         hasArrowSeparator,
         hasBulletSeparator,
         hasDotSeparator,
@@ -80,6 +81,8 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
         ...props
       },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     return (
       <nav

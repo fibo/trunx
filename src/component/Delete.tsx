@@ -1,11 +1,13 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import { HelpersProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface DeleteProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+ErrorBoundaryProps,
     HelpersProps,
     SizeProps {}
 
@@ -17,10 +19,10 @@ export class Delete extends React.Component<DeleteProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('button', this.props, bulmaClassName.delete)
+    if (this.state.hasError)  return null
+
+    return renderElement('button', props, bulmaClassName.delete)
   }
 }

@@ -1,6 +1,7 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import {
   HelpersProps,
@@ -13,6 +14,7 @@ import {
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+ErrorBoundaryProps,
     HelpersProps,
     MainColorsProps,
     ShadeColorsProps,
@@ -37,16 +39,13 @@ export class Button extends React.Component<ButtonProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const [
       modifiersProps,
       {
         children,
         className: classNameProp,
         disabled,
+fallbackUI,
         href,
         isActive,
         isFocused,
@@ -64,6 +63,8 @@ export class Button extends React.Component<ButtonProps> {
         ...props
       },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     const className = classnames(
       bulmaClassName.button,

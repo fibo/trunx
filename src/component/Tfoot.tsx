@@ -1,27 +1,25 @@
 import * as React from 'react'
 
 import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName } from './classNames'
-import { HelpersProps } from './modifiers'
+import { BackgroundColorHelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-export interface BoxProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-ErrorBoundaryProps,
-    HelpersProps {}
+export interface TfootProps
+  extends React.HTMLAttributes<HTMLTableSectionElement>,
+BackgroundColorHelpersProps, ErrorBoundaryProps {}
 
-export class Box extends React.Component<BoxProps> {
+export class Tfoot extends React.Component<TfootProps> {
   static getDerivedStateFromError() {
     return { hasError: true }
   }
 
   state = { hasError: false }
 
-  render() {
+  render(): React.ReactNode {
     const { fallbackUI, ...props } = this.props
 
     if (this.state.hasError) return fallbackUI
 
-    return renderElement('div', props, bulmaClassName.box)
+    return renderElement('tfoot', props)
   }
 }
