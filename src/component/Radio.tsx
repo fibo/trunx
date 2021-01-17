@@ -1,6 +1,7 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import {
   HelpersProps,
@@ -10,6 +11,7 @@ import {
 
 export interface RadioProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export class Radio extends React.Component<RadioProps> {
@@ -20,14 +22,12 @@ export class Radio extends React.Component<RadioProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const [
       modifiersProps,
-      { children, className, ...props },
+      { children, className, fallbackUI, ...props },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     return (
       <label

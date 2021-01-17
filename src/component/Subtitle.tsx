@@ -1,11 +1,13 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface SubtitleProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
+    ErrorBoundaryProps,
     HelpersProps {
   is1?: boolean
   is2?: boolean
@@ -23,11 +25,9 @@ export class Subtitle extends React.Component<SubtitleProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, is1, is2, is3, is4, is5, is6, ...props } = this.props
 
-    const { is1, is2, is3, is4, is5, is6, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('p', props, bulmaClassName.subtitle, {
       is1,

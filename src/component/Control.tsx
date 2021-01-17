@@ -7,7 +7,7 @@ import { renderElement } from './renderElement'
 
 export interface ControlProps
   extends React.HTMLAttributes<HTMLDivElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps,
     SizeProps {
   hasIconsLeft?: boolean
@@ -25,7 +25,7 @@ export class Control extends React.Component<ControlProps> {
 
   render(): React.ReactNode {
     const {
-fallbackUI,
+      fallbackUI,
       hasIconsLeft,
       hasIconsRight,
       isExpanded,
@@ -33,7 +33,7 @@ fallbackUI,
       ...props
     } = this.props
 
-    if (this.state.hasError)  return null
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('div', props, bulmaClassName.control, {
       hasIconsLeft,

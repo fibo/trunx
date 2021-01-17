@@ -8,6 +8,8 @@ import { Button } from '../src/component/Button'
 import { Buttons } from '../src/component/Buttons'
 import { Card } from '../src/component/Card'
 import { Checkbox } from '../src/component/Checkbox'
+import { Col } from '../src/component/Col'
+import { Colgroup } from '../src/component/Colgroup'
 import { Column } from '../src/component/Column'
 import { Columns } from '../src/component/Columns'
 import { Container } from '../src/component/Container'
@@ -51,9 +53,14 @@ import { Table } from '../src/component/Table'
 import { Tabs } from '../src/component/Tabs'
 import { Tag } from '../src/component/Tag'
 import { Tags } from '../src/component/Tags'
+import { Tbody } from '../src/component/Tbody'
 import { Textarea } from '../src/component/Textarea'
+import { Tfoot } from '../src/component/Tfoot'
+import { Th } from '../src/component/Th'
+import { Thead } from '../src/component/Thead'
 import { Tile } from '../src/component/Tile'
 import { Title } from '../src/component/Title'
+import { Tr } from '../src/component/Tr'
 import { Ul } from '../src/component/Ul'
 import { U } from '../src/component/U'
 
@@ -73,6 +80,8 @@ export function noPropIsRequired () {
       <Card.Header />
       <Card.Image />
       <Checkbox />
+      <Col />
+      <Colgroup />
       <Column />
       <Columns />
       <Container />
@@ -169,13 +178,18 @@ export function noPropIsRequired () {
       <Tabs />
       <Tag />
       <Tags />
+      <Tbody />
       <Textarea />
+      <Tfoot />
+      <Th />
+      <Thead />
       <Tile />
       <Tile.Ancestor />
       <Tile.Child />
       <Tile.Child.Box />
       <Tile.Child.Notification />
       <Title />
+      <Tr />
       <Ul />
       <U />
     </>

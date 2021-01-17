@@ -1,6 +1,7 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
 import {
   HelpersProps,
@@ -13,6 +14,7 @@ import { renderElement } from './renderElement'
 
 export interface NavbarProps
   extends React.HTMLAttributes<HTMLElement>,
+    ErrorBoundaryProps,
     HelpersProps,
     MainColorsProps,
     ShadeColorsProps {
@@ -25,28 +27,34 @@ export interface NavbarProps
 
 export interface NavbarBrandProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface NavbarDividerProps
   extends React.HTMLAttributes<HTMLHRElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface NavbarDropdownProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface NavbarEndProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface NavbarBurgerProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    ErrorBoundaryProps,
     HelpersProps {
   isActive?: boolean
 }
 
 export interface NavbarItemProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    ErrorBoundaryProps,
     HelpersProps {
   hasDropdown?: boolean
   hasDropdownUp?: boolean
@@ -56,16 +64,19 @@ export interface NavbarItemProps
 
 export interface NavbarLinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface NavbarMenuProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {
   isActive?: boolean
 }
 
 export interface NavbarStartProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 class NavbarBrand extends React.Component<NavbarBrandProps> {
@@ -76,11 +87,11 @@ class NavbarBrand extends React.Component<NavbarBrandProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.navbarBrand)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.navbarBrand)
   }
 }
 
@@ -97,14 +108,12 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const [
       modifiersProps,
-      { className, isActive, ...props },
+      { className, fallbackUI, isActive, ...props },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     return (
       <a
@@ -133,11 +142,11 @@ class NavbarDivider extends React.Component<NavbarDividerProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('hr', this.props, bulmaClassName.navbarDivider)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('hr', props, bulmaClassName.navbarDivider)
   }
 }
 
@@ -149,11 +158,11 @@ class NavbarDropdown extends React.Component<NavbarDropdownProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.navbarDropdown)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.navbarDropdown)
   }
 }
 
@@ -165,11 +174,11 @@ class NavbarEnd extends React.Component<NavbarEndProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.navbarEnd)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.navbarEnd)
   }
 }
 
@@ -181,17 +190,16 @@ class NavbarItem extends React.Component<NavbarItemProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const {
+      fallbackUI,
       hasDropdown,
       hasDropdownUp,
       isActive,
       isHoverable,
       ...props
     } = this.props
+
+    if (this.state.hasError) return fallbackUI
 
     const tag = hasDropdown ? 'div' : 'a'
 
@@ -212,11 +220,11 @@ class NavbarLink extends React.Component<NavbarLinkProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('a', this.props, bulmaClassName.navbarLink)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('a', props, bulmaClassName.navbarLink)
   }
 }
 
@@ -228,11 +236,9 @@ class NavbarMenu extends React.Component<NavbarMenuProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, isActive, ...props } = this.props
 
-    const { isActive, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('div', props, bulmaClassName.navbarMenu, { isActive })
   }
@@ -246,11 +252,11 @@ class NavbarStart extends React.Component<NavbarStartProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.navbarStart)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.navbarStart)
   }
 }
 
@@ -296,17 +302,16 @@ export class Navbar extends React.Component<NavbarProps> {
   }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const {
+      fallbackUI,
       isFixedBottom,
       isFixedTop,
       isTransparent,
       isUnselectable,
       ...props
     } = this.props
+
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('nav', props, bulmaClassName.navbar, {
       isFixedBottom,

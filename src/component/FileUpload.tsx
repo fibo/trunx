@@ -2,6 +2,7 @@ import * as classnames from 'classnames'
 import * as React from 'react'
 
 import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import {
   HelpersProps,
   MainColorsProps,
@@ -13,6 +14,7 @@ import { renderElement } from './renderElement'
 
 export interface FileUploadProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps,
     MainColorsProps,
     SizeProps {
@@ -24,22 +26,27 @@ export interface FileUploadProps
 
 export interface FileUploadCtaProps
   extends React.HTMLAttributes<HTMLSpanElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface FileUploadIconProps
   extends React.HTMLAttributes<HTMLSpanElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface FileUploadInputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface IFileUploadLabel
   extends React.HTMLAttributes<HTMLSpanElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface FileUploadNameProps
   extends React.HTMLAttributes<HTMLSpanElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 class FileUploadCta extends React.Component<FileUploadCtaProps> {
@@ -50,11 +57,11 @@ class FileUploadCta extends React.Component<FileUploadCtaProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('span', this.props, bulmaClassName.fileCta)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('span', props, bulmaClassName.fileCta)
   }
 }
 
@@ -66,11 +73,11 @@ class FileUploadIcon extends React.Component<FileUploadIconProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('span', this.props, bulmaClassName.fileIcon)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('span', props, bulmaClassName.fileIcon)
   }
 }
 
@@ -82,13 +89,13 @@ class FileUploadInput extends React.Component<FileUploadInputProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
+
+    if (this.state.hasError) return fallbackUI
 
     return renderElement(
       'input',
-      { ...this.props, type: 'file' },
+      { props, type: 'file' },
       bulmaClassName.fileInput
     )
   }
@@ -102,11 +109,11 @@ class FileUploadLabel extends React.Component<IFileUploadLabel> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('span', this.props, bulmaClassName.fileLabel)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('span', props, bulmaClassName.fileLabel)
   }
 }
 
@@ -118,11 +125,11 @@ class FileUploadName extends React.Component<FileUploadNameProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('span', this.props, bulmaClassName.fileName)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('span', props, bulmaClassName.fileName)
   }
 }
 
@@ -140,14 +147,21 @@ export class FileUpload extends React.Component<FileUploadProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const [
       modifiersProps,
-      { children, className, hasName, isBoxed, isFullwidth, isRight, ...props },
+      {
+        children,
+        className,
+        fallbackUI,
+        hasName,
+        isBoxed,
+        isFullwidth,
+        isRight,
+        ...props
+      },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     return (
       <div

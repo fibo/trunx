@@ -1,11 +1,13 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface HeadingProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export class Heading extends React.Component<HeadingProps> {
@@ -16,10 +18,10 @@ export class Heading extends React.Component<HeadingProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('p', this.props, bulmaClassName.heading)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('p', props, bulmaClassName.heading)
   }
 }

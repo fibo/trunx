@@ -1,18 +1,20 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import { HelpersProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface IconProps
   extends React.HTMLAttributes<HTMLSpanElement>,
+    ErrorBoundaryProps,
     HelpersProps,
     SizeProps {
   isLeft?: boolean
   isRight?: boolean
 }
 
-export interface IconSvgProps {
+export interface IconSvgProps extends ErrorBoundaryProps {
   className?: string
   fill?: string
   icon?: {
@@ -40,11 +42,9 @@ class IconSvg extends React.Component<IconSvgProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { className, fallbackUI, icon, fill, size } = this.props
 
-    const { className, icon, fill, size } = this.props
+    if (this.state.hasError) return fallbackUI
 
     return (
       <svg
@@ -72,11 +72,9 @@ export class Icon extends React.Component<IconProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, isLeft, isRight, ...props } = this.props
 
-    const { isLeft, isRight, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('span', props, bulmaClassName.icon, {
       isLeft,

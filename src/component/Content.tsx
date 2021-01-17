@@ -7,7 +7,7 @@ import { renderElement } from './renderElement'
 
 export interface ContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps,
     SizeProps {
   hasTextCentered?: boolean
@@ -25,6 +25,7 @@ export class Content extends React.Component<ContentProps> {
 
   render(): React.ReactNode {
     const {
+      fallbackUI,
       hasTextCentered,
       hasTextJustified,
       hasTextLeft,
@@ -32,7 +33,7 @@ export class Content extends React.Component<ContentProps> {
       ...props
     } = this.props
 
-    if (this.state.hasError) return null
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('div', props, bulmaClassName.content, {
       hasTextCentered,

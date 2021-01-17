@@ -1,10 +1,12 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { renderElement } from './renderElement'
 import { HelpersProps } from './modifiers'
 
 interface UlProps
   extends React.HTMLAttributes<HTMLUListElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export class Ul extends React.Component<UlProps> {
@@ -15,10 +17,10 @@ export class Ul extends React.Component<UlProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('ul', this.props)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('ul', props)
   }
 }

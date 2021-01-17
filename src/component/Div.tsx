@@ -6,6 +6,7 @@ import { renderElement } from './renderElement'
 
 export interface DivProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export class Div extends React.Component<DivProps> {
