@@ -8,6 +8,8 @@ import { Button } from '../src/component/Button'
 import { Buttons } from '../src/component/Buttons'
 import { Card } from '../src/component/Card'
 import { Checkbox } from '../src/component/Checkbox'
+import { Col } from '../src/component/Col'
+import { Colgroup } from '../src/component/Colgroup'
 import { Column } from '../src/component/Column'
 import { Columns } from '../src/component/Columns'
 import { Container } from '../src/component/Container'
@@ -51,9 +53,14 @@ import { Table } from '../src/component/Table'
 import { Tabs } from '../src/component/Tabs'
 import { Tag } from '../src/component/Tag'
 import { Tags } from '../src/component/Tags'
+import { Tbody } from '../src/component/Tbody'
 import { Textarea } from '../src/component/Textarea'
+import { Tfoot } from '../src/component/Tfoot'
+import { Th } from '../src/component/Th'
+import { Thead } from '../src/component/Thead'
 import { Tile } from '../src/component/Tile'
 import { Title } from '../src/component/Title'
+import { Tr } from '../src/component/Tr'
 import { Ul } from '../src/component/Ul'
 import { U } from '../src/component/U'
 
@@ -73,6 +80,8 @@ export function classNameProp () {
       <Card.Header fallbackUI={<div>Opss...</div>} />
       <Card.Image fallbackUI={<div>Opss...</div>} />
       <Checkbox fallbackUI={<div>Opss...</div>} />
+      <Col fallbackUI={<div>Opss...</div>} />
+      <Colgroup fallbackUI={<div>Opss...</div>} />
       <Column fallbackUI={<div>Opss...</div>} />
       <Columns fallbackUI={<div>Opss...</div>} />
       <Container fallbackUI={<div>Opss...</div>} />
@@ -169,13 +178,18 @@ export function classNameProp () {
       <Tabs fallbackUI={<div>Opss...</div>} />
       <Tag fallbackUI={<div>Opss...</div>} />
       <Tags fallbackUI={<div>Opss...</div>} />
+      <Tbody fallbackUI={<div>Opss...</div>} />
+      <Tfoot fallbackUI={<div>Opss...</div>} />
       <Textarea fallbackUI={<div>Opss...</div>} />
+      <Th fallbackUI={<div>Opss...</div>} />
+      <Thead fallbackUI={<div>Opss...</div>} />
       <Tile fallbackUI={<div>Opss...</div>} />
       <Tile.Ancestor fallbackUI={<div>Opss...</div>} />
       <Tile.Child fallbackUI={<div>Opss...</div>} />
       <Tile.Child.Box fallbackUI={<div>Opss...</div>} />
       <Tile.Child.Notification fallbackUI={<div>Opss...</div>} />
       <Title fallbackUI={<div>Opss...</div>} />
+      <Tr fallbackUI={<div>Opss...</div>} />
       <Ul fallbackUI={<div>Opss...</div>} />
       <U fallbackUI={<div>Opss...</div>} />
     </>

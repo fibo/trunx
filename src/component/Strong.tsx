@@ -1,9 +1,13 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface StrongProps extends React.HTMLAttributes<HTMLElement>, HelpersProps {}
+interface StrongProps
+  extends React.HTMLAttributes<HTMLElement>,
+    ErrorBoundaryProps,
+    HelpersProps {}
 
 export class Strong extends React.Component<StrongProps> {
   static getDerivedStateFromError() {
@@ -13,10 +17,10 @@ export class Strong extends React.Component<StrongProps> {
   state = { hasError: false }
 
   render() {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('strong', this.props)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('strong', props)
   }
 }

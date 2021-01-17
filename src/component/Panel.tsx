@@ -1,29 +1,35 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface PanelProps
   extends React.HTMLAttributes<HTMLElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface PanelBlockProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    ErrorBoundaryProps,
     HelpersProps {
   isActive?: boolean
 }
 
 export interface PanelHeadingProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface PanelIconProps
   extends React.HTMLAttributes<HTMLSpanElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface PanelTabsProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 class PanelBlock extends React.Component<PanelBlockProps> {
@@ -34,11 +40,9 @@ class PanelBlock extends React.Component<PanelBlockProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, isActive, ...props } = this.props
 
-    const { isActive, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('a', props, bulmaClassName.panelBlock, { isActive })
   }
@@ -52,11 +56,11 @@ class PanelHeading extends React.Component<PanelHeadingProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('p', this.props, bulmaClassName.panelHeading)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('p', props, bulmaClassName.panelHeading)
   }
 }
 
@@ -84,11 +88,11 @@ class PanelTabs extends React.Component<PanelTabsProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('p', this.props, bulmaClassName.panelTabs)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('p', props, bulmaClassName.panelTabs)
   }
 }
 
@@ -105,10 +109,10 @@ export class Panel extends React.Component<PanelProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('nav', this.props, bulmaClassName.panel)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('nav', props, bulmaClassName.panel)
   }
 }

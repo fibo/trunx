@@ -1,10 +1,12 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface UProps
   extends React.HTMLAttributes<HTMLElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export class U extends React.Component<UProps> {
@@ -15,10 +17,10 @@ export class U extends React.Component<UProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('u', this.props)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('u', props)
   }
 }

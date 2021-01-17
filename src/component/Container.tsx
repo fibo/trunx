@@ -7,7 +7,7 @@ import { renderElement } from './renderElement'
 
 export interface ContainerProps
   extends React.HTMLAttributes<HTMLDivElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps {
   isFluid?: boolean
   isFullhd?: boolean
@@ -24,7 +24,7 @@ export class Container extends React.Component<ContainerProps> {
   render(): React.ReactNode {
     const { fallbackUI, isFluid, isFullhd, isWidescreen, ...props } = this.props
 
-    if (this.state.hasError)  return null
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('div', props, bulmaClassName.container, {
       isFluid,

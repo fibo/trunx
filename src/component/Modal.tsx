@@ -1,46 +1,56 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface ModalProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {
   isActive?: boolean
 }
 
 export interface ModalBackgroundProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface ModalCardProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface ModalCardBodyProps
   extends React.HTMLAttributes<HTMLElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface ModalCardFootProps
   extends React.HTMLAttributes<HTMLElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface ModalCardHeadProps
   extends React.HTMLAttributes<HTMLElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface ModalCardTitleProps
   extends React.HTMLAttributes<HTMLElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface ModalCloseProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    ErrorBoundaryProps {
   isLarge?: boolean
 }
 
 export interface ModalContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 class ModalCardBody extends React.Component<ModalCardBodyProps> {
@@ -51,11 +61,11 @@ class ModalCardBody extends React.Component<ModalCardBodyProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('section', this.props, bulmaClassName.modalCardFoot)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('section', props, bulmaClassName.modalCardFoot)
   }
 }
 
@@ -67,11 +77,11 @@ class ModalCardFoot extends React.Component<ModalCardFootProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('footer', this.props, bulmaClassName.modalCardFoot)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('footer', props, bulmaClassName.modalCardFoot)
   }
 }
 
@@ -83,11 +93,11 @@ class ModalCardHead extends React.Component<ModalCardHeadProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('header', this.props, bulmaClassName.modalCardHead)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('header', props, bulmaClassName.modalCardHead)
   }
 }
 
@@ -99,11 +109,11 @@ class ModalCardTitle extends React.Component<ModalCardTitleProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.modalCardTitle)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.modalCardTitle)
   }
 }
 
@@ -115,11 +125,11 @@ class ModalBackground extends React.Component<ModalBackgroundProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.modalBackground)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.modalBackground)
   }
 }
 
@@ -139,8 +149,11 @@ class ModalCard extends React.Component<ModalCardProps> {
     if (this.state.hasError) {
       return null
     }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.modalCard)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.modalCard)
   }
 }
 
@@ -156,11 +169,9 @@ class ModalClose extends React.Component<ModalCloseProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, isLarge, ...props } = this.props
 
-    const { isLarge, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('button', props, bulmaClassName.modalClose, {
       isLarge,
@@ -176,11 +187,11 @@ class ModalContent extends React.Component<ModalContentProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.modalContent)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.modalContent)
   }
 }
 
@@ -197,11 +208,9 @@ export class Modal extends React.Component<ModalProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, isActive, ...props } = this.props
 
-    const { isActive, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('div', props, bulmaClassName.modal, { isActive })
   }

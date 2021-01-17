@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import { bulmaClassName } from './classNames'
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import {
   HelpersProps,
   MainColorsProps,
@@ -11,6 +12,7 @@ import { renderElement } from './renderElement'
 
 interface MessageProps
   extends React.HTMLAttributes<HTMLElement>,
+    ErrorBoundaryProps,
     HelpersProps,
     MainColorsProps,
     ShadeColorsProps,
@@ -20,10 +22,12 @@ interface MessageProps
 
 export interface MessageBodyProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface MessageHeaderProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 class MessageBody extends React.Component<MessageBodyProps> {
@@ -34,11 +38,11 @@ class MessageBody extends React.Component<MessageBodyProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.messageBody)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.messageBody)
   }
 }
 
@@ -50,11 +54,11 @@ class MessageHeader extends React.Component<MessageHeaderProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.messageHeader)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.messageHeader)
   }
 }
 
@@ -69,10 +73,10 @@ export class Message extends React.Component<MessageProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('article', this.props, bulmaClassName.message)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('article', props, bulmaClassName.message)
   }
 }

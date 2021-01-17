@@ -2,6 +2,7 @@ import * as classnames from 'classnames'
 import * as React from 'react'
 
 import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import {
   HelpersProps,
   extractModifiersProps,
@@ -10,6 +11,7 @@ import {
 
 export interface ImageProps
   extends React.ImgHTMLAttributes<HTMLImageElement>,
+    ErrorBoundaryProps,
     HelpersProps {
   is1by1?: boolean
   is1by2?: boolean
@@ -43,14 +45,11 @@ export class Image extends React.Component<ImageProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const [
       modifiersProps,
       {
         className,
+        fallbackUI,
         is1by1,
         is1by2,
         is1by3,
@@ -76,6 +75,8 @@ export class Image extends React.Component<ImageProps> {
         ...props
       },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     return (
       <figure

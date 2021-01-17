@@ -1,6 +1,7 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import {
   HelpersProps,
@@ -11,6 +12,7 @@ import {
 
 export interface TileProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {
   is1?: boolean
   is2?: boolean
@@ -30,18 +32,22 @@ export interface TileProps
 
 export interface TileAncestorProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface TileChildProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface TileChildBoxProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface TileChildNotificationProps
   extends React.HTMLAttributes<HTMLElement>,
+    ErrorBoundaryProps,
     HelpersProps,
     MainColorsProps {}
 
@@ -53,14 +59,12 @@ class TileAncestor extends React.Component<TileAncestorProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const [
       modifiersProps,
-      { children, className, ...props },
+      { children, className, fallbackUI, ...props },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     return (
       <div
@@ -86,14 +90,12 @@ class TileChildBox extends React.Component<TileChildBoxProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const [
       modifiersProps,
-      { children, className, ...props },
+      { children, className, fallbackUI, ...props },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     return (
       <div
@@ -122,14 +124,12 @@ class TileChildNotification extends React.Component<
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const [
       modifiersProps,
-      { className, children, ...props },
+      { className, children, fallbackUI, ...props },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     return (
       <article
@@ -159,14 +159,12 @@ class TileChild extends React.Component<TileChildProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const [
       modifiersProps,
-      { children, className, ...props },
+      { children, className, fallbackUI, ...props },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     return (
       <div
@@ -195,15 +193,12 @@ export class Tile extends React.Component<TileProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const [
       modifiersProps,
       {
         children,
         className,
+        fallbackUI,
         is1,
         is2,
         is3,
@@ -221,6 +216,8 @@ export class Tile extends React.Component<TileProps> {
         ...props
       },
     ] = extractModifiersProps(this.props)
+
+    if (this.state.hasError) return fallbackUI
 
     return (
       <div

@@ -14,6 +14,8 @@ export class ErrorBoundary extends React.Component<ErrorBoundaryProps> {
   render(): React.ReactNode {
     const { children, fallbackUI } = this.props
 
-    return this.state.hasError ? fallbackUI : <>{children}</>
+    if (this.state.hasError) return fallbackUI
+
+    return <>{children}</>
   }
 }

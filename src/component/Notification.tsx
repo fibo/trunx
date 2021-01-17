@@ -1,11 +1,13 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import { HelpersProps, MainColorsProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 interface NotificationProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps,
     MainColorsProps {}
 
@@ -17,10 +19,10 @@ export class Notification extends React.Component<NotificationProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.navbar)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.navbar)
   }
 }

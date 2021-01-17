@@ -1,6 +1,7 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import {
   HelpersProps,
@@ -10,6 +11,7 @@ import {
 
 export interface CheckboxProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export class Checkbox extends React.Component<CheckboxProps> {
