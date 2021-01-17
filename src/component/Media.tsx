@@ -1,23 +1,28 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface MediaProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface MediaContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface MediaLeftProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface MediaRightProps
   extends React.HTMLAttributes<HTMLDivElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 class MediaContent extends React.Component<MediaContentProps> {
@@ -28,11 +33,11 @@ class MediaContent extends React.Component<MediaContentProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.mediaContent)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.mediaContent)
   }
 }
 
@@ -44,11 +49,11 @@ class MediaLeft extends React.Component<MediaLeftProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.mediaLeft)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.mediaLeft)
   }
 }
 
@@ -60,11 +65,11 @@ class MediaRight extends React.Component<MediaRightProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.mediaRight)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.mediaRight)
   }
 }
 
@@ -80,10 +85,10 @@ export class Media extends React.Component<MediaProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('div', this.props, bulmaClassName.media)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('div', props, bulmaClassName.media)
   }
 }

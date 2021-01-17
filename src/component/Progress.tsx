@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import {
   HelpersProps,
@@ -11,6 +12,7 @@ import { renderElement } from './renderElement'
 
 export interface ProgressProps
   extends React.ProgressHTMLAttributes<HTMLProgressElement>,
+    ErrorBoundaryProps,
     HelpersProps,
     MainColorsProps,
     ShadeColorsProps,
@@ -24,10 +26,10 @@ export class Progress extends React.Component<ProgressProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('progress', this.props, bulmaClassName.progress)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('progress', props, bulmaClassName.progress)
   }
 }

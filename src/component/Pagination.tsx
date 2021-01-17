@@ -1,6 +1,7 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import {
   HelpersProps,
@@ -11,28 +12,34 @@ import { renderElement } from './renderElement'
 
 export interface PaginationProps
   extends React.HTMLAttributes<HTMLElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface PaginationEllipsisProps
   extends React.HTMLAttributes<HTMLSpanElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface PaginationLinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    ErrorBoundaryProps,
     HelpersProps {
   isCurrent?: boolean
 }
 
 export interface PaginationListProps
   extends React.HTMLAttributes<HTMLUListElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface IPaginationNextProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface PaginationPreviousProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
@@ -43,13 +50,12 @@ class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const [
+      modifiersProps,
+      { className, fallbackUI, ...props },
+    ] = extractModifiersProps(this.props)
 
-    const [modifiersProps, { className, ...props }] = extractModifiersProps(
-      this.props
-    )
+    if (this.state.hasError) return fallbackUI
 
     return (
       <li>
@@ -76,11 +82,9 @@ class PaginationLink extends React.Component<PaginationLinkProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, isCurrent, ...props } = this.props
 
-    const { isCurrent, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     return (
       <li>
@@ -100,11 +104,11 @@ class PaginationList extends React.Component<PaginationListProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('ul', this.props, bulmaClassName.paginationList)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('ul', props, bulmaClassName.paginationList)
   }
 }
 
@@ -116,11 +120,11 @@ class PaginationNext extends React.Component<IPaginationNextProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('a', this.props, bulmaClassName.paginationNext)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('a', props, bulmaClassName.paginationNext)
   }
 }
 
@@ -132,11 +136,11 @@ class PaginationPrevious extends React.Component<PaginationPreviousProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('a', this.props, bulmaClassName.paginationPrevious)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('a', props, bulmaClassName.paginationPrevious)
   }
 }
 
@@ -159,10 +163,10 @@ export class Pagination extends React.Component<PaginationProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, ...props } = this.props
 
-    return renderElement('nav', this.props, bulmaClassName.pagination)
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement('nav', props, bulmaClassName.pagination)
   }
 }

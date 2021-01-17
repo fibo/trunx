@@ -1,11 +1,13 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface TitleProps
   extends React.HTMLAttributes<HTMLHeadingElement>,
+    ErrorBoundaryProps,
     HelpersProps {
   is1?: boolean
   is2?: boolean
@@ -24,13 +26,21 @@ export class Title extends React.Component<TitleProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
-    const { is1, is2, is3, is4, is5, is6, isSpaced, ...props } = this.props
+    const {
+      fallbackUI,
+      is1,
+      is2,
+      is3,
+      is4,
+      is5,
+      is6,
+      isSpaced,
+      ...props
+    } = this.props
 
     let tag = 'p'
+
+    if (this.state.hasError) return fallbackUI
 
     if (is1) tag = 'h1'
     if (is2) tag = 'h2'

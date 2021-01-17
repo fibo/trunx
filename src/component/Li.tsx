@@ -1,11 +1,13 @@
 import * as classnames from 'classnames'
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { trunxPropsToClassnamesObject } from './classNames'
 import { HelpersProps } from './modifiers'
 
 export interface LiProps
   extends React.LiHTMLAttributes<HTMLLIElement>,
+    ErrorBoundaryProps,
     HelpersProps {
   isActive?: boolean
 }
@@ -18,11 +20,9 @@ export class Li extends React.Component<LiProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { children, className, fallbackUI, isActive, ...props } = this.props
 
-    const { children, className, isActive, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     return (
       <li

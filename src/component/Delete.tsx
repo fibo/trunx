@@ -7,7 +7,7 @@ import { renderElement } from './renderElement'
 
 export interface DeleteProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps,
     SizeProps {}
 
@@ -21,7 +21,7 @@ export class Delete extends React.Component<DeleteProps> {
   render(): React.ReactNode {
     const { fallbackUI, ...props } = this.props
 
-    if (this.state.hasError)  return null
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('button', props, bulmaClassName.delete)
   }

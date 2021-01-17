@@ -1,11 +1,13 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import { HelpersProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
 export interface TabsProps
   extends React.HTMLAttributes<HTMLElement>,
+    ErrorBoundaryProps,
     HelpersProps,
     SizeProps {
   isBoxed?: boolean
@@ -24,11 +26,8 @@ export class Tabs extends React.Component<TabsProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
     const {
+      fallbackUI,
       isBoxed,
       isCentered,
       isFullwidth,
@@ -40,6 +39,8 @@ export class Tabs extends React.Component<TabsProps> {
       isToggleRounded,
       ...props
     } = this.props
+
+    if (this.state.hasError) return fallbackUI
 
     return renderElement('nav', props, bulmaClassName.tabs, {
       isBoxed,

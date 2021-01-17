@@ -1,5 +1,6 @@
 import * as React from 'react'
 
+import { ErrorBoundaryProps } from './ErrorBoundary'
 import { bulmaClassName } from './classNames'
 import {
   HelpersProps,
@@ -11,6 +12,7 @@ import { renderElement } from './renderElement'
 
 export interface TagProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+    ErrorBoundaryProps,
     HelpersProps,
     MainColorsProps,
     ShadeColorsProps,
@@ -28,11 +30,9 @@ export class Tag extends React.Component<TagProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
+    const { fallbackUI, isDelete, isNormal, isRounded, ...props } = this.props
 
-    const { isDelete, isNormal, isRounded, ...props } = this.props
+    if (this.state.hasError) return fallbackUI
 
     const tag = props.href || props.onClick ? 'a' : 'span'
 
