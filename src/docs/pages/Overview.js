@@ -17,6 +17,7 @@ import {
   Title,
   Ul,
 } from '../../../component/index'
+import { componentHierarchy } from '../../../component/metadata'
 import pkg from '../../../package.json'
 import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
@@ -262,288 +263,57 @@ export function Overview({ location: { pathname } }) {
               </Column>
             </Columns>
 
-            <P>Notice also that:</P>
+            <Message isInfo>
+              <Message.Header>
+                Features implemented by every component
+              </Message.Header>
 
-            <Ul>
-              <Li>
-                Every Trunx component accepts a <code>className</code> prop
-                which will be appended to Bulma classes in order to customize
-                the component style.
-              </Li>
+              <Message.Body>
+                <P>Notice also that:</P>
 
-              <Li>
-                Every <Em>prop</Em> in a Trunx component is <B>optional</B>.
-              </Li>
+                <Ul>
+                  <Li>
+                    Every <Em>prop</Em> in a Trunx component is <B>optional</B>.
+                  </Li>
 
-              <Li>
-                Every trunx component implements a React <Em>Error Boundary</Em>: it is possible to customize it using the <code>fallbackUI</code> prop.
-                .
-              </Li>
-            </Ul>
+                  <Li>
+                    Every Trunx component accepts a <code>className</code> prop
+                    which will be appended to Bulma classes in order to
+                    customize the component style.
+                  </Li>
+
+                  <Li>
+                    Every trunx component implements a React{' '}
+                    <Em>Error Boundary</Em>: it is possible to customize it
+                    using the <code>fallbackUI</code> prop. .
+                  </Li>
+                </Ul>
+              </Message.Body>
+            </Message>
 
             <P>Follows a list of all component currently implemented.</P>
 
             <Ul>
-              {[
-                {
-                  component: 'A',
-                },
-                {
-                  component: 'B',
-                },
-                {
-                  component: 'Box',
-                },
-                {
-                  component: 'Breadcrumb',
-                  subComponents: ['Item'],
-                },
-                {
-                  component: 'Button',
-                },
-                {
-                  component: 'Buttons',
-                },
-                {
-                  component: 'Card',
-                  subComponents: ['Content', 'Footer', 'Header', 'Image'],
-                },
-                {
-                  component: 'Checkbox',
-                },
-                {
-                  component: 'Col',
-                },
-                {
-                  component: 'Colgroup',
-                },
-                {
-                  component: 'Column',
-                },
-                {
-                  component: 'Columns',
-                },
-                {
-                  component: 'Container',
-                },
-                {
-                  component: 'Content',
-                },
-                {
-                  component: 'Control',
-                },
-                {
-                  component: 'Delete',
-                },
-                {
-                  component: 'Dropdown',
-                  subComponents: [
-                    'Content',
-                    'Divider',
-                    'Item',
-                    'Menu',
-                    'Trigger',
-                  ],
-                },
-                {
-                  component: 'Em',
-                },
-                {
-                  component: 'Field',
-                  subComponents: ['Body', 'Label;'],
-                },
-                {
-                  component: 'FileUpload',
-                  subComponents: ['Cta', 'Icon', 'Input', 'Label', 'Name'],
-                },
-                {
-                  component: 'Footer',
-                },
-                {
-                  component: 'Heading',
-                },
-                {
-                  component: 'Help',
-                },
-                {
-                  component: 'Hero',
-                  subComponents: ['Body', 'Foot', 'Head'],
-                },
-                {
-                  component: 'Icon',
-                  subComponents: ['Svg'],
-                },
-                {
-                  component: 'Image',
-                },
-                {
-                  component: 'Input',
-                },
-                {
-                  component: 'Label',
-                },
-                {
-                  component: 'Level',
-                  subComponents: ['Item', 'Left', 'Right'],
-                },
-                {
-                  component: 'Li',
-                },
-                {
-                  component: 'Media',
-                  subComponents: ['Content', 'Left', 'Right'],
-                },
-                {
-                  component: 'Message',
-                  subComponents: ['Body', 'Header'],
-                },
-                {
-                  component: 'Modal',
-                  subComponents: [
-                    'Background',
-                    'Card',
-                    'Card.Body',
-                    'Card.Foot',
-                    'Card.Head',
-                    'Card.Title',
-                    'Close',
-                    'Content',
-                  ],
-                },
-                {
-                  component: 'Navbar',
-                  subComponents: [
-                    'Brand',
-                    'Burger',
-                    'Divider',
-                    'Dropdown',
-                    'End',
-                    'Item',
-                    'Link',
-                    'Menu',
-                    'Start',
-                  ],
-                },
-                {
-                  component: 'Notification',
-                },
-                {
-                  component: 'P',
-                },
-                {
-                  component: 'Pagination',
-                  subComponents: [
-                    'Ellipsis',
-                    'Link',
-                    'List',
-                    'Next',
-                    'Previous',
-                  ],
-                },
-                {
-                  component: 'Panel',
-                  subComponents: ['Block', 'Heading', 'Icon', 'Tabs'],
-                },
-                {
-                  component: 'Progress',
-                },
-                {
-                  component: 'Radio',
-                },
-                {
-                  component: 'Section',
-                },
-                {
-                  component: 'Select',
-                },
-                {
-                  component: 'Span',
-                },
-                {
-                  component: 'Small',
-                },
-                {
-                  component: 'Strong',
-                },
-                {
-                  component: 'Sub',
-                },
-                {
-                  component: 'Subtitle',
-                },
-                {
-                  component: 'Sup',
-                },
-                {
-                  component: 'Table',
-                  subComponents: ['Container'],
-                },
-                {
-                  component: 'Tabs',
-                },
-                {
-                  component: 'Tag',
-                },
-                {
-                  component: 'Tags',
-                },
-                {
-                  component: 'Tbody',
-                },
-                {
-                  component: 'Td',
-                },
-                {
-                  component: 'Tfoot',
-                },
-                {
-                  component: 'Textarea',
-                },
-                {
-                  component: 'Th',
-                },
-                {
-                  component: 'Thead',
-                },
-                {
-                  component: 'Tile',
-                  subComponents: [
-                    'Ancestor',
-                    'Child',
-                    'Child.Box',
-                    'Child.Notification',
-                  ],
-                },
-                {
-                  component: 'Title',
-                },
-                {
-                  component: 'Tr',
-                },
-                {
-                  component: 'U',
-                },
-                {
-                  component: 'Ul',
-                },
-              ].map(({ component, subComponents = [] }, i) => (
-                <Li key={i}>
-                  <A
-                    href={`https://github.com/fibo/trunx/blob/main/src/component/${component}.tsx`}
-                    target='_blank'
-                  >
-                    {component}
-                  </A>
+              {componentHierarchy.map(
+                ({ component, subComponents = [] }, i) => (
+                  <Li key={i}>
+                    <A
+                      href={`https://github.com/fibo/trunx/blob/main/src/component/${component}.tsx`}
+                      target='_blank'
+                    >
+                      {component}
+                    </A>
 
-                  {subComponents.length > 0 && (
-                    <Ul>
-                      {subComponents.map((subComponent, i) => (
-                        <Li key={i}>{`${component}.${subComponent}`}</Li>
-                      ))}
-                    </Ul>
-                  )}
-                </Li>
-              ))}
+                    {subComponents.length > 0 && (
+                      <Ul>
+                        {subComponents.map((subComponent, i) => (
+                          <Li key={i}>{`${component}.${subComponent}`}</Li>
+                        ))}
+                      </Ul>
+                    )}
+                  </Li>
+                )
+              )}
             </Ul>
           </Content>
         </Container>
