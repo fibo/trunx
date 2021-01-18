@@ -15,5 +15,5 @@
     "strictNullChecks": true,
     "target": "es5"
   },
-  "files": ["src/component/index.ts"]
+  "files": ["src/component/index.ts", "src/component/metadata.ts"]
 }
