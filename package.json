@@ -59,7 +59,7 @@
   },
   "homepage": "https://trunx.dev",
   "peerDependencies": {
-    "react": "16.x"
+    "react": "16.x||17.x"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.11",
