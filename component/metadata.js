@@ -56,13 +56,7 @@ exports.componentHierarchy = [
     },
     {
         component: 'Dropdown',
-        subComponents: [
-            'Content',
-            'Divider',
-            'Item',
-            'Menu',
-            'Trigger',
-        ],
+        subComponents: ['Content', 'Divider', 'Item', 'Menu', 'Trigger'],
     },
     {
         component: 'Em',
@@ -151,13 +145,7 @@ exports.componentHierarchy = [
     },
     {
         component: 'Pagination',
-        subComponents: [
-            'Ellipsis',
-            'Link',
-            'List',
-            'Next',
-            'Previous',
-        ],
+        subComponents: ['Ellipsis', 'Link', 'List', 'Next', 'Previous'],
     },
     {
         component: 'Panel',
@@ -226,12 +214,7 @@ exports.componentHierarchy = [
     },
     {
         component: 'Tile',
-        subComponents: [
-            'Ancestor',
-            'Child',
-            'Child.Box',
-            'Child.Notification',
-        ],
+        subComponents: ['Ancestor', 'Child', 'Child.Box', 'Child.Notification'],
     },
     {
         component: 'Title',
