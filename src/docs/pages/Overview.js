@@ -36,7 +36,7 @@ export function Overview({ location: { pathname } }) {
             <P>
               <Em>Trunx</Em> is an open source collection of <Em>React</Em>{' '}
               components built on top of <Em>Bulma</Em> CSS framework and
-              implemented with <Em>TypeScript</Em>. GitHub repo here:
+              implemented with <Em>TypeScript</Em>. GitHub repo here:{' '}
               <A href='https://github.com/fibo/trunx'>github.com/fibo/trunx</A>.
             </P>
 
