@@ -14,7 +14,7 @@ import {
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps,
     MainColorsProps,
     ShadeColorsProps,
@@ -29,6 +29,7 @@ ErrorBoundaryProps,
   isRounded?: boolean
   isStatic?: boolean
   isText?: boolean
+  onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
 }
 
 export class Button extends React.Component<ButtonProps> {
@@ -45,7 +46,7 @@ export class Button extends React.Component<ButtonProps> {
         children,
         className: classNameProp,
         disabled,
-fallbackUI,
+        fallbackUI,
         href,
         isActive,
         isFocused,

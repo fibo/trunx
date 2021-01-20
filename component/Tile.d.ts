@@ -55,9 +55,7 @@ declare class TileChildBox extends React.Component<TileChildBoxProps> {
   }
   render(): React.ReactNode
 }
-declare class TileChildNotification extends React.Component<
-  TileChildNotificationProps
-> {
+declare class TileChildNotification extends React.Component<TileChildNotificationProps> {
   static getDerivedStateFromError(): {
     hasError: boolean
   }
