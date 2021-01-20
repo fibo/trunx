@@ -23,6 +23,7 @@ export interface ButtonProps
   isRounded?: boolean
   isStatic?: boolean
   isText?: boolean
+  onClick?: React.MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>
 }
 export declare class Button extends React.Component<ButtonProps> {
   static getDerivedStateFromError(): {
