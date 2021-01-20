@@ -2,6 +2,5 @@
 *.swp
 *.un~
 .DS_Store
-./component
 node_modules
 npm-debug.log
