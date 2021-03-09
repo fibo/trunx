@@ -36,6 +36,7 @@ import { Message } from '../src/component/Message'
 import { Modal } from '../src/component/Modal'
 import { Navbar } from '../src/component/Navbar'
 import { Notification } from '../src/component/Notification'
+import { Ol } from '../src/component/Ol'
 import { P } from '../src/component/P'
 import { Pagination } from '../src/component/Pagination'
 import { Panel } from '../src/component/Panel'
@@ -113,6 +114,7 @@ export function classNameProp () {
       <Hero.Head fallbackUI={<div>Opss...</div>} />
       <Icon fallbackUI={<div>Opss...</div>} />
       <Icon.Svg fallbackUI={<div>Opss...</div>} />
+      <Icon.Text fallbackUI={<div>Opss...</div>} />
       <Image fallbackUI={<div>Opss...</div>} />
       <Input fallbackUI={<div>Opss...</div>} />
       <Label fallbackUI={<div>Opss...</div>} />
@@ -151,6 +153,7 @@ export function classNameProp () {
       <Navbar.Menu fallbackUI={<div>Opss...</div>} />
       <Navbar.Start fallbackUI={<div>Opss...</div>} />
       <Notification fallbackUI={<div>Opss...</div>} />
+      <Ol fallbackUI={<div>Opss...</div>} />
       <P fallbackUI={<div>Opss...</div>} />
       <Pagination fallbackUI={<div>Opss...</div>} />
       <Pagination.Ellipsis fallbackUI={<div>Opss...</div>} />

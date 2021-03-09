@@ -91,6 +91,7 @@ export function Nav() {
               items: [
                 { label: 'Breadcrumb', route: route.components.breadcrumb },
                 { label: 'Navbar', route: route.components.navbar },
+                { label: 'Message', route: route.components.message },
                 { label: 'Modal', route: route.components.modal },
               ],
             },

@@ -115,6 +115,7 @@ export const bulmaClassNames = [
   'hero-foot',
   'hero-head',
   'icon',
+  'icon-text',
   'image',
   'input',
   'label',

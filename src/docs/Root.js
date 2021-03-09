@@ -6,6 +6,7 @@ import { ColumnsNesting } from './pages/ColumnsNesting'
 import { ColumnsResponsiveness } from './pages/ColumnsResponsiveness'
 import { ColumnsSizes } from './pages/ColumnsSizes'
 import { ComponentsBreadcrumb } from './pages/ComponentsBreadcrumb'
+import { ComponentsMessage } from './pages/ComponentsMessage'
 import { ComponentsModal } from './pages/ComponentsModal'
 import { ComponentsNavbar } from './pages/ComponentsNavbar'
 import { ElementsBox } from './pages/ElementsBox'
@@ -42,6 +43,7 @@ export default function Root() {
           [ColumnsSizes, route.columns.sizes],
           [ComponentsBreadcrumb, route.components.breadcrumb],
           [ComponentsNavbar, route.components.navbar],
+          [ComponentsMessage, route.components.message],
           [ComponentsModal, route.components.modal],
           [ElementsBox, route.elements.box],
           [ElementsButton, route.elements.button],

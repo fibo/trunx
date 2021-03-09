@@ -22,6 +22,7 @@ export interface ButtonProps
   isActive?: boolean
   isFocused?: boolean
   isFullwidth?: boolean
+  isGhost?: boolean
   isInverted?: boolean
   isLoading?: boolean
   isNormal?: boolean
@@ -51,6 +52,7 @@ export class Button extends React.Component<ButtonProps> {
         isActive,
         isFocused,
         isFullwidth,
+        isGhost,
         isInverted,
         isLoading,
         isNormal,
@@ -74,6 +76,7 @@ export class Button extends React.Component<ButtonProps> {
         'is-active': isActive,
         'is-focused': isFocused,
         'is-fullwidth': isFullwidth,
+        'is-ghost': isGhost,
         'is-inverted': isInverted,
         'is-loading': isLoading,
         'is-normal': isNormal,
