@@ -24,6 +24,11 @@ export interface IconSvgProps extends ErrorBoundaryProps {
   size?: string
 }
 
+export interface IconTextProps extends ErrorBoundaryProps {
+  as?: 'div' | 'span'
+  className?: string
+}
+
 class IconSvg extends React.Component<IconSvgProps> {
   static defaultProps = {
     fill: 'currentColor',
@@ -62,8 +67,27 @@ class IconSvg extends React.Component<IconSvgProps> {
   }
 }
 
+class IconText extends React.Component<IconTextProps> {
+  static defaultProps = { as: 'span' }
+
+  static getDerivedStateFromError() {
+    return { hasError: true }
+  }
+
+  state = { hasError: false }
+
+  render(): React.ReactNode {
+    const { as: tag, fallbackUI, ...props } = this.props
+
+    if (this.state.hasError) return fallbackUI
+
+    return renderElement(tag as string, props, bulmaClassName.iconText)
+  }
+}
+
 export class Icon extends React.Component<IconProps> {
   static Svg = IconSvg
+  static Text = IconText
 
   static getDerivedStateFromError() {
     return { hasError: true }

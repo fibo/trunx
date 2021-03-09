@@ -23,7 +23,7 @@ import { Code } from '../components/Code'
 import { Nav } from '../components/Nav'
 import { indent } from '../utils/indent'
 
-export function ComponentsModal({ location: { pathname } }) {
+export function ComponentsModal() {
   const [isExampleModalActive, setIsExampleModalActive] = useState(false)
   const [isImageModalActive, setIsImageModalActive] = useState(false)
   const [isCardModalActive, setIsCardModalActive] = useState(false)

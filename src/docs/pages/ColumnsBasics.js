@@ -1,11 +1,15 @@
 import React from 'react'
 
 import {
+  B,
   Column,
   Columns,
   Container,
   Content,
+  Li,
   Notification,
+  Ol,
+  P,
   Section,
   Subtitle,
   Title,
@@ -28,24 +32,24 @@ export function ColumnsBasics({ location: { pathname } }) {
 
             <hr />
 
-            <p>
-              Building a <b>columns layout</b> with Trunx is very simple:
-            </p>
+            <P>
+              Building a <B>columns layout</B> with Trunx is very simple:
+            </P>
 
-            <ol>
-              <li>
+            <Ol>
+              <Li>
                 Add a <code>Columns</code> component as container.
-              </li>
+              </Li>
 
-              <li>
+              <Li>
                 Add as many <code>Column</code> components as children.
-              </li>
-            </ol>
+              </Li>
+            </Ol>
 
-            <p>
-              Each column will have an <b>equal width</b>, no matter the number
+            <P>
+              Each column will have an <B>equal width</B>, no matter the number
               of columns.
-            </p>
+            </P>
 
             <Columns>
               <Column>
