@@ -6,6 +6,9 @@ export const componentHierarchy = [
     component: 'B',
   },
   {
+    component: 'Block',
+  },
+  {
     component: 'Box',
   },
   {
