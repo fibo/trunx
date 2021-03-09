@@ -4,6 +4,7 @@ export interface TrunxProps {
 export declare function camelCaseToKebabCase(inputString: string): string
 export declare function trunxPropsToClassnamesObject(props?: TrunxProps): {}
 export declare const bulmaClassNames: readonly [
+  'block',
   'box',
   'breadcrumb',
   'button',
@@ -126,6 +127,7 @@ export declare const bulmaClassName: {
     | 'textarea'
     | 'title'
     | 'image'
+    | 'block'
     | 'box'
     | 'breadcrumb'
     | 'buttons'

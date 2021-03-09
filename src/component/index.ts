@@ -3,6 +3,7 @@ export * from './modifiers'
 
 export * from './A'
 export * from './B'
+export * from './Block'
 export * from './Box'
 export * from './Breadcrumb'
 export * from './Button'

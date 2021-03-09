@@ -73,6 +73,7 @@ export function trunxPropsToClassnamesObject(props?: TrunxProps) {
 }
 
 export const bulmaClassNames = [
+  'block',
   'box',
   'breadcrumb',
   'button',

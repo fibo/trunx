@@ -4,6 +4,7 @@ tslib_1.__exportStar(require("./classNames"), exports);
 tslib_1.__exportStar(require("./modifiers"), exports);
 tslib_1.__exportStar(require("./A"), exports);
 tslib_1.__exportStar(require("./B"), exports);
+tslib_1.__exportStar(require("./Block"), exports);
 tslib_1.__exportStar(require("./Box"), exports);
 tslib_1.__exportStar(require("./Breadcrumb"), exports);
 tslib_1.__exportStar(require("./Button"), exports);
