@@ -82,7 +82,7 @@ export const componentHierarchy = [
   },
   {
     component: 'Icon',
-    subComponents: ['Svg'],
+    subComponents: ['Svg', 'Text'],
   },
   {
     component: 'Image',
@@ -137,6 +137,9 @@ export const componentHierarchy = [
   },
   {
     component: 'Notification',
+  },
+  {
+    component: 'Ol',
   },
   {
     component: 'P',

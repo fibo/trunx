@@ -36,6 +36,7 @@ import { Message } from '../src/component/Message'
 import { Modal } from '../src/component/Modal'
 import { Navbar } from '../src/component/Navbar'
 import { Notification } from '../src/component/Notification'
+import { Ol } from '../src/component/Ol'
 import { P } from '../src/component/P'
 import { Pagination } from '../src/component/Pagination'
 import { Panel } from '../src/component/Panel'
@@ -112,6 +113,7 @@ export function classNameProp () {
       <Hero.Foot className='test' />
       <Hero.Head className='test' />
       <Icon className='test' />
+      <Icon.Text className='test' />
       <Icon.Svg className='test' />
       <Image className='test' />
       <Input className='test' />
@@ -151,6 +153,7 @@ export function classNameProp () {
       <Navbar.Menu className='test' />
       <Navbar.Start className='test' />
       <Notification className='test' />
+      <Ol className='test' />
       <P className='test' />
       <Pagination className='test' />
       <Pagination.Ellipsis className='test' />

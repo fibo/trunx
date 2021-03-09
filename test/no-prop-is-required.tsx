@@ -36,6 +36,7 @@ import { Message } from '../src/component/Message'
 import { Modal } from '../src/component/Modal'
 import { Navbar } from '../src/component/Navbar'
 import { Notification } from '../src/component/Notification'
+import { Ol } from '../src/component/Ol'
 import { P } from '../src/component/P'
 import { Pagination } from '../src/component/Pagination'
 import { Panel } from '../src/component/Panel'
@@ -113,6 +114,7 @@ export function noPropIsRequired () {
       <Hero.Head />
       <Icon />
       <Icon.Svg />
+      <Icon.Text />
       <Image />
       <Input />
       <Label />
@@ -151,6 +153,7 @@ export function noPropIsRequired () {
       <Navbar.Menu />
       <Navbar.Start />
       <Notification />
+      <Ol />
       <P />
       <Pagination />
       <Pagination.Ellipsis />

@@ -2,6 +2,7 @@
   "compilerOptions": {
     "allowJs": true,
     "charset": "utf8",
+    "checkJs": true,
     "importHelpers": true,
     "jsx": "react",
     "lib": ["dom", "es2015"],
