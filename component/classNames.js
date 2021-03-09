@@ -42,6 +42,7 @@ function trunxPropsToClassnamesObject(props) {
 }
 exports.trunxPropsToClassnamesObject = trunxPropsToClassnamesObject;
 exports.bulmaClassNames = [
+    'block',
     'box',
     'breadcrumb',
     'button',

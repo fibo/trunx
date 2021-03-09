@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import { A } from '../src/component/A'
 import { B } from '../src/component/B'
+import { Block } from '../src/component/Block'
 import { Box } from '../src/component/Box'
 import { Breadcrumb } from '../src/component/Breadcrumb'
 import { Button } from '../src/component/Button'
@@ -70,6 +71,7 @@ export function classNameProp () {
     <>
       <A className='test' />
       <B className='test' />
+      <Block className='test' />
       <Box className='test' />
       <Breadcrumb className='test' />
       <Breadcrumb.Item className='test' />

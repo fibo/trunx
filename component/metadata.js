@@ -8,6 +8,9 @@ exports.componentHierarchy = [
         component: 'B',
     },
     {
+        component: 'Block',
+    },
+    {
         component: 'Box',
     },
     {
