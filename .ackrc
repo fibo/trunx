@@ -1,7 +1,6 @@
-## This is a ack configuration: use ack --noenv to ignore them.
-
+# Ack is awesome: https://beyondgrep.com/
+#
+# To ignore the options below use `ack --noenv`.
+###
 --smart-case
-
 --ignore-dir=docs
-
-# See also https://beyondgrep.com/
