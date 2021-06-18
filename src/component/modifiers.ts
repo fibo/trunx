@@ -266,6 +266,7 @@ export interface TextTransformationHelpersProps {
   isCapitalized?: boolean
   isItalic?: boolean
   isLowercase?: boolean
+  isUnderlined?: boolean
   isUppercase?: boolean
 }
 
@@ -714,6 +715,7 @@ export function extractModifiersProps({
   isCapitalized,
   isItalic,
   isLowercase,
+  isUnderlined,
   isUppercase,
   // TextWeightHelpersProps
   hasTextWeightLight,
@@ -1127,6 +1129,7 @@ export function extractModifiersProps({
       isCapitalized,
       isItalic,
       isLowercase,
+      isUnderlined,
       isUppercase,
       // TextWeightHelpersProps
       hasTextWeightLight,
