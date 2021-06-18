@@ -59,6 +59,10 @@ export function ElementsContent({ location: { pathname } }) {
                 <code>{'<th>'}</code> <code>{'<td>'}</code> tables
               </li>
             </ul>
+
+            <p>
+                This <code>Content</code> component can be used in <em>any</em> context where you just want to (or can only) write some text. For example, it's used for the paragraph you're currently reading.
+            </p>
           </Content>
         </Container>
       </Section>
