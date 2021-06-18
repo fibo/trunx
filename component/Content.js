@@ -15,10 +15,11 @@ var Content = (function (_super) {
         return { hasError: true };
     };
     Content.prototype.render = function () {
-        var _a = this.props, fallbackUI = _a.fallbackUI, hasTextCentered = _a.hasTextCentered, hasTextJustified = _a.hasTextJustified, hasTextLeft = _a.hasTextLeft, hasTextRight = _a.hasTextRight, props = tslib_1.__rest(_a, ["fallbackUI", "hasTextCentered", "hasTextJustified", "hasTextLeft", "hasTextRight"]);
+        var _a = this.props, fallbackUI = _a.fallbackUI, isNormal = _a.isNormal, hasTextCentered = _a.hasTextCentered, hasTextJustified = _a.hasTextJustified, hasTextLeft = _a.hasTextLeft, hasTextRight = _a.hasTextRight, props = tslib_1.__rest(_a, ["fallbackUI", "isNormal", "hasTextCentered", "hasTextJustified", "hasTextLeft", "hasTextRight"]);
         if (this.state.hasError)
             return fallbackUI;
         return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.content, {
+            isNormal: isNormal,
             hasTextCentered: hasTextCentered,
             hasTextJustified: hasTextJustified,
             hasTextLeft: hasTextLeft,
