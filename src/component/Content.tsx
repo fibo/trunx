@@ -10,6 +10,7 @@ export interface ContentProps
     ErrorBoundaryProps,
     HelpersProps,
     SizeProps {
+  isNormal?: boolean
   hasTextCentered?: boolean
   hasTextJustified?: boolean
   hasTextLeft?: boolean
@@ -26,6 +27,7 @@ export class Content extends React.Component<ContentProps> {
   render(): React.ReactNode {
     const {
       fallbackUI,
+      isNormal,
       hasTextCentered,
       hasTextJustified,
       hasTextLeft,
@@ -36,6 +38,7 @@ export class Content extends React.Component<ContentProps> {
     if (this.state.hasError) return fallbackUI
 
     return renderElement('div', props, bulmaClassName.content, {
+      isNormal,
       hasTextCentered,
       hasTextJustified,
       hasTextLeft,
