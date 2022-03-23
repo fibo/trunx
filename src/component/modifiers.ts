@@ -147,6 +147,13 @@ export interface SpacingHelpersProps {
   m4?: boolean
   m5?: boolean
   m6?: boolean
+  mAuto?: boolean
+  mtAuto?: boolean
+  mrAuto?: boolean
+  mbAuto?: boolean
+  mlAuto?: boolean
+  mxAuto?: boolean
+  myAuto?: boolean
   mt0?: boolean
   mt1?: boolean
   mt2?: boolean
@@ -196,6 +203,13 @@ export interface SpacingHelpersProps {
   p4?: boolean
   p5?: boolean
   p6?: boolean
+  pAuto?: boolean
+  ptAuto?: boolean
+  prAuto?: boolean
+  pbAuto?: boolean
+  plAuto?: boolean
+  pxAuto?: boolean
+  pyAuto?: boolean
   pt0?: boolean
   pt1?: boolean
   pt2?: boolean
@@ -600,6 +614,13 @@ export function extractModifiersProps({
   m4,
   m5,
   m6,
+  mAuto,
+  mtAuto,
+  mrAuto,
+  mbAuto,
+  mlAuto,
+  mxAuto,
+  myAuto,
   mt0,
   mt1,
   mt2,
@@ -649,6 +670,13 @@ export function extractModifiersProps({
   p4,
   p5,
   p6,
+  pAuto,
+  ptAuto,
+  prAuto,
+  pbAuto,
+  plAuto,
+  pxAuto,
+  pyAuto,
   pt0,
   pt1,
   pt2,
@@ -1014,6 +1042,13 @@ export function extractModifiersProps({
       m4,
       m5,
       m6,
+      mAuto,
+      mtAuto,
+      mrAuto,
+      mbAuto,
+      mlAuto,
+      mxAuto,
+      myAuto,
       mt0,
       mt1,
       mt2,
@@ -1063,6 +1098,13 @@ export function extractModifiersProps({
       p4,
       p5,
       p6,
+      pAuto,
+      ptAuto,
+      prAuto,
+      pbAuto,
+      plAuto,
+      pxAuto,
+      pyAuto,
       pt0,
       pt1,
       pt2,

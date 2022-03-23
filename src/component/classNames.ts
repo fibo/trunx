@@ -51,6 +51,8 @@ export function trunxPropsToClassnamesObject(props?: TrunxProps) {
   if (typeof props === 'undefined') return {}
 
   return Object.keys(props).reduce((obj, key) => {
+    if (typeof props[key] === 'undefined') return obj
+
     if (
       key.substring(0, 3) === 'are' ||
       key.substring(0, 3) === 'has' ||
@@ -61,9 +63,15 @@ export function trunxPropsToClassnamesObject(props?: TrunxProps) {
       obj[className] = props[key]
     }
 
-    // spacing helper
+    // spacing helpers
+
     if (key.match(/[mp][trblxy]?[0-6]/)) {
       const className = key.replace(/([0-6])/, '-$1')
+
+      obj[className] = props[key]
+    }
+    if (key.match(/[mp][trblxy]?Auto/)) {
+      const className = key.replace('A', '-a')
 
       obj[className] = props[key]
     }
