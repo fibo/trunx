@@ -27,6 +27,8 @@ function trunxPropsToClassnamesObject(props) {
     if (typeof props === 'undefined')
         return {};
     return Object.keys(props).reduce(function (obj, key) {
+        if (typeof props[key] === 'undefined')
+            return obj;
         if (key.substring(0, 3) === 'are' ||
             key.substring(0, 3) === 'has' ||
             key.substring(0, 2) === 'is') {
@@ -35,6 +37,10 @@ function trunxPropsToClassnamesObject(props) {
         }
         if (key.match(/[mp][trblxy]?[0-6]/)) {
             var className = key.replace(/([0-6])/, '-$1');
+            obj[className] = props[key];
+        }
+        if (key.match(/[mp][trblxy]?Auto/)) {
+            var className = key.replace('A', '-a');
             obj[className] = props[key];
         }
         return obj;
