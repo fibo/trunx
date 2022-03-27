@@ -7,6 +7,7 @@ export interface InputProps
     HelpersProps,
     MainColorsProps,
     SizeProps {
+  inputRef?: React.Ref<HTMLInputElement>
   isFocused?: boolean
   isHovered?: boolean
   isRounded?: boolean
