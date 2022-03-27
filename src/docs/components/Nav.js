@@ -48,12 +48,12 @@ export function Nav() {
               label: 'Columns',
               items: [
                 { label: 'Basics', route: route.columns.basics },
-                { label: 'Nesting', route: route.columns.nesting },
                 { label: 'Sizes', route: route.columns.sizes },
                 {
                   label: 'Responsiveness',
                   route: route.columns.responsiveness,
                 },
+                { label: 'Nesting', route: route.columns.nesting },
               ],
             },
             {
@@ -62,6 +62,8 @@ export function Nav() {
                 { label: 'Container', route: route.layout.container },
                 { label: 'Level', route: route.layout.level },
                 { label: 'Media Object', route: route.layout.mediaObject },
+                // TODO fix hero foot
+                // { label: 'Hero', route: route.layout.hero },
                 { label: 'Footer', route: route.layout.footer },
                 { label: 'Tiles', route: route.layout.tiles },
               ],
