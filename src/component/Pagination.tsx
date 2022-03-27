@@ -32,7 +32,7 @@ export interface PaginationListProps
     ErrorBoundaryProps,
     HelpersProps {}
 
-export interface IPaginationNextProps
+export interface PaginationNextProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
     ErrorBoundaryProps,
     HelpersProps {}
@@ -50,10 +50,8 @@ class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    const [
-      modifiersProps,
-      { className, fallbackUI, ...props },
-    ] = extractModifiersProps(this.props)
+    const [modifiersProps, { className, fallbackUI, ...props }] =
+      extractModifiersProps(this.props)
 
     if (this.state.hasError) return fallbackUI
 
@@ -112,7 +110,7 @@ class PaginationList extends React.Component<PaginationListProps> {
   }
 }
 
-class PaginationNext extends React.Component<IPaginationNextProps> {
+class PaginationNext extends React.Component<PaginationNextProps> {
   static getDerivedStateFromError() {
     return { hasError: true }
   }

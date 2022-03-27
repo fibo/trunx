@@ -5,7 +5,7 @@ import { ErrorBoundaryProps } from './ErrorBoundary'
 import { HelpersProps, MainColorsProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-export interface IInputProps
+export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
     ErrorBoundaryProps,
     HelpersProps,
@@ -17,7 +17,7 @@ export interface IInputProps
   isStatic?: boolean
 }
 
-export class Input extends React.Component<IInputProps> {
+export class Input extends React.Component<InputProps> {
   static getDerivedStateFromError() {
     return { hasError: true }
   }

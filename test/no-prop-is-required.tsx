@@ -17,6 +17,7 @@ import { Container } from '../src/component/Container'
 import { Content } from '../src/component/Content'
 import { Control } from '../src/component/Control'
 import { Delete } from '../src/component/Delete'
+import { Div } from '../src/component/Div'
 import { Dropdown } from '../src/component/Dropdown'
 import { Em } from '../src/component/Em'
 import { Field } from '../src/component/Field'
@@ -91,6 +92,7 @@ export function noPropIsRequired () {
       <Content />
       <Control />
       <Delete />
+      <Div />
       <Dropdown />
       <Dropdown.Content />
       <Dropdown.Divider />

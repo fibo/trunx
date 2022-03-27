@@ -4,7 +4,7 @@ import { ErrorBoundaryProps } from './ErrorBoundary'
 import { renderElement } from './renderElement'
 import { HelpersProps } from './modifiers'
 
-interface UlProps
+export interface UlProps
   extends React.HTMLAttributes<HTMLUListElement>,
     ErrorBoundaryProps,
     HelpersProps {}

@@ -5,7 +5,7 @@ import { bulmaClassName } from './classNames'
 import { HelpersProps, MainColorsProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface NotificationProps
+export interface NotificationProps
   extends React.HTMLAttributes<HTMLDivElement>,
     ErrorBoundaryProps,
     HelpersProps,

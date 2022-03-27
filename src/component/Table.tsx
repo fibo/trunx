@@ -5,7 +5,7 @@ import { bulmaClassName } from './classNames'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface TableProps
+export interface TableProps
   extends React.TableHTMLAttributes<HTMLTableElement>,
     ErrorBoundaryProps,
     HelpersProps {
@@ -16,7 +16,7 @@ interface TableProps
   isStriped?: boolean
 }
 
-interface TableContainerProps
+export interface TableContainerProps
   extends React.HTMLAttributes<HTMLDivElement>,
     ErrorBoundaryProps {}
 

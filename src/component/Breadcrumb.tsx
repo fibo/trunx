@@ -11,7 +11,7 @@ import {
 
 export interface BreadcrumbProps
   extends React.HTMLAttributes<HTMLElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     SizeProps {
   hasArrowSeparator?: boolean
   hasBulletSeparator?: boolean
@@ -22,7 +22,8 @@ ErrorBoundaryProps,
 }
 
 export interface BreadcrumbItemProps
-  extends React.LiHTMLAttributes<HTMLLIElement>, ErrorBoundaryProps {
+  extends React.LiHTMLAttributes<HTMLLIElement>,
+    ErrorBoundaryProps {
   isActive?: boolean
 }
 
@@ -71,7 +72,7 @@ export class Breadcrumb extends React.Component<BreadcrumbProps> {
       {
         children,
         className,
-fallbackUI,
+        fallbackUI,
         hasArrowSeparator,
         hasBulletSeparator,
         hasDotSeparator,

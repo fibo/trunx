@@ -25,6 +25,7 @@
     "test:className-prop": "tsc --jsx react --noEmit --lib dom,es2015 test/className-prop.tsx",
     "test:fallbackUI-prop": "tsc --jsx react --noEmit --lib dom,es2015 test/fallbackUI-prop.tsx",
     "test:no-prop-is-required": "tsc --jsx react --noEmit --lib dom,es2015 test/no-prop-is-required.tsx",
+    "test:props-are-exported": "tsc --jsx react --noEmit --lib dom,es2015 test/props-are-exported.ts",
     "test:types": "tsc --declaration --project . --noemit",
     "tsc": "tsc --declaration --project ."
   },

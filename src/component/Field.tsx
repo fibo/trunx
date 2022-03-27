@@ -5,7 +5,7 @@ import { ErrorBoundaryProps } from './ErrorBoundary'
 import { HelpersProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface FieldProps
+export interface FieldProps
   extends React.HTMLAttributes<HTMLDivElement>,
     ErrorBoundaryProps,
     SizeProps {
@@ -16,12 +16,12 @@ interface FieldProps
   isHorizontal?: boolean
 }
 
-interface FieldBodyProps
+export interface FieldBodyProps
   extends React.HTMLAttributes<HTMLDivElement>,
     ErrorBoundaryProps,
     HelpersProps {}
 
-interface FieldLabelProps
+export interface FieldLabelProps
   extends React.HTMLAttributes<HTMLDivElement>,
     ErrorBoundaryProps,
     HelpersProps,
