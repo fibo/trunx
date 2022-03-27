@@ -5,7 +5,7 @@ import { bulmaClassName } from './classNames'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface TagsProps
+export interface TagsProps
   extends React.HTMLAttributes<HTMLDivElement>,
     ErrorBoundaryProps,
     HelpersProps {

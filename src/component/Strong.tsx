@@ -4,7 +4,7 @@ import { ErrorBoundaryProps } from './ErrorBoundary'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface StrongProps
+export interface StrongProps
   extends React.HTMLAttributes<HTMLElement>,
     ErrorBoundaryProps,
     HelpersProps {}

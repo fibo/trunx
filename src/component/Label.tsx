@@ -5,7 +5,7 @@ import { bulmaClassName } from './classNames'
 import { HelpersProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface LabelProps
+export interface LabelProps
   extends React.LabelHTMLAttributes<HTMLLabelElement>,
     ErrorBoundaryProps,
     HelpersProps,
