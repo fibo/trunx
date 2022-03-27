@@ -5,7 +5,7 @@ import { ErrorBoundaryProps } from './ErrorBoundary'
 import { HelpersProps, MainColorsProps, SizeProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface IInputProps
+export interface IInputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
     ErrorBoundaryProps,
     HelpersProps,
