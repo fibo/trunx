@@ -5,7 +5,7 @@ import { ErrorBoundaryProps } from './ErrorBoundary'
 import { BackgroundColorHelpersProps, MainColorsProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface HelpProps
+export interface HelpProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
     ErrorBoundaryProps,
     BackgroundColorHelpersProps,

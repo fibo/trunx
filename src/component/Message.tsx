@@ -10,7 +10,7 @@ import {
 } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface MessageProps
+export interface MessageProps
   extends React.HTMLAttributes<HTMLElement>,
     ErrorBoundaryProps,
     HelpersProps,

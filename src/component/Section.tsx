@@ -5,7 +5,7 @@ import { bulmaClassName } from './classNames'
 import { HelpersProps } from './modifiers'
 import { renderElement } from './renderElement'
 
-interface SectionProps
+export interface SectionProps
   extends React.HTMLAttributes<HTMLElement>,
     ErrorBoundaryProps,
     HelpersProps {

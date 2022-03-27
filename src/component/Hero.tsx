@@ -19,17 +19,17 @@ export interface HeroProps
   isMedium?: boolean
 }
 
-interface HeroBodyProps
+export interface HeroBodyProps
   extends React.HTMLAttributes<HTMLDivElement>,
     ErrorBoundaryProps,
     HelpersProps {}
 
-interface HeroFootProps
+export interface HeroFootProps
   extends React.HTMLAttributes<HTMLDivElement>,
     ErrorBoundaryProps,
     HelpersProps {}
 
-interface HeroHeadProps
+export interface HeroHeadProps
   extends React.HTMLAttributes<HTMLDivElement>,
     ErrorBoundaryProps,
     HelpersProps {}
