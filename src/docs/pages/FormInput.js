@@ -31,21 +31,23 @@ function ClickToEditExample() {
     if (editing) {
       inputRef.current.focus()
     }
-  }, [editing, inputRef])
+  }, [editing, inputRef.current])
 
-  return editing ? (
-    <Input
-      inputRef={inputRef}
-      isPrimary
-      onBlur={() => setEditing(false)}
-      onChange={(event) => setValue(event.target.value)}
-      onKeyUp={(event) => event.keyCode === 13 && setEditing(false)}
-      value={value}
-    />
-  ) : (
-    <Button onClick={() => setEditing(true)}>
-      {value === '' ? initialValue : value}
-    </Button>
+  return (
+    <>
+      <Input
+        isHidden={!editing}
+        inputRef={inputRef}
+        isPrimary
+        onBlur={() => setEditing(false)}
+        onChange={(event) => setValue(event.target.value)}
+        onKeyUp={(event) => event.keyCode === 13 && setEditing(false)}
+        value={value}
+      />
+      <Button onClick={() => setEditing(true)} isHidden={editing}>
+        {value === '' ? initialValue : value}
+      </Button>
+    </>
   )
 }
 
@@ -785,9 +787,10 @@ export function FormInput() {
             <Title is4>Example</Title>
 
             <p>
-              The <code>inputRef</code> prop accepts a React ref, created with{' '}
-              <code>React.createRef()</code>. Other than that it accepts all
-              props you can pass to a React <code>input</code> element.
+              The <code>inputRef</code> prop accepts a React ref, created with
+              <code>React.createRef()</code> of <code>useRef()</code> hook.
+              Other than that it accepts all props you can pass to a React
+              <code>input</code> element.
             </p>
 
             <ClickToEditExample />
@@ -813,6 +816,7 @@ export function FormInput() {
 
                   return editing ? (
                     <Input
+                      isHidden={!editing}
                       inputRef={inputRef}
                       isPrimary
                       onBlur={() => setEditing(false)}
@@ -822,6 +826,7 @@ export function FormInput() {
                     />
                   ) : (
                     <Button
+                      isHidden={editing}
                       onClick={() => setEditing(true)}
                     >
                       {value === '' ? initialValue : value}

@@ -11,6 +11,7 @@ export interface InputProps
     HelpersProps,
     MainColorsProps,
     SizeProps {
+  inputRef?: React.Ref<HTMLInputElement>
   isFocused?: boolean
   isHovered?: boolean
   isRounded?: boolean
@@ -27,6 +28,7 @@ export class Input extends React.Component<InputProps> {
   render(): React.ReactNode {
     const {
       fallbackUI,
+      inputRef,
       isFocused,
       isHovered,
       isRounded,
@@ -37,11 +39,16 @@ export class Input extends React.Component<InputProps> {
 
     if (this.state.hasError) return fallbackUI
 
-    return renderElement('input', { type, ...props }, bulmaClassName.input, {
-      isFocused,
-      isHovered,
-      isRounded,
-      isStatic,
-    })
+    return renderElement(
+      'input',
+      { ref: inputRef, type, ...props },
+      bulmaClassName.input,
+      {
+        isFocused,
+        isHovered,
+        isRounded,
+        isStatic,
+      }
+    )
   }
 }

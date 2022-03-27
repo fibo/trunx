@@ -15,10 +15,10 @@ var Input = (function (_super) {
         return { hasError: true };
     };
     Input.prototype.render = function () {
-        var _a = this.props, fallbackUI = _a.fallbackUI, isFocused = _a.isFocused, isHovered = _a.isHovered, isRounded = _a.isRounded, isStatic = _a.isStatic, type = _a.type, props = tslib_1.__rest(_a, ["fallbackUI", "isFocused", "isHovered", "isRounded", "isStatic", "type"]);
+        var _a = this.props, fallbackUI = _a.fallbackUI, inputRef = _a.inputRef, isFocused = _a.isFocused, isHovered = _a.isHovered, isRounded = _a.isRounded, isStatic = _a.isStatic, type = _a.type, props = tslib_1.__rest(_a, ["fallbackUI", "inputRef", "isFocused", "isHovered", "isRounded", "isStatic", "type"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('input', tslib_1.__assign({ type: type }, props), classNames_1.bulmaClassName.input, {
+        return renderElement_1.renderElement('input', tslib_1.__assign({ ref: inputRef, type: type }, props), classNames_1.bulmaClassName.input, {
             isFocused: isFocused,
             isHovered: isHovered,
             isRounded: isRounded,
