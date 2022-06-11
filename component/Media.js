@@ -18,7 +18,7 @@ var MediaContent = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.mediaContent);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.mediaContent);
     };
     return MediaContent;
 }(React.Component));
@@ -36,7 +36,7 @@ var MediaLeft = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.mediaLeft);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.mediaLeft);
     };
     return MediaLeft;
 }(React.Component));
@@ -54,7 +54,7 @@ var MediaRight = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.mediaRight);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.mediaRight);
     };
     return MediaRight;
 }(React.Component));
@@ -72,7 +72,7 @@ var Media = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.media);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.media);
     };
     Media.Content = MediaContent;
     Media.Left = MediaLeft;

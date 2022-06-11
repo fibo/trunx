@@ -18,7 +18,7 @@ var Section = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isLarge = _a.isLarge, isMedium = _a.isMedium, props = tslib_1.__rest(_a, ["fallbackUI", "isLarge", "isMedium"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('section', props, classNames_1.bulmaClassName.section, {
+        return (0, renderElement_1.renderElement)('section', props, classNames_1.bulmaClassName.section, {
             isLarge: isLarge,
             isMedium: isMedium,
         });

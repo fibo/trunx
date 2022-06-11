@@ -18,7 +18,7 @@ var Block = (function (_super) {
         var _a = this.props, tag = _a.as, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["as", "fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement(tag, props, classNames_1.bulmaClassName.block);
+        return (0, renderElement_1.renderElement)(tag, props, classNames_1.bulmaClassName.block);
     };
     Block.defaultProps = { as: 'div' };
     return Block;

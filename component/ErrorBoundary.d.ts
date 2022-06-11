@@ -1,13 +1,15 @@
-import * as React from 'react';
+import * as React from 'react'
 export interface ErrorBoundaryProps {
-    fallbackUI?: React.ReactNode;
+  fallbackUI?: React.ReactNode
 }
-export declare class ErrorBoundary extends React.Component<ErrorBoundaryProps> {
-    static getDerivedStateFromError(): {
-        hasError: boolean;
-    };
-    state: {
-        hasError: boolean;
-    };
-    render(): React.ReactNode;
+export declare class ErrorBoundary extends React.Component<
+  React.PropsWithChildren<ErrorBoundaryProps>
+> {
+  static getDerivedStateFromError(): {
+    hasError: boolean
+  }
+  state: {
+    hasError: boolean
+  }
+  render(): React.ReactNode
 }

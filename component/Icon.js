@@ -45,7 +45,7 @@ var IconText = (function (_super) {
         var _a = this.props, tag = _a.as, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["as", "fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement(tag, props, classNames_1.bulmaClassName.iconText);
+        return (0, renderElement_1.renderElement)(tag, props, classNames_1.bulmaClassName.iconText);
     };
     IconText.defaultProps = { as: 'span' };
     return IconText;
@@ -64,7 +64,7 @@ var Icon = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isLeft = _a.isLeft, isRight = _a.isRight, props = tslib_1.__rest(_a, ["fallbackUI", "isLeft", "isRight"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('span', props, classNames_1.bulmaClassName.icon, {
+        return (0, renderElement_1.renderElement)('span', props, classNames_1.bulmaClassName.icon, {
             isLeft: isLeft,
             isRight: isRight,
         });

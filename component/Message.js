@@ -18,7 +18,7 @@ var MessageBody = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.messageBody);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.messageBody);
     };
     return MessageBody;
 }(React.Component));
@@ -36,7 +36,7 @@ var MessageHeader = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.messageHeader);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.messageHeader);
     };
     return MessageHeader;
 }(React.Component));
@@ -54,7 +54,7 @@ var Message = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('article', props, classNames_1.bulmaClassName.message);
+        return (0, renderElement_1.renderElement)('article', props, classNames_1.bulmaClassName.message);
     };
     Message.Body = MessageBody;
     Message.Header = MessageHeader;

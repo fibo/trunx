@@ -18,7 +18,7 @@ var Progress = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('progress', props, classNames_1.bulmaClassName.progress);
+        return (0, renderElement_1.renderElement)('progress', props, classNames_1.bulmaClassName.progress);
     };
     return Progress;
 }(React.Component));

@@ -3,7 +3,7 @@ exports.extractModifiersProps = exports.modifierPropsToClassnamesObject = void 0
 var tslib_1 = require("tslib");
 var classNames_1 = require("./classNames");
 function modifierPropsToClassnamesObject(props) {
-    return classNames_1.trunxPropsToClassnamesObject(props);
+    return (0, classNames_1.trunxPropsToClassnamesObject)(props);
 }
 exports.modifierPropsToClassnamesObject = modifierPropsToClassnamesObject;
 function extractModifiersProps(_a) {

@@ -1,7 +1,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Card = void 0;
 var tslib_1 = require("tslib");
-var classnames = require("classnames");
+var classnames_1 = require("classnames");
 var React = require("react");
 var Image_1 = require("./Image");
 var classNames_1 = require("./classNames");
@@ -20,7 +20,7 @@ var CardContent = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.cardContent);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.cardContent);
     };
     return CardContent;
 }(React.Component));
@@ -39,10 +39,10 @@ var CardFooterItem = (function (_super) {
         if (this.state.hasError)
             return fallbackUI;
         if (href || onClick) {
-            return renderElement_1.renderElement('a', tslib_1.__assign({ href: href, onClick: onClick }, props), classNames_1.bulmaClassName.cardFooterItem);
+            return (0, renderElement_1.renderElement)('a', tslib_1.__assign({ href: href, onClick: onClick }, props), classNames_1.bulmaClassName.cardFooterItem);
         }
         else {
-            return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.cardFooterItem);
+            return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.cardFooterItem);
         }
     };
     return CardFooterItem;
@@ -61,7 +61,7 @@ var CardFooter = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('footer', props, classNames_1.bulmaClassName.cardFooter);
+        return (0, renderElement_1.renderElement)('footer', props, classNames_1.bulmaClassName.cardFooter);
     };
     CardFooter.Item = CardFooterItem;
     return CardFooter;
@@ -81,10 +81,10 @@ var CardHeaderIcon = (function (_super) {
         if (this.state.hasError)
             return fallbackUI;
         if (href || onClick) {
-            return renderElement_1.renderElement('a', tslib_1.__assign({ href: href, onClick: onClick }, props), classNames_1.bulmaClassName.cardHeaderIcon);
+            return (0, renderElement_1.renderElement)('a', tslib_1.__assign({ href: href, onClick: onClick }, props), classNames_1.bulmaClassName.cardHeaderIcon);
         }
         else {
-            return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.cardHeaderIcon);
+            return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.cardHeaderIcon);
         }
     };
     return CardHeaderIcon;
@@ -103,7 +103,7 @@ var CardHeaderTitle = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isCentered = _a.isCentered, props = tslib_1.__rest(_a, ["fallbackUI", "isCentered"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.cardHeaderTitle, {
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.cardHeaderTitle, {
             isCentered: isCentered,
         });
     };
@@ -123,7 +123,7 @@ var CardHeader = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('header', props, classNames_1.bulmaClassName.cardHeader);
+        return (0, renderElement_1.renderElement)('header', props, classNames_1.bulmaClassName.cardHeader);
     };
     CardHeader.Icon = CardHeaderIcon;
     CardHeader.Title = CardHeaderTitle;
@@ -143,7 +143,7 @@ var CardImage = (function (_super) {
         var _a = this.props, className = _a.className, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["className", "fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return (React.createElement("div", { className: classnames(classNames_1.bulmaClassName.cardImage, className) },
+        return (React.createElement("div", { className: (0, classnames_1.default)(classNames_1.bulmaClassName.cardImage, className) },
             React.createElement(Image_1.Image, tslib_1.__assign({}, props))));
     };
     return CardImage;
@@ -162,7 +162,7 @@ var Card = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.card);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.card);
     };
     Card.Content = CardContent;
     Card.Footer = CardFooter;

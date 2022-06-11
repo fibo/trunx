@@ -18,7 +18,7 @@ var Tags = (function (_super) {
         var _a = this.props, areLarge = _a.areLarge, areMedium = _a.areMedium, fallbackUI = _a.fallbackUI, hasAddons = _a.hasAddons, props = tslib_1.__rest(_a, ["areLarge", "areMedium", "fallbackUI", "hasAddons"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.tags, {
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.tags, {
             areLarge: areLarge,
             areMedium: areMedium,
             hasAddons: hasAddons,

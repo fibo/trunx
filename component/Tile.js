@@ -1,7 +1,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Tile = void 0;
 var tslib_1 = require("tslib");
-var classnames = require("classnames");
+var classnames_1 = require("classnames");
 var React = require("react");
 var classNames_1 = require("./classNames");
 var modifiers_1 = require("./modifiers");
@@ -16,10 +16,10 @@ var TileAncestor = (function (_super) {
         return { hasError: true };
     };
     TileAncestor.prototype.render = function () {
-        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, fallbackUI = _b.fallbackUI, props = tslib_1.__rest(_b, ["children", "className", "fallbackUI"]);
+        var _a = (0, modifiers_1.extractModifiersProps)(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, fallbackUI = _b.fallbackUI, props = tslib_1.__rest(_b, ["children", "className", "fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-ancestor', className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), children));
+        return (React.createElement("div", tslib_1.__assign({ className: (0, classnames_1.default)(classNames_1.bulmaClassName.tile, 'is-ancestor', className, (0, modifiers_1.modifierPropsToClassnamesObject)(modifiersProps)) }, props), children));
     };
     return TileAncestor;
 }(React.Component));
@@ -34,10 +34,10 @@ var TileChildBox = (function (_super) {
         return { hasError: true };
     };
     TileChildBox.prototype.render = function () {
-        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, fallbackUI = _b.fallbackUI, props = tslib_1.__rest(_b, ["children", "className", "fallbackUI"]);
+        var _a = (0, modifiers_1.extractModifiersProps)(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, fallbackUI = _b.fallbackUI, props = tslib_1.__rest(_b, ["children", "className", "fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-child', classNames_1.bulmaClassName.box, className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), children));
+        return (React.createElement("div", tslib_1.__assign({ className: (0, classnames_1.default)(classNames_1.bulmaClassName.tile, 'is-child', classNames_1.bulmaClassName.box, className, (0, modifiers_1.modifierPropsToClassnamesObject)(modifiersProps)) }, props), children));
     };
     return TileChildBox;
 }(React.Component));
@@ -52,10 +52,10 @@ var TileChildNotification = (function (_super) {
         return { hasError: true };
     };
     TileChildNotification.prototype.render = function () {
-        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], className = _b.className, children = _b.children, fallbackUI = _b.fallbackUI, props = tslib_1.__rest(_b, ["className", "children", "fallbackUI"]);
+        var _a = (0, modifiers_1.extractModifiersProps)(this.props), modifiersProps = _a[0], _b = _a[1], className = _b.className, children = _b.children, fallbackUI = _b.fallbackUI, props = tslib_1.__rest(_b, ["className", "children", "fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return (React.createElement("article", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-child', classNames_1.bulmaClassName.notification, className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), children));
+        return (React.createElement("article", tslib_1.__assign({ className: (0, classnames_1.default)(classNames_1.bulmaClassName.tile, 'is-child', classNames_1.bulmaClassName.notification, className, (0, modifiers_1.modifierPropsToClassnamesObject)(modifiersProps)) }, props), children));
     };
     return TileChildNotification;
 }(React.Component));
@@ -70,10 +70,10 @@ var TileChild = (function (_super) {
         return { hasError: true };
     };
     TileChild.prototype.render = function () {
-        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, fallbackUI = _b.fallbackUI, props = tslib_1.__rest(_b, ["children", "className", "fallbackUI"]);
+        var _a = (0, modifiers_1.extractModifiersProps)(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, fallbackUI = _b.fallbackUI, props = tslib_1.__rest(_b, ["children", "className", "fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return (React.createElement("div", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.tile, 'is-child', className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), children));
+        return (React.createElement("div", tslib_1.__assign({ className: (0, classnames_1.default)(classNames_1.bulmaClassName.tile, 'is-child', className, (0, modifiers_1.modifierPropsToClassnamesObject)(modifiersProps)) }, props), children));
     };
     TileChild.Box = TileChildBox;
     TileChild.Notification = TileChildNotification;
@@ -90,10 +90,10 @@ var Tile = (function (_super) {
         return { hasError: true };
     };
     Tile.prototype.render = function () {
-        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, fallbackUI = _b.fallbackUI, is1 = _b.is1, is2 = _b.is2, is3 = _b.is3, is4 = _b.is4, is5 = _b.is5, is6 = _b.is6, is7 = _b.is7, is8 = _b.is8, is9 = _b.is9, is10 = _b.is10, is11 = _b.is11, is12 = _b.is12, isParent = _b.isParent, isVertical = _b.isVertical, props = tslib_1.__rest(_b, ["children", "className", "fallbackUI", "is1", "is2", "is3", "is4", "is5", "is6", "is7", "is8", "is9", "is10", "is11", "is12", "isParent", "isVertical"]);
+        var _a = (0, modifiers_1.extractModifiersProps)(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, fallbackUI = _b.fallbackUI, is1 = _b.is1, is2 = _b.is2, is3 = _b.is3, is4 = _b.is4, is5 = _b.is5, is6 = _b.is6, is7 = _b.is7, is8 = _b.is8, is9 = _b.is9, is10 = _b.is10, is11 = _b.is11, is12 = _b.is12, isParent = _b.isParent, isVertical = _b.isVertical, props = tslib_1.__rest(_b, ["children", "className", "fallbackUI", "is1", "is2", "is3", "is4", "is5", "is6", "is7", "is8", "is9", "is10", "is11", "is12", "isParent", "isVertical"]);
         if (this.state.hasError)
             return fallbackUI;
-        return (React.createElement("div", tslib_1.__assign({}, props, { className: classnames(classNames_1.bulmaClassName.tile, className, {
+        return (React.createElement("div", tslib_1.__assign({}, props, { className: (0, classnames_1.default)(classNames_1.bulmaClassName.tile, className, {
                 'is-1': is1,
                 'is-2': is2,
                 'is-3': is3,
@@ -108,7 +108,7 @@ var Tile = (function (_super) {
                 'is-12': is12,
                 'is-parent': isParent,
                 'is-vertical': isVertical,
-            }, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }), children));
+            }, (0, modifiers_1.modifierPropsToClassnamesObject)(modifiersProps)) }), children));
     };
     Tile.Ancestor = TileAncestor;
     Tile.Child = TileChild;
