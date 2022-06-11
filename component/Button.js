@@ -1,7 +1,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Button = void 0;
 var tslib_1 = require("tslib");
-var classnames = require("classnames");
+var classnames_1 = require("classnames");
 var React = require("react");
 var classNames_1 = require("./classNames");
 var modifiers_1 = require("./modifiers");
@@ -16,10 +16,10 @@ var Button = (function (_super) {
         return { hasError: true };
     };
     Button.prototype.render = function () {
-        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, classNameProp = _b.className, disabled = _b.disabled, fallbackUI = _b.fallbackUI, href = _b.href, isActive = _b.isActive, isFocused = _b.isFocused, isFullwidth = _b.isFullwidth, isGhost = _b.isGhost, isInverted = _b.isInverted, isLoading = _b.isLoading, isNormal = _b.isNormal, isOutlined = _b.isOutlined, isRounded = _b.isRounded, isStatic = _b.isStatic, isText = _b.isText, target = _b.target, type = _b.type, value = _b.value, props = tslib_1.__rest(_b, ["children", "className", "disabled", "fallbackUI", "href", "isActive", "isFocused", "isFullwidth", "isGhost", "isInverted", "isLoading", "isNormal", "isOutlined", "isRounded", "isStatic", "isText", "target", "type", "value"]);
+        var _a = (0, modifiers_1.extractModifiersProps)(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, classNameProp = _b.className, disabled = _b.disabled, fallbackUI = _b.fallbackUI, href = _b.href, isActive = _b.isActive, isFocused = _b.isFocused, isFullwidth = _b.isFullwidth, isGhost = _b.isGhost, isInverted = _b.isInverted, isLoading = _b.isLoading, isNormal = _b.isNormal, isOutlined = _b.isOutlined, isRounded = _b.isRounded, isStatic = _b.isStatic, isText = _b.isText, target = _b.target, type = _b.type, value = _b.value, props = tslib_1.__rest(_b, ["children", "className", "disabled", "fallbackUI", "href", "isActive", "isFocused", "isFullwidth", "isGhost", "isInverted", "isLoading", "isNormal", "isOutlined", "isRounded", "isStatic", "isText", "target", "type", "value"]);
         if (this.state.hasError)
             return fallbackUI;
-        var className = classnames(classNames_1.bulmaClassName.button, classNameProp, {
+        var className = (0, classnames_1.default)(classNames_1.bulmaClassName.button, classNameProp, {
             'is-active': isActive,
             'is-focused': isFocused,
             'is-fullwidth': isFullwidth,
@@ -31,7 +31,7 @@ var Button = (function (_super) {
             'is-rounded': isRounded,
             'is-static': isStatic,
             'is-text': isText,
-        }, modifiers_1.modifierPropsToClassnamesObject(modifiersProps));
+        }, (0, modifiers_1.modifierPropsToClassnamesObject)(modifiersProps));
         if (href) {
             return (React.createElement("a", tslib_1.__assign({ className: className, href: href }, props), children));
         }

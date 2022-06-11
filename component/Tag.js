@@ -19,7 +19,7 @@ var Tag = (function (_super) {
         if (this.state.hasError)
             return fallbackUI;
         var tag = props.href || props.onClick ? 'a' : 'span';
-        return renderElement_1.renderElement(tag, props, classNames_1.bulmaClassName.tag, {
+        return (0, renderElement_1.renderElement)(tag, props, classNames_1.bulmaClassName.tag, {
             isDelete: isDelete,
             isNormal: isNormal,
             isRounded: isRounded,

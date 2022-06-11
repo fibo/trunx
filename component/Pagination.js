@@ -1,7 +1,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Pagination = void 0;
 var tslib_1 = require("tslib");
-var classnames = require("classnames");
+var classnames_1 = require("classnames");
 var React = require("react");
 var classNames_1 = require("./classNames");
 var modifiers_1 = require("./modifiers");
@@ -17,11 +17,11 @@ var PaginationEllipsis = (function (_super) {
         return { hasError: true };
     };
     PaginationEllipsis.prototype.render = function () {
-        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], className = _b.className, fallbackUI = _b.fallbackUI, props = tslib_1.__rest(_b, ["className", "fallbackUI"]);
+        var _a = (0, modifiers_1.extractModifiersProps)(this.props), modifiersProps = _a[0], _b = _a[1], className = _b.className, fallbackUI = _b.fallbackUI, props = tslib_1.__rest(_b, ["className", "fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
         return (React.createElement("li", null,
-            React.createElement("span", tslib_1.__assign({ className: classnames(classNames_1.bulmaClassName.paginationEllipsis, className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps)) }, props), "\u2026")));
+            React.createElement("span", tslib_1.__assign({ className: (0, classnames_1.default)(classNames_1.bulmaClassName.paginationEllipsis, className, (0, modifiers_1.modifierPropsToClassnamesObject)(modifiersProps)) }, props), "\u2026")));
     };
     return PaginationEllipsis;
 }(React.Component));
@@ -39,7 +39,7 @@ var PaginationLink = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isCurrent = _a.isCurrent, props = tslib_1.__rest(_a, ["fallbackUI", "isCurrent"]);
         if (this.state.hasError)
             return fallbackUI;
-        return (React.createElement("li", null, renderElement_1.renderElement('a', props, classNames_1.bulmaClassName.paginationLink, {
+        return (React.createElement("li", null, (0, renderElement_1.renderElement)('a', props, classNames_1.bulmaClassName.paginationLink, {
             isCurrent: isCurrent,
         })));
     };
@@ -59,7 +59,7 @@ var PaginationList = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('ul', props, classNames_1.bulmaClassName.paginationList);
+        return (0, renderElement_1.renderElement)('ul', props, classNames_1.bulmaClassName.paginationList);
     };
     return PaginationList;
 }(React.Component));
@@ -77,7 +77,7 @@ var PaginationNext = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('a', props, classNames_1.bulmaClassName.paginationNext);
+        return (0, renderElement_1.renderElement)('a', props, classNames_1.bulmaClassName.paginationNext);
     };
     return PaginationNext;
 }(React.Component));
@@ -95,7 +95,7 @@ var PaginationPrevious = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('a', props, classNames_1.bulmaClassName.paginationPrevious);
+        return (0, renderElement_1.renderElement)('a', props, classNames_1.bulmaClassName.paginationPrevious);
     };
     return PaginationPrevious;
 }(React.Component));
@@ -113,7 +113,7 @@ var Pagination = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('nav', props, classNames_1.bulmaClassName.pagination);
+        return (0, renderElement_1.renderElement)('nav', props, classNames_1.bulmaClassName.pagination);
     };
     Pagination.defaultProps = {
         'aria-label': 'pagination',

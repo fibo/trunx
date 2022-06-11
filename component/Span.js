@@ -17,7 +17,7 @@ var Span = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('span', props);
+        return (0, renderElement_1.renderElement)('span', props);
     };
     return Span;
 }(React.Component));

@@ -18,7 +18,7 @@ var DropdownContent = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.dropdownContent);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.dropdownContent);
     };
     return DropdownContent;
 }(React.Component));
@@ -36,7 +36,7 @@ var DropdownDivider = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.dropdownDivider);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.dropdownDivider);
     };
     return DropdownDivider;
 }(React.Component));
@@ -52,7 +52,7 @@ var DropdownItem = (function (_super) {
     };
     DropdownItem.prototype.render = function () {
         var _a = this.props, fallbackUI = _a.fallbackUI, isActive = _a.isActive, props = tslib_1.__rest(_a, ["fallbackUI", "isActive"]);
-        return renderElement_1.renderElement('a', props, classNames_1.bulmaClassName.dropdownItem, { isActive: isActive });
+        return (0, renderElement_1.renderElement)('a', props, classNames_1.bulmaClassName.dropdownItem, { isActive: isActive });
     };
     return DropdownItem;
 }(React.Component));
@@ -70,7 +70,7 @@ var DropdownMenu = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.dropdownMenu);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.dropdownMenu);
     };
     DropdownMenu.defaultProps = { role: 'menu' };
     return DropdownMenu;
@@ -89,7 +89,7 @@ var DropdownTrigger = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.dropdownTrigger);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.dropdownTrigger);
     };
     return DropdownTrigger;
 }(React.Component));
@@ -107,7 +107,7 @@ var Dropdown = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isActive = _a.isActive, isHoverable = _a.isHoverable, isRight = _a.isRight, isUp = _a.isUp, props = tslib_1.__rest(_a, ["fallbackUI", "isActive", "isHoverable", "isRight", "isUp"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.dropdown, {
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.dropdown, {
             isActive: isActive,
             isHoverable: isHoverable,
             isRight: isRight,

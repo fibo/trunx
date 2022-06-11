@@ -18,7 +18,7 @@ var Subtitle = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, is1 = _a.is1, is2 = _a.is2, is3 = _a.is3, is4 = _a.is4, is5 = _a.is5, is6 = _a.is6, props = tslib_1.__rest(_a, ["fallbackUI", "is1", "is2", "is3", "is4", "is5", "is6"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('p', props, classNames_1.bulmaClassName.subtitle, {
+        return (0, renderElement_1.renderElement)('p', props, classNames_1.bulmaClassName.subtitle, {
             is1: is1,
             is2: is2,
             is3: is3,

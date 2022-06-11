@@ -18,7 +18,7 @@ var Textarea = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isFocused = _a.isFocused, isHovered = _a.isHovered, props = tslib_1.__rest(_a, ["fallbackUI", "isFocused", "isHovered"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('textarea', props, classNames_1.bulmaClassName.textarea, {
+        return (0, renderElement_1.renderElement)('textarea', props, classNames_1.bulmaClassName.textarea, {
             isFocused: isFocused,
             isHovered: isHovered,
         });
