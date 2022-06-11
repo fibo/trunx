@@ -18,7 +18,7 @@ var Columns = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isDesktop = _a.isDesktop, isGapless = _a.isGapless, isMobile = _a.isMobile, isMultiline = _a.isMultiline, props = tslib_1.__rest(_a, ["fallbackUI", "isDesktop", "isGapless", "isMobile", "isMultiline"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.columns, {
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.columns, {
             isDesktop: isDesktop,
             isGapless: isGapless,
             isMobile: isMobile,

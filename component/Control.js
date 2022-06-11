@@ -18,7 +18,7 @@ var Control = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, hasIconsLeft = _a.hasIconsLeft, hasIconsRight = _a.hasIconsRight, isExpanded = _a.isExpanded, isLoading = _a.isLoading, props = tslib_1.__rest(_a, ["fallbackUI", "hasIconsLeft", "hasIconsRight", "isExpanded", "isLoading"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.control, {
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.control, {
             hasIconsLeft: hasIconsLeft,
             hasIconsRight: hasIconsRight,
             isExpanded: isExpanded,

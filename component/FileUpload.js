@@ -1,7 +1,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FileUpload = void 0;
 var tslib_1 = require("tslib");
-var classnames = require("classnames");
+var classnames_1 = require("classnames");
 var React = require("react");
 var classNames_1 = require("./classNames");
 var modifiers_1 = require("./modifiers");
@@ -20,7 +20,7 @@ var FileUploadCta = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('span', props, classNames_1.bulmaClassName.fileCta);
+        return (0, renderElement_1.renderElement)('span', props, classNames_1.bulmaClassName.fileCta);
     };
     return FileUploadCta;
 }(React.Component));
@@ -38,7 +38,7 @@ var FileUploadIcon = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('span', props, classNames_1.bulmaClassName.fileIcon);
+        return (0, renderElement_1.renderElement)('span', props, classNames_1.bulmaClassName.fileIcon);
     };
     return FileUploadIcon;
 }(React.Component));
@@ -56,7 +56,7 @@ var FileUploadInput = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('input', { props: props, type: 'file' }, classNames_1.bulmaClassName.fileInput);
+        return (0, renderElement_1.renderElement)('input', { props: props, type: 'file' }, classNames_1.bulmaClassName.fileInput);
     };
     return FileUploadInput;
 }(React.Component));
@@ -74,7 +74,7 @@ var FileUploadLabel = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('span', props, classNames_1.bulmaClassName.fileLabel);
+        return (0, renderElement_1.renderElement)('span', props, classNames_1.bulmaClassName.fileLabel);
     };
     return FileUploadLabel;
 }(React.Component));
@@ -92,7 +92,7 @@ var FileUploadName = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('span', props, classNames_1.bulmaClassName.fileName);
+        return (0, renderElement_1.renderElement)('span', props, classNames_1.bulmaClassName.fileName);
     };
     return FileUploadName;
 }(React.Component));
@@ -107,10 +107,10 @@ var FileUpload = (function (_super) {
         return { hasError: true };
     };
     FileUpload.prototype.render = function () {
-        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, fallbackUI = _b.fallbackUI, hasName = _b.hasName, isBoxed = _b.isBoxed, isFullwidth = _b.isFullwidth, isRight = _b.isRight, props = tslib_1.__rest(_b, ["children", "className", "fallbackUI", "hasName", "isBoxed", "isFullwidth", "isRight"]);
+        var _a = (0, modifiers_1.extractModifiersProps)(this.props), modifiersProps = _a[0], _b = _a[1], children = _b.children, className = _b.className, fallbackUI = _b.fallbackUI, hasName = _b.hasName, isBoxed = _b.isBoxed, isFullwidth = _b.isFullwidth, isRight = _b.isRight, props = tslib_1.__rest(_b, ["children", "className", "fallbackUI", "hasName", "isBoxed", "isFullwidth", "isRight"]);
         if (this.state.hasError)
             return fallbackUI;
-        return (React.createElement("div", tslib_1.__assign({ className: classnames(className, classNames_1.bulmaClassName.file, modifiers_1.modifierPropsToClassnamesObject(modifiersProps), classNames_1.trunxPropsToClassnamesObject({
+        return (React.createElement("div", tslib_1.__assign({ className: (0, classnames_1.default)(className, classNames_1.bulmaClassName.file, (0, modifiers_1.modifierPropsToClassnamesObject)(modifiersProps), (0, classNames_1.trunxPropsToClassnamesObject)({
                 hasName: hasName,
                 isBoxed: isBoxed,
                 isFullwidth: isFullwidth,

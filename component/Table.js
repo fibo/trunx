@@ -18,7 +18,7 @@ var TableContainer = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.tableContainer);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.tableContainer);
     };
     return TableContainer;
 }(React.Component));
@@ -36,7 +36,7 @@ var Table = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isBordered = _a.isBordered, isFullwidth = _a.isFullwidth, isHoverable = _a.isHoverable, isNarrow = _a.isNarrow, isStriped = _a.isStriped, props = tslib_1.__rest(_a, ["fallbackUI", "isBordered", "isFullwidth", "isHoverable", "isNarrow", "isStriped"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('table', props, classNames_1.bulmaClassName.table, {
+        return (0, renderElement_1.renderElement)('table', props, classNames_1.bulmaClassName.table, {
             isBordered: isBordered,
             isFullwidth: isFullwidth,
             isHoverable: isHoverable,

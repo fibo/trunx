@@ -18,7 +18,7 @@ var ModalCardBody = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('section', props, classNames_1.bulmaClassName.modalCardFoot);
+        return (0, renderElement_1.renderElement)('section', props, classNames_1.bulmaClassName.modalCardFoot);
     };
     return ModalCardBody;
 }(React.Component));
@@ -36,7 +36,7 @@ var ModalCardFoot = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('footer', props, classNames_1.bulmaClassName.modalCardFoot);
+        return (0, renderElement_1.renderElement)('footer', props, classNames_1.bulmaClassName.modalCardFoot);
     };
     return ModalCardFoot;
 }(React.Component));
@@ -54,7 +54,7 @@ var ModalCardHead = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('header', props, classNames_1.bulmaClassName.modalCardHead);
+        return (0, renderElement_1.renderElement)('header', props, classNames_1.bulmaClassName.modalCardHead);
     };
     return ModalCardHead;
 }(React.Component));
@@ -72,7 +72,7 @@ var ModalCardTitle = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.modalCardTitle);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.modalCardTitle);
     };
     return ModalCardTitle;
 }(React.Component));
@@ -90,7 +90,7 @@ var ModalBackground = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.modalBackground);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.modalBackground);
     };
     return ModalBackground;
 }(React.Component));
@@ -111,7 +111,7 @@ var ModalCard = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.modalCard);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.modalCard);
     };
     ModalCard.Body = ModalCardBody;
     ModalCard.Foot = ModalCardFoot;
@@ -133,7 +133,7 @@ var ModalClose = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isLarge = _a.isLarge, props = tslib_1.__rest(_a, ["fallbackUI", "isLarge"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('button', props, classNames_1.bulmaClassName.modalClose, {
+        return (0, renderElement_1.renderElement)('button', props, classNames_1.bulmaClassName.modalClose, {
             isLarge: isLarge,
         });
     };
@@ -156,7 +156,7 @@ var ModalContent = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.modalContent);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.modalContent);
     };
     return ModalContent;
 }(React.Component));
@@ -174,7 +174,7 @@ var Modal = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isActive = _a.isActive, props = tslib_1.__rest(_a, ["fallbackUI", "isActive"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.modal, { isActive: isActive });
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.modal, { isActive: isActive });
     };
     Modal.Background = ModalBackground;
     Modal.Card = ModalCard;

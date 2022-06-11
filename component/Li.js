@@ -1,7 +1,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Li = void 0;
 var tslib_1 = require("tslib");
-var classnames = require("classnames");
+var classnames_1 = require("classnames");
 var React = require("react");
 var classNames_1 = require("./classNames");
 var Li = (function (_super) {
@@ -18,7 +18,7 @@ var Li = (function (_super) {
         var _a = this.props, children = _a.children, className = _a.className, fallbackUI = _a.fallbackUI, isActive = _a.isActive, props = tslib_1.__rest(_a, ["children", "className", "fallbackUI", "isActive"]);
         if (this.state.hasError)
             return fallbackUI;
-        return (React.createElement("li", tslib_1.__assign({ className: classnames(className, classNames_1.trunxPropsToClassnamesObject({ isActive: isActive })) }, props), children));
+        return (React.createElement("li", tslib_1.__assign({ className: (0, classnames_1.default)(className, (0, classNames_1.trunxPropsToClassnamesObject)({ isActive: isActive })) }, props), children));
     };
     return Li;
 }(React.Component));

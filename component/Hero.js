@@ -18,7 +18,7 @@ var HeroBody = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.heroBody);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.heroBody);
     };
     return HeroBody;
 }(React.Component));
@@ -36,7 +36,7 @@ var HeroFoot = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.heroFoot);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.heroFoot);
     };
     return HeroFoot;
 }(React.Component));
@@ -54,7 +54,7 @@ var HeroHead = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.heroHead);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.heroHead);
     };
     return HeroHead;
 }(React.Component));
@@ -72,7 +72,7 @@ var Hero = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isBold = _a.isBold, isDark = _a.isDark, isFullheight = _a.isFullheight, isFullheightWithNavbar = _a.isFullheightWithNavbar, isLarge = _a.isLarge, isMedium = _a.isMedium, props = tslib_1.__rest(_a, ["fallbackUI", "isBold", "isDark", "isFullheight", "isFullheightWithNavbar", "isLarge", "isMedium"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('section', props, classNames_1.bulmaClassName.hero, {
+        return (0, renderElement_1.renderElement)('section', props, classNames_1.bulmaClassName.hero, {
             isBold: isBold,
             isDark: isDark,
             isFullheight: isFullheight,

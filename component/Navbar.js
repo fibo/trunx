@@ -1,7 +1,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Navbar = void 0;
 var tslib_1 = require("tslib");
-var classnames = require("classnames");
+var classnames_1 = require("classnames");
 var React = require("react");
 var classNames_1 = require("./classNames");
 var modifiers_1 = require("./modifiers");
@@ -20,7 +20,7 @@ var NavbarBrand = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.navbarBrand);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.navbarBrand);
     };
     return NavbarBrand;
 }(React.Component));
@@ -35,10 +35,10 @@ var NavbarBurger = (function (_super) {
         return { hasError: true };
     };
     NavbarBurger.prototype.render = function () {
-        var _a = modifiers_1.extractModifiersProps(this.props), modifiersProps = _a[0], _b = _a[1], className = _b.className, fallbackUI = _b.fallbackUI, isActive = _b.isActive, props = tslib_1.__rest(_b, ["className", "fallbackUI", "isActive"]);
+        var _a = (0, modifiers_1.extractModifiersProps)(this.props), modifiersProps = _a[0], _b = _a[1], className = _b.className, fallbackUI = _b.fallbackUI, isActive = _b.isActive, props = tslib_1.__rest(_b, ["className", "fallbackUI", "isActive"]);
         if (this.state.hasError)
             return fallbackUI;
-        return (React.createElement("a", tslib_1.__assign({ "aria-expanded": isActive ? 'true' : 'false', className: classnames(classNames_1.bulmaClassName.navbarBurger, className, modifiers_1.modifierPropsToClassnamesObject(modifiersProps), classNames_1.trunxPropsToClassnamesObject({ isActive: isActive })) }, props),
+        return (React.createElement("a", tslib_1.__assign({ "aria-expanded": isActive ? 'true' : 'false', className: (0, classnames_1.default)(classNames_1.bulmaClassName.navbarBurger, className, (0, modifiers_1.modifierPropsToClassnamesObject)(modifiersProps), (0, classNames_1.trunxPropsToClassnamesObject)({ isActive: isActive })) }, props),
             React.createElement("span", { "aria-hidden": 'true' }),
             React.createElement("span", { "aria-hidden": 'true' }),
             React.createElement("span", { "aria-hidden": 'true' })));
@@ -63,7 +63,7 @@ var NavbarDivider = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('hr', props, classNames_1.bulmaClassName.navbarDivider);
+        return (0, renderElement_1.renderElement)('hr', props, classNames_1.bulmaClassName.navbarDivider);
     };
     return NavbarDivider;
 }(React.Component));
@@ -81,7 +81,7 @@ var NavbarDropdown = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.navbarDropdown);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.navbarDropdown);
     };
     return NavbarDropdown;
 }(React.Component));
@@ -99,7 +99,7 @@ var NavbarEnd = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.navbarEnd);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.navbarEnd);
     };
     return NavbarEnd;
 }(React.Component));
@@ -118,7 +118,7 @@ var NavbarItem = (function (_super) {
         if (this.state.hasError)
             return fallbackUI;
         var tag = hasDropdown ? 'div' : 'a';
-        return renderElement_1.renderElement(tag, props, classNames_1.bulmaClassName.navbarItem, {
+        return (0, renderElement_1.renderElement)(tag, props, classNames_1.bulmaClassName.navbarItem, {
             hasDropdown: hasDropdown,
             hasDropdownUp: hasDropdownUp,
             isActive: isActive,
@@ -141,7 +141,7 @@ var NavbarLink = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('a', props, classNames_1.bulmaClassName.navbarLink);
+        return (0, renderElement_1.renderElement)('a', props, classNames_1.bulmaClassName.navbarLink);
     };
     return NavbarLink;
 }(React.Component));
@@ -159,7 +159,7 @@ var NavbarMenu = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isActive = _a.isActive, props = tslib_1.__rest(_a, ["fallbackUI", "isActive"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.navbarMenu, { isActive: isActive });
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.navbarMenu, { isActive: isActive });
     };
     return NavbarMenu;
 }(React.Component));
@@ -177,7 +177,7 @@ var NavbarStart = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.navbarStart);
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.navbarStart);
     };
     return NavbarStart;
 }(React.Component));
@@ -213,7 +213,7 @@ var Navbar = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isFixedBottom = _a.isFixedBottom, isFixedTop = _a.isFixedTop, isTransparent = _a.isTransparent, isUnselectable = _a.isUnselectable, props = tslib_1.__rest(_a, ["fallbackUI", "isFixedBottom", "isFixedTop", "isTransparent", "isUnselectable"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('nav', props, classNames_1.bulmaClassName.navbar, {
+        return (0, renderElement_1.renderElement)('nav', props, classNames_1.bulmaClassName.navbar, {
             isFixedBottom: isFixedBottom,
             isFixedTop: isFixedTop,
             isTransparent: isTransparent,

@@ -18,7 +18,7 @@ var Container = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, isFluid = _a.isFluid, isFullhd = _a.isFullhd, isWidescreen = _a.isWidescreen, props = tslib_1.__rest(_a, ["fallbackUI", "isFluid", "isFullhd", "isWidescreen"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('div', props, classNames_1.bulmaClassName.container, {
+        return (0, renderElement_1.renderElement)('div', props, classNames_1.bulmaClassName.container, {
             isFluid: isFluid,
             isFullhd: isFullhd,
             isWidescreen: isWidescreen,

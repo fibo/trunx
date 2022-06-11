@@ -18,7 +18,7 @@ var Heading = (function (_super) {
         var _a = this.props, fallbackUI = _a.fallbackUI, props = tslib_1.__rest(_a, ["fallbackUI"]);
         if (this.state.hasError)
             return fallbackUI;
-        return renderElement_1.renderElement('p', props, classNames_1.bulmaClassName.heading);
+        return (0, renderElement_1.renderElement)('p', props, classNames_1.bulmaClassName.heading);
     };
     return Heading;
 }(React.Component));
