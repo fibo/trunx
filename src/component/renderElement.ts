@@ -1,17 +1,17 @@
-import * as classnames from 'classnames'
+import classnames from 'classnames'
 import * as React from 'react'
 
 import {
   BulmaClassName,
   TrunxProps,
-  trunxPropsToClassnamesObject
+  trunxPropsToClassnamesObject,
 } from './classNames'
 import {
   extractModifiersProps,
-  modifierPropsToClassnamesObject
+  modifierPropsToClassnamesObject,
 } from './modifiers'
 
-export function renderElement (
+export function renderElement(
   type: string,
   elementProps: { [prop: string]: any },
   bulmaClassName?: BulmaClassName,
@@ -19,7 +19,7 @@ export function renderElement (
 ): React.ReactNode {
   const [
     modifiersProps,
-    { children, className, ...props }
+    { children, className, ...props },
   ] = extractModifiersProps(elementProps)
 
   return React.createElement(
@@ -31,7 +31,7 @@ export function renderElement (
         modifierPropsToClassnamesObject(modifiersProps),
         trunxPropsToClassnamesObject(trunxProps)
       ),
-      ...props
+      ...props,
     },
     children
   )
