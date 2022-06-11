@@ -1,4 +1,4 @@
-import * as classnames from 'classnames'
+import classnames from 'classnames'
 import * as React from 'react'
 
 import { ErrorBoundaryProps } from './ErrorBoundary'
@@ -50,8 +50,10 @@ class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    const [modifiersProps, { className, fallbackUI, ...props }] =
-      extractModifiersProps(this.props)
+    const [
+      modifiersProps,
+      { className, fallbackUI, ...props },
+    ] = extractModifiersProps(this.props)
 
     if (this.state.hasError) return fallbackUI
 
