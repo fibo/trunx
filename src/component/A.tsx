@@ -1,4 +1,4 @@
-import * as classnames from 'classnames'
+import classnames from 'classnames'
 import * as React from 'react'
 
 import { trunxPropsToClassnamesObject } from './classNames'
@@ -11,7 +11,7 @@ import {
 
 export interface AProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps {
   isActive?: boolean
 }

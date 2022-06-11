@@ -4,7 +4,9 @@ export interface ErrorBoundaryProps {
   fallbackUI?: React.ReactNode
 }
 
-export class ErrorBoundary extends React.Component<ErrorBoundaryProps> {
+export class ErrorBoundary extends React.Component<
+  React.PropsWithChildren<ErrorBoundaryProps>
+> {
   static getDerivedStateFromError() {
     return { hasError: true }
   }

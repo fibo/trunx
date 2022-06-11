@@ -1,4 +1,4 @@
-import * as classnames from 'classnames'
+import classnames from 'classnames'
 import * as React from 'react'
 
 import { ErrorBoundaryProps } from './ErrorBoundary'
@@ -9,32 +9,32 @@ import { renderElement } from './renderElement'
 
 export interface CardContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface CardFooterItemProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface CardFooterProps
   extends React.HTMLAttributes<HTMLElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface CardHeaderProps
   extends React.HTMLAttributes<HTMLElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface CardHeaderIconProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 export interface CardHeaderTitleProps
   extends React.HTMLAttributes<HTMLElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps {
   isCentered?: boolean
 }
@@ -43,7 +43,7 @@ export type CardImageProps = ImageProps
 
 export interface CardProps
   extends React.HTMLAttributes<HTMLDivElement>,
-ErrorBoundaryProps,
+    ErrorBoundaryProps,
     HelpersProps {}
 
 class CardContent extends React.Component<CardContentProps> {
