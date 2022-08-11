@@ -65,7 +65,7 @@ class ModalCardBody extends React.Component<ModalCardBodyProps> {
 
     if (this.state.hasError) return fallbackUI
 
-    return renderElement('section', props, bulmaClassName.modalCardFoot)
+    return renderElement('section', props, bulmaClassName.modalCardBody)
   }
 }
 
