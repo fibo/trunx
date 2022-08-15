@@ -2,25 +2,25 @@
 
 Install dependencies
 
-```bash
+```sh
 npm install
 ```
 
 Launch documentation website locally
 
-```bash
+```sh
 npm start
 ```
 
 Transpile components, build documentation website
 
-```bash
+```sh
 npm run build
 ```
 
 After components are built, commit code and then you can release a new version
 
-```bash
+```sh
 npm version [patch|minor|major]
 ```
 
