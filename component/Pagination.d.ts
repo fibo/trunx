@@ -27,9 +27,7 @@ export interface PaginationPreviousProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
     ErrorBoundaryProps,
     HelpersProps {}
-declare class PaginationEllipsis extends React.Component<
-  PaginationEllipsisProps
-> {
+declare class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
   static getDerivedStateFromError(): {
     hasError: boolean
   }
@@ -65,9 +63,7 @@ declare class PaginationNext extends React.Component<PaginationNextProps> {
   }
   render(): React.ReactNode
 }
-declare class PaginationPrevious extends React.Component<
-  PaginationPreviousProps
-> {
+declare class PaginationPrevious extends React.Component<PaginationPreviousProps> {
   static getDerivedStateFromError(): {
     hasError: boolean
   }
