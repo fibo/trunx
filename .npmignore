@@ -5,7 +5,7 @@
 .eslintignore
 .eslintrc.json
 .github
-Development.md
+DEVELOP.md
 docs/
 src/
 test/
