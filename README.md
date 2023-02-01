@@ -1,6 +1,6 @@
 # Trunx
 
-> Super Saiyan React components, son of awesome [Bulma], implemented in TypeScript
+> Super Saiyan React components, son of awesome [Bulma]
 
 <img src="./docs/assets/trunks.png" height="290"/>
 
@@ -25,7 +25,7 @@ I remember when I was reading the comics and Trunks arrived from the future. He 
 
 ## License
 
-[MIT](http://g14n.info/mit-license)
+[MIT](https://fibo.github.io/mit-license)
 
 ## Credits
 

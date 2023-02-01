@@ -1,25 +1,18 @@
 # EditorConfig is awesome: http://EditorConfig.org
 
-# This file was created via command line
-#
-#     npm install dot-editorconfig
-
-# top-most EditorConfig file
+# Stop the editor from looking for .editorconfig files in the parent directories.
 root = true
 
 [*]
-end_of_line = lf
-trim_trailing_whitespace = true
+# Non-configurable Prettier behaviors
 charset = utf-8
+insert_final_newline = true
+
+# Configurable Prettier behaviors
+# (change these if your Prettier config differs)
+end_of_line = lf
 indent_style = space
 indent_size = 2
+max_line_length = 108
 
-[*{.conf,.pl,.pm,.py}]
-indent_size = 4
-
-[*{.glsl,.go,.sh,.sql}]
-indent_style = tab
-
-[Makefile]
-indent_style = tab
-
+trim_trailing_whitespace = true

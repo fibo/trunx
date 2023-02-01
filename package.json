@@ -1,94 +1,21 @@
 {
-  "name": "trunx",
-  "version": "0.42.1",
-  "description": "Super Saiyan React components, son of awesome Bulma, implemented in TypeScript",
+  "name": "trunx-monorepo",
   "type": "module",
-  "main": "component/index.js",
-  "files": [
-    "component"
-  ],
+  "private": true,
   "scripts": {
-    "build": "run-s build:lib build:docs",
-    "build:docs": "run-p generate_docs_bundle_js generate_docs_style generate_pages generate_sitemap",
-    "build:lib": "npm run tsc",
-    "eslint": "eslint --ext .ts,.tsx,.js,.jsx .",
-    "generate_docs_bundle_js": "cross-env NODE_ENV=production browserify src/docs/index.js -t babelify -g [ envify --NODE_ENV production ] -g uglifyify | terser --compress --mangle > docs/bundle.js",
-    "generate_docs_style": "sass src/docs/sass/style.scss docs/style.css --load-path node_modules --style compressed --no-source-map",
-    "generate_pages": "node src/npm-scripts/generatePages.js",
-    "generate_sitemap": "node src/npm-scripts/generateSitemap.js",
-    "lint-staged": "lint-staged",
-    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin main",
-    "pretsc": "rimraf component",
-    "start": "budo src/docs/index.js --dir docs --serve bundle.js --open --live --pushstate -- -t babelify",
-    "test": "run-p test:*",
-    "test:bulma-version": "node test/bulma-version.js",
-    "test:className-prop": "tsc --jsx react --noEmit --lib dom,es2015 test/className-prop.tsx",
-    "test:fallbackUI-prop": "tsc --jsx react --noEmit --lib dom,es2015 test/fallbackUI-prop.tsx",
-    "test:no-prop-is-required": "tsc --jsx react --noEmit --lib dom,es2015 test/no-prop-is-required.tsx",
-    "test:props-are-exported": "tsc --jsx react --noEmit --lib dom,es2015 test/props-are-exported.ts",
-    "test:types": "tsc --declaration --project . --noemit",
-    "tsc": "tsc --declaration --project ."
-  },
-  "lint-staged": {
-    "**/*.{js,scss,ts,tsx}": [
-      "prettier --write"
-    ],
-    "*.{json,md}": "prettier --write"
-  },
-  "pre-commit": [
-    "lint-staged",
-    "test"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fibo/trunx.git"
-  },
-  "keywords": [
-    "react",
-    "bulma",
-    "component",
-    "components",
-    "typescript"
-  ],
-  "author": {
-    "name": "Gianluca Casati",
-    "url": "http://g14n.info"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/fibo/trunx/issues"
-  },
-  "homepage": "https://trunx.dev",
-  "peerDependencies": {
-    "react": "17.x||18.x"
+    "build": "npm run build --workspaces --if-present",
+    "check_types": "npm run check_types --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present",
+    "prestart": "npm run build -w packages/trunx",
+    "start": "npm run dev -w webapps/trunx-docs"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.11",
-    "@types/react": "^18.0.12",
-    "@types/react-dom": "^18.0.5",
-    "@typescript-eslint/eslint-plugin": "^4.17.0",
-    "@typescript-eslint/parser": "^4.17.0",
-    "babel-eslint": "^10.1.0",
-    "dot-editorconfig": "^1.1.1",
-    "eslint": "^7.21.0",
-    "fa-svg-icon": "^0.3.0",
-    "lint-staged": "^10.5.4",
-    "npm-run-all": "^4.1.2",
-    "pre-commit": "^1.2.2",
+    "@types/node": "^18.0.3",
     "prettier": "^2.7.1",
-    "react-router-dom": "^5.2.0",
-    "react-syntax-highlighter": "^8.0.1",
-    "read-file-utf8": "^2.0.4",
-    "rimraf": "^3.0.2",
-    "sass": "^1.35.1",
-    "standard": "^16.0.3",
-    "typescript": "^4.7.3",
-    "write-file-utf8": "^2.0.1",
-    "zeroconf-redux": "^5.10.0"
+    "typescript": "^4.9.4"
   },
-  "dependencies": {
-    "bulma": "^0.9.4",
-    "classnames": "^2.3.1",
-    "tslib": "^2.4.0"
-  }
+  "workspaces": [
+    "packages/trunx",
+    "webapps/trunx-docs"
+  ]
 }
