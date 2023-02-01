@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "charset": "utf8",
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "useDefineForClassFields": true
+  }
+}
