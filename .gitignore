@@ -1,3 +1,5 @@
+packages/trunx/dist/
+
 *.log
 *.swp
 *.un~

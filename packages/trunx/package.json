@@ -1,0 +1,62 @@
+{
+  "name": "trunx",
+  "version": "0.42.1",
+  "description": "Super Saiyan React components, son of awesome Bulma",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "check_types": "tsc --noEmit --project .",
+    "postversion": "git push origin v${npm_package_version}; npm publish; git push origin main",
+    "test": "run-p test:*",
+    "test:bulma-version": "node test/bulma-version.js",
+    "test:className-prop": "tsc --jsx react --noEmit --lib dom,es2015 test/className-prop.tsx",
+    "test:fallbackUI-prop": "tsc --jsx react --noEmit --lib dom,es2015 test/fallbackUI-prop.tsx",
+    "test:no-prop-is-required": "tsc --jsx react --noEmit --lib dom,es2015 test/no-prop-is-required.tsx",
+    "test:props-are-exported": "tsc --jsx react --noEmit --lib dom,es2015 test/props-are-exported.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibo/trunx.git"
+  },
+  "keywords": [
+    "react",
+    "bulma",
+    "component",
+    "components",
+    "typescript"
+  ],
+  "author": {
+    "name": "Gianluca Casati",
+    "url": "https://fibo.github.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fibo/trunx/issues"
+  },
+  "homepage": "https://trunx.dev",
+  "peerDependencies": {
+    "react": "17.x||18.x"
+  },
+  "devDependencies": {
+    "@types/classnames": "2.2.11",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "typescript": "4.9.5"
+  },
+  "dependencies": {
+    "bulma": "0.9.4",
+    "classnames": "2.3.1",
+    "tslib": "2.4.0"
+  }
+}
