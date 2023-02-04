@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { Container, Section, Title } from 'trunx'
+import Nav from '../components/Nav';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <main>
+        <Nav />
         <Section>
           <Container>
             <Title>Getting started with Trunx</Title>
