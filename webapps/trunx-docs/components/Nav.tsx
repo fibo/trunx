@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { Navbar } from 'trunx'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { route } from '../routes/routes'
 import { navContents } from '../helpers/navContent'
 
-export const Nav = (): JSX.Element => {
+export const Nav: FC = () => {
   const router = useRouter()
 
   const { pathname } = router
