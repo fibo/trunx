@@ -17,7 +17,7 @@ export const Nav: FC = () => {
     if (redirect !== '') {
       router.push(redirect)
     }
-  }, [redirect])
+  }, [redirect, router])
 
   const redirectTo = useCallback(
     (wantedPathname: string) => (): void => {
