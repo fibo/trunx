@@ -1,14 +1,4 @@
-type Route = {
-  columns: { basics: string; nesting: string; responsiveness: string; sizes: string }
-  components: { breadcrumb: string; message: string; modal: string; navbar: string }
-  elements: { box: string; button: string; content: string; delete: string; tag: string; title: string }
-  form: { general: string; input: string; radio: string; textarea: string }
-  home: string
-  layout: { container: string; footer: string; hero: string; level: string; mediaObject: string; section: string; tiles: string }
-  modifiers: { colorHelpers: string; syntax: string }
-}
-
-export const route: Route = {
+export const route = {
   columns: {
     basics: '/columns/basics',
     nesting: '/columns/nesting',
