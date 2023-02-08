@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react'
+import { FC, useCallback, useEffect, useState } from 'react'
 import { Navbar } from 'trunx'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
@@ -19,14 +19,18 @@ export const Nav: FC = () => {
     }
   }, [redirect])
 
-  const redirectTo = (wantedPathname: string) => (): void => {
-    if (pathname !== wantedPathname) {
-      setRedirect(wantedPathname)
-    }
-  }
-  const onClickBurger = (): void => {
-    setExpanded(!expanded)
-  }
+  const redirectTo = useCallback(
+    (wantedPathname: string) => (): void => {
+      if (pathname !== wantedPathname) {
+        setRedirect(wantedPathname)
+      }
+    },
+    [pathname]
+  )
+
+  const onClickBurger = useCallback(() => {
+    setExpanded((expanded) => !expanded)
+  }, [])
 
   return (
     <Navbar isPrimary>
