@@ -1,8 +1,7 @@
-import classnames from 'classnames'
 import * as React from 'react'
 
 import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
+import { bulmaClassName, classNames, trunxPropsToClassnamesObject } from './classNames'
 import {
   HelpersProps,
   MainColorsProps,
@@ -108,17 +107,16 @@ class NavbarBurger extends React.Component<NavbarBurgerProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    const [
-      modifiersProps,
-      { className, fallbackUI, isActive, ...props },
-    ] = extractModifiersProps(this.props)
+    const [modifiersProps, { className, fallbackUI, isActive, ...props }] = extractModifiersProps(
+      this.props
+    )
 
     if (this.state.hasError) return fallbackUI
 
     return (
       <a
         aria-expanded={isActive ? 'true' : 'false'}
-        className={classnames(
+        className={classNames<string>(
           bulmaClassName.navbarBurger,
           className,
           modifierPropsToClassnamesObject(modifiersProps),
@@ -190,14 +188,7 @@ class NavbarItem extends React.Component<NavbarItemProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    const {
-      fallbackUI,
-      hasDropdown,
-      hasDropdownUp,
-      isActive,
-      isHoverable,
-      ...props
-    } = this.props
+    const { fallbackUI, hasDropdown, hasDropdownUp, isActive, isHoverable, ...props } = this.props
 
     if (this.state.hasError) return fallbackUI
 
@@ -302,14 +293,7 @@ export class Navbar extends React.Component<NavbarProps> {
   }
 
   render(): React.ReactNode {
-    const {
-      fallbackUI,
-      isFixedBottom,
-      isFixedTop,
-      isTransparent,
-      isUnselectable,
-      ...props
-    } = this.props
+    const { fallbackUI, isFixedBottom, isFixedTop, isTransparent, isUnselectable, ...props } = this.props
 
     if (this.state.hasError) return fallbackUI
 

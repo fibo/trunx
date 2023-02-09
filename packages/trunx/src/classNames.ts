@@ -1,3 +1,22 @@
+export type ClassNamesArg<ClassName extends string> =
+  | ClassName
+  | { [key in ClassName]: unknown }
+  | ClassNamesArg<ClassName>[]
+
+export const classNames = <T extends string>(...args: ClassNamesArg<T>[]): string =>
+  args
+    .map((arg) => {
+      if (typeof arg === 'string') return arg
+      if (Array.isArray(arg) && arg.length) return classNames<string>(...arg)
+      if (arg && typeof arg === 'object')
+        return classNames<string>(
+          Object.entries(arg)
+            .filter(([_key, val]) => val)
+            .map(([key]) => key)
+        )
+    })
+    .join(' ')
+
 export interface TrunxProps {
   [props: string]: boolean | undefined
 }
@@ -5,11 +24,7 @@ export interface TrunxProps {
 function kebabCaseToCamelCase(value: string): string {
   return value
     .split('-')
-    .map((part, index) =>
-      index > 0
-        ? part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()
-        : part
-    )
+    .map((part, index) => (index > 0 ? part.charAt(0).toUpperCase() + part.slice(1).toLowerCase() : part))
     .join('')
 }
 
@@ -24,9 +39,7 @@ function kebabCaseToCamelCase(value: string): string {
  * https://gist.github.com/nblackburn/875e6ff75bc8ce171c758bf75f304707
  */
 export function camelCaseToKebabCase(inputString: string): string {
-  return inputString
-    .replace(/([a-z0-9]|(?=[A-Z]))([A-Z0-9])/g, '$1-$2')
-    .toLowerCase()
+  return inputString.replace(/([a-z0-9]|(?=[A-Z]))([A-Z0-9])/g, '$1-$2').toLowerCase()
 }
 
 /**
@@ -35,9 +48,7 @@ export function camelCaseToKebabCase(inputString: string): string {
  *
  * ['a', 'b', 'foo-bar'] ---> { a: 'a', b: 'b', fooBar: 'foo-bar' }
  */
-function listToKeyValues<T extends string>(
-  list: readonly T[]
-): { [key: string]: T } {
+function listToKeyValues<T extends string>(list: readonly T[]): { [key: string]: T } {
   return list.reduce(
     (obj: { [key: string]: T }, key: T) => ({
       ...obj,
@@ -53,11 +64,7 @@ export function trunxPropsToClassnamesObject(props?: TrunxProps) {
   return Object.keys(props).reduce((obj, key) => {
     if (typeof props[key] === 'undefined') return obj
 
-    if (
-      key.substring(0, 3) === 'are' ||
-      key.substring(0, 3) === 'has' ||
-      key.substring(0, 2) === 'is'
-    ) {
+    if (key.substring(0, 3) === 'are' || key.substring(0, 3) === 'has' || key.substring(0, 2) === 'is') {
       const className = camelCaseToKebabCase(key)
 
       obj[className] = props[key]
