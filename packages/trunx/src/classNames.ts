@@ -3,6 +3,15 @@ export type ClassNamesArg<ClassName extends string> =
   | { [key in ClassName]: unknown }
   | ClassNamesArg<ClassName>[]
 
+/**
+ * Utility for conditionally joining CSS classes together.
+ *
+ * @example
+ * type C = 'foo' | 'bar' // my CSS classes
+ * classNames<C>('foo', 'bar') // 'foo bar'
+ * classNames<C>('foo', ['bar']) // 'foo bar'
+ * classNames<C>({ foo: true }, { bar: false }) // 'foo'
+ */
 export const classNames = <T extends string>(...args: ClassNamesArg<T>[]): string =>
   args
     .map((arg) => {
