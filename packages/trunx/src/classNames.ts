@@ -1,3 +1,48 @@
+export type ClassNamesArg<ClassName extends string> =
+  | ClassName
+  | { [key in ClassName]: unknown }
+  | ClassNamesArg<ClassName>[]
+
+/**
+ * Utility for conditionally joining CSS classes together.
+ *
+ * @example
+ * classNames('foo', 'bar') // 'foo bar'
+ * classNames('foo', ['bar']) // 'foo bar'
+ * classNames({ foo: true }, { bar: false }) // 'foo'
+ *
+ * It accepts a generic "class names" type.
+ *
+ * @example
+ * type T = 'foo' | 'bar' // my CSS classes
+ * classNames<T>('foo', 'quz') // ERROR: not assignable to type ClassNamesArg<T>[]
+ */
+export const classNames = <T extends string>(...args: ClassNamesArg<T>[]): string =>
+  args
+    .map((arg) => {
+      if (Array.isArray(arg)) {
+        // Recursively call classNames or return empty string if arg is an empty array.
+        return arg.length ? classNames(...arg) : ''
+      } else if (
+        // In this `else` branch, arg is not an Array.
+        // Make sure arg is not null,
+        arg &&
+        // and arg is a proper Object.
+        typeof arg === 'object'
+      ) {
+        return classNames(
+          // Map object to an array of its keys,
+          Object.entries(arg)
+            // with a truthy value.
+            .filter(([_, value]) => value)
+            .map(([key]) => key)
+        )
+      }
+      // Return arg if it is a string, or fallback to empty string.
+      return typeof arg === 'string' ? arg : ''
+    })
+    .join(' ')
+
 export interface TrunxProps {
   [props: string]: boolean | undefined
 }
@@ -5,11 +50,7 @@ export interface TrunxProps {
 function kebabCaseToCamelCase(value: string): string {
   return value
     .split('-')
-    .map((part, index) =>
-      index > 0
-        ? part.charAt(0).toUpperCase() + part.slice(1).toLowerCase()
-        : part
-    )
+    .map((part, index) => (index > 0 ? part.charAt(0).toUpperCase() + part.slice(1).toLowerCase() : part))
     .join('')
 }
 
@@ -24,9 +65,7 @@ function kebabCaseToCamelCase(value: string): string {
  * https://gist.github.com/nblackburn/875e6ff75bc8ce171c758bf75f304707
  */
 export function camelCaseToKebabCase(inputString: string): string {
-  return inputString
-    .replace(/([a-z0-9]|(?=[A-Z]))([A-Z0-9])/g, '$1-$2')
-    .toLowerCase()
+  return inputString.replace(/([a-z0-9]|(?=[A-Z]))([A-Z0-9])/g, '$1-$2').toLowerCase()
 }
 
 /**
@@ -35,9 +74,7 @@ export function camelCaseToKebabCase(inputString: string): string {
  *
  * ['a', 'b', 'foo-bar'] ---> { a: 'a', b: 'b', fooBar: 'foo-bar' }
  */
-function listToKeyValues<T extends string>(
-  list: readonly T[]
-): { [key: string]: T } {
+function listToKeyValues<T extends string>(list: readonly T[]): { [key: string]: T } {
   return list.reduce(
     (obj: { [key: string]: T }, key: T) => ({
       ...obj,
@@ -53,11 +90,7 @@ export function trunxPropsToClassnamesObject(props?: TrunxProps) {
   return Object.keys(props).reduce((obj, key) => {
     if (typeof props[key] === 'undefined') return obj
 
-    if (
-      key.substring(0, 3) === 'are' ||
-      key.substring(0, 3) === 'has' ||
-      key.substring(0, 2) === 'is'
-    ) {
+    if (key.substring(0, 3) === 'are' || key.substring(0, 3) === 'has' || key.substring(0, 2) === 'is') {
       const className = camelCaseToKebabCase(key)
 
       obj[className] = props[key]
