@@ -1,14 +1,11 @@
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName } from './classNames'
-import { HelpersProps } from './modifiers'
-import { renderElement } from './renderElement'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { bulmaClassName } from './classNames.js'
+import { HelpersProps } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
-export interface PanelProps
-  extends React.HTMLAttributes<HTMLElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
+export interface PanelProps extends React.HTMLAttributes<HTMLElement>, ErrorBoundaryProps, HelpersProps {}
 
 export interface PanelBlockProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement>,

@@ -1,15 +1,15 @@
 import classnames from 'classnames'
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames.js'
 import {
   HelpersProps,
   MainColorsProps,
   SizeProps,
   extractModifiersProps,
   modifierPropsToClassnamesObject,
-} from './modifiers'
+} from './modifiers.js'
 
 export interface SelectProps
   extends React.SelectHTMLAttributes<HTMLSelectElement>,
@@ -33,16 +33,7 @@ export class Select extends React.Component<SelectProps> {
   render(): React.ReactNode {
     const [
       modifiersProps,
-      {
-        children,
-        className,
-        fallbackUI,
-        isFocused,
-        isHovered,
-        isLoading,
-        isMultiple,
-        ...props
-      },
+      { children, className, fallbackUI, isFocused, isHovered, isLoading, isMultiple, ...props },
     ] = extractModifiersProps(this.props)
 
     if (this.state.hasError) return fallbackUI

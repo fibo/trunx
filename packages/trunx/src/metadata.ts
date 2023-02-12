@@ -126,17 +126,7 @@ export const componentHierarchy = [
   },
   {
     component: 'Navbar',
-    subComponents: [
-      'Brand',
-      'Burger',
-      'Divider',
-      'Dropdown',
-      'End',
-      'Item',
-      'Link',
-      'Menu',
-      'Start',
-    ],
+    subComponents: ['Brand', 'Burger', 'Divider', 'Dropdown', 'End', 'Item', 'Link', 'Menu', 'Start'],
   },
   {
     component: 'Notification',

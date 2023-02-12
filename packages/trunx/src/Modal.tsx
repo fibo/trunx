@@ -1,14 +1,11 @@
 import * as React from 'react'
 
-import { bulmaClassName } from './classNames'
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { HelpersProps } from './modifiers'
-import { renderElement } from './renderElement'
+import { bulmaClassName } from './classNames.js'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { HelpersProps } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
-export interface ModalProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {
+export interface ModalProps extends React.HTMLAttributes<HTMLDivElement>, ErrorBoundaryProps, HelpersProps {
   isActive?: boolean
 }
 
@@ -42,9 +39,7 @@ export interface ModalCardTitleProps
     ErrorBoundaryProps,
     HelpersProps {}
 
-export interface ModalCloseProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    ErrorBoundaryProps {
+export interface ModalCloseProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ErrorBoundaryProps {
   isLarge?: boolean
 }
 

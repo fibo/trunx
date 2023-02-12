@@ -1,16 +1,16 @@
 import classnames from 'classnames'
 import * as React from 'react'
 
-import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
-import { ErrorBoundaryProps } from './ErrorBoundary'
+import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames.js'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
 import {
   HelpersProps,
   MainColorsProps,
   SizeProps,
   extractModifiersProps,
   modifierPropsToClassnamesObject,
-} from './modifiers'
-import { renderElement } from './renderElement'
+} from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
 export interface FileUploadProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -93,11 +93,7 @@ class FileUploadInput extends React.Component<FileUploadInputProps> {
 
     if (this.state.hasError) return fallbackUI
 
-    return renderElement(
-      'input',
-      { props, type: 'file' },
-      bulmaClassName.fileInput
-    )
+    return renderElement('input', { props, type: 'file' }, bulmaClassName.fileInput)
   }
 }
 
@@ -149,16 +145,7 @@ export class FileUpload extends React.Component<FileUploadProps> {
   render(): React.ReactNode {
     const [
       modifiersProps,
-      {
-        children,
-        className,
-        fallbackUI,
-        hasName,
-        isBoxed,
-        isFullwidth,
-        isRight,
-        ...props
-      },
+      { children, className, fallbackUI, hasName, isBoxed, isFullwidth, isRight, ...props },
     ] = extractModifiersProps(this.props)
 
     if (this.state.hasError) return fallbackUI

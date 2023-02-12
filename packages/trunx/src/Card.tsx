@@ -1,11 +1,11 @@
 import classnames from 'classnames'
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { Image, ImageProps } from './Image'
-import { bulmaClassName } from './classNames'
-import { HelpersProps } from './modifiers'
-import { renderElement } from './renderElement'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { Image, ImageProps } from './Image.js'
+import { bulmaClassName } from './classNames.js'
+import { HelpersProps } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
 export interface CardContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -41,10 +41,7 @@ export interface CardHeaderTitleProps
 
 export type CardImageProps = ImageProps
 
-export interface CardProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
+export interface CardProps extends React.HTMLAttributes<HTMLDivElement>, ErrorBoundaryProps, HelpersProps {}
 
 class CardContent extends React.Component<CardContentProps> {
   static getDerivedStateFromError() {
@@ -75,11 +72,7 @@ class CardFooterItem extends React.Component<CardFooterItemProps> {
     if (this.state.hasError) return fallbackUI
 
     if (href || onClick) {
-      return renderElement(
-        'a',
-        { href, onClick, ...props },
-        bulmaClassName.cardFooterItem
-      )
+      return renderElement('a', { href, onClick, ...props }, bulmaClassName.cardFooterItem)
     } else {
       return renderElement('div', props, bulmaClassName.cardFooterItem)
     }
@@ -117,11 +110,7 @@ class CardHeaderIcon extends React.Component<CardHeaderIconProps> {
     if (this.state.hasError) return fallbackUI
 
     if (href || onClick) {
-      return renderElement(
-        'a',
-        { href, onClick, ...props },
-        bulmaClassName.cardHeaderIcon
-      )
+      return renderElement('a', { href, onClick, ...props }, bulmaClassName.cardHeaderIcon)
     } else {
       return renderElement('div', props, bulmaClassName.cardHeaderIcon)
     }

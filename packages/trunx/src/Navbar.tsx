@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
 import { bulmaClassName, classNames, trunxPropsToClassnamesObject } from './classNames.js'
 import {
   HelpersProps,
@@ -8,8 +8,8 @@ import {
   ShadeColorsProps,
   extractModifiersProps,
   modifierPropsToClassnamesObject,
-} from './modifiers'
-import { renderElement } from './renderElement'
+} from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
 export interface NavbarProps
   extends React.HTMLAttributes<HTMLElement>,

@@ -1,14 +1,10 @@
 import classnames from 'classnames'
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName } from './classNames'
-import {
-  HelpersProps,
-  extractModifiersProps,
-  modifierPropsToClassnamesObject,
-} from './modifiers'
-import { renderElement } from './renderElement'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { bulmaClassName } from './classNames.js'
+import { HelpersProps, extractModifiersProps, modifierPropsToClassnamesObject } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
 export interface PaginationProps
   extends React.HTMLAttributes<HTMLElement>,
@@ -50,10 +46,7 @@ class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    const [
-      modifiersProps,
-      { className, fallbackUI, ...props },
-    ] = extractModifiersProps(this.props)
+    const [modifiersProps, { className, fallbackUI, ...props }] = extractModifiersProps(this.props)
 
     if (this.state.hasError) return fallbackUI
 

@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { bulmaClassName } from './classNames'
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { HelpersProps, MainColorsProps } from './modifiers'
-import { renderElement } from './renderElement'
+import { bulmaClassName } from './classNames.js'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { HelpersProps, MainColorsProps } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
 export interface HeroProps
   extends React.HTMLAttributes<HTMLDivElement>,

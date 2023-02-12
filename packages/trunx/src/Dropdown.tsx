@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { HelpersProps } from './modifiers'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName } from './classNames'
-import { renderElement } from './renderElement'
+import { HelpersProps } from './modifiers.js'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { bulmaClassName } from './classNames.js'
+import { renderElement } from './renderElement.js'
 
 export interface DropdownProps
   extends React.HTMLAttributes<HTMLDivElement>,
