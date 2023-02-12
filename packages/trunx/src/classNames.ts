@@ -7,22 +7,39 @@ export type ClassNamesArg<ClassName extends string> =
  * Utility for conditionally joining CSS classes together.
  *
  * @example
- * type C = 'foo' | 'bar' // my CSS classes
- * classNames<C>('foo', 'bar') // 'foo bar'
- * classNames<C>('foo', ['bar']) // 'foo bar'
- * classNames<C>({ foo: true }, { bar: false }) // 'foo'
+ * classNames('foo', 'bar') // 'foo bar'
+ * classNames('foo', ['bar']) // 'foo bar'
+ * classNames({ foo: true }, { bar: false }) // 'foo'
+ *
+ * It accepts a generic "class names" type.
+ *
+ * @example
+ * type T = 'foo' | 'bar' // my CSS classes
+ * classNames<T>('foo', 'quz') // ERROR: not assignable to type ClassNamesArg<T>[]
  */
 export const classNames = <T extends string>(...args: ClassNamesArg<T>[]): string =>
   args
     .map((arg) => {
-      if (typeof arg === 'string') return arg
-      if (Array.isArray(arg) && arg.length) return classNames<string>(...arg)
-      if (arg && typeof arg === 'object')
-        return classNames<string>(
+      if (Array.isArray(arg)) {
+        // Recursively call classNames or return empty string if arg is an empty array.
+        return arg.length ? classNames(...arg) : ''
+      } else if (
+        // In this `else` branch, arg is not an Array.
+        // Make sure arg is not null,
+        arg &&
+        // and arg is a proper Object.
+        typeof arg === 'object'
+      ) {
+        return classNames(
+          // Map object to an array of its keys,
           Object.entries(arg)
-            .filter(([_key, val]) => val)
+            // with a truthy value.
+            .filter(([_, value]) => value)
             .map(([key]) => key)
         )
+      }
+      // Return arg if it is a string, or fallback to empty string.
+      return typeof arg === 'string' ? arg : ''
     })
     .join(' ')
 
