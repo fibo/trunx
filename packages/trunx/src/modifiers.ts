@@ -1,4 +1,4 @@
-import { TrunxProps, trunxPropsToClassnamesObject } from './classNames'
+import { TrunxProps, trunxPropsToClassnamesObject } from './classNames.js'
 
 export interface BackgroundColorHelpersProps {
   hasBackgroundBlack?: boolean
@@ -466,11 +466,7 @@ export interface HelpersProps
     TypographySizeHelpers,
     VisibilityHelpersProps {}
 
-export interface ModifiersProps
-  extends HelpersProps,
-    MainColorsProps,
-    ShadeColorsProps,
-    SizeProps {}
+export interface ModifiersProps extends HelpersProps, MainColorsProps, ShadeColorsProps, SizeProps {}
 
 export interface ExtractModifiersPropsArg extends ModifiersProps {
   [prop: string]: any

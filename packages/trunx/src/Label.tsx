@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName } from './classNames'
-import { HelpersProps, SizeProps } from './modifiers'
-import { renderElement } from './renderElement'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { bulmaClassName } from './classNames.js'
+import { HelpersProps, SizeProps } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
 export interface LabelProps
   extends React.LabelHTMLAttributes<HTMLLabelElement>,

@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName } from './classNames'
-import { HelpersProps, SizeProps } from './modifiers'
-import { renderElement } from './renderElement'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { bulmaClassName } from './classNames.js'
+import { HelpersProps, SizeProps } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
 export interface ContentProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -25,15 +25,8 @@ export class Content extends React.Component<ContentProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    const {
-      fallbackUI,
-      isNormal,
-      hasTextCentered,
-      hasTextJustified,
-      hasTextLeft,
-      hasTextRight,
-      ...props
-    } = this.props
+    const { fallbackUI, isNormal, hasTextCentered, hasTextJustified, hasTextLeft, hasTextRight, ...props } =
+      this.props
 
     if (this.state.hasError) return fallbackUI
 
