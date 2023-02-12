@@ -1,14 +1,11 @@
 import * as React from 'react'
 
-import { bulmaClassName } from './classNames'
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { HelpersProps, SizeProps } from './modifiers'
-import { renderElement } from './renderElement'
+import { bulmaClassName } from './classNames.js'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { HelpersProps, SizeProps } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
-export interface FieldProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    SizeProps {
+export interface FieldProps extends React.HTMLAttributes<HTMLDivElement>, ErrorBoundaryProps, SizeProps {
   hasAddons?: boolean
   hasAddonsCentered?: boolean
   isGrouped?: boolean

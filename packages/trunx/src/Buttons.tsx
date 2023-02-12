@@ -1,13 +1,9 @@
 import classnames from 'classnames'
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
-import {
-  HelpersProps,
-  extractModifiersProps,
-  modifierPropsToClassnamesObject,
-} from './modifiers'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames.js'
+import { HelpersProps, extractModifiersProps, modifierPropsToClassnamesObject } from './modifiers.js'
 
 export interface ButtonsProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -26,18 +22,8 @@ export class Buttons extends React.Component<ButtonsProps> {
   state = { hasError: false }
 
   render() {
-    const [
-      modifiersProps,
-      {
-        areLarge,
-        areMedium,
-        areSmall,
-        children,
-        className,
-        fallbackUI,
-        ...props
-      },
-    ] = extractModifiersProps(this.props)
+    const [modifiersProps, { areLarge, areMedium, areSmall, children, className, fallbackUI, ...props }] =
+      extractModifiersProps(this.props)
 
     if (this.state.hasError) return fallbackUI
 
