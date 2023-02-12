@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Container, Section, Title } from 'trunx'
-import { Nav } from '../components'
+import { Nav } from '@/components'
 
 export default function Home() {
   return (
