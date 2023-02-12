@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName, classNames } from './classNames'
+import { bulmaClassName, classNames } from './classNames.js'
 import {
   HelpersProps,
   MainColorsProps,
@@ -68,7 +68,7 @@ export class Button extends React.Component<ButtonProps> {
 
     if (this.state.hasError) return fallbackUI
 
-    const className = classNames<string>(
+    const className = classNames(
       bulmaClassName.button,
       classNameProp,
       {

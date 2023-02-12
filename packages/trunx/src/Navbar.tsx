@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName, classNames, trunxPropsToClassnamesObject } from './classNames'
+import { bulmaClassName, classNames, trunxPropsToClassnamesObject } from './classNames.js'
 import {
   HelpersProps,
   MainColorsProps,
