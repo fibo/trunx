@@ -82,7 +82,7 @@ class DropdownItem extends React.Component<DropdownItemProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    const { fallbackUI, isActive, ...props } = this.props
+    const { isActive, ...props } = this.props
 
     return renderElement('a', props, bulmaClassName.dropdownItem, { isActive })
   }
@@ -136,14 +136,7 @@ export class Dropdown extends React.Component<DropdownProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    const {
-      fallbackUI,
-      isActive,
-      isHoverable,
-      isRight,
-      isUp,
-      ...props
-    } = this.props
+    const { fallbackUI, isActive, isHoverable, isRight, isUp, ...props } = this.props
 
     if (this.state.hasError) return fallbackUI
 
