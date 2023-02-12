@@ -59,7 +59,6 @@ export class Button extends React.Component<ButtonProps> {
         isRounded,
         isStatic,
         isText,
-        target,
         type,
         value,
         ...props
