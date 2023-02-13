@@ -1,7 +1,6 @@
-export type ClassNamesArg<ClassName extends string> =
-  | ClassName
-  | { [key in ClassName]: unknown }
-  | ClassNamesArg<ClassName>[]
+export type ClassNamesArg<ClassName> = ClassName extends string
+  ? ClassName | { [key in ClassName]: unknown } | ClassNamesArg<ClassName>[]
+  : null | undefined
 
 /**
  * Utility for conditionally joining CSS classes together.
@@ -221,6 +220,6 @@ export const bulmaClassNames = [
   'tile',
 ] as const
 
-export type BulmaClassName = typeof bulmaClassNames[number]
+type BulmaClassName = typeof bulmaClassNames[number]
 
 export const bulmaClassName = listToKeyValues<BulmaClassName>(bulmaClassNames)

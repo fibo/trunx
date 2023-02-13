@@ -1,13 +1,13 @@
 import classnames from 'classnames'
 import * as React from 'react'
 
-import { BulmaClassName, TrunxProps, trunxPropsToClassnamesObject } from './classNames.js'
+import { TrunxProps, trunxPropsToClassnamesObject } from './classNames.js'
 import { extractModifiersProps, modifierPropsToClassnamesObject } from './modifiers.js'
 
 export function renderElement(
   type: string,
   elementProps: { [prop: string]: any },
-  bulmaClassName?: BulmaClassName,
+  bulmaClassName?: string,
   trunxProps?: TrunxProps
 ): React.ReactNode {
   const [modifiersProps, { children, className, ...props }] = extractModifiersProps(elementProps)

@@ -1,6 +1,10 @@
 import { Size } from './modifiers.js'
 import { BulmaClassName } from './bulma.js'
 
+export const centeredClassName = (
+  centered: boolean | undefined
+): Extract<BulmaClassName, 'is-centered'> | undefined => (centered ? 'is-centered' : undefined)
+
 export const pluralSizeClassName = (
   size: Size | undefined
 ): Extract<BulmaClassName, 'are-small' | 'are-medium' | 'are-large'> | undefined => {

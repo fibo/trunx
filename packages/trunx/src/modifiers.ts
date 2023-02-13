@@ -1,5 +1,15 @@
 import { TrunxProps, trunxPropsToClassnamesObject } from './classNames.js'
 
+export type CenteredProp = Partial<{
+  centered: boolean
+}>
+
+export type Size = 'small' | 'medium' | 'large'
+
+export type SizeProp = Partial<{
+  size: Size
+}>
+
 export interface BackgroundColorHelpersProps {
   hasBackgroundBlack?: boolean
   hasBackgroundBlackBis?: boolean
