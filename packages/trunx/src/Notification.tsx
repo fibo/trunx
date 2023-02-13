@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName } from './classNames'
-import { HelpersProps, MainColorsProps } from './modifiers'
-import { renderElement } from './renderElement'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { bulmaClassName } from './classNames.js'
+import { HelpersProps, MainColorsProps } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
 export interface NotificationProps
   extends React.HTMLAttributes<HTMLDivElement>,

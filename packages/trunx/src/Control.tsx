@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName } from './classNames'
-import { HelpersProps, SizeProps } from './modifiers'
-import { renderElement } from './renderElement'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { bulmaClassName } from './classNames.js'
+import { HelpersProps, SizeProps } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
 export interface ControlProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -24,14 +24,7 @@ export class Control extends React.Component<ControlProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    const {
-      fallbackUI,
-      hasIconsLeft,
-      hasIconsRight,
-      isExpanded,
-      isLoading,
-      ...props
-    } = this.props
+    const { fallbackUI, hasIconsLeft, hasIconsRight, isExpanded, isLoading, ...props } = this.props
 
     if (this.state.hasError) return fallbackUI
 

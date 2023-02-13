@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
 import { bulmaClassName, classNames } from './classNames.js'
 import {
   HelpersProps,
@@ -9,7 +9,7 @@ import {
   SizeProps,
   extractModifiersProps,
   modifierPropsToClassnamesObject,
-} from './modifiers'
+} from './modifiers.js'
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
@@ -59,7 +59,6 @@ export class Button extends React.Component<ButtonProps> {
         isRounded,
         isStatic,
         isText,
-        target,
         type,
         value,
         ...props

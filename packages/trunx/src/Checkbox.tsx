@@ -1,13 +1,9 @@
 import classnames from 'classnames'
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName } from './classNames'
-import {
-  HelpersProps,
-  extractModifiersProps,
-  modifierPropsToClassnamesObject,
-} from './modifiers'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { bulmaClassName } from './classNames.js'
+import { HelpersProps, extractModifiersProps, modifierPropsToClassnamesObject } from './modifiers.js'
 
 export interface CheckboxProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
@@ -22,10 +18,9 @@ export class Checkbox extends React.Component<CheckboxProps> {
   state = { hasError: false }
 
   render() {
-    const [
-      modifiersProps,
-      { children, className, fallbackUI, ...props },
-    ] = extractModifiersProps(this.props)
+    const [modifiersProps, { children, className, fallbackUI, ...props }] = extractModifiersProps(
+      this.props
+    )
 
     if (this.state.hasError) return fallbackUI
 

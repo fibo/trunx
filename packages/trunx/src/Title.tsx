@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName } from './classNames'
-import { HelpersProps } from './modifiers'
-import { renderElement } from './renderElement'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { bulmaClassName } from './classNames.js'
+import { HelpersProps } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
 export interface TitleProps
   extends React.HTMLAttributes<HTMLHeadingElement>,
@@ -26,17 +26,7 @@ export class Title extends React.Component<TitleProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    const {
-      fallbackUI,
-      is1,
-      is2,
-      is3,
-      is4,
-      is5,
-      is6,
-      isSpaced,
-      ...props
-    } = this.props
+    const { fallbackUI, is1, is2, is3, is4, is5, is6, isSpaced, ...props } = this.props
 
     let tag = 'p'
 
