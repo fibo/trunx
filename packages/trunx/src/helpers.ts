@@ -1,5 +1,5 @@
-import { Size } from './modifiers.js'
 import { BulmaClassName } from './bulma.js'
+import { Size } from './modifiers.js'
 
 export const centeredClassName = (
   centered: boolean | undefined
