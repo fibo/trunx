@@ -5,9 +5,11 @@
   },
   "extends": [
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:import/recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    // react/jsx-runtime must be loaded after react/recommended
+    "plugin:react/jsx-runtime"
   ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
