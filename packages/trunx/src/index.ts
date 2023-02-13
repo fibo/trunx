@@ -1,3 +1,4 @@
+export * from './bulma.js'
 export * from './classNames.js'
 export * from './modifiers.js'
 
