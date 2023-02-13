@@ -1,9 +1,9 @@
 import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { bulmaClassName } from './classNames'
-import { HelpersProps } from './modifiers'
-import { renderElement } from './renderElement'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { bulmaClassName } from './classNames.js'
+import { HelpersProps } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
 export interface TableProps
   extends React.TableHTMLAttributes<HTMLTableElement>,
@@ -16,9 +16,7 @@ export interface TableProps
   isStriped?: boolean
 }
 
-export interface TableContainerProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps {}
+export interface TableContainerProps extends React.HTMLAttributes<HTMLDivElement>, ErrorBoundaryProps {}
 
 class TableContainer extends React.Component<TableContainerProps> {
   static getDerivedStateFromError() {
@@ -46,15 +44,7 @@ export class Table extends React.Component<TableProps> {
   state = { hasError: false }
 
   render(): React.ReactNode {
-    const {
-      fallbackUI,
-      isBordered,
-      isFullwidth,
-      isHoverable,
-      isNarrow,
-      isStriped,
-      ...props
-    } = this.props
+    const { fallbackUI, isBordered, isFullwidth, isHoverable, isNarrow, isStriped, ...props } = this.props
 
     if (this.state.hasError) return fallbackUI
 

@@ -1,13 +1,9 @@
 import classnames from 'classnames'
 import * as React from 'react'
 
-import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames'
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import {
-  HelpersProps,
-  extractModifiersProps,
-  modifierPropsToClassnamesObject,
-} from './modifiers'
+import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames.js'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { HelpersProps, extractModifiersProps, modifierPropsToClassnamesObject } from './modifiers.js'
 
 export interface ImageProps
   extends React.ImgHTMLAttributes<HTMLImageElement>,
