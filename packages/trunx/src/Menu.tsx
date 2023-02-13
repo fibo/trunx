@@ -1,14 +1,11 @@
 import * as React from 'react'
 
-import { bulmaClassName } from './classNames'
-import { ErrorBoundaryProps } from './ErrorBoundary'
-import { HelpersProps } from './modifiers'
-import { renderElement } from './renderElement'
+import { bulmaClassName } from './classNames.js'
+import { ErrorBoundaryProps } from './ErrorBoundary.js'
+import { HelpersProps } from './modifiers.js'
+import { renderElement } from './renderElement.js'
 
-export interface MenuProps
-  extends React.HTMLAttributes<HTMLElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
+export interface MenuProps extends React.HTMLAttributes<HTMLElement>, ErrorBoundaryProps, HelpersProps {}
 
 export interface MenuLabelProps
   extends React.HTMLAttributes<HTMLParagraphElement>,
