@@ -5,7 +5,7 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "check_types": "npm run check_types --workspaces --if-present",
-    "generate_BulmaClassName_type": "postcss ./node_modules/bulma/css/bulma.css --output ./node_modules/bulma/css/output.css",
+    "generate_BulmaClassName_type": "postcss ./node_modules/bulma/css/bulma.css --config ./npm-scripts/generate_BulmaClassName_type --output ./node_modules/bulma/css/output.css",
     "lint": "npm run lint --workspaces --if-present",
     "prestart": "npm run build -w packages/trunx",
     "start": "npm run dev -w webapps/trunx-docs"
