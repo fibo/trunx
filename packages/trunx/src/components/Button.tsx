@@ -1,7 +1,7 @@
 import * as React from 'react'
-
+import { classNames } from '../classNames.js'
 import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName, classNames } from './classNames.js'
+import { bulmaClassName } from './classNames.js'
 import {
   HelpersProps,
   MainColorsProps,
