@@ -1,5 +1,15 @@
 import { FC, useCallback, useEffect, useState } from 'react'
-import { Navbar } from 'trunx'
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarBurger,
+  NavbarDropdown,
+  NavbarItem,
+  NavbarLink,
+  NavbarMenu,
+  NavbarStart,
+  NavbarItemAnchor,
+} from 'trunx'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { route } from '../routes/routes'
@@ -33,30 +43,30 @@ export const Nav: FC = () => {
   }, [])
 
   return (
-    <Navbar isPrimary>
-      <Navbar.Brand>
-        <Navbar.Item onClick={redirectTo(route.home)}>
-          <Image src='/assets/trunx-logotype-white.png' alt='me' width='100' height='100' />
-        </Navbar.Item>
-        <Navbar.Burger isActive={expanded} onClick={onClickBurger} />
-      </Navbar.Brand>
-      <Navbar.Menu>
-        <Navbar.Start>
+    <Navbar color="primary">
+      <NavbarBrand>
+        <NavbarItem onClick={redirectTo(route.home)}>
+          <Image src="/assets/trunx-logotype-white.png" alt="me" width="100" height="100" />
+        </NavbarItem>
+        <NavbarBurger isActive={expanded} onClick={onClickBurger} />
+      </NavbarBrand>
+      <NavbarMenu>
+        <NavbarStart>
           {navContents.map(({ label, items }, i) => (
-            <Navbar.Item hasDropdown isHoverable key={i}>
-              <Navbar.Link>{label}</Navbar.Link>
+            <NavbarItem hasDropdown isHoverable key={i}>
+              <NavbarLink>{label}</NavbarLink>
 
-              <Navbar.Dropdown>
+              <NavbarDropdown>
                 {items.map(({ label, route }, i) => (
-                  <Navbar.Item isActive={route === pathname} key={i} onClick={redirectTo(route)}>
+                  <NavbarItemAnchor isActive={route === pathname} key={i} onClick={redirectTo(route)}>
                     {label}
-                  </Navbar.Item>
+                  </NavbarItemAnchor>
                 ))}
-              </Navbar.Dropdown>
-            </Navbar.Item>
+              </NavbarDropdown>
+            </NavbarItem>
           ))}
-        </Navbar.Start>
-      </Navbar.Menu>
+        </NavbarStart>
+      </NavbarMenu>
     </Navbar>
   )
 }
