@@ -1,9 +1,18 @@
-import * as React from 'react'
+import { ChangeEventHandler } from 'react'
 
 import { bulmaClassName } from './classNames.js'
 import { ErrorBoundaryProps } from './ErrorBoundary.js'
 import { HelpersProps, MainColorsProps, SizeProps } from './modifiers.js'
 import { renderElement } from './renderElement.js'
+
+/**
+ * Callback helper, alias for `ChangeEventHandler<HTMLInputElement>`
+ * @example
+ * useCallback<InputOnChange>((event) => {
+ *   // `event` has the correct type.
+ * })
+ */
+export type InputOnChange = ChangeEventHandler<HTMLInputElement>
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement>,
