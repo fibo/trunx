@@ -9,6 +9,14 @@
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
+    },
+    "./bulma": {
+      "import": "./dist/bulma.js",
+      "types": "./dist/bulma.d.ts"
+    },
+    "./classNames": {
+      "import": "./dist/classNames.js",
+      "types": "./dist/classNames.d.ts"
     }
   },
   "engines": {
