@@ -1,4 +1,4 @@
-import * as React from 'react'
+import { PointerEventHandler } from 'react'
 import { classNames } from '../classNames.js'
 import { ErrorBoundaryProps } from './ErrorBoundary.js'
 import { bulmaClassName } from './classNames.js'
@@ -10,6 +10,15 @@ import {
   extractModifiersProps,
   modifierPropsToClassnamesObject,
 } from './modifiers.js'
+
+/**
+ * Callback helper, alias for `PointerEventHandler<HTMLButtonElement>`
+ * @example
+ * useCallback<ButtonOnClick>((event) => {
+ *   // `event` has the correct type.
+ * })
+ */
+export type ButtonOnClick = PointerEventHandler<HTMLButtonElement>
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
