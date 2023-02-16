@@ -7,19 +7,18 @@ import {
   useEffect,
   useMemo,
 } from 'react'
-import { bulma } from '../bulma.js'
 import { classNames } from '../classNames.js'
 import {
-  ActiveProp,
   MainColor,
   ShadeColor,
-  ColorProp,
+  ColorModifierProp,
   colorClassName,
-  activeClassName,
+  CommonModifierProps,
+  modifier,
 } from '../modifiers/index.js'
 
 export type NavbarProps = HTMLAttributes<HTMLElement> &
-  ColorProp<MainColor | ShadeColor> &
+  ColorModifierProp<MainColor | ShadeColor> &
   Partial<{
     isFixedBottom: boolean
     isFixedTop: boolean
@@ -56,12 +55,13 @@ export const Navbar: FC<PropsWithChildren<NavbarProps>> = ({
   const _className = useMemo(
     () =>
       classNames(
-        bulma('navbar', {
+        'navbar',
+        {
           'is-fixed-bottom': isFixedBottom,
           'is-fixed-top': isFixedTop,
           'is-transparent': isTransparent,
           'has-shadow': hasShadow,
-        }),
+        },
         colorClassName(color),
         className
       ),
@@ -78,7 +78,7 @@ export const Navbar: FC<PropsWithChildren<NavbarProps>> = ({
 export type NavbarBrandProps = HTMLAttributes<HTMLDivElement>
 
 export const NavbarBrand: FC<PropsWithChildren<NavbarBrandProps>> = ({ children, className, ...props }) => {
-  const _className = useMemo(() => classNames(bulma('navbar-brand'), className), [className])
+  const _className = useMemo(() => classNames('navbar-brand', className), [className])
   return (
     <div className={_className} {...props}>
       {children}
@@ -89,12 +89,12 @@ export const NavbarBrand: FC<PropsWithChildren<NavbarBrandProps>> = ({ children,
 export type NavbarDividerProps = HTMLAttributes<HTMLHRElement>
 
 export const NavbarDivider: FC<NavbarDividerProps> = ({ className, ...props }) => {
-  const _className = useMemo(() => classNames(bulma('navbar-divider'), className), [className])
+  const _className = useMemo(() => classNames('navbar-divider', className), [className])
   return <hr className={_className} {...props} />
 }
 
 export type NavbarBurgerProps = HTMLAttributes<HTMLDivElement> &
-  ActiveProp & {
+  Pick<CommonModifierProps, 'isActive'> & {
     content?: ReactNode
   }
 
@@ -110,7 +110,7 @@ export const NavbarBurger: FC<NavbarBurgerProps> = ({
   ),
   ...props
 }) => {
-  const _className = useMemo(() => classNames(bulma('navbar-burger'), className), [className])
+  const _className = useMemo(() => classNames('navbar-burger', className), [className])
   return (
     <div
       aria-expanded={isActive ? 'true' : 'false'}
@@ -131,7 +131,7 @@ export const NavbarDropdown: FC<PropsWithChildren<NavbarDropdownProps>> = ({
   className,
   ...props
 }) => {
-  const _className = useMemo(() => classNames(bulma('navbar-dropdown'), className), [className])
+  const _className = useMemo(() => classNames('navbar-dropdown', className), [className])
   return (
     <div className={_className} {...props}>
       {children}
@@ -142,7 +142,7 @@ export const NavbarDropdown: FC<PropsWithChildren<NavbarDropdownProps>> = ({
 export type NavbarEndProps = HTMLAttributes<HTMLDivElement>
 
 export const NavbarEnd: FC<PropsWithChildren<NavbarEndProps>> = ({ children, className, ...props }) => {
-  const _className = useMemo(() => classNames(bulma('navbar-end'), className), [className])
+  const _className = useMemo(() => classNames('navbar-end', className), [className])
   return (
     <div className={_className} {...props}>
       {children}
@@ -151,7 +151,7 @@ export const NavbarEnd: FC<PropsWithChildren<NavbarEndProps>> = ({ children, cla
 }
 
 export type NavbarItemProps = HTMLAttributes<HTMLDivElement> &
-  ActiveProp &
+  Pick<CommonModifierProps, 'isActive'> &
   Partial<{
     hasDropdown: boolean
     hasDropdownUp: boolean
@@ -174,14 +174,15 @@ export const NavbarItem: FC<NavbarItemProps> = ({
   const _className = useMemo(
     () =>
       classNames(
-        bulma('navbar-item', {
+        'navbar-item',
+        {
           'has-dropdown': hasDropdown,
           'has-dropdown-up': hasDropdownUp,
           'is-expanded': isExpanded,
           'is-hoverable': isHoverable,
           'is-tab': isTab,
-        }),
-        activeClassName(isActive),
+        },
+        modifier({ isActive }),
         className
       ),
     [className, hasDropdown, hasDropdownUp, isActive, isExpanded, isHoverable, isTab]
@@ -193,7 +194,8 @@ export const NavbarItem: FC<NavbarItemProps> = ({
   )
 }
 
-export type NavbarItemAnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & ActiveProp
+export type NavbarItemAnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  Pick<CommonModifierProps, 'isActive'>
 
 export const NavbarItemAnchor: FC<NavbarItemAnchorProps> = ({
   children,
@@ -202,7 +204,7 @@ export const NavbarItemAnchor: FC<NavbarItemAnchorProps> = ({
   ...props
 }) => {
   const _className = useMemo(
-    () => classNames(bulma('navbar-item'), activeClassName(isActive), className),
+    () => classNames('navbar-item', modifier({ isActive }), className),
     [className, isActive]
   )
   return (
@@ -215,7 +217,7 @@ export const NavbarItemAnchor: FC<NavbarItemAnchorProps> = ({
 export type NavbarLinkProps = AnchorHTMLAttributes<HTMLAnchorElement>
 
 export const NavbarLink: FC<PropsWithChildren<NavbarLinkProps>> = ({ children, className, ...props }) => {
-  const _className = useMemo(() => classNames(bulma('navbar-link'), className), [className])
+  const _className = useMemo(() => classNames('navbar-link', className), [className])
   return (
     <a className={_className} {...props}>
       {children}
@@ -223,11 +225,11 @@ export const NavbarLink: FC<PropsWithChildren<NavbarLinkProps>> = ({ children, c
   )
 }
 
-export type NavbarMenuProps = HTMLAttributes<HTMLDivElement> & ActiveProp
+export type NavbarMenuProps = HTMLAttributes<HTMLDivElement> & Pick<CommonModifierProps, 'isActive'>
 
 export const NavbarMenu: FC<PropsWithChildren<NavbarMenuProps>> = ({ children, className, isActive }) => {
   const _className = useMemo(
-    () => classNames(bulma('navbar-start'), activeClassName(isActive), className),
+    () => classNames('navbar-start', modifier({ isActive }), className),
     [className, isActive]
   )
   return <div className={_className}>{children}</div>
@@ -236,6 +238,6 @@ export const NavbarMenu: FC<PropsWithChildren<NavbarMenuProps>> = ({ children, c
 export type NavbarStartProps = HTMLAttributes<HTMLDivElement>
 
 export const NavbarStart: FC<PropsWithChildren<NavbarStartProps>> = ({ children, className }) => {
-  const _className = useMemo(() => classNames(bulma('navbar-start'), className), [className])
+  const _className = useMemo(() => classNames('navbar-start', className), [className])
   return <div className={_className}>{children}</div>
 }
