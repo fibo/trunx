@@ -1,40 +1,57 @@
-import * as React from 'react'
+import { ChangeEventHandler, FC, InputHTMLAttributes, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import {
+  MainColor,
+  ColorModifierProp,
+  CommonModifierProps,
+  SizeModifierProp,
+  colorClassName,
+  modifier,
+  sizeClassName,
+} from '../modifiers/index.js'
 
-import { bulmaClassName } from './classNames.js'
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { HelpersProps, MainColorsProps, SizeProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> &
+  ColorModifierProp<MainColor> &
+  SizeModifierProp &
+  Pick<CommonModifierProps, 'isFocused' | 'isHovered' | 'isLoading' | 'isRounded' | 'isStatic'>
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement>,
-    ErrorBoundaryProps,
-    HelpersProps,
-    MainColorsProps,
-    SizeProps {
-  inputRef?: React.Ref<HTMLInputElement>
-  isFocused?: boolean
-  isHovered?: boolean
-  isRounded?: boolean
-  isStatic?: boolean
+export const Input: FC<InputProps> = ({
+  className,
+  color,
+  isFocused,
+  isHovered,
+  isLoading,
+  isRounded,
+  isStatic,
+  size,
+  ...props
+}) => {
+  const _className = useMemo(
+    () =>
+      classNames(
+        'input',
+        colorClassName(color),
+        sizeClassName(size),
+        modifier({
+          isFocused,
+          isHovered,
+          isLoading,
+          isRounded,
+          isStatic,
+        }),
+        className
+      ),
+    [color, isFocused, isHovered, size, isLoading, isRounded, isStatic]
+  )
+
+  return <input className={_className} {...props} />
 }
 
-export class Input extends React.Component<InputProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, inputRef, isFocused, isHovered, isRounded, isStatic, type, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('input', { ref: inputRef, type, ...props }, bulmaClassName.input, {
-      isFocused,
-      isHovered,
-      isRounded,
-      isStatic,
-    })
-  }
-}
+/**
+ * Callback helper, alias for `ChangeEventHandler<HTMLInputElement>`
+ * @example
+ * useCallback<InputOnChange>((event) => {
+ *   // `event` has the correct type.
+ * })
+ */
+export type InputOnChange = ChangeEventHandler<HTMLInputElement>
