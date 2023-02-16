@@ -3,10 +3,10 @@ import { BulmaClassName } from '../bulma.js'
 /**
  * @example
  * ```ts
- * type Props = { foo: boolean } & ColorProp<MainColor | ShadeColor>
+ * type Props = { foo: boolean } & ColorModifierProp<MainColor | ShadeColor>
  * ```
  */
-export type ColorProp<Color> = Partial<{ color: Color }>
+export type ColorModifierProp<Color> = Partial<{ color: Color }>
 
 export type MainColor = 'danger' | 'link' | 'info' | 'primary' | 'success' | 'warning'
 
