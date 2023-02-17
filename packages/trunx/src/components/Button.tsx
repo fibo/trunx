@@ -1,13 +1,13 @@
 import { ButtonHTMLAttributes, FC, PointerEventHandler, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
 import {
-  modifier,
   ColorModifierProp,
   CommonModifierProps,
   MainColor,
   ShadeColor,
   SizeModifierProp,
   colorClassName,
+  modifier,
   sizeClassName,
 } from '../modifiers/index.js'
 
