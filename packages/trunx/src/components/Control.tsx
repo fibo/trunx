@@ -17,6 +17,7 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
   hasIconsRight,
   isExpanded,
   isLoading,
+  ...props
 }) => {
   const _className = useMemo(
     () =>
@@ -32,5 +33,9 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
       ),
     [className, hasIconsLeft, hasIconsRight, isExpanded, isLoading]
   )
-  return <div className={_className}>{children}</div>
+  return (
+    <div className={_className} {...props}>
+      {children}
+    </div>
+  )
 }
