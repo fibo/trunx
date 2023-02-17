@@ -2,7 +2,7 @@ import { BulmaClassName } from '../bulma.js'
 
 export type Size = 'small' | 'medium' | 'large'
 
-export type SizeModifierProp = Partial<{ size: Size }>
+export type SizeModifierProp<S extends Size> = Partial<{ size: S }>
 
 export const pluralSizeClassName = (
   size: Size | undefined
