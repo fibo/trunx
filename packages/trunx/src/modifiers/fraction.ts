@@ -1,0 +1,11 @@
+export type Fraction =
+  | 'three-quarters'
+  | 'two-thirds'
+  | 'half'
+  | 'one-third'
+  | 'one-quarter'
+  | 'full'
+  | 'four-fifths'
+  | 'three-fifths'
+  | 'two-fifths'
+  | 'one-fifth'

@@ -1,38 +1,36 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import { CommonModifierProps, modifier } from '../modifiers/index.js'
 
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName } from './classNames.js'
-import { HelpersProps, SizeProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type ControlProps = HTMLAttributes<HTMLDivElement> &
+  Pick<CommonModifierProps, 'isLoading'> &
+  Partial<{
+    hasIconsLeft: boolean
+    hasIconsRight: boolean
+    isExpanded: boolean
+  }>
 
-export interface ControlProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps,
-    SizeProps {
-  hasIconsLeft?: boolean
-  hasIconsRight?: boolean
-  isExpanded?: boolean
-  isLoading?: boolean
-}
-
-export class Control extends React.Component<ControlProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, hasIconsLeft, hasIconsRight, isExpanded, isLoading, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.control, {
-      hasIconsLeft,
-      hasIconsRight,
-      isExpanded,
-      isLoading,
-    })
-  }
+export const Control: FC<PropsWithChildren<ControlProps>> = ({
+  children,
+  className,
+  hasIconsLeft,
+  hasIconsRight,
+  isExpanded,
+  isLoading,
+}) => {
+  const _className = useMemo(
+    () =>
+      classNames(
+        'control',
+        modifier({ isLoading }),
+        {
+          'is-expanded': isExpanded,
+          'has-icons-left': hasIconsLeft,
+          'has-icons-right': hasIconsRight,
+        },
+        className
+      ),
+    [className, hasIconsLeft, hasIconsRight, isExpanded, isLoading]
+  )
+  return <div className={_className}>{children}</div>
 }
