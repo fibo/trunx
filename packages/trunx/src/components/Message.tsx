@@ -1,77 +1,37 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import {
+  ColorModifierProp,
+  MainColor,
+  ShadeColor,
+  SizeModifierProp,
+  colorClassName,
+  sizeClassName,
+} from '../modifiers/index.js'
 
-import { bulmaClassName } from './classNames.js'
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { HelpersProps, MainColorsProps, ShadeColorsProps, SizeProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type MessageProps = HTMLAttributes<HTMLElement> &
+  ColorModifierProp<MainColor | ShadeColor> &
+  SizeModifierProp &
+  Partial<{
+    header: ReactNode
+  }>
 
-export interface MessageProps
-  extends React.HTMLAttributes<HTMLElement>,
-    ErrorBoundaryProps,
-    HelpersProps,
-    MainColorsProps,
-    ShadeColorsProps,
-    SizeProps {
-  isDark?: boolean
-}
-
-export interface MessageBodyProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface MessageHeaderProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-class MessageBody extends React.Component<MessageBodyProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.messageBody)
-  }
-}
-
-class MessageHeader extends React.Component<MessageHeaderProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.messageHeader)
-  }
-}
-
-export class Message extends React.Component<MessageProps> {
-  static Body = MessageBody
-  static Header = MessageHeader
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('article', props, bulmaClassName.message)
-  }
+export const Message: FC<PropsWithChildren<MessageProps>> = ({
+  children,
+  className,
+  color,
+  header,
+  size,
+  ...props
+}) => {
+  const _className = useMemo(
+    () => classNames('message', colorClassName(color), sizeClassName(size), className),
+    [className, color, header, size]
+  )
+  return (
+    <article className={_className} {...props}>
+      {header ? <div className="message-header">{header}</div> : null}
+      <div className="message-body">{children}</div>
+    </article>
+  )
 }
