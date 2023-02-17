@@ -1,35 +1,38 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
+import { classNames } from '../classNames.js'
 
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName } from './classNames.js'
-import { HelpersProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type ContainerProps = HTMLAttributes<HTMLDivElement> &
+  Partial<{
+    isFullhd: boolean
+    isFluid: boolean
+    isWidescreen: boolean
+    isMaxDesktop: boolean
+    isMaxWidescreen: boolean
+  }>
 
-export interface ContainerProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {
-  isFluid?: boolean
-  isFullhd?: boolean
-  isWidescreen?: boolean
-}
-
-export class Container extends React.Component<ContainerProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, isFluid, isFullhd, isWidescreen, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.container, {
-      isFluid,
-      isFullhd,
-      isWidescreen,
-    })
-  }
+export const Container: FC<PropsWithChildren<ContainerProps>> = ({
+  children,
+  className,
+  isFluid,
+  isFullhd,
+  isWidescreen,
+  isMaxWidescreen,
+  isMaxDesktop,
+}) => {
+  const _className = useMemo(
+    () =>
+      classNames(
+        'container',
+        {
+          'is-fluid': isFluid,
+          'is-fullhd': isFullhd,
+          'is-widescreen': isWidescreen,
+          'is-max-widescreen': isMaxWidescreen,
+          'is-max-desktop': isMaxDesktop,
+        },
+        className
+      ),
+    [className, isFluid, isFullhd, isWidescreen, isMaxWidescreen, isMaxDesktop]
+  )
+  return <div className={_className}>{children}</div>
 }
