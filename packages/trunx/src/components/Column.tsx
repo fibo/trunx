@@ -1,11 +1,10 @@
-import * as React from 'react'
-import { Breakpoint, CommonModifierProps, Fraction } from '../modifiers/index.js'
+import { FC } from 'react'
+import { classNames } from '../classNames.js'
+import { Breakpoint, CommonModifierProps, Dozen, Fraction } from '../modifiers/index.js'
 
 import { ErrorBoundaryProps } from './ErrorBoundary.js'
 import { bulmaClassName } from './classNames.js'
 import { renderElement } from './renderElement.js'
-
-type NumColumns = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
 export type ColumnProps = React.HTMLAttributes<HTMLDivElement> &
   ErrorBoundaryProps &
@@ -20,7 +19,7 @@ export type ColumnProps = React.HTMLAttributes<HTMLDivElement> &
      * @example
      * <Column size={ mobile: "full", tablet: "two-thirds", desktop: 6 }></Column>
      */
-    size: NumColumns | Fraction | { [key in Breakpoint]: NumColumns | Fraction }
+    size: Dozen | Fraction | { [key in Breakpoint]: Dozen | Fraction }
 
     offset: Exclude<NumColumns, 12>
 
