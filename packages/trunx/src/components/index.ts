@@ -1,4 +1,3 @@
-export * from './Box.js'
 export * from './Breadcrumb.js'
 export * from './Button.js'
 export * from './Buttons.js'
