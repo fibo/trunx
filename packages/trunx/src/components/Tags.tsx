@@ -1,8 +1,10 @@
 import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
-import { SizeModifierProp, pluralSizeClassName } from '../modifiers/index.js'
+import { Size, SizeModifierProp, pluralSizeClassName } from '../modifiers/index.js'
 
-export type TagsProps = HTMLAttributes<HTMLDivElement> & SizeModifierProp & Partial<{ hasAddons: boolean }>
+export type TagsProps = HTMLAttributes<HTMLDivElement> &
+  SizeModifierProp<Exclude<Size, 'normal'>> &
+  Partial<{ hasAddons: boolean }>
 
 export const Tags: FC<PropsWithChildren<TagsProps>> = ({
   children,
