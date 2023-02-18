@@ -10,6 +10,7 @@ export type CommonModifierProps = Partial<{
   isHoverable: boolean
   isHovered: boolean
   isLoading: boolean
+  isLight: boolean
   isRight: boolean
   isRounded: boolean
   isStatic: boolean
@@ -24,6 +25,7 @@ export const modifier = ({
   isFullwidth,
   isHoverable,
   isHovered,
+  isLight,
   isLoading,
   isRight,
   isRounded,
@@ -38,6 +40,7 @@ export const modifier = ({
   'is-hoverable': isHoverable,
   'is-hovered': isHovered,
   'is-loading': isLoading,
+  'is-light': isLight,
   'is-right': isRight,
   'is-rounded': isRounded,
   'is-static': isStatic,
