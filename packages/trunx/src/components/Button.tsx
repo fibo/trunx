@@ -16,7 +16,14 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   SizeModifierProp &
   Pick<
     CommonModifierProps,
-    'isExpanded' | 'isActive' | 'isFocused' | 'isFullwidth' | 'isLoading' | 'isRounded' | 'isStatic'
+    | 'isExpanded'
+    | 'isActive'
+    | 'isFocused'
+    | 'isFullwidth'
+    | 'isLight'
+    | 'isLoading'
+    | 'isRounded'
+    | 'isStatic'
   > &
   Partial<{
     isGhost: boolean

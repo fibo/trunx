@@ -1,3 +1,15 @@
+import { ButtonHTMLAttributes, FC, PointerEventHandler, PropsWithChildren, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import {
+  ColorModifierProp,
+  CommonModifierProps,
+  MainColor,
+  ShadeColor,
+  SizeModifierProp,
+  colorClassName,
+  modifier,
+  sizeClassName,
+} from '../modifiers/index.js'
 import * as React from 'react'
 
 import { ErrorBoundaryProps } from './ErrorBoundary.js'
@@ -5,8 +17,8 @@ import { bulmaClassName } from './classNames.js'
 import { HelpersProps, MainColorsProps, ShadeColorsProps, SizeProps } from './modifiers.js'
 import { renderElement } from './renderElement.js'
 
-export interface TagProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
+export type TagProps = AnchorHTMLAttributes<HTMLAnchorElement> & Pick<CommonModifierProps, 'isLight'>
+
     ErrorBoundaryProps,
     HelpersProps,
     MainColorsProps,
