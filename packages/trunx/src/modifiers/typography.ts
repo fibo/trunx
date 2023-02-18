@@ -12,7 +12,9 @@ export const textAlignClassName = (
 ): Extract<BulmaClassName, `has-text-${typeof alignment}`> | undefined =>
   alignment ? `has-text-${alignment}` : undefined
 
+export type TextColor = MainColor
+
 export const textColorClassName = (
-  color: MainColor
+  color: TextColor
 ): Extract<BulmaClassName, `has-text-${typeof color}`> | undefined =>
   color ? `has-text-${color}` : undefined
