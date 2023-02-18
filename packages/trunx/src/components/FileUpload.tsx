@@ -1,172 +1,44 @@
-import classnames from 'classnames'
-import * as React from 'react'
+import { FC, InputHTMLAttributes, ReactNode, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import { CommonModifierProps, modifier } from '../modifiers/index.js'
 
-import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames.js'
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import {
-  HelpersProps,
-  MainColorsProps,
-  SizeProps,
-  extractModifiersProps,
-  modifierPropsToClassnamesObject,
-} from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type FileUploadProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> &
+  Pick<CommonModifierProps, 'isFullwidth' | 'isRight'> &
+  Partial<{
+    cta: ReactNode
+    hasName: ReactNode
+    isBoxed: boolean
+  }>
 
-export interface FileUploadProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps,
-    MainColorsProps,
-    SizeProps {
-  hasName?: boolean
-  isBoxed?: boolean
-  isFullwidth?: boolean
-  isRight?: boolean
-}
+export const FileUpload: FC<FileUploadProps> = ({
+  className,
+  cta,
+  hasName,
+  isBoxed,
+  isFullwidth,
+  isRight,
+  ...props
+}) => {
+  const _className = useMemo(
+    () =>
+      classNames(
+        'file',
+        modifier({ isFullwidth, isRight }),
+        {
+          'is-boxed': isBoxed,
+        },
+        className
+      ),
+    [className]
+  )
 
-export interface FileUploadCtaProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface FileUploadIconProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface FileUploadInputProps
-  extends React.InputHTMLAttributes<HTMLInputElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface IFileUploadLabel
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface FileUploadNameProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-class FileUploadCta extends React.Component<FileUploadCtaProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('span', props, bulmaClassName.fileCta)
-  }
-}
-
-class FileUploadIcon extends React.Component<FileUploadIconProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('span', props, bulmaClassName.fileIcon)
-  }
-}
-
-class FileUploadInput extends React.Component<FileUploadInputProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('input', { props, type: 'file' }, bulmaClassName.fileInput)
-  }
-}
-
-class FileUploadLabel extends React.Component<IFileUploadLabel> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('span', props, bulmaClassName.fileLabel)
-  }
-}
-
-class FileUploadName extends React.Component<FileUploadNameProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('span', props, bulmaClassName.fileName)
-  }
-}
-
-export class FileUpload extends React.Component<FileUploadProps> {
-  static Cta = FileUploadCta
-  static Icon = FileUploadIcon
-  static Input = FileUploadInput
-  static Label = FileUploadLabel
-  static Name = FileUploadName
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const [
-      modifiersProps,
-      { children, className, fallbackUI, hasName, isBoxed, isFullwidth, isRight, ...props },
-    ] = extractModifiersProps(this.props)
-
-    if (this.state.hasError) return fallbackUI
-
-    return (
-      <div
-        className={classnames(
-          className,
-          bulmaClassName.file,
-          modifierPropsToClassnamesObject(modifiersProps),
-          trunxPropsToClassnamesObject({
-            hasName,
-            isBoxed,
-            isFullwidth,
-            isRight,
-          })
-        )}
-        {...props}
-      >
-        <label className={bulmaClassName.fileLabel}>{children}</label>
-      </div>
-    )
-  }
+  return (
+    <div className={_className}>
+      <label className="file-label">
+        <input type="file-input" {...props} />
+        {cta ? <span className="file-cta">{cta}</span> : null}
+        {hasName ? <span className="file-name">{hasName}</span> : null}
+      </label>
+    </div>
+  )
 }
