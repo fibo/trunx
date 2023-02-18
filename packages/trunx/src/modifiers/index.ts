@@ -1,6 +1,7 @@
 export * from './color.js'
 export * from './common.js'
 export * from './fraction.js'
+export * from './layout.js'
 export * from './responsiveness.js'
 export * from './typography.js'
 export * from './size.js'

@@ -3,7 +3,7 @@ import { BulmaClassName } from '../bulma.js'
 export type TextAlignment = 'centered' | 'justified' | 'left' | 'right'
 
 export type TextAlignProp = Partial<{
-  textAlign: TextAlignment
+  hasText: TextAlignment
 }>
 
 export const textAlignClassName = (

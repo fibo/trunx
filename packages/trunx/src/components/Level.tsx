@@ -36,12 +36,12 @@ export type LevelItemProps = HTMLAttributes<HTMLDivElement> & TextAlignProp
 export const LevelItem: FC<PropsWithChildren<LevelItemProps>> = ({
   className,
   children,
-  textAlign,
+  hasText,
   ...props
 }) => {
   const _className = useMemo(
-    () => classNames('level-item', textAlignClassName(textAlign), className),
-    [className, textAlign]
+    () => classNames('level-item', textAlignClassName(hasText), className),
+    [className, hasText]
   )
   return (
     <div className={_className} {...props}>
