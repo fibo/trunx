@@ -1,9 +1,15 @@
 import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
-import { CommonModifierProps, SizeModifierProp, modifier, pluralSizeClassName } from '../modifiers/index.js'
+import {
+  CommonModifierProps,
+  SizeModifierProp,
+  Size,
+  modifier,
+  pluralSizeClassName,
+} from '../modifiers/index.js'
 
 export type ButtonsProps = HTMLAttributes<HTMLDivElement> &
-  SizeModifierProp &
+  SizeModifierProp<Exclude<Size, 'normal'>> &
   Pick<CommonModifierProps, 'isCentered'>
 
 export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({
