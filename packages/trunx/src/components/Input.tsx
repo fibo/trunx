@@ -10,10 +10,11 @@ import {
   sizeClassName,
 } from '../modifiers/index.js'
 
-export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> &
+export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> &
   ColorModifierProp<MainColor> &
   SizeModifierProp &
-  Pick<CommonModifierProps, 'isFocused' | 'isHovered' | 'isLoading' | 'isRounded' | 'isStatic'>
+  Pick<CommonModifierProps, 'isFocused' | 'isHovered' | 'isLoading' | 'isRounded' | 'isStatic'> &
+  Partial<{ type: Exclude<InputHTMLAttributes<HTMLInputElement>, 'file'> }>
 
 export const Input: FC<InputProps> = ({
   className,
