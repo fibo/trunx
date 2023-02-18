@@ -16,7 +16,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   SizeModifierProp &
   Pick<
     CommonModifierProps,
-    'isActive' | 'isFocused' | 'isFullwidth' | 'isLoading' | 'isRounded' | 'isStatic'
+    'isExpanded' | 'isActive' | 'isFocused' | 'isFullwidth' | 'isLoading' | 'isRounded' | 'isStatic'
   > &
   Partial<{
     isGhost: boolean
@@ -31,6 +31,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   isActive,
   size,
   isGhost,
+  isExpanded,
   isStatic,
   isFocused,
   isLoading,
@@ -47,7 +48,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
         modifier({ isFocused, isLoading }),
         colorClassName(color),
         sizeClassName(size),
-        modifier({ isActive, isStatic, isFocused, isLoading }),
+        modifier({ isActive, isExpanded, isStatic, isFocused, isLoading }),
         {
           'is-ghost': isGhost,
           'is-outlined': isOutlined,
@@ -56,7 +57,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
         },
         className
       ),
-    [className, isGhost, size]
+    [className, isGhost, isText, isExpanded, isOutlined, isInverted, isStatic, isFocused, isLoading, size]
   )
   return (
     <button className={_className} {...props}>

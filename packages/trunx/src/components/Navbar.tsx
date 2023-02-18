@@ -19,6 +19,7 @@ import {
 
 export type NavbarProps = HTMLAttributes<HTMLElement> &
   ColorModifierProp<MainColor | ShadeColor> &
+  Pick<CommonModifierProps, 'isHoverable'> &
   Partial<{
     isFixedBottom: boolean
     isFixedTop: boolean
@@ -178,11 +179,9 @@ export const NavbarItem: FC<NavbarItemProps> = ({
         {
           'has-dropdown': hasDropdown,
           'has-dropdown-up': hasDropdownUp,
-          'is-expanded': isExpanded,
-          'is-hoverable': isHoverable,
           'is-tab': isTab,
         },
-        modifier({ isActive }),
+        modifier({ isActive, isExpanded, isHoverable }),
         className
       ),
     [className, hasDropdown, hasDropdownUp, isActive, isExpanded, isHoverable, isTab]

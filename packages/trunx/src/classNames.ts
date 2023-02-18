@@ -7,8 +7,8 @@ export type ClassNamesArg<ClassName> = ClassName extends string
  *
  * @example
  * classNames('foo', 'bar') // 'foo bar'
- * classNames('foo', ['bar']) // 'foo bar'
- * classNames({ foo: true }, { bar: false }) // 'foo'
+ * classNames<string>('foo', ['bar']) // 'foo bar'
+ * classNames<string>({ foo: true }, { bar: false }) // 'foo'
  *
  * It accepts a generic "class names" type.
  *
