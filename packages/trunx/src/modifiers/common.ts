@@ -4,6 +4,7 @@ export type CommonModifierProps = Partial<{
   isActive: boolean
   isCentered: boolean
   isExpanded: boolean
+  isDisabled: boolean
   isFocused: boolean
   isFullwidth: boolean
   isHoverable: boolean
@@ -17,6 +18,7 @@ export type CommonModifierProps = Partial<{
 export const modifier = ({
   isActive,
   isCentered,
+  isDisabled,
   isExpanded,
   isFocused,
   isFullwidth,
@@ -30,6 +32,7 @@ export const modifier = ({
   'is-active': isActive,
   'is-centered': isCentered,
   'is-expanded': isExpanded,
+  'is-disabled': isDisabled,
   'is-focused': isFocused,
   'is-fullwidth': isFullwidth,
   'is-hoverable': isHoverable,
