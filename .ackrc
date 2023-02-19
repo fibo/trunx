@@ -1,6 +1,0 @@
-# Ack is awesome: https://beyondgrep.com/
-#
-# To ignore the options below use `ack --noenv`.
-###
---smart-case
---ignore-dir=docs
