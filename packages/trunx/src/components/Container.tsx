@@ -1,35 +1,44 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import {
+  Breakpoint,
+  BooleanModifierProps,
+  ColorModifierProp,
+  MainColor,
+  colorClassName,
+  modifier,
+} from '../modifiers/index.js'
 
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName } from './classNames.js'
-import { HelpersProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+type ContainerFullWidth = Extract<Breakpoint, 'fullhd' | 'widescreen'>
+type ContainerMaxWidth = Extract<Breakpoint, 'desktop' | 'widescreen'>
 
-export interface ContainerProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {
-  isFluid?: boolean
-  isFullhd?: boolean
-  isWidescreen?: boolean
-}
+export type ContainerProps = HTMLAttributes<HTMLDivElement> &
+  ColorModifierProp<MainColor> &
+  Pick<BooleanModifierProps, 'isFluid'> &
+  Partial<{
+    fullWidth: ContainerFullWidth
+    maxWidth: ContainerMaxWidth
+  }>
 
-export class Container extends React.Component<ContainerProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, isFluid, isFullhd, isWidescreen, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.container, {
-      isFluid,
-      isFullhd,
-      isWidescreen,
-    })
-  }
+export const Container: FC<PropsWithChildren<ContainerProps>> = ({
+  children,
+  className,
+  color,
+  isFluid,
+  fullWidth,
+  maxWidth,
+}) => {
+  const _className = useMemo(
+    () =>
+      classNames(
+        'container',
+        colorClassName(color),
+        fullWidth ? `is-${fullWidth}` : undefined,
+        maxWidth ? `is-max-${maxWidth}` : undefined,
+        modifier({ isFluid }),
+        className
+      ),
+    [className, color, fullWidth, isFluid, maxWidth]
+  )
+  return <div className={_className}>{children}</div>
 }
