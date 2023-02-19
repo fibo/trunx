@@ -1,13 +1,12 @@
 import { FC, InputHTMLAttributes, ReactNode, useMemo } from 'react'
 import { classNames } from '../classNames.js'
-import { CommonModifierProps, modifier } from '../modifiers/index.js'
+import { BooleanModifierProps, modifier } from '../modifiers/index.js'
 
 export type FileUploadProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> &
-  Pick<CommonModifierProps, 'isFullwidth' | 'isRight'> &
+  Pick<BooleanModifierProps, 'isBoxed' | 'isFullwidth' | 'isRight'> &
   Partial<{
     cta: ReactNode
     hasName: ReactNode
-    isBoxed: boolean
   }>
 
 export const FileUpload: FC<FileUploadProps> = ({
@@ -20,15 +19,7 @@ export const FileUpload: FC<FileUploadProps> = ({
   ...props
 }) => {
   const _className = useMemo(
-    () =>
-      classNames(
-        'file',
-        modifier({ isFullwidth, isRight }),
-        {
-          'is-boxed': isBoxed,
-        },
-        className
-      ),
+    () => classNames('file', modifier({ isBoxed, isFullwidth, isRight }), className),
     [className]
   )
 

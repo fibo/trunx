@@ -1,12 +1,12 @@
 import { FC, HTMLAttributes, LiHTMLAttributes, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
-import { CommonModifierProps, SizeModifierProp, modifier } from '../modifiers/index.js'
+import { BooleanModifierProps, SizeModifierProp, modifier } from '../modifiers/index.js'
 
 type BreadcrumbSeparator = 'arrow' | 'bullet' | 'dot' | 'succedes'
 
 export type BreadcrumbProps = HTMLAttributes<HTMLElement> &
   SizeModifierProp &
-  Pick<CommonModifierProps, 'isCentered' | 'isRight'> &
+  Pick<BooleanModifierProps, 'isCentered' | 'isRight'> &
   Partial<{
     separator: BreadcrumbSeparator
   }>

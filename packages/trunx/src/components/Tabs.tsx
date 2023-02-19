@@ -1,22 +1,19 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import {
+  BooleanModifierProps,
+  SizeModifierProp,
+  Size,
+  modifier,
+  sizeClassName,
+} from '../modifiers/index.js'
 
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName } from './classNames.js'
-import { HelpersProps, SizeProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
-
-export interface TabsProps
-  extends React.HTMLAttributes<HTMLElement>,
-    ErrorBoundaryProps,
-    HelpersProps,
-    SizeProps {
-  isBoxed?: boolean
-  isCentered?: boolean
-  isFullwidth?: boolean
-  isRight?: boolean
-  isToggle?: boolean
-  isToggleRounded?: boolean
-}
+export type TabsProps = HTMLAttributes<HTMLElement> &
+  SizeModifierProp &
+  Pick<
+    BooleanModifierProps,
+    'isBoxed' | 'isCentered' | 'isFullwidth' | 'isRight' | 'isToggle' | 'isToggleRounded'
+  >
 
 export class Tabs extends React.Component<TabsProps> {
   static getDerivedStateFromError() {

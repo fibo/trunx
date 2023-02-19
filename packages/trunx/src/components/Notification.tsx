@@ -1,15 +1,8 @@
-import {
-  ButtonHTMLAttributes,
-  FC,
-  HTMLAttributes,
-  PointerEventHandler,
-  PropsWithChildren,
-  useMemo,
-} from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
 import {
   ColorModifierProp,
-  CommonModifierProps,
+  BooleanModifierProps,
   MainColor,
   colorClassName,
   modifier,
@@ -17,7 +10,7 @@ import {
 
 export type NotificationProps = HTMLAttributes<HTMLDivElement> &
   ColorModifierProp<MainColor> &
-  Pick<CommonModifierProps, 'isLight'>
+  Pick<BooleanModifierProps, 'isLight'>
 
 export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
   children,
