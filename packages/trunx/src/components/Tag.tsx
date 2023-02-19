@@ -1,8 +1,8 @@
-import { AnchorHTMLAttributes, FC, PointerEventHandler, PropsWithChildren, useMemo } from 'react'
+import { AnchorHTMLAttributes, FC, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
 import {
+  BooleanModifierProps,
   ColorModifierProp,
-  CommonModifierProps,
   MainColor,
   ShadeColor,
   Size,
@@ -15,12 +15,20 @@ import {
 export type TagProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   ColorModifierProp<MainColor | ShadeColor> &
   SizeModifierProp<Extract<Size, 'normal' | 'medium' | 'large'>> &
-  Pick<CommonModifierProps, 'isLight' | 'isRounded'> &
+  Pick<BooleanModifierProps, 'isLight' | 'isRounded'> &
   Partial<{
     isDelete: boolean
   }>
 
-export const Tag: FC<TagProps> = ({ children, className, color, isDelete, isLight, isRounded, size }) => {
+export const Tag: FC<PropsWithChildren<TagProps>> = ({
+  children,
+  className,
+  color,
+  isDelete,
+  isLight,
+  isRounded,
+  size,
+}) => {
   const _className = useMemo(
     () =>
       classNames(

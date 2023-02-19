@@ -3,7 +3,7 @@ import { classNames } from '../classNames.js'
 import {
   MainColor,
   ColorModifierProp,
-  CommonModifierProps,
+  BooleanModifierProps,
   SizeModifierProp,
   colorClassName,
   modifier,
@@ -13,7 +13,7 @@ import {
 export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> &
   ColorModifierProp<MainColor> &
   SizeModifierProp &
-  Pick<CommonModifierProps, 'isFocused' | 'isHovered' | 'isLoading' | 'isRounded' | 'isStatic'> &
+  Pick<BooleanModifierProps, 'isFocused' | 'isHovered' | 'isLoading' | 'isRounded' | 'isStatic'> &
   Partial<{
     type: Exclude<
       InputHTMLAttributes<HTMLInputElement>,

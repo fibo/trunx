@@ -1,13 +1,9 @@
 import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
-import { CommonModifierProps, modifier } from '../modifiers/index.js'
+import { BooleanModifierProps, modifier } from '../modifiers/index.js'
 
 export type ControlProps = HTMLAttributes<HTMLDivElement> &
-  Pick<CommonModifierProps, 'isExpanded' | 'isLoading'> &
-  Partial<{
-    hasIconsLeft: boolean
-    hasIconsRight: boolean
-  }>
+  Pick<BooleanModifierProps, 'hasIconsLeft' | 'hasIconsRight' | 'isExpanded' | 'isLoading'>
 
 export const Control: FC<PropsWithChildren<ControlProps>> = ({
   children,
@@ -20,15 +16,7 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
 }) => {
   const _className = useMemo(
     () =>
-      classNames(
-        'control',
-        modifier({ isExpanded, isLoading }),
-        {
-          'has-icons-left': hasIconsLeft,
-          'has-icons-right': hasIconsRight,
-        },
-        className
-      ),
+      classNames('control', modifier({ hasIconsLeft, hasIconsRight, isExpanded, isLoading }), className),
     [className, hasIconsLeft, hasIconsRight, isExpanded, isLoading]
   )
   return (

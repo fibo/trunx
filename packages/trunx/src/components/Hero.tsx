@@ -3,7 +3,9 @@ import { classNames } from '../classNames.js'
 import {
   colorClassName,
   ColorModifierProp,
+  BooleanModifierProps,
   MainColor,
+  modifier,
   sizeClassName,
   SizeModifierProp,
 } from '../modifiers/index.js'
@@ -11,13 +13,10 @@ import {
 export type HeroProps = HTMLAttributes<HTMLDivElement> &
   ColorModifierProp<MainColor> &
   SizeModifierProp &
+  Pick<BooleanModifierProps, 'isFullheight' | 'isFullheightWithNavbar' | 'isHalfheight'> &
   Partial<{
     head: ReactNode
     foot: ReactNode
-
-    isFullheight: boolean
-    isFullheightWithNavbar: boolean
-    isHalfheight: boolean
   }>
 
 export const Hero: FC<PropsWithChildren<HeroProps>> = ({
@@ -38,12 +37,12 @@ export const Hero: FC<PropsWithChildren<HeroProps>> = ({
         'hero',
         colorClassName(color),
         sizeClassName(size),
-        {
+        modifier({
+          isHalfheight,
+          isFullheightWithNavbar,
           // For the fullheight hero to work, you will also need a hero-head and a hero-foot.
-          'is-fullheight': isFullheight && head && foot,
-          'is-fullheight-with-navbar': isFullheightWithNavbar,
-          'is-halfheight': isHalfheight,
-        },
+          isFullheight: Boolean(isFullheight && head && foot),
+        }),
         className
       ),
     [className, color, isFullheight, isFullheightWithNavbar, isHalfheight, size]

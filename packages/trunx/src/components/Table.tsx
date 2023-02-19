@@ -1,13 +1,10 @@
 import { FC, TableHTMLAttributes, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
-import { CommonModifierProps, modifier } from '../modifiers/index.js'
+import { BooleanModifierProps, modifier } from '../modifiers/index.js'
 
 export type TableProps = TableHTMLAttributes<HTMLTableElement> &
-  Pick<CommonModifierProps, 'isFullwidth' | 'isHoverable'> &
+  Pick<BooleanModifierProps, 'isBordered' | 'isNarrow' | 'isStriped' | 'isFullwidth' | 'isHoverable'> &
   Partial<{
-    isBordered: boolean
-    isNarrow: boolean
-    isStriped: boolean
     withContainer: boolean
   }>
 
@@ -27,15 +24,10 @@ export const Table: FC<PropsWithChildren<TableProps>> = ({
     () =>
       classNames(
         'table',
-        modifier({ isFullwidth, isHoverable }),
-        {
-          'is-bordered': isBordered,
-          'is-narrow': isNarrow,
-          'is-striped': isStriped,
-        },
+        modifier({ isBordered, isFullwidth, isHoverable, isNarrow, isStriped }),
         className
       ),
-    [className, isHoverable, isNarrow, isBordered, isStriped, isFullwidth]
+    [className, isFullwidth, isHoverable, isNarrow, isBordered, isStriped, isFullwidth]
   )
   return (
     <div className={containerClassName}>

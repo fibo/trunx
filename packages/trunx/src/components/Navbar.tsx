@@ -13,20 +13,16 @@ import {
   ShadeColor,
   ColorModifierProp,
   colorClassName,
-  CommonModifierProps,
+  BooleanModifierProps,
   modifier,
 } from '../modifiers/index.js'
 
 export type NavbarProps = HTMLAttributes<HTMLElement> &
   ColorModifierProp<MainColor | ShadeColor> &
-  Pick<CommonModifierProps, 'isHoverable'> &
-  Partial<{
-    isFixedBottom: boolean
-    isFixedTop: boolean
-    isSpaced: boolean
-    isTransparent: boolean
-    hasShadow: boolean
-  }>
+  Pick<
+    BooleanModifierProps,
+    'isHoverable' | 'isFixedBottom' | 'isFixedTop' | 'isSpaced' | 'isTransparent' | 'hasShadow'
+  >
 
 export const Navbar: FC<PropsWithChildren<NavbarProps>> = ({
   children,
@@ -95,7 +91,7 @@ export const NavbarDivider: FC<NavbarDividerProps> = ({ className, ...props }) =
 }
 
 export type NavbarBurgerProps = HTMLAttributes<HTMLDivElement> &
-  Pick<CommonModifierProps, 'isActive'> & {
+  Pick<BooleanModifierProps, 'isActive'> & {
     content?: ReactNode
   }
 
@@ -152,7 +148,7 @@ export const NavbarEnd: FC<PropsWithChildren<NavbarEndProps>> = ({ children, cla
 }
 
 export type NavbarItemProps = HTMLAttributes<HTMLDivElement> &
-  Pick<CommonModifierProps, 'isActive'> &
+  Pick<BooleanModifierProps, 'isActive'> &
   Partial<{
     hasDropdown: boolean
     hasDropdownUp: boolean
@@ -194,7 +190,7 @@ export const NavbarItem: FC<NavbarItemProps> = ({
 }
 
 export type NavbarItemAnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> &
-  Pick<CommonModifierProps, 'isActive'>
+  Pick<BooleanModifierProps, 'isActive'>
 
 export const NavbarItemAnchor: FC<NavbarItemAnchorProps> = ({
   children,
@@ -224,7 +220,7 @@ export const NavbarLink: FC<PropsWithChildren<NavbarLinkProps>> = ({ children, c
   )
 }
 
-export type NavbarMenuProps = HTMLAttributes<HTMLDivElement> & Pick<CommonModifierProps, 'isActive'>
+export type NavbarMenuProps = HTMLAttributes<HTMLDivElement> & Pick<BooleanModifierProps, 'isActive'>
 
 export const NavbarMenu: FC<PropsWithChildren<NavbarMenuProps>> = ({ children, className, isActive }) => {
   const _className = useMemo(

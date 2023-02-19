@@ -1,9 +1,9 @@
 import { FC, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
-import { Breakpoint, CommonModifierProps, Dozen, Fraction, modifier } from '../modifiers/index.js'
+import { Breakpoint, BooleanModifierProps, Dozen, Fraction, modifier } from '../modifiers/index.js'
 
 export type ColumnProps = React.HTMLAttributes<HTMLDivElement> &
-  Pick<CommonModifierProps, 'isCentered'> &
+  Pick<BooleanModifierProps, 'isCentered'> &
   Partial<{
     /**
      * @example
