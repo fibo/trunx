@@ -1,4 +1,4 @@
-import { classNames } from '../classNames'
+import { classNames } from '../classNames.js'
 
 export type Alignment = 'centered' | 'left' | 'right'
 

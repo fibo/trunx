@@ -19,6 +19,7 @@ export type ColumnProps = React.HTMLAttributes<HTMLDivElement> &
      * ```
      */
     isNarrow: boolean | { [key in Breakpoint]: boolean }
+
     /**
      * @example
      * ```ts
@@ -31,6 +32,7 @@ export type ColumnProps = React.HTMLAttributes<HTMLDivElement> &
      * ```
      */
     offset: Exclude<Dozen, 12> | Fraction
+
     /**
      * @example
      * ```ts
@@ -82,7 +84,8 @@ export const Column: FC<PropsWithChildren<ColumnProps>> = ({
           : undefined,
         className
       ),
-    [className, isCentered, isNarrow]
+    [className, isCentered, isNarrow, offset, size]
   )
+
   return <div className={_className}>{children}</div>
 }

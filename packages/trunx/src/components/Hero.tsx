@@ -31,6 +31,8 @@ export const Hero: FC<PropsWithChildren<HeroProps>> = ({
   size,
   ...props
 }) => {
+  const hasHeadAndFoot = useMemo(() => Boolean(head) && Boolean(foot), [head, foot])
+
   const _className = useMemo(
     () =>
       classNames(
@@ -38,15 +40,16 @@ export const Hero: FC<PropsWithChildren<HeroProps>> = ({
         colorClassName(color),
         sizeClassName(size),
         modifier({
-          isHalfheight,
-          isFullheightWithNavbar,
           // For the fullheight hero to work, you will also need a hero-head and a hero-foot.
-          isFullheight: Boolean(isFullheight && head && foot),
+          isFullheight: isFullheight && hasHeadAndFoot,
+          isFullheightWithNavbar,
+          isHalfheight,
         }),
         className
       ),
-    [className, color, isFullheight, isFullheightWithNavbar, isHalfheight, size]
+    [className, color, hasHeadAndFoot, isFullheight, isFullheightWithNavbar, isHalfheight, size]
   )
+
   return (
     <section className={_className} {...props}>
       {head ? <div className="hero-head">{head}</div> : null}

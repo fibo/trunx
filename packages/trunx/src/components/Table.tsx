@@ -27,7 +27,7 @@ export const Table: FC<PropsWithChildren<TableProps>> = ({
         modifier({ isBordered, isFullwidth, isHoverable, isNarrow, isStriped }),
         className
       ),
-    [className, isFullwidth, isHoverable, isNarrow, isBordered, isStriped, isFullwidth]
+    [className, isFullwidth, isHoverable, isNarrow, isBordered, isStriped]
   )
   return (
     <div className={containerClassName}>
