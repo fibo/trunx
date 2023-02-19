@@ -6,6 +6,7 @@ import {
   ReactNode,
   useEffect,
   useMemo,
+  memo,
 } from 'react'
 import { classNames } from '../classNames.js'
 import {
@@ -83,12 +84,9 @@ export const NavbarBrand: FC<PropsWithChildren<NavbarBrandProps>> = ({ children,
   )
 }
 
-export type NavbarDividerProps = HTMLAttributes<HTMLHRElement>
+export type NavbarDividerProps = Omit<HTMLAttributes<HTMLHRElement>, 'className'>
 
-export const NavbarDivider: FC<NavbarDividerProps> = ({ className, ...props }) => {
-  const _className = useMemo(() => classNames('navbar-divider', className), [className])
-  return <hr className={_className} {...props} />
-}
+export const NavbarDivider: FC<NavbarDividerProps> = memo(() => <hr className="navbar-divider" />)
 
 export type NavbarBurgerProps = HTMLAttributes<HTMLDivElement> &
   Pick<BooleanModifierProps, 'isActive'> & {

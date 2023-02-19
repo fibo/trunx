@@ -1,4 +1,12 @@
-import { FC, AnchorHTMLAttributes, HTMLAttributes, PropsWithChildren, ReactNode, useMemo } from 'react'
+import {
+  FC,
+  AnchorHTMLAttributes,
+  HTMLAttributes,
+  PropsWithChildren,
+  ReactNode,
+  useMemo,
+  memo,
+} from 'react'
 import { classNames } from '../classNames.js'
 import { BooleanModifierProps, SizeModifierProp, Size, modifier } from '../modifiers/index.js'
 
@@ -37,4 +45,4 @@ export const DropdownItem: FC<DropdownItemProps> = ({ children, className, isAct
 
 export type DropdownItemAnchorProps = AnchorHTMLAttributes<HTMLAnchorElement>
 
-export const DropdownDivider = () => <hr className="dropdown-divider" />
+export const DropdownDivider = memo(() => <hr className="dropdown-divider" />)
