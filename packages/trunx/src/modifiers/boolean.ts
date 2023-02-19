@@ -1,5 +1,7 @@
 export type BooleanModifierProps = Partial<{
   hasAddons: boolean
+  hasDropdown: boolean
+  hasDropdownUp: boolean
   hasIconsLeft: boolean
   hasIconsRight: boolean
   hasShadow: boolean
@@ -35,10 +37,12 @@ export type BooleanModifierProps = Partial<{
   isSpaced: boolean
   isStatic: boolean
   isStriped: boolean
+  isTab: boolean
   isText: boolean
   isToggle: boolean
   isToggleRounded: boolean
   isTransparent: boolean
+  isUp: boolean
   isVariable: boolean
   isVcentered: boolean
   isVertical: boolean

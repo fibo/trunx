@@ -148,14 +148,10 @@ export const NavbarEnd: FC<PropsWithChildren<NavbarEndProps>> = ({ children, cla
 }
 
 export type NavbarItemProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, 'isActive'> &
-  Partial<{
-    hasDropdown: boolean
-    hasDropdownUp: boolean
-    isExpanded: boolean
-    isHoverable: boolean
-    isTab: boolean
-  }>
+  Pick<
+    BooleanModifierProps,
+    'isActive' | 'hasDropdown' | 'hasDropdownUp' | 'isExpanded' | 'isHoverable' | 'isTab'
+  >
 
 export const NavbarItem: FC<NavbarItemProps> = ({
   children,
@@ -172,12 +168,7 @@ export const NavbarItem: FC<NavbarItemProps> = ({
     () =>
       classNames(
         'navbar-item',
-        {
-          'has-dropdown': hasDropdown,
-          'has-dropdown-up': hasDropdownUp,
-          'is-tab': isTab,
-        },
-        modifier({ isActive, isExpanded, isHoverable }),
+        modifier({ isActive, isExpanded, isHoverable, hasDropdown, hasDropdownUp, isTab }),
         className
       ),
     [className, hasDropdown, hasDropdownUp, isActive, isExpanded, isHoverable, isTab]
