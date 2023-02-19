@@ -1,6 +1,7 @@
 import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
 import {
+  Alignment,
   BreakpointProps,
   responsivenessClassName,
   textAlignClassName,
@@ -10,7 +11,7 @@ import {
 export type LevelProps = HTMLAttributes<HTMLDivElement> &
   Pick<BreakpointProps, 'isMobile'> &
   Partial<{
-    side: 'left' | 'right'
+    side: Extract<Alignment, 'left' | 'right'>
   }>
 
 export const Level: FC<PropsWithChildren<LevelProps>> = ({

@@ -2,7 +2,7 @@ import { ButtonHTMLAttributes, FC, PointerEventHandler, PropsWithChildren, useMe
 import { classNames } from '../classNames.js'
 import {
   ColorModifierProp,
-  CommonModifierProps,
+  BooleanModifierProps,
   MainColor,
   ShadeColor,
   SizeModifierProp,
@@ -15,22 +15,20 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   ColorModifierProp<MainColor | ShadeColor> &
   SizeModifierProp &
   Pick<
-    CommonModifierProps,
+    BooleanModifierProps,
     | 'isExpanded'
     | 'isActive'
     | 'isFocused'
     | 'isFullwidth'
     | 'isLight'
+    | 'isGhost'
+    | 'isInverted'
+    | 'isOutlined'
     | 'isLoading'
     | 'isRounded'
     | 'isStatic'
-  > &
-  Partial<{
-    isGhost: boolean
-    isInverted: boolean
-    isOutlined: boolean
-    isText: boolean
-  }>
+    | 'isText'
+  >
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   className,
@@ -55,13 +53,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
         modifier({ isFocused, isLoading }),
         colorClassName(color),
         sizeClassName(size),
-        modifier({ isActive, isExpanded, isStatic, isFocused, isLoading }),
-        {
-          'is-ghost': isGhost,
-          'is-outlined': isOutlined,
-          'is-inverted': isInverted,
-          'is-text': isText,
-        },
+        modifier({ isActive, isExpanded, isGhost, isInverted, isOutlined, isStatic, isFocused, isLoading }),
         className
       ),
     [className, isGhost, isText, isExpanded, isOutlined, isInverted, isStatic, isFocused, isLoading, size]

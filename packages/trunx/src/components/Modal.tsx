@@ -1,12 +1,19 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import { BooleanModifierProps, modifier } from '../modifiers/index.js'
 
-import { bulmaClassName } from './classNames.js'
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { HelpersProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type ModalProps = HTMLAttributes<HTMLDivElement> & Pick<BooleanModifierProps, 'isActive'>
 
-export interface ModalProps extends React.HTMLAttributes<HTMLDivElement>, ErrorBoundaryProps, HelpersProps {
-  isActive?: boolean
+export const Modal: FC<PropsWithChildren<ModalProps>> = ({ children, className, isActive, ...props }) => {
+  const _className = useMemo(
+    () => classNames('modal', modifier({ isActive }), className),
+    [className, isActive]
+  )
+  return (
+    <div className={_className} {...props}>
+      {children}
+    </div>
+  )
 }
 
 export interface ModalBackgroundProps
@@ -187,26 +194,5 @@ class ModalContent extends React.Component<ModalContentProps> {
     if (this.state.hasError) return fallbackUI
 
     return renderElement('div', props, bulmaClassName.modalContent)
-  }
-}
-
-export class Modal extends React.Component<ModalProps> {
-  static Background = ModalBackground
-  static Card = ModalCard
-  static Close = ModalClose
-  static Content = ModalContent
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, isActive, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.modal, { isActive })
   }
 }

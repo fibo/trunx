@@ -1,10 +1,16 @@
 import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
-import { Size, SizeModifierProp, pluralSizeClassName } from '../modifiers/index.js'
+import {
+  BooleanModifierProps,
+  Size,
+  SizeModifierProp,
+  modifier,
+  pluralSizeClassName,
+} from '../modifiers/index.js'
 
 export type TagsProps = HTMLAttributes<HTMLDivElement> &
   SizeModifierProp<Exclude<Size, 'normal'>> &
-  Partial<{ hasAddons: boolean }>
+  Pick<BooleanModifierProps, 'hasAddons'>
 
 export const Tags: FC<PropsWithChildren<TagsProps>> = ({
   children,
@@ -14,8 +20,8 @@ export const Tags: FC<PropsWithChildren<TagsProps>> = ({
   ...props
 }) => {
   const _className = useMemo(
-    () => classNames('tags', pluralSizeClassName(size), { 'has-addons': hasAddons }, className),
-    [className, size]
+    () => classNames('tags', pluralSizeClassName(size), modifier({ hasAddons }), className),
+    [className, hasAddons, size]
   )
   return (
     <div className={_className} {...props}>

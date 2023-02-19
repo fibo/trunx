@@ -1,10 +1,16 @@
 import { FC, AnchorHTMLAttributes, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
-import { CommonModifierProps, SizeModifierProp, Size, modifier, sizeClassName } from '../modifiers/index.js'
+import {
+  BooleanModifierProps,
+  SizeModifierProp,
+  Size,
+  modifier,
+  sizeClassName,
+} from '../modifiers/index.js'
 
 export type PaginationProps = HTMLAttributes<HTMLElement> &
   SizeModifierProp<Exclude<Size, 'isNormal'>> &
-  Pick<CommonModifierProps, 'isCentered' | 'isRight' | 'isRounded'>
+  Pick<BooleanModifierProps, 'isCentered' | 'isRight' | 'isRounded'>
 
 export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
   className,
@@ -79,7 +85,7 @@ export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({ chi
 }
 
 export type PaginationIncrementalNavigationProps = AnchorHTMLAttributes<HTMLAnchorElement> &
-  Pick<CommonModifierProps, 'isDisabled'>
+  Pick<BooleanModifierProps, 'isDisabled'>
 
 export const PaginationNext: FC<PropsWithChildren<PaginationIncrementalNavigationProps>> = ({
   children,

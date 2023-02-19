@@ -2,12 +2,12 @@ import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
 import {
   ColorModifierProp,
+  Size,
   SizeModifierProp,
   TextColor,
-  textColorClassName,
   sizeClassName,
+  textColorClassName,
 } from '../modifiers/index.js'
-import { Size } from './modifiers.js'
 
 export type IconProps = HTMLAttributes<HTMLSpanElement> &
   ColorModifierProp<TextColor> &
