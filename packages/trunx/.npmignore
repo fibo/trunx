@@ -1,2 +1,4 @@
-media/
+.eslintrc.json
 src/
+test/
+tsconfig.json
