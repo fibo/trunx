@@ -31,7 +31,6 @@ export type BooleanModifierProps = Partial<{
   isLoading: boolean
   isMobile: boolean
   isMultiline: boolean
-  isMultiple: boolean
   isNarrow: boolean
   isOutlined: boolean
   isParent: boolean
