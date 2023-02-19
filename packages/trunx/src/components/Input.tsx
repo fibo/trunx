@@ -50,17 +50,20 @@ export const Input: FC<InputProps> = ({
         }),
         className
       ),
-    [color, isFocused, isHovered, size, isLoading, isRounded, isStatic]
+    [className, color, isFocused, isHovered, size, isLoading, isRounded, isStatic]
   )
 
   return <input className={_className} {...props} />
 }
 
 /**
- * Callback helper, alias for `ChangeEventHandler<HTMLInputElement>`
+ * Callback helper, alias for `React.ChangeEventHandler<HTMLInputElement>`.
+ *
+ * ```ts
  * @example
  * useCallback<InputOnChange>((event) => {
  *   // `event` has the correct type.
  * })
+ * ```
  */
 export type InputOnChange = ChangeEventHandler<HTMLInputElement>

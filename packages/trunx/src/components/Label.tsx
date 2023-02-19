@@ -5,9 +5,6 @@ import { SizeModifierProp, sizeClassName } from '../modifiers/index.js'
 export type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & SizeModifierProp
 
 export const Label: FC<PropsWithChildren<LabelProps>> = ({ children, className, size }) => {
-  const _className = useMemo(
-    () => classNames('label', sizeClassName(size), className),
-    [className, size, size]
-  )
+  const _className = useMemo(() => classNames('label', sizeClassName(size), className), [className, size])
   return <label className={_className}>{children}</label>
 }

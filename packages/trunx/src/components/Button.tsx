@@ -16,15 +16,15 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   SizeModifierProp &
   Pick<
     BooleanModifierProps,
-    | 'isExpanded'
     | 'isActive'
+    | 'isExpanded'
     | 'isFocused'
     | 'isFullwidth'
-    | 'isLight'
     | 'isGhost'
     | 'isInverted'
-    | 'isOutlined'
+    | 'isLight'
     | 'isLoading'
+    | 'isOutlined'
     | 'isRounded'
     | 'isStatic'
     | 'isText'
@@ -50,14 +50,37 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
     () =>
       classNames(
         'button',
-        modifier({ isFocused, isLoading }),
         colorClassName(color),
         sizeClassName(size),
-        modifier({ isActive, isExpanded, isGhost, isInverted, isOutlined, isStatic, isFocused, isLoading }),
+        modifier({
+          isActive,
+          isExpanded,
+          isFocused,
+          isGhost,
+          isInverted,
+          isLoading,
+          isOutlined,
+          isStatic,
+          isText,
+        }),
         className
       ),
-    [className, isGhost, isText, isExpanded, isOutlined, isInverted, isStatic, isFocused, isLoading, size]
+    [
+      className,
+      color,
+      isActive,
+      isFocused,
+      isExpanded,
+      isGhost,
+      isInverted,
+      isLoading,
+      isOutlined,
+      isStatic,
+      isText,
+      size,
+    ]
   )
+
   return (
     <button className={_className} {...props}>
       {children}
@@ -66,10 +89,13 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
 }
 
 /**
- * Callback helper, alias for `PointerEventHandler<HTMLButtonElement>`
+ * Callback helper, alias for `React.PointerEventHandler<HTMLButtonElement>`.
+ *
  * @example
+ * ```ts
  * useCallback<ButtonOnClick>((event) => {
  *   // `event` has the correct type.
  * })
+ * ```
  */
 export type ButtonOnClick = PointerEventHandler<HTMLButtonElement>

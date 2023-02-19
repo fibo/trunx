@@ -20,7 +20,7 @@ export const FileUpload: FC<FileUploadProps> = ({
 }) => {
   const _className = useMemo(
     () => classNames('file', modifier({ isBoxed, isFullwidth, isRight }), className),
-    [className]
+    [className, isBoxed, isFullwidth, isRight]
   )
 
   return (

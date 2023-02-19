@@ -15,10 +15,7 @@ import {
 export type TagProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   ColorModifierProp<MainColor | ShadeColor> &
   SizeModifierProp<Extract<Size, 'normal' | 'medium' | 'large'>> &
-  Pick<BooleanModifierProps, 'isLight' | 'isRounded'> &
-  Partial<{
-    isDelete: boolean
-  }>
+  Pick<BooleanModifierProps, 'isDelete' | 'isLight' | 'isRounded'>
 
 export const Tag: FC<PropsWithChildren<TagProps>> = ({
   children,
@@ -35,13 +32,10 @@ export const Tag: FC<PropsWithChildren<TagProps>> = ({
         'tag',
         colorClassName(color),
         sizeClassName(size),
-        modifier({ isLight, isRounded }),
-        {
-          'is-delete': isDelete,
-        },
+        modifier({ isDelete, isLight, isRounded }),
         className
       ),
-    [className, color, size]
+    [className, color, isDelete, isLight, isRounded, size]
   )
   return <div className={_className}>{children}</div>
 }
