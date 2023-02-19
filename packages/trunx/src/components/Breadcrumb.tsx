@@ -41,7 +41,7 @@ export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps>> = ({
   )
 }
 
-export type BreadcrumbItemProps = LiHTMLAttributes<HTMLLIElement> & Pick<CommonModifierProps, 'isActive'>
+export type BreadcrumbItemProps = LiHTMLAttributes<HTMLLIElement> & Pick<BooleanModifierProps, 'isActive'>
 
 export const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   className,

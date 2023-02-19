@@ -16,7 +16,7 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 't
   Pick<BooleanModifierProps, 'isFocused' | 'isHovered' | 'isLoading' | 'isRounded' | 'isStatic'> &
   Partial<{
     type: Exclude<
-      InputHTMLAttributes<HTMLInputElement>,
+      InputHTMLAttributes<HTMLInputElement>['type'],
       // Component FileUpload handles `type="file"`
       | 'file'
       // Component Radio handles `type="radio"`
