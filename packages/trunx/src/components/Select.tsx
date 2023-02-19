@@ -21,7 +21,7 @@ type Option = Omit<OptionHTMLAttributes<HTMLOptionElement>, 'value' | 'label'> &
 export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> &
   ColorModifierProp<MainColor> &
   SizeModifierProp &
-  Pick<BooleanModifierProps, 'isFocused' | 'isHovered' | 'isLoading' | 'isMultiple'> & {
+  Pick<BooleanModifierProps, 'isFocused' | 'isHovered' | 'isLoading'> & {
     options: Option[]
   }
 
@@ -31,7 +31,6 @@ export const Select: FC<SelectProps> = ({
   isFocused,
   isHovered,
   isLoading,
-  isMultiple,
   options,
   size,
   ...props
@@ -41,11 +40,11 @@ export const Select: FC<SelectProps> = ({
       classNames(
         'select',
         colorClassName(color),
-        modifier({ isFocused, isHovered, isLoading, isMultiple }),
+        modifier({ isFocused, isHovered, isLoading }),
         sizeClassName(size),
         className
       ),
-    [className, color, size, isFocused, isHovered, isLoading, isMultiple]
+    [className, color, size, isFocused, isHovered, isLoading]
   )
 
   return (
