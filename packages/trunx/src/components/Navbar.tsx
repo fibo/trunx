@@ -6,6 +6,7 @@ import {
   ReactNode,
   useEffect,
   useMemo,
+  memo,
 } from 'react'
 import { classNames } from '../classNames.js'
 import {
@@ -13,19 +14,16 @@ import {
   ShadeColor,
   ColorModifierProp,
   colorClassName,
-  CommonModifierProps,
+  BooleanModifierProps,
   modifier,
 } from '../modifiers/index.js'
 
 export type NavbarProps = HTMLAttributes<HTMLElement> &
   ColorModifierProp<MainColor | ShadeColor> &
-  Partial<{
-    isFixedBottom: boolean
-    isFixedTop: boolean
-    isSpaced: boolean
-    isTransparent: boolean
-    hasShadow: boolean
-  }>
+  Pick<
+    BooleanModifierProps,
+    'isHoverable' | 'isFixedBottom' | 'isFixedTop' | 'isSpaced' | 'isTransparent' | 'hasShadow'
+  >
 
 export const Navbar: FC<PropsWithChildren<NavbarProps>> = ({
   children,
@@ -56,13 +54,8 @@ export const Navbar: FC<PropsWithChildren<NavbarProps>> = ({
     () =>
       classNames(
         'navbar',
-        {
-          'is-fixed-bottom': isFixedBottom,
-          'is-fixed-top': isFixedTop,
-          'is-transparent': isTransparent,
-          'has-shadow': hasShadow,
-        },
         colorClassName(color),
+        modifier({ hasShadow, isFixedBottom, isFixedTop, isTransparent }),
         className
       ),
     [className, color, isFixedTop, isFixedBottom, isTransparent, hasShadow]
@@ -86,15 +79,13 @@ export const NavbarBrand: FC<PropsWithChildren<NavbarBrandProps>> = ({ children,
   )
 }
 
-export type NavbarDividerProps = HTMLAttributes<HTMLHRElement>
+export type NavbarDividerProps = Omit<HTMLAttributes<HTMLHRElement>, 'className'>
 
-export const NavbarDivider: FC<NavbarDividerProps> = ({ className, ...props }) => {
-  const _className = useMemo(() => classNames('navbar-divider', className), [className])
-  return <hr className={_className} {...props} />
-}
+export const NavbarDivider: FC<NavbarDividerProps> = memo(() => <hr className="navbar-divider" />)
+NavbarDivider.displayName = 'NavbarDivider'
 
 export type NavbarBurgerProps = HTMLAttributes<HTMLDivElement> &
-  Pick<CommonModifierProps, 'isActive'> & {
+  Pick<BooleanModifierProps, 'isActive'> & {
     content?: ReactNode
   }
 
@@ -151,14 +142,10 @@ export const NavbarEnd: FC<PropsWithChildren<NavbarEndProps>> = ({ children, cla
 }
 
 export type NavbarItemProps = HTMLAttributes<HTMLDivElement> &
-  Pick<CommonModifierProps, 'isActive'> &
-  Partial<{
-    hasDropdown: boolean
-    hasDropdownUp: boolean
-    isExpanded: boolean
-    isHoverable: boolean
-    isTab: boolean
-  }>
+  Pick<
+    BooleanModifierProps,
+    'isActive' | 'hasDropdown' | 'hasDropdownUp' | 'isExpanded' | 'isHoverable' | 'isTab'
+  >
 
 export const NavbarItem: FC<NavbarItemProps> = ({
   children,
@@ -175,14 +162,7 @@ export const NavbarItem: FC<NavbarItemProps> = ({
     () =>
       classNames(
         'navbar-item',
-        {
-          'has-dropdown': hasDropdown,
-          'has-dropdown-up': hasDropdownUp,
-          'is-expanded': isExpanded,
-          'is-hoverable': isHoverable,
-          'is-tab': isTab,
-        },
-        modifier({ isActive }),
+        modifier({ hasDropdown, hasDropdownUp, isActive, isExpanded, isHoverable, isTab }),
         className
       ),
     [className, hasDropdown, hasDropdownUp, isActive, isExpanded, isHoverable, isTab]
@@ -195,7 +175,7 @@ export const NavbarItem: FC<NavbarItemProps> = ({
 }
 
 export type NavbarItemAnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> &
-  Pick<CommonModifierProps, 'isActive'>
+  Pick<BooleanModifierProps, 'isActive'>
 
 export const NavbarItemAnchor: FC<NavbarItemAnchorProps> = ({
   children,
@@ -225,7 +205,7 @@ export const NavbarLink: FC<PropsWithChildren<NavbarLinkProps>> = ({ children, c
   )
 }
 
-export type NavbarMenuProps = HTMLAttributes<HTMLDivElement> & Pick<CommonModifierProps, 'isActive'>
+export type NavbarMenuProps = HTMLAttributes<HTMLDivElement> & Pick<BooleanModifierProps, 'isActive'>
 
 export const NavbarMenu: FC<PropsWithChildren<NavbarMenuProps>> = ({ children, className, isActive }) => {
   const _className = useMemo(

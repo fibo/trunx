@@ -1,13 +1,13 @@
 import { ButtonHTMLAttributes, FC, PointerEventHandler, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
 import {
-  modifier,
   ColorModifierProp,
-  CommonModifierProps,
+  BooleanModifierProps,
   MainColor,
   ShadeColor,
   SizeModifierProp,
   colorClassName,
+  modifier,
   sizeClassName,
 } from '../modifiers/index.js'
 
@@ -15,15 +15,20 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   ColorModifierProp<MainColor | ShadeColor> &
   SizeModifierProp &
   Pick<
-    CommonModifierProps,
-    'isActive' | 'isFocused' | 'isFullwidth' | 'isLoading' | 'isRounded' | 'isStatic'
-  > &
-  Partial<{
-    isGhost: boolean
-    isInverted: boolean
-    isOutlined: boolean
-    isText: boolean
-  }>
+    BooleanModifierProps,
+    | 'isActive'
+    | 'isExpanded'
+    | 'isFocused'
+    | 'isFullwidth'
+    | 'isGhost'
+    | 'isInverted'
+    | 'isLight'
+    | 'isLoading'
+    | 'isOutlined'
+    | 'isRounded'
+    | 'isStatic'
+    | 'isText'
+  >
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   className,
@@ -31,6 +36,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   isActive,
   size,
   isGhost,
+  isExpanded,
   isStatic,
   isFocused,
   isLoading,
@@ -44,20 +50,37 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
     () =>
       classNames(
         'button',
-        modifier({ isFocused, isLoading }),
         colorClassName(color),
         sizeClassName(size),
-        modifier({ isActive, isStatic, isFocused, isLoading }),
-        {
-          'is-ghost': isGhost,
-          'is-outlined': isOutlined,
-          'is-inverted': isInverted,
-          'is-text': isText,
-        },
+        modifier({
+          isActive,
+          isExpanded,
+          isFocused,
+          isGhost,
+          isInverted,
+          isLoading,
+          isOutlined,
+          isStatic,
+          isText,
+        }),
         className
       ),
-    [className, isGhost, size]
+    [
+      className,
+      color,
+      isActive,
+      isFocused,
+      isExpanded,
+      isGhost,
+      isInverted,
+      isLoading,
+      isOutlined,
+      isStatic,
+      isText,
+      size,
+    ]
   )
+
   return (
     <button className={_className} {...props}>
       {children}
@@ -66,10 +89,13 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
 }
 
 /**
- * Callback helper, alias for `PointerEventHandler<HTMLButtonElement>`
+ * Callback helper, alias for `React.PointerEventHandler<HTMLButtonElement>`.
+ *
  * @example
+ * ```ts
  * useCallback<ButtonOnClick>((event) => {
  *   // `event` has the correct type.
  * })
+ * ```
  */
 export type ButtonOnClick = PointerEventHandler<HTMLButtonElement>

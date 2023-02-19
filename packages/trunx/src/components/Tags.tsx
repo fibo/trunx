@@ -1,32 +1,31 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import {
+  BooleanModifierProps,
+  Size,
+  SizeModifierProp,
+  modifier,
+  pluralSizeClassName,
+} from '../modifiers/index.js'
 
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName } from './classNames.js'
-import { HelpersProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type TagsProps = HTMLAttributes<HTMLDivElement> &
+  SizeModifierProp<Exclude<Size, 'normal'>> &
+  Pick<BooleanModifierProps, 'hasAddons'>
 
-export interface TagsProps extends React.HTMLAttributes<HTMLDivElement>, ErrorBoundaryProps, HelpersProps {
-  areLarge?: boolean
-  areMedium?: boolean
-  hasAddons?: boolean
-}
-
-export class Tags extends React.Component<TagsProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render() {
-    const { areLarge, areMedium, fallbackUI, hasAddons, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.tags, {
-      areLarge,
-      areMedium,
-      hasAddons,
-    })
-  }
+export const Tags: FC<PropsWithChildren<TagsProps>> = ({
+  children,
+  className,
+  hasAddons,
+  size,
+  ...props
+}) => {
+  const _className = useMemo(
+    () => classNames('tags', pluralSizeClassName(size), modifier({ hasAddons }), className),
+    [className, hasAddons, size]
+  )
+  return (
+    <div className={_className} {...props}>
+      {children}
+    </div>
+  )
 }

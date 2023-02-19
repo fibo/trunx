@@ -1,95 +1,58 @@
-import classnames from 'classnames'
-import * as React from 'react'
+import { FC, HTMLAttributes, LiHTMLAttributes, PropsWithChildren, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import { BooleanModifierProps, SizeModifierProp, modifier } from '../modifiers/index.js'
 
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames.js'
-import { SizeProps, extractModifiersProps, modifierPropsToClassnamesObject } from './modifiers.js'
+type BreadcrumbSeparator = 'arrow' | 'bullet' | 'dot' | 'succedes'
 
-export interface BreadcrumbProps extends React.HTMLAttributes<HTMLElement>, ErrorBoundaryProps, SizeProps {
-  hasArrowSeparator?: boolean
-  hasBulletSeparator?: boolean
-  hasDotSeparator?: boolean
-  hasSuccedesSeparator?: boolean
-  isCentered?: boolean
-  isRight?: boolean
+export type BreadcrumbProps = HTMLAttributes<HTMLElement> &
+  SizeModifierProp &
+  Pick<BooleanModifierProps, 'isCentered' | 'isRight'> &
+  Partial<{
+    separator: BreadcrumbSeparator
+  }>
+
+export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps>> = ({
+  className,
+  children,
+  separator,
+  isCentered,
+  isRight,
+  ...props
+}) => {
+  const _className = useMemo(
+    () =>
+      classNames(
+        'breadcrumb',
+        modifier({ isCentered, isRight }),
+        {
+          'has-arrow-separator': separator === 'arrow',
+          'has-bullet-separator': separator === 'bullet',
+          'has-dot-separator': separator === 'dot',
+          'has-succedes-separator': separator === 'succedes',
+        },
+        className
+      ),
+    [className, isCentered, separator, isRight]
+  )
+  return (
+    <nav className={_className} aria-label="breadcrumbs" {...props}>
+      <ul>{children}</ul>
+    </nav>
+  )
 }
 
-export interface BreadcrumbItemProps extends React.LiHTMLAttributes<HTMLLIElement>, ErrorBoundaryProps {
-  isActive?: boolean
-}
+export type BreadcrumbItemProps = LiHTMLAttributes<HTMLLIElement> & Pick<BooleanModifierProps, 'isActive'>
 
-class BreadcrumbItem extends React.Component<BreadcrumbItemProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { children, className, fallbackUI, isActive, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return (
-      <li className={classnames(className, trunxPropsToClassnamesObject({ isActive }))} {...props}>
-        {children}
-      </li>
-    )
-  }
-}
-
-export class Breadcrumb extends React.Component<BreadcrumbProps> {
-  static Item = BreadcrumbItem
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-
-    const [
-      modifiersProps,
-      {
-        children,
-        className,
-        fallbackUI,
-        hasArrowSeparator,
-        hasBulletSeparator,
-        hasDotSeparator,
-        hasSuccedesSeparator,
-        isCentered,
-        isRight,
-        ...props
-      },
-    ] = extractModifiersProps(this.props)
-
-    if (this.state.hasError) return fallbackUI
-
-    return (
-      <nav
-        aria-label='breadcrumbs'
-        className={classnames(
-          bulmaClassName.breadcrumb,
-          className,
-          trunxPropsToClassnamesObject({
-            hasArrowSeparator,
-            hasBulletSeparator,
-            hasDotSeparator,
-            hasSuccedesSeparator,
-            isCentered,
-            isRight,
-          }),
-          modifierPropsToClassnamesObject(modifiersProps)
-        )}
-        {...props}
-      >
-        <ul>{children}</ul>
-      </nav>
-    )
-  }
+export const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
+  className,
+  children,
+  isActive,
+  ...props
+}) => {
+  const _className = useMemo(() => classNames(modifier({ isActive }), className), [className, isActive])
+  return (
+    <li className={_className} {...props}>
+      {children}
+    </li>
+  )
 }

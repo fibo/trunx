@@ -1,212 +1,66 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode, useCallback, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import { BooleanModifierProps, modifier } from '../modifiers/index.js'
 
-import { bulmaClassName } from './classNames.js'
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { HelpersProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type ModalProps = HTMLAttributes<HTMLDivElement> &
+  Pick<BooleanModifierProps, 'isActive'> &
+  Partial<{
+    handleDelete: () => void
+  }>
 
-export interface ModalProps extends React.HTMLAttributes<HTMLDivElement>, ErrorBoundaryProps, HelpersProps {
-  isActive?: boolean
+export const Modal: FC<PropsWithChildren<ModalProps>> = ({
+  children,
+  className,
+  isActive,
+  handleDelete,
+  ...props
+}) => {
+  const _className = useMemo(
+    () => classNames('modal', modifier({ isActive }), className),
+    [className, isActive]
+  )
+
+  const handleBackgroundClick = useCallback(() => {
+    handleDelete?.()
+  }, [handleDelete])
+
+  return (
+    <div className={_className} {...props}>
+      <div className="modal-background" onClick={handleBackgroundClick} />
+      {children}
+    </div>
+  )
 }
 
-export interface ModalBackgroundProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
+export type ModalCardProps = HTMLAttributes<HTMLDivElement> &
+  Partial<{
+    title: ReactNode
+    content: ReactNode
+    footer: ReactNode
+    handleDelete: () => void
+  }>
 
-export interface ModalCardProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface ModalCardBodyProps
-  extends React.HTMLAttributes<HTMLElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface ModalCardFootProps
-  extends React.HTMLAttributes<HTMLElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface ModalCardHeadProps
-  extends React.HTMLAttributes<HTMLElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface ModalCardTitleProps
-  extends React.HTMLAttributes<HTMLElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface ModalCloseProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, ErrorBoundaryProps {
-  isLarge?: boolean
-}
-
-export interface ModalContentProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-class ModalCardBody extends React.Component<ModalCardBodyProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('section', props, bulmaClassName.modalCardBody)
-  }
-}
-
-class ModalCardFoot extends React.Component<ModalCardFootProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('footer', props, bulmaClassName.modalCardFoot)
-  }
-}
-
-class ModalCardHead extends React.Component<ModalCardHeadProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('header', props, bulmaClassName.modalCardHead)
-  }
-}
-
-class ModalCardTitle extends React.Component<ModalCardTitleProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.modalCardTitle)
-  }
-}
-
-class ModalBackground extends React.Component<ModalBackgroundProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.modalBackground)
-  }
-}
-
-class ModalCard extends React.Component<ModalCardProps> {
-  static Body = ModalCardBody
-  static Foot = ModalCardFoot
-  static Head = ModalCardHead
-  static Title = ModalCardTitle
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    if (this.state.hasError) {
-      return null
-    }
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.modalCard)
-  }
-}
-
-class ModalClose extends React.Component<ModalCloseProps> {
-  static defaultProps = {
-    'aria-label': 'close',
-  }
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, isLarge, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('button', props, bulmaClassName.modalClose, {
-      isLarge,
-    })
-  }
-}
-
-class ModalContent extends React.Component<ModalContentProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.modalContent)
-  }
-}
-
-export class Modal extends React.Component<ModalProps> {
-  static Background = ModalBackground
-  static Card = ModalCard
-  static Close = ModalClose
-  static Content = ModalContent
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, isActive, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.modal, { isActive })
-  }
+export const ModalCard: FC<PropsWithChildren<ModalCardProps>> = ({
+  children,
+  handleDelete,
+  title,
+  footer,
+  className,
+}) => {
+  const _className = useMemo(() => classNames('modal-card', className), [className])
+  const handleDeleteButtonClick = useCallback(() => {
+    handleDelete?.()
+  }, [handleDelete])
+  return (
+    <div className={_className}>
+      {title ? (
+        <header className="modal-card-head">
+          <p className="modal-card-title">{title}</p>
+          <button className="delete" aria-label="close" onClick={handleDeleteButtonClick}></button>
+        </header>
+      ) : null}
+      <div className="modal-card-body">{children}</div>
+      {footer ? <footer className="modal-card-foot">{footer}</footer> : null}
+    </div>
+  )
 }
