@@ -3,11 +3,10 @@ import { classNames } from '../classNames.js'
 import { CommonModifierProps, modifier } from '../modifiers/index.js'
 
 export type ControlProps = HTMLAttributes<HTMLDivElement> &
-  Pick<CommonModifierProps, 'isLoading'> &
+  Pick<CommonModifierProps, 'isExpanded' | 'isLoading'> &
   Partial<{
     hasIconsLeft: boolean
     hasIconsRight: boolean
-    isExpanded: boolean
   }>
 
 export const Control: FC<PropsWithChildren<ControlProps>> = ({
@@ -23,9 +22,8 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
     () =>
       classNames(
         'control',
-        modifier({ isLoading }),
+        modifier({ isExpanded, isLoading }),
         {
-          'is-expanded': isExpanded,
           'has-icons-left': hasIconsLeft,
           'has-icons-right': hasIconsRight,
         },
