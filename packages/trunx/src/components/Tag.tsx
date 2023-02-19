@@ -1,52 +1,39 @@
-import { ButtonHTMLAttributes, FC, PointerEventHandler, PropsWithChildren, useMemo } from 'react'
+import { AnchorHTMLAttributes, FC, PointerEventHandler, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
 import {
   ColorModifierProp,
   CommonModifierProps,
   MainColor,
   ShadeColor,
+  Size,
   SizeModifierProp,
   colorClassName,
   modifier,
   sizeClassName,
 } from '../modifiers/index.js'
-import * as React from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName } from './classNames.js'
-import { HelpersProps, MainColorsProps, ShadeColorsProps, SizeProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type TagProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  ColorModifierProp<MainColor | ShadeColor> &
+  SizeModifierProp<Extract<Size, 'normal' | 'medium' | 'large'>> &
+  Pick<CommonModifierProps, 'isLight' | 'isRounded'> &
+  Partial<{
+    isDelete: boolean
+  }>
 
-export type TagProps = AnchorHTMLAttributes<HTMLAnchorElement> & Pick<CommonModifierProps, 'isLight'>
-
-    ErrorBoundaryProps,
-    HelpersProps,
-    MainColorsProps,
-    ShadeColorsProps,
-    Pick<SizeProps, 'isMedium' | 'isLarge'> {
-  isDelete?: boolean
-  isNormal?: boolean
-  isRounded?: boolean
-}
-
-export class Tag extends React.Component<TagProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, isDelete, isNormal, isRounded, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    const tag = props.href || props.onClick ? 'a' : 'span'
-
-    return renderElement(tag, props, bulmaClassName.tag, {
-      isDelete,
-      isNormal,
-      isRounded,
-    })
-  }
+export const Tag: FC<TagProps> = ({ children, className, color, isDelete, isLight, isRounded, size }) => {
+  const _className = useMemo(
+    () =>
+      classNames(
+        'tag',
+        colorClassName(color),
+        sizeClassName(size),
+        modifier({ isLight, isRounded }),
+        {
+          'is-delete': isDelete,
+        },
+        className
+      ),
+    [className, color, size]
+  )
+  return <div className={_className}>{children}</div>
 }

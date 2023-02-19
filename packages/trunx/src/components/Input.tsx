@@ -14,7 +14,15 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 't
   ColorModifierProp<MainColor> &
   SizeModifierProp &
   Pick<CommonModifierProps, 'isFocused' | 'isHovered' | 'isLoading' | 'isRounded' | 'isStatic'> &
-  Partial<{ type: Exclude<InputHTMLAttributes<HTMLInputElement>, 'file'> }>
+  Partial<{
+    type: Exclude<
+      InputHTMLAttributes<HTMLInputElement>,
+      // Component FileUpload handles `type="file"`
+      | 'file'
+      // Component Radio handles `type="radio"`
+      | 'radio'
+    >
+  }>
 
 export const Input: FC<InputProps> = ({
   className,
