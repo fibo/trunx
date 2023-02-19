@@ -26,7 +26,7 @@ export const Message: FC<PropsWithChildren<MessageProps>> = ({
 }) => {
   const _className = useMemo(
     () => classNames('message', colorClassName(color), sizeClassName(size), className),
-    [className, color, header, size]
+    [className, color, size]
   )
   return (
     <article className={_className} {...props}>

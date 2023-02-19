@@ -14,23 +14,23 @@ export const Flex: FC<PropsWithChildren<FlexProps>> = ({
   className,
   align,
   alignItems,
-  grow,
-  shrink,
   alignSelf,
   direction,
+  grow,
   justify,
-  wrap,
+  shrink,
   spacing,
+  wrap,
   ...props
 }) => {
   const _className = useMemo(
     () =>
       classNames(
-        flexClassNames({ direction, justify, align, alignItems, alignSelf, wrap, grow, shrink }),
+        flexClassNames({ align, alignItems, alignSelf, direction, grow, justify, shrink, wrap }),
         spacingClassNames(spacing),
         className
       ),
-    [className, direction, justify, wrap, grow, shrink, align, alignItems]
+    [className, align, alignItems, alignSelf, direction, justify, grow, shrink, spacing, wrap]
   )
   return (
     <div className={_className} {...props}>

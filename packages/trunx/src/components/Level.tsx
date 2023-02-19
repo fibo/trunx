@@ -2,14 +2,14 @@ import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
 import {
   Alignment,
-  BreakpointProps,
-  responsivenessClassName,
+  BooleanModifierProps,
+  modifier,
   textAlignClassName,
   TextAlignProp,
 } from '../modifiers/index.js'
 
 export type LevelProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BreakpointProps, 'isMobile'> &
+  Pick<BooleanModifierProps, 'isMobile'> &
   Partial<{
     side: Extract<Alignment, 'left' | 'right'>
   }>
@@ -22,7 +22,7 @@ export const Level: FC<PropsWithChildren<LevelProps>> = ({
   ...props
 }) => {
   const _className = useMemo(
-    () => classNames(side ? `level-${side}` : 'level', responsivenessClassName({ isMobile }), className),
+    () => classNames(side ? `level-${side}` : 'level', modifier({ isMobile }), className),
     [className, isMobile, side]
   )
   return (
