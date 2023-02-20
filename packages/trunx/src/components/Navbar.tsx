@@ -79,9 +79,7 @@ export const NavbarBrand: FC<PropsWithChildren<NavbarBrandProps>> = ({ children,
   )
 }
 
-export type NavbarDividerProps = Omit<HTMLAttributes<HTMLHRElement>, 'className'>
-
-export const NavbarDivider: FC<NavbarDividerProps> = memo(() => <hr className="navbar-divider" />)
+export const NavbarDivider = memo(() => <hr className="navbar-divider" />)
 NavbarDivider.displayName = 'NavbarDivider'
 
 export type NavbarBurgerProps = HTMLAttributes<HTMLDivElement> &
