@@ -1,4 +1,4 @@
-import { FC, AnchorHTMLAttributes, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
+import { FC, AnchorHTMLAttributes, HTMLAttributes, PropsWithChildren, memo, useMemo } from 'react'
 import { classNames } from '../classNames.js'
 import {
   BooleanModifierProps,
@@ -38,17 +38,12 @@ export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
   )
 }
 
-type PaginationEllipsisProps = Exclude<HTMLAttributes<HTMLSpanElement>, 'className'>
-
-export const PaginationEllipsis: FC<PaginationEllipsisProps> = (props) => {
-  return (
-    <li>
-      <span className="pagination-ellipsis" {...props}>
-        &hellip;
-      </span>
-    </li>
-  )
-}
+export const PaginationEllipsis = memo(() => (
+  <li>
+    <span className="pagination-ellipsis">&hellip;</span>
+  </li>
+))
+PaginationEllipsis.displayName = 'PaginationEllipsis'
 
 export type PaginationLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   Partial<{
