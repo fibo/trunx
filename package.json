@@ -29,5 +29,6 @@
     "packages/trunx",
     "webapps/trunx-docs"
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "version": "0.0.1"
 }
