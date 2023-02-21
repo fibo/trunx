@@ -80,7 +80,7 @@ export const Column: FC<PropsWithChildren<ColumnProps>> = ({
         size
           ? typeof size === 'object'
             ? Object.entries(size).map(([breakpoint, value]) => `is-${value}-${breakpoint}`)
-            : `is-size-${size}`
+            : `is-${size}`
           : undefined,
         className
       ),
