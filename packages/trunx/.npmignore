@@ -1,4 +1,4 @@
+!dist/
 .eslintrc.json
 src/
-test/
-tsconfig.json
+tsconfig.*

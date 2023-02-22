@@ -25,16 +25,12 @@
   "scripts": {
     "build": "tsc --build",
     "check_types": "tsc --noEmit --project .",
-    "cleanup": "rimraf dist/",
+    "cleanup": "rimraf dist/ temp/",
     "lint": "eslint --ext .tsx --ext .ts src/",
     "prebuild": "npm run cleanup",
+    "pretest": "tsc --build tsconfig.test.json",
     "preversion": "npm run build",
-    "test": "run-p test:*",
-    "test:bulma-version": "node test/bulma-version.js",
-    "test:className-prop": "tsc --jsx react --noEmit --lib dom,es2015 test/className-prop.tsx",
-    "test:fallbackUI-prop": "tsc --jsx react --noEmit --lib dom,es2015 test/fallbackUI-prop.tsx",
-    "test:no-prop-is-required": "tsc --jsx react --noEmit --lib dom,es2015 test/no-prop-is-required.tsx",
-    "test:props-are-exported": "tsc --jsx react --noEmit --lib dom,es2015 test/props-are-exported.ts"
+    "test": "node --test"
   },
   "repository": {
     "type": "git",
