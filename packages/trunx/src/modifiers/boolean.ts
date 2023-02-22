@@ -74,4 +74,4 @@ export const camelCaseToKebabCase = (arg: string): string =>
  * ```
  */
 export const modifier = (arg: BooleanModifierProps) =>
-  Object.entries(arg).map(([key, value]) => (value ? camelCaseToKebabCase(key) : undefined))
+  Object.entries(arg).map(([key, value]) => (value ? camelCaseToKebabCase(key) : ''))
