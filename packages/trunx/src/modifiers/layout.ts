@@ -68,14 +68,14 @@ export const flexClassNames = ({
 }: FlexModifierProps) =>
   classNames(
     'is-flex',
-    direction ? `is-flex-direction-${direction}` : undefined,
-    justify ? `is-justify-content-${justify}` : undefined,
-    align ? `is-align-content-${align}` : undefined,
-    alignItems ? `is-align-items-${alignItems}` : undefined,
-    alignSelf ? `is-align-self-${alignSelf}` : undefined,
-    grow ? `is-flex-${grow}` : undefined,
-    shrink ? `is-flex-${shrink}` : undefined,
-    wrap ? `is-flex-wrap-${wrap}` : undefined
+    direction && `is-flex-direction-${direction}`,
+    justify && `is-justify-content-${justify}`,
+    align && `is-align-content-${align}`,
+    alignItems && `is-align-items-${alignItems}`,
+    alignSelf && `is-align-self-${alignSelf}`,
+    grow && `is-flex-grow-${grow}`,
+    shrink && `is-flex-shrink-${shrink}`,
+    wrap && `is-flex-wrap-${wrap}`
   )
 
 export type SpacingValue = 0 | 1 | 2 | 3 | 5 | 5 | 6
