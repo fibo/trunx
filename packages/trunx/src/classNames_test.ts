@@ -3,23 +3,11 @@ import { describe, it } from 'node:test'
 import { ClassNamesArg, classNames } from './classNames.js'
 
 describe('classNames', () => {
-  it('works', () => {
+  it('accepts strings, arrays or objects', () => {
     const testData: Array<{
-      input: (ClassNamesArg<string> | null | undefined)[]
+      input: ClassNamesArg<string>[]
       output: string
     }> = [
-      {
-        input: [undefined],
-        output: '',
-      },
-      {
-        input: [{}],
-        output: '',
-      },
-      {
-        input: ['', {}],
-        output: '',
-      },
       {
         input: ['is-primary'],
         output: 'is-primary',
@@ -47,6 +35,57 @@ describe('classNames', () => {
       {
         input: ['', 'is-primary', ''],
         output: 'is-primary',
+      },
+    ]
+
+    testData.forEach(({ input, output }) => {
+      assert.deepEqual(classNames(...input), output)
+    })
+  })
+
+  it('handles edge cases', () => {
+    const testData: Array<{
+      input: ClassNamesArg<string>[]
+      output: string
+    }> = [
+      {
+        input: [],
+        output: '',
+      },
+      {
+        input: [''],
+        output: '',
+      },
+      {
+        input: [{}],
+        output: '',
+      },
+      {
+        input: ['', [], {}],
+        output: '',
+      },
+      {
+        input: ['', '', ''],
+        output: '',
+      },
+      {
+        input: [['', '', '']],
+        output: '',
+      },
+      {
+        input: [['', '', ''], '', ''],
+        output: '',
+      },
+      {
+        input: [
+          ['', '', ''],
+          ['', ''],
+        ],
+        output: '',
+      },
+      {
+        input: ['', { '': true }],
+        output: '',
       },
     ]
 
