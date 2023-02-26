@@ -207,7 +207,7 @@ export type NavbarMenuProps = HTMLAttributes<HTMLDivElement> & Pick<BooleanModif
 
 export const NavbarMenu: FC<PropsWithChildren<NavbarMenuProps>> = ({ children, className, isActive }) => {
   const _className = useMemo(
-    () => classNames('navbar-start', modifier({ isActive }), className),
+    () => classNames('navbar-menu', modifier({ isActive }), className),
     [className, isActive]
   )
   return <div className={_className}>{children}</div>
