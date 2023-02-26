@@ -24,12 +24,7 @@ export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps>> = ({
       classNames(
         'breadcrumb',
         modifier({ isCentered, isRight }),
-        {
-          'has-arrow-separator': separator === 'arrow',
-          'has-bullet-separator': separator === 'bullet',
-          'has-dot-separator': separator === 'dot',
-          'has-succedes-separator': separator === 'succedes',
-        },
+        separator === undefined ? '' : `has-${separator}-separator`,
         className
       ),
     [className, isCentered, separator, isRight]
