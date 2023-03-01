@@ -13,7 +13,6 @@
   },
   "devDependencies": {
     "@types/node": "^18.0.3",
-    "@types/prismjs": "^1.26.0",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "postcss-ts-classnames": "^0.3.0",

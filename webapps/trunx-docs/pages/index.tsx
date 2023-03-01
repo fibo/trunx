@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Container, Section, bulma } from 'trunx'
-import { Nav, MessageComp, Code, Installation, CodeRequirement, WorkExample } from '@/components'
+import { Nav, MessageComp, Installation, CodeRequirement, WorkExample } from '@/components'
 
 export default function Home() {
   return (
@@ -34,7 +34,6 @@ export default function Home() {
             <hr />
 
             <WorkExample />
-
           </Container>
         </Section>
       </main>
