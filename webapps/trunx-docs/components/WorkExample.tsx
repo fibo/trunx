@@ -12,7 +12,9 @@ export const WorkExample = () => {
 
       <Code>
         {indent`
-          <Button isPrimary isLarge>Push me</Button>
+          <Button color="primary" size="large">
+            Push me
+          </Button>
         `}
       </Code>
 
