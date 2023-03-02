@@ -1,165 +1,117 @@
-import classnames from 'classnames'
-import * as React from 'react'
+import { FC, AnchorHTMLAttributes, HTMLAttributes, PropsWithChildren, memo, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import {
+  BooleanModifierProps,
+  SizeModifierProp,
+  Size,
+  modifier,
+  sizeClassName,
+} from '../modifiers/index.js'
 
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName } from './classNames.js'
-import { HelpersProps, extractModifiersProps, modifierPropsToClassnamesObject } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type PaginationProps = HTMLAttributes<HTMLElement> &
+  SizeModifierProp<Exclude<Size, 'isNormal'>> &
+  Pick<BooleanModifierProps, 'isCentered' | 'isRight' | 'isRounded'>
 
-export interface PaginationProps
-  extends React.HTMLAttributes<HTMLElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface PaginationEllipsisProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface PaginationLinkProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    ErrorBoundaryProps,
-    HelpersProps {
-  isCurrent?: boolean
+export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
+  className,
+  children,
+  isCentered,
+  isRight,
+  isRounded,
+  size,
+  ...props
+}) => {
+  const _className = useMemo(
+    () =>
+      classNames(
+        'pagination',
+        sizeClassName(size),
+        modifier({ isCentered, isRight, isRounded }),
+        className
+      ),
+    [className, isCentered, isRight, isRounded, size]
+  )
+  return (
+    <nav className={_className} aria-label="pagination" {...props}>
+      <ul>{children}</ul>
+    </nav>
+  )
 }
 
-export interface PaginationListProps
-  extends React.HTMLAttributes<HTMLUListElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
+export const PaginationEllipsis = memo(() => (
+  <li>
+    <span className="pagination-ellipsis">&hellip;</span>
+  </li>
+))
+PaginationEllipsis.displayName = 'PaginationEllipsis'
 
-export interface PaginationNextProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
+export type PaginationLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  Partial<{
+    isCurrent: boolean
+  }>
 
-export interface PaginationPreviousProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-class PaginationEllipsis extends React.Component<PaginationEllipsisProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const [modifiersProps, { className, fallbackUI, ...props }] = extractModifiersProps(this.props)
-
-    if (this.state.hasError) return fallbackUI
-
-    return (
-      <li>
-        <span
-          className={classnames(
-            bulmaClassName.paginationEllipsis,
-            className,
-            modifierPropsToClassnamesObject(modifiersProps)
-          )}
-          {...props}
-        >
-          &hellip;
-        </span>
-      </li>
-    )
-  }
+export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
+  children,
+  className,
+  isCurrent,
+  ...props
+}) => {
+  const _className = useMemo(
+    () => classNames('pagination-link', { 'is-current': isCurrent }, className),
+    [className, isCurrent]
+  )
+  return (
+    <li>
+      <a className={_className} {...props}>
+        {children}
+      </a>
+    </li>
+  )
 }
 
-class PaginationLink extends React.Component<PaginationLinkProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
+export type PaginationListProps = Omit<HTMLAttributes<HTMLUListElement>, 'className'>
 
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, isCurrent, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return (
-      <li>
-        {renderElement('a', props, bulmaClassName.paginationLink, {
-          isCurrent,
-        })}
-      </li>
-    )
-  }
+export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({ children, ...props }) => {
+  return (
+    <ul className="pagination-list" {...props}>
+      {children}
+    </ul>
+  )
 }
 
-class PaginationList extends React.Component<PaginationListProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
+export type PaginationIncrementalNavigationProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  Pick<BooleanModifierProps, 'isDisabled'>
 
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('ul', props, bulmaClassName.paginationList)
-  }
+export const PaginationNext: FC<PropsWithChildren<PaginationIncrementalNavigationProps>> = ({
+  children,
+  className,
+  isDisabled,
+  ...props
+}) => {
+  const _className = useMemo(
+    () => classNames('pagination-next', modifier({ isDisabled }), className),
+    [className, isDisabled]
+  )
+  return (
+    <a className={_className} {...props}>
+      {children}
+    </a>
+  )
 }
 
-class PaginationNext extends React.Component<PaginationNextProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('a', props, bulmaClassName.paginationNext)
-  }
-}
-
-class PaginationPrevious extends React.Component<PaginationPreviousProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('a', props, bulmaClassName.paginationPrevious)
-  }
-}
-
-export class Pagination extends React.Component<PaginationProps> {
-  static defaultProps = {
-    'aria-label': 'pagination',
-    role: 'navigation',
-  }
-
-  static Ellipsis = PaginationEllipsis
-  static Link = PaginationLink
-  static List = PaginationList
-  static Next = PaginationNext
-  static Previous = PaginationPrevious
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('nav', props, bulmaClassName.pagination)
-  }
+export const PaginationPrevious: FC<PropsWithChildren<PaginationIncrementalNavigationProps>> = ({
+  children,
+  className,
+  isDisabled,
+  ...props
+}) => {
+  const _className = useMemo(
+    () => classNames('pagination-previous', modifier({ isDisabled }), className),
+    [className, isDisabled]
+  )
+  return (
+    <a className={_className} {...props}>
+      {children}
+    </a>
+  )
 }

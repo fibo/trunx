@@ -1,92 +1,53 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import { Alignment } from '../modifiers/index.js'
 
-import { bulmaClassName } from './classNames.js'
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { HelpersProps, SizeProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type FieldProps = HTMLAttributes<HTMLDivElement> &
+  Partial<{
+    hasAddons: boolean | Alignment
+    isGrouped: boolean | Alignment | 'multiline'
+  }>
 
-export interface FieldProps extends React.HTMLAttributes<HTMLDivElement>, ErrorBoundaryProps, SizeProps {
-  hasAddons?: boolean
-  hasAddonsCentered?: boolean
-  isGrouped?: boolean
-  isGroupedMultiline?: boolean
-  isHorizontal?: boolean
+export const Field: FC<PropsWithChildren<FieldProps>> = ({
+  children,
+  className,
+  hasAddons,
+  isGrouped,
+  ...props
+}) => {
+  const _className = useMemo(
+    () =>
+      classNames(
+        'field',
+        hasAddons ? (hasAddons === true ? 'has-addons' : `has-addons-${hasAddons}`) : undefined,
+        isGrouped ? (isGrouped === true ? 'is-grouped' : `is-grouped-${isGrouped}`) : undefined,
+        className
+      ),
+    [className, hasAddons, isGrouped]
+  )
+  return (
+    <div className={_className} {...props}>
+      {children}
+    </div>
+  )
 }
 
-export interface FieldBodyProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
+export type FieldHorizontalProps = HTMLAttributes<HTMLDivElement> &
+  Partial<{
+    label: ReactNode
+  }>
 
-export interface FieldLabelProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps,
-    SizeProps {
-  isNormal?: boolean
-}
-
-class FieldBody extends React.Component<FieldBodyProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.fieldBody)
-  }
-}
-
-class FieldLabel extends React.Component<FieldLabelProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, isNormal, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.fieldLabel, { isNormal })
-  }
-}
-
-export class Field extends React.Component<FieldProps> {
-  static Body = FieldBody
-  static Label = FieldLabel
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const {
-      fallbackUI,
-      hasAddons,
-      hasAddonsCentered,
-      isGrouped,
-      isGroupedMultiline,
-      isHorizontal,
-      ...props
-    } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.field, {
-      hasAddons,
-      hasAddonsCentered,
-      isGrouped,
-      isGroupedMultiline,
-      isHorizontal,
-    })
-  }
+export const FieldHorizontal: FC<PropsWithChildren<FieldHorizontalProps>> = ({
+  children,
+  label,
+  className,
+  ...props
+}) => {
+  const _className = useMemo(() => classNames('field is-horizontal', className), [className])
+  return (
+    <div className={_className} {...props}>
+      <div className="field-label">{label}</div>
+      <div className="field-body">{children}</div>
+    </div>
+  )
 }

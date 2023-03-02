@@ -1,28 +1,10 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import { ColorModifierProp, MainColor, colorClassName } from '../modifiers/index.js'
 
-import { bulmaClassName } from './classNames.js'
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { BackgroundColorHelpersProps, MainColorsProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type HelpProps = HTMLAttributes<HTMLParagraphElement> & ColorModifierProp<MainColor>
 
-export interface HelpProps
-  extends React.HTMLAttributes<HTMLParagraphElement>,
-    ErrorBoundaryProps,
-    BackgroundColorHelpersProps,
-    MainColorsProps {}
-
-export class Help extends React.Component<HelpProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('p', props, bulmaClassName.help)
-  }
+export const Help: FC<PropsWithChildren<HelpProps>> = ({ children, className, color }) => {
+  const _className = useMemo(() => classNames('help', colorClassName(color), className), [className, color])
+  return <p className={_className}>{children}</p>
 }

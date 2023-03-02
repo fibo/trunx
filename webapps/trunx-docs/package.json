@@ -1,6 +1,6 @@
 {
   "name": "trunx-docs",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -23,7 +23,6 @@
     "react-dom": "18.2.0",
     "react-highlight": "^0.15.0",
     "sass": "^1.58.0",
-    "trunx": "file:packages/trunx",
-    "typescript": "4.9.5"
+    "trunx": "file:packages/trunx"
   }
 }

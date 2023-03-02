@@ -1,97 +1,52 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import {
+  Alignment,
+  BooleanModifierProps,
+  modifier,
+  textAlignClassName,
+  TextAlignProp,
+} from '../modifiers/index.js'
 
-import { bulmaClassName } from './classNames.js'
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { HelpersProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type LevelProps = HTMLAttributes<HTMLDivElement> &
+  Pick<BooleanModifierProps, 'isMobile'> &
+  Partial<{
+    side: Extract<Alignment, 'left' | 'right'>
+  }>
 
-export interface LevelProps extends React.HTMLAttributes<HTMLDivElement>, ErrorBoundaryProps, HelpersProps {
-  isMobile?: boolean
+export const Level: FC<PropsWithChildren<LevelProps>> = ({
+  children,
+  className,
+  isMobile,
+  side,
+  ...props
+}) => {
+  const _className = useMemo(
+    () => classNames(side ? `level-${side}` : 'level', modifier({ isMobile }), className),
+    [className, isMobile, side]
+  )
+  return (
+    <div className={_className} {...props}>
+      {children}
+    </div>
+  )
 }
 
-export interface LevelItemProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {
-  as?: 'a' | 'div'
-}
+export type LevelItemProps = HTMLAttributes<HTMLDivElement> & TextAlignProp
 
-export interface LevelLeftProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface LevelRightProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-class LevelItem extends React.Component<LevelItemProps> {
-  static defaultProps = { as: 'div' }
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { as: tag, fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement(tag as string, props, bulmaClassName.levelItem)
-  }
-}
-
-class LevelLeft extends React.Component<LevelLeftProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.levelLeft)
-  }
-}
-
-class LevelRight extends React.Component<LevelRightProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.levelRight)
-  }
-}
-
-export class Level extends React.Component<LevelProps> {
-  static Item = LevelItem
-  static Left = LevelLeft
-  static Right = LevelRight
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, isMobile, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('nav', props, bulmaClassName.level, { isMobile })
-  }
+export const LevelItem: FC<PropsWithChildren<LevelItemProps>> = ({
+  className,
+  children,
+  hasText,
+  ...props
+}) => {
+  const _className = useMemo(
+    () => classNames('level-item', textAlignClassName(hasText), className),
+    [className, hasText]
+  )
+  return (
+    <div className={_className} {...props}>
+      {children}
+    </div>
+  )
 }
