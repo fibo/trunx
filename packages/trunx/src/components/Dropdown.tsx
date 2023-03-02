@@ -1,150 +1,96 @@
-import * as React from 'react'
+import {
+  FC,
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  HTMLAttributes,
+  PropsWithChildren,
+  useMemo,
+  memo,
+} from 'react'
+import { classNames } from '../classNames.js'
+import { BooleanModifierProps, modifier } from '../modifiers/index.js'
 
-import { HelpersProps } from './modifiers.js'
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName } from './classNames.js'
-import { renderElement } from './renderElement.js'
+export type DropdownProps = HTMLAttributes<HTMLDivElement> &
+  Pick<BooleanModifierProps, 'isActive' | 'isHoverable' | 'isRight' | 'isUp'>
 
-export interface DropdownProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {
-  isActive?: boolean
-  isHoverable?: boolean
-  isRight?: boolean
-  isUp?: boolean
+export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
+  children,
+  className,
+  isHoverable,
+  isActive,
+  isRight,
+  isUp,
+  ...props
+}) => {
+  const _className = useMemo(
+    () => classNames('dropdown', modifier({ isActive, isHoverable, isRight, isUp }), className),
+    [className, isActive, isHoverable, isRight, isUp]
+  )
+  return (
+    <div className={_className} {...props}>
+      {children}
+    </div>
+  )
 }
 
-export interface DropdownContentProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
+export const DropdownDivider = memo(() => <hr className="dropdown-divider" />)
+DropdownDivider.displayName = 'DropdownDivider'
 
-export interface DropdownDividerProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
+type DropdownItemModifierProps = Pick<BooleanModifierProps, 'isActive'>
 
-export interface DropdownItemProps
-  extends React.AnchorHTMLAttributes<HTMLAnchorElement>,
-    ErrorBoundaryProps,
-    HelpersProps {
-  isActive?: boolean
+const dropdownItemClassNames = ({ isActive }: DropdownItemModifierProps, className?: string) =>
+  classNames('dropdown-item', modifier({ isActive }), className)
+
+export type DropdownItemProps = HTMLAttributes<HTMLDivElement> & DropdownItemModifierProps
+
+export const DropdownItem: FC<DropdownItemProps> = ({ children, className, isActive, ...props }) => {
+  const _className = useMemo(() => dropdownItemClassNames({ isActive }, className), [className, isActive])
+  return (
+    <div className={_className} {...props}>
+      {children}
+    </div>
+  )
 }
 
-export interface DropdownMenuProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
+export type DropdownItemAnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & DropdownItemModifierProps
 
-export interface DropdownTriggerProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-class DropdownContent extends React.Component<DropdownContentProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.dropdownContent)
-  }
+export const DropdownItemAnchor: FC<DropdownItemAnchorProps> = ({
+  children,
+  className,
+  isActive,
+  ...props
+}) => {
+  const _className = useMemo(() => dropdownItemClassNames({ isActive }, className), [className, isActive])
+  return (
+    <a className={_className} {...props}>
+      {children}
+    </a>
+  )
 }
 
-class DropdownDivider extends React.Component<DropdownDividerProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
+export type DropdownMenuProps = Omit<HTMLAttributes<HTMLDivElement>, 'className'>
 
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.dropdownDivider)
-  }
+export const DropdownMenu: FC<PropsWithChildren<DropdownMenuProps>> = ({ children, ...props }) => {
+  return (
+    <div className="dropdown-menu" {...props}>
+      <div className="dropdown-content">{children}</div>
+    </div>
+  )
 }
 
-class DropdownItem extends React.Component<DropdownItemProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
+export type DropdownTriggerProps = ButtonHTMLAttributes<HTMLButtonElement>
 
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { isActive, ...props } = this.props
-
-    return renderElement('a', props, bulmaClassName.dropdownItem, { isActive })
-  }
-}
-
-class DropdownMenu extends React.Component<DropdownMenuProps> {
-  static defaultProps = { role: 'menu' }
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.dropdownMenu)
-  }
-}
-
-class DropdownTrigger extends React.Component<DropdownTriggerProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.dropdownTrigger)
-  }
-}
-
-export class Dropdown extends React.Component<DropdownProps> {
-  static Content = DropdownContent
-  static Divider = DropdownDivider
-  static Item = DropdownItem
-  static Menu = DropdownMenu
-  static Trigger = DropdownTrigger
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, isActive, isHoverable, isRight, isUp, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.dropdown, {
-      isActive,
-      isHoverable,
-      isRight,
-      isUp,
-    })
-  }
+export const DropdownTrigger: FC<PropsWithChildren<DropdownTriggerProps>> = ({
+  children,
+  className,
+  ...props
+}) => {
+  const _className = useMemo(() => classNames('button', className), [className])
+  return (
+    <div className="dropdown-trigger">
+      <button className={_className} {...props}>
+        {children}
+      </button>
+    </div>
+  )
 }

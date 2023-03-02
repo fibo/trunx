@@ -1,28 +1,31 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import {
+  ColorModifierProp,
+  BooleanModifierProps,
+  MainColor,
+  colorClassName,
+  modifier,
+} from '../modifiers/index.js'
 
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName } from './classNames.js'
-import { HelpersProps, MainColorsProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type NotificationProps = HTMLAttributes<HTMLDivElement> &
+  ColorModifierProp<MainColor> &
+  Pick<BooleanModifierProps, 'isLight'>
 
-export interface NotificationProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps,
-    MainColorsProps {}
-
-export class Notification extends React.Component<NotificationProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.navbar)
-  }
+export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
+  children,
+  className,
+  color,
+  isLight,
+  ...props
+}) => {
+  const _className = useMemo(
+    () => classNames('notification', colorClassName(color), modifier({ isLight }), className),
+    [className, color, isLight]
+  )
+  return (
+    <div className={_className} {...props}>
+      {children}
+    </div>
+  )
 }

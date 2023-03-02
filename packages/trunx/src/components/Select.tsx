@@ -1,61 +1,71 @@
-import classnames from 'classnames'
-import * as React from 'react'
-
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName, trunxPropsToClassnamesObject } from './classNames.js'
+import { FC, ChangeEventHandler, OptionHTMLAttributes, SelectHTMLAttributes, useMemo } from 'react'
+import { classNames } from '../classNames.js'
 import {
-  HelpersProps,
-  MainColorsProps,
-  SizeProps,
-  extractModifiersProps,
-  modifierPropsToClassnamesObject,
-} from './modifiers.js'
+  BooleanModifierProps,
+  SizeModifierProp,
+  modifier,
+  ColorModifierProp,
+  MainColor,
+  colorClassName,
+  sizeClassName,
+} from '../modifiers/index.js'
 
-export interface SelectProps
-  extends React.SelectHTMLAttributes<HTMLSelectElement>,
-    ErrorBoundaryProps,
-    HelpersProps,
-    MainColorsProps,
-    SizeProps {
-  isFocused?: boolean
-  isHovered?: boolean
-  isLoading?: boolean
-  isMultiple?: boolean
+/**
+ * Pretend that every option has `label` and `value`.
+ */
+type Option = Omit<OptionHTMLAttributes<HTMLOptionElement>, 'value' | 'label'> & {
+  label: OptionHTMLAttributes<HTMLOptionElement>['label']
+  value: OptionHTMLAttributes<HTMLOptionElement>['value']
 }
 
-export class Select extends React.Component<SelectProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
+export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> &
+  ColorModifierProp<MainColor> &
+  SizeModifierProp &
+  Pick<BooleanModifierProps, 'isFocused' | 'isHovered' | 'isLoading'> & {
+    options: Option[]
   }
 
-  state = { hasError: false }
+export const Select: FC<SelectProps> = ({
+  className,
+  color,
+  isFocused,
+  isHovered,
+  isLoading,
+  options,
+  size,
+  ...props
+}) => {
+  const _className = useMemo(
+    () =>
+      classNames(
+        'select',
+        colorClassName(color),
+        modifier({ isFocused, isHovered, isLoading }),
+        sizeClassName(size),
+        className
+      ),
+    [className, color, size, isFocused, isHovered, isLoading]
+  )
 
-  render(): React.ReactNode {
-    const [
-      modifiersProps,
-      { children, className, fallbackUI, isFocused, isHovered, isLoading, isMultiple, ...props },
-    ] = extractModifiersProps(this.props)
-
-    if (this.state.hasError) return fallbackUI
-
-    return (
-      <div
-        className={classnames(
-          bulmaClassName.select,
-          className,
-          modifierPropsToClassnamesObject(modifiersProps),
-          trunxPropsToClassnamesObject({
-            isFocused,
-            isHovered,
-            isLoading,
-            isMultiple,
-          })
-        )}
-      >
-        <select {...props} multiple={isMultiple}>
-          {children}
-        </select>
-      </div>
-    )
-  }
+  return (
+    <div className={_className}>
+      <select {...props}>
+        {options.map((props, i) => (
+          <option key={i} {...props} />
+        ))}
+      </select>
+    </div>
+  )
 }
+
+/**
+ * Callback helper, alias for `React.ChangeEventHandler<HTMLSelectElement>`.
+ *
+ * ```ts
+ * @example
+ * useCallback<SelectOnChange>((event) => {
+ *   // `event` has the correct type.
+ * })
+ * ```
+ */
+export type SelectOnChange = ChangeEventHandler<HTMLSelectElement>
