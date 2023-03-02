@@ -1,119 +1,60 @@
-import * as React from 'react'
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode, useMemo } from 'react'
+import { classNames } from '../classNames.js'
+import {
+  colorClassName,
+  ColorModifierProp,
+  BooleanModifierProps,
+  MainColor,
+  modifier,
+  sizeClassName,
+  SizeModifierProp,
+} from '../modifiers/index.js'
 
-import { bulmaClassName } from './classNames.js'
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { HelpersProps, MainColorsProps } from './modifiers.js'
-import { renderElement } from './renderElement.js'
+export type HeroProps = HTMLAttributes<HTMLDivElement> &
+  ColorModifierProp<MainColor> &
+  SizeModifierProp &
+  Pick<BooleanModifierProps, 'isFullheight' | 'isFullheightWithNavbar' | 'isHalfheight'> &
+  Partial<{
+    head: ReactNode
+    foot: ReactNode
+  }>
 
-export interface HeroProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps,
-    MainColorsProps {
-  isBold?: boolean
-  isDark?: boolean
-  isFullheightWithNavbar?: boolean
-  isFullheight?: boolean
-  isLarge?: boolean
-  isLight?: boolean
-  isMedium?: boolean
-}
+export const Hero: FC<PropsWithChildren<HeroProps>> = ({
+  className,
+  children,
+  color,
+  head,
+  foot,
+  isFullheight,
+  isFullheightWithNavbar,
+  isHalfheight,
+  size,
+  ...props
+}) => {
+  const hasHeadAndFoot = useMemo(() => Boolean(head) && Boolean(foot), [head, foot])
 
-export interface HeroBodyProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
+  const _className = useMemo(
+    () =>
+      classNames(
+        'hero',
+        colorClassName(color),
+        sizeClassName(size),
+        modifier({
+          // For the fullheight hero to work, you will also need a hero-head and a hero-foot.
+          isFullheight: isFullheight && hasHeadAndFoot,
+          isFullheightWithNavbar,
+          isHalfheight,
+        }),
+        className
+      ),
+    [className, color, hasHeadAndFoot, isFullheight, isFullheightWithNavbar, isHalfheight, size]
+  )
 
-export interface HeroFootProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export interface HeroHeadProps
-  extends React.HTMLAttributes<HTMLDivElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-class HeroBody extends React.Component<HeroBodyProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.heroBody)
-  }
-}
-
-class HeroFoot extends React.Component<HeroFootProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.heroFoot)
-  }
-}
-
-class HeroHead extends React.Component<HeroHeadProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const { fallbackUI, ...props } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('div', props, bulmaClassName.heroHead)
-  }
-}
-
-export class Hero extends React.Component<HeroProps> {
-  static Body = HeroBody
-  static Foot = HeroFoot
-  static Head = HeroHead
-
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render(): React.ReactNode {
-    const {
-      fallbackUI,
-      isBold,
-      isDark,
-      isFullheight,
-      isFullheightWithNavbar,
-      isLarge,
-      isMedium,
-      ...props
-    } = this.props
-
-    if (this.state.hasError) return fallbackUI
-
-    return renderElement('section', props, bulmaClassName.hero, {
-      isBold,
-      isDark,
-      isFullheight,
-      isFullheightWithNavbar,
-      isLarge,
-      isMedium,
-    })
-  }
+  return (
+    <section className={_className} {...props}>
+      {head ? <div className="hero-head">{head}</div> : null}
+      <div className="hero-body">{children}</div>
+      {foot ? <div className="hero-foot">{foot}</div> : null}
+    </section>
+  )
 }

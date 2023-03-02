@@ -1,14 +1,15 @@
-export type ClassNamesArg<ClassName> = ClassName extends string
-  ? ClassName | { [key in ClassName]: unknown } | ClassNamesArg<ClassName>[]
-  : null | undefined
+export type ClassNamesArg<ClassName extends string> =
+  | ClassName
+  | { [key in ClassName]: unknown }
+  | ClassNamesArg<ClassName>[]
 
 /**
  * Utility for conditionally joining CSS classes together.
  *
  * @example
  * classNames('foo', 'bar') // 'foo bar'
- * classNames('foo', ['bar']) // 'foo bar'
- * classNames({ foo: true }, { bar: false }) // 'foo'
+ * classNames<string>('foo', ['bar']) // 'foo bar'
+ * classNames<string>({ foo: true }, { bar: false }) // 'foo'
  *
  * It accepts a generic "class names" type.
  *

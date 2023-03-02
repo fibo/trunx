@@ -3,17 +3,26 @@ import { classNames } from '../classNames.js'
 import {
   MainColor,
   ColorModifierProp,
-  CommonModifierProps,
+  BooleanModifierProps,
   SizeModifierProp,
   colorClassName,
   modifier,
   sizeClassName,
 } from '../modifiers/index.js'
 
-export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size'> &
+export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> &
   ColorModifierProp<MainColor> &
   SizeModifierProp &
-  Pick<CommonModifierProps, 'isFocused' | 'isHovered' | 'isLoading' | 'isRounded' | 'isStatic'>
+  Pick<BooleanModifierProps, 'isFocused' | 'isHovered' | 'isLoading' | 'isRounded' | 'isStatic'> &
+  Partial<{
+    type: Exclude<
+      InputHTMLAttributes<HTMLInputElement>['type'],
+      // Component FileUpload handles `type="file"`
+      | 'file'
+      // Component Radio handles `type="radio"`
+      | 'radio'
+    >
+  }>
 
 export const Input: FC<InputProps> = ({
   className,
@@ -41,17 +50,20 @@ export const Input: FC<InputProps> = ({
         }),
         className
       ),
-    [color, isFocused, isHovered, size, isLoading, isRounded, isStatic]
+    [className, color, isFocused, isHovered, size, isLoading, isRounded, isStatic]
   )
 
   return <input className={_className} {...props} />
 }
 
 /**
- * Callback helper, alias for `ChangeEventHandler<HTMLInputElement>`
+ * Callback helper, alias for `React.ChangeEventHandler<HTMLInputElement>`.
+ *
+ * ```ts
  * @example
  * useCallback<InputOnChange>((event) => {
  *   // `event` has the correct type.
  * })
+ * ```
  */
 export type InputOnChange = ChangeEventHandler<HTMLInputElement>

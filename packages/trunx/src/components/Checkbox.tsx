@@ -1,41 +1,24 @@
-import classnames from 'classnames'
-import * as React from 'react'
+import { FC, ChangeEventHandler, InputHTMLAttributes, PropsWithChildren } from 'react'
 
-import { ErrorBoundaryProps } from './ErrorBoundary.js'
-import { bulmaClassName } from './classNames.js'
-import { HelpersProps, extractModifiersProps, modifierPropsToClassnamesObject } from './modifiers.js'
+export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'type'>
 
-export interface CheckboxProps
-  extends React.InputHTMLAttributes<HTMLInputElement>,
-    ErrorBoundaryProps,
-    HelpersProps {}
-
-export class Checkbox extends React.Component<CheckboxProps> {
-  static getDerivedStateFromError() {
-    return { hasError: true }
-  }
-
-  state = { hasError: false }
-
-  render() {
-    const [modifiersProps, { children, className, fallbackUI, ...props }] = extractModifiersProps(
-      this.props
-    )
-
-    if (this.state.hasError) return fallbackUI
-
-    return (
-      <label
-        className={classnames(
-          className,
-          bulmaClassName.checkbox,
-          modifierPropsToClassnamesObject(modifiersProps)
-        )}
-      >
-        <input type='checkbox' {...props} />
-        {' ' /* adding a space looks better */}
-        {children}
-      </label>
-    )
-  }
+export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({ children, ...props }) => {
+  return (
+    <label className="checkbox">
+      <input type="checkbox" {...props} />
+      {children}
+    </label>
+  )
 }
+
+/**
+ * Callback helper, alias for `React.ChangeEventHandler<HTMLInputElement>`.
+ *
+ * @example
+ * ```ts
+ * useCallback<CheckboxOnChange>((event) => {
+ *   // `event` has the correct type.
+ * })
+ * ```
+ */
+export type CheckboxOnChange = ChangeEventHandler<HTMLInputElement>
