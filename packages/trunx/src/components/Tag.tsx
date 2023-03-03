@@ -5,7 +5,6 @@ import {
   ColorModifierProp,
   MainColor,
   ShadeColor,
-  Size,
   SizeModifierProp,
   colorClassName,
   modifier,
@@ -14,7 +13,7 @@ import {
 
 export type TagProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   ColorModifierProp<MainColor | ShadeColor> &
-  SizeModifierProp<Extract<Size, 'normal' | 'medium' | 'large'>> &
+  SizeModifierProp<'normal' | 'medium' | 'large'> &
   Pick<BooleanModifierProps, 'isDelete' | 'isLight' | 'isRounded'>
 
 export const Tag: FC<PropsWithChildren<TagProps>> = ({

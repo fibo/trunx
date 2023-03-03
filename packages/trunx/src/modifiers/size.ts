@@ -2,7 +2,9 @@ import { BulmaClassName } from '../bulma.js'
 
 export type Size = 'small' | 'medium' | 'large' | 'normal'
 
-export type SizeModifierProp<S extends Size = Size> = Partial<{ size: S }>
+export type SizeModifierProp<S extends Size = Size> = Partial<{
+  size: S
+}>
 
 export const pluralSizeClassName = (
   size: Exclude<Size, 'normal'> | undefined
