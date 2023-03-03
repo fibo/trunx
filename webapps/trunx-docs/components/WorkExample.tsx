@@ -16,8 +16,10 @@ export const WorkExample = () => {
         `}
       </Code>
 
-      <Columns>
-        <Column isNarrow>
+      <Columns></Columns>
+
+      <Columns isMultiline>
+        <Column size="full">
           <p>This button</p>
 
           <Button color="primary" size="large">
