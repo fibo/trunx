@@ -1,5 +1,6 @@
-import { FC, PropsWithChildren, ReactNode } from 'react'
-import { Container, Content, Hero, bulma } from 'trunx'
+import { FC, PropsWithChildren, ReactNode } from "react"
+import { Container, Content, Hero, bulma } from "trunx"
+import { Nav } from "./Nav"
 
 type Props = {
   title: ReactNode
@@ -9,15 +10,19 @@ type Props = {
 export const PageContent: FC<PropsWithChildren<Props>> = ({ children, title, subtitle }) => {
   return (
     <>
-      <Hero>
-        <Container maxWidth="desktop">
-          <h1 className={bulma('title', 'is-1')}>{title}</h1>
+      <Nav />
 
-          <p className={bulma('title', 'has-text-grey')}>{subtitle}</p>
-        </Container>
-      </Hero>
+      <main>
+        <Hero>
+          <Container maxWidth="desktop">
+            <h1 className={bulma("title", "is-1")}>{title}</h1>
 
-      <Content>{children}</Content>
+            <p className={bulma("title", "has-text-grey")}>{subtitle}</p>
+          </Container>
+        </Hero>
+
+        <Content>{children}</Content>
+      </main>
     </>
   )
 }

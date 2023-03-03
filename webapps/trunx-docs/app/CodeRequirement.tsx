@@ -1,16 +1,16 @@
-import { Column, Columns } from 'trunx'
-import { Code } from './Code'
-import { indent } from '@/helpers/utils/indent'
-import { PageSection } from './PageSection'
+"use client"
+import { Column, Columns } from "trunx"
+import { Code, PageSection } from "@/components"
+import { indent } from "@/helpers/utils/indent"
 
-export const CodeRequirement = () => {
+export default function Example() {
   return (
     <PageSection title="HTML code requirements">
       <p>
-        Trunx is son of awesome{' '}
+        Trunx is son of awesome{" "}
         <a href="https://bulma.io/" target="_blank" rel="noreferrer">
           Bulma
-        </a>{' '}
+        </a>{" "}
         which to work correctly needs a <b>responsive</b> webpage.
       </p>
 
