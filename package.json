@@ -41,6 +41,5 @@
   "workspaces": [
     "packages/trunx",
     "webapps/trunx-docs"
-  ],
-  "dependencies": {}
+  ]
 }
