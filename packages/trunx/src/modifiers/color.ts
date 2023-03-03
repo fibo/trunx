@@ -1,4 +1,4 @@
-import { BulmaClassName } from '../bulma.js'
+import { BulmaClassName } from "../bulma.js"
 
 /**
  * @example
@@ -8,25 +8,29 @@ import { BulmaClassName } from '../bulma.js'
  */
 export type ColorModifierProp<Color> = Partial<{ color: Color }>
 
-export type MainColor = 'danger' | 'link' | 'info' | 'primary' | 'success' | 'warning'
+export type MainColor = "danger" | "link" | "info" | "primary" | "success" | "warning"
 
-export type ShadeColor = 'black' | 'dark' | 'light' | 'white'
+export type ShadeColor = "black" | "dark" | "light" | "white"
+
+export type OtherColor = "text" | "ghost"
 
 export const colorClassName = (
-  color: MainColor | ShadeColor | undefined
+  color: MainColor | ShadeColor | OtherColor | undefined
 ):
   | Extract<
       BulmaClassName,
-      | 'is-black'
-      | 'is-danger'
-      | 'is-danger'
-      | 'is-dark'
-      | 'is-info'
-      | 'is-light'
-      | 'is-link'
-      | 'is-primary'
-      | 'is-success'
-      | 'is-warning'
-      | 'is-white'
+      | "is-black"
+      | "is-danger"
+      | "is-danger"
+      | "is-dark"
+      | "is-ghost"
+      | "is-info"
+      | "is-light"
+      | "is-link"
+      | "is-primary"
+      | "is-success"
+      | "is-text"
+      | "is-warning"
+      | "is-white"
     >
   | undefined => (color ? `is-${color}` : undefined)

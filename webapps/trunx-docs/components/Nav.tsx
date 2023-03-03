@@ -1,4 +1,5 @@
-import { FC, useCallback, useEffect, useState } from 'react'
+"use client"
+import { FC, useCallback, useEffect, useState } from "react"
 import {
   Navbar,
   NavbarBrand,
@@ -9,33 +10,29 @@ import {
   NavbarMenu,
   NavbarStart,
   NavbarItemAnchor,
-} from 'trunx'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import { route } from '../routes/routes'
-import { navContents } from '../helpers/navContent'
+} from "trunx"
+import Image from "next/image"
+import { useRouter } from "next/navigation"
+import { route } from "../routes/routes"
+import { navContents } from "../helpers/navContent"
 
 export const Nav: FC = () => {
   const router = useRouter()
 
-  const { pathname } = router
-
   const [expanded, setExpanded] = useState<boolean>(false)
-  const [redirect, setRedirect] = useState('')
+  const [redirect, setRedirect] = useState("")
 
   useEffect(() => {
-    if (redirect !== '') {
+    if (redirect !== "") {
       router.push(redirect)
     }
   }, [redirect, router])
 
   const redirectTo = useCallback(
-    (wantedPathname: string) => (): void => {
-      if (pathname !== wantedPathname) {
-        setRedirect(wantedPathname)
-      }
+    (pathname: string) => (): void => {
+      setRedirect(pathname)
     },
-    [pathname]
+    []
   )
 
   const onClickBurger = useCallback(() => {
@@ -50,7 +47,8 @@ export const Nav: FC = () => {
         </NavbarItem>
         <NavbarBurger isActive={expanded} onClick={onClickBurger} />
       </NavbarBrand>
-      <NavbarMenu>
+
+      <NavbarMenu isActive={expanded}>
         <NavbarStart>
           {navContents.map(({ label, items }, i) => (
             <NavbarItem hasDropdown isHoverable key={i}>
@@ -58,7 +56,7 @@ export const Nav: FC = () => {
 
               <NavbarDropdown>
                 {items.map(({ label, route }, i) => (
-                  <NavbarItemAnchor isActive={route === pathname} key={i} onClick={redirectTo(route)}>
+                  <NavbarItemAnchor key={i} onClick={redirectTo(route)}>
                     {label}
                   </NavbarItemAnchor>
                 ))}

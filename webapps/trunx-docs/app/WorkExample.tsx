@@ -1,9 +1,9 @@
+"use client"
 import { Button, Column, Columns, Message, bulma } from "trunx"
-import { Code } from "./Code"
-import { PageSection } from "./PageSection"
+import { Code, PageSection } from "@/components"
 import { indent } from "@/helpers/utils/indent"
 
-export const WorkExample = () => {
+export default function Example() {
   return (
     <PageSection title="How it works">
       <p>
@@ -15,8 +15,6 @@ export const WorkExample = () => {
           import { Button } from "trunx";
         `}
       </Code>
-
-      <Columns></Columns>
 
       <Columns isMultiline>
         <Column size="full">
@@ -61,10 +59,7 @@ export const WorkExample = () => {
         `}
       </Code>
 
-      <Columns>
-        <Column>
-          You are <strong className={bulma("has-text-success")}>successful</strong>!
-        </Column>
+      <Columns isVcentered>
         <Column>
           <Code>
             {indent`
@@ -72,11 +67,15 @@ export const WorkExample = () => {
         `}
           </Code>
         </Column>
+
+        <Column>
+          You are <strong className={bulma("has-text-success")}>successful</strong>!
+        </Column>
       </Columns>
 
       <Message color="info">
-        Many Trunx component accept a <code>className</code> prop which will be appended to Bulma classes in
-        order to customize the component style.
+        Many Trunx components accept a <code>className</code> prop which will be appended to Bulma classes
+        in order to customize the component style.
       </Message>
     </PageSection>
   )
