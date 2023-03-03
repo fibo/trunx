@@ -8,7 +8,7 @@ export type ContentProps = Omit<HTMLAttributes<HTMLDivElement>, 'className'> &
 
 export const Content: FC<PropsWithChildren<ContentProps>> = ({ children, hasText, size, ...props }) => {
   const _className = useMemo(
-    () => classNames(textAlignClassName(hasText), sizeClassName(size)),
+    () => classNames('content', textAlignClassName(hasText), sizeClassName(size)),
     [hasText, size]
   )
   return (

@@ -2,7 +2,6 @@ import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
 import { classNames } from '../classNames.js'
 import {
   ColorModifierProp,
-  Size,
   SizeModifierProp,
   TextColor,
   sizeClassName,
@@ -11,7 +10,7 @@ import {
 
 export type IconProps = HTMLAttributes<HTMLSpanElement> &
   ColorModifierProp<TextColor> &
-  SizeModifierProp<Exclude<Size, 'normal'>>
+  SizeModifierProp<'small' | 'medium' | 'large'>
 
 export const Icon: FC<PropsWithChildren<IconProps>> = ({ children, className, color, size, ...props }) => {
   const _className = useMemo(

@@ -1,33 +1,32 @@
-import { ButtonHTMLAttributes, FC, PointerEventHandler, PropsWithChildren, useMemo } from 'react'
-import { classNames } from '../classNames.js'
+import { ButtonHTMLAttributes, FC, PointerEventHandler, PropsWithChildren, useMemo } from "react"
+import { classNames } from "../classNames.js"
 import {
   ColorModifierProp,
   BooleanModifierProps,
   MainColor,
   ShadeColor,
+  OtherColor,
   SizeModifierProp,
   colorClassName,
   modifier,
   sizeClassName,
-} from '../modifiers/index.js'
+} from "../modifiers/index.js"
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  ColorModifierProp<MainColor | ShadeColor> &
+  ColorModifierProp<MainColor | ShadeColor | OtherColor> &
   SizeModifierProp &
   Pick<
     BooleanModifierProps,
-    | 'isActive'
-    | 'isExpanded'
-    | 'isFocused'
-    | 'isFullwidth'
-    | 'isGhost'
-    | 'isInverted'
-    | 'isLight'
-    | 'isLoading'
-    | 'isOutlined'
-    | 'isRounded'
-    | 'isStatic'
-    | 'isText'
+    | "isActive"
+    | "isExpanded"
+    | "isFocused"
+    | "isFullwidth"
+    | "isInverted"
+    | "isLight"
+    | "isLoading"
+    | "isOutlined"
+    | "isRounded"
+    | "isStatic"
   >
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
@@ -35,12 +34,11 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   children,
   isActive,
   size,
-  isGhost,
   isExpanded,
   isStatic,
   isFocused,
+  isLight,
   isLoading,
-  isText,
   isInverted,
   isOutlined,
   color,
@@ -49,19 +47,18 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   const _className = useMemo(
     () =>
       classNames(
-        'button',
+        "button",
         colorClassName(color),
         sizeClassName(size),
         modifier({
           isActive,
           isExpanded,
           isFocused,
-          isGhost,
           isInverted,
+          isLight,
           isLoading,
           isOutlined,
           isStatic,
-          isText,
         }),
         className
       ),
@@ -71,12 +68,11 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
       isActive,
       isFocused,
       isExpanded,
-      isGhost,
       isInverted,
+      isLight,
       isLoading,
       isOutlined,
       isStatic,
-      isText,
       size,
     ]
   )
