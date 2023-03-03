@@ -1,15 +1,9 @@
 import { FC, AnchorHTMLAttributes, HTMLAttributes, PropsWithChildren, memo, useMemo } from 'react'
 import { classNames } from '../classNames.js'
-import {
-  BooleanModifierProps,
-  SizeModifierProp,
-  Size,
-  modifier,
-  sizeClassName,
-} from '../modifiers/index.js'
+import { BooleanModifierProps, SizeModifierProp, modifier, sizeClassName } from '../modifiers/index.js'
 
 export type PaginationProps = HTMLAttributes<HTMLElement> &
-  SizeModifierProp<Exclude<Size, 'isNormal'>> &
+  SizeModifierProp<'small' | 'medium' | 'large'> &
   Pick<BooleanModifierProps, 'isCentered' | 'isRight' | 'isRounded'>
 
 export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
