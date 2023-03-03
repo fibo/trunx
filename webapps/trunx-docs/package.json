@@ -23,6 +23,7 @@
     "react-dom": "18.2.0",
     "react-highlight": "^0.15.0",
     "sass": "^1.58.0",
+    "sharp": "^0.31.3",
     "trunx": "file:packages/trunx"
   }
 }
