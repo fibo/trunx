@@ -1,12 +1,12 @@
-import { FC } from 'react';
-import { bulma } from 'trunx';
-import { Code } from './Code';
-import { indent } from '@/helpers/utils/indent';
+import { FC } from 'react'
+import { bulma } from 'trunx'
+import { Code } from './Code'
+import { indent } from '@/helpers/utils/indent'
+import { PageSection } from './PageSection'
+
 export const Installation: FC = () => {
   return (
-    <section>
-      <h4 className={bulma('title', 'is-4')}>Installation</h4>
-
+    <PageSection title="Installation">
       <p className={bulma('mt-2')}>
         Use <b>npm</b> to install Trunx package. React is required as a peer dependency.
       </p>
@@ -89,6 +89,6 @@ export const Installation: FC = () => {
         <a href="https://bulma.io/documentation/">official Bulma documentation</a>. See also{' '}
         <a href="https://jenil.github.io/bulmaswatch/">Bulmaswatch</a> for custom Bulma themes.
       </p>
-    </section>
+    </PageSection>
   )
 }

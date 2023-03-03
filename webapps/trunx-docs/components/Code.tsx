@@ -4,7 +4,7 @@ import { bulma } from 'trunx'
 
 export const Code: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className={bulma('mt-2', 'mb-2')}>
+    <div className={bulma('my-2')}>
       <Highlight>{children}</Highlight>
     </div>
   )

@@ -1,28 +1,78 @@
-import { bulma } from 'trunx'
+import { Button, Column, Columns, Message } from 'trunx'
+// import { Button } from 'trunx/components/Button'
 import { Code } from './Code'
+import { PageSection } from './PageSection'
 import { indent } from '@/helpers/utils/indent'
-import { MessageComp } from './MessageComp'
 
 export const WorkExample = () => {
   return (
-    <section>
-      <h4 className={bulma('title', 'is-4')}>How it works</h4>
+    <PageSection title="How it works">
+      <p>Trunx React components wrap Bulma CSS classes.</p>
 
-      <p>Trunx React components wrap Bulma CSS classes. For instance, this JSX code</p>
+      <Columns>
+        <Column isNarrow>
+          <p>This button</p>
 
-      <Code>
-        {indent`
           <Button color="primary" size="large">
             Push me
           </Button>
-        `}
-      </Code>
+        </Column>
 
-      <p>is equivalent to</p>
+        <Column>
+          <p>is created by this JSX code</p>
+
+          <Code>
+            {indent`
+          <Button
+            color="primary"
+            size="large"
+          >Push me</Button>
+        `}
+          </Code>
+        </Column>
+
+        <Column>
+          <p>which is equivalent to</p>
+
+          <Code>{indent`
+            <button
+              className="is-primary is-large"
+            >Push me</button>
+          `}</Code>
+        </Column>
+      </Columns>
+
+      <p>
+        To import components, the following syntaxes are supported. For example to import the{' '}
+        <code>Button</code> component you can use both ES6 or CommonJS syntaxes.
+      </p>
 
       <Code>
         {indent`
-          <button className="is-primary is-large">Push me</button>
+          import { Button } from 'trunx'
+        `}
+      </Code>
+
+      <Code>
+        {indent`
+          const { Button } = require('trunx')
+        `}
+      </Code>
+
+      <p>
+        It is also possible to import components directly. If you do not have <em>Tree shaking</em> setup in
+        your build, the following imports will create lighter bundles <b>out of the box</b>.
+      </p>
+
+      <Code>
+        {indent`
+          import Button from 'trunx/component/Button'
+        `}
+      </Code>
+
+      <Code>
+        {indent`
+          const Button = require('trunx/component/Button')
         `}
       </Code>
 
@@ -37,7 +87,7 @@ export const WorkExample = () => {
         `}
       </Code>
 
-      <MessageComp header="Features implemented by every component">
+      <Message color="info" header="Features implemented by every component">
         <>
           <p>Notice also that:</p>
           <ul>
@@ -49,14 +99,9 @@ export const WorkExample = () => {
               Every Trunx component accepts a <code>className</code> prop which will be appended to Bulma
               classes in order to customize the component style.
             </li>
-
-            <li>
-              Every trunx component implements a React <em>Error Boundary</em>: it is possible to customize
-              it using the <code>fallbackUI</code> prop. .
-            </li>
           </ul>
         </>
-      </MessageComp>
-    </section>
+      </Message>
+    </PageSection>
   )
 }
