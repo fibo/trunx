@@ -5,11 +5,12 @@
   "private": true,
   "scripts": {
     "build": "npm run build --workspaces --if-present",
+    "build:trunx": "npm run build -w packages/trunx",
     "cleanup": "npm run cleanup --workspaces --if-present",
     "check_types": "npm run check_types --workspaces --if-present",
     "generate_BulmaClassName_type": "postcss ./node_modules/bulma/css/bulma.css --config ./npm-scripts/generate_BulmaClassName_type --output ./node_modules/bulma/css/output.css",
     "lint": "npm run lint --workspaces --if-present",
-    "prestart": "npm run build -w packages/trunx",
+    "prestart": "npm run build:trunx",
     "start": "npm run dev -w webapps/trunx-docs",
     "test": "npm run test --workspaces --if-present"
   },
