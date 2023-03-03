@@ -1,3 +1,4 @@
+import { Column, Columns } from 'trunx'
 import { Code } from './Code'
 import { indent } from '@/helpers/utils/indent'
 import { PageSection } from './PageSection'
@@ -13,21 +14,27 @@ export const CodeRequirement = () => {
         which to work correctly needs a <b>responsive</b> webpage.
       </p>
 
-      <p>Use the HTML5 doctype</p>
+      <Columns>
+        <Column size="half">
+          <p>Use the HTML5 doctype</p>
 
-      <Code>
-        {indent`
+          <Code>
+            {indent`
           <!DOCTYPE html>
         `}
-      </Code>
+          </Code>
+        </Column>
 
-      <p>Add the responsive viewport meta tag</p>
+        <Column size="half">
+          <p>Add the responsive viewport meta tag</p>
 
-      <Code>
-        {indent`
+          <Code>
+            {indent`
           <meta name="viewport" content="width=device-width, initial-scale=1">
         `}
-      </Code>
+          </Code>
+        </Column>
+      </Columns>
     </PageSection>
   )
 }
