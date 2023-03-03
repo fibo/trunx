@@ -17,27 +17,21 @@ import {
   modifier,
 } from "../modifiers/index.js"
 
-type FixedSide = "bottom" | "top"
-
 export type NavbarProps = HTMLAttributes<HTMLElement> &
   ColorModifierProp<MainColor | ShadeColor> &
-  Pick<BooleanModifierProps, "isHoverable" | "isSpaced" | "isTransparent" | "hasShadow"> &
-  Partial<{
-    fixed: FixedSide
-  }>
+  Pick<BooleanModifierProps, "isHoverable" | "isSpaced" | "isTransparent" | "hasShadow">
 
 export const Navbar: FC<PropsWithChildren<NavbarProps>> = ({
   children,
   className,
   color,
-  fixed,
   isTransparent,
   hasShadow,
   ...props
 }) => {
   const _className = useMemo(
     () => classNames("navbar", colorClassName(color), modifier({ hasShadow, isTransparent }), className),
-    [className, color, fixed, isTransparent, hasShadow]
+    [className, color, isTransparent, hasShadow]
   )
 
   return (
