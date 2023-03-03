@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 import {
   B,
@@ -13,10 +13,10 @@ import {
   Section,
   Subtitle,
   Title,
-} from '../../../component/index'
-import { Code } from '../components/Code'
-import { Nav } from '../components/Nav'
-import { indent } from '../utils/indent'
+} from "../../../component/index"
+import { Code } from "../components/Code"
+import { Nav } from "../components/Nav"
+import { indent } from "../utils/indent"
 
 export function ColumnsBasics({ location: { pathname } }) {
   return (
@@ -32,10 +32,6 @@ export function ColumnsBasics({ location: { pathname } }) {
 
             <hr />
 
-            <P>
-              Building a <B>columns layout</B> with Trunx is very simple:
-            </P>
-
             <Ol>
               <Li>
                 Add a <code>Columns</code> component as container.
@@ -47,8 +43,7 @@ export function ColumnsBasics({ location: { pathname } }) {
             </Ol>
 
             <P>
-              Each column will have an <B>equal width</B>, no matter the number
-              of columns.
+              Each column will have an <B>equal width</B>, no matter the number of columns.
             </P>
 
             <Columns>
@@ -66,7 +61,7 @@ export function ColumnsBasics({ location: { pathname } }) {
               </Column>
             </Columns>
 
-            <Code language='jsx'>
+            <Code language="jsx">
               {indent`
                 <Columns>
                   <Column>
