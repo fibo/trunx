@@ -1,4 +1,7 @@
+# Force dist/ inclusion, it is in .gitignore
+!dist/
+# Other files to be removed.
 .eslintrc.json
 src/
-test/
-tsconfig.json
+temp/
+tsconfig.*

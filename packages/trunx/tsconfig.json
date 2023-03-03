@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig.common.json",
   "compilerOptions": {
+    "composite": true,
     "declaration": true,
     "declarationMap": true,
     "importHelpers": true,
@@ -10,11 +11,13 @@
     "moduleResolution": "node",
     "outDir": "./dist",
     "removeComments": true,
+    "rootDir": "./src",
     "sourceMap": false,
     "skipLibCheck": true,
-    "target": "esnext"
+    "target": "esnext",
+    "tsBuildInfoFile": "temp/tsconfig.tsbuildinfo"
   },
-  "exclude": ["node_modules"],
+  "exclude": ["node_modules", "./src/**/*_test.ts"],
   "include": ["./src/**/*.ts", "./src/**/*.tsx"]
 }
 
