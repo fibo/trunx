@@ -3,4 +3,6 @@
 > Super Saiyan React components, son of awesome [Bulma]
 
 * [trunx package code](./packages/trunx)
-* [trunx website code](./website/trunx-docs)
+* [trunx website code](./webapps/trunx-docs)
+
+[bulma]: https://bulma.io 'Bulma CSS framework'
