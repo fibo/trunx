@@ -11,7 +11,7 @@ export default function Page() {
       subtitle={
         <>
           <em>Trunx</em> is an open source collection of <em>React</em> components built on top of{" "}
-          <em>Bulma</em>, implemented with <em>TypeScript</em>
+          <em>Bulma</em>
         </>
       }
     >
