@@ -5,7 +5,7 @@
  * be rendered without leading spaces.
  */
 
-export function indent (strings:TemplateStringsArray) {
+export function indent(strings: TemplateStringsArray) {
   const code = strings[0]
 
   const rows = code.split('\n')
@@ -23,5 +23,5 @@ export function indent (strings:TemplateStringsArray) {
     }
   }
 
-  return rows.map(row => row.substring(indentationLenght)).join('\n')
+  return rows.map((row) => row.substring(indentationLenght)).join('\n')
 }
