@@ -3,13 +3,12 @@ import { classNames } from '../classNames.js'
 import {
   BooleanModifierProps,
   SizeModifierProp,
-  Size,
   modifier,
   pluralSizeClassName,
 } from '../modifiers/index.js'
 
 export type ButtonsProps = HTMLAttributes<HTMLDivElement> &
-  SizeModifierProp<Exclude<Size, 'normal'>> &
+  SizeModifierProp<'small' | 'medium' | 'large'> &
   Pick<BooleanModifierProps, 'isCentered'>
 
 export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({

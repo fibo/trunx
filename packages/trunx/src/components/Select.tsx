@@ -1,4 +1,4 @@
-import { FC, ChangeEventHandler, SelectHTMLAttributes, PropsWithChildren, useMemo } from 'react'
+import { FC, ChangeEventHandler, OptionHTMLAttributes, SelectHTMLAttributes, useMemo } from 'react'
 import { classNames } from '../classNames.js'
 import {
   BooleanModifierProps,
@@ -10,19 +10,28 @@ import {
   sizeClassName,
 } from '../modifiers/index.js'
 
+/**
+ * Pretend that every option has `label` and `value`.
+ */
+type Option = Omit<OptionHTMLAttributes<HTMLOptionElement>, 'value' | 'label'> & {
+  label: OptionHTMLAttributes<HTMLOptionElement>['label']
+  value: OptionHTMLAttributes<HTMLOptionElement>['value']
+}
+
 export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> &
   ColorModifierProp<MainColor> &
   SizeModifierProp &
-  Pick<BooleanModifierProps, 'isFocused' | 'isHovered' | 'isLoading' | 'isMultiple'>
+  Pick<BooleanModifierProps, 'isFocused' | 'isHovered' | 'isLoading'> & {
+    options: Option[]
+  }
 
-export const Select: FC<PropsWithChildren<SelectProps>> = ({
-  children,
+export const Select: FC<SelectProps> = ({
   className,
   color,
   isFocused,
   isHovered,
   isLoading,
-  isMultiple,
+  options,
   size,
   ...props
 }) => {
@@ -31,16 +40,20 @@ export const Select: FC<PropsWithChildren<SelectProps>> = ({
       classNames(
         'select',
         colorClassName(color),
-        modifier({ isFocused, isHovered, isLoading, isMultiple }),
+        modifier({ isFocused, isHovered, isLoading }),
         sizeClassName(size),
         className
       ),
-    [className, color, size, isFocused, isHovered, isLoading, isMultiple]
+    [className, color, size, isFocused, isHovered, isLoading]
   )
 
   return (
     <div className={_className}>
-      <select {...props}>{children}</select>
+      <select {...props}>
+        {options.map((props, i) => (
+          <option key={i} {...props} />
+        ))}
+      </select>
     </div>
   )
 }
