@@ -1,6 +1,6 @@
-@import 'highlight.js/scss/tomorrow.scss';
+@import "highlight.js/scss/default.scss";
 
 // Import bulma variables first;
-@import './bulma-variables/index.scss';
+@import "./bulma-variables/index.scss";
 // then import bulma.
-@import 'bulma/bulma';
+@import "bulma/bulma";

@@ -1,7 +1,6 @@
 "use client"
 import { Columns, Column, bulma } from "trunx"
 import { Code, PageContent, PageSection } from "@/components"
-import { indent } from "@/helpers/utils/indent"
 
 export default function Page() {
   return (
@@ -51,16 +50,16 @@ export default function Page() {
           ))}
         </Columns>
 
-        <Code>
-          {indent`
-        <Columns>
-          <Column>First column</Column>
-          <Column>Second column</Column>
-          <Column>Third column</Column>
-          <Column>Fourth column</Column>
-        </Columns>
-        `}
-        </Code>
+        <Code
+          snippet={`
+            <Columns>
+              <Column>First column</Column>
+              <Column>Second column</Column>
+              <Column>Third column</Column>
+              <Column>Fourth column</Column>
+            </Columns>
+          `}
+        />
       </PageSection>
     </PageContent>
   )
