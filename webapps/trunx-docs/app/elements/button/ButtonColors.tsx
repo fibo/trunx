@@ -1,7 +1,6 @@
 "use client"
 import { Button, Buttons, Column, Columns } from "trunx"
 import { Code, PageSection } from "@/components"
-import { indent } from "@/helpers/utils/indent"
 
 export default function Example() {
   return (
@@ -19,18 +18,18 @@ export default function Example() {
         </Column>
 
         <Column>
-          <Code>
-            {indent`
-          <Buttons>
-            <Button color="white">white</Button>
-            <Button color="light">light</Button>
-            <Button color="dark">dark</Button>
-            <Button color="black">black</Button>
-            <Button color="text">text</Button>
-            <Button color="ghost">ghost</Button>
-          </Buttons>
-          `}
-          </Code>
+          <Code
+            snippet={`
+              <Buttons>
+                <Button color="white">white</Button>
+                <Button color="light">light</Button>
+                <Button color="dark">dark</Button>
+                <Button color="black">black</Button>
+                <Button color="text">text</Button>
+                <Button color="ghost">ghost</Button>
+              </Buttons>
+              `}
+          />
         </Column>
       </Columns>
 
@@ -50,8 +49,8 @@ export default function Example() {
         </Column>
 
         <Column>
-          <Code>
-            {indent`
+          <Code
+            snippet={`
           <Buttons>
             <Button color="primary">primary</Button>
             <Button color="link">link</Button>
@@ -64,7 +63,7 @@ export default function Example() {
             <Button color="danger">danger</Button>
           </Buttons>
           `}
-          </Code>
+          />
         </Column>
       </Columns>
 
@@ -96,8 +95,8 @@ export default function Example() {
         </Column>
 
         <Column>
-          <Code>
-            {indent`
+          <Code
+            snippet={`
           <Buttons>
             <Button isLight color="primary">primary</Button>
             <Button isLight color="link">link</Button>
@@ -110,7 +109,7 @@ export default function Example() {
             <Button isLight color="danger">danger</Button>
           </Buttons>
           `}
-          </Code>
+          />
         </Column>
       </Columns>
     </PageSection>

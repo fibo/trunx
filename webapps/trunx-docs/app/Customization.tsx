@@ -1,24 +1,23 @@
 "use client"
 import { Code, PageSection } from "@/components"
-import { indent } from "@/helpers/utils/indent"
 
 export default function Example() {
   return (
     <PageSection title="Customization">
       <p>Use Sass to customize your Bulma build to create your own theme.</p>
 
-      <Code>
-        {indent`
+      <Code
+        snippet={`
           npm install sass --save-dev
         `}
-      </Code>
+      />
 
       <p>
         Create, for example, a <em>_colors.scss</em> file like the following
       </p>
 
-      <Code>
-        {indent`
+      <Code
+        snippet={`
           $azure: hsl(180, 100%, 97%);
           $limegreen: hsl(120, 60%, 50%);
           $orangered: hsl(16, 100%, 50%);
@@ -34,18 +33,18 @@ export default function Example() {
           $warning: hsl(48, 89%, 60%);
           $danger: $orangered;
         `}
-      </Code>
+      />
 
       <p>In your entry Sass file import customizations first and then Bulma.</p>
 
-      <Code>
-        {indent`
+      <Code
+        snippet={`
           /* Import custom variables first. */
           @import "colors";
           /* Import all bulma modules. */
           @import "bulma/bulma";
         `}
-      </Code>
+      />
     </PageSection>
   )
 }
