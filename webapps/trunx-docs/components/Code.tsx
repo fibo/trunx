@@ -1,12 +1,44 @@
 "use client"
-import { FC, PropsWithChildren } from "react"
-import Highlight from "react-highlight"
+import hljs from "highlight.js"
+import { FC, useEffect, useRef } from "react"
 import { bulma } from "trunx"
 
-export const Code: FC<PropsWithChildren> = ({ children }) => {
+type Props = {
+  snippet: string
+}
+
+function indent(code: string) {
+  const rows = code.split("\n")
+  rows.shift()
+  rows.pop()
+
+  const firstRow = rows[0]
+  let indentationLenght = 0
+
+  for (let i = 0; i < firstRow.length; i++) {
+    if (firstRow[i] === " ") {
+      indentationLenght++
+    } else {
+      break
+    }
+  }
+
+  return rows.map((row) => row.substring(indentationLenght)).join("\n")
+}
+
+export const Code: FC<Props> = ({ snippet }) => {
+  const ref = useRef(null)
+
+  useEffect(() => {
+    if (!ref.current) return
+    hljs.highlightElement(ref.current)
+  }, [ref])
+
   return (
-    <div className={bulma("my-2")}>
-      <Highlight>{children}</Highlight>
+    <div className={bulma("mb-5")}>
+      <pre ref={ref}>
+        <code>{indent(snippet)}</code>
+      </pre>
     </div>
   )
 }

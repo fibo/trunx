@@ -1,7 +1,6 @@
 "use client"
 import { Column, Columns } from "trunx"
 import { Code, PageSection } from "@/components"
-import { indent } from "@/helpers/utils/indent"
 
 export default function Example() {
   return (
@@ -18,21 +17,21 @@ export default function Example() {
         <Column size="half">
           <p>Use the HTML5 doctype</p>
 
-          <Code>
-            {indent`
-          <!DOCTYPE html>
-        `}
-          </Code>
+          <Code
+            snippet={`
+              <!DOCTYPE html>
+            `}
+          />
         </Column>
 
         <Column size="half">
           <p>Add the responsive viewport meta tag</p>
 
-          <Code>
-            {indent`
-          <meta name="viewport" content="width=device-width, initial-scale=1">
-        `}
-          </Code>
+          <Code
+            snippet={`
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+            `}
+          />
         </Column>
       </Columns>
     </PageSection>
