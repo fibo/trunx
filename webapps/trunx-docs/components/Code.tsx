@@ -13,6 +13,7 @@ function indent(code: string) {
   rows.pop()
 
   const firstRow = rows[0]
+  if (!firstRow) return ""
   let indentationLenght = 0
 
   for (let i = 0; i < firstRow.length; i++) {
