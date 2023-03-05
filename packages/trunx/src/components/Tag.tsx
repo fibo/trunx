@@ -1,5 +1,5 @@
-import { AnchorHTMLAttributes, FC, PropsWithChildren, useMemo } from 'react'
-import { classNames } from '../classNames.js'
+import { FC, HTMLAttributes, PropsWithChildren, useMemo } from "react"
+import { classNames } from "../classNames.js"
 import {
   BooleanModifierProps,
   ColorModifierProp,
@@ -9,18 +9,17 @@ import {
   colorClassName,
   modifier,
   sizeClassName,
-} from '../modifiers/index.js'
+} from "../modifiers/index.js"
 
-export type TagProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+export type TagProps = HTMLAttributes<HTMLSpanElement> &
   ColorModifierProp<MainColor | ShadeColor> &
-  SizeModifierProp<'normal' | 'medium' | 'large'> &
-  Pick<BooleanModifierProps, 'isDelete' | 'isLight' | 'isRounded'>
+  SizeModifierProp<"normal" | "medium" | "large"> &
+  Pick<BooleanModifierProps, "isLight" | "isRounded">
 
 export const Tag: FC<PropsWithChildren<TagProps>> = ({
   children,
   className,
   color,
-  isDelete,
   isLight,
   isRounded,
   size,
@@ -28,13 +27,13 @@ export const Tag: FC<PropsWithChildren<TagProps>> = ({
   const _className = useMemo(
     () =>
       classNames(
-        'tag',
+        "tag",
         colorClassName(color),
         sizeClassName(size),
-        modifier({ isDelete, isLight, isRounded }),
+        modifier({ isLight, isRounded }),
         className
       ),
-    [className, color, isDelete, isLight, isRounded, size]
+    [className, color, isLight, isRounded, size]
   )
-  return <div className={_className}>{children}</div>
+  return <span className={_className}>{children}</span>
 }
