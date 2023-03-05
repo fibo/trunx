@@ -1,5 +1,6 @@
 import { PageContent } from "@/components"
 import TagAddons from "./TagAddons"
+import TagCombinations from "./TagCombinations"
 import TagColors from "./TagColors"
 
 export default function Page() {
@@ -13,6 +14,8 @@ export default function Page() {
       }
     >
       <TagColors />
+
+      <TagCombinations />
 
       <TagAddons />
     </PageContent>
