@@ -1,4 +1,5 @@
 import { PageContent } from "@/components"
+import ModalUsage from "./ModalUsage"
 import ImageModal from "./ImageModal"
 
 export default function Page() {
@@ -11,6 +12,8 @@ export default function Page() {
         </>
       }
     >
+      <ModalUsage />
+
       <ImageModal />
     </PageContent>
   )

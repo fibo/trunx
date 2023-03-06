@@ -1,3 +1,4 @@
+"use client"
 import { FC, ButtonHTMLAttributes, HTMLAttributes, PropsWithChildren, ReactNode, useMemo } from "react"
 import { classNames } from "../classNames.js"
 import { BooleanModifierProps, modifier, sizeClassName, SizeModifierProp } from "../modifiers/index.js"

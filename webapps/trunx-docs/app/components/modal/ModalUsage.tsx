@@ -4,7 +4,6 @@ import {
   Button,
   Columns,
   Column,
-  Image,
   Modal,
   ModalBackground,
   ModalClose,
@@ -13,7 +12,7 @@ import {
 } from "trunx"
 import { Code, PageSection } from "@/components"
 
-const ImageModal: FC = () => {
+const ExampleModal: FC = () => {
   const [isActive, setIsActive] = useState(false)
 
   const toggleModal = useCallback(() => {
@@ -25,15 +24,13 @@ const ImageModal: FC = () => {
   return (
     <>
       <Button size="large" color="primary" onClick={toggleModal}>
-        Launch image modal
+        Launch example modal
       </Button>
 
       <Modal isActive={isActive}>
         <ModalBackground onClick={toggleModal} />
 
-        <ModalContent>
-          <Image alt="trunx" src="/assets/trunx-logotype-white.png" />
-        </ModalContent>
+        <ModalContent>{/* Any other Trunx components you want */}</ModalContent>
 
         <ModalClose size="large" onClick={toggleModal} />
       </Modal>
@@ -44,20 +41,42 @@ const ImageModal: FC = () => {
 export default function Example() {
   return (
     <PageSection>
+      <p>The modal structure is very simple:</p>
+
+      <ol>
+        <li>
+          <code>Modal</code>: the main container
+        </li>
+
+        <li>
+          <code>ModalBackground</code>: a transparent overlay that can act as a click target to close the
+          modal
+        </li>
+
+        <li>
+          <code>ModalContent</code>: a horizontally and vertically centered container, with a maximum width
+          of 640px, in which you can include any content
+        </li>
+
+        <li>
+          <code>ModalClose</code>: a simple cross located in the top right corner
+        </li>
+      </ol>
+
       <p>
-        Because a modal can contain <b>anything you want</b>, you can very simply use it to build an image
-        gallery for example.
+        To activate the modal, just add the <code>isActive</code> prop. You may also want to stop scroll
+        overflow with <code>useStopScroll</code>
       </p>
 
       <Columns>
         <Column>
-          <ImageModal />
+          <ExampleModal />
         </Column>
       </Columns>
 
       <Code
         snippet={`
-const ImageModal: FC = () => {
+const ExampleModal: FC = () => {
   const [isActive, setIsActive] = useState(false)
 
   const toggleModal = useCallback(() => {
@@ -69,15 +88,13 @@ const ImageModal: FC = () => {
   return (
     <>
       <Button size="large" color="primary" onClick={toggleModal}>
-        Launch image modal
+        Launch example modal
       </Button>
 
       <Modal isActive={isActive}>
         <ModalBackground onClick={toggleModal} />
 
-        <ModalContent>
-          <Image alt="trunx" src="/assets/trunx-logotype-white.png" />
-        </ModalContent>
+        <ModalContent>{/* Any other Trunx components you want */}</ModalContent>
 
         <ModalClose size="large" onClick={toggleModal} />
       </Modal>
