@@ -1,9 +1,13 @@
 "use client"
 import { FC, useCallback, useState } from "react"
 import {
+  Box,
   Button,
   Columns,
   Column,
+  Content,
+  Image,
+  Media,
   Modal,
   ModalBackground,
   ModalClose,
@@ -30,9 +34,23 @@ const ExampleModal: FC = () => {
       <Modal isActive={isActive}>
         <ModalBackground onClick={toggleModal} />
 
-        <ModalContent>{/* Any other Trunx components you want */}</ModalContent>
+        <ModalContent>
+          {/* TODO add icons and Level */}
+          <Box>
+            <Media left={<Image alt="" dimension="64x64" src="/assets/placeholders/128x128.png" />}>
+              <Content>
+                <strong>John Smith</strong>
+                <small>@johnsmith</small>
+                <small>31m</small>
+                <br />
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
+                fringilla egestas. Nullam condimentum luctus turpis.
+              </Content>
+            </Media>
+          </Box>
+        </ModalContent>
 
-        <ModalClose size="large" onClick={toggleModal} />
+        <ModalClose onClick={toggleModal} />
       </Modal>
     </>
   )
@@ -96,7 +114,7 @@ const ExampleModal: FC = () => {
 
         <ModalContent>{/* Any other Trunx components you want */}</ModalContent>
 
-        <ModalClose size="large" onClick={toggleModal} />
+        <ModalClose onClick={toggleModal} />
       </Modal>
     </>
   )
