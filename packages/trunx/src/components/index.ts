@@ -1,7 +1,6 @@
 export * from "./Box.js"
 export * from "./Breadcrumb.js"
 export * from "./Button.js"
-export * from "./ButtonDelete.js"
 export * from "./Buttons.js"
 export * from "./Card.js"
 export * from "./Checkbox.js"

@@ -1,30 +1,29 @@
 "use client"
 import { FC, useCallback, useState } from "react"
-import { Button, Columns, Column, Image, Modal, ModalContent } from "trunx"
+import { Button, Columns, Column, Image, Modal, ModalBackground, ModalClose, ModalContent } from "trunx"
 import { Code, PageSection } from "@/components"
 
 const ImageModal: FC = () => {
   const [isActive, setIsActive] = useState(false)
 
-  const openModal = useCallback(() => {
-    setIsActive(true)
-  }, [])
-
-  const closeModal = useCallback(() => {
-    setIsActive(false)
+  const toggleModal = useCallback(() => {
+    setIsActive((active) => !active)
   }, [])
 
   return (
     <>
-      <Button size="large" color="primary" onClick={openModal}>
+      <Button size="large" color="primary" onClick={toggleModal}>
         Launch Image Modal
       </Button>
 
       <Modal isActive={isActive}>
+        <ModalBackground onClick={toggleModal} />
+
         <ModalContent>
           <Image alt="trunx" src="/assets/trunx-logotype-white.png" />
         </ModalContent>
-        <button className="modal-close is-large" aria-label="close" onClick={closeModal}></button>
+
+        <ModalClose size="large" onClick={toggleModal} />
       </Modal>
     </>
   )
@@ -49,20 +48,24 @@ export default function Example() {
 const ImageModal: FC = () => {
   const [isActive, setIsActive] = useState(false)
 
-  const onClick = useCallback(() => {
-    setIsActive(true)
+  const toggleModal = useCallback(() => {
+    setIsActive((active) => !active)
   }, [])
 
   return (
     <>
-      <Button size="large" color="primary" onClick={onClick}>
+      <Button size="large" color="primary" onClick={toggleModal}>
         Launch Image Modal
       </Button>
 
       <Modal isActive={isActive}>
+        <ModalBackground onClick={toggleModal} />
+
         <ModalContent>
-          <img src="/assets/trunx-logotype-white.png" />
+          <Image alt="trunx" src="/assets/trunx-logotype-white.png" />
         </ModalContent>
+
+        <ModalClose size="large" onClick={toggleModal} />
       </Modal>
     </>
   )
