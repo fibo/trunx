@@ -1,35 +1,28 @@
-import { FC, HTMLAttributes, PropsWithChildren, ReactNode, useCallback, useMemo } from "react"
+import { FC, ButtonHTMLAttributes, HTMLAttributes, PropsWithChildren, ReactNode, useMemo } from "react"
 import { classNames } from "../classNames.js"
-import { BooleanModifierProps, modifier } from "../modifiers/index.js"
+import { BooleanModifierProps, modifier, sizeClassName, SizeModifierProp } from "../modifiers/index.js"
 
-export type ModalProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, "isActive"> & {
-    setIsActive: (arg: boolean) => void
-  }
+export type ModalProps = HTMLAttributes<HTMLDivElement> & Pick<BooleanModifierProps, "isActive">
 
-export const Modal: FC<PropsWithChildren<ModalProps>> = ({
-  children,
-  className,
-  isActive,
-  setIsActive,
-  ...props
-}) => {
+export const Modal: FC<PropsWithChildren<ModalProps>> = ({ children, className, isActive, ...props }) => {
   const _className = useMemo(
     () => classNames("modal", modifier({ isActive }), className),
     [className, isActive]
   )
 
-  const handleBackgroundClick = useCallback(() => {
-    setIsActive(false)
-  }, [setIsActive])
-
   return (
     <div className={_className} {...props}>
-      <div className="modal-background" onClick={handleBackgroundClick} />
-
       {children}
     </div>
   )
+}
+
+export type ModalBackgroundProps = HTMLAttributes<HTMLDivElement>
+
+export const ModalBackground: FC<ModalBackgroundProps> = ({ className, ...props }) => {
+  const _className = useMemo(() => classNames("modal-background", className), [className])
+
+  return <div className={_className} {...props} />
 }
 
 export type ModalCardProps = ModalProps &
@@ -60,6 +53,17 @@ export const ModalCard: FC<PropsWithChildren<ModalCardProps>> = ({
       {footer ? <footer className="modal-card-foot">{footer}</footer> : null}
     </div>
   )
+}
+
+export type ModalCloseProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeModifierProp<"large">
+
+export const ModalClose: FC<ModalCloseProps> = ({ className, size, ...props }) => {
+  const _className = useMemo(
+    () => classNames("modal-close", sizeClassName(size), className),
+    [className, size]
+  )
+
+  return <button className={_className} aria-label="close" {...props} />
 }
 
 export type ModalContentProps = HTMLAttributes<HTMLDivElement>

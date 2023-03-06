@@ -84,6 +84,16 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   )
 }
 
+export type ButtonDeleteProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className"> &
+  ColorModifierProp<MainColor | ShadeColor | OtherColor> &
+  SizeModifierProp<"small" | "medium" | "large">
+
+export const ButtonDelete: FC<ButtonDeleteProps> = ({ size, ...props }) => {
+  const _className = useMemo(() => classNames("delete", sizeClassName(size)), [size])
+
+  return <button className={_className} {...props} />
+}
+
 /**
  * Callback helper, alias for `React.PointerEventHandler<HTMLButtonElement>`.
  *
