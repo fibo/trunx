@@ -1,7 +1,8 @@
-export { type BooleanModifierProps, modifier } from './boolean.js'
-export * from './color.js'
-export * from './layout.js'
-export * from './number.js'
-export * from './responsiveness.js'
-export * from './typography.js'
-export * from './size.js'
+export { type BooleanModifierProps, modifier } from "./boolean.js"
+export * from "./color.js"
+export * from "./layout.js"
+export * from "./image.js"
+export * from "./number.js"
+export * from "./responsiveness.js"
+export * from "./typography.js"
+export * from "./size.js"

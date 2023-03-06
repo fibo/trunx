@@ -29,7 +29,7 @@ const ImageModal: FC = () => {
       </Button>
 
       <Modal isActive={isActive}>
-        <ModalBackground onClick={toggleModal} />
+        <ModalBackground />
 
         <ModalContent>
           <Image alt="trunx" src="/assets/trunx-logotype-white.png" />
@@ -43,7 +43,7 @@ const ImageModal: FC = () => {
 
 export default function Example() {
   return (
-    <PageSection>
+    <PageSection title="Image modal">
       <p>
         Because a modal can contain <b>anything you want</b>, you can very simply use it to build an image
         gallery for example.
@@ -73,7 +73,7 @@ const ImageModal: FC = () => {
       </Button>
 
       <Modal isActive={isActive}>
-        <ModalBackground onClick={toggleModal} />
+        <ModalBackground />
 
         <ModalContent>
           <Image alt="trunx" src="/assets/trunx-logotype-white.png" />
