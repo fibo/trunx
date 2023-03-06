@@ -1,11 +1,11 @@
-import { FC, HTMLAttributes, PropsWithChildren, ReactNode, useMemo } from 'react'
-import { classNames } from '../classNames.js'
-import { Alignment } from '../modifiers/index.js'
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode, useMemo } from "react"
+import { classNames } from "../classNames.js"
+import { Alignment } from "../modifiers/index.js"
 
 export type FieldProps = HTMLAttributes<HTMLDivElement> &
   Partial<{
     hasAddons: boolean | Alignment
-    isGrouped: boolean | Alignment | 'multiline'
+    isGrouped: boolean | Alignment | "multiline"
   }>
 
 export const Field: FC<PropsWithChildren<FieldProps>> = ({
@@ -18,9 +18,10 @@ export const Field: FC<PropsWithChildren<FieldProps>> = ({
   const _className = useMemo(
     () =>
       classNames(
-        'field',
-        hasAddons ? (hasAddons === true ? 'has-addons' : `has-addons-${hasAddons}`) : undefined,
-        isGrouped ? (isGrouped === true ? 'is-grouped' : `is-grouped-${isGrouped}`) : undefined,
+        "field",
+        hasAddons ? (hasAddons === true ? "has-addons" : `has-addons-${hasAddons}`) : undefined,
+        isGrouped !== undefined ? "is-grouped" : undefined,
+        typeof isGrouped === "string" ? `is-grouped-${isGrouped}` : undefined,
         className
       ),
     [className, hasAddons, isGrouped]
@@ -43,7 +44,7 @@ export const FieldHorizontal: FC<PropsWithChildren<FieldHorizontalProps>> = ({
   className,
   ...props
 }) => {
-  const _className = useMemo(() => classNames('field is-horizontal', className), [className])
+  const _className = useMemo(() => classNames("field is-horizontal", className), [className])
   return (
     <div className={_className} {...props}>
       <div className="field-label">{label}</div>
