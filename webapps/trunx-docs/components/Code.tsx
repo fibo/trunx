@@ -6,10 +6,11 @@ import { bulma } from "trunx"
 hljs.configure({ ignoreUnescapedHTML: true })
 
 type Props = {
+  language?: "html" | "jsx" | "scss"
   snippet: string
 }
 
-export const Code: FC<Props> = ({ snippet }) => {
+export const Code: FC<Props> = ({ language = "jsx", snippet }) => {
   const ref = useRef(null)
 
   useEffect(() => {
@@ -19,7 +20,7 @@ export const Code: FC<Props> = ({ snippet }) => {
 
   return (
     <div className={bulma("mb-5")}>
-      <pre ref={ref}>
+      <pre ref={ref} className={`language-${language}`}>
         <code>{indent(snippet)}</code>
       </pre>
     </div>
