@@ -1,28 +1,28 @@
-import { FC, HTMLAttributes, PropsWithChildren, ReactNode, useCallback, useMemo } from 'react'
-import { classNames } from '../classNames.js'
-import { BooleanModifierProps, modifier } from '../modifiers/index.js'
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode, useCallback, useMemo } from "react"
+import { classNames } from "../classNames.js"
+import { BooleanModifierProps, modifier } from "../modifiers/index.js"
 
 export type ModalProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, 'isActive'> &
+  Pick<BooleanModifierProps, "isActive"> &
   Partial<{
-    handleDelete: () => void
+    handleClose: () => void
   }>
 
 export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   children,
   className,
   isActive,
-  handleDelete,
+  handleClose,
   ...props
 }) => {
   const _className = useMemo(
-    () => classNames('modal', modifier({ isActive }), className),
+    () => classNames("modal", modifier({ isActive }), className),
     [className, isActive]
   )
 
   const handleBackgroundClick = useCallback(() => {
-    handleDelete?.()
-  }, [handleDelete])
+    handleClose?.()
+  }, [handleClose])
 
   return (
     <div className={_className} {...props}>
@@ -32,25 +32,26 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   )
 }
 
-export type ModalCardProps = HTMLAttributes<HTMLDivElement> &
+export type ModalCardProps = ModalProps &
   Partial<{
     title: ReactNode
     content: ReactNode
     footer: ReactNode
-    handleDelete: () => void
   }>
 
 export const ModalCard: FC<PropsWithChildren<ModalCardProps>> = ({
   children,
-  handleDelete,
+  handleClose,
   title,
   footer,
   className,
 }) => {
-  const _className = useMemo(() => classNames('modal-card', className), [className])
+  const _className = useMemo(() => classNames("modal-card", className), [className])
+
   const handleDeleteButtonClick = useCallback(() => {
-    handleDelete?.()
-  }, [handleDelete])
+    handleClose?.()
+  }, [handleClose])
+
   return (
     <div className={_className}>
       {title ? (
@@ -61,6 +62,16 @@ export const ModalCard: FC<PropsWithChildren<ModalCardProps>> = ({
       ) : null}
       <div className="modal-card-body">{children}</div>
       {footer ? <footer className="modal-card-foot">{footer}</footer> : null}
+    </div>
+  )
+}
+
+export type ModalContentProps = Omit<HTMLAttributes<HTMLDivElement>, "className">
+
+export const ModalContent: FC<PropsWithChildren<ModalContentProps>> = ({ children, ...props }) => {
+  return (
+    <div className="modal-content" {...props}>
+      {children}
     </div>
   )
 }
