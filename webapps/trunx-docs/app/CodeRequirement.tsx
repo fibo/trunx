@@ -18,6 +18,7 @@ export default function Example() {
           <p>Use the HTML5 doctype</p>
 
           <Code
+            language="html"
             snippet={`
               <!DOCTYPE html>
             `}
@@ -28,6 +29,7 @@ export default function Example() {
           <p>Add the responsive viewport meta tag</p>
 
           <Code
+            language="html"
             snippet={`
               <meta name="viewport" content="width=device-width, initial-scale=1">
             `}
