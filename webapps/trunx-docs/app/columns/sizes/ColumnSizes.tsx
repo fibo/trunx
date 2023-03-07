@@ -104,7 +104,7 @@ export const ColumnSizes: FC = () => {
             </Columns>
 
             <Columns>
-              <Column size="tow-thirds">tow-thirds</Column>
+              <Column size="two-thirds">two-thirds</Column>
               <Column>auto</Column>
               <Column>auto</Column>
             </Columns>
