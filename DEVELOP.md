@@ -1,5 +1,7 @@
 # Trunx Development
 
+## Workflow
+
 Install dependencies
 
 ```sh
@@ -24,4 +26,13 @@ After components are built, commit code and then you can release a new version
 cd packages/trunx/
 npm version [patch|minor|major]
 ```
+
+## Website deploy
+
+Trunx website is deployed on [Vercel](https://vercel.com/).
+
+SSL is provided by [Let's Encrypt](https://letsencrypt.org/) via the following DNS record:
+
+* type: `CAA`
+* value: `0 issue "letsencrypt.org"`
 
