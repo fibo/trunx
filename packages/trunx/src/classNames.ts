@@ -1,6 +1,6 @@
 export type ClassNamesArg<ClassName extends string> =
   | ClassName
-  | { [key in ClassName]: unknown }
+  | { [key in ClassName]?: unknown }
   | ClassNamesArg<ClassName>[]
 
 /**
@@ -22,13 +22,13 @@ export const classNames = <T extends string>(...args: ClassNamesArg<T>[]): strin
     .map((arg) => {
       if (Array.isArray(arg)) {
         // Recursively call classNames or return empty string if arg is an empty array.
-        return arg.length ? classNames(...arg) : ''
+        return arg.length ? classNames(...arg) : ""
       } else if (
         // In this `else` branch, arg is not an Array.
         // Make sure arg is not null,
         arg &&
         // and arg is a proper Object.
-        typeof arg === 'object'
+        typeof arg === "object"
       ) {
         return classNames(
           // Map object to an array of its keys,
@@ -39,10 +39,10 @@ export const classNames = <T extends string>(...args: ClassNamesArg<T>[]): strin
         )
       }
       // Return arg if it is a string, or fallback to empty string.
-      return typeof arg === 'string' ? arg : ''
+      return typeof arg === "string" ? arg : ""
     })
     .filter(
       // Avoid more than one white space in the join below, by filtering empty strings.
-      (str) => str !== ''
+      (str) => str !== ""
     )
-    .join(' ')
+    .join(" ")
