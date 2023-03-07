@@ -7,8 +7,8 @@ export const route = {
   },
   components: {
     breadcrumb: "/components/breadcrumb",
-    message: "/component/message",
-    modal: "/component/modal",
+    message: "/components/message",
+    modal: "/components/modal",
     navbar: "/components/navbar",
   },
   elements: {
