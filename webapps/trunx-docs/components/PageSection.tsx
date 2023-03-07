@@ -1,5 +1,5 @@
 import { FC, PropsWithChildren, ReactNode } from "react"
-import { Container, Section, bulma } from "trunx"
+import { Container, Section, Title } from "trunx"
 
 type Props = {
   title?: ReactNode
@@ -8,8 +8,14 @@ type Props = {
 export const PageSection: FC<PropsWithChildren<Props>> = ({ children, title }) => {
   return (
     <Section>
+      <hr />
+
       <Container maxWidth="desktop">
-        {title && <p className={bulma("title", "is-4")}>{title}</p>}
+        {title && (
+          <Title h={2} size={4}>
+            {title}
+          </Title>
+        )}
 
         {children}
       </Container>

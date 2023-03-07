@@ -41,7 +41,7 @@ export const navContents = [
       // { label: "Content", route: route.elements.content },
       // { label: "Delete", route: route.elements.delete },
       // { label: "Tag", route: route.elements.tag },
-      // { label: "Title", route: route.elements.title },
+      { label: "Title", route: route.elements.title },
     ],
   },
   {
