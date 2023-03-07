@@ -1,9 +1,9 @@
-import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
-import { classNames } from '../classNames.js'
-import { BooleanModifierProps, Dozen, modifier } from '../modifiers/index.js'
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import { classNames } from "../classNames.js"
+import { BooleanModifierProps, Dozen, modifier } from "../modifiers/index.js"
 
 export type TileProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, 'isAncestor' | 'isParent' | 'isVertical'> &
+  Pick<BooleanModifierProps, "isAncestor" | "isParent" | "isVertical"> &
   Partial<{
     size: Dozen
   }>
@@ -17,18 +17,15 @@ export const Tile: FC<PropsWithChildren<TileProps>> = ({
   size,
   ...props
 }) => {
-  const _className = useMemo(
-    () =>
-      classNames(
-        'tile',
-        size ? `is-${size}` : undefined,
-        modifier({ isAncestor, isParent, isVertical }),
-        className
-      ),
-    [className, isAncestor, isParent, isVertical, size]
+  const _class = classNames(
+    "tile",
+    size ? `is-${size}` : undefined,
+    modifier({ isAncestor, isParent, isVertical }),
+    className
   )
+
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
       {children}
     </div>
   )

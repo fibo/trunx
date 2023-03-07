@@ -1,15 +1,15 @@
-import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
-import { classNames } from '../classNames.js'
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import { classNames } from "../classNames.js"
 import {
   BooleanModifierProps,
   SizeModifierProp,
   modifier,
   pluralSizeClassName,
-} from '../modifiers/index.js'
+} from "../modifiers/index.js"
 
 export type TagsProps = HTMLAttributes<HTMLDivElement> &
-  SizeModifierProp<'small' | 'medium' | 'large'> &
-  Pick<BooleanModifierProps, 'hasAddons'>
+  SizeModifierProp<"small" | "medium" | "large"> &
+  Pick<BooleanModifierProps, "hasAddons">
 
 export const Tags: FC<PropsWithChildren<TagsProps>> = ({
   children,
@@ -18,12 +18,10 @@ export const Tags: FC<PropsWithChildren<TagsProps>> = ({
   size,
   ...props
 }) => {
-  const _className = useMemo(
-    () => classNames('tags', pluralSizeClassName(size), modifier({ hasAddons }), className),
-    [className, hasAddons, size]
-  )
+  const _class = classNames("tags", pluralSizeClassName(size), modifier({ hasAddons }), className)
+
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
       {children}
     </div>
   )

@@ -1,5 +1,5 @@
-import { ChangeEventHandler, FC, InputHTMLAttributes, useMemo } from 'react'
-import { classNames } from '../classNames.js'
+import { ChangeEventHandler, FC, InputHTMLAttributes } from "react"
+import { classNames } from "../classNames.js"
 import {
   MainColor,
   ColorModifierProp,
@@ -8,19 +8,19 @@ import {
   colorClassName,
   modifier,
   sizeClassName,
-} from '../modifiers/index.js'
+} from "../modifiers/index.js"
 
-export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'size' | 'type'> &
+export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "type"> &
   ColorModifierProp<MainColor> &
   SizeModifierProp &
-  Pick<BooleanModifierProps, 'isFocused' | 'isHovered' | 'isLoading' | 'isRounded' | 'isStatic'> &
+  Pick<BooleanModifierProps, "isFocused" | "isHovered" | "isLoading" | "isRounded" | "isStatic"> &
   Partial<{
     type: Exclude<
-      InputHTMLAttributes<HTMLInputElement>['type'],
+      InputHTMLAttributes<HTMLInputElement>["type"],
       // Component FileUpload handles `type="file"`
-      | 'file'
+      | "file"
       // Component Radio handles `type="radio"`
-      | 'radio'
+      | "radio"
     >
   }>
 
@@ -35,25 +35,21 @@ export const Input: FC<InputProps> = ({
   size,
   ...props
 }) => {
-  const _className = useMemo(
-    () =>
-      classNames(
-        'input',
-        colorClassName(color),
-        sizeClassName(size),
-        modifier({
-          isFocused,
-          isHovered,
-          isLoading,
-          isRounded,
-          isStatic,
-        }),
-        className
-      ),
-    [className, color, isFocused, isHovered, size, isLoading, isRounded, isStatic]
+  const _class = classNames(
+    "input",
+    colorClassName(color),
+    sizeClassName(size),
+    modifier({
+      isFocused,
+      isHovered,
+      isLoading,
+      isRounded,
+      isStatic,
+    }),
+    className
   )
 
-  return <input className={_className} {...props} />
+  return <input className={_class} {...props} />
 }
 
 /**

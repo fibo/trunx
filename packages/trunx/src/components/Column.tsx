@@ -1,9 +1,9 @@
-import { FC, PropsWithChildren, useMemo } from 'react'
-import { classNames } from '../classNames.js'
-import { Breakpoint, BooleanModifierProps, Dozen, Fraction, modifier } from '../modifiers/index.js'
+import { FC, PropsWithChildren } from "react"
+import { classNames } from "../classNames.js"
+import { Breakpoint, BooleanModifierProps, Dozen, Fraction, modifier } from "../modifiers/index.js"
 
 export type ColumnProps = React.HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, 'isCentered'> &
+  Pick<BooleanModifierProps, "isCentered"> &
   Partial<{
     /**
      * @example
@@ -62,30 +62,26 @@ export const Column: FC<PropsWithChildren<ColumnProps>> = ({
   offset,
   size,
 }) => {
-  const _className = useMemo(
-    () =>
-      classNames(
-        'column',
-        modifier({ isCentered }),
-        isNarrow === true
-          ? {
-              'is-narrow': isNarrow,
-            }
-          : isNarrow && typeof isNarrow === 'object'
-          ? Object.entries(isNarrow).map(([breakpoint, enabled]) =>
-              enabled ? `is-narrow-${breakpoint}` : undefined
-            )
-          : undefined,
-        offset ? `is-offset-${offset}` : undefined,
-        size
-          ? typeof size === 'object'
-            ? Object.entries(size).map(([breakpoint, value]) => `is-${value}-${breakpoint}`)
-            : `is-${size}`
-          : undefined,
-        className
-      ),
-    [className, isCentered, isNarrow, offset, size]
+  const _class = classNames(
+    "column",
+    modifier({ isCentered }),
+    isNarrow === true
+      ? {
+          "is-narrow": isNarrow,
+        }
+      : isNarrow && typeof isNarrow === "object"
+      ? Object.entries(isNarrow).map(([breakpoint, enabled]) =>
+          enabled ? `is-narrow-${breakpoint}` : undefined
+        )
+      : undefined,
+    offset ? `is-offset-${offset}` : undefined,
+    size
+      ? typeof size === "object"
+        ? Object.entries(size).map(([breakpoint, value]) => `is-${value}-${breakpoint}`)
+        : `is-${size}`
+      : undefined,
+    className
   )
 
-  return <div className={_className}>{children}</div>
+  return <div className={_class}>{children}</div>
 }

@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, PointerEventHandler, PropsWithChildren, useMemo } from "react"
+import { ButtonHTMLAttributes, FC, PointerEventHandler, PropsWithChildren } from "react"
 import { classNames } from "../classNames.js"
 import {
   ColorModifierProp,
@@ -44,41 +44,25 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   color,
   ...props
 }) => {
-  const _className = useMemo(
-    () =>
-      classNames(
-        "button",
-        colorClassName(color),
-        sizeClassName(size),
-        modifier({
-          isActive,
-          isExpanded,
-          isFocused,
-          isInverted,
-          isLight,
-          isLoading,
-          isOutlined,
-          isStatic,
-        }),
-        className
-      ),
-    [
-      className,
-      color,
+  const _class = classNames(
+    "button",
+    colorClassName(color),
+    sizeClassName(size),
+    modifier({
       isActive,
-      isFocused,
       isExpanded,
+      isFocused,
       isInverted,
       isLight,
       isLoading,
       isOutlined,
       isStatic,
-      size,
-    ]
+    }),
+    className
   )
 
   return (
-    <button className={_className} {...props}>
+    <button className={_class} {...props}>
       {children}
     </button>
   )
@@ -89,9 +73,9 @@ export type ButtonDeleteProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "c
   SizeModifierProp<"small" | "medium" | "large">
 
 export const ButtonDelete: FC<ButtonDeleteProps> = ({ size, ...props }) => {
-  const _className = useMemo(() => classNames("delete", sizeClassName(size)), [size])
+  const _class = classNames("delete", sizeClassName(size))
 
-  return <button className={_className} {...props} />
+  return <button className={_class} {...props} />
 }
 
 /**
