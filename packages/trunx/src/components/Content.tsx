@@ -1,18 +1,16 @@
-import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
-import { classNames } from '../classNames.js'
-import { SizeModifierProp, sizeClassName, textAlignClassName, TextAlignProp } from '../modifiers/index.js'
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import { classNames } from "../classNames.js"
+import { SizeModifierProp, sizeClassName, textAlignClassName, TextAlignProp } from "../modifiers/index.js"
 
-export type ContentProps = Omit<HTMLAttributes<HTMLDivElement>, 'className'> &
+export type ContentProps = Omit<HTMLAttributes<HTMLDivElement>, "className"> &
   SizeModifierProp &
   TextAlignProp
 
 export const Content: FC<PropsWithChildren<ContentProps>> = ({ children, hasText, size, ...props }) => {
-  const _className = useMemo(
-    () => classNames('content', textAlignClassName(hasText), sizeClassName(size)),
-    [hasText, size]
-  )
+  const _class = classNames("content", textAlignClassName(hasText), sizeClassName(size))
+
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
       {children}
     </div>
   )
