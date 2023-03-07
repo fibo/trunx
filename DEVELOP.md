@@ -21,6 +21,7 @@ npm run build
 After components are built, commit code and then you can release a new version
 
 ```sh
+cd packages/trunx/
 npm version [patch|minor|major]
 ```
 
