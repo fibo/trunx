@@ -6,7 +6,7 @@
 
 ## Documentation
 
-To read documentation point your browser to https://trunx.vercel.app/
+To read documentation point your browser to https://trunx.dev/
 
 Yes, the website itself is implemented with Trunx: you can read its [source code here](https://github.com/fibo/trunx/tree/main/webapps/trunx-docs).
 
