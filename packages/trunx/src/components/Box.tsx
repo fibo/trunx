@@ -1,12 +1,13 @@
-import { FC, HTMLAttributes, PropsWithChildren, useMemo } from "react"
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
 import { classNames } from "../classNames.js"
 
 export type BoxProps = HTMLAttributes<HTMLDivElement>
 
 export const Box: FC<PropsWithChildren<BoxProps>> = ({ children, className, ...props }) => {
-  const _className = useMemo(() => classNames("box", className), [className])
+  const _class = classNames("box", className)
+
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
       {children}
     </div>
   )

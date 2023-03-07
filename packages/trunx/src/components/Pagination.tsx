@@ -1,10 +1,10 @@
-import { FC, AnchorHTMLAttributes, HTMLAttributes, PropsWithChildren, memo, useMemo } from 'react'
-import { classNames } from '../classNames.js'
-import { BooleanModifierProps, SizeModifierProp, modifier, sizeClassName } from '../modifiers/index.js'
+import { FC, AnchorHTMLAttributes, HTMLAttributes, PropsWithChildren } from "react"
+import { classNames } from "../classNames.js"
+import { BooleanModifierProps, SizeModifierProp, modifier, sizeClassName } from "../modifiers/index.js"
 
 export type PaginationProps = HTMLAttributes<HTMLElement> &
-  SizeModifierProp<'small' | 'medium' | 'large'> &
-  Pick<BooleanModifierProps, 'isCentered' | 'isRight' | 'isRounded'>
+  SizeModifierProp<"small" | "medium" | "large"> &
+  Pick<BooleanModifierProps, "isCentered" | "isRight" | "isRounded">
 
 export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
   className,
@@ -15,29 +15,25 @@ export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
   size,
   ...props
 }) => {
-  const _className = useMemo(
-    () =>
-      classNames(
-        'pagination',
-        sizeClassName(size),
-        modifier({ isCentered, isRight, isRounded }),
-        className
-      ),
-    [className, isCentered, isRight, isRounded, size]
+  const _class = classNames(
+    "pagination",
+    sizeClassName(size),
+    modifier({ isCentered, isRight, isRounded }),
+    className
   )
+
   return (
-    <nav className={_className} aria-label="pagination" {...props}>
+    <nav className={_class} aria-label="pagination" {...props}>
       <ul>{children}</ul>
     </nav>
   )
 }
 
-export const PaginationEllipsis = memo(() => (
+export const PaginationEllipsis: FC = () => (
   <li>
     <span className="pagination-ellipsis">&hellip;</span>
   </li>
-))
-PaginationEllipsis.displayName = 'PaginationEllipsis'
+)
 
 export type PaginationLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   Partial<{
@@ -50,20 +46,18 @@ export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
   isCurrent,
   ...props
 }) => {
-  const _className = useMemo(
-    () => classNames('pagination-link', { 'is-current': isCurrent }, className),
-    [className, isCurrent]
-  )
+  const _class = classNames("pagination-link", { "is-current": isCurrent }, className)
+
   return (
     <li>
-      <a className={_className} {...props}>
+      <a className={_class} {...props}>
         {children}
       </a>
     </li>
   )
 }
 
-export type PaginationListProps = Omit<HTMLAttributes<HTMLUListElement>, 'className'>
+export type PaginationListProps = Omit<HTMLAttributes<HTMLUListElement>, "className">
 
 export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({ children, ...props }) => {
   return (
@@ -74,7 +68,7 @@ export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({ chi
 }
 
 export type PaginationIncrementalNavigationProps = AnchorHTMLAttributes<HTMLAnchorElement> &
-  Pick<BooleanModifierProps, 'isDisabled'>
+  Pick<BooleanModifierProps, "isDisabled">
 
 export const PaginationNext: FC<PropsWithChildren<PaginationIncrementalNavigationProps>> = ({
   children,
@@ -82,12 +76,10 @@ export const PaginationNext: FC<PropsWithChildren<PaginationIncrementalNavigatio
   isDisabled,
   ...props
 }) => {
-  const _className = useMemo(
-    () => classNames('pagination-next', modifier({ isDisabled }), className),
-    [className, isDisabled]
-  )
+  const _class = classNames("pagination-next", modifier({ isDisabled }), className)
+
   return (
-    <a className={_className} {...props}>
+    <a className={_class} {...props}>
       {children}
     </a>
   )
@@ -99,12 +91,10 @@ export const PaginationPrevious: FC<PropsWithChildren<PaginationIncrementalNavig
   isDisabled,
   ...props
 }) => {
-  const _className = useMemo(
-    () => classNames('pagination-previous', modifier({ isDisabled }), className),
-    [className, isDisabled]
-  )
+  const _class = classNames("pagination-previous", modifier({ isDisabled }), className)
+
   return (
-    <a className={_className} {...props}>
+    <a className={_class} {...props}>
       {children}
     </a>
   )
