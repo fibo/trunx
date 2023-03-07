@@ -17,6 +17,7 @@ export default function Example() {
       </p>
 
       <Code
+        language="scss"
         snippet={`
           $azure: hsl(180, 100%, 97%);
           $limegreen: hsl(120, 60%, 50%);
@@ -38,6 +39,7 @@ export default function Example() {
       <p>In your entry Sass file import customizations first and then Bulma.</p>
 
       <Code
+        language="scss"
         snippet={`
           /* Import custom variables first. */
           @import "colors";

@@ -1,6 +1,7 @@
 "use client"
-import { Columns, Column, bulma } from "trunx"
+import { Columns, Column } from "trunx"
 import { Code, PageContent, PageSection } from "@/components"
+import { ColumnFill } from "../ColumnFill"
 
 export default function Page() {
   return (
@@ -34,18 +35,7 @@ export default function Page() {
         <Columns>
           {["First", "Second", "Third", "Fourth"].map((label, i) => (
             <Column key={i}>
-              <p
-                className={bulma(
-                  "has-text-centered",
-                  "has-text-white",
-                  "has-text-weight-bold",
-                  "has-background-primary",
-                  "is-rounded",
-                  "p-2"
-                )}
-              >
-                {label} column
-              </p>
+              <ColumnFill text={`${label} column`} />
             </Column>
           ))}
         </Columns>
