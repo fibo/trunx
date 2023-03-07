@@ -41,7 +41,7 @@
   "bugs": {
     "url": "https://github.com/fibo/trunx/issues"
   },
-  "homepage": "https://trunx.dev",
+  "homepage": "https://trunx.vercel.app/",
   "dependencies": {
     "bulma": "^0.9.4"
   }
