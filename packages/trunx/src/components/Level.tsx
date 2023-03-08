@@ -1,31 +1,31 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
 import { classNames } from "../classNames.js"
-import {
-  Alignment,
-  BooleanModifierProps,
-  modifier,
-  textAlignClassName,
-  TextAlignProp,
-} from "../modifiers/index.js"
+import { BooleanModifierProps, modifier, textAlignClassName, TextAlignProp } from "../modifiers/index.js"
 
 export type LevelProps = HTMLAttributes<HTMLDivElement> &
   Pick<BooleanModifierProps, "isMobile"> &
   Partial<{
-    side: Extract<Alignment, "left" | "right">
+    left: ReactNode
+    right: ReactNode
   }>
 
 export const Level: FC<PropsWithChildren<LevelProps>> = ({
   children,
   className,
   isMobile,
-  side,
+  left,
+  right,
   ...props
 }) => {
-  const _class = classNames(side ? `level-${side}` : "level", modifier({ isMobile }), className)
+  const _class = classNames("level", modifier({ isMobile }), className)
 
   return (
     <div className={_class} {...props}>
+      {left && <div className="level-left">{left}</div>}
+
       {children}
+
+      {right && <div className="level-right">{right}</div>}
     </div>
   )
 }
