@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, PropsWithChildren, ReactNode, useMemo } from "react"
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
 import { classNames } from "../classNames.js"
 
 export type MediaProps = HTMLAttributes<HTMLElement> &
@@ -14,10 +14,10 @@ export const Media: FC<PropsWithChildren<MediaProps>> = ({
   right,
   ...props
 }) => {
-  const _className = useMemo(() => classNames("media", className), [className])
+  const _class = classNames("media", className)
 
   return (
-    <article className={_className} {...props}>
+    <article className={_class} {...props}>
       {left && <div className="media-left">{left}</div>}
 
       {children}

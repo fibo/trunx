@@ -1,12 +1,12 @@
-import { FC, HTMLAttributes, LiHTMLAttributes, PropsWithChildren, useMemo } from 'react'
-import { classNames } from '../classNames.js'
-import { BooleanModifierProps, SizeModifierProp, modifier } from '../modifiers/index.js'
+import { FC, HTMLAttributes, LiHTMLAttributes, PropsWithChildren } from "react"
+import { classNames } from "../classNames.js"
+import { BooleanModifierProps, SizeModifierProp, modifier } from "../modifiers/index.js"
 
-type BreadcrumbSeparator = 'arrow' | 'bullet' | 'dot' | 'succedes'
+type BreadcrumbSeparator = "arrow" | "bullet" | "dot" | "succedes"
 
 export type BreadcrumbProps = HTMLAttributes<HTMLElement> &
   SizeModifierProp &
-  Pick<BooleanModifierProps, 'isCentered' | 'isRight'> &
+  Pick<BooleanModifierProps, "isCentered" | "isRight"> &
   Partial<{
     separator: BreadcrumbSeparator
   }>
@@ -19,24 +19,21 @@ export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps>> = ({
   isRight,
   ...props
 }) => {
-  const _className = useMemo(
-    () =>
-      classNames(
-        'breadcrumb',
-        modifier({ isCentered, isRight }),
-        separator === undefined ? '' : `has-${separator}-separator`,
-        className
-      ),
-    [className, isCentered, separator, isRight]
+  const _class = classNames(
+    "breadcrumb",
+    modifier({ isCentered, isRight }),
+    separator === undefined ? "" : `has-${separator}-separator`,
+    className
   )
+
   return (
-    <nav className={_className} aria-label="breadcrumbs" {...props}>
+    <nav className={_class} aria-label="breadcrumbs" {...props}>
       <ul>{children}</ul>
     </nav>
   )
 }
 
-export type BreadcrumbItemProps = LiHTMLAttributes<HTMLLIElement> & Pick<BooleanModifierProps, 'isActive'>
+export type BreadcrumbItemProps = LiHTMLAttributes<HTMLLIElement> & Pick<BooleanModifierProps, "isActive">
 
 export const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   className,
@@ -44,9 +41,10 @@ export const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   isActive,
   ...props
 }) => {
-  const _className = useMemo(() => classNames(modifier({ isActive }), className), [className, isActive])
+  const _class = classNames(modifier({ isActive }), className)
+
   return (
-    <li className={_className} {...props}>
+    <li className={_class} {...props}>
       {children}
     </li>
   )
