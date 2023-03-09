@@ -1,10 +1,10 @@
-import { FC, TextareaHTMLAttributes, useMemo } from 'react'
-import { classNames } from '../classNames.js'
-import { BooleanModifierProps, SizeModifierProp, modifier, sizeClassName } from '../modifiers/index.js'
+import { FC, TextareaHTMLAttributes } from "react"
+import { classNames } from "../classNames.js"
+import { BooleanModifierProps, SizeModifierProp, modifier, sizeClassName } from "../modifiers/index.js"
 
 export type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
   SizeModifierProp &
-  Pick<BooleanModifierProps, 'isActive' | 'isFocused' | 'isHovered' | 'isLoading'>
+  Pick<BooleanModifierProps, "isActive" | "isFocused" | "isHovered" | "isLoading">
 
 export const TextArea: FC<TextAreaProps> = ({
   children,
@@ -16,18 +16,15 @@ export const TextArea: FC<TextAreaProps> = ({
   size,
   ...props
 }) => {
-  const _className = useMemo(
-    () =>
-      classNames(
-        'textarea',
-        modifier({ isActive, isFocused, isHovered, isLoading }),
-        sizeClassName(size),
-        className
-      ),
-    [className, isActive, isFocused, isHovered, isLoading, size]
+  const _class = classNames(
+    "textarea",
+    modifier({ isActive, isFocused, isHovered, isLoading }),
+    sizeClassName(size),
+    className
   )
+
   return (
-    <textarea className={_className} {...props}>
+    <textarea className={_class} {...props}>
       {children}
     </textarea>
   )

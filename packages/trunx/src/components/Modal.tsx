@@ -1,18 +1,15 @@
 "use client"
-import { FC, ButtonHTMLAttributes, HTMLAttributes, PropsWithChildren, ReactNode, useMemo } from "react"
+import { FC, ButtonHTMLAttributes, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
 import { classNames } from "../classNames.js"
 import { BooleanModifierProps, modifier, sizeClassName, SizeModifierProp } from "../modifiers/index.js"
 
 export type ModalProps = HTMLAttributes<HTMLDivElement> & Pick<BooleanModifierProps, "isActive">
 
 export const Modal: FC<PropsWithChildren<ModalProps>> = ({ children, className, isActive, ...props }) => {
-  const _className = useMemo(
-    () => classNames("modal", modifier({ isActive }), className),
-    [className, isActive]
-  )
+  const _class = classNames("modal", modifier({ isActive }), className)
 
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
       {children}
     </div>
   )
@@ -21,9 +18,9 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ children, className, 
 export type ModalBackgroundProps = HTMLAttributes<HTMLDivElement>
 
 export const ModalBackground: FC<ModalBackgroundProps> = ({ className, ...props }) => {
-  const _className = useMemo(() => classNames("modal-background", className), [className])
+  const _class = classNames("modal-background", className)
 
-  return <div className={_className} {...props} />
+  return <div className={_class} {...props} />
 }
 
 export type ModalCardProps = ModalProps &
@@ -39,15 +36,15 @@ export const ModalCard: FC<PropsWithChildren<ModalCardProps>> = ({
   footer,
   className,
 }) => {
-  const _className = useMemo(() => classNames("modal-card", className), [className])
+  const _class = classNames("modal-card", className)
 
   return (
-    <div className={_className}>
-      {header ? (
+    <div className={_class}>
+      {header && (
         <header className="modal-card-head">
           <p className="modal-card-title">{header}</p>
         </header>
-      ) : null}
+      )}
 
       <div className="modal-card-body">{children}</div>
 
@@ -59,12 +56,9 @@ export const ModalCard: FC<PropsWithChildren<ModalCardProps>> = ({
 export type ModalCloseProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeModifierProp<"large">
 
 export const ModalClose: FC<ModalCloseProps> = ({ className, size, ...props }) => {
-  const _className = useMemo(
-    () => classNames("modal-close", sizeClassName(size), className),
-    [className, size]
-  )
+  const _class = classNames("modal-close", sizeClassName(size), className)
 
-  return <button className={_className} aria-label="close" {...props} />
+  return <button className={_class} aria-label="close" {...props} />
 }
 
 export type ModalContentProps = HTMLAttributes<HTMLDivElement>
@@ -74,10 +68,10 @@ export const ModalContent: FC<PropsWithChildren<ModalContentProps>> = ({
   className,
   ...props
 }) => {
-  const _className = useMemo(() => classNames("modal-content", className), [className])
+  const _class = classNames("modal-content", className)
 
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
       {children}
     </div>
   )

@@ -1,4 +1,4 @@
-import { FC, HTMLAttributes, PropsWithChildren, useMemo } from "react"
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
 import { classNames } from "../classNames.js"
 import {
   BooleanModifierProps,
@@ -24,16 +24,13 @@ export const Tag: FC<PropsWithChildren<TagProps>> = ({
   isRounded,
   size,
 }) => {
-  const _className = useMemo(
-    () =>
-      classNames(
-        "tag",
-        colorClassName(color),
-        sizeClassName(size),
-        modifier({ isLight, isRounded }),
-        className
-      ),
-    [className, color, isLight, isRounded, size]
+  const _class = classNames(
+    "tag",
+    colorClassName(color),
+    sizeClassName(size),
+    modifier({ isLight, isRounded }),
+    className
   )
-  return <span className={_className}>{children}</span>
+
+  return <span className={_class}>{children}</span>
 }
