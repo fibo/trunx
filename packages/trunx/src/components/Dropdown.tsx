@@ -1,17 +1,9 @@
-import {
-  FC,
-  AnchorHTMLAttributes,
-  ButtonHTMLAttributes,
-  HTMLAttributes,
-  PropsWithChildren,
-  useMemo,
-  memo,
-} from 'react'
-import { classNames } from '../classNames.js'
-import { BooleanModifierProps, modifier } from '../modifiers/index.js'
+import { FC, AnchorHTMLAttributes, ButtonHTMLAttributes, HTMLAttributes, PropsWithChildren } from "react"
+import { classNames } from "../classNames.js"
+import { BooleanModifierProps, modifier } from "../modifiers/index.js"
 
 export type DropdownProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, 'isActive' | 'isHoverable' | 'isRight' | 'isUp'>
+  Pick<BooleanModifierProps, "isActive" | "isHoverable" | "isRight" | "isUp">
 
 export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
   children,
@@ -22,31 +14,29 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
   isUp,
   ...props
 }) => {
-  const _className = useMemo(
-    () => classNames('dropdown', modifier({ isActive, isHoverable, isRight, isUp }), className),
-    [className, isActive, isHoverable, isRight, isUp]
-  )
+  const _class = classNames("dropdown", modifier({ isActive, isHoverable, isRight, isUp }), className)
+
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
       {children}
     </div>
   )
 }
 
-export const DropdownDivider = memo(() => <hr className="dropdown-divider" />)
-DropdownDivider.displayName = 'DropdownDivider'
+export const DropdownDivider: FC = () => <hr className="dropdown-divider" />
 
-type DropdownItemModifierProps = Pick<BooleanModifierProps, 'isActive'>
+type DropdownItemModifierProps = Pick<BooleanModifierProps, "isActive">
 
 const dropdownItemClassNames = ({ isActive }: DropdownItemModifierProps, className?: string) =>
-  classNames('dropdown-item', modifier({ isActive }), className)
+  classNames("dropdown-item", modifier({ isActive }), className)
 
 export type DropdownItemProps = HTMLAttributes<HTMLDivElement> & DropdownItemModifierProps
 
 export const DropdownItem: FC<DropdownItemProps> = ({ children, className, isActive, ...props }) => {
-  const _className = useMemo(() => dropdownItemClassNames({ isActive }, className), [className, isActive])
+  const _class = dropdownItemClassNames({ isActive }, className)
+
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
       {children}
     </div>
   )
@@ -60,15 +50,16 @@ export const DropdownItemAnchor: FC<DropdownItemAnchorProps> = ({
   isActive,
   ...props
 }) => {
-  const _className = useMemo(() => dropdownItemClassNames({ isActive }, className), [className, isActive])
+  const _class = dropdownItemClassNames({ isActive }, className)
+
   return (
-    <a className={_className} {...props}>
+    <a className={_class} {...props}>
       {children}
     </a>
   )
 }
 
-export type DropdownMenuProps = Omit<HTMLAttributes<HTMLDivElement>, 'className'>
+export type DropdownMenuProps = Omit<HTMLAttributes<HTMLDivElement>, "className">
 
 export const DropdownMenu: FC<PropsWithChildren<DropdownMenuProps>> = ({ children, ...props }) => {
   return (
@@ -85,10 +76,11 @@ export const DropdownTrigger: FC<PropsWithChildren<DropdownTriggerProps>> = ({
   className,
   ...props
 }) => {
-  const _className = useMemo(() => classNames('button', className), [className])
+  const _class = classNames("button", className)
+
   return (
     <div className="dropdown-trigger">
-      <button className={_className} {...props}>
+      <button className={_class} {...props}>
         {children}
       </button>
     </div>

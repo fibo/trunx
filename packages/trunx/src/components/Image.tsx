@@ -1,5 +1,5 @@
 import { classNames } from "../classNames.js"
-import { FC, ImgHTMLAttributes, useMemo } from "react"
+import { FC, ImgHTMLAttributes } from "react"
 import {
   ImageDimensionProp,
   ImageRatioProp,
@@ -10,13 +10,15 @@ import {
 export type ImageProps = ImgHTMLAttributes<HTMLImageElement> & ImageRatioProp & ImageDimensionProp
 
 export const Image: FC<ImageProps> = ({ className, dimension, ratio, ...props }) => {
-  const _className = useMemo(
-    () => classNames("image", imageDimensionClassName(dimension), imageRatioClassName(ratio), className),
-    [className, dimension, ratio]
+  const _class = classNames(
+    "image",
+    imageDimensionClassName(dimension),
+    imageRatioClassName(ratio),
+    className
   )
 
   return (
-    <figure className={_className}>
+    <figure className={_class}>
       <img {...props} />
     </figure>
   )

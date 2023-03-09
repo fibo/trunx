@@ -1,15 +1,15 @@
-import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
-import { classNames } from '../classNames.js'
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import { classNames } from "../classNames.js"
 import {
   BooleanModifierProps,
   SizeModifierProp,
   modifier,
   pluralSizeClassName,
-} from '../modifiers/index.js'
+} from "../modifiers/index.js"
 
 export type ButtonsProps = HTMLAttributes<HTMLDivElement> &
-  SizeModifierProp<'small' | 'medium' | 'large'> &
-  Pick<BooleanModifierProps, 'isCentered'>
+  SizeModifierProp<"small" | "medium" | "large"> &
+  Pick<BooleanModifierProps, "isCentered">
 
 export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({
   children,
@@ -18,12 +18,10 @@ export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({
   size,
   ...props
 }) => {
-  const _className = useMemo(
-    () => classNames('buttons', modifier({ isCentered }), pluralSizeClassName(size), className),
-    [className, isCentered, size]
-  )
+  const _class = classNames("buttons", modifier({ isCentered }), pluralSizeClassName(size), className)
+
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
       {children}
     </div>
   )

@@ -1,11 +1,11 @@
-import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
-import { classNames } from '../classNames.js'
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import { classNames } from "../classNames.js"
 import {
   flexClassNames,
   FlexModifierProps,
   SpacingModifierProp,
   spacingClassNames,
-} from '../modifiers/index.js'
+} from "../modifiers/index.js"
 
 export type FlexProps = HTMLAttributes<HTMLDivElement> & FlexModifierProps & SpacingModifierProp
 
@@ -23,17 +23,14 @@ export const Flex: FC<PropsWithChildren<FlexProps>> = ({
   wrap,
   ...props
 }) => {
-  const _className = useMemo(
-    () =>
-      classNames(
-        flexClassNames({ align, alignItems, alignSelf, direction, grow, justify, shrink, wrap }),
-        spacingClassNames(spacing),
-        className
-      ),
-    [className, align, alignItems, alignSelf, direction, justify, grow, shrink, spacing, wrap]
+  const _class = classNames(
+    flexClassNames({ align, alignItems, alignSelf, direction, grow, justify, shrink, wrap }),
+    spacingClassNames(spacing),
+    className
   )
+
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
       {children}
     </div>
   )

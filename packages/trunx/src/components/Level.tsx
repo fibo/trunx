@@ -1,33 +1,31 @@
-import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
-import { classNames } from '../classNames.js'
-import {
-  Alignment,
-  BooleanModifierProps,
-  modifier,
-  textAlignClassName,
-  TextAlignProp,
-} from '../modifiers/index.js'
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
+import { classNames } from "../classNames.js"
+import { BooleanModifierProps, modifier, textAlignClassName, TextAlignProp } from "../modifiers/index.js"
 
 export type LevelProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, 'isMobile'> &
+  Pick<BooleanModifierProps, "isMobile"> &
   Partial<{
-    side: Extract<Alignment, 'left' | 'right'>
+    left: ReactNode
+    right: ReactNode
   }>
 
 export const Level: FC<PropsWithChildren<LevelProps>> = ({
   children,
   className,
   isMobile,
-  side,
+  left,
+  right,
   ...props
 }) => {
-  const _className = useMemo(
-    () => classNames(side ? `level-${side}` : 'level', modifier({ isMobile }), className),
-    [className, isMobile, side]
-  )
+  const _class = classNames("level", modifier({ isMobile }), className)
+
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
+      {left && <div className="level-left">{left}</div>}
+
       {children}
+
+      {right && <div className="level-right">{right}</div>}
     </div>
   )
 }
@@ -40,12 +38,10 @@ export const LevelItem: FC<PropsWithChildren<LevelItemProps>> = ({
   hasText,
   ...props
 }) => {
-  const _className = useMemo(
-    () => classNames('level-item', textAlignClassName(hasText), className),
-    [className, hasText]
-  )
+  const _class = classNames("level-item", textAlignClassName(hasText), className)
+
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
       {children}
     </div>
   )

@@ -1,16 +1,16 @@
-import { FC, HTMLAttributes, PropsWithChildren, useMemo } from 'react'
-import { classNames } from '../classNames.js'
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import { classNames } from "../classNames.js"
 import {
   ColorModifierProp,
   BooleanModifierProps,
   MainColor,
   colorClassName,
   modifier,
-} from '../modifiers/index.js'
+} from "../modifiers/index.js"
 
 export type NotificationProps = HTMLAttributes<HTMLDivElement> &
   ColorModifierProp<MainColor> &
-  Pick<BooleanModifierProps, 'isLight'>
+  Pick<BooleanModifierProps, "isLight">
 
 export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
   children,
@@ -19,12 +19,10 @@ export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
   isLight,
   ...props
 }) => {
-  const _className = useMemo(
-    () => classNames('notification', colorClassName(color), modifier({ isLight }), className),
-    [className, color, isLight]
-  )
+  const _class = classNames("notification", colorClassName(color), modifier({ isLight }), className)
+
   return (
-    <div className={_className} {...props}>
+    <div className={_class} {...props}>
       {children}
     </div>
   )
