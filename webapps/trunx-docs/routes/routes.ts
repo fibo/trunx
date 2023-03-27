@@ -10,6 +10,7 @@ export const route = {
     message: "/components/message",
     modal: "/components/modal",
     navbar: "/components/navbar",
+    tabs: "/components/tabs",
   },
   elements: {
     box: "/elements/box",
