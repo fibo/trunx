@@ -66,6 +66,7 @@ const navContents = [
       // { label: "Navbar", route: route.components.navbar },
       // { label: "Message", route: route.components.message },
       { label: "Modal", route: route.components.modal },
+      { label: "Tabs", route: route.components.tabs },
     ],
   },
 ]
