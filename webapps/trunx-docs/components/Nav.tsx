@@ -4,6 +4,7 @@ import {
   Navbar,
   NavbarBrand,
   NavbarBurger,
+  NavbarBurgerOnClick,
   NavbarDropdown,
   NavbarItem,
   NavbarLink,
@@ -90,8 +91,20 @@ export const Nav: FC = () => {
     []
   )
 
-  const onClickBurger = useCallback(() => {
+  const onClickBurger = useCallback<NavbarBurgerOnClick>((event) => {
+    event.stopPropagation()
     setExpanded((expanded) => !expanded)
+  }, [])
+
+  // Close menu on outside click.
+  useEffect(() => {
+    const closeMenu = () => {
+      setExpanded(false)
+    }
+    window.addEventListener("click", closeMenu)
+    return () => {
+      window.removeEventListener("click", closeMenu)
+    }
   }, [])
 
   return (
