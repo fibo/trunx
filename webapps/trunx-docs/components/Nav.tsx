@@ -13,7 +13,7 @@ import {
 } from "trunx"
 import Image from "next/image"
 import { useRouter } from "next/navigation"
-import { route } from "../routes/routes"
+import { route } from "../routes"
 
 const navContents = [
   {
