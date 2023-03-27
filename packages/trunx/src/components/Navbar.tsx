@@ -1,4 +1,11 @@
-import { AnchorHTMLAttributes, FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
+import {
+  AnchorHTMLAttributes,
+  FC,
+  HTMLAttributes,
+  PointerEventHandler,
+  PropsWithChildren,
+  ReactNode,
+} from "react"
 import { classNames } from "../classNames.js"
 import {
   MainColor,
@@ -80,6 +87,18 @@ export const NavbarBurger: FC<NavbarBurgerProps> = ({
     </div>
   )
 }
+
+/**
+ * Callback helper, alias for `React.PointerEventHandler<HTMLDivElement>`.
+ *
+ * @example
+ * ```ts
+ * useCallback<DivOnClick>((event) => {
+ *   // `event` has the correct type.
+ * })
+ * ```
+ */
+export type NavbarBurgerOnClick = PointerEventHandler<HTMLDivElement>
 
 export type NavbarDropdownProps = HTMLAttributes<HTMLDivElement>
 
