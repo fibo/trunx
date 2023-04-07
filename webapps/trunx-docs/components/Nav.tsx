@@ -1,7 +1,6 @@
 "use client"
 import { FC, useCallback, useEffect, useState } from "react"
 import {
-  Navbar,
   NavbarBrand,
   NavbarBurger,
   NavbarBurgerOnClick,
@@ -15,6 +14,7 @@ import {
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { route } from "../routes"
+import { NavbarFixed } from "./NavbarFixed"
 
 const navContents = [
   {
@@ -108,7 +108,7 @@ export const Nav: FC = () => {
   }, [])
 
   return (
-    <Navbar color="primary">
+    <NavbarFixed color="primary" side="top">
       <NavbarBrand>
         <NavbarItem onClick={redirectTo(route.home)}>
           <Image src="/assets/trunx-logotype-white.png" alt="me" width="100" height="100" />
@@ -133,6 +133,6 @@ export const Nav: FC = () => {
           ))}
         </NavbarStart>
       </NavbarMenu>
-    </Navbar>
+    </NavbarFixed>
   )
 }
