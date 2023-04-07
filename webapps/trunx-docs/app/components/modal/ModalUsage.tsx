@@ -12,9 +12,9 @@ import {
   ModalBackground,
   ModalClose,
   ModalContent,
-  useStopScroll,
 } from "trunx"
 import { Code, PageSection } from "@/components"
+import { useStopScroll } from "@/hooks"
 
 const ExampleModal: FC = () => {
   const [isActive, setIsActive] = useState(false)

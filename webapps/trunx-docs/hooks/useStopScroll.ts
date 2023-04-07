@@ -3,10 +3,12 @@ import { useEffect } from "react"
 
 export const useStopScroll = (isActive: boolean) => {
   useEffect(() => {
+    const html = document.querySelector("html")
+    if (!html) return
     if (isActive) {
-      document.querySelector("html").classList.add("is-clipped")
+      html.classList.add("is-clipped")
     } else {
-      document.querySelector("html").classList.remove("is-clipped")
+      html.classList.remove("is-clipped")
     }
   }, [isActive])
 }

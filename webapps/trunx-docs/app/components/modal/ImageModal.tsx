@@ -9,9 +9,9 @@ import {
   ModalBackground,
   ModalClose,
   ModalContent,
-  useStopScroll,
 } from "trunx"
 import { Code, PageSection } from "@/components"
+import { useStopScroll } from "@/hooks"
 
 const ImageModal: FC = () => {
   const [isActive, setIsActive] = useState(false)
