@@ -1,1 +1,1 @@
-export * from "./useStopScroll.js"
+export * from "./useStopScroll"
