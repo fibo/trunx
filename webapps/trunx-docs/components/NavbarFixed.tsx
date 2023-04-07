@@ -1,18 +1,18 @@
 "use client"
 import { FC, PropsWithChildren, useEffect } from "react"
-import { classNames } from "../classNames.js"
-import { Navbar, NavbarProps } from "./Navbar.js"
+import { Navbar, NavbarProps } from "trunx"
 
-type NavbarFixedProps = NavbarProps & {
+type NavbarFixedProps = Omit<NavbarProps, 'className'> & {
   side: "bottom" | "top"
 }
 
-export const NavbarFixed: FC<PropsWithChildren<NavbarFixedProps>> = ({ className, side, ...props }) => {
+export const NavbarFixed: FC<PropsWithChildren<NavbarFixedProps>> = ({ side, ...props }) => {
   useEffect(() => {
+    if (!side) return
     const otherSide = side === "top" ? "bottom" : "top"
 
     // Remove other side class, if any.
-    document.body.classList.add(`has-navbar-fixed-${otherSide}`)
+    document.body.classList.remove(`has-navbar-fixed-${otherSide}`)
 
     // Add related class to body.
     document.body.classList.add(`has-navbar-fixed-${side}`)
@@ -22,7 +22,7 @@ export const NavbarFixed: FC<PropsWithChildren<NavbarFixedProps>> = ({ className
     }
   }, [side])
 
-  const _class = classNames(`is-fixed-${side}`, className)
+  const className = `is-fixed-${side}`
 
-  return <Navbar className={_class} {...props} />
+  return <Navbar className={className} {...props} />
 }
