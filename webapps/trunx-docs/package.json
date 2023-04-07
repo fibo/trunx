@@ -12,17 +12,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
-    "eslint": "8.33.0",
-    "eslint-config-next": "13.2.3",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.33",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.37.0",
+    "eslint-config-next": "13.3.0",
     "highlight.js": "^11.7.0",
-    "next": "13.2.3",
+    "next": "13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "^1.58.0",
-    "sharp": "^0.31.3",
+    "sass": "^1.61.0",
+    "sharp": "^0.32.0",
     "trunx": "file:packages/trunx"
   }
 }
