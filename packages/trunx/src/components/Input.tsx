@@ -1,4 +1,9 @@
-import { ChangeEventHandler, FC, InputHTMLAttributes } from "react"
+import {
+  ChangeEventHandler,
+  FocusEventHandler,
+  FC,
+  InputHTMLAttributes,
+} from "react"
 import { classNames } from "../classNames.js"
 import {
   MainColor,
@@ -10,10 +15,16 @@ import {
   sizeClassName,
 } from "../modifiers/index.js"
 
-export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "type"> &
+export type InputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "size" | "type"
+> &
   ColorModifierProp<MainColor> &
   SizeModifierProp &
-  Pick<BooleanModifierProps, "isFocused" | "isHovered" | "isLoading" | "isRounded" | "isStatic"> &
+  Pick<
+    BooleanModifierProps,
+    "isFocused" | "isHovered" | "isLoading" | "isRounded" | "isStatic"
+  > &
   Partial<{
     type: Exclude<
       InputHTMLAttributes<HTMLInputElement>["type"],
@@ -63,3 +74,15 @@ export const Input: FC<InputProps> = ({
  * ```
  */
 export type InputOnChange = ChangeEventHandler<HTMLInputElement>
+
+/**
+ * Callback helper, alias for `React.FocusEventHandler<HTMLInputElement>`.
+ *
+ * ```ts
+ * @example
+ * useCallback<InputOnFocus>((event) => {
+ *   // `event` has the correct type.
+ * })
+ * ```
+ */
+export type InputOnFocus = FocusEventHandler<HTMLInputElement>
