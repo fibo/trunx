@@ -61,13 +61,11 @@ export const DropdownItemAnchor: FC<DropdownItemAnchorProps> = ({
 
 export type DropdownMenuProps = Omit<HTMLAttributes<HTMLDivElement>, "className">
 
-export const DropdownMenu: FC<PropsWithChildren<DropdownMenuProps>> = ({ children, ...props }) => {
-  return (
-    <div className="dropdown-menu" {...props}>
-      <div className="dropdown-content">{children}</div>
-    </div>
-  )
-}
+export const DropdownMenu: FC<PropsWithChildren<DropdownMenuProps>> = ({ children, ...props }) => (
+  <div className="dropdown-menu" {...props}>
+    <div className="dropdown-content">{children}</div>
+  </div>
+)
 
 export type DropdownTriggerProps = ButtonHTMLAttributes<HTMLButtonElement>
 

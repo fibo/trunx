@@ -1,5 +1,5 @@
-import { classNames } from "../classNames.js"
 import { FC, ImgHTMLAttributes } from "react"
+import { classNames } from "../classNames.js"
 import {
   ImageDimensionProp,
   ImageRatioProp,

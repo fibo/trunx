@@ -21,9 +21,29 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "arrow-body-style": ["error", "as-needed"],
+    "func-style": ["error", "expression"],
     "import/extensions": ["error", "always"],
+    "import/order": ["error", { "newlines-between": "never" }],
     "import/no-unresolved": "off",
+    "max-depth": ["error", 4],
+    "no-case-declarations": "error",
+    "no-console": "error",
+    "no-inline-comments": "error",
+    "no-implicit-globals": "error",
+    "no-lonely-if": "error",
+    "no-warning-comments": "error",
     "react-hooks/exhaustive-deps": "error",
-    "sort-keys": ["error","asc", { "natural": true}]
+    "react-hooks/rules-of-hooks": "error",
+    "react/jsx-key": "error",
+    "react/jsx-sort-props": [
+      "error",
+      {
+        "noSortAlphabetically": true,
+        "reservedFirst": true,
+        "shorthandFirst": true
+      }
+    ],
+    "sort-keys": ["error","asc", { "natural": true }]
   }
 }

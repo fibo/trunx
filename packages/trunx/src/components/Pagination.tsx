@@ -59,13 +59,11 @@ export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
 
 export type PaginationListProps = Omit<HTMLAttributes<HTMLUListElement>, "className">
 
-export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({ children, ...props }) => {
-  return (
-    <ul className="pagination-list" {...props}>
-      {children}
-    </ul>
-  )
-}
+export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({ children, ...props }) => (
+  <ul className="pagination-list" {...props}>
+    {children}
+  </ul>
+)
 
 export type PaginationIncrementalNavigationProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   Pick<BooleanModifierProps, "isDisabled">
