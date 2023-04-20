@@ -10,6 +10,7 @@ export type BooleanModifierProps = Partial<{
   isBordered: boolean
   isBoxed: boolean
   isCentered: boolean
+  isChild: boolean
   isDesktop: boolean
   isDisabled: boolean
   isExpanded: boolean
