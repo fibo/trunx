@@ -29,6 +29,7 @@ After components are built, commit code and then you can release a new version
 ```sh
 cd packages/trunx/
 npm version [patch|minor|major]
+npm publish
 ```
 
 Once the package is published on npm, commit new version change in *package-lock.json* and *packages/trunx/package.json* and push.
