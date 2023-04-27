@@ -23,7 +23,7 @@ export type InputProps = Omit<
   SizeModifierProp &
   Pick<
     BooleanModifierProps,
-    "isFocused" | "isHovered" | "isLoading" | "isRounded" | "isStatic"
+    "isFocused" | "isHovered" | "isRounded" | "isStatic"
   > &
   Partial<{
     type: Exclude<
@@ -40,7 +40,6 @@ export const Input: FC<InputProps> = ({
   color,
   isFocused,
   isHovered,
-  isLoading,
   isRounded,
   isStatic,
   size,
@@ -53,7 +52,6 @@ export const Input: FC<InputProps> = ({
     modifier({
       isFocused,
       isHovered,
-      isLoading,
       isRounded,
       isStatic,
     }),
