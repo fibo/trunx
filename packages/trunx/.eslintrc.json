@@ -45,5 +45,10 @@
       }
     ],
     "sort-keys": ["error","asc", { "natural": true }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
