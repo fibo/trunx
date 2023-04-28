@@ -1,6 +1,10 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
 import { classNames } from "../classNames.js"
-import { Breakpoint, BooleanModifierProps, modifier } from "../modifiers/index.js"
+import {
+  Breakpoint,
+  BooleanModifierProps,
+  modifier,
+} from "../modifiers/index.js"
 
 type Gap = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 

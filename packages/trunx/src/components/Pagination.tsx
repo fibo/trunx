@@ -1,6 +1,16 @@
-import { FC, AnchorHTMLAttributes, HTMLAttributes, PropsWithChildren } from "react"
+import {
+  FC,
+  AnchorHTMLAttributes,
+  HTMLAttributes,
+  PropsWithChildren,
+} from "react"
 import { classNames } from "../classNames.js"
-import { BooleanModifierProps, SizeModifierProp, modifier, sizeClassName } from "../modifiers/index.js"
+import {
+  BooleanModifierProps,
+  SizeModifierProp,
+  modifier,
+  sizeClassName,
+} from "../modifiers/index.js"
 
 export type PaginationProps = HTMLAttributes<HTMLElement> &
   SizeModifierProp<"small" | "medium" | "large"> &
@@ -46,7 +56,11 @@ export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
   isCurrent,
   ...props
 }) => {
-  const _class = classNames("pagination-link", { "is-current": isCurrent }, className)
+  const _class = classNames(
+    "pagination-link",
+    { "is-current": isCurrent },
+    className
+  )
 
   return (
     <li>
@@ -57,24 +71,32 @@ export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
   )
 }
 
-export type PaginationListProps = Omit<HTMLAttributes<HTMLUListElement>, "className">
+export type PaginationListProps = Omit<
+  HTMLAttributes<HTMLUListElement>,
+  "className"
+>
 
-export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({ children, ...props }) => (
+export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({
+  children,
+  ...props
+}) => (
   <ul className="pagination-list" {...props}>
     {children}
   </ul>
 )
 
-export type PaginationIncrementalNavigationProps = AnchorHTMLAttributes<HTMLAnchorElement> &
-  Pick<BooleanModifierProps, "isDisabled">
+export type PaginationIncrementalNavigationProps =
+  AnchorHTMLAttributes<HTMLAnchorElement> &
+    Pick<BooleanModifierProps, "isDisabled">
 
-export const PaginationNext: FC<PropsWithChildren<PaginationIncrementalNavigationProps>> = ({
-  children,
-  className,
-  isDisabled,
-  ...props
-}) => {
-  const _class = classNames("pagination-next", modifier({ isDisabled }), className)
+export const PaginationNext: FC<
+  PropsWithChildren<PaginationIncrementalNavigationProps>
+> = ({ children, className, isDisabled, ...props }) => {
+  const _class = classNames(
+    "pagination-next",
+    modifier({ isDisabled }),
+    className
+  )
 
   return (
     <a className={_class} {...props}>
@@ -83,13 +105,14 @@ export const PaginationNext: FC<PropsWithChildren<PaginationIncrementalNavigatio
   )
 }
 
-export const PaginationPrevious: FC<PropsWithChildren<PaginationIncrementalNavigationProps>> = ({
-  children,
-  className,
-  isDisabled,
-  ...props
-}) => {
-  const _class = classNames("pagination-previous", modifier({ isDisabled }), className)
+export const PaginationPrevious: FC<
+  PropsWithChildren<PaginationIncrementalNavigationProps>
+> = ({ children, className, isDisabled, ...props }) => {
+  const _class = classNames(
+    "pagination-previous",
+    modifier({ isDisabled }),
+    className
+  )
 
   return (
     <a className={_class} {...props}>

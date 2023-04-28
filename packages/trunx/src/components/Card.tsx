@@ -8,7 +8,13 @@ export type CardProps = HTMLAttributes<HTMLDivElement> &
     footer: ReactNode
   }>
 
-export const Card: FC<PropsWithChildren<CardProps>> = ({ children, header, footer, image, className }) => {
+export const Card: FC<PropsWithChildren<CardProps>> = ({
+  children,
+  header,
+  footer,
+  image,
+  className,
+}) => {
   const _class = classNames("card", className)
 
   return (

@@ -37,14 +37,23 @@ const ExampleModal: FC = () => {
         <ModalContent>
           {/* TODO add icons and Level */}
           <Box>
-            <Media left={<Image alt="" dimension="64x64" src="/assets/placeholders/128x128.png" />}>
+            <Media
+              left={
+                <Image
+                  alt=""
+                  dimension="64x64"
+                  src="/assets/placeholders/128x128.png"
+                />
+              }
+            >
               <Content>
                 <strong>John Smith</strong>
                 <small>@johnsmith</small>
                 <small>31m</small>
                 <br />
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa
-                fringilla egestas. Nullam condimentum luctus turpis.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+                efficitur sit amet massa fringilla egestas. Nullam condimentum
+                luctus turpis.
               </Content>
             </Media>
           </Box>
@@ -67,23 +76,25 @@ export default function Example() {
         </li>
 
         <li>
-          <code>ModalBackground</code>: a transparent overlay that can act as a click target to close the
-          modal
+          <code>ModalBackground</code>: a transparent overlay that can act as a
+          click target to close the modal
         </li>
 
         <li>
-          <code>ModalContent</code>: a horizontally and vertically centered container, with a maximum width
-          of 640px, in which you can include any content
+          <code>ModalContent</code>: a horizontally and vertically centered
+          container, with a maximum width of 640px, in which you can include any
+          content
         </li>
 
         <li>
-          <code>ModalClose</code>: a simple cross located in the top right corner
+          <code>ModalClose</code>: a simple cross located in the top right
+          corner
         </li>
       </ol>
 
       <p>
-        To activate the modal, just add the <code>isActive</code> prop. You may also want to stop scroll
-        overflow with <code>useStopScroll</code>
+        To activate the modal, just add the <code>isActive</code> prop. You may
+        also want to stop scroll overflow with <code>useStopScroll</code>
       </p>
 
       <Columns>

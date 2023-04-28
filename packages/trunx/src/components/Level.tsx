@@ -1,6 +1,11 @@
 import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
 import { classNames } from "../classNames.js"
-import { BooleanModifierProps, modifier, textAlignClassName, TextAlignProp } from "../modifiers/index.js"
+import {
+  BooleanModifierProps,
+  modifier,
+  textAlignClassName,
+  TextAlignProp,
+} from "../modifiers/index.js"
 
 export type LevelProps = HTMLAttributes<HTMLDivElement> &
   Pick<BooleanModifierProps, "isMobile"> &
@@ -38,7 +43,11 @@ export const LevelItem: FC<PropsWithChildren<LevelItemProps>> = ({
   hasText,
   ...props
 }) => {
-  const _class = classNames("level-item", textAlignClassName(hasText), className)
+  const _class = classNames(
+    "level-item",
+    textAlignClassName(hasText),
+    className
+  )
 
   return (
     <div className={_class} {...props}>

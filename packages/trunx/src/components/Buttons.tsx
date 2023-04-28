@@ -18,7 +18,12 @@ export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({
   size,
   ...props
 }) => {
-  const _class = classNames("buttons", modifier({ isCentered }), pluralSizeClassName(size), className)
+  const _class = classNames(
+    "buttons",
+    modifier({ isCentered }),
+    pluralSizeClassName(size),
+    className
+  )
 
   return (
     <div className={_class} {...props}>

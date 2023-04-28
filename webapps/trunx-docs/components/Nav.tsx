@@ -3,7 +3,6 @@ import { FC, useCallback, useEffect, useState } from "react"
 import {
   NavbarBrand,
   NavbarBurger,
-  NavbarBurgerOnClick,
   NavbarDropdown,
   NavbarItem,
   NavbarLink,
@@ -75,7 +74,7 @@ const navContents = [
 export const Nav: FC = () => {
   const router = useRouter()
 
-  const [expanded, setExpanded] = useState<boolean>(false)
+  const [isActive, setIsActive] = useState<boolean>(false)
   const [redirect, setRedirect] = useState("")
 
   useEffect(() => {
@@ -91,15 +90,10 @@ export const Nav: FC = () => {
     []
   )
 
-  const onClickBurger = useCallback<NavbarBurgerOnClick>((event) => {
-    event.stopPropagation()
-    setExpanded((expanded) => !expanded)
-  }, [])
-
   // Close menu on outside click.
   useEffect(() => {
     const closeMenu = () => {
-      setExpanded(false)
+      setIsActive(false)
     }
     window.addEventListener("click", closeMenu)
     return () => {
@@ -111,12 +105,17 @@ export const Nav: FC = () => {
     <NavbarFixed color="primary" side="top">
       <NavbarBrand>
         <NavbarItem onClick={redirectTo(route.home)}>
-          <Image src="/assets/trunx-logotype-white.png" alt="me" width="100" height="100" />
+          <Image
+            src="/assets/trunx-logotype-white.png"
+            alt="me"
+            width="100"
+            height="100"
+          />
         </NavbarItem>
-        <NavbarBurger isActive={expanded} onClick={onClickBurger} />
+        <NavbarBurger isActive={isActive} setIsActive={setIsActive} />
       </NavbarBrand>
 
-      <NavbarMenu isActive={expanded}>
+      <NavbarMenu isActive={isActive}>
         <NavbarStart>
           {navContents.map(({ label, items }, i) => (
             <NavbarItem hasDropdown isHoverable key={i}>

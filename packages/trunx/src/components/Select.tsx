@@ -1,4 +1,9 @@
-import { FC, ChangeEventHandler, OptionHTMLAttributes, SelectHTMLAttributes } from "react"
+import {
+  FC,
+  ChangeEventHandler,
+  OptionHTMLAttributes,
+  SelectHTMLAttributes,
+} from "react"
 import { classNames } from "../classNames.js"
 import {
   BooleanModifierProps,
@@ -11,7 +16,10 @@ import {
 } from "../modifiers/index.js"
 
 // Require that every option has `label` and `value`.
-type Option = Omit<OptionHTMLAttributes<HTMLOptionElement>, "value" | "label"> & {
+type Option = Omit<
+  OptionHTMLAttributes<HTMLOptionElement>,
+  "value" | "label"
+> & {
   label: OptionHTMLAttributes<HTMLOptionElement>["label"]
   value: OptionHTMLAttributes<HTMLOptionElement>["value"]
 }

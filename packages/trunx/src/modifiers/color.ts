@@ -2,13 +2,19 @@ import { BulmaClassName } from "../bulma.js"
 
 /**
  * @example
- * ```ts
- * type Props = { foo: boolean } & ColorModifierProp<MainColor | ShadeColor>
- * ```
+ *   ;```ts
+ *   type Props = { foo: boolean } & ColorModifierProp<MainColor | ShadeColor>
+ *   ```
  */
 export type ColorModifierProp<Color> = Partial<{ color: Color }>
 
-export type MainColor = "danger" | "link" | "info" | "primary" | "success" | "warning"
+export type MainColor =
+  | "danger"
+  | "link"
+  | "info"
+  | "primary"
+  | "success"
+  | "warning"
 
 export type ShadeColor = "black" | "dark" | "light" | "white"
 

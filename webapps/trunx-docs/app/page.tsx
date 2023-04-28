@@ -10,18 +10,22 @@ export default function Page() {
       title="Getting started with Trunx"
       subtitle={
         <>
-          <em>Trunx</em> is an open source collection of <em>React</em> components built on top of{" "}
-          <em>Bulma</em>
+          <em>Trunx</em> is an open source collection of <em>React</em>{" "}
+          components built on top of <em>Bulma</em>
         </>
       }
     >
       <PageSection>
         <p className={bulma("block")}>
-          GitHub repo here: <a href="https://github.com/fibo/trunx">github.com/fibo/trunx</a>.
+          GitHub repo here:{" "}
+          <a href="https://github.com/fibo/trunx">github.com/fibo/trunx</a>.
         </p>
 
         <Message color="info">
-          <p>Almost all bulma components are implemented, yet not documented here.</p>
+          <p>
+            Almost all bulma components are implemented, yet not documented
+            here.
+          </p>
         </Message>
       </PageSection>
 

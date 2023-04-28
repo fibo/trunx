@@ -12,8 +12,18 @@ export type ProgressProps = ProgressHTMLAttributes<HTMLProgressElement> &
   ColorModifierProp<MainColor> &
   SizeModifierProp
 
-export const Progress: FC<ProgressProps> = ({ className, color, size, ...props }) => {
-  const _class = classNames("progress", colorClassName(color), sizeClassName(size), className)
+export const Progress: FC<ProgressProps> = ({
+  className,
+  color,
+  size,
+  ...props
+}) => {
+  const _class = classNames(
+    "progress",
+    colorClassName(color),
+    sizeClassName(size),
+    className
+  )
 
   return <progress className={_class} {...props} />
 }

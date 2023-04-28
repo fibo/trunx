@@ -12,8 +12,19 @@ export type IconProps = HTMLAttributes<HTMLSpanElement> &
   ColorModifierProp<TextColor> &
   SizeModifierProp<"small" | "medium" | "large">
 
-export const Icon: FC<PropsWithChildren<IconProps>> = ({ children, className, color, size, ...props }) => {
-  const _class = classNames("icon", textColorClassName(color), sizeClassName(size), className)
+export const Icon: FC<PropsWithChildren<IconProps>> = ({
+  children,
+  className,
+  color,
+  size,
+  ...props
+}) => {
+  const _class = classNames(
+    "icon",
+    textColorClassName(color),
+    sizeClassName(size),
+    className
+  )
 
   return (
     <span className={_class} {...props}>
@@ -24,7 +35,11 @@ export const Icon: FC<PropsWithChildren<IconProps>> = ({ children, className, co
 
 export type IconTextProps = HTMLAttributes<HTMLSpanElement>
 
-export const IconText: FC<PropsWithChildren<IconTextProps>> = ({ children, className, ...props }) => {
+export const IconText: FC<PropsWithChildren<IconTextProps>> = ({
+  children,
+  className,
+  ...props
+}) => {
   const _class = classNames("icon-text", className)
 
   return (

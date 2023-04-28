@@ -13,7 +13,10 @@ import {
 export type HeroProps = HTMLAttributes<HTMLDivElement> &
   ColorModifierProp<MainColor> &
   SizeModifierProp &
-  Pick<BooleanModifierProps, "isFullheight" | "isFullheightWithNavbar" | "isHalfheight"> &
+  Pick<
+    BooleanModifierProps,
+    "isFullheight" | "isFullheightWithNavbar" | "isHalfheight"
+  > &
   Partial<{
     head: ReactNode
     foot: ReactNode

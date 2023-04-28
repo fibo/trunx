@@ -44,7 +44,14 @@ export const imageRatioClassName = (
     >
   | undefined => (ratio ? `is-${ratio}` : undefined)
 
-export type ImageDimension = "16x16" | "24x24" | "32x32" | "48x48" | "64x64" | "96x96" | "128x128"
+export type ImageDimension =
+  | "16x16"
+  | "24x24"
+  | "32x32"
+  | "48x48"
+  | "64x64"
+  | "96x96"
+  | "128x128"
 
 export type ImageDimensionProp = Partial<{ dimension: ImageDimension }>
 
@@ -53,6 +60,12 @@ export const imageDimensionClassName = (
 ):
   | Extract<
       BulmaClassName,
-      "is-16x16" | "is-24x24" | "is-32x32" | "is-48x48" | "is-64x64" | "is-96x96" | "is-128x128"
+      | "is-16x16"
+      | "is-24x24"
+      | "is-32x32"
+      | "is-48x48"
+      | "is-64x64"
+      | "is-96x96"
+      | "is-128x128"
     >
   | undefined => (dimension ? `is-${dimension}` : undefined)

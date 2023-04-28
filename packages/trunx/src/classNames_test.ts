@@ -1,40 +1,40 @@
-import assert from 'node:assert/strict'
-import { describe, it } from 'node:test'
-import { ClassNamesArg, classNames } from './classNames.js'
+import assert from "node:assert/strict"
+import { describe, it } from "node:test"
+import { ClassNamesArg, classNames } from "./classNames.js"
 
-describe('classNames', () => {
-  it('accepts strings, arrays or objects', () => {
+describe("classNames", () => {
+  it("accepts strings, arrays or objects", () => {
     const testData: Array<{
       input: ClassNamesArg<string>[]
       output: string
     }> = [
       {
-        input: ['is-primary'],
-        output: 'is-primary',
+        input: ["is-primary"],
+        output: "is-primary",
       },
       {
-        input: ['is-primary', 'is-loading'],
-        output: 'is-primary is-loading',
+        input: ["is-primary", "is-loading"],
+        output: "is-primary is-loading",
       },
       {
         input: [
           {
-            'is-primary': true,
+            "is-primary": true,
           },
         ],
-        output: 'is-primary',
+        output: "is-primary",
       },
       {
-        input: [['is-primary']],
-        output: 'is-primary',
+        input: [["is-primary"]],
+        output: "is-primary",
       },
       {
-        input: [['is-loading', 'is-primary', '']],
-        output: 'is-loading is-primary',
+        input: [["is-loading", "is-primary", ""]],
+        output: "is-loading is-primary",
       },
       {
-        input: ['', 'is-primary', ''],
-        output: 'is-primary',
+        input: ["", "is-primary", ""],
+        output: "is-primary",
       },
     ]
 
@@ -43,49 +43,49 @@ describe('classNames', () => {
     })
   })
 
-  it('handles edge cases', () => {
+  it("handles edge cases", () => {
     const testData: Array<{
       input: ClassNamesArg<string>[]
       output: string
     }> = [
       {
         input: [],
-        output: '',
+        output: "",
       },
       {
-        input: [''],
-        output: '',
+        input: [""],
+        output: "",
       },
       {
         input: [{}],
-        output: '',
+        output: "",
       },
       {
-        input: ['', [], {}],
-        output: '',
+        input: ["", [], {}],
+        output: "",
       },
       {
-        input: ['', '', ''],
-        output: '',
+        input: ["", "", ""],
+        output: "",
       },
       {
-        input: [['', '', '']],
-        output: '',
+        input: [["", "", ""]],
+        output: "",
       },
       {
-        input: [['', '', ''], '', ''],
-        output: '',
+        input: [["", "", ""], "", ""],
+        output: "",
       },
       {
         input: [
-          ['', '', ''],
-          ['', ''],
+          ["", "", ""],
+          ["", ""],
         ],
-        output: '',
+        output: "",
       },
       {
-        input: ['', { '': true }],
-        output: '',
+        input: ["", { "": true }],
+        output: "",
       },
     ]
 

@@ -1,9 +1,21 @@
-import { FC, FormEvent, FormEventHandler, FormHTMLAttributes, PropsWithChildren } from "react"
+import {
+  FC,
+  FormEvent,
+  FormEventHandler,
+  FormHTMLAttributes,
+  PropsWithChildren,
+} from "react"
 import { classNames } from "../classNames.js"
 
-export type FormProps = FormHTMLAttributes<HTMLFormElement> & Partial<{ box: boolean }>
+export type FormProps = FormHTMLAttributes<HTMLFormElement> &
+  Partial<{ box: boolean }>
 
-export const Form: FC<PropsWithChildren<FormProps>> = ({ children, className, box, ...props }) => {
+export const Form: FC<PropsWithChildren<FormProps>> = ({
+  children,
+  className,
+  box,
+  ...props
+}) => {
   const _class = classNames(box && "box", className)
 
   return (
@@ -17,11 +29,11 @@ export const Form: FC<PropsWithChildren<FormProps>> = ({ children, className, bo
  * Callback helper, alias for `React.FormEventHandler<HTMLFormElement>`.
  *
  * @example
- * ```ts
- * useCallback<FormOnSubmit>((event) => {
+ *   ```ts
+ *   useCallback<FormOnSubmit>((event) => {
  *   // `event` has the correct type.
- * })
- * ```
+ *   })
+ *   ```
  */
 export type FormOnReset = FormEventHandler<HTMLFormElement>
 
@@ -29,11 +41,11 @@ export type FormOnReset = FormEventHandler<HTMLFormElement>
  * Callback helper, alias for `React.FormEventHandler<HTMLFormElement>`.
  *
  * @example
- * ```ts
- * useCallback<FormOnReset>((event) => {
+ *   ```ts
+ *   useCallback<FormOnReset>((event) => {
  *   // `event` has the correct type.
- * })
- * ```
+ *   })
+ *   ```
  */
 export type FormOnSubmit = FormEventHandler<HTMLFormElement>
 
@@ -41,18 +53,21 @@ export type FormOnSubmit = FormEventHandler<HTMLFormElement>
  * Form helper, get all values.
  *
  * @example
- * ```ts
+ *   ;```ts
  *
- * const fields = ["foo", "bar"] as const;
+ *   const fields = ["foo", "bar"] as const;
  *
- * useCallback<FormOnSubmit>((event) => {
- *   event.preventDefault();
+ *   useCallback<FormOnSubmit>((event) => {
+ *     event.preventDefault();
  *
- *   const { foo, bar } = formValues(event, fields)
- * })
- * ```
+ *     const { foo, bar } = formValues(event, fields)
+ *   })
+ *   ```
  */
-export const formValues = (event: FormEvent<HTMLFormElement>, fields: ReadonlyArray<string>) => {
+export const formValues = (
+  event: FormEvent<HTMLFormElement>,
+  fields: ReadonlyArray<string>
+) => {
   const eventTarget = event.target as EventTarget & {
     [key in typeof fields[number]]?: { value: unknown }
   }

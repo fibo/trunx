@@ -2,7 +2,10 @@ import { FC, InputHTMLAttributes, ReactNode } from "react"
 import { classNames } from "../classNames.js"
 import { BooleanModifierProps, modifier } from "../modifiers/index.js"
 
-export type FileUploadProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> &
+export type FileUploadProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "type"
+> &
   Pick<BooleanModifierProps, "isBoxed" | "isFullwidth" | "isRight"> &
   Partial<{
     cta: ReactNode
@@ -18,7 +21,11 @@ export const FileUpload: FC<FileUploadProps> = ({
   isRight,
   ...props
 }) => {
-  const _class = classNames("file", modifier({ isBoxed, isFullwidth, isRight }), className)
+  const _class = classNames(
+    "file",
+    modifier({ isBoxed, isFullwidth, isRight }),
+    className
+  )
 
   return (
     <div className={_class}>

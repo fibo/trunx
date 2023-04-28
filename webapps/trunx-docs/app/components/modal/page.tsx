@@ -8,7 +8,8 @@ export default function Page() {
       title="Modal"
       subtitle={
         <>
-          A classic <b>modal</b> overlay, in which you can include any content you want
+          A classic <b>modal</b> overlay, in which you can include any content
+          you want
         </>
       }
     >

@@ -7,7 +7,8 @@ export default function Page() {
       title="Tabs"
       subtitle={
         <>
-          Simple responsive horizontal navigation <b>tabs</b>, with different styles
+          Simple responsive horizontal navigation <b>tabs</b>, with different
+          styles
         </>
       }
     >

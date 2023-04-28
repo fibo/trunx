@@ -7,7 +7,9 @@ import {
   spacingClassNames,
 } from "../modifiers/index.js"
 
-export type FlexProps = HTMLAttributes<HTMLDivElement> & FlexModifierProps & SpacingModifierProp
+export type FlexProps = HTMLAttributes<HTMLDivElement> &
+  FlexModifierProps &
+  SpacingModifierProp
 
 export const Flex: FC<PropsWithChildren<FlexProps>> = ({
   children,
@@ -24,7 +26,16 @@ export const Flex: FC<PropsWithChildren<FlexProps>> = ({
   ...props
 }) => {
   const _class = classNames(
-    flexClassNames({ align, alignItems, alignSelf, direction, grow, justify, shrink, wrap }),
+    flexClassNames({
+      align,
+      alignItems,
+      alignSelf,
+      direction,
+      grow,
+      justify,
+      shrink,
+      wrap,
+    }),
     spacingClassNames(spacing),
     className
   )

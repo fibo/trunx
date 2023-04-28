@@ -1,9 +1,9 @@
-import assert from 'node:assert/strict'
-import { describe, it } from 'node:test'
-import { colorClassName, MainColor, ShadeColor } from './color.js'
+import assert from "node:assert/strict"
+import { describe, it } from "node:test"
+import { colorClassName, MainColor, ShadeColor } from "./color.js"
 
-describe('colorClassName', () => {
-  it('works', () => {
+describe("colorClassName", () => {
+  it("works", () => {
     const testData: Array<{
       input: MainColor | ShadeColor | undefined
       output: string | undefined
@@ -13,12 +13,12 @@ describe('colorClassName', () => {
         output: undefined,
       },
       {
-        input: 'success',
-        output: 'is-success',
+        input: "success",
+        output: "is-success",
       },
       {
-        input: 'dark',
-        output: 'is-dark',
+        input: "dark",
+        output: "is-dark",
       },
     ]
 

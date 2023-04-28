@@ -3,7 +3,10 @@ import { classNames } from "../classNames.js"
 import { BooleanModifierProps, modifier } from "../modifiers/index.js"
 
 export type TableProps = TableHTMLAttributes<HTMLTableElement> &
-  Pick<BooleanModifierProps, "isBordered" | "isNarrow" | "isStriped" | "isFullwidth" | "isHoverable"> &
+  Pick<
+    BooleanModifierProps,
+    "isBordered" | "isNarrow" | "isStriped" | "isFullwidth" | "isHoverable"
+  > &
   Partial<{
     withContainer: boolean
   }>

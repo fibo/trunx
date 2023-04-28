@@ -1,10 +1,18 @@
 import { FC, TextareaHTMLAttributes } from "react"
 import { classNames } from "../classNames.js"
-import { BooleanModifierProps, SizeModifierProp, modifier, sizeClassName } from "../modifiers/index.js"
+import {
+  BooleanModifierProps,
+  SizeModifierProp,
+  modifier,
+  sizeClassName,
+} from "../modifiers/index.js"
 
 export type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
   SizeModifierProp &
-  Pick<BooleanModifierProps, "isActive" | "isFocused" | "isHovered" | "isLoading">
+  Pick<
+    BooleanModifierProps,
+    "isActive" | "isFocused" | "isHovered" | "isLoading"
+  >
 
 export const TextArea: FC<TextAreaProps> = ({
   children,

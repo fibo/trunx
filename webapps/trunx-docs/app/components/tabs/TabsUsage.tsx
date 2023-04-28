@@ -6,8 +6,9 @@ export default function Example() {
   return (
     <PageSection>
       <p>
-        The Trunx <code>Tabs</code> are a straightforward navigation component that come in a variety of
-        versions. They only require the following structure:
+        The Trunx <code>Tabs</code> are a straightforward navigation component
+        that come in a variety of versions. They only require the following
+        structure:
       </p>
 
       <ul>

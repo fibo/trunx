@@ -7,8 +7,8 @@ export const ColumnSizes: FC = () => {
   return (
     <PageSection>
       <p>
-        If you want to change the <b>size</b> of a single column, you can use one of the following prop
-        values:
+        If you want to change the <b>size</b> of a single column, you can use
+        one of the following prop values:
       </p>
 
       <ul>
@@ -33,7 +33,8 @@ export const ColumnSizes: FC = () => {
       </ul>
 
       <p>
-        The <em>other</em> columns will fill up the <b>remaining</b>space automatically.
+        The <em>other</em> columns will fill up the <b>remaining</b>space
+        automatically.
       </p>
 
       <p>
