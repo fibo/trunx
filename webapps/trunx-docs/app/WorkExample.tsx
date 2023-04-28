@@ -6,7 +6,8 @@ export default function Example() {
   return (
     <PageSection title="How it works">
       <p>
-        Trunx React components wrap Bulma CSS classes. For example, import <code>Button</code> component.
+        Trunx React components wrap Bulma CSS classes. For example, import{" "}
+        <code>Button</code> component.
       </p>
 
       <Code
@@ -51,7 +52,8 @@ export default function Example() {
       </Columns>
 
       <p>
-        You can also use <code>bulma</code> helper if some feature or HTML tag is not implemented by Trunx.
+        You can also use <code>bulma</code> helper if some feature or HTML tag
+        is not implemented by Trunx.
       </p>
 
       <Code
@@ -71,14 +73,15 @@ export default function Example() {
 
         <Column>
           <div className={bulma("mb-5")}>
-            You are <strong className={bulma("has-text-success")}>successful</strong>!
+            You are{" "}
+            <strong className={bulma("has-text-success")}>successful</strong>!
           </div>
         </Column>
       </Columns>
 
       <Message color="info">
-        Many Trunx components accept a <code>className</code> prop which will be appended to Bulma classes
-        in order to customize the component style.
+        Many Trunx components accept a <code>className</code> prop which will be
+        appended to Bulma classes in order to customize the component style.
       </Message>
     </PageSection>
   )

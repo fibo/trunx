@@ -6,7 +6,12 @@ export type PanelProps = HTMLAttributes<HTMLElement> &
   ColorModifierProp<MainColor> &
   Partial<{ heading: ReactNode }>
 
-export const Panel: FC<PropsWithChildren<PanelProps>> = ({ children, className, heading, ...props }) => {
+export const Panel: FC<PropsWithChildren<PanelProps>> = ({
+  children,
+  className,
+  heading,
+  ...props
+}) => {
   const _class = classNames("panel", className)
 
   return (

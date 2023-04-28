@@ -1,4 +1,9 @@
-import { ButtonHTMLAttributes, FC, PointerEventHandler, PropsWithChildren } from "react"
+import {
+  ButtonHTMLAttributes,
+  FC,
+  PointerEventHandler,
+  PropsWithChildren,
+} from "react"
 import { classNames } from "../classNames.js"
 import {
   ColorModifierProp,
@@ -68,7 +73,10 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   )
 }
 
-export type ButtonDeleteProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "className"> &
+export type ButtonDeleteProps = Omit<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  "className"
+> &
   ColorModifierProp<MainColor | ShadeColor | OtherColor> &
   SizeModifierProp<"small" | "medium" | "large">
 
@@ -82,10 +90,10 @@ export const ButtonDelete: FC<ButtonDeleteProps> = ({ size, ...props }) => {
  * Callback helper, alias for `React.PointerEventHandler<HTMLButtonElement>`.
  *
  * @example
- * ```ts
- * useCallback<ButtonOnClick>((event) => {
+ *   ```ts
+ *   useCallback<ButtonOnClick>((event) => {
  *   // `event` has the correct type.
- * })
- * ```
+ *   })
+ *   ```
  */
 export type ButtonOnClick = PointerEventHandler<HTMLButtonElement>

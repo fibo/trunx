@@ -7,9 +7,16 @@ import {
   imageRatioClassName,
 } from "../modifiers/index.js"
 
-export type ImageProps = ImgHTMLAttributes<HTMLImageElement> & ImageRatioProp & ImageDimensionProp
+export type ImageProps = ImgHTMLAttributes<HTMLImageElement> &
+  ImageRatioProp &
+  ImageDimensionProp
 
-export const Image: FC<ImageProps> = ({ className, dimension, ratio, ...props }) => {
+export const Image: FC<ImageProps> = ({
+  className,
+  dimension,
+  ratio,
+  ...props
+}) => {
   const _class = classNames(
     "image",
     imageDimensionClassName(dimension),

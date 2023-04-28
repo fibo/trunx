@@ -19,7 +19,12 @@ export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
   isLight,
   ...props
 }) => {
-  const _class = classNames("notification", colorClassName(color), modifier({ isLight }), className)
+  const _class = classNames(
+    "notification",
+    colorClassName(color),
+    modifier({ isLight }),
+    className
+  )
 
   return (
     <div className={_class} {...props}>

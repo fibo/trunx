@@ -29,7 +29,8 @@ export default function Page() {
         </ol>
 
         <p>
-          Each column will have an <b>equal width</b>, no matter the number of columns.
+          Each column will have an <b>equal width</b>, no matter the number of
+          columns.
         </p>
 
         <Columns>

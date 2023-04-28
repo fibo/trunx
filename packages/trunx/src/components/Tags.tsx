@@ -18,7 +18,12 @@ export const Tags: FC<PropsWithChildren<TagsProps>> = ({
   size,
   ...props
 }) => {
-  const _class = classNames("tags", pluralSizeClassName(size), modifier({ hasAddons }), className)
+  const _class = classNames(
+    "tags",
+    pluralSizeClassName(size),
+    modifier({ hasAddons }),
+    className
+  )
 
   return (
     <div className={_class} {...props}>

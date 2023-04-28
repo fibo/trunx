@@ -5,7 +5,10 @@ type Props = {
   title?: ReactNode
 }
 
-export const PageSection: FC<PropsWithChildren<Props>> = ({ children, title }) => {
+export const PageSection: FC<PropsWithChildren<Props>> = ({
+  children,
+  title,
+}) => {
   return (
     <Section>
       <hr />

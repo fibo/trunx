@@ -2,11 +2,14 @@
 import { FC, PropsWithChildren, useEffect } from "react"
 import { Navbar, NavbarProps } from "trunx"
 
-type NavbarFixedProps = Omit<NavbarProps, 'className'> & {
+type NavbarFixedProps = Omit<NavbarProps, "className"> & {
   side: "bottom" | "top"
 }
 
-export const NavbarFixed: FC<PropsWithChildren<NavbarFixedProps>> = ({ side, ...props }) => {
+export const NavbarFixed: FC<PropsWithChildren<NavbarFixedProps>> = ({
+  side,
+  ...props
+}) => {
   useEffect(() => {
     if (!side) return
     const otherSide = side === "top" ? "bottom" : "top"

@@ -17,7 +17,11 @@ export const Field: FC<PropsWithChildren<FieldProps>> = ({
 }) => {
   const _class = classNames(
     "field",
-    hasAddons ? (hasAddons === true ? "has-addons" : `has-addons-${hasAddons}`) : undefined,
+    hasAddons
+      ? hasAddons === true
+        ? "has-addons"
+        : `has-addons-${hasAddons}`
+      : undefined,
     isGrouped !== undefined ? "is-grouped" : undefined,
     typeof isGrouped === "string" ? `is-grouped-${isGrouped}` : undefined,
     className

@@ -1,10 +1,27 @@
-import { FC, ButtonHTMLAttributes, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
+import {
+  FC,
+  ButtonHTMLAttributes,
+  HTMLAttributes,
+  PropsWithChildren,
+  ReactNode,
+} from "react"
 import { classNames } from "../classNames.js"
-import { BooleanModifierProps, modifier, sizeClassName, SizeModifierProp } from "../modifiers/index.js"
+import {
+  BooleanModifierProps,
+  modifier,
+  sizeClassName,
+  SizeModifierProp,
+} from "../modifiers/index.js"
 
-export type ModalProps = HTMLAttributes<HTMLDivElement> & Pick<BooleanModifierProps, "isActive">
+export type ModalProps = HTMLAttributes<HTMLDivElement> &
+  Pick<BooleanModifierProps, "isActive">
 
-export const Modal: FC<PropsWithChildren<ModalProps>> = ({ children, className, isActive, ...props }) => {
+export const Modal: FC<PropsWithChildren<ModalProps>> = ({
+  children,
+  className,
+  isActive,
+  ...props
+}) => {
   const _class = classNames("modal", modifier({ isActive }), className)
 
   return (
@@ -16,7 +33,10 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({ children, className, 
 
 export type ModalBackgroundProps = HTMLAttributes<HTMLDivElement>
 
-export const ModalBackground: FC<ModalBackgroundProps> = ({ className, ...props }) => {
+export const ModalBackground: FC<ModalBackgroundProps> = ({
+  className,
+  ...props
+}) => {
   const _class = classNames("modal-background", className)
 
   return <div className={_class} {...props} />
@@ -52,9 +72,14 @@ export const ModalCard: FC<PropsWithChildren<ModalCardProps>> = ({
   )
 }
 
-export type ModalCloseProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeModifierProp<"large">
+export type ModalCloseProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  SizeModifierProp<"large">
 
-export const ModalClose: FC<ModalCloseProps> = ({ className, size, ...props }) => {
+export const ModalClose: FC<ModalCloseProps> = ({
+  className,
+  size,
+  ...props
+}) => {
   const _class = classNames("modal-close", sizeClassName(size), className)
 
   return <button className={_class} aria-label="close" {...props} />

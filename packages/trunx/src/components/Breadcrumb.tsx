@@ -1,6 +1,10 @@
 import { FC, HTMLAttributes, LiHTMLAttributes, PropsWithChildren } from "react"
 import { classNames } from "../classNames.js"
-import { BooleanModifierProps, SizeModifierProp, modifier } from "../modifiers/index.js"
+import {
+  BooleanModifierProps,
+  SizeModifierProp,
+  modifier,
+} from "../modifiers/index.js"
 
 type BreadcrumbSeparator = "arrow" | "bullet" | "dot" | "succedes"
 
@@ -33,7 +37,8 @@ export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps>> = ({
   )
 }
 
-export type BreadcrumbItemProps = LiHTMLAttributes<HTMLLIElement> & Pick<BooleanModifierProps, "isActive">
+export type BreadcrumbItemProps = LiHTMLAttributes<HTMLLIElement> &
+  Pick<BooleanModifierProps, "isActive">
 
 export const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   className,

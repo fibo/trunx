@@ -7,7 +7,11 @@ type Props = {
   subtitle: ReactNode
 }
 
-export const PageContent: FC<PropsWithChildren<Props>> = ({ children, title, subtitle }) => {
+export const PageContent: FC<PropsWithChildren<Props>> = ({
+  children,
+  title,
+  subtitle,
+}) => {
   return (
     <>
       <Nav />

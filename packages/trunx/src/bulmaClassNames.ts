@@ -1006,6 +1006,6 @@ export type ClassNames =
   | "tags"
   | "textarea"
   | "tile"
-  | "title";
+  | "title"
 
-export default ClassNames;
+export default ClassNames

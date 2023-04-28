@@ -24,7 +24,12 @@ export const Message: FC<PropsWithChildren<MessageProps>> = ({
   size,
   ...props
 }) => {
-  const _class = classNames("message", colorClassName(color), sizeClassName(size), className)
+  const _class = classNames(
+    "message",
+    colorClassName(color),
+    sizeClassName(size),
+    className
+  )
 
   return (
     <article className={_class} {...props}>

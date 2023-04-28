@@ -8,7 +8,8 @@ export default function Example() {
       <Columns>
         <Column>
           <p>
-            You can <b>attach tags together</b> with the <code>hasAddons</code> modifier.
+            You can <b>attach tags together</b> with the <code>hasAddons</code>{" "}
+            modifier.
           </p>
 
           <Tags hasAddons>
@@ -32,7 +33,8 @@ export default function Example() {
       <Columns>
         <Column>
           <p>
-            You can attach a <b>text</b> tag with a <code>TagDelete</code> together.
+            You can attach a <b>text</b> tag with a <code>TagDelete</code>{" "}
+            together.
           </p>
 
           <Tags hasAddons>
@@ -56,8 +58,9 @@ export default function Example() {
       <Columns>
         <Column>
           <p>
-            You can attach a <b>text</b> tag with a <code>TagDelete</code> together. If you want to attach{" "}
-            <code>Tags</code>containers <b>together</b>, simply use the <code>Field</code> element with the{" "}
+            You can attach a <b>text</b> tag with a <code>TagDelete</code>{" "}
+            together. If you want to attach <code>Tags</code>containers{" "}
+            <b>together</b>, simply use the <code>Field</code> element with the{" "}
             <code>isGrouped=&quot;multiline&quot;</code> modifier.
           </p>
 

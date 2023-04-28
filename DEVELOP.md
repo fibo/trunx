@@ -32,7 +32,7 @@ npm version [patch|minor|major]
 npm publish
 ```
 
-Once the package is published on npm, commit new version change in *package-lock.json* and *packages/trunx/package.json* and push.
+Once the package is published on npm, commit new version change in _package-lock.json_ and _packages/trunx/package.json_ and push.
 
 ```sh
 cd -
@@ -54,6 +54,5 @@ Trunx website is deployed on [Vercel](https://vercel.com/).
 
 SSL is provided by [Let's Encrypt](https://letsencrypt.org/) via the following DNS record:
 
-* type: `CAA`
-* value: `0 issue "letsencrypt.org"`
-
+- type: `CAA`
+- value: `0 issue "letsencrypt.org"`

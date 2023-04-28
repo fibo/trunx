@@ -45,8 +45,8 @@ export default function Example() {
   return (
     <PageSection title="Image modal">
       <p>
-        Because a modal can contain <b>anything you want</b>, you can very simply use it to build an image
-        gallery for example.
+        Because a modal can contain <b>anything you want</b>, you can very
+        simply use it to build an image gallery for example.
       </p>
 
       <Columns>

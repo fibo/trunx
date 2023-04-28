@@ -30,5 +30,5 @@ Tons of kudos to [bulma](webapps/trunx-docs) author!
 Trunks full body png comes from [kisspng](https://www.kisspng.com/png-trunks-gohan-goku-goten-bulma-1996965/).
 Then I draw Trunks' head with [Tayasui Sketches](https://tayasui.com/sketches/).
 
-[bulma]: https://bulma.io 'Bulma CSS framework'
-[react]: https://facebook.github.io/react/ 'React'
+[bulma]: https://bulma.io "Bulma CSS framework"
+[react]: https://facebook.github.io/react/ "React"

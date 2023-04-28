@@ -3,7 +3,10 @@ import { classNames } from "../classNames.js"
 import { BooleanModifierProps, modifier } from "../modifiers/index.js"
 
 export type ControlProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, "hasIconsLeft" | "hasIconsRight" | "isExpanded" | "isLoading">
+  Pick<
+    BooleanModifierProps,
+    "hasIconsLeft" | "hasIconsRight" | "isExpanded" | "isLoading"
+  >
 
 export const Control: FC<PropsWithChildren<ControlProps>> = ({
   children,

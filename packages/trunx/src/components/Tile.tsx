@@ -3,7 +3,10 @@ import { classNames } from "../classNames.js"
 import { BooleanModifierProps, Dozen, modifier } from "../modifiers/index.js"
 
 export type TileProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, "isAncestor" | "isChild" | "isParent" | "isVertical"> &
+  Pick<
+    BooleanModifierProps,
+    "isAncestor" | "isChild" | "isParent" | "isVertical"
+  > &
   Partial<{
     size: Dozen
   }>
