@@ -13,49 +13,56 @@ export type ColumnProps = React.HTMLAttributes<HTMLDivElement> &
   Partial<{
     /**
      * @example
-     *   ;```ts
+     *
+     * ```ts
      *   <Column isNarrow>{/* children * /}</Column>
-     *   ```
+     * ```
      *
      * @example
-     *   ;```ts
+     *
+     * ```ts
      *   <Column isNarrow={{ mobile: false, tablet: true }}>
      *     {/* children * /}
      *   </Column>
-     *   ```
+     * ```
      */
     isNarrow: boolean | { [key in Breakpoint]: boolean }
 
     /**
      * @example
-     *   ;```ts
+     *
+     * ```ts
      *   <Column offset={6}>{/* children * /}</Column>
-     *   ```
+     * ```
      *
      * @example
-     *   ;```ts
+     *
+     * ```ts
      *   <Column offset="three-quarters">{/* children * /}</Column>
-     *   ```
+     * ```
      */
     offset: Exclude<Dozen, 12> | Fraction
 
     /**
      * @example
-     *   ;```ts
+     *
+     * ```ts
      *   <Column size={6}>{/* children * /}</Column>
-     *   ```
+     * ```
      *
      * @example
-     *   ;```ts
-     *   <Column size="three-quarters">{/* children * /}</Column>
-     *   ```
+     *
+     * ```ts
+     *  <Column size="three-quarters">{/* children * /}</Column>
+     * ```
      *
      * @example
-     *   ;```ts
+     *
+     * ```ts
      *   <Column size={ mobile: "full", tablet: "two-thirds", desktop: 6 }>
      *     {/* children * /}
      *   </Column>
-     *   ```
+     * ```
      */
     size: Dozen | Fraction | { [key in Breakpoint]: Dozen | Fraction }
   }>

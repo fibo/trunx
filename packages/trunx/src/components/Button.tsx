@@ -90,10 +90,11 @@ export const ButtonDelete: FC<ButtonDeleteProps> = ({ size, ...props }) => {
  * Callback helper, alias for `React.PointerEventHandler<HTMLButtonElement>`.
  *
  * @example
- *   ```ts
- *   useCallback<ButtonOnClick>((event) => {
+ *
+ * ```ts
+ * useCallback<ButtonOnClick>((event) => {
  *   // `event` has the correct type.
- *   })
- *   ```
+ * })
+ * ```
  */
 export type ButtonOnClick = PointerEventHandler<HTMLButtonElement>

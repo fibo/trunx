@@ -7,15 +7,21 @@ export type ClassNamesArg<ClassName extends string> =
  * Utility for conditionally joining CSS classes together.
  *
  * @example
- *   classNames('foo', 'bar') // 'foo bar'
- *   classNames<string>('foo', ['bar']) // 'foo bar'
- *   classNames<string>({ foo: true }, { bar: false }) // 'foo'
  *
- *   It accepts a generic "class names" type.
+ * ```ts
+ * classNames("foo", "bar") // 'foo bar'
+ * classNames<string>("foo", ["bar"]) // 'foo bar'
+ * classNames<string>({ foo: true }, { bar: false }) // 'foo'
+ * ```
+ *
+ * It accepts a generic "class names" type.
  *
  * @example
- *   type T = "foo" | "bar" // my CSS classes
- *   classNames<T>("foo", "quz") // ERROR: not assignable to type ClassNamesArg<T>[]
+ *
+ * ```ts
+ * type T = "foo" | "bar" // my CSS classes
+ * classNames<T>("foo", "quz") // ERROR: not assignable to type ClassNamesArg<T>[]
+ * ```
  */
 export const classNames = <T extends string>(
   ...args: ClassNamesArg<T>[]
