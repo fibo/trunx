@@ -44,5 +44,8 @@
   "homepage": "https://trunx.dev/",
   "dependencies": {
     "bulma": "^0.9.4"
+  },
+  "devDependencies": {
+    "eslint-plugin-tsdoc": "^0.2.17"
   }
 }
