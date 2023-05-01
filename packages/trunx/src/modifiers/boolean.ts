@@ -49,7 +49,13 @@ export type BooleanModifierProps = Partial<{
 /**
  * Convert a string in camel case to its equivalent in kebab case.
  *
- * @example FooBar ==> foo-bar isActive ==> is-active is1 ==> is-1
+ * @example
+ *
+ * ```ts
+ * camelCaseToKebabCase("FooBar") // foo-bar
+ * camelCaseToKebabCase("isActive") //  is-active
+ * camelCaseToKebabCase("is1") // is-1
+ * ```
  *
  * Credits (initial code from here):
  * https://gist.github.com/nblackburn/875e6ff75bc8ce171c758bf75f304707
