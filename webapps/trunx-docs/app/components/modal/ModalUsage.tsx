@@ -94,9 +94,28 @@ export default function Example() {
 
       <p>
         To activate the modal, just add the <code>isActive</code> prop. You may
-        also want to stop scroll overflow with <code>useStopScroll</code>
+        also want to stop scroll overflow with a <code>useStopScroll</code>{" "}
+        hook.
       </p>
 
+      <Code
+        snippet={`
+"use client"
+import { useEffect } from "react"
+
+export const useStopScroll = (isActive: boolean) => {
+  useEffect(() => {
+    const html = document.querySelector("html")
+    if (!html) return
+    if (isActive) {
+      html.classList.add("is-clipped")
+    } else {
+      html.classList.remove("is-clipped")
+    }
+  }, [isActive])
+}
+        `}
+      />
       <Columns>
         <Column>
           <ExampleModal />
