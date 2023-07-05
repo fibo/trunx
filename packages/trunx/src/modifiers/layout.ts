@@ -84,7 +84,7 @@ export const flexClassNames = ({
     wrap && `is-flex-wrap-${wrap}`
   )
 
-export type SpacingValue = 0 | 1 | 2 | 3 | 5 | 5 | 6
+export type SpacingValue = 0 | 1 | 2 | 3 | 4 | 5 | 6
 export type SpacingKey =
   | "mx"
   | "my"
