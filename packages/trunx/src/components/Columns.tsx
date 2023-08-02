@@ -1,7 +1,7 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
 import { classNames } from "../classNames.js"
 import {
-  Breakpoint,
+  BreakpointsMap,
   BooleanModifierProps,
   modifier,
 } from "../modifiers/index.js"
@@ -21,34 +21,18 @@ export type ColumnsProps = HTMLAttributes<HTMLDivElement> &
     | "isVcentered"
   > &
   Partial<{
-    gap: Gap | { [key in Breakpoint]: Gap }
+    gap: Gap | BreakpointsMap<Gap>
   }>
 
 export const Columns: FC<PropsWithChildren<ColumnsProps>> = ({
   className,
   children,
   gap,
-  isCentered,
-  isDesktop,
-  isGapless,
-  isMobile,
-  isMultiline,
-  isNarrow,
-  isVariable,
-  isVcentered,
+  ...modifierProps
 }) => {
   const _class = classNames(
     "columns",
-    modifier({
-      isCentered,
-      isDesktop,
-      isGapless,
-      isMobile,
-      isMultiline,
-      isNarrow,
-      isVariable,
-      isVcentered,
-    }),
+    modifier(modifierProps),
     typeof gap === "number" ? `is-${gap}` : undefined,
     className
   )
