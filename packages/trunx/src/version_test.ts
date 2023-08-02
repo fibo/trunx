@@ -2,7 +2,7 @@ import assert from "node:assert/strict"
 import { describe, it } from "node:test"
 import pkg from "../package.json" assert { type: "json" }
 
-describe("version", () => {
+describe("trunx version", () => {
   const { dependencies, version } = pkg
 
   it("has same major version as Bulma", () => {

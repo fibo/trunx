@@ -22,7 +22,7 @@
     "prebuild": "npm run cleanup",
     "pretest": "tsc --build tsconfig.test.json",
     "preversion": "npm run build",
-    "test": "node --test"
+    "test": "node --test --test-reporter spec"
   },
   "repository": {
     "type": "git",
