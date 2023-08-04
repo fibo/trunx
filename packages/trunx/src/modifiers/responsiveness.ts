@@ -19,4 +19,4 @@ export const breakpoints = [
  */
 export type Breakpoint = typeof breakpoints[number]
 
-export type BreakpointsMap<T> = { [key in Breakpoint]?: T }
+export type BreakpointsMap<T> = Partial<{ [key in Breakpoint]: T }>
