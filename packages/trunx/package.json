@@ -1,6 +1,6 @@
 {
   "name": "trunx",
-  "version": "0.45.2",
+  "version": "0.45.3",
   "description": "Super Saiyan React components, son of awesome Bulma",
   "type": "module",
   "main": "dist/index.js",
@@ -22,7 +22,7 @@
     "prebuild": "npm run cleanup",
     "pretest": "tsc --build tsconfig.test.json",
     "preversion": "npm run build",
-    "test": "node --test"
+    "test": "node --test --test-reporter spec"
   },
   "repository": {
     "type": "git",
@@ -43,9 +43,6 @@
   },
   "homepage": "https://trunx.dev/",
   "dependencies": {
-    "bulma": "^0.9.4"
-  },
-  "devDependencies": {
-    "eslint-plugin-tsdoc": "^0.2.17"
+    "bulma": "0.9.4"
   }
 }
