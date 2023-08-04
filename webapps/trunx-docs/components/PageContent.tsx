@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren, ReactNode } from "react"
 import { Container, Content, Hero, Subtitle, Title } from "trunx"
-import { Nav } from "./Nav"
+import { TopNavbar } from "./TopNavbar"
 
 type Props = {
   title: ReactNode
@@ -14,7 +14,7 @@ export const PageContent: FC<PropsWithChildren<Props>> = ({
 }) => {
   return (
     <>
-      <Nav />
+      <TopNavbar />
 
       <main>
         <Hero>

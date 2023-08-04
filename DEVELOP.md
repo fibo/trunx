@@ -1,5 +1,9 @@
 # Trunx Development
 
+## Requirements
+
+Install [Node.js](https://nodejs.org/) version 20 or above.
+
 ## Workflow
 
 Install dependencies
