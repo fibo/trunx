@@ -1,6 +1,7 @@
 "use client"
 import { FC, useCallback, useEffect, useState } from "react"
 import {
+  Navbar,
   NavbarBrand,
   NavbarBurger,
   NavbarDropdown,
@@ -13,9 +14,8 @@ import {
 import Image from "next/image"
 import { useRouter } from "next/navigation"
 import { route } from "../routes"
-import { NavbarFixed } from "./NavbarFixed"
 
-const navContents = [
+const navigationItems = [
   {
     label: "Columns",
     items: [
@@ -39,15 +39,15 @@ const navContents = [
   //     { label: "Tiles", route: route.layout.tiles },
   //   ],
   // },
-  // {
-  //   label: "Form",
-  //   items: [
-  //     { label: "General", route: route.form.general },
-  //     { label: "Input", route: route.form.input },
-  //     { label: "Textarea", route: route.form.textarea },
-  //     { label: "Radio", route: route.form.radio },
-  //   ],
-  // },
+  {
+    label: "Form",
+    items: [
+      { label: "General", route: route.form.general },
+      // { label: "Input", route: route.form.input },
+      // { label: "Textarea", route: route.form.textarea },
+      // { label: "Radio", route: route.form.radio },
+    ],
+  },
   {
     label: "Elements",
     items: [
@@ -71,7 +71,7 @@ const navContents = [
   },
 ]
 
-export const Nav: FC = () => {
+export const TopNavbar: FC = () => {
   const router = useRouter()
 
   const [isActive, setIsActive] = useState<boolean>(false)
@@ -102,7 +102,7 @@ export const Nav: FC = () => {
   }, [])
 
   return (
-    <NavbarFixed color="primary" side="top">
+    <Navbar color="primary">
       <NavbarBrand>
         <NavbarItem onClick={redirectTo(route.home)}>
           <Image
@@ -117,7 +117,7 @@ export const Nav: FC = () => {
 
       <NavbarMenu isActive={isActive}>
         <NavbarStart>
-          {navContents.map(({ label, items }, i) => (
+          {navigationItems.map(({ label, items }, i) => (
             <NavbarItem hasDropdown isHoverable key={i}>
               <NavbarLink>{label}</NavbarLink>
 
@@ -132,6 +132,6 @@ export const Nav: FC = () => {
           ))}
         </NavbarStart>
       </NavbarMenu>
-    </NavbarFixed>
+    </Navbar>
   )
 }
