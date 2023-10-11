@@ -22,18 +22,19 @@ export default function Example() {
         <Column size="half">
           <Form>
             <Field>
-              <Label>Name</Label>
+              <Label htmlFor="name">Name</Label>
 
               <Control>
-                <Input type="text" placeholder="Text input" />
+                <Input id="name" type="text" placeholder="Text input" />
               </Control>
             </Field>
 
             <Field>
-              <Label>Username</Label>
+              <Label htmlFor="username">Username</Label>
 
               <Control>
                 <Input
+                  id="username"
                   color="success"
                   type="text"
                   placeholder="Text input"
@@ -45,10 +46,11 @@ export default function Example() {
             </Field>
 
             <Field>
-              <Label>Email</Label>
+              <Label htmlFor="email">Email</Label>
 
               <Control>
                 <Input
+                  id="email"
                   color="danger"
                   type="email"
                   placeholder="Email input"
@@ -100,18 +102,19 @@ export default function Example() {
             snippet={`
           <Form>
             <Field>
-              <Label>Name</Label>
+              <Label htmlFor="name">Name</Label>
 
               <Control>
-                <Input type="text" placeholder="Text input" />
+                <Input id="name" type="text" placeholder="Text input" />
               </Control>
             </Field>
 
             <Field>
-              <Label>Username</Label>
+              <Label htmlFor="username">Username</Label>
 
               <Control>
                 <Input
+                  id="username"
                   color="success"
                   type="text"
                   placeholder="Text input"
@@ -123,10 +126,11 @@ export default function Example() {
             </Field>
 
             <Field>
-              <Label>Email</Label>
+              <Label htmlFor="email">Email</Label>
 
               <Control>
                 <Input
+                  id="email"
                   color="danger"
                   type="email"
                   placeholder="Email input"
@@ -171,7 +175,7 @@ export default function Example() {
               </Control>
             </Field>
           </Form>
-	  `}
+	    `}
           />
         </Column>
       </Columns>
