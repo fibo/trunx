@@ -78,7 +78,7 @@ export const NavbarBurger: FC<NavbarBurgerProps> = ({
   setIsActive,
   ...props
 }) => {
-  const _class = classNames("navbar-burger", className)
+  const _class = classNames("navbar-burger", { "is-active": isActive }, className)
 
   const onClick: PointerEventHandler<HTMLDivElement> = (event) => {
     event.stopPropagation()
