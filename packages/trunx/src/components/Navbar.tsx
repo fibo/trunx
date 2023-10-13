@@ -9,11 +9,11 @@ import {
 } from "react"
 import { classNames } from "../classNames.js"
 import {
+  BooleanModifierProps,
+  ColorModifierProp,
   MainColor,
   ShadeColor,
-  ColorModifierProp,
   colorClassName,
-  BooleanModifierProps,
   modifier,
 } from "../modifiers/index.js"
 
@@ -78,7 +78,7 @@ export const NavbarBurger: FC<NavbarBurgerProps> = ({
   setIsActive,
   ...props
 }) => {
-  const _class = classNames("navbar-burger", { "is-active": isActive }, className)
+  const _class = classNames("navbar-burger", modifier({ isActive }), className)
 
   const onClick: PointerEventHandler<HTMLDivElement> = (event) => {
     event.stopPropagation()
