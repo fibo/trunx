@@ -1,6 +1,6 @@
 # Trunx
 
-> Super Saiyan React components, son of awesome [Bulma]
+> Super Saiyan components, son of awesome [Bulma]
 
 <img src="./media/trunks.png" height="290"/>
 
@@ -12,8 +12,8 @@ Yes, the website itself is implemented with Trunx: you can read its [source code
 
 ## Motivation
 
-I really like [Bulma] CSS framework, I love [React] and I am also a [Dragon Ball](https://en.wikipedia.org/wiki/Dragon_Ball) fan.
-So, summing all, I am creating this component library. I hope you enjoy it!
+I really like [Bulma] CSS framework and I am also a [Dragon Ball](https://en.wikipedia.org/wiki/Dragon_Ball) fan.
+That is why I am creating this component library. I hope you enjoy it!
 
 > Trunks (Japanese: トランクス Hepburn: Torankusu) is a fictional character in the Dragon Ball manga series created by Akira Toriyama.
 
@@ -25,10 +25,9 @@ I remember when I was reading the comics and Trunks arrived from the future. He 
 
 ## Credits
 
-Tons of kudos to [bulma](webapps/trunx-docs) author!
+Tons of kudos to [Bulma] author!
 
 Trunks full body png comes from [kisspng](https://www.kisspng.com/png-trunks-gohan-goku-goten-bulma-1996965/).
 Then I draw Trunks' head with [Tayasui Sketches](https://tayasui.com/sketches/).
 
-[bulma]: https://bulma.io "Bulma CSS framework"
-[react]: https://facebook.github.io/react/ "React"
+[Bulma]: https://bulma.io "Bulma CSS framework"
