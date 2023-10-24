@@ -1,5 +1,6 @@
 import { PageContent } from "@/components"
 import ButtonColors from "./ButtonColors"
+import ButtonStyles from "./ButtonStyles"
 
 export default function Page() {
   return (
@@ -12,6 +13,8 @@ export default function Page() {
       }
     >
       <ButtonColors />
+
+      <ButtonStyles />
     </PageContent>
   )
 }

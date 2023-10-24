@@ -46,6 +46,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   isLoading,
   isInverted,
   isOutlined,
+  isRounded,
   color,
   ...props
 }) => {
@@ -61,6 +62,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
       isLight,
       isLoading,
       isOutlined,
+      isRounded,
       isStatic,
     }),
     className
