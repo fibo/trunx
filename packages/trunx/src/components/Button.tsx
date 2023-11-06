@@ -35,19 +35,20 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   >
 
 export const Button: FC<PropsWithChildren<ButtonProps>> = ({
-  className,
   children,
+  className,
+  color,
   isActive,
-  size,
   isExpanded,
-  isStatic,
   isFocused,
+  isFullwidth,
+  isInverted,
   isLight,
   isLoading,
-  isInverted,
   isOutlined,
   isRounded,
-  color,
+  isStatic,
+  size,
   ...props
 }) => {
   const _class = classNames(
@@ -58,6 +59,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
       isActive,
       isExpanded,
       isFocused,
+      isFullwidth,
       isInverted,
       isLight,
       isLoading,
