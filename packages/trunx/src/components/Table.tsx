@@ -8,7 +8,7 @@ export type TableProps = TableHTMLAttributes<HTMLTableElement> &
     "isBordered" | "isNarrow" | "isStriped" | "isFullwidth" | "isHoverable"
   > &
   Partial<{
-    withContainer: boolean
+    responsive: boolean
   }>
 
 export const Table: FC<PropsWithChildren<TableProps>> = ({
@@ -19,10 +19,10 @@ export const Table: FC<PropsWithChildren<TableProps>> = ({
   isNarrow,
   isBordered,
   isStriped,
-  withContainer,
+  responsive = true,
   ...props
 }) => {
-  const containerClassName = withContainer ? "table-container" : undefined
+  const containerClassName = responsive ? "table-container" : undefined
 
   const _class = classNames(
     "table",
