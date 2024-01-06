@@ -28,29 +28,30 @@ export const classNames = <T extends string>(
 ): string =>
   args
     .map((arg) => {
-      if (Array.isArray(arg)) {
-        // Recursively call classNames or return empty string if arg is an empty array.
+      if (Array.isArray(arg))
+        // Recursively call `classNames` or return empty string if arg is an empty array.
         return arg.length ? classNames(...arg) : ""
-      } else if (
-        // In this `else` branch, arg is not an Array.
-        // Make sure arg is not null,
+
+      if (
+        // Here we know that `arg` is not an array.
+        // Make sure `arg` is not null,
         arg &&
-        // and arg is a proper Object.
+        // and `arg` is a proper object.
         typeof arg === "object"
-      ) {
+      )
         return classNames(
-          // Map object to an array of its keys,
-          Object.entries(arg)
-            // with a truthy value.
-            .filter(([_, value]) => value)
-            .map(([key]) => key)
+          // Map `arg` object to an array its keys, having a truthy value.
+          Object.entries(arg).reduce(
+            (keys, keyValue) => (keyValue[1] ? keys.concat(keyValue[0]) : keys),
+            []
+          )
         )
-      }
-      // Return arg if it is a string, or fallback to empty string.
-      return typeof arg === "string" ? arg : ""
+
+      // Here `arg` should be a string or `undefined`.
+      return arg
     })
     .filter(
-      // Avoid more than one white space in the join below, by filtering empty strings.
-      (str) => str !== ""
+      // Avoid more than one white space in the join below, by filtering falsy values.
+      (str) => !!str
     )
     .join(" ")
