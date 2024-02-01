@@ -1,9 +1,4 @@
-import {
-  ChangeEventHandler,
-  FocusEventHandler,
-  FC,
-  InputHTMLAttributes,
-} from "react"
+import { FC, InputHTMLAttributes } from "react"
 import { classNames } from "../classNames.js"
 import {
   MainColor,
@@ -60,31 +55,3 @@ export const Input: FC<InputProps> = ({
 
   return <input className={_class} {...props} />
 }
-
-/**
- * Callback helper.
- *
- * ```ts
- * @example
- * useCallback<InputOnChange>((event) => {
- *   // `event` has the correct type.
- * })
- * ```
- */
-export type InputOnChange = ChangeEventHandler<
-  InputHTMLAttributes<HTMLInputElement>
->
-
-/**
- * Callback helper.
- *
- * ```ts
- * @example
- * useCallback<InputOnFocus>((event) => {
- *   // `event` has the correct type.
- * })
- * ```
- */
-export type InputOnFocus = FocusEventHandler<
-  InputHTMLAttributes<HTMLInputElement>
->

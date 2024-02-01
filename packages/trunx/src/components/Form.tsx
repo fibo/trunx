@@ -1,10 +1,4 @@
-import {
-  FC,
-  FormEvent,
-  FormEventHandler,
-  FormHTMLAttributes,
-  PropsWithChildren,
-} from "react"
+import { FC, FormEvent, FormHTMLAttributes, PropsWithChildren } from "react"
 import { classNames } from "../classNames.js"
 
 export type FormProps = FormHTMLAttributes<HTMLFormElement> &
@@ -24,32 +18,6 @@ export const Form: FC<PropsWithChildren<FormProps>> = ({
     </form>
   )
 }
-
-/**
- * Callback helper.
- *
- * @example
- *
- * ```ts
- * useCallback<FormOnSubmit>((event) => {
- *   // `event` has the correct type.
- * })
- * ```
- */
-export type FormOnReset = FormEventHandler<HTMLFormElement>
-
-/**
- * Callback helper.
- *
- * @example
- *
- * ```ts
- * useCallback<FormOnReset>((event) => {
- *   // `event` has the correct type.
- * })
- * ```
- */
-export type FormOnSubmit = FormEventHandler<HTMLFormElement>
 
 /**
  * Form helper, get all values.

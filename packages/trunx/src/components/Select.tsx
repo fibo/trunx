@@ -1,34 +1,20 @@
-import {
-  FC,
-  ChangeEventHandler,
-  OptionHTMLAttributes,
-  SelectHTMLAttributes,
-} from "react"
+import { FC, OptionHTMLAttributes, SelectHTMLAttributes } from "react"
 import { classNames } from "../classNames.js"
 import {
   BooleanModifierProps,
-  SizeModifierProp,
-  modifier,
   ColorModifierProp,
   MainColor,
+  SizeModifierProp,
   colorClassName,
+  modifier,
   sizeClassName,
 } from "../modifiers/index.js"
-
-// Require that every option has `label` and `value`.
-type Option = Omit<
-  OptionHTMLAttributes<HTMLOptionElement>,
-  "value" | "label"
-> & {
-  label: OptionHTMLAttributes<HTMLOptionElement>["label"]
-  value: OptionHTMLAttributes<HTMLOptionElement>["value"]
-}
 
 export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> &
   ColorModifierProp<MainColor> &
   SizeModifierProp &
   Pick<BooleanModifierProps, "isFocused" | "isHovered" | "isLoading"> & {
-    options: Option[]
+    options: Array<OptionHTMLAttributes<HTMLOptionElement>>
   }
 
 export const Select: FC<SelectProps> = ({
@@ -59,17 +45,3 @@ export const Select: FC<SelectProps> = ({
     </div>
   )
 }
-
-/**
- * Callback helper.
- *
- * ```ts
- * @example
- * useCallback<SelectOnChange>((event) => {
- *   // `event` has the correct type.
- * })
- * ```
- */
-export type SelectOnChange = ChangeEventHandler<
-  SelectHTMLAttributes<HTMLSelectElement>
->

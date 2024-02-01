@@ -3,7 +3,6 @@ import {
   AnchorHTMLAttributes,
   ButtonHTMLAttributes,
   HTMLAttributes,
-  PointerEventHandler,
   PropsWithChildren,
 } from "react"
 import { classNames } from "../classNames.js"
@@ -110,18 +109,3 @@ export const DropdownTrigger: FC<PropsWithChildren<DropdownTriggerProps>> = ({
     </div>
   )
 }
-
-/**
- * Callback helper.
- *
- * @example
- *
- * ```ts
- * useCallback<DropdownOnClick>((event) => {
- *   // `event` has the correct type.
- * })
- * ```
- */
-export type DropdownOnClick = PointerEventHandler<
-  HTMLAttributes<HTMLDivElement>
->
