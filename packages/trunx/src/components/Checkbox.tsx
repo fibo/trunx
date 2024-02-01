@@ -1,9 +1,4 @@
-import {
-  FC,
-  ChangeEventHandler,
-  InputHTMLAttributes,
-  PropsWithChildren,
-} from "react"
+import { FC, InputHTMLAttributes, PropsWithChildren } from "react"
 import { classNames } from "../classNames.js"
 
 export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type">
@@ -23,18 +18,3 @@ export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({
     </label>
   )
 }
-
-/**
- * Callback helper.
- *
- * @example
- *
- * ```ts
- * useCallback<CheckboxOnChange>((event) => {
- *   // `event` has the correct type.
- * })
- * ```
- */
-export type CheckboxOnChange = ChangeEventHandler<
-  InputHTMLAttributes<HTMLInputElement>
->
