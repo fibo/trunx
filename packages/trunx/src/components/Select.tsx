@@ -61,7 +61,7 @@ export const Select: FC<SelectProps> = ({
 }
 
 /**
- * Callback helper, alias for `React.ChangeEventHandler<HTMLSelectElement>`.
+ * Callback helper.
  *
  * ```ts
  * @example
@@ -70,4 +70,6 @@ export const Select: FC<SelectProps> = ({
  * })
  * ```
  */
-export type SelectOnChange = ChangeEventHandler<HTMLSelectElement>
+export type SelectOnChange = ChangeEventHandler<
+  SelectHTMLAttributes<HTMLSelectElement>
+>

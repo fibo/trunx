@@ -26,7 +26,7 @@ export const Form: FC<PropsWithChildren<FormProps>> = ({
 }
 
 /**
- * Callback helper, alias for `React.FormEventHandler<HTMLFormElement>`.
+ * Callback helper.
  *
  * @example
  *
@@ -39,7 +39,7 @@ export const Form: FC<PropsWithChildren<FormProps>> = ({
 export type FormOnReset = FormEventHandler<HTMLFormElement>
 
 /**
- * Callback helper, alias for `React.FormEventHandler<HTMLFormElement>`.
+ * Callback helper.
  *
  * @example
  *
@@ -71,9 +71,9 @@ export const formValues = (
   fields: ReadonlyArray<string>
 ) => {
   const eventTarget = event.target as EventTarget & {
-    [key in typeof fields[number]]?: { value: unknown }
+    [key in (typeof fields)[number]]?: { value: unknown }
   }
-  const fieldsObj = {} as { [key in typeof fields[number]]?: unknown }
+  const fieldsObj = {} as { [key in (typeof fields)[number]]?: unknown }
   for (const field of fields) {
     fieldsObj[field] = eventTarget[field]?.value
   }

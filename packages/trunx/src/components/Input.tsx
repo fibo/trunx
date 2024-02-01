@@ -62,7 +62,7 @@ export const Input: FC<InputProps> = ({
 }
 
 /**
- * Callback helper, alias for `React.ChangeEventHandler<HTMLInputElement>`.
+ * Callback helper.
  *
  * ```ts
  * @example
@@ -71,10 +71,12 @@ export const Input: FC<InputProps> = ({
  * })
  * ```
  */
-export type InputOnChange = ChangeEventHandler<HTMLInputElement>
+export type InputOnChange = ChangeEventHandler<
+  InputHTMLAttributes<HTMLInputElement>
+>
 
 /**
- * Callback helper, alias for `React.FocusEventHandler<HTMLInputElement>`.
+ * Callback helper.
  *
  * ```ts
  * @example
@@ -83,4 +85,6 @@ export type InputOnChange = ChangeEventHandler<HTMLInputElement>
  * })
  * ```
  */
-export type InputOnFocus = FocusEventHandler<HTMLInputElement>
+export type InputOnFocus = FocusEventHandler<
+  InputHTMLAttributes<HTMLInputElement>
+>
