@@ -25,7 +25,7 @@ export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({
 }
 
 /**
- * Callback helper, alias for `React.ChangeEventHandler<HTMLInputElement>`.
+ * Callback helper.
  *
  * @example
  *
@@ -35,4 +35,6 @@ export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({
  * })
  * ```
  */
-export type CheckboxOnChange = ChangeEventHandler<HTMLInputElement>
+export type CheckboxOnChange = ChangeEventHandler<
+  InputHTMLAttributes<HTMLInputElement>
+>

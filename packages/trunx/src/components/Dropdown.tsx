@@ -112,7 +112,7 @@ export const DropdownTrigger: FC<PropsWithChildren<DropdownTriggerProps>> = ({
 }
 
 /**
- * Callback helper, alias for `React.PointerEventHandler<HTMLDivElement>`.
+ * Callback helper.
  *
  * @example
  *
@@ -122,4 +122,6 @@ export const DropdownTrigger: FC<PropsWithChildren<DropdownTriggerProps>> = ({
  * })
  * ```
  */
-export type DropdownOnClick = PointerEventHandler<HTMLDivElement>
+export type DropdownOnClick = PointerEventHandler<
+  HTMLAttributes<HTMLDivElement>
+>
