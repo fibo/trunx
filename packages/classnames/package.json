@@ -1,0 +1,33 @@
+{
+  "name": "@trunx/classnames",
+  "version": "0.0.0",
+  "description": "Super Saiyan classnames, son of awesome Bulma",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibo/trunx.git"
+  },
+  "keywords": [
+    "bulma"
+  ],
+  "author": {
+    "name": "Gianluca Casati",
+    "url": "https://fibo.github.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fibo/trunx/issues"
+  },
+  "homepage": "https://trunx.dev/",
+  "dependencies": {
+    "bulma": "0.9.4"
+  }
+}
