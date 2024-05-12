@@ -16,12 +16,8 @@
   },
   "scripts": {
     "build": "tsc --build",
-    "check_types": "tsc --noEmit --project .",
-    "cleanup": "rimraf dist/ temp/",
-    "prebuild": "npm run cleanup",
-    "pretest": "tsc --build tsconfig.test.json",
-    "preversion": "npm run build",
-    "test": "node --test --test-reporter spec"
+    "clean": "tsc --build --clean",
+    "check_types": "tsc --noEmit --project ."
   },
   "repository": {
     "type": "git",
@@ -42,7 +38,6 @@
   },
   "homepage": "https://trunx.dev/",
   "dependencies": {
-    "@trunx/classnames": "^0.1.1",
-    "bulma": "0.9.4"
+    "@trunx/classnames": "^0.1.1"
   }
 }

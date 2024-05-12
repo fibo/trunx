@@ -2,5 +2,4 @@
 !dist/
 # Other files to be removed.
 src/
-temp/
 tsconfig.*

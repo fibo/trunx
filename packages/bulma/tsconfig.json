@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.common.json",
+  "compilerOptions": {
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "importHelpers": true,
+    "jsx": "react-jsx",
+    "lib": ["dom", "es2015"],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "removeComments": true,
+    "rootDir": "./src",
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "target": "esnext",
+    "tsBuildInfoFile": "temp/tsconfig.tsbuildinfo"
+  },
+  "exclude": ["node_modules", "./src/**/*_test.ts"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
+}

@@ -25,6 +25,7 @@ npm start
 Transpile components, build documentation website
 
 ```sh
+npm run clean
 npm run build
 ```
 

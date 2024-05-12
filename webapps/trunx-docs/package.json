@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "cleanup": "rimraf .next",
+    "clean": "rm -rf .next",
     "check_types": "tsc --noEmit --project .",
     "predev": "npm run cleanup",
     "start": "next start",
