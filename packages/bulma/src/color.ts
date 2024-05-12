@@ -1,4 +1,4 @@
-import { BulmaClassname } from "../bulma.js"
+import BulmaClass from "./bulma.js"
 
 /**
  * @example
@@ -21,11 +21,11 @@ export type ShadeColor = "black" | "dark" | "light" | "white"
 
 export type OtherColor = "text" | "ghost"
 
-export const colorClassName = (
+export const colorClass = (
   color: MainColor | ShadeColor | OtherColor | undefined
 ):
   | Extract<
-      BulmaClassname,
+      BulmaClass,
       | "is-black"
       | "is-danger"
       | "is-danger"

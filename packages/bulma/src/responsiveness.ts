@@ -6,6 +6,7 @@ export const breakpoints = [
   "widescreen",
   "fullhd",
 ] as const
+
 /**
  * Responsive breakpoints.
  *

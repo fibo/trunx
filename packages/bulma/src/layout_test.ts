@@ -1,10 +1,10 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
-import { FlexModifierProps, flexClassNames } from "./layout.js"
+import { FlexClassArg, flexClass } from "./layout.js"
 
-test("flexClassNames", () => {
+test("flexClass", () => {
   const testData: Array<{
-    input: FlexModifierProps
+    input: FlexClassArg
     output: string
   }> = [
     {
@@ -22,6 +22,6 @@ test("flexClassNames", () => {
   ]
 
   testData.forEach(({ input, output }) => {
-    assert.deepEqual(flexClassNames(input), output)
+    assert.deepEqual(flexClass(input), output)
   })
 })

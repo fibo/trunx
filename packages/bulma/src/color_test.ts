@@ -1,8 +1,8 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
-import { colorClassName, MainColor, ShadeColor } from "./color.js"
+import { colorClass, MainColor, ShadeColor } from "./color.js"
 
-test("colorClassName", () => {
+test("colorClass", () => {
   const testData: Array<{
     input: MainColor | ShadeColor | undefined
     output: string | undefined
@@ -22,6 +22,6 @@ test("colorClassName", () => {
   ]
 
   testData.forEach(({ input, output }) => {
-    assert.deepEqual(colorClassName(input), output)
+    assert.deepEqual(colorClass(input), output)
   })
 })
