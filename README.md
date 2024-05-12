@@ -4,6 +4,7 @@
 
 - [trunx package code](./packages/trunx)
 - [trunx website code](./webapps/trunx-docs)
+- [`@trunx/bulma` package code](./packages/bulma)
 - [`@trunx/classnames` package code](./packages/classnames)
 
 [bulma]: https://bulma.io "Bulma CSS framework"

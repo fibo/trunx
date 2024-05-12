@@ -1,0 +1,30 @@
+{
+  "name": "@trunx/bulma",
+  "version": "0.1.0",
+  "description": "Super Saiyan utils, son of awesome Bulma",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "keywords": [
+    "bulma"
+  ],
+  "author": {
+    "name": "Gianluca Casati",
+    "url": "https://fibo.github.io"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/fibo/trunx/tree/main/packages/bulma",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibo/trunx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fibo/trunx/issues"
+  }
+}

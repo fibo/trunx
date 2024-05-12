@@ -1,4 +1,4 @@
-import { BulmaClassname } from "../bulma.js"
+import BulmaClass from "../bulma.js"
 
 export type ImageRatio =
   | "square"
@@ -18,13 +18,11 @@ export type ImageRatio =
   | "1by2"
   | "1by3"
 
-export type ImageRatioProp = Partial<{ ratio: ImageRatio }>
-
-export const imageRatioClassName = (
+export const imageRatioClass = (
   ratio: ImageRatio | undefined
 ):
   | Extract<
-      BulmaClassname,
+      BulmaClass,
       | "is-square"
       | "is-1by1"
       | "is-5by4"
@@ -53,13 +51,11 @@ export type ImageDimension =
   | "96x96"
   | "128x128"
 
-export type ImageDimensionProp = Partial<{ dimension: ImageDimension }>
-
-export const imageDimensionClassName = (
+export const imageDimensionClass = (
   dimension: ImageDimension | undefined
 ):
   | Extract<
-      BulmaClassname,
+      BulmaClass,
       | "is-16x16"
       | "is-24x24"
       | "is-32x32"
@@ -69,3 +65,11 @@ export const imageDimensionClassName = (
       | "is-128x128"
     >
   | undefined => (dimension ? `is-${dimension}` : undefined)
+
+export type ImageClassArg = Partial<{
+  dimension: ImageDimension
+  ratio: ImageRatio
+}>
+
+export const imageClass = ({ dimension, ratio }: ImageClassArg) =>
+  classnames("image", imageDimensionClass(dimension), imageRatioClass(ratio))

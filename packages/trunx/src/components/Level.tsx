@@ -4,8 +4,8 @@ import {
   BooleanModifierProps,
   modifier,
   textAlignClassName,
-  TextAlignProp,
 } from "../modifiers/index.js"
+import { TextAlignProp } from "./commonProps.js"
 
 export type LevelProps = HTMLAttributes<HTMLDivElement> &
   Pick<BooleanModifierProps, "isMobile"> &

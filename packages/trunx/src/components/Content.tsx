@@ -4,8 +4,8 @@ import {
   SizeModifierProp,
   sizeClassName,
   textAlignClassName,
-  TextAlignProp,
 } from "../modifiers/index.js"
+import { TextAlignProp } from "./commonProps.js"
 
 export type ContentProps = Omit<HTMLAttributes<HTMLDivElement>, "className"> &
   SizeModifierProp &

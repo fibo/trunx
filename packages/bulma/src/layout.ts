@@ -51,7 +51,7 @@ export type FlexWrap = "nowrap" | "wrap" | "wrap-reverse"
 
 type FlexSpacing = 0 | 1 | 2 | 3 | 4 | 5
 
-export type FlexModifierProps = Partial<{
+export type FlexClassArg = Partial<{
   direction: FlexDirection
   align: FlexAlignContent
   alignItems: FlexAlignItems
@@ -62,7 +62,7 @@ export type FlexModifierProps = Partial<{
   shrink: FlexSpacing
 }>
 
-export const flexClassNames = ({
+export const flexClass = ({
   direction,
   align,
   alignItems,
@@ -71,7 +71,7 @@ export const flexClassNames = ({
   wrap,
   grow,
   shrink,
-}: FlexModifierProps) =>
+}: FlexClassArg) =>
   classnames(
     "is-flex",
     direction && `is-flex-direction-${direction}`,
@@ -99,11 +99,9 @@ export type SpacingKey =
   | "pt"
   | "pb"
 
-export type SpacingModifierProp = Partial<{
-  spacing: Partial<{ [key in SpacingKey]: SpacingValue }>
-}>
+export type Spacing = Partial<{ [key in SpacingKey]: SpacingValue }>
 
-export const spacingClassNames = (arg: SpacingModifierProp["spacing"]) =>
+export const spacingClass = (arg: Spacing) =>
   arg && !Array.isArray(arg) && typeof arg === "object"
     ? Object.entries(arg).map(([key, value]) => `${key}-${value}`)
     : undefined

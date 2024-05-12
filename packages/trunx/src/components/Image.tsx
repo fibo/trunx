@@ -1,15 +1,8 @@
 import { FC, ImgHTMLAttributes } from "react"
+import { ImageClassArg, imageClass } from "@trunx/bulma"
 import { classnames } from "@trunx/classnames"
-import {
-  ImageDimensionProp,
-  ImageRatioProp,
-  imageDimensionClassName,
-  imageRatioClassName,
-} from "../modifiers/index.js"
 
-export type ImageProps = ImgHTMLAttributes<HTMLImageElement> &
-  ImageRatioProp &
-  ImageDimensionProp
+export type ImageProps = ImgHTMLAttributes<HTMLImageElement> & ImageClassArg
 
 export const Image: FC<ImageProps> = ({
   className,
@@ -18,14 +11,7 @@ export const Image: FC<ImageProps> = ({
   ...props
 }) => {
   return (
-    <figure
-      className={classnames(
-        "image",
-        imageDimensionClassName(dimension),
-        imageRatioClassName(ratio),
-        className
-      )}
-    >
+    <figure className={classnames(imageClass({ dimension, ratio }), className)}>
       <img {...props} />
     </figure>
   )
