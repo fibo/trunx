@@ -1,19 +1,18 @@
 {
   "name": "@trunx/classnames",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "Super Saiyan classnames, son of awesome Bulma",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./index.js",
+      "types": "./index.d.ts"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/fibo/trunx.git"
+  "scripts": {
+    "test": "node --test"
   },
   "keywords": [
     "bulma"
@@ -23,11 +22,12 @@
     "url": "https://fibo.github.io"
   },
   "license": "MIT",
+  "homepage": "https://github.com/fibo/trunx/tree/main/packages/classnames",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibo/trunx.git"
+  },
   "bugs": {
     "url": "https://github.com/fibo/trunx/issues"
-  },
-  "homepage": "https://trunx.dev/",
-  "dependencies": {
-    "bulma": "0.9.4"
   }
 }
