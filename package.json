@@ -7,10 +7,11 @@
     "build": "npm run build --workspaces --if-present",
     "build:bulma": "npm run build -w packages/bulma",
     "build:trunx": "npm run build -w packages/trunx",
-    "cleanup": "npm run cleanup --workspaces --if-present",
+    "clean": "npm run clean --workspaces --if-present",
     "check_types": "npm run check_types --workspaces --if-present",
     "generate_bulma_classes_types": "postcss ./node_modules/bulma/css/bulma.css --config ./npm-scripts/generate_bulma_classes_types --output ./node_modules/bulma/css/output.css",
     "prestart": "npm run build:trunx",
+    "prettier": "prettier --write .",
     "prettier--check": "prettier --check .",
     "start": "npm run dev -w webapps/trunx-docs",
     "test": "npm run test --workspaces --if-present"
@@ -34,8 +35,7 @@
     "prettier-plugin-jsdoc": "^0.4.2",
     "react": "^18",
     "react-dom": "^18",
-    "rimraf": "^4",
-    "typescript": "^4"
+    "typescript": "^5"
   },
   "pre-commit": [
     "check_types",

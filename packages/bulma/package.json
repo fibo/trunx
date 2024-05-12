@@ -1,6 +1,6 @@
 {
   "name": "@trunx/bulma",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Super Saiyan utils, son of awesome Bulma",
   "type": "module",
   "main": "dist/index.js",
@@ -10,6 +10,17 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "tsc --build --clean",
+    "check_types": "tsc --noEmit --project .",
+    "pretest": "tsc --build tsconfig.test.json",
+    "preversion": "npm run build",
+    "test": "node --test --test-reporter spec"
   },
   "keywords": [
     "bulma"
@@ -26,5 +37,9 @@
   },
   "bugs": {
     "url": "https://github.com/fibo/trunx/issues"
+  },
+  "dependencies": {
+    "@trunx/classnames": "0.1.1",
+    "bulma": "1.0.0"
   }
 }
