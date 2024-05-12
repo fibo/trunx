@@ -10,9 +10,8 @@
     "cleanup": "npm run cleanup --workspaces --if-present",
     "check_types": "npm run check_types --workspaces --if-present",
     "generate_BulmaClassName_type": "postcss ./node_modules/bulma/css/bulma.css --config ./npm-scripts/generate_BulmaClassName_type --output ./node_modules/bulma/css/output.css",
-    "lint": "npm run lint --workspaces --if-present",
-    "lint-staged": "lint-staged",
     "prestart": "npm run build:trunx",
+    "prettier--check": "prettier --check .",
     "start": "npm run dev -w webapps/trunx-docs",
     "test": "npm run test --workspaces --if-present"
   },
@@ -26,7 +25,6 @@
     "eslint-plugin-import": "^2",
     "eslint-plugin-react": "^7",
     "eslint-plugin-react-hooks": "^4",
-    "eslint-plugin-tsdoc": "^0.2.17",
     "lint-staged": "^13",
     "postcss": "^8",
     "postcss-cli": "^10",
@@ -39,19 +37,10 @@
     "rimraf": "^4",
     "typescript": "^4"
   },
-  "lint-staged": {
-    "*.{ts,tsx}": [
-      "prettier --write",
-      "eslint --fix"
-    ],
-    "*.{css,json,md,scss}": [
-      "prettier --write"
-    ]
-  },
   "pre-commit": [
-    "lint-staged",
     "check_types",
-    "test"
+    "test",
+    "prettier--check"
   ],
   "prettier": {
     "semi": false,

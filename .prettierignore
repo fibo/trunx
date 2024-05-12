@@ -1,0 +1,5 @@
+packages/classnames/
+packages/trunx/dist/
+packages/trunx/temp/
+webapps/trunx-docs/.next
+webapps/trunx-docs/.vscode
