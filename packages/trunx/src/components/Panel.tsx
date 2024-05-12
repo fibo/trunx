@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import { ColorModifierProp, MainColor } from "../modifiers/index.js"
 
 export type PanelProps = HTMLAttributes<HTMLElement> &
@@ -12,10 +12,8 @@ export const Panel: FC<PropsWithChildren<PanelProps>> = ({
   heading,
   ...props
 }) => {
-  const _class = classNames("panel", className)
-
   return (
-    <nav className={_class} {...props}>
+    <nav className={classnames("panel", className)} {...props}>
       {heading && <p className="panel-heading">{heading}</p>}
 
       {children}

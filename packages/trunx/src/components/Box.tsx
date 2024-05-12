@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 
 export type BoxProps = HTMLAttributes<HTMLDivElement>
 
@@ -8,10 +8,8 @@ export const Box: FC<PropsWithChildren<BoxProps>> = ({
   className,
   ...props
 }) => {
-  const _class = classNames("box", className)
-
   return (
-    <div className={_class} {...props}>
+    <div className={classnames("box", className)} {...props}>
       {children}
     </div>
   )

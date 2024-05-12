@@ -1,5 +1,5 @@
 import { FC, TableHTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import { BooleanModifierProps, modifier } from "../modifiers/index.js"
 
 export type TableProps = TableHTMLAttributes<HTMLTableElement> &
@@ -22,17 +22,22 @@ export const Table: FC<PropsWithChildren<TableProps>> = ({
   responsive = true,
   ...props
 }) => {
-  const containerClassName = responsive ? "table-container" : undefined
-
-  const _class = classNames(
-    "table",
-    modifier({ isBordered, isFullwidth, isHoverable, isNarrow, isStriped }),
-    className
-  )
-
   return (
-    <div className={containerClassName}>
-      <table className={_class} {...props}>
+    <div className={responsive ? "table-container" : undefined}>
+      <table
+        className={classnames(
+          "table",
+          modifier({
+            isBordered,
+            isFullwidth,
+            isHoverable,
+            isNarrow,
+            isStriped,
+          }),
+          className
+        )}
+        {...props}
+      >
         {children}
       </table>
     </div>

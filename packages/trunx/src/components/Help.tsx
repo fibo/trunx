@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   ColorModifierProp,
   MainColor,
@@ -14,7 +14,9 @@ export const Help: FC<PropsWithChildren<HelpProps>> = ({
   className,
   color,
 }) => {
-  const _class = classNames("help", colorClassName(color), className)
-
-  return <p className={_class}>{children}</p>
+  return (
+    <p className={classnames("help", colorClassName(color), className)}>
+      {children}
+    </p>
+  )
 }

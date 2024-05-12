@@ -1,5 +1,5 @@
 import { FC, LabelHTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import { SizeModifierProp, sizeClassName } from "../modifiers/index.js"
 
 export type LabelProps = Omit<LabelHTMLAttributes<HTMLLabelElement>, "size"> &
@@ -11,10 +11,11 @@ export const Label: FC<PropsWithChildren<LabelProps>> = ({
   size,
   ...props
 }) => {
-  const _class = classNames("label", sizeClassName(size), className)
-
   return (
-    <label className={_class} {...props}>
+    <label
+      className={classnames("label", sizeClassName(size), className)}
+      {...props}
+    >
       {children}
     </label>
   )

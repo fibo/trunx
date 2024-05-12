@@ -1,5 +1,5 @@
 import { FC, TextareaHTMLAttributes } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   BooleanModifierProps,
   SizeModifierProp,
@@ -24,15 +24,16 @@ export const TextArea: FC<TextAreaProps> = ({
   size,
   ...props
 }) => {
-  const _class = classNames(
-    "textarea",
-    modifier({ isActive, isFocused, isHovered, isLoading }),
-    sizeClassName(size),
-    className
-  )
-
   return (
-    <textarea className={_class} {...props}>
+    <textarea
+      className={classnames(
+        "textarea",
+        modifier({ isActive, isFocused, isHovered, isLoading }),
+        sizeClassName(size),
+        className
+      )}
+      {...props}
+    >
       {children}
     </textarea>
   )

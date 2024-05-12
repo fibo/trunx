@@ -43,6 +43,7 @@
   },
   "homepage": "https://trunx.dev/",
   "dependencies": {
+    "@trunx/classnames": "^0.1.1",
     "bulma": "0.9.4"
   }
 }

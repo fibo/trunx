@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   colorClassName,
   ColorModifierProp,
@@ -34,23 +34,22 @@ export const Hero: FC<PropsWithChildren<HeroProps>> = ({
   size,
   ...props
 }) => {
-  const hasHeadAndFoot = Boolean(head) && Boolean(foot)
-
-  const _class = classNames(
-    "hero",
-    colorClassName(color),
-    sizeClassName(size),
-    modifier({
-      // For the fullheight hero to work, you will also need a hero-head and a hero-foot.
-      isFullheight: isFullheight && hasHeadAndFoot,
-      isFullheightWithNavbar,
-      isHalfheight,
-    }),
-    className
-  )
-
   return (
-    <section className={_class} {...props}>
+    <section
+      className={classnames(
+        "hero",
+        colorClassName(color),
+        sizeClassName(size),
+        modifier({
+          // For the fullheight hero to work, you will also need a hero-head and a hero-foot.
+          isFullheight: isFullheight && Boolean(head) && Boolean(foot),
+          isFullheightWithNavbar,
+          isHalfheight,
+        }),
+        className
+      )}
+      {...props}
+    >
       {head ? <div className="hero-head">{head}</div> : null}
 
       <div className="hero-body">{children}</div>

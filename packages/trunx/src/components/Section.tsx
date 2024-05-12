@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import { SizeModifierProp, sizeClassName } from "../modifiers/index.js"
 
 export type SectionProps = HTMLAttributes<HTMLElement> &
@@ -11,10 +11,11 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({
   size,
   ...props
 }) => {
-  const _class = classNames("section", sizeClassName(size), className)
-
   return (
-    <section className={_class} {...props}>
+    <section
+      className={classnames("section", sizeClassName(size), className)}
+      {...props}
+    >
       {children}
     </section>
   )

@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   BooleanModifierProps,
   HalfDozen,
@@ -29,11 +29,11 @@ const tag = (h: HalfDozen) =>
     ? "h6"
     : "p"
 
-const _classNames = (
+const _class = (
   type: "title" | "subtitle",
   { className, isSpaced, size }: Pick<Props, "className" | "size" | "isSpaced">
 ) =>
-  classNames(
+  classnames(
     type,
     size ? `is-${size}` : undefined,
     modifier({ isSpaced }),
@@ -52,10 +52,8 @@ export const Title: FC<PropsWithChildren<TitleProps>> = ({
 }) => {
   const Tag = tag(h)
 
-  const _class = _classNames("title", { className, isSpaced, size })
-
   return (
-    <Tag className={_class} {...props}>
+    <Tag className={_class("title", { className, isSpaced, size })} {...props}>
       {children}
     </Tag>
   )
@@ -73,10 +71,11 @@ export const Subtitle: FC<PropsWithChildren<TitleProps>> = ({
 }) => {
   const Tag = tag(h)
 
-  const _class = _classNames("subtitle", { className, isSpaced, size })
-
   return (
-    <Tag className={_class} {...props}>
+    <Tag
+      className={_class("subtitle", { className, isSpaced, size })}
+      {...props}
+    >
       {children}
     </Tag>
   )

@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   Breakpoint,
   BooleanModifierProps,
@@ -28,14 +28,18 @@ export const Container: FC<PropsWithChildren<ContainerProps>> = ({
   fullWidth,
   maxWidth,
 }) => {
-  const _class = classNames(
-    "container",
-    colorClassName(color),
-    fullWidth ? `is-${fullWidth}` : undefined,
-    maxWidth ? `is-max-${maxWidth}` : undefined,
-    modifier({ isFluid }),
-    className
+  return (
+    <div
+      className={classnames(
+        "container",
+        colorClassName(color),
+        fullWidth ? `is-${fullWidth}` : undefined,
+        maxWidth ? `is-max-${maxWidth}` : undefined,
+        modifier({ isFluid }),
+        className
+      )}
+    >
+      {children}
+    </div>
   )
-
-  return <div className={_class}>{children}</div>
 }

@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   BreakpointsMap,
   BooleanModifierProps,
@@ -30,12 +30,16 @@ export const Columns: FC<PropsWithChildren<ColumnsProps>> = ({
   gap,
   ...modifierProps
 }) => {
-  const _class = classNames(
-    "columns",
-    modifier(modifierProps),
-    typeof gap === "number" ? `is-${gap}` : undefined,
-    className
+  return (
+    <div
+      className={classnames(
+        "columns",
+        modifier(modifierProps),
+        typeof gap === "number" ? `is-${gap}` : undefined,
+        className
+      )}
+    >
+      {children}
+    </div>
   )
-
-  return <div className={_class}>{children}</div>
 }

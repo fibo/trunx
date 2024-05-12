@@ -1,5 +1,5 @@
 import { ProgressHTMLAttributes, FC } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   ColorModifierProp,
   MainColor,
@@ -18,12 +18,15 @@ export const Progress: FC<ProgressProps> = ({
   size,
   ...props
 }) => {
-  const _class = classNames(
-    "progress",
-    colorClassName(color),
-    sizeClassName(size),
-    className
+  return (
+    <progress
+      className={classnames(
+        "progress",
+        colorClassName(color),
+        sizeClassName(size),
+        className
+      )}
+      {...props}
+    />
   )
-
-  return <progress className={_class} {...props} />
 }

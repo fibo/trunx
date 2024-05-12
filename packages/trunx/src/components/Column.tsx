@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   BreakpointsMap,
   BooleanModifierProps,
@@ -74,7 +74,7 @@ export const columnClassNames = ({
   offset,
   size,
 }: ColumnProps) =>
-  classNames(
+  classnames(
     "column",
     modifier({ isCentered }),
     isNarrow === true

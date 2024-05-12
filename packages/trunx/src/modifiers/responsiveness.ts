@@ -17,6 +17,6 @@ export const breakpoints = [
  * - Widescreen: 1216px = `1152px + (2 * $gap)`
  * - Fullhd: 1408px = `1344px + (2 * $gap)`
  */
-export type Breakpoint = typeof breakpoints[number]
+export type Breakpoint = (typeof breakpoints)[number]
 
 export type BreakpointsMap<T> = Partial<{ [key in Breakpoint]: T }>

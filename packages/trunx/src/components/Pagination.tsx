@@ -4,7 +4,7 @@ import {
   HTMLAttributes,
   PropsWithChildren,
 } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   BooleanModifierProps,
   SizeModifierProp,
@@ -25,15 +25,17 @@ export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
   size,
   ...props
 }) => {
-  const _class = classNames(
-    "pagination",
-    sizeClassName(size),
-    modifier({ isCentered, isRight, isRounded }),
-    className
-  )
-
   return (
-    <nav className={_class} aria-label="pagination" {...props}>
+    <nav
+      className={classnames(
+        "pagination",
+        sizeClassName(size),
+        modifier({ isCentered, isRight, isRounded }),
+        className
+      )}
+      aria-label="pagination"
+      {...props}
+    >
       <ul>{children}</ul>
     </nav>
   )
@@ -56,15 +58,16 @@ export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
   isCurrent,
   ...props
 }) => {
-  const _class = classNames(
-    "pagination-link",
-    { "is-current": isCurrent },
-    className
-  )
-
   return (
     <li>
-      <a className={_class} {...props}>
+      <a
+        className={classnames(
+          "pagination-link",
+          { "is-current": isCurrent },
+          className
+        )}
+        {...props}
+      >
         {children}
       </a>
     </li>
@@ -92,14 +95,15 @@ export type PaginationIncrementalNavigationProps =
 export const PaginationNext: FC<
   PropsWithChildren<PaginationIncrementalNavigationProps>
 > = ({ children, className, isDisabled, ...props }) => {
-  const _class = classNames(
-    "pagination-next",
-    modifier({ isDisabled }),
-    className
-  )
-
   return (
-    <a className={_class} {...props}>
+    <a
+      className={classnames(
+        "pagination-next",
+        modifier({ isDisabled }),
+        className
+      )}
+      {...props}
+    >
       {children}
     </a>
   )
@@ -108,14 +112,15 @@ export const PaginationNext: FC<
 export const PaginationPrevious: FC<
   PropsWithChildren<PaginationIncrementalNavigationProps>
 > = ({ children, className, isDisabled, ...props }) => {
-  const _class = classNames(
-    "pagination-previous",
-    modifier({ isDisabled }),
-    className
-  )
-
   return (
-    <a className={_class} {...props}>
+    <a
+      className={classnames(
+        "pagination-previous",
+        modifier({ isDisabled }),
+        className
+      )}
+      {...props}
+    >
       {children}
     </a>
   )

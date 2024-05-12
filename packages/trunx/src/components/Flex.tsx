@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   flexClassNames,
   FlexModifierProps,
@@ -25,23 +25,24 @@ export const Flex: FC<PropsWithChildren<FlexProps>> = ({
   wrap,
   ...props
 }) => {
-  const _class = classNames(
-    flexClassNames({
-      align,
-      alignItems,
-      alignSelf,
-      direction,
-      grow,
-      justify,
-      shrink,
-      wrap,
-    }),
-    spacingClassNames(spacing),
-    className
-  )
-
   return (
-    <div className={_class} {...props}>
+    <div
+      className={classnames(
+        flexClassNames({
+          align,
+          alignItems,
+          alignSelf,
+          direction,
+          grow,
+          justify,
+          shrink,
+          wrap,
+        }),
+        spacingClassNames(spacing),
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   )

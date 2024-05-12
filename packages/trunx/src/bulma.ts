@@ -1,7 +1,7 @@
-import { ClassNamesArg, classNames } from "./classNames.js"
-import _BulmaClassName from "./bulmaClassNames.js"
+import { ClassnamesArg, classnames } from "@trunx/classnames"
+import _BulmaClassname from "./bulmaClassNames.js"
 
-export type BulmaClassName = _BulmaClassName
+export type BulmaClassname = _BulmaClassname
 
-export const bulma = (...args: ClassNamesArg<BulmaClassName>[]) =>
-  classNames<BulmaClassName>(...args)
+export const bulma = (...args: ClassnamesArg<BulmaClassname>[]) =>
+  classnames<BulmaClassname>(...args)

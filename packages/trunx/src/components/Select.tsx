@@ -1,5 +1,5 @@
 import { FC, OptionHTMLAttributes, SelectHTMLAttributes } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   BooleanModifierProps,
   ColorModifierProp,
@@ -27,16 +27,16 @@ export const Select: FC<SelectProps> = ({
   size,
   ...props
 }) => {
-  const _class = classNames(
-    "select",
-    colorClassName(color),
-    modifier({ isFocused, isHovered, isLoading }),
-    sizeClassName(size),
-    className
-  )
-
   return (
-    <div className={_class}>
+    <div
+      className={classnames(
+        "select",
+        colorClassName(color),
+        modifier({ isFocused, isHovered, isLoading }),
+        sizeClassName(size),
+        className
+      )}
+    >
       <select {...props}>
         {options.map((props, i) => (
           <option key={i} {...props} />

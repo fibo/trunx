@@ -1,4 +1,4 @@
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 
 export type Alignment = "centered" | "left" | "right"
 
@@ -72,7 +72,7 @@ export const flexClassNames = ({
   grow,
   shrink,
 }: FlexModifierProps) =>
-  classNames(
+  classnames(
     "is-flex",
     direction && `is-flex-direction-${direction}`,
     justify && `is-justify-content-${justify}`,

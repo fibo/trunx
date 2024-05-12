@@ -1,5 +1,5 @@
 import { FC, InputHTMLAttributes, ReactNode } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import { BooleanModifierProps, modifier } from "../modifiers/index.js"
 
 export type FileUploadProps = Omit<
@@ -21,14 +21,14 @@ export const FileUpload: FC<FileUploadProps> = ({
   isRight,
   ...props
 }) => {
-  const _class = classNames(
-    "file",
-    modifier({ isBoxed, isFullwidth, isRight }),
-    className
-  )
-
   return (
-    <div className={_class}>
+    <div
+      className={classnames(
+        "file",
+        modifier({ isBoxed, isFullwidth, isRight }),
+        className
+      )}
+    >
       <label className="file-label">
         <input type="file-input" {...props} />
 

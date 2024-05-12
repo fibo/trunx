@@ -1,4 +1,4 @@
-import { BulmaClassName } from "../bulma.js"
+import { BulmaClassname } from "../bulma.js"
 
 /**
  * @example
@@ -25,7 +25,7 @@ export const colorClassName = (
   color: MainColor | ShadeColor | OtherColor | undefined
 ):
   | Extract<
-      BulmaClassName,
+      BulmaClassname,
       | "is-black"
       | "is-danger"
       | "is-danger"

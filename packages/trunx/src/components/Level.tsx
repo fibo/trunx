@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   BooleanModifierProps,
   modifier,
@@ -22,10 +22,11 @@ export const Level: FC<PropsWithChildren<LevelProps>> = ({
   right,
   ...props
 }) => {
-  const _class = classNames("level", modifier({ isMobile }), className)
-
   return (
-    <div className={_class} {...props}>
+    <div
+      className={classnames("level", modifier({ isMobile }), className)}
+      {...props}
+    >
       {left && <div className="level-left">{left}</div>}
 
       {children}
@@ -43,14 +44,15 @@ export const LevelItem: FC<PropsWithChildren<LevelItemProps>> = ({
   hasText,
   ...props
 }) => {
-  const _class = classNames(
-    "level-item",
-    textAlignClassName(hasText),
-    className
-  )
-
   return (
-    <div className={_class} {...props}>
+    <div
+      className={classnames(
+        "level-item",
+        textAlignClassName(hasText),
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   )

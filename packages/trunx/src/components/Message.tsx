@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   ColorModifierProp,
   MainColor,
@@ -24,15 +24,16 @@ export const Message: FC<PropsWithChildren<MessageProps>> = ({
   size,
   ...props
 }) => {
-  const _class = classNames(
-    "message",
-    colorClassName(color),
-    sizeClassName(size),
-    className
-  )
-
   return (
-    <article className={_class} {...props}>
+    <article
+      className={classnames(
+        "message",
+        colorClassName(color),
+        sizeClassName(size),
+        className
+      )}
+      {...props}
+    >
       {header && <div className="message-header">{header}</div>}
 
       <div className="message-body">{children}</div>

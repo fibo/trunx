@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import { BooleanModifierProps, modifier } from "../modifiers/index.js"
 
 export type ControlProps = HTMLAttributes<HTMLDivElement> &
@@ -17,14 +17,15 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
   isLoading,
   ...props
 }) => {
-  const _class = classNames(
-    "control",
-    modifier({ hasIconsLeft, hasIconsRight, isExpanded, isLoading }),
-    className
-  )
-
   return (
-    <div className={_class} {...props}>
+    <div
+      className={classnames(
+        "control",
+        modifier({ hasIconsLeft, hasIconsRight, isExpanded, isLoading }),
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   )

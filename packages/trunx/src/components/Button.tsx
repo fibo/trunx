@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, FC, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   ColorModifierProp,
   BooleanModifierProps,
@@ -46,27 +46,28 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   size,
   ...props
 }) => {
-  const _class = classNames(
-    "button",
-    colorClassName(color),
-    sizeClassName(size),
-    modifier({
-      isActive,
-      isExpanded,
-      isFocused,
-      isFullwidth,
-      isInverted,
-      isLight,
-      isLoading,
-      isOutlined,
-      isRounded,
-      isStatic,
-    }),
-    className
-  )
-
   return (
-    <button className={_class} {...props}>
+    <button
+      className={classnames(
+        "button",
+        colorClassName(color),
+        sizeClassName(size),
+        modifier({
+          isActive,
+          isExpanded,
+          isFocused,
+          isFullwidth,
+          isInverted,
+          isLight,
+          isLoading,
+          isOutlined,
+          isRounded,
+          isStatic,
+        }),
+        className
+      )}
+      {...props}
+    >
       {children}
     </button>
   )
@@ -80,7 +81,7 @@ export type ButtonDeleteProps = Omit<
   SizeModifierProp<"small" | "medium" | "large">
 
 export const ButtonDelete: FC<ButtonDeleteProps> = ({ size, ...props }) => {
-  const _class = classNames("delete", sizeClassName(size))
-
-  return <button className={_class} {...props} />
+  return (
+    <button className={classnames("delete", sizeClassName(size))} {...props} />
+  )
 }
