@@ -18,7 +18,6 @@
     "build": "tsc --build",
     "check_types": "tsc --noEmit --project .",
     "cleanup": "rimraf dist/ temp/",
-    "lint": "eslint --ext .tsx --ext .ts src/",
     "prebuild": "npm run cleanup",
     "pretest": "tsc --build tsconfig.test.json",
     "preversion": "npm run build",
