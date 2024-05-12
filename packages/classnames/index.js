@@ -1,0 +1,1 @@
+export const classnames=(...args)=> args.map((arg)=>{if (Array.isArray(arg)) return arg.length ? classnames(...arg) : ""; if (arg && typeof arg === "object") return classnames( Object.entries(arg).reduce( (keys, keyValue) => (keyValue[1] ? keys.concat(keyValue[0]) : keys), [])); return arg; }).filter((str) => !!str).join(" ");
