@@ -1,5 +1,5 @@
 import { FC, FormEvent, FormHTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 
 export type FormProps = FormHTMLAttributes<HTMLFormElement> &
   Partial<{ box: boolean }>
@@ -10,10 +10,8 @@ export const Form: FC<PropsWithChildren<FormProps>> = ({
   box,
   ...props
 }) => {
-  const _class = classNames(box && "box", className)
-
   return (
-    <form className={_class} {...props}>
+    <form className={classnames(box && "box", className)} {...props}>
       {children}
     </form>
   )

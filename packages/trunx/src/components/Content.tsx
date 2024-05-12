@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   SizeModifierProp,
   sizeClassName,
@@ -17,14 +17,15 @@ export const Content: FC<PropsWithChildren<ContentProps>> = ({
   size,
   ...props
 }) => {
-  const _class = classNames(
-    "content",
-    textAlignClassName(hasText),
-    sizeClassName(size)
-  )
-
   return (
-    <div className={_class} {...props}>
+    <div
+      className={classnames(
+        "content",
+        textAlignClassName(hasText),
+        sizeClassName(size)
+      )}
+      {...props}
+    >
       {children}
     </div>
   )

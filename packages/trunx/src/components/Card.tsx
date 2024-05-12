@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 
 export type CardProps = HTMLAttributes<HTMLDivElement> &
   Partial<{
@@ -15,10 +15,8 @@ export const Card: FC<PropsWithChildren<CardProps>> = ({
   image,
   className,
 }) => {
-  const _class = classNames("card", className)
-
   return (
-    <div className={_class}>
+    <div className={classnames("card", className)}>
       {header ? <header className="card-header">{header}</header> : null}
 
       {image ? <div className="card-image">{image}</div> : null}

@@ -1,12 +1,12 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
-import { BulmaClassName } from "../bulma.js"
+import { BulmaClassname } from "../bulma.js"
 import { columnClassNames, ColumnProps } from "./Column.js"
 
 test("columnClassNames", () => {
   const testData: Array<{
     input: ColumnProps
-    output: BulmaClassName[]
+    output: BulmaClassname[]
   }> = [
     {
       input: {

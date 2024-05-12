@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import { BooleanModifierProps, Dozen, modifier } from "../modifiers/index.js"
 
 export type TileProps = HTMLAttributes<HTMLDivElement> &
@@ -21,15 +21,16 @@ export const Tile: FC<PropsWithChildren<TileProps>> = ({
   size,
   ...props
 }) => {
-  const _class = classNames(
-    "tile",
-    size ? `is-${size}` : undefined,
-    modifier({ isAncestor, isChild, isParent, isVertical }),
-    className
-  )
-
   return (
-    <div className={_class} {...props}>
+    <div
+      className={classnames(
+        "tile",
+        size ? `is-${size}` : undefined,
+        modifier({ isAncestor, isChild, isParent, isVertical }),
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   )

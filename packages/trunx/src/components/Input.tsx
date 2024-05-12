@@ -1,5 +1,5 @@
 import { FC, InputHTMLAttributes } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   MainColor,
   ColorModifierProp,
@@ -40,18 +40,21 @@ export const Input: FC<InputProps> = ({
   size,
   ...props
 }) => {
-  const _class = classNames(
-    "input",
-    colorClassName(color),
-    sizeClassName(size),
-    modifier({
-      isFocused,
-      isHovered,
-      isRounded,
-      isStatic,
-    }),
-    className
+  return (
+    <input
+      className={classnames(
+        "input",
+        colorClassName(color),
+        sizeClassName(size),
+        modifier({
+          isFocused,
+          isHovered,
+          isRounded,
+          isStatic,
+        }),
+        className
+      )}
+      {...props}
+    />
   )
-
-  return <input className={_class} {...props} />
 }

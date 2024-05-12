@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   ColorModifierProp,
   SizeModifierProp,
@@ -19,15 +19,16 @@ export const Icon: FC<PropsWithChildren<IconProps>> = ({
   size,
   ...props
 }) => {
-  const _class = classNames(
-    "icon",
-    textColorClassName(color),
-    sizeClassName(size),
-    className
-  )
-
   return (
-    <span className={_class} {...props}>
+    <span
+      className={classnames(
+        "icon",
+        textColorClassName(color),
+        sizeClassName(size),
+        className
+      )}
+      {...props}
+    >
       {children}
     </span>
   )
@@ -40,10 +41,8 @@ export const IconText: FC<PropsWithChildren<IconTextProps>> = ({
   className,
   ...props
 }) => {
-  const _class = classNames("icon-text", className)
-
   return (
-    <span className={_class} {...props}>
+    <span className={classnames("icon-text", className)} {...props}>
       {children}
     </span>
   )

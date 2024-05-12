@@ -1,4 +1,4 @@
-import { BulmaClassName } from "../bulma.js"
+import { BulmaClassname } from "../bulma.js"
 
 export type ImageRatio =
   | "square"
@@ -24,7 +24,7 @@ export const imageRatioClassName = (
   ratio: ImageRatio | undefined
 ):
   | Extract<
-      BulmaClassName,
+      BulmaClassname,
       | "is-square"
       | "is-1by1"
       | "is-5by4"
@@ -59,7 +59,7 @@ export const imageDimensionClassName = (
   dimension: ImageDimension | undefined
 ):
   | Extract<
-      BulmaClassName,
+      BulmaClassname,
       | "is-16x16"
       | "is-24x24"
       | "is-32x32"

@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import { Alignment } from "../modifiers/index.js"
 
 export type FieldProps = HTMLAttributes<HTMLDivElement> &
@@ -15,20 +15,21 @@ export const Field: FC<PropsWithChildren<FieldProps>> = ({
   isGrouped,
   ...props
 }) => {
-  const _class = classNames(
-    "field",
-    hasAddons
-      ? hasAddons === true
-        ? "has-addons"
-        : `has-addons-${hasAddons}`
-      : undefined,
-    isGrouped !== undefined ? "is-grouped" : undefined,
-    typeof isGrouped === "string" ? `is-grouped-${isGrouped}` : undefined,
-    className
-  )
-
   return (
-    <div className={_class} {...props}>
+    <div
+      className={classnames(
+        "field",
+        hasAddons
+          ? hasAddons === true
+            ? "has-addons"
+            : `has-addons-${hasAddons}`
+          : undefined,
+        isGrouped !== undefined ? "is-grouped" : undefined,
+        typeof isGrouped === "string" ? `is-grouped-${isGrouped}` : undefined,
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   )
@@ -45,10 +46,8 @@ export const FieldHorizontal: FC<PropsWithChildren<FieldHorizontalProps>> = ({
   className,
   ...props
 }) => {
-  const _class = classNames("field", "is-horizontal", className)
-
   return (
-    <div className={_class} {...props}>
+    <div className={classnames("field", "is-horizontal", className)} {...props}>
       <div className="field-label">{label}</div>
 
       <div className="field-body">{children}</div>

@@ -5,7 +5,7 @@ import {
   PropsWithChildren,
   ReactNode,
 } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   BooleanModifierProps,
   modifier,
@@ -22,10 +22,11 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   isActive,
   ...props
 }) => {
-  const _class = classNames("modal", modifier({ isActive }), className)
-
   return (
-    <div className={_class} {...props}>
+    <div
+      className={classnames("modal", modifier({ isActive }), className)}
+      {...props}
+    >
       {children}
     </div>
   )
@@ -37,9 +38,9 @@ export const ModalBackground: FC<ModalBackgroundProps> = ({
   className,
   ...props
 }) => {
-  const _class = classNames("modal-background", className)
-
-  return <div className={_class} {...props} />
+  return (
+    <div className={classnames("modal-background", className)} {...props} />
+  )
 }
 
 export type ModalCardProps = ModalProps &
@@ -55,10 +56,8 @@ export const ModalCard: FC<PropsWithChildren<ModalCardProps>> = ({
   footer,
   className,
 }) => {
-  const _class = classNames("modal-card", className)
-
   return (
-    <div className={_class}>
+    <div className={classnames("modal-card", className)}>
       {header && (
         <header className="modal-card-head">
           <p className="modal-card-title">{header}</p>
@@ -80,9 +79,13 @@ export const ModalClose: FC<ModalCloseProps> = ({
   size,
   ...props
 }) => {
-  const _class = classNames("modal-close", sizeClassName(size), className)
-
-  return <button className={_class} aria-label="close" {...props} />
+  return (
+    <button
+      className={classnames("modal-close", sizeClassName(size), className)}
+      aria-label="close"
+      {...props}
+    />
+  )
 }
 
 export type ModalContentProps = HTMLAttributes<HTMLDivElement>
@@ -92,10 +95,8 @@ export const ModalContent: FC<PropsWithChildren<ModalContentProps>> = ({
   className,
   ...props
 }) => {
-  const _class = classNames("modal-content", className)
-
   return (
-    <div className={_class} {...props}>
+    <div className={classnames("modal-content", className)} {...props}>
       {children}
     </div>
   )

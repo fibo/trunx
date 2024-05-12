@@ -1,5 +1,5 @@
 import { FC, InputHTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 
 export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type">
 
@@ -8,10 +8,8 @@ export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({
   className,
   ...props
 }) => {
-  const _class = classNames("checkbox", className)
-
   return (
-    <label className={_class}>
+    <label className={classnames("checkbox", className)}>
       <input type="checkbox" {...props} />
 
       {children}

@@ -1,5 +1,5 @@
 import { FC, ImgHTMLAttributes } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   ImageDimensionProp,
   ImageRatioProp,
@@ -17,15 +17,15 @@ export const Image: FC<ImageProps> = ({
   ratio,
   ...props
 }) => {
-  const _class = classNames(
-    "image",
-    imageDimensionClassName(dimension),
-    imageRatioClassName(ratio),
-    className
-  )
-
   return (
-    <figure className={_class}>
+    <figure
+      className={classnames(
+        "image",
+        imageDimensionClassName(dimension),
+        imageRatioClassName(ratio),
+        className
+      )}
+    >
       <img {...props} />
     </figure>
   )

@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 
 export type MediaProps = HTMLAttributes<HTMLElement> &
   Partial<{
@@ -14,10 +14,8 @@ export const Media: FC<PropsWithChildren<MediaProps>> = ({
   right,
   ...props
 }) => {
-  const _class = classNames("media", className)
-
   return (
-    <article className={_class} {...props}>
+    <article className={classnames("media", className)} {...props}>
       {left && <div className="media-left">{left}</div>}
 
       {children}

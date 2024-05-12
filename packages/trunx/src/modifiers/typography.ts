@@ -1,4 +1,4 @@
-import { BulmaClassName } from "../bulma.js"
+import { BulmaClassname } from "../bulma.js"
 import { MainColor } from "./color.js"
 
 export type TextAlignment = "centered" | "justified" | "left" | "right"
@@ -9,12 +9,12 @@ export type TextAlignProp = Partial<{
 
 export const textAlignClassName = (
   alignment: TextAlignProp["hasText"]
-): Extract<BulmaClassName, `has-text-${typeof alignment}`> | undefined =>
+): Extract<BulmaClassname, `has-text-${typeof alignment}`> | undefined =>
   alignment ? `has-text-${alignment}` : undefined
 
 export type TextColor = MainColor
 
 export const textColorClassName = (
   color: TextColor
-): Extract<BulmaClassName, `has-text-${typeof color}`> | undefined =>
+): Extract<BulmaClassname, `has-text-${typeof color}`> | undefined =>
   color ? `has-text-${color}` : undefined

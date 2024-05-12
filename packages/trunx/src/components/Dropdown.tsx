@@ -5,7 +5,7 @@ import {
   HTMLAttributes,
   PropsWithChildren,
 } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import { BooleanModifierProps, modifier } from "../modifiers/index.js"
 
 export type DropdownProps = HTMLAttributes<HTMLDivElement> &
@@ -20,14 +20,15 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
   isUp,
   ...props
 }) => {
-  const _class = classNames(
-    "dropdown",
-    modifier({ isActive, isHoverable, isRight, isUp }),
-    className
-  )
-
   return (
-    <div className={_class} {...props}>
+    <div
+      className={classnames(
+        "dropdown",
+        modifier({ isActive, isHoverable, isRight, isUp }),
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   )
@@ -40,7 +41,7 @@ type DropdownItemModifierProps = Pick<BooleanModifierProps, "isActive">
 const dropdownItemClassNames = (
   { isActive }: DropdownItemModifierProps,
   className?: string
-) => classNames("dropdown-item", modifier({ isActive }), className)
+) => classnames("dropdown-item", modifier({ isActive }), className)
 
 export type DropdownItemProps = HTMLAttributes<HTMLDivElement> &
   DropdownItemModifierProps
@@ -51,10 +52,8 @@ export const DropdownItem: FC<DropdownItemProps> = ({
   isActive,
   ...props
 }) => {
-  const _class = dropdownItemClassNames({ isActive }, className)
-
   return (
-    <div className={_class} {...props}>
+    <div className={dropdownItemClassNames({ isActive }, className)} {...props}>
       {children}
     </div>
   )
@@ -69,10 +68,8 @@ export const DropdownItemAnchor: FC<DropdownItemAnchorProps> = ({
   isActive,
   ...props
 }) => {
-  const _class = dropdownItemClassNames({ isActive }, className)
-
   return (
-    <a className={_class} {...props}>
+    <a className={dropdownItemClassNames({ isActive }, className)} {...props}>
       {children}
     </a>
   )
@@ -99,11 +96,9 @@ export const DropdownTrigger: FC<PropsWithChildren<DropdownTriggerProps>> = ({
   className,
   ...props
 }) => {
-  const _class = classNames("button", className)
-
   return (
     <div className="dropdown-trigger">
-      <button className={_class} {...props}>
+      <button className={classnames("button", className)} {...props}>
         {children}
       </button>
     </div>

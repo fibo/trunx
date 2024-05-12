@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, LiHTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   BooleanModifierProps,
   SizeModifierProp,
@@ -23,15 +23,17 @@ export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps>> = ({
   isRight,
   ...props
 }) => {
-  const _class = classNames(
-    "breadcrumb",
-    modifier({ isCentered, isRight }),
-    separator === undefined ? "" : `has-${separator}-separator`,
-    className
-  )
-
   return (
-    <nav className={_class} aria-label="breadcrumbs" {...props}>
+    <nav
+      className={classnames(
+        "breadcrumb",
+        modifier({ isCentered, isRight }),
+        separator === undefined ? "" : `has-${separator}-separator`,
+        className
+      )}
+      aria-label="breadcrumbs"
+      {...props}
+    >
       <ul>{children}</ul>
     </nav>
   )
@@ -46,10 +48,8 @@ export const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   isActive,
   ...props
 }) => {
-  const _class = classNames(modifier({ isActive }), className)
-
   return (
-    <li className={_class} {...props}>
+    <li className={classnames(modifier({ isActive }), className)} {...props}>
       {children}
     </li>
   )

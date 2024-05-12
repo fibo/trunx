@@ -3,11 +3,10 @@ import {
   Dispatch,
   FC,
   HTMLAttributes,
-  PointerEventHandler,
   PropsWithChildren,
   SetStateAction,
 } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   BooleanModifierProps,
   ColorModifierProp,
@@ -32,15 +31,16 @@ export const Navbar: FC<PropsWithChildren<NavbarProps>> = ({
   hasShadow,
   ...props
 }) => {
-  const _class = classNames(
-    "navbar",
-    colorClassName(color),
-    modifier({ hasShadow, isTransparent }),
-    className
-  )
-
   return (
-    <nav className={_class} {...props}>
+    <nav
+      className={classnames(
+        "navbar",
+        colorClassName(color),
+        modifier({ hasShadow, isTransparent }),
+        className
+      )}
+      {...props}
+    >
       {children}
     </nav>
   )
@@ -53,10 +53,8 @@ export const NavbarBrand: FC<PropsWithChildren<NavbarBrandProps>> = ({
   className,
   ...props
 }) => {
-  const _class = classNames("navbar-brand", className)
-
   return (
-    <div className={_class} {...props}>
+    <div className={classnames("navbar-brand", className)} {...props}>
       {children}
     </div>
   )
@@ -78,20 +76,16 @@ export const NavbarBurger: FC<NavbarBurgerProps> = ({
   setIsActive,
   ...props
 }) => {
-  const _class = classNames("navbar-burger", modifier({ isActive }), className)
-
-  const onClick: PointerEventHandler<HTMLDivElement> = (event) => {
-    event.stopPropagation()
-    setIsActive((isActive) => !isActive)
-  }
-
   return (
     <div
       aria-expanded={isActive ? "true" : "false"}
       aria-label="menu"
       role="button"
-      className={_class}
-      onClick={onClick}
+      className={classnames("navbar-burger", modifier({ isActive }), className)}
+      onClick={(event) => {
+        event.stopPropagation()
+        setIsActive((isActive) => !isActive)
+      }}
       {...props}
     >
       <span aria-hidden="true" />
@@ -108,10 +102,8 @@ export const NavbarDropdown: FC<PropsWithChildren<NavbarDropdownProps>> = ({
   className,
   ...props
 }) => {
-  const _class = classNames("navbar-dropdown", className)
-
   return (
-    <div className={_class} {...props}>
+    <div className={classnames("navbar-dropdown", className)} {...props}>
       {children}
     </div>
   )
@@ -124,10 +116,8 @@ export const NavbarEnd: FC<PropsWithChildren<NavbarEndProps>> = ({
   className,
   ...props
 }) => {
-  const _class = classNames("navbar-end", className)
-
   return (
-    <div className={_class} {...props}>
+    <div className={classnames("navbar-end", className)} {...props}>
       {children}
     </div>
   )
@@ -155,21 +145,22 @@ export const NavbarItem: FC<NavbarItemProps> = ({
   isTab,
   ...props
 }) => {
-  const _class = classNames(
-    "navbar-item",
-    modifier({
-      hasDropdown,
-      hasDropdownUp,
-      isActive,
-      isExpanded,
-      isHoverable,
-      isTab,
-    }),
-    className
-  )
-
   return (
-    <div className={_class} {...props}>
+    <div
+      className={classnames(
+        "navbar-item",
+        modifier({
+          hasDropdown,
+          hasDropdownUp,
+          isActive,
+          isExpanded,
+          isHoverable,
+          isTab,
+        }),
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   )
@@ -184,10 +175,11 @@ export const NavbarItemAnchor: FC<NavbarItemAnchorProps> = ({
   isActive,
   ...props
 }) => {
-  const _class = classNames("navbar-item", modifier({ isActive }), className)
-
   return (
-    <a className={_class} {...props}>
+    <a
+      className={classnames("navbar-item", modifier({ isActive }), className)}
+      {...props}
+    >
       {children}
     </a>
   )
@@ -200,10 +192,8 @@ export const NavbarLink: FC<PropsWithChildren<NavbarLinkProps>> = ({
   className,
   ...props
 }) => {
-  const _class = classNames("navbar-link", className)
-
   return (
-    <a className={_class} {...props}>
+    <a className={classnames("navbar-link", className)} {...props}>
       {children}
     </a>
   )
@@ -217,9 +207,13 @@ export const NavbarMenu: FC<PropsWithChildren<NavbarMenuProps>> = ({
   className,
   isActive,
 }) => {
-  const _class = classNames("navbar-menu", modifier({ isActive }), className)
-
-  return <div className={_class}>{children}</div>
+  return (
+    <div
+      className={classnames("navbar-menu", modifier({ isActive }), className)}
+    >
+      {children}
+    </div>
+  )
 }
 
 export type NavbarStartProps = HTMLAttributes<HTMLDivElement>
@@ -228,7 +222,5 @@ export const NavbarStart: FC<PropsWithChildren<NavbarStartProps>> = ({
   children,
   className,
 }) => {
-  const _class = classNames("navbar-start", className)
-
-  return <div className={_class}>{children}</div>
+  return <div className={classnames("navbar-start", className)}>{children}</div>
 }

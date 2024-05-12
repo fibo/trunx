@@ -1,5 +1,5 @@
 import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classNames } from "../classNames.js"
+import { classnames } from "@trunx/classnames"
 import {
   BooleanModifierProps,
   SizeModifierProp,
@@ -18,15 +18,16 @@ export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({
   size,
   ...props
 }) => {
-  const _class = classNames(
-    "buttons",
-    modifier({ isCentered }),
-    pluralSizeClassName(size),
-    className
-  )
-
   return (
-    <div className={_class} {...props}>
+    <div
+      className={classnames(
+        "buttons",
+        modifier({ isCentered }),
+        pluralSizeClassName(size),
+        className
+      )}
+      {...props}
+    >
       {children}
     </div>
   )
