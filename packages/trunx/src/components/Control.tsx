@@ -1,12 +1,13 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
-import { BooleanModifierProps, modifier } from "../modifiers/index.js"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {BoolClassArg, boolClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
-export type ControlProps = HTMLAttributes<HTMLDivElement> &
-  Pick<
-    BooleanModifierProps,
-    "hasIconsLeft" | "hasIconsRight" | "isExpanded" | "isLoading"
-  >
+export type ControlClassArg = Pick<
+  BoolClassArg,
+  "hasIconsLeft" | "hasIconsRight" | "isExpanded" | "isLoading"
+>
+
+export type ControlProps = HTMLAttributes<HTMLDivElement> & ControlClassArg
 
 export const Control: FC<PropsWithChildren<ControlProps>> = ({
   children,
@@ -16,17 +17,15 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
   isExpanded,
   isLoading,
   ...props
-}) => {
-  return (
-    <div
-      className={classnames(
-        "control",
-        modifier({ hasIconsLeft, hasIconsRight, isExpanded, isLoading }),
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div
+    className={classnames(
+      "control",
+      boolClass({hasIconsLeft, hasIconsRight, isExpanded, isLoading}),
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)

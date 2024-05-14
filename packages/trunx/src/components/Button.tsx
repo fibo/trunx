@@ -1,22 +1,22 @@
-import { ButtonHTMLAttributes, FC, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
+import {ButtonHTMLAttributes, FC, PropsWithChildren} from "react"
 import {
-  ColorModifierProp,
-  BooleanModifierProps,
+  BoolClassArg,
+  ColorArg,
   MainColor,
   ShadeColor,
+  SizeArg,
   OtherColor,
-  SizeModifierProp,
-  colorClassName,
-  modifier,
-  sizeClassName,
-} from "../modifiers/index.js"
+  boolClass,
+  colorClass,
+  sizeClass
+} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
 export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  ColorModifierProp<MainColor | ShadeColor | OtherColor> &
-  SizeModifierProp &
+  ColorArg<MainColor | ShadeColor | OtherColor> &
+  SizeArg &
   Pick<
-    BooleanModifierProps,
+    BoolClassArg,
     | "isActive"
     | "isExpanded"
     | "isFocused"
@@ -45,43 +45,39 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   isStatic,
   size,
   ...props
-}) => {
-  return (
-    <button
-      className={classnames(
-        "button",
-        colorClassName(color),
-        sizeClassName(size),
-        modifier({
-          isActive,
-          isExpanded,
-          isFocused,
-          isFullwidth,
-          isInverted,
-          isLight,
-          isLoading,
-          isOutlined,
-          isRounded,
-          isStatic,
-        }),
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </button>
-  )
-}
+}) => (
+  <button
+    className={classnames(
+      "button",
+      colorClass(color),
+      sizeClass(size),
+      boolClass({
+        isActive,
+        isExpanded,
+        isFocused,
+        isFullwidth,
+        isInverted,
+        isLight,
+        isLoading,
+        isOutlined,
+        isRounded,
+        isStatic,
+      }),
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </button>
+)
 
 export type ButtonDeleteProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
   "className"
 > &
-  ColorModifierProp<MainColor | ShadeColor | OtherColor> &
-  SizeModifierProp<"small" | "medium" | "large">
+  ColorArg<MainColor | ShadeColor | OtherColor> &
+  SizeArg<"small" | "medium" | "large">
 
-export const ButtonDelete: FC<ButtonDeleteProps> = ({ size, ...props }) => {
-  return (
-    <button className={classnames("delete", sizeClassName(size))} {...props} />
-  )
-}
+export const ButtonDelete: FC<ButtonDeleteProps> = ({size, ...props}) => (
+  <button className={classnames("delete", sizeClass(size))} {...props} />
+)

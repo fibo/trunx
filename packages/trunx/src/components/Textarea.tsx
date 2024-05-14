@@ -1,14 +1,14 @@
-import { FC, TextareaHTMLAttributes } from "react"
-import { classnames } from "@trunx/classnames"
+import {FC, TextareaHTMLAttributes} from "react"
+import {sizeClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 import {
   BooleanModifierProps,
-  SizeModifierProp,
   modifier,
-  sizeClassName,
 } from "../modifiers/index.js"
+import {SizeProp} from "./commonProps.js"
 
 export type TextAreaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
-  SizeModifierProp &
+  SizeProp &
   Pick<
     BooleanModifierProps,
     "isActive" | "isFocused" | "isHovered" | "isLoading"
@@ -28,8 +28,8 @@ export const TextArea: FC<TextAreaProps> = ({
     <textarea
       className={classnames(
         "textarea",
-        modifier({ isActive, isFocused, isHovered, isLoading }),
-        sizeClassName(size),
+        modifier({isActive, isFocused, isHovered, isLoading}),
+        sizeClass(size),
         className
       )}
       {...props}

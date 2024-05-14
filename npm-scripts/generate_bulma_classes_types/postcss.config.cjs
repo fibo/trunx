@@ -1,4 +1,4 @@
-// This config is used by `generate_BulmaClassName_type` npm script.
+// This config is used by `generate_bulma_classes_types` npm script.
 //
 // This current implementation has a great value added, by now it is worth to keep it as is.
 //

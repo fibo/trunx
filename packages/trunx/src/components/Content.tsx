@@ -1,32 +1,26 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
-import {
-  SizeModifierProp,
-  sizeClassName,
-  textAlignClassName,
-} from "../modifiers/index.js"
-import { TextAlignProp } from "./commonProps.js"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {SizeArg, TextAlignArg, sizeClass, textAlignClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
+import {ContainerClassArg} from "./Container.js"
 
-export type ContentProps = Omit<HTMLAttributes<HTMLDivElement>, "className"> &
-  SizeModifierProp &
-  TextAlignProp
+export type ContentClassArg = SizeArg & TextAlignArg
+
+export type ContentProps = Omit<HTMLAttributes<HTMLDivElement>, "className"> & ContainerClassArg
 
 export const Content: FC<PropsWithChildren<ContentProps>> = ({
   children,
   hasText,
   size,
   ...props
-}) => {
-  return (
-    <div
-      className={classnames(
-        "content",
-        textAlignClassName(hasText),
-        sizeClassName(size)
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div
+    className={classnames(
+      "content",
+      textAlignClass(hasText),
+      sizeClass(size)
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)

@@ -1,6 +1,7 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
-import { BooleanModifierProps, Dozen, modifier } from "../modifiers/index.js"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {Dozen} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
+import {BooleanModifierProps, modifier} from "../modifiers/index.js"
 
 export type TileProps = HTMLAttributes<HTMLDivElement> &
   Pick<
@@ -26,7 +27,7 @@ export const Tile: FC<PropsWithChildren<TileProps>> = ({
       className={classnames(
         "tile",
         size ? `is-${size}` : undefined,
-        modifier({ isAncestor, isChild, isParent, isVertical }),
+        modifier({isAncestor, isChild, isParent, isVertical}),
         className
       )}
       {...props}

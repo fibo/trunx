@@ -5,11 +5,12 @@ import {
   HTMLAttributes,
   PropsWithChildren,
 } from "react"
-import { classnames } from "@trunx/classnames"
-import { BooleanModifierProps, modifier } from "../modifiers/index.js"
+import {BoolClassArg, boolClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
-export type DropdownProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, "isActive" | "isHoverable" | "isRight" | "isUp">
+export type DropdownClassArg = Pick<BoolClassArg, "isActive" | "isHoverable" | "isRight" | "isUp">
+
+export type DropdownProps = HTMLAttributes<HTMLDivElement> & DropdownClassArg
 
 export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
   children,
@@ -24,7 +25,7 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
     <div
       className={classnames(
         "dropdown",
-        modifier({ isActive, isHoverable, isRight, isUp }),
+        boolClass({isActive, isHoverable, isRight, isUp}),
         className
       )}
       {...props}
@@ -36,12 +37,12 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
 
 export const DropdownDivider: FC = () => <hr className="dropdown-divider" />
 
-type DropdownItemModifierProps = Pick<BooleanModifierProps, "isActive">
+type DropdownItemModifierProps = Pick<BoolClassArg, "isActive">
 
-const dropdownItemClassNames = (
-  { isActive }: DropdownItemModifierProps,
+const dropdownItemClass = (
+  {isActive}: DropdownItemModifierProps,
   className?: string
-) => classnames("dropdown-item", modifier({ isActive }), className)
+) => classnames("dropdown-item", boolClass({isActive}), className)
 
 export type DropdownItemProps = HTMLAttributes<HTMLDivElement> &
   DropdownItemModifierProps
@@ -53,7 +54,7 @@ export const DropdownItem: FC<DropdownItemProps> = ({
   ...props
 }) => {
   return (
-    <div className={dropdownItemClassNames({ isActive }, className)} {...props}>
+    <div className={classnames(dropdownItemClass({isActive}), className)} {...props}>
       {children}
     </div>
   )
@@ -69,7 +70,7 @@ export const DropdownItemAnchor: FC<DropdownItemAnchorProps> = ({
   ...props
 }) => {
   return (
-    <a className={dropdownItemClassNames({ isActive }, className)} {...props}>
+    <a className={dropdownItemClassNames({isActive}, className)} {...props}>
       {children}
     </a>
   )

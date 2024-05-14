@@ -1,10 +1,11 @@
-import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
-import { classnames } from "@trunx/classnames"
-import { ColorModifierProp, MainColor } from "../modifiers/index.js"
+import {FC, HTMLAttributes, PropsWithChildren, ReactNode} from "react"
+import {MainColor} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
+import {ColorProp, } from "./commonProps.js"
 
 export type PanelProps = HTMLAttributes<HTMLElement> &
-  ColorModifierProp<MainColor> &
-  Partial<{ heading: ReactNode }>
+  ColorProp<MainColor> &
+  Partial<{heading: ReactNode}>
 
 export const Panel: FC<PropsWithChildren<PanelProps>> = ({
   children,

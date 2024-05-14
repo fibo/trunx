@@ -1,27 +1,20 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
-import {
-  BreakpointsMap,
-  BooleanModifierProps,
-  Dozen,
-  Fraction,
-  modifier,
-} from "../modifiers/index.js"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {BoolClassArg, BreakpointsMap, Dozen, Fraction, boolClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
-export type ColumnProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, "isCentered"> &
+export type ColumnClassArg = Pick<BoolClassArg, "isCentered"> &
   Partial<{
     /**
      * @example
      *
      * ```ts
-     * ;<Column isNarrow>{children}</Column>
+     * <Column isNarrow>{children}</Column>
      * ```
      *
      * @example
      *
      * ```ts
-     * ;<Column isNarrow={{ mobile: false, tablet: true }}>
+     * <Column isNarrow={{ mobile: false, tablet: true }}>
      *   {children}
      * </Column>
      * ```
@@ -32,13 +25,13 @@ export type ColumnProps = HTMLAttributes<HTMLDivElement> &
      * @example
      *
      * ```ts
-     * ;<Column offset={6}>{children}</Column>
+     * <Column offset={6}>{children}</Column>
      * ```
      *
      * @example
      *
      * ```ts
-     * ;<Column offset="three-quarters">{children}</Column>
+     * <Column offset="three-quarters">{children}</Column>
      * ```
      */
     offset: Exclude<Dozen, 12> | Fraction
@@ -47,19 +40,19 @@ export type ColumnProps = HTMLAttributes<HTMLDivElement> &
      * @example
      *
      * ```ts
-     * ;<Column size={6}>{children}</Column>
+     * <Column size={6}>{children}</Column>
      * ```
      *
      * @example
      *
      * ```ts
-     * ;<Column size="three-quarters">{children}</Column>
+     * <Column size="three-quarters">{children}</Column>
      * ```
      *
      * @example
      *
      * ```ts
-     * ;<Column size={{ mobile: "full", tablet: "two-thirds", desktop: 6 }}>
+     * <Column size={{ mobile: "full", tablet: "two-thirds", desktop: 6 }}>
      *   {children}
      * </Column>
      * ```
@@ -67,37 +60,38 @@ export type ColumnProps = HTMLAttributes<HTMLDivElement> &
     size: Dozen | Fraction | BreakpointsMap<Dozen | Fraction>
   }>
 
-export const columnClassNames = ({
-  className,
+export type ColumnProps = HTMLAttributes<HTMLDivElement> & ColumnClassArg
+
+export const columnClass = ({
   isCentered,
   isNarrow,
   offset,
   size,
-}: ColumnProps) =>
+}: ColumnClassArg) =>
   classnames(
     "column",
-    modifier({ isCentered }),
+    boolClass({isCentered}),
     isNarrow === true
       ? {
-          "is-narrow": isNarrow,
-        }
+        "is-narrow": isNarrow,
+      }
       : isNarrow && typeof isNarrow === "object"
-      ? Object.entries(isNarrow).map(([breakpoint, enabled]) =>
+        ? Object.entries(isNarrow).map(([breakpoint, enabled]) =>
           enabled ? `is-narrow-${breakpoint}` : undefined
         )
-      : undefined,
+        : undefined,
     offset ? `is-offset-${offset}` : undefined,
     size
       ? size && typeof size === "object"
         ? Object.entries(size).map(
-            ([breakpoint, value]) => `is-${value}-${breakpoint}`
-          )
+          ([breakpoint, value]) => `is-${value}-${breakpoint}`
+        )
         : `is-${size}`
       : undefined,
-    className
   )
 
 export const Column: FC<PropsWithChildren<ColumnProps>> = ({
   children,
+  className,
   ...props
-}) => <div className={columnClassNames(props)}>{children}</div>
+}) => <div className={classnames(columnClass(props), className)}>{children}</div>

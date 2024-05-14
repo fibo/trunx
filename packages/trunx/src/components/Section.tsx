@@ -1,9 +1,10 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
-import { SizeModifierProp, sizeClassName } from "../modifiers/index.js"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {sizeClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
+import {SizeProp} from "./commonProps.js"
 
 export type SectionProps = HTMLAttributes<HTMLElement> &
-  SizeModifierProp<"medium" | "large">
+  SizeProp<"medium" | "large">
 
 export const Section: FC<PropsWithChildren<SectionProps>> = ({
   className,
@@ -13,7 +14,7 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({
 }) => {
   return (
     <section
-      className={classnames("section", sizeClassName(size), className)}
+      className={classnames("section", sizeClass(size), className)}
       {...props}
     >
       {children}

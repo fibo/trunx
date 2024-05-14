@@ -5,43 +5,34 @@ import {
   PropsWithChildren,
   ReactNode,
 } from "react"
-import { classnames } from "@trunx/classnames"
-import {
-  BooleanModifierProps,
-  modifier,
-  sizeClassName,
-  SizeModifierProp,
-} from "../modifiers/index.js"
+import {BoolClassArg, boolClass, SizeArg, sizeClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
 export type ModalProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, "isActive">
+  Pick<BoolClassArg, "isActive">
 
 export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   children,
   className,
   isActive,
   ...props
-}) => {
-  return (
-    <div
-      className={classnames("modal", modifier({ isActive }), className)}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div
+    className={classnames("modal", boolClass({isActive}), className)}
+    {...props}
+  >
+    {children}
+  </div>
+)
 
 export type ModalBackgroundProps = HTMLAttributes<HTMLDivElement>
 
 export const ModalBackground: FC<ModalBackgroundProps> = ({
   className,
   ...props
-}) => {
-  return (
-    <div className={classnames("modal-background", className)} {...props} />
-  )
-}
+}) => (
+  <div className={classnames("modal-background", className)} {...props} />
+)
 
 export type ModalCardProps = ModalProps &
   Partial<{
@@ -55,38 +46,34 @@ export const ModalCard: FC<PropsWithChildren<ModalCardProps>> = ({
   header,
   footer,
   className,
-}) => {
-  return (
-    <div className={classnames("modal-card", className)}>
-      {header && (
-        <header className="modal-card-head">
-          <p className="modal-card-title">{header}</p>
-        </header>
-      )}
+}) => (
+  <div className={classnames("modal-card", className)}>
+    {header && (
+      <header className="modal-card-head">
+        <p className="modal-card-title">{header}</p>
+      </header>
+    )}
 
-      <div className="modal-card-body">{children}</div>
+    <div className="modal-card-body">{children}</div>
 
-      {footer ? <footer className="modal-card-foot">{footer}</footer> : null}
-    </div>
-  )
-}
+    {footer ? <footer className="modal-card-foot">{footer}</footer> : null}
+  </div>
+)
 
 export type ModalCloseProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  SizeModifierProp<"large">
+  SizeArg<"large">
 
 export const ModalClose: FC<ModalCloseProps> = ({
   className,
   size,
   ...props
-}) => {
-  return (
-    <button
-      className={classnames("modal-close", sizeClassName(size), className)}
-      aria-label="close"
-      {...props}
-    />
-  )
-}
+}) => (
+  <button
+    className={classnames("modal-close", sizeClass(size), className)}
+    aria-label="close"
+    {...props}
+  />
+)
 
 export type ModalContentProps = HTMLAttributes<HTMLDivElement>
 
@@ -94,10 +81,8 @@ export const ModalContent: FC<PropsWithChildren<ModalContentProps>> = ({
   children,
   className,
   ...props
-}) => {
-  return (
-    <div className={classnames("modal-content", className)} {...props}>
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div className={classnames("modal-content", className)} {...props}>
+    {children}
+  </div>
+)

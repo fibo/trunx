@@ -1,14 +1,14 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {sizeClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 import {
   BooleanModifierProps,
-  SizeModifierProp,
   modifier,
-  sizeClassName,
 } from "../modifiers/index.js"
+import {SizeProp} from "./commonProps.js"
 
 export type TabsProps = HTMLAttributes<HTMLElement> &
-  SizeModifierProp &
+  SizeProp &
   Pick<
     BooleanModifierProps,
     | "isBoxed"
@@ -35,7 +35,7 @@ export const Tabs: FC<PropsWithChildren<TabsProps>> = ({
     <nav
       className={classnames(
         "tabs",
-        sizeClassName(size),
+        sizeClass(size),
         modifier({
           isBoxed,
           isCentered,

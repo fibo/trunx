@@ -1,15 +1,14 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {MainColor, colorClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 import {
-  ColorModifierProp,
   BooleanModifierProps,
-  MainColor,
-  colorClassName,
   modifier,
 } from "../modifiers/index.js"
+import {ColorProp} from "./commonProps.js"
 
 export type NotificationProps = HTMLAttributes<HTMLDivElement> &
-  ColorModifierProp<MainColor> &
+  ColorProp<MainColor> &
   Pick<BooleanModifierProps, "isLight">
 
 export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
@@ -23,8 +22,8 @@ export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
     <div
       className={classnames(
         "notification",
-        colorClassName(color),
-        modifier({ isLight }),
+        colorClass(color),
+        modifier({isLight}),
         className
       )}
       {...props}

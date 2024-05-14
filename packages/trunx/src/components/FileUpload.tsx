@@ -1,12 +1,12 @@
-import { FC, InputHTMLAttributes, ReactNode } from "react"
-import { classnames } from "@trunx/classnames"
-import { BooleanModifierProps, modifier } from "../modifiers/index.js"
+import {FC, InputHTMLAttributes, ReactNode} from "react"
+import {BoolClassArg, boolClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
 export type FileUploadProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
   "type"
 > &
-  Pick<BooleanModifierProps, "isBoxed" | "isFullwidth" | "isRight"> &
+  Pick<BoolClassArg, "isBoxed" | "isFullwidth" | "isRight"> &
   Partial<{
     cta: ReactNode
     hasName: ReactNode
@@ -20,22 +20,20 @@ export const FileUpload: FC<FileUploadProps> = ({
   isFullwidth,
   isRight,
   ...props
-}) => {
-  return (
-    <div
-      className={classnames(
-        "file",
-        modifier({ isBoxed, isFullwidth, isRight }),
-        className
-      )}
-    >
-      <label className="file-label">
-        <input type="file-input" {...props} />
+}) => (
+  <div
+    className={classnames(
+      "file",
+      boolClass({isBoxed, isFullwidth, isRight}),
+      className
+    )}
+  >
+    <label className="file-label">
+      <input type="file-input" {...props} />
 
-        {cta ? <span className="file-cta">{cta}</span> : null}
+      {cta ? <span className="file-cta">{cta}</span> : null}
 
-        {hasName ? <span className="file-name">{hasName}</span> : null}
-      </label>
-    </div>
-  )
-}
+      {hasName ? <span className="file-name">{hasName}</span> : null}
+    </label>
+  </div>
+)

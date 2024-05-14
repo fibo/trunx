@@ -1,5 +1,5 @@
-import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
-import { classnames } from "@trunx/classnames"
+import {FC, HTMLAttributes, PropsWithChildren, ReactNode} from "react"
+import {classnames} from "@trunx/classnames"
 
 export type MediaProps = HTMLAttributes<HTMLElement> &
   Partial<{
@@ -13,14 +13,12 @@ export const Media: FC<PropsWithChildren<MediaProps>> = ({
   left,
   right,
   ...props
-}) => {
-  return (
-    <article className={classnames("media", className)} {...props}>
-      {left && <div className="media-left">{left}</div>}
+}) => (
+  <article className={classnames("media", className)} {...props}>
+    {left && <div className="media-left">{left}</div>}
 
-      {children}
+    {children}
 
-      {right && <div className="media-right">{right}</div>}
-    </article>
-  )
-}
+    {right && <div className="media-right">{right}</div>}
+  </article>
+)

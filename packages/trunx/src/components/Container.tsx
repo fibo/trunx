@@ -1,24 +1,15 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
-import {
-  Breakpoint,
-  BooleanModifierProps,
-  ColorModifierProp,
-  MainColor,
-  colorClassName,
-  modifier,
-} from "../modifiers/index.js"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {BoolClassArg, Breakpoint, ColorArg, MainColor, boolClass, colorClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
-type ContainerFullWidth = Extract<Breakpoint, "fullhd" | "widescreen">
-type ContainerMaxWidth = Extract<Breakpoint, "desktop" | "widescreen">
-
-export type ContainerProps = HTMLAttributes<HTMLDivElement> &
-  ColorModifierProp<MainColor> &
-  Pick<BooleanModifierProps, "isFluid"> &
+export type ContainerClassArg = ColorArg<MainColor> &
+  Pick<BoolClassArg, "isFluid"> &
   Partial<{
-    fullWidth: ContainerFullWidth
-    maxWidth: ContainerMaxWidth
+    fullWidth: Extract<Breakpoint, "fullhd" | "widescreen">
+    maxWidth: Extract<Breakpoint, "desktop" | "widescreen">
   }>
+
+export type ContainerProps = HTMLAttributes<HTMLDivElement> & ContainerClassArg
 
 export const Container: FC<PropsWithChildren<ContainerProps>> = ({
   children,
@@ -27,19 +18,17 @@ export const Container: FC<PropsWithChildren<ContainerProps>> = ({
   isFluid,
   fullWidth,
   maxWidth,
-}) => {
-  return (
-    <div
-      className={classnames(
-        "container",
-        colorClassName(color),
-        fullWidth ? `is-${fullWidth}` : undefined,
-        maxWidth ? `is-max-${maxWidth}` : undefined,
-        modifier({ isFluid }),
-        className
-      )}
-    >
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div
+    className={classnames(
+      "container",
+      colorClass(color),
+      fullWidth ? `is-${fullWidth}` : undefined,
+      maxWidth ? `is-max-${maxWidth}` : undefined,
+      boolClass({isFluid}),
+      className
+    )}
+  >
+    {children}
+  </div>
+)
