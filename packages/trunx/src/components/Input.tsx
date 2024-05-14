@@ -1,23 +1,15 @@
-import { FC, InputHTMLAttributes } from "react"
-import { classnames } from "@trunx/classnames"
-import {
-  MainColor,
-  ColorModifierProp,
-  BooleanModifierProps,
-  SizeModifierProp,
-  colorClassName,
-  modifier,
-  sizeClassName,
-} from "../modifiers/index.js"
+import {FC, InputHTMLAttributes} from "react"
+import {BoolClassArg, ColorArg, MainColor, SizeArg, boolClass, colorClass, sizeClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
 export type InputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
   "size" | "type"
 > &
-  ColorModifierProp<MainColor> &
-  SizeModifierProp &
+  ColorArg<MainColor> &
+  SizeArg &
   Pick<
-    BooleanModifierProps,
+    BoolClassArg,
     "isFocused" | "isHovered" | "isRounded" | "isStatic"
   > &
   Partial<{
@@ -39,22 +31,20 @@ export const Input: FC<InputProps> = ({
   isStatic,
   size,
   ...props
-}) => {
-  return (
-    <input
-      className={classnames(
-        "input",
-        colorClassName(color),
-        sizeClassName(size),
-        modifier({
-          isFocused,
-          isHovered,
-          isRounded,
-          isStatic,
-        }),
-        className
-      )}
-      {...props}
-    />
-  )
-}
+}) => (
+  <input
+    className={classnames(
+      "input",
+      colorClass(color),
+      sizeClass(size),
+      boolClass({
+        isFocused,
+        isHovered,
+        isRounded,
+        isStatic,
+      }),
+      className
+    )}
+    {...props}
+  />
+)

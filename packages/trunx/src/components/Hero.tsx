@@ -1,20 +1,12 @@
-import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
-import { classnames } from "@trunx/classnames"
-import {
-  colorClassName,
-  ColorModifierProp,
-  BooleanModifierProps,
-  MainColor,
-  modifier,
-  sizeClassName,
-  SizeModifierProp,
-} from "../modifiers/index.js"
+import {FC, HTMLAttributes, PropsWithChildren, ReactNode} from "react"
+import {BoolClassArg, ColorArg, MainColor, SizeArg, boolClass, colorClass, sizeClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
 export type HeroProps = HTMLAttributes<HTMLDivElement> &
-  ColorModifierProp<MainColor> &
-  SizeModifierProp &
+  ColorArg<MainColor> &
+  SizeArg &
   Pick<
-    BooleanModifierProps,
+    BoolClassArg,
     "isFullheight" | "isFullheightWithNavbar" | "isHalfheight"
   > &
   Partial<{
@@ -33,28 +25,26 @@ export const Hero: FC<PropsWithChildren<HeroProps>> = ({
   isHalfheight,
   size,
   ...props
-}) => {
-  return (
-    <section
-      className={classnames(
-        "hero",
-        colorClassName(color),
-        sizeClassName(size),
-        modifier({
-          // For the fullheight hero to work, you will also need a hero-head and a hero-foot.
-          isFullheight: isFullheight && Boolean(head) && Boolean(foot),
-          isFullheightWithNavbar,
-          isHalfheight,
-        }),
-        className
-      )}
-      {...props}
-    >
-      {head ? <div className="hero-head">{head}</div> : null}
+}) => (
+  <section
+    className={classnames(
+      "hero",
+      colorClass(color),
+      sizeClass(size),
+      boolClass({
+        // For the fullheight hero to work, you will also need a hero-head and a hero-foot.
+        isFullheight: isFullheight && Boolean(head) && Boolean(foot),
+        isFullheightWithNavbar,
+        isHalfheight,
+      }),
+      className
+    )}
+    {...props}
+  >
+    {head ? <div className="hero-head">{head}</div> : null}
 
-      <div className="hero-body">{children}</div>
+    <div className="hero-body">{children}</div>
 
-      {foot ? <div className="hero-foot">{foot}</div> : null}
-    </section>
-  )
-}
+    {foot ? <div className="hero-foot">{foot}</div> : null}
+  </section>
+)

@@ -1,22 +1,15 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
-import {
-  ColorModifierProp,
-  MainColor,
-  colorClassName,
-} from "../modifiers/index.js"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {ColorArg, MainColor, colorClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
-export type HelpProps = HTMLAttributes<HTMLParagraphElement> &
-  ColorModifierProp<MainColor>
+export type HelpProps = HTMLAttributes<HTMLParagraphElement> & ColorArg<MainColor>
 
 export const Help: FC<PropsWithChildren<HelpProps>> = ({
   children,
   className,
   color,
-}) => {
-  return (
-    <p className={classnames("help", colorClassName(color), className)}>
-      {children}
-    </p>
-  )
-}
+}) => (
+  <p className={classnames("help", colorClass(color), className)}>
+    {children}
+  </p>
+)

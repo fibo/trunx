@@ -1,5 +1,5 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {classnames} from "@trunx/classnames"
 
 export type BlockProps = HTMLAttributes<HTMLDivElement>
 
@@ -7,10 +7,8 @@ export const Block: FC<PropsWithChildren<BlockProps>> = ({
   children,
   className,
   ...props
-}) => {
-  return (
-    <div className={classnames("block", className)} {...props}>
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div className={classnames("block", className)} {...props}>
+    {children}
+  </div>
+)

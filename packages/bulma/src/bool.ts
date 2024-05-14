@@ -1,4 +1,4 @@
-export type BooleanModifierProps = Partial<{
+export type BoolClassArg = Partial<{
   hasAddons: boolean
   hasDropdown: boolean
   hasDropdownUp: boolean
@@ -64,16 +64,17 @@ export const camelCaseToKebabCase = (arg: string): string =>
   arg.replace(/([a-z0-9]|(?=[A-Z]))([A-Z0-9])/g, "$1-$2").toLowerCase()
 
 /**
- * Convert an object of boolean props to its equivalent array of classNames.
+ * Convert an object of boolean attributes to its equivalent array of classNames.
  *
  * @example
  *
  * ```ts
- * modifier({ isTransparent: true, isFixedTop: true, isBlack: true })
+ * boolClass({ isTransparent: true, isFixedTop: true, isBlack: true })
  * // ['is-transparent', 'is-black']
  * ```
  */
-export const modifier = (arg: BooleanModifierProps) =>
+export const boolClass = (arg: BoolClassArg) =>
   Object.entries(arg).map(([key, value]) =>
     value ? camelCaseToKebabCase(key) : ""
   )
+

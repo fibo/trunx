@@ -1,6 +1,6 @@
-import { FC, TableHTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
-import { BooleanModifierProps, modifier } from "../modifiers/index.js"
+import {FC, TableHTMLAttributes, PropsWithChildren} from "react"
+import {classnames} from "@trunx/classnames"
+import {BooleanModifierProps, modifier} from "../modifiers/index.js"
 
 export type TableProps = TableHTMLAttributes<HTMLTableElement> &
   Pick<

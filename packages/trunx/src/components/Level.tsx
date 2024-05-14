@@ -1,14 +1,9 @@
-import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
-import { classnames } from "@trunx/classnames"
-import {
-  BooleanModifierProps,
-  modifier,
-  textAlignClassName,
-} from "../modifiers/index.js"
-import { TextAlignProp } from "./commonProps.js"
+import {FC, HTMLAttributes, PropsWithChildren, ReactNode} from "react"
+import {BoolClassArg, TextAlignArg, boolClass, textAlignClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
 export type LevelProps = HTMLAttributes<HTMLDivElement> &
-  Pick<BooleanModifierProps, "isMobile"> &
+  Pick<BoolClassArg, "isMobile"> &
   Partial<{
     left: ReactNode
     right: ReactNode
@@ -21,39 +16,35 @@ export const Level: FC<PropsWithChildren<LevelProps>> = ({
   left,
   right,
   ...props
-}) => {
-  return (
-    <div
-      className={classnames("level", modifier({ isMobile }), className)}
-      {...props}
-    >
-      {left && <div className="level-left">{left}</div>}
+}) => (
+  <div
+    className={classnames("level", boolClass({isMobile}), className)}
+    {...props}
+  >
+    {left && <div className="level-left">{left}</div>}
 
-      {children}
+    {children}
 
-      {right && <div className="level-right">{right}</div>}
-    </div>
-  )
-}
+    {right && <div className="level-right">{right}</div>}
+  </div>
+)
 
-export type LevelItemProps = HTMLAttributes<HTMLDivElement> & TextAlignProp
+export type LevelItemProps = HTMLAttributes<HTMLDivElement> & TextAlignArg
 
 export const LevelItem: FC<PropsWithChildren<LevelItemProps>> = ({
   className,
   children,
   hasText,
   ...props
-}) => {
-  return (
-    <div
-      className={classnames(
-        "level-item",
-        textAlignClassName(hasText),
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div
+    className={classnames(
+      "level-item",
+      textAlignClass(hasText),
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)

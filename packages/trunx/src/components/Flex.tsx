@@ -1,15 +1,10 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
-import {
-  flexClassNames,
-  FlexModifierProps,
-  SpacingModifierProp,
-  spacingClassNames,
-} from "../modifiers/index.js"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {FlexClassArg, SpacingArg, flexClass, spacingClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
 export type FlexProps = HTMLAttributes<HTMLDivElement> &
-  FlexModifierProps &
-  SpacingModifierProp
+  FlexClassArg &
+  SpacingArg
 
 export const Flex: FC<PropsWithChildren<FlexProps>> = ({
   children,
@@ -24,26 +19,24 @@ export const Flex: FC<PropsWithChildren<FlexProps>> = ({
   spacing,
   wrap,
   ...props
-}) => {
-  return (
-    <div
-      className={classnames(
-        flexClassNames({
-          align,
-          alignItems,
-          alignSelf,
-          direction,
-          grow,
-          justify,
-          shrink,
-          wrap,
-        }),
-        spacingClassNames(spacing),
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div
+    className={classnames(
+      flexClass({
+        align,
+        alignItems,
+        alignSelf,
+        direction,
+        grow,
+        justify,
+        shrink,
+        wrap,
+      }),
+      spacingClass(spacing),
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)

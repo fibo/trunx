@@ -1,15 +1,10 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
-import {
-  BooleanModifierProps,
-  SizeModifierProp,
-  modifier,
-  pluralSizeClassName,
-} from "../modifiers/index.js"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {BoolClassArg, SizeArg, boolClass, pluralSizeClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
 
 export type ButtonsProps = HTMLAttributes<HTMLDivElement> &
-  SizeModifierProp<"small" | "medium" | "large"> &
-  Pick<BooleanModifierProps, "isCentered">
+  SizeArg<"small" | "medium" | "large"> &
+  Pick<BoolClassArg, "isCentered">
 
 export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({
   children,
@@ -17,18 +12,16 @@ export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({
   isCentered,
   size,
   ...props
-}) => {
-  return (
-    <div
-      className={classnames(
-        "buttons",
-        modifier({ isCentered }),
-        pluralSizeClassName(size),
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div
+    className={classnames(
+      "buttons",
+      boolClass({isCentered}),
+      pluralSizeClass(size),
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)

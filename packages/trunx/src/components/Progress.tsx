@@ -1,16 +1,11 @@
-import { ProgressHTMLAttributes, FC } from "react"
-import { classnames } from "@trunx/classnames"
-import {
-  ColorModifierProp,
-  MainColor,
-  SizeModifierProp,
-  colorClassName,
-  sizeClassName,
-} from "../modifiers/index.js"
+import {ProgressHTMLAttributes, FC} from "react"
+import {MainColor, colorClass, sizeClass} from "@trunx/bulma"
+import {classnames} from "@trunx/classnames"
+import {ColorProp, SizeProp} from "./commonProps.js"
 
 export type ProgressProps = ProgressHTMLAttributes<HTMLProgressElement> &
-  ColorModifierProp<MainColor> &
-  SizeModifierProp
+  ColorProp<MainColor> &
+  SizeProp
 
 export const Progress: FC<ProgressProps> = ({
   className,
@@ -22,8 +17,8 @@ export const Progress: FC<ProgressProps> = ({
     <progress
       className={classnames(
         "progress",
-        colorClassName(color),
-        sizeClassName(size),
+        colorClass(color),
+        sizeClass(size),
         className
       )}
       {...props}

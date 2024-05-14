@@ -1,5 +1,5 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
-import { classnames } from "@trunx/classnames"
+import {FC, HTMLAttributes, PropsWithChildren} from "react"
+import {classnames} from "@trunx/classnames"
 
 export type HeadingProps = HTMLAttributes<HTMLParagraphElement>
 
@@ -7,10 +7,8 @@ export const Heading: FC<PropsWithChildren<HeadingProps>> = ({
   children,
   className,
   ...props
-}) => {
-  return (
-    <p className={classnames("heading", className)} {...props}>
-      {children}
-    </p>
-  )
-}
+}) => (
+  <p className={classnames("heading", className)} {...props}>
+    {children}
+  </p>
+)

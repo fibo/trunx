@@ -1,4 +1,4 @@
-import { classnames } from "@trunx/classnames"
+import {classnames} from "@trunx/classnames"
 
 export type Alignment = "centered" | "left" | "right"
 
@@ -99,7 +99,9 @@ export type SpacingKey =
   | "pt"
   | "pb"
 
-export type Spacing = Partial<{ [key in SpacingKey]: SpacingValue }>
+export type Spacing = Partial<{[key in SpacingKey]: SpacingValue}>
+
+export type SpacingArg = Partial<{spacing: Spacing}>
 
 export const spacingClass = (arg: Spacing) =>
   arg && !Array.isArray(arg) && typeof arg === "object"
