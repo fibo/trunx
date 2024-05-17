@@ -17,15 +17,7 @@
     "test": "npm run test --workspaces --if-present"
   },
   "devDependencies": {
-    "@types/node": "^18",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@typescript-eslint/eslint-plugin": "^5",
-    "@typescript-eslint/parser": "^5",
-    "eslint": "^8",
-    "eslint-plugin-import": "^2",
-    "eslint-plugin-react": "^7",
-    "eslint-plugin-react-hooks": "^4",
+    "@types/node": "^20.12.12",
     "postcss": "^8",
     "postcss-cli": "^10",
     "postcss-ts-classnames": "^0.3.0",
@@ -60,7 +52,6 @@
     "packages/bulma",
     "packages/classnames",
     "packages/react",
-    "packages/trunx",
-    "webapps/trunx-docs"
+    "packages/trunx"
   ]
 }

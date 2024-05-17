@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/fibo/trunx/issues"
   },
-  "homepage": "https://trunx.dev/",
+  "homepage": "https://github.com/fibo/trunx/tree/main",
   "dependencies": {
     "@trunx/bulma": "^1",
     "@trunx/react": "^1"
