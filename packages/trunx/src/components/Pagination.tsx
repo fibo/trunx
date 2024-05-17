@@ -4,17 +4,12 @@ import {
   HTMLAttributes,
   PropsWithChildren,
 } from "react"
-import {sizeClass} from "@trunx/bulma"
+import {BoolClassArg, boolClass, SizeArg, sizeClass} from "@trunx/bulma"
 import {classnames} from "@trunx/classnames"
-import {
-  BooleanModifierProps,
-  modifier,
-} from "../modifiers/index.js"
-import {SizeProp} from "./commonProps.js"
 
 export type PaginationProps = HTMLAttributes<HTMLElement> &
-  SizeProp<"small" | "medium" | "large"> &
-  Pick<BooleanModifierProps, "isCentered" | "isRight" | "isRounded">
+  SizeArg<"small" | "medium" | "large"> &
+  Pick<BoolClassArg, "isCentered" | "isRight" | "isRounded">
 
 export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
   className,
@@ -24,22 +19,20 @@ export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
   isRounded,
   size,
   ...props
-}) => {
-  return (
-    <nav
-      className={classnames(
-        "pagination",
-        sizeClass(size),
-        modifier({isCentered, isRight, isRounded}),
-        className
-      )}
-      aria-label="pagination"
-      {...props}
-    >
-      <ul>{children}</ul>
-    </nav>
-  )
-}
+}) => (
+  <nav
+    className={classnames(
+      "pagination",
+      sizeClass(size),
+      boolClass({isCentered, isRight, isRounded}),
+      className
+    )}
+    aria-label="pagination"
+    {...props}
+  >
+    <ul>{children}</ul>
+  </nav>
+)
 
 export const PaginationEllipsis: FC = () => (
   <li>
@@ -57,22 +50,20 @@ export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
   className,
   isCurrent,
   ...props
-}) => {
-  return (
-    <li>
-      <a
-        className={classnames(
-          "pagination-link",
-          {"is-current": isCurrent},
-          className
-        )}
-        {...props}
-      >
-        {children}
-      </a>
-    </li>
-  )
-}
+}) => (
+  <li>
+    <a
+      className={classnames(
+        "pagination-link",
+        {"is-current": isCurrent},
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </a>
+  </li>
+)
 
 export type PaginationListProps = Omit<
   HTMLAttributes<HTMLUListElement>,
@@ -90,38 +81,34 @@ export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({
 
 export type PaginationIncrementalNavigationProps =
   AnchorHTMLAttributes<HTMLAnchorElement> &
-  Pick<BooleanModifierProps, "isDisabled">
+  Pick<BoolClassArg, "isDisabled">
 
 export const PaginationNext: FC<
   PropsWithChildren<PaginationIncrementalNavigationProps>
-> = ({children, className, isDisabled, ...props}) => {
-  return (
-    <a
-      className={classnames(
-        "pagination-next",
-        modifier({isDisabled}),
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </a>
-  )
-}
+> = ({children, className, isDisabled, ...props}) => (
+  <a
+    className={classnames(
+      "pagination-next",
+      boolClass({isDisabled}),
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </a>
+)
 
 export const PaginationPrevious: FC<
   PropsWithChildren<PaginationIncrementalNavigationProps>
-> = ({children, className, isDisabled, ...props}) => {
-  return (
-    <a
-      className={classnames(
-        "pagination-previous",
-        modifier({isDisabled}),
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </a>
-  )
-}
+> = ({children, className, isDisabled, ...props}) => (
+  <a
+    className={classnames(
+      "pagination-previous",
+      boolClass({isDisabled}),
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </a>
+)

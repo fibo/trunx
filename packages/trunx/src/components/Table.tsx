@@ -1,10 +1,10 @@
 import {FC, TableHTMLAttributes, PropsWithChildren} from "react"
+import {BoolClassArg, boolClass} from "@trunx/bulma"
 import {classnames} from "@trunx/classnames"
-import {BooleanModifierProps, modifier} from "../modifiers/index.js"
 
 export type TableProps = TableHTMLAttributes<HTMLTableElement> &
   Pick<
-    BooleanModifierProps,
+    BoolClassArg,
     "isBordered" | "isNarrow" | "isStriped" | "isFullwidth" | "isHoverable"
   > &
   Partial<{
@@ -27,7 +27,7 @@ export const Table: FC<PropsWithChildren<TableProps>> = ({
       <table
         className={classnames(
           "table",
-          modifier({
+          boolClass({
             isBordered,
             isFullwidth,
             isHoverable,

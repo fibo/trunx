@@ -7,7 +7,7 @@
     "build": "next build",
     "clean": "rm -rf .next",
     "check_types": "tsc --noEmit --project .",
-    "predev": "npm run cleanup",
+    "predev": "npm run clean",
     "start": "next start",
     "lint": "next lint"
   },

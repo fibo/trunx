@@ -20,61 +20,58 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
   isRight,
   isUp,
   ...props
-}) => {
-  return (
-    <div
-      className={classnames(
-        "dropdown",
-        boolClass({isActive, isHoverable, isRight, isUp}),
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div
+    className={classnames(
+      "dropdown",
+      boolClass({isActive, isHoverable, isRight, isUp}),
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
 
 export const DropdownDivider: FC = () => <hr className="dropdown-divider" />
 
-type DropdownItemModifierProps = Pick<BoolClassArg, "isActive">
+type DropdownItemClassArg = Pick<BoolClassArg, "isActive">
 
 const dropdownItemClass = (
-  {isActive}: DropdownItemModifierProps,
-  className?: string
-) => classnames("dropdown-item", boolClass({isActive}), className)
+  {isActive}: DropdownItemClassArg,
+) => classnames("dropdown-item", boolClass({isActive}))
 
 export type DropdownItemProps = HTMLAttributes<HTMLDivElement> &
-  DropdownItemModifierProps
+  DropdownItemClassArg
 
 export const DropdownItem: FC<DropdownItemProps> = ({
   children,
   className,
   isActive,
   ...props
-}) => {
-  return (
-    <div className={classnames(dropdownItemClass({isActive}), className)} {...props}>
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div className={
+    classnames(dropdownItemClass({isActive}), className)
+  } {...props}>
+    {children}
+  </div>
+)
 
 export type DropdownItemAnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> &
-  DropdownItemModifierProps
+  DropdownItemClassArg
 
 export const DropdownItemAnchor: FC<DropdownItemAnchorProps> = ({
   children,
   className,
   isActive,
   ...props
-}) => {
-  return (
-    <a className={dropdownItemClassNames({isActive}, className)} {...props}>
-      {children}
-    </a>
-  )
-}
+}) => (
+  <a className={
+    classnames(dropdownItemClass({isActive}), className)
+  } {...props}>
+    {children}
+  </a>
+)
 
 export type DropdownMenuProps = Omit<
   HTMLAttributes<HTMLDivElement>,
@@ -96,12 +93,10 @@ export const DropdownTrigger: FC<PropsWithChildren<DropdownTriggerProps>> = ({
   children,
   className,
   ...props
-}) => {
-  return (
-    <div className="dropdown-trigger">
-      <button className={classnames("button", className)} {...props}>
-        {children}
-      </button>
-    </div>
-  )
-}
+}) => (
+  <div className="dropdown-trigger">
+    <button className={classnames("button", className)} {...props}>
+      {children}
+    </button>
+  </div>
+)

@@ -1,18 +1,13 @@
 import {FC, OptionHTMLAttributes, SelectHTMLAttributes} from "react"
-import {MainColor, colorClass, sizeClass} from "@trunx/bulma"
+import {BoolClassArg, ColorArg, MainColor, SizeArg, boolClass, colorClass, sizeClass} from "@trunx/bulma"
 import {classnames} from "@trunx/classnames"
-import {
-  BooleanModifierProps,
-  modifier,
-} from "../modifiers/index.js"
-import {ColorProp, SizeProp} from "./commonProps.js"
 
-export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> &
-  ColorProp<MainColor> &
-  SizeProp &
-  Pick<BooleanModifierProps, "isFocused" | "isHovered" | "isLoading"> & {
-    options: Array<OptionHTMLAttributes<HTMLOptionElement>>
-  }
+export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
+  options: Array<OptionHTMLAttributes<HTMLOptionElement>>
+} &
+  ColorArg<MainColor> &
+  SizeArg &
+  Pick<BoolClassArg, "isFocused" | "isHovered" | "isLoading">
 
 export const Select: FC<SelectProps> = ({
   className,
@@ -23,22 +18,20 @@ export const Select: FC<SelectProps> = ({
   options,
   size,
   ...props
-}) => {
-  return (
-    <div
-      className={classnames(
-        "select",
-        colorClass(color),
-        modifier({isFocused, isHovered, isLoading}),
-        sizeClass(size),
-        className
-      )}
-    >
-      <select {...props}>
-        {options.map((props, i) => (
-          <option key={i} {...props} />
-        ))}
-      </select>
-    </div>
-  )
-}
+}) => (
+  <div
+    className={classnames(
+      "select",
+      colorClass(color),
+      boolClass({isFocused, isHovered, isLoading}),
+      sizeClass(size),
+      className
+    )}
+  >
+    <select {...props}>
+      {options.map((props, i) => (
+        <option key={i} {...props} />
+      ))}
+    </select>
+  </div>
+)

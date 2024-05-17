@@ -1,13 +1,9 @@
 import {FC, HTMLAttributes, PropsWithChildren} from "react"
-import {HalfDozen} from "@trunx/bulma"
+import {BoolClassArg, HalfDozen, boolClass} from "@trunx/bulma"
 import {classnames} from "@trunx/classnames"
-import {
-  BooleanModifierProps,
-  modifier,
-} from "../modifiers/index.js"
 
 type Props = HTMLAttributes<HTMLElement> &
-  Pick<BooleanModifierProps, "isSpaced"> &
+  Pick<BoolClassArg, "isSpaced"> &
   Partial<{
     h: HalfDozen
     size: HalfDozen
@@ -36,7 +32,7 @@ const _class = (
   classnames(
     type,
     size ? `is-${size}` : undefined,
-    modifier({isSpaced}),
+    boolClass({isSpaced}),
     className
   )
 

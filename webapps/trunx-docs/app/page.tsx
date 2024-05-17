@@ -1,5 +1,5 @@
-import { Message, bulma } from "trunx"
-import { PageContent, PageSection } from "@/components"
+import {Message} from "trunx"
+import {PageContent, PageSection} from "@/components"
 import CodeRequirement from "./CodeRequirement"
 import Customization from "./Customization"
 import WorkExample from "./WorkExample"
@@ -16,8 +16,8 @@ export default function Page() {
       }
     >
       <PageSection>
-        <p className={bulma("block")}>
-          GitHub repo here:{" "}
+        <p className="block">
+          GitHub repo:{" "}
           <a href="https://github.com/fibo/trunx">github.com/fibo/trunx</a>.
         </p>
 
