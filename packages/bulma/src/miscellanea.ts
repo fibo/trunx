@@ -14,16 +14,16 @@ export type ControlClassArg = Pick<
   "hasIconsLeft" | "hasIconsRight" | "isExpanded" | "isLoading"
 >
 
-export const controlClass = ({
-  hasIconsLeft,
-  hasIconsRight,
-  isExpanded,
-  isLoading,
-}) =>
-  classnames(
-    "control",
-    boolClass({ hasIconsLeft, hasIconsRight, isExpanded, isLoading })
-  )
+export const controlClass = (arg: ControlClassArg) =>
+  classnames("control", boolClass(arg))
+
+export type FileClassArg = Pick<
+  BoolClassArg,
+  "isBoxed" | "isFullwidth" | "isRight"
+>
+
+export const fileClass = (arg: FileClassArg) =>
+  classnames("file", boolClass(arg))
 
 export type HelpClassArg = ColorArg<MainColor>
 

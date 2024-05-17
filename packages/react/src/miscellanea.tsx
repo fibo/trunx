@@ -9,11 +9,13 @@ import {
 import {
   ContentClassArg,
   ControlClassArg,
+  FileClassArg,
   HelpClassArg,
   LabelClassArg,
   SectionClassArg,
   contentClass,
   controlClass,
+  fileClass,
   helpClass,
   labelClass,
   sectionClass,
@@ -84,6 +86,34 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
     {...props}
   >
     {children}
+  </div>
+)
+
+export type FileUploadProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "type"
+> &
+  FileClassArg &
+  Partial<{
+    cta: ReactNode
+    hasName: ReactNode
+  }>
+
+export const FileUpload: FC<FileUploadProps> = ({
+  className,
+  cta,
+  hasName,
+  isBoxed,
+  isFullwidth,
+  isRight,
+  ...props
+}) => (
+  <div className={fileClass({ isBoxed, isFullwidth, isRight })}>
+    <label className="file-label">
+      <input type="file-input" {...props} />
+      {cta ? <span className="file-cta">{cta}</span> : null}
+      {hasName ? <span className="file-name">{hasName}</span> : null}
+    </label>
   </div>
 )
 
