@@ -51,6 +51,13 @@ export type HelpClassArg = ColorArg<MainColor>
 
 export const helpClass = ({ color }) => classnames("help", colorClass(color))
 
+export type HeroClassArg = ColorArg<MainColor> &
+  SizeArg &
+  Pick<BoolClassArg, "isFullheight" | "isFullheightWithNavbar" | "isHalfheight">
+
+export const heroClass = ({ color, size, ...bools }: HeroClassArg) =>
+  classnames("hero", colorClass(color), sizeClass(size), boolClass(bools))
+
 export type LabelClassArg = SizeArg
 
 export const labelClass = ({ size }: LabelClassArg) =>

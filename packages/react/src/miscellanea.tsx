@@ -2,7 +2,6 @@ import {
   FC,
   HTMLAttributes,
   InputHTMLAttributes,
-  LabelHTMLAttributes,
   PropsWithChildren,
   ReactNode,
 } from "react"
@@ -12,6 +11,7 @@ import {
   ControlClassArg,
   FileClassArg,
   HelpClassArg,
+  HeroClassArg,
   LabelClassArg,
   SectionClassArg,
   containerClass,
@@ -19,16 +19,16 @@ import {
   controlClass,
   fileClass,
   helpClass,
+  heroClass,
   labelClass,
   sectionClass,
 } from "@trunx/bulma"
 
-export type CardProps = Omit<HTMLAttributes<HTMLDivElement>, "className"> &
-  Partial<{
-    header: ReactNode
-    image: ReactNode
-    footer: ReactNode
-  }>
+export type CardProps = Partial<{
+  header: ReactNode
+  image: ReactNode
+  footer: ReactNode
+}>
 
 export const Card: FC<PropsWithChildren<CardProps>> = ({
   children,
@@ -126,32 +126,48 @@ export const FileUpload: FC<FileUploadProps> = ({
   </div>
 )
 
-export type HelpProps = Omit<
-  HTMLAttributes<HTMLParagraphElement>,
-  "className"
-> &
-  HelpClassArg
+export type HelpProps = HelpClassArg
 
 export const Help: FC<PropsWithChildren<HelpProps>> = ({ children, color }) => (
   <p className={helpClass({ color })}>{children}</p>
 )
 
-export type LabelProps = Omit<
-  LabelHTMLAttributes<HTMLLabelElement>,
-  "size" | "className"
-> &
-  LabelClassArg
+export type HeroProps = HeroClassArg &
+  Partial<{
+    head: ReactNode
+    foot: ReactNode
+  }>
+
+export const Hero: FC<PropsWithChildren<HeroProps>> = ({
+  color,
+  head,
+  foot,
+  isFullheight,
+  size,
+  children,
+  ...bools
+}) => (
+  <section
+    className={heroClass({
+      color,
+      size,
+      // For the fullheight hero to work, you will also need a hero-head and a hero-foot.
+      isFullheight: isFullheight && Boolean(head) && Boolean(foot),
+      ...bools,
+    })}
+  >
+    {head ? <div className="hero-head">{head}</div> : null}
+    <div className="hero-body">{children}</div>
+    {foot ? <div className="hero-foot">{foot}</div> : null}
+  </section>
+)
+
+export type LabelProps = LabelClassArg
 
 export const Label: FC<PropsWithChildren<LabelProps>> = ({
   children,
   size,
-  ...props
-}) => (
-  <label className={labelClass({ size })} {...props}>
-    {" "}
-    {children}{" "}
-  </label>
-)
+}) => <label className={labelClass({ size })}>{children}</label>
 
 export type RadioProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -163,21 +179,14 @@ export const Radio: FC<PropsWithChildren<RadioProps>> = ({
   ...props
 }) => (
   <label className="radio">
-    {" "}
-    <input type="radio" {...props} /> {children}{" "}
+    <input type="radio" {...props} />
+    {children}
   </label>
 )
 
-export type SectionProps = HTMLAttributes<HTMLElement> & SectionClassArg
+export type SectionProps = SectionClassArg
 
 export const Section: FC<PropsWithChildren<SectionProps>> = ({
-  className,
   children,
   size,
-  ...props
-}) => (
-  <section className={sectionClass({ size })} {...props}>
-    {" "}
-    {children}{" "}
-  </section>
-)
+}) => <section className={sectionClass({ size })}>{children}</section>
