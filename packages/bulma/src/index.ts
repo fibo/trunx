@@ -7,4 +7,4 @@ export * from "./number.js"
 export * from "./responsiveness.js"
 export * from "./size.js"
 export * from "./typography.js"
-export * from './bulma.js'
+export * from "./bulma.js"

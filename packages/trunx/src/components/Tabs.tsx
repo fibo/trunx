@@ -1,6 +1,6 @@
-import {FC, HTMLAttributes, PropsWithChildren} from "react"
-import {BoolClassArg, SizeArg, boolClass, sizeClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import { BoolClassArg, SizeArg, boolClass, sizeClass } from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type TabsProps = HTMLAttributes<HTMLElement> &
   SizeArg &

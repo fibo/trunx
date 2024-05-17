@@ -1,11 +1,18 @@
-import {FC, OptionHTMLAttributes, SelectHTMLAttributes} from "react"
-import {BoolClassArg, ColorArg, MainColor, SizeArg, boolClass, colorClass, sizeClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, OptionHTMLAttributes, SelectHTMLAttributes } from "react"
+import {
+  BoolClassArg,
+  ColorArg,
+  MainColor,
+  SizeArg,
+  boolClass,
+  colorClass,
+  sizeClass,
+} from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
   options: Array<OptionHTMLAttributes<HTMLOptionElement>>
-} &
-  ColorArg<MainColor> &
+} & ColorArg<MainColor> &
   SizeArg &
   Pick<BoolClassArg, "isFocused" | "isHovered" | "isLoading">
 
@@ -23,7 +30,7 @@ export const Select: FC<SelectProps> = ({
     className={classnames(
       "select",
       colorClass(color),
-      boolClass({isFocused, isHovered, isLoading}),
+      boolClass({ isFocused, isHovered, isLoading }),
       sizeClass(size),
       className
     )}

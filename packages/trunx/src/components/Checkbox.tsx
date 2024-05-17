@@ -1,5 +1,5 @@
-import {FC, InputHTMLAttributes, PropsWithChildren} from "react"
-import {classnames} from "@trunx/classnames"
+import { FC, InputHTMLAttributes, PropsWithChildren } from "react"
+import { classnames } from "@trunx/classnames"
 
 export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type">
 

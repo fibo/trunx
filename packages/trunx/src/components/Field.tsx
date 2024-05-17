@@ -1,6 +1,6 @@
-import {FC, HTMLAttributes, PropsWithChildren, ReactNode} from "react"
-import {Alignment} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
+import { Alignment } from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type FieldProps = HTMLAttributes<HTMLDivElement> &
   Partial<{

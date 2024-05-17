@@ -1,5 +1,5 @@
-import {FC, HTMLAttributes, PropsWithChildren} from "react"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import { classnames } from "@trunx/classnames"
 
 export type HeadingProps = HTMLAttributes<HTMLParagraphElement>
 

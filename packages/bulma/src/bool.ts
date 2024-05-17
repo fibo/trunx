@@ -64,7 +64,8 @@ export const camelCaseToKebabCase = (arg: string): string =>
   arg.replace(/([a-z0-9]|(?=[A-Z]))([A-Z0-9])/g, "$1-$2").toLowerCase()
 
 /**
- * Convert an object of boolean attributes to its equivalent array of classNames.
+ * Convert an object of boolean attributes to its equivalent array of
+ * classNames.
  *
  * @example
  *
@@ -74,7 +75,6 @@ export const camelCaseToKebabCase = (arg: string): string =>
  * ```
  */
 export const boolClass = (arg: BoolClassArg) =>
-  Object.entries(arg).map(([key, value]) =>
-    value ? camelCaseToKebabCase(key) : ""
-  ).join(" ")
-
+  Object.entries(arg)
+    .map(([key, value]) => (value ? camelCaseToKebabCase(key) : ""))
+    .join(" ")

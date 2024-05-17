@@ -5,8 +5,8 @@ import {
   PropsWithChildren,
   ReactNode,
 } from "react"
-import {BoolClassArg, boolClass, SizeArg, sizeClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { BoolClassArg, boolClass, SizeArg, sizeClass } from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type ModalProps = HTMLAttributes<HTMLDivElement> &
   Pick<BoolClassArg, "isActive">
@@ -18,7 +18,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   ...props
 }) => (
   <div
-    className={classnames("modal", boolClass({isActive}), className)}
+    className={classnames("modal", boolClass({ isActive }), className)}
     {...props}
   >
     {children}
@@ -30,9 +30,7 @@ export type ModalBackgroundProps = HTMLAttributes<HTMLDivElement>
 export const ModalBackground: FC<ModalBackgroundProps> = ({
   className,
   ...props
-}) => (
-  <div className={classnames("modal-background", className)} {...props} />
-)
+}) => <div className={classnames("modal-background", className)} {...props} />
 
 export type ModalCardProps = ModalProps &
   Partial<{

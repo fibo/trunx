@@ -1,6 +1,11 @@
-import {FC, HTMLAttributes, PropsWithChildren, ReactNode} from "react"
-import {BoolClassArg, TextAlignArg, boolClass, textAlignClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
+import {
+  BoolClassArg,
+  TextAlignArg,
+  boolClass,
+  textAlignClass,
+} from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type LevelProps = HTMLAttributes<HTMLDivElement> &
   Pick<BoolClassArg, "isMobile"> &
@@ -18,7 +23,7 @@ export const Level: FC<PropsWithChildren<LevelProps>> = ({
   ...props
 }) => (
   <div
-    className={classnames("level", boolClass({isMobile}), className)}
+    className={classnames("level", boolClass({ isMobile }), className)}
     {...props}
   >
     {left && <div className="level-left">{left}</div>}
@@ -38,11 +43,7 @@ export const LevelItem: FC<PropsWithChildren<LevelItemProps>> = ({
   ...props
 }) => (
   <div
-    className={classnames(
-      "level-item",
-      textAlignClass(hasText),
-      className
-    )}
+    className={classnames("level-item", textAlignClass(hasText), className)}
     {...props}
   >
     {children}

@@ -9,7 +9,7 @@
     "build:react": "npm run build -w packages/react",
     "clean": "npm run clean --workspaces --if-present",
     "check_types": "npm run check_types --workspaces --if-present",
-    "generate_bulma_classes_types": "postcss ./node_modules/bulma/css/bulma.css --config ./npm-scripts/generate_bulma_classes_types --output ./node_modules/bulma/css/output.css",
+    "generate_bulma_classes_types": "npm run generate_bulma_classes_types -w packages/bulma",
     "prestart": "npm run build:react",
     "prettier": "prettier --write .",
     "prettier--check": "prettier --check .",

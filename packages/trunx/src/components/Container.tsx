@@ -1,6 +1,13 @@
-import {FC, HTMLAttributes, PropsWithChildren} from "react"
-import {BoolClassArg, Breakpoint, ColorArg, MainColor, boolClass, colorClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import {
+  BoolClassArg,
+  Breakpoint,
+  ColorArg,
+  MainColor,
+  boolClass,
+  colorClass,
+} from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type ContainerClassArg = ColorArg<MainColor> &
   Pick<BoolClassArg, "isFluid"> &
@@ -25,7 +32,7 @@ export const Container: FC<PropsWithChildren<ContainerProps>> = ({
       colorClass(color),
       fullWidth ? `is-${fullWidth}` : undefined,
       maxWidth ? `is-max-${maxWidth}` : undefined,
-      boolClass({isFluid}),
+      boolClass({ isFluid }),
       className
     )}
   >

@@ -1,6 +1,6 @@
-import {FC, HTMLAttributes, PropsWithChildren} from "react"
-import {BoolClassArg, boolClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import { BoolClassArg, boolClass } from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type ControlClassArg = Pick<
   BoolClassArg,
@@ -21,7 +21,7 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
   <div
     className={classnames(
       "control",
-      boolClass({hasIconsLeft, hasIconsRight, isExpanded, isLoading}),
+      boolClass({ hasIconsLeft, hasIconsRight, isExpanded, isLoading }),
       className
     )}
     {...props}

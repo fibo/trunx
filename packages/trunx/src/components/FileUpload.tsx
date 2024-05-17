@@ -1,6 +1,6 @@
-import {FC, InputHTMLAttributes, ReactNode} from "react"
-import {BoolClassArg, boolClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, InputHTMLAttributes, ReactNode } from "react"
+import { BoolClassArg, boolClass } from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type FileUploadProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -24,7 +24,7 @@ export const FileUpload: FC<FileUploadProps> = ({
   <div
     className={classnames(
       "file",
-      boolClass({isBoxed, isFullwidth, isRight}),
+      boolClass({ isBoxed, isFullwidth, isRight }),
       className
     )}
   >

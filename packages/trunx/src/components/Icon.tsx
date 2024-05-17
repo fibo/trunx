@@ -1,6 +1,12 @@
-import {FC, HTMLAttributes, PropsWithChildren} from "react"
-import {ColorArg, SizeArg, TextColor, sizeClass, textColorClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import {
+  ColorArg,
+  SizeArg,
+  TextColor,
+  sizeClass,
+  textColorClass,
+} from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type IconProps = HTMLAttributes<HTMLSpanElement> &
   ColorArg<TextColor> &

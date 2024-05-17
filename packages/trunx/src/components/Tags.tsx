@@ -4,8 +4,18 @@ import {
   HTMLAttributes,
   PropsWithChildren,
 } from "react"
-import {BoolClassArg, ColorArg, MainColor, ShadeColor, SizeArg, boolClass, colorClass, pluralSizeClass, sizeClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import {
+  BoolClassArg,
+  ColorArg,
+  MainColor,
+  ShadeColor,
+  SizeArg,
+  boolClass,
+  colorClass,
+  pluralSizeClass,
+  sizeClass,
+} from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type TagProps = HTMLAttributes<HTMLSpanElement> &
   ColorArg<MainColor | ShadeColor> &
@@ -25,7 +35,7 @@ export const Tag: FC<PropsWithChildren<TagProps>> = ({
       "tag",
       colorClass(color),
       sizeClass(size),
-      boolClass({isLight, isRounded}),
+      boolClass({ isLight, isRounded }),
       className
     )}
   >
@@ -48,7 +58,7 @@ export const Tags: FC<PropsWithChildren<TagsProps>> = ({
     className={classnames(
       "tags",
       pluralSizeClass(size),
-      boolClass({hasAddons}),
+      boolClass({ hasAddons }),
       className
     )}
     {...props}

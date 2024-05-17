@@ -1,6 +1,12 @@
-import {ProgressHTMLAttributes, FC} from "react"
-import {ColorArg, MainColor, SizeArg, colorClass, sizeClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { ProgressHTMLAttributes, FC } from "react"
+import {
+  ColorArg,
+  MainColor,
+  SizeArg,
+  colorClass,
+  sizeClass,
+} from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type ProgressProps = ProgressHTMLAttributes<HTMLProgressElement> &
   ColorArg<MainColor> &

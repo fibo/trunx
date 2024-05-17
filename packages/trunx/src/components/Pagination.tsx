@@ -4,8 +4,8 @@ import {
   HTMLAttributes,
   PropsWithChildren,
 } from "react"
-import {BoolClassArg, boolClass, SizeArg, sizeClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { BoolClassArg, boolClass, SizeArg, sizeClass } from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type PaginationProps = HTMLAttributes<HTMLElement> &
   SizeArg<"small" | "medium" | "large"> &
@@ -24,7 +24,7 @@ export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
     className={classnames(
       "pagination",
       sizeClass(size),
-      boolClass({isCentered, isRight, isRounded}),
+      boolClass({ isCentered, isRight, isRounded }),
       className
     )}
     aria-label="pagination"
@@ -55,7 +55,7 @@ export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
     <a
       className={classnames(
         "pagination-link",
-        {"is-current": isCurrent},
+        { "is-current": isCurrent },
         className
       )}
       {...props}
@@ -80,16 +80,15 @@ export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({
 )
 
 export type PaginationIncrementalNavigationProps =
-  AnchorHTMLAttributes<HTMLAnchorElement> &
-  Pick<BoolClassArg, "isDisabled">
+  AnchorHTMLAttributes<HTMLAnchorElement> & Pick<BoolClassArg, "isDisabled">
 
 export const PaginationNext: FC<
   PropsWithChildren<PaginationIncrementalNavigationProps>
-> = ({children, className, isDisabled, ...props}) => (
+> = ({ children, className, isDisabled, ...props }) => (
   <a
     className={classnames(
       "pagination-next",
-      boolClass({isDisabled}),
+      boolClass({ isDisabled }),
       className
     )}
     {...props}
@@ -100,11 +99,11 @@ export const PaginationNext: FC<
 
 export const PaginationPrevious: FC<
   PropsWithChildren<PaginationIncrementalNavigationProps>
-> = ({children, className, isDisabled, ...props}) => (
+> = ({ children, className, isDisabled, ...props }) => (
   <a
     className={classnames(
       "pagination-previous",
-      boolClass({isDisabled}),
+      boolClass({ isDisabled }),
       className
     )}
     {...props}

@@ -1,6 +1,12 @@
-import {FC, HTMLAttributes, PropsWithChildren} from "react"
-import {BoolClassArg, ColorArg, MainColor, boolClass, colorClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import {
+  BoolClassArg,
+  ColorArg,
+  MainColor,
+  boolClass,
+  colorClass,
+} from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type NotificationProps = HTMLAttributes<HTMLDivElement> &
   ColorArg<MainColor> &
@@ -17,7 +23,7 @@ export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
     className={classnames(
       "notification",
       colorClass(color),
-      boolClass({isLight}),
+      boolClass({ isLight }),
       className
     )}
     {...props}
