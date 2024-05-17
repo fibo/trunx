@@ -1,7 +1,7 @@
 {
-  "name": "@trunx/bulma",
+  "name": "@trunx/react",
   "version": "1.0.0",
-  "description": "Super Saiyan tools, son of awesome Bulma",
+  "description": "Super Saiyan React components, son of awesome Bulma",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,20 +14,19 @@
   "scripts": {
     "build": "tsc --build",
     "clean": "tsc --build --clean",
-    "check_types": "tsc --noEmit --project .",
-    "pretest": "tsc --build tsconfig.test.json",
-    "preversion": "npm run build",
-    "test": "node --test --test-reporter spec"
+    "check_types": "tsc --noEmit --project ."
   },
   "keywords": [
-    "bulma"
+    "bulma",
+    "react",
+    "typescript"
   ],
   "author": {
     "name": "Gianluca Casati",
     "url": "https://fibo.github.io"
   },
   "license": "MIT",
-  "homepage": "https://github.com/fibo/trunx/tree/main/packages/bulma",
+  "homepage": "https://github.com/fibo/trunx/tree/main/packages/react",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fibo/trunx.git"
@@ -36,7 +35,9 @@
     "url": "https://github.com/fibo/trunx/issues"
   },
   "dependencies": {
-    "@trunx/classnames": "0.1.1",
-    "bulma": "1.0.0"
+    "@trunx/bulma": "^1"
+  },
+  "peerDependencies": {
+    "react": ">= 17"
   }
 }
