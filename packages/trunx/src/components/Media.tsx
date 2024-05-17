@@ -1,5 +1,5 @@
-import {FC, HTMLAttributes, PropsWithChildren, ReactNode} from "react"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
+import { classnames } from "@trunx/classnames"
 
 export type MediaProps = HTMLAttributes<HTMLElement> &
   Partial<{

@@ -15,6 +15,7 @@
     "build": "tsc --build",
     "clean": "tsc --build --clean",
     "check_types": "tsc --noEmit --project .",
+    "generate_bulma_classes_types": "postcss ./node_modules/bulma/css/bulma.css --config ./generate_bulma_classes_types --output ./node_modules/bulma/css/output.css",
     "pretest": "tsc --build tsconfig.test.json",
     "preversion": "npm run build",
     "test": "node --test --test-reporter spec"

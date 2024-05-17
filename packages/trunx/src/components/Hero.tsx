@@ -1,6 +1,14 @@
-import {FC, HTMLAttributes, PropsWithChildren, ReactNode} from "react"
-import {BoolClassArg, ColorArg, MainColor, SizeArg, boolClass, colorClass, sizeClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
+import {
+  BoolClassArg,
+  ColorArg,
+  MainColor,
+  SizeArg,
+  boolClass,
+  colorClass,
+  sizeClass,
+} from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type HeroProps = HTMLAttributes<HTMLDivElement> &
   ColorArg<MainColor> &

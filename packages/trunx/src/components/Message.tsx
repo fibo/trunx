@@ -1,6 +1,13 @@
-import {FC, HTMLAttributes, PropsWithChildren, ReactNode} from "react"
-import {ColorArg, MainColor, ShadeColor, SizeArg, colorClass, sizeClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren, ReactNode } from "react"
+import {
+  ColorArg,
+  MainColor,
+  ShadeColor,
+  SizeArg,
+  colorClass,
+  sizeClass,
+} from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type MessageProps = HTMLAttributes<HTMLElement> &
   ColorArg<MainColor | ShadeColor> &

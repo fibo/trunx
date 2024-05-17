@@ -1,6 +1,6 @@
-import {FC, HTMLAttributes, PropsWithChildren} from "react"
-import {SizeArg, sizeClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import { SizeArg, sizeClass } from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type SectionProps = HTMLAttributes<HTMLElement> &
   SizeArg<"medium" | "large">

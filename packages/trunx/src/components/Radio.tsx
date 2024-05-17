@@ -1,4 +1,4 @@
-import {FC, InputHTMLAttributes, PropsWithChildren} from "react"
+import { FC, InputHTMLAttributes, PropsWithChildren } from "react"
 
 export type RadioProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,

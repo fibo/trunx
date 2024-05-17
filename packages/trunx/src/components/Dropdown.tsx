@@ -5,10 +5,13 @@ import {
   HTMLAttributes,
   PropsWithChildren,
 } from "react"
-import {BoolClassArg, boolClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { BoolClassArg, boolClass } from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
-export type DropdownClassArg = Pick<BoolClassArg, "isActive" | "isHoverable" | "isRight" | "isUp">
+export type DropdownClassArg = Pick<
+  BoolClassArg,
+  "isActive" | "isHoverable" | "isRight" | "isUp"
+>
 
 export type DropdownProps = HTMLAttributes<HTMLDivElement> & DropdownClassArg
 
@@ -24,7 +27,7 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
   <div
     className={classnames(
       "dropdown",
-      boolClass({isActive, isHoverable, isRight, isUp}),
+      boolClass({ isActive, isHoverable, isRight, isUp }),
       className
     )}
     {...props}
@@ -37,9 +40,8 @@ export const DropdownDivider: FC = () => <hr className="dropdown-divider" />
 
 type DropdownItemClassArg = Pick<BoolClassArg, "isActive">
 
-const dropdownItemClass = (
-  {isActive}: DropdownItemClassArg,
-) => classnames("dropdown-item", boolClass({isActive}))
+const dropdownItemClass = ({ isActive }: DropdownItemClassArg) =>
+  classnames("dropdown-item", boolClass({ isActive }))
 
 export type DropdownItemProps = HTMLAttributes<HTMLDivElement> &
   DropdownItemClassArg
@@ -50,9 +52,10 @@ export const DropdownItem: FC<DropdownItemProps> = ({
   isActive,
   ...props
 }) => (
-  <div className={
-    classnames(dropdownItemClass({isActive}), className)
-  } {...props}>
+  <div
+    className={classnames(dropdownItemClass({ isActive }), className)}
+    {...props}
+  >
     {children}
   </div>
 )
@@ -66,9 +69,10 @@ export const DropdownItemAnchor: FC<DropdownItemAnchorProps> = ({
   isActive,
   ...props
 }) => (
-  <a className={
-    classnames(dropdownItemClass({isActive}), className)
-  } {...props}>
+  <a
+    className={classnames(dropdownItemClass({ isActive }), className)}
+    {...props}
+  >
     {children}
   </a>
 )

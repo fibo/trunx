@@ -1,6 +1,6 @@
-import {FC, HTMLAttributes, LiHTMLAttributes, PropsWithChildren} from "react"
-import {BoolClassArg, SizeArg, boolClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, LiHTMLAttributes, PropsWithChildren } from "react"
+import { BoolClassArg, SizeArg, boolClass } from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 type BreadcrumbSeparator = "arrow" | "bullet" | "dot" | "succedes"
 
@@ -22,7 +22,7 @@ export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps>> = ({
   <nav
     className={classnames(
       "breadcrumb",
-      boolClass({isCentered, isRight}),
+      boolClass({ isCentered, isRight }),
       separator === undefined ? "" : `has-${separator}-separator`,
       className
     )}
@@ -42,7 +42,7 @@ export const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   isActive,
   ...props
 }) => (
-  <li className={classnames(boolClass({isActive}), className)} {...props}>
+  <li className={classnames(boolClass({ isActive }), className)} {...props}>
     {children}
   </li>
 )

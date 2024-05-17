@@ -1,6 +1,14 @@
-import {FC, InputHTMLAttributes} from "react"
-import {BoolClassArg, ColorArg, MainColor, SizeArg, boolClass, colorClass, sizeClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, InputHTMLAttributes } from "react"
+import {
+  BoolClassArg,
+  ColorArg,
+  MainColor,
+  SizeArg,
+  boolClass,
+  colorClass,
+  sizeClass,
+} from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type InputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
@@ -8,10 +16,7 @@ export type InputProps = Omit<
 > &
   ColorArg<MainColor> &
   SizeArg &
-  Pick<
-    BoolClassArg,
-    "isFocused" | "isHovered" | "isRounded" | "isStatic"
-  > &
+  Pick<BoolClassArg, "isFocused" | "isHovered" | "isRounded" | "isStatic"> &
   Partial<{
     type: Exclude<
       InputHTMLAttributes<HTMLInputElement>["type"],

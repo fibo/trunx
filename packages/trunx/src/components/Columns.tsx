@@ -1,6 +1,6 @@
-import {FC, HTMLAttributes, PropsWithChildren} from "react"
-import {BoolClassArg, BreakpointsMap, boolClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import { BoolClassArg, BreakpointsMap, boolClass } from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 type Gap = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8
 

@@ -1,6 +1,6 @@
-import {FC, TableHTMLAttributes, PropsWithChildren} from "react"
-import {BoolClassArg, boolClass} from "@trunx/bulma"
-import {classnames} from "@trunx/classnames"
+import { FC, TableHTMLAttributes, PropsWithChildren } from "react"
+import { BoolClassArg, boolClass } from "@trunx/bulma"
+import { classnames } from "@trunx/classnames"
 
 export type TableProps = TableHTMLAttributes<HTMLTableElement> &
   Pick<

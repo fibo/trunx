@@ -1,5 +1,5 @@
-import {Message} from "trunx"
-import {PageContent, PageSection} from "@/components"
+import { Message } from "trunx"
+import { PageContent, PageSection } from "@/components"
 import CodeRequirement from "./CodeRequirement"
 import Customization from "./Customization"
 import WorkExample from "./WorkExample"
