@@ -81,6 +81,18 @@ describe("classNames", () => {
         input: ["", { "": true }],
         output: "",
       },
+      {
+        input: [undefined],
+        output: "",
+      },
+      {
+        input: [[undefined, undefined]],
+        output: "",
+      },
+      {
+        input: [[undefined, "foo"]],
+        output: "foo",
+      },
     ]
 
     testData.forEach(({ input, output }) => {

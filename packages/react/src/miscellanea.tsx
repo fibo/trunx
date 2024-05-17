@@ -7,12 +7,14 @@ import {
   ReactNode,
 } from "react"
 import {
+  ContainerClassArg,
   ContentClassArg,
   ControlClassArg,
   FileClassArg,
   HelpClassArg,
   LabelClassArg,
   SectionClassArg,
+  containerClass,
   contentClass,
   controlClass,
   fileClass,
@@ -56,6 +58,13 @@ export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({
     {children}
   </label>
 )
+
+export type ContainerProps = ContainerClassArg
+
+export const Container: FC<PropsWithChildren<ContainerProps>> = ({
+  children,
+  ...props
+}) => <div className={containerClass(props)}> {children} </div>
 
 export type ContentProps = ContentClassArg
 

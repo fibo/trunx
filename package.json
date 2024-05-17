@@ -5,15 +5,11 @@
   "private": true,
   "scripts": {
     "build": "npm run build --workspaces --if-present",
-    "build:bulma": "npm run build -w packages/bulma",
-    "build:react": "npm run build -w packages/react",
     "clean": "npm run clean --workspaces --if-present",
     "check_types": "npm run check_types --workspaces --if-present",
     "generate_bulma_classes_types": "npm run generate_bulma_classes_types -w packages/bulma",
-    "prestart": "npm run build:react",
     "prettier": "prettier --write .",
     "prettier--check": "prettier --check .",
-    "start": "npm run dev -w webapps/trunx-docs",
     "test": "npm run test --workspaces --if-present"
   },
   "devDependencies": {

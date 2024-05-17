@@ -1,8 +1,30 @@
 import { classnames } from "@trunx/classnames"
 import { BoolClassArg, boolClass } from "./bool.js"
 import { ColorArg, MainColor, colorClass } from "./color.js"
+import { Breakpoint } from "./responsiveness.js"
 import { SizeArg, sizeClass } from "./size.js"
 import { TextAlignArg, textAlignClass } from "./typography.js"
+
+export type ContainerClassArg = ColorArg<MainColor> &
+  Pick<BoolClassArg, "isFluid"> &
+  Partial<{
+    fullWidth: Extract<Breakpoint, "fullhd" | "widescreen">
+    maxWidth: Extract<Breakpoint, "desktop" | "widescreen">
+  }>
+
+export const containerClass = ({
+  color,
+  fullWidth,
+  maxWidth,
+  isFluid,
+}: ContainerClassArg) =>
+  classnames(
+    "container",
+    colorClass(color),
+    fullWidth ? `is-${fullWidth}` : undefined,
+    maxWidth ? `is-max-${maxWidth}` : undefined,
+    boolClass({ isFluid })
+  )
 
 export type ContentClassArg = SizeArg & TextAlignArg
 
