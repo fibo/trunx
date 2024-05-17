@@ -1,7 +1,7 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
-import { BulmaClass } from "@trunx/bulma"
-import { columnClass, ColumnClassArg } from "./Column.js"
+import BulmaClass from "./BulmaClass.js"
+import { columnClass, ColumnClassArg } from "./columns.js"
 
 test("columnClass", () => {
   const testData: Array<{

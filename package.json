@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.12.12",
+    "@types/react": "^18.3.2",
     "postcss": "^8",
     "postcss-cli": "^10",
     "postcss-ts-classnames": "^0.3.0",
