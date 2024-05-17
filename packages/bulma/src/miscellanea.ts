@@ -1,6 +1,6 @@
 import { classnames } from "@trunx/classnames"
 import { BoolClassArg, boolClass } from "./bool.js"
-import { ColorArg, MainColor, colorClass } from "./color.js"
+import { ColorArg, MainColor, ShadeColor, colorClass } from "./color.js"
 import { Breakpoint } from "./responsiveness.js"
 import { SizeArg, sizeClass } from "./size.js"
 import { TextAlignArg, textAlignClass } from "./typography.js"
@@ -62,6 +62,11 @@ export type LabelClassArg = SizeArg
 
 export const labelClass = ({ size }: LabelClassArg) =>
   classnames("label", sizeClass(size))
+
+export type MessageClassArg = ColorArg<MainColor | ShadeColor> & SizeArg
+
+export const messageClass = ({ color, size }: MessageClassArg) =>
+  classnames("message", colorClass(color), sizeClass(size))
 
 export type SectionClassArg = SizeArg<"medium" | "large">
 

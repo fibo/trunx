@@ -13,6 +13,7 @@ import {
   HelpClassArg,
   HeroClassArg,
   LabelClassArg,
+  MessageClassArg,
   SectionClassArg,
   containerClass,
   contentClass,
@@ -21,6 +22,7 @@ import {
   helpClass,
   heroClass,
   labelClass,
+  messageClass,
   sectionClass,
 } from "@trunx/bulma"
 
@@ -168,6 +170,23 @@ export const Label: FC<PropsWithChildren<LabelProps>> = ({
   children,
   size,
 }) => <label className={labelClass({ size })}>{children}</label>
+
+export type MessageProps = MessageClassArg &
+  Partial<{
+    header: ReactNode
+  }>
+
+export const Message: FC<PropsWithChildren<MessageProps>> = ({
+  color,
+  header,
+  size,
+  children,
+}) => (
+  <article className={messageClass({ color, size })}>
+    {header && <div className="message-header">{header}</div>}
+    <div className="message-body">{children}</div>
+  </article>
+)
 
 export type RadioProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
