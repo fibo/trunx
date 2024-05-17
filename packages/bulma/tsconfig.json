@@ -4,7 +4,7 @@
     "declaration": true,
     "declarationMap": true,
     "importHelpers": true,
-    "lib": ["dom", "es2015"],
+    "lib": ["es2017"],
     "module": "esnext",
     "moduleResolution": "node",
     "outDir": "./dist",

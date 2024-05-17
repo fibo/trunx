@@ -4,12 +4,6 @@
 
 <img src="./media/trunks.png" height="290"/>
 
-## Documentation
-
-To read documentation point your browser to https://trunx.dev/
-
-Yes, the website itself is implemented with Trunx: you can read its [source code here](https://github.com/fibo/trunx/tree/main/webapps/trunx-docs).
-
 ## Motivation
 
 I really like [Bulma] CSS framework and I am also a [Dragon Ball](https://en.wikipedia.org/wiki/Dragon_Ball) fan.

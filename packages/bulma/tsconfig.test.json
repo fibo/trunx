@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
+    "composite": true,
     "declarationMap": false,
     "outDir": "./temp",
     "resolveJsonModule": true,
