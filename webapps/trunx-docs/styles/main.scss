@@ -1,6 +1,3 @@
-@import "highlight.js/scss/default.scss";
-
-// Import bulma variables first;
-@import "./bulma-variables/index.scss";
-// then import bulma.
-@import "bulma/bulma";
+@use "bulma/sass" with (
+$input-shadow: none
+);

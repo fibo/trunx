@@ -1,10 +1,9 @@
 import {FC, HTMLAttributes, PropsWithChildren, ReactNode} from "react"
-import {MainColor} from "@trunx/bulma"
+import {ColorArg, MainColor} from "@trunx/bulma"
 import {classnames} from "@trunx/classnames"
-import {ColorProp, } from "./commonProps.js"
 
 export type PanelProps = HTMLAttributes<HTMLElement> &
-  ColorProp<MainColor> &
+  ColorArg<MainColor> &
   Partial<{heading: ReactNode}>
 
 export const Panel: FC<PropsWithChildren<PanelProps>> = ({
@@ -12,12 +11,10 @@ export const Panel: FC<PropsWithChildren<PanelProps>> = ({
   className,
   heading,
   ...props
-}) => {
-  return (
-    <nav className={classnames("panel", className)} {...props}>
-      {heading && <p className="panel-heading">{heading}</p>}
+}) => (
+  <nav className={classnames("panel", className)} {...props}>
+    {heading && <p className="panel-heading">{heading}</p>}
 
-      {children}
-    </nav>
-  )
-}
+    {children}
+  </nav>
+)

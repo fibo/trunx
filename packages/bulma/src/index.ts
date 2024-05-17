@@ -1,4 +1,11 @@
+import { ClassnamesArg, classnames } from "@trunx/classnames"
+
+import type BulmaClassname from './bulma.js'
+
+  export const bulma = (...args: ClassnamesArg<BulmaClassname>[]) => classnames<BulmaClassname>(...args)
+
 export type {default as BulmaClass} from "./bulma.js"
+
 export type {BoolClassArg} from "./bool.js"
 export {boolClass} from "./bool.js"
 export type {ColorArg, MainColor, ShadeColor, OtherColor} from "./color.js"

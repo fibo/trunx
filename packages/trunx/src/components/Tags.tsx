@@ -4,18 +4,13 @@ import {
   HTMLAttributes,
   PropsWithChildren,
 } from "react"
-import {MainColor, ShadeColor, colorClass, pluralSizeClass, sizeClass} from "@trunx/bulma"
+import {BoolClassArg, ColorArg, MainColor, ShadeColor, SizeArg, boolClass, colorClass, pluralSizeClass, sizeClass} from "@trunx/bulma"
 import {classnames} from "@trunx/classnames"
-import {ColorProp, SizeProp} from "./commonProps.js"
-import {
-  BooleanModifierProps,
-  modifier,
-} from "../modifiers/index.js"
 
 export type TagProps = HTMLAttributes<HTMLSpanElement> &
-  ColorProp<MainColor | ShadeColor> &
-  SizeProp<"normal" | "medium" | "large"> &
-  Pick<BooleanModifierProps, "isLight" | "isRounded">
+  ColorArg<MainColor | ShadeColor> &
+  SizeArg<"normal" | "medium" | "large"> &
+  Pick<BoolClassArg, "isLight" | "isRounded">
 
 export const Tag: FC<PropsWithChildren<TagProps>> = ({
   children,
@@ -24,25 +19,23 @@ export const Tag: FC<PropsWithChildren<TagProps>> = ({
   isLight,
   isRounded,
   size,
-}) => {
-  return (
-    <span
-      className={classnames(
-        "tag",
-        colorClass(color),
-        sizeClass(size),
-        modifier({isLight, isRounded}),
-        className
-      )}
-    >
-      {children}
-    </span>
-  )
-}
+}) => (
+  <span
+    className={classnames(
+      "tag",
+      colorClass(color),
+      sizeClass(size),
+      boolClass({isLight, isRounded}),
+      className
+    )}
+  >
+    {children}
+  </span>
+)
 
 export type TagsProps = HTMLAttributes<HTMLDivElement> &
-  SizeProp<"small" | "medium" | "large"> &
-  Pick<BooleanModifierProps, "hasAddons">
+  SizeArg<"small" | "medium" | "large"> &
+  Pick<BoolClassArg, "hasAddons">
 
 export const Tags: FC<PropsWithChildren<TagsProps>> = ({
   children,
@@ -50,21 +43,19 @@ export const Tags: FC<PropsWithChildren<TagsProps>> = ({
   hasAddons,
   size,
   ...props
-}) => {
-  return (
-    <div
-      className={classnames(
-        "tags",
-        pluralSizeClass(size),
-        modifier({hasAddons}),
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div
+    className={classnames(
+      "tags",
+      pluralSizeClass(size),
+      boolClass({hasAddons}),
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
 
 export type TagDeleteProps = AnchorHTMLAttributes<HTMLAnchorElement>
 

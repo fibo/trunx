@@ -1,11 +1,10 @@
 import {FC, HTMLAttributes, PropsWithChildren} from "react"
-import {Dozen} from "@trunx/bulma"
+import {BoolClassArg, Dozen, boolClass} from "@trunx/bulma"
 import {classnames} from "@trunx/classnames"
-import {BooleanModifierProps, modifier} from "../modifiers/index.js"
 
 export type TileProps = HTMLAttributes<HTMLDivElement> &
   Pick<
-    BooleanModifierProps,
+    BoolClassArg,
     "isAncestor" | "isChild" | "isParent" | "isVertical"
   > &
   Partial<{
@@ -21,18 +20,16 @@ export const Tile: FC<PropsWithChildren<TileProps>> = ({
   isVertical,
   size,
   ...props
-}) => {
-  return (
-    <div
-      className={classnames(
-        "tile",
-        size ? `is-${size}` : undefined,
-        modifier({isAncestor, isChild, isParent, isVertical}),
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-}
+}) => (
+  <div
+    className={classnames(
+      "tile",
+      size ? `is-${size}` : undefined,
+      boolClass({isAncestor, isChild, isParent, isVertical}),
+      className
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
