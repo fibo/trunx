@@ -7,10 +7,12 @@ import {
   ReactNode,
 } from "react"
 import {
+  ContentClassArg,
   ControlClassArg,
   HelpClassArg,
   LabelClassArg,
   SectionClassArg,
+  contentClass,
   controlClass,
   helpClass,
   labelClass,
@@ -32,11 +34,8 @@ export const Card: FC<PropsWithChildren<CardProps>> = ({
 }) => (
   <div className="card">
     {header ? <header className="card-header">{header}</header> : null}
-
     {image ? <div className="card-image">{image}</div> : null}
-
     <div className="card-content">{children}</div>
-
     {footer ? <footer className="card-footer">{footer}</footer> : null}
   </div>
 )
@@ -55,6 +54,14 @@ export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({
     {children}
   </label>
 )
+
+export type ContentProps = ContentClassArg
+
+export const Content: FC<PropsWithChildren<ContentProps>> = ({
+  children,
+  hasText,
+  size,
+}) => <div className={contentClass({ hasText, size })}> {children} </div>
 
 export type ControlProps = HTMLAttributes<HTMLDivElement> & ControlClassArg
 

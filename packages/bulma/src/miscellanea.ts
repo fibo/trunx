@@ -2,6 +2,12 @@ import { classnames } from "@trunx/classnames"
 import { BoolClassArg, boolClass } from "./bool.js"
 import { ColorArg, MainColor, colorClass } from "./color.js"
 import { SizeArg, sizeClass } from "./size.js"
+import { TextAlignArg, textAlignClass } from "./typography.js"
+
+export type ContentClassArg = SizeArg & TextAlignArg
+
+export const contentClass = ({ hasText, size }: ContentClassArg) =>
+  classnames("content", textAlignClass(hasText), sizeClass(size))
 
 export type ControlClassArg = Pick<
   BoolClassArg,
