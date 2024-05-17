@@ -72,7 +72,8 @@ export const flexClass = ({
   grow,
   shrink,
 }: FlexClassArg) =>
-  classnames(
+classnames
+(
     "is-flex",
     direction && `is-flex-direction-${direction}`,
     justify && `is-justify-content-${justify}`,

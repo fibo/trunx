@@ -1,4 +1,4 @@
-import BulmaClass from "./bulma.js"
+import {BulmaClass} from "./bulma.js"
 import {MainColor} from "./color.js"
 
 export type TextAlignment = "centered" | "justified" | "left" | "right"

@@ -1,5 +1,5 @@
 import {classnames} from "@trunx/classnames"
-import BulmaClass from "./bulma.js"
+import {BulmaClass} from "./bulma.js"
 
 export type ImageRatio =
   | "square"

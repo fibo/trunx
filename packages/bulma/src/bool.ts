@@ -76,5 +76,5 @@ export const camelCaseToKebabCase = (arg: string): string =>
 export const boolClass = (arg: BoolClassArg) =>
   Object.entries(arg).map(([key, value]) =>
     value ? camelCaseToKebabCase(key) : ""
-  )
+  ).join(" ")
 

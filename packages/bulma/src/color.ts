@@ -1,4 +1,4 @@
-import BulmaClass from "./bulma.js"
+import {BulmaClass} from "./bulma.js"
 
 export type MainColor =
   | "danger"

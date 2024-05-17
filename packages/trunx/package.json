@@ -3,29 +3,21 @@
   "version": "0.46.0",
   "description": "Super Saiyan components, son of awesome Bulma",
   "type": "module",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "import": "./index.js",
+      "types": "./index.d.ts"
     }
-  },
-  "engines": {
-    "node": ">=16.0.0"
-  },
-  "scripts": {
-    "build": "tsc --build",
-    "clean": "tsc --build --clean",
-    "check_types": "tsc --noEmit --project ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fibo/trunx.git"
   },
   "keywords": [
-    "react",
     "bulma",
+    "react",
     "typescript"
   ],
   "author": {
@@ -38,6 +30,7 @@
   },
   "homepage": "https://trunx.dev/",
   "dependencies": {
-    "@trunx/classnames": "^0.1.1"
+    "@trunx/bulma": "^1",
+    "@trunx/react": "^1"
   }
 }
