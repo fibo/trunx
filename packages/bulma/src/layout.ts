@@ -1,6 +1,7 @@
 import { classnames } from "@trunx/classnames"
+import { BulmaClass } from "./bulma.js"
 
-export type Alignment = "centered" | "left" | "right"
+export type Alignment = "centered" | "right"
 
 export type FlexAlignContent =
   | "flex-start"
@@ -72,19 +73,19 @@ export const flexClass = ({
   grow,
   shrink,
 }: FlexClassArg) =>
-  classnames(
+  classnames<BulmaClass>(
     "is-flex",
-    direction && `is-flex-direction-${direction}`,
-    justify && `is-justify-content-${justify}`,
-    align && `is-align-content-${align}`,
-    alignItems && `is-align-items-${alignItems}`,
-    alignSelf && `is-align-self-${alignSelf}`,
-    grow && `is-flex-grow-${grow}`,
-    shrink && `is-flex-shrink-${shrink}`,
-    wrap && `is-flex-wrap-${wrap}`
+    direction ? `is-flex-direction-${direction}` : undefined,
+    justify ? `is-justify-content-${justify}` : undefined,
+    align ? `is-align-content-${align}` : undefined,
+    alignItems ? `is-align-items-${alignItems}` : undefined,
+    alignSelf ? `is-align-self-${alignSelf}` : undefined,
+    grow ? `is-flex-grow-${grow}` : undefined,
+    shrink ? `is-flex-shrink-${shrink}` : undefined,
+    wrap ? `is-flex-wrap-${wrap}` : undefined
   )
 
-export type SpacingValue = 0 | 1 | 2 | 3 | 4 | 5 | 6
+export type SpacingValue = 0 | 1 | 2 | 3 | 4 | 5 | 6 | "auto"
 export type SpacingKey =
   | "mx"
   | "my"
@@ -105,5 +106,7 @@ export type SpacingArg = Partial<{ spacing: Spacing }>
 
 export const spacingClass = (arg: Spacing) =>
   arg && !Array.isArray(arg) && typeof arg === "object"
-    ? Object.entries(arg).map(([key, value]) => `${key}-${value}`)
+    ? Object.entries(arg).map(
+        ([key, value]) => `${key}-${value}` as `${SpacingKey}-${SpacingValue}`
+      )
     : undefined

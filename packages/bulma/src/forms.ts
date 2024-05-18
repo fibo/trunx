@@ -1,5 +1,6 @@
 import { classnames } from "@trunx/classnames"
-import { BoolClassArg, boolClass } from "./bool.js"
+import { BulmaClass } from "./bulma.js"
+import { BoolClasslistArg, boolClasslist } from "./bool.js"
 import { ColorArg, MainColor, colorClass } from "./color.js"
 import { Alignment } from "./layout.js"
 import { SizeArg, sizeClass } from "./size.js"
@@ -10,12 +11,12 @@ export type FieldClassArg = Partial<{
 }>
 
 export const fieldClass = ({ hasAddons, isGrouped }: FieldClassArg) =>
-  classnames(
+  classnames<BulmaClass>(
     "field",
     hasAddons
       ? hasAddons === true
-        ? "has-addons"
-        : `has-addons-${hasAddons}`
+        ? ("has-addons" as BulmaClass)
+        : (`has-addons-${hasAddons}` as BulmaClass)
       : undefined,
     isGrouped !== undefined ? "is-grouped" : undefined,
     typeof isGrouped === "string" ? `is-grouped-${isGrouped}` : undefined
@@ -23,28 +24,38 @@ export const fieldClass = ({ hasAddons, isGrouped }: FieldClassArg) =>
 
 export type InputClassArg = ColorArg<MainColor> &
   SizeArg &
-  Pick<BoolClassArg, "isFocused" | "isHovered" | "isRounded" | "isStatic">
+  Pick<BoolClasslistArg, "isFocused" | "isHovered" | "isRounded" | "isStatic">
 
 export const inputClass = ({ color, size, ...bools }: InputClassArg) =>
-  classnames("input", colorClass(color), sizeClass(size), boolClass(bools))
+  classnames<BulmaClass>(
+    "input",
+    colorClass(color),
+    sizeClass(size),
+    boolClasslist(bools)
+  )
 
 export type InputFileClassArg = Pick<
-  BoolClassArg,
+  BoolClasslistArg,
   "isBoxed" | "isFullwidth" | "isRight"
 >
 
 export const inputFileClass = (arg: InputFileClassArg) =>
-  classnames("file", boolClass(arg))
+  classnames<BulmaClass>("file", boolClasslist(arg))
 
 export type SelectClassArg = ColorArg<MainColor> &
   SizeArg &
-  Pick<BoolClassArg, "isFocused" | "isHovered" | "isLoading">
+  Pick<BoolClasslistArg, "isFocused" | "isHovered" | "isLoading">
 
 export const selectClass = ({ color, size, ...bools }: SelectClassArg) =>
-  classnames("select", colorClass(color), boolClass(bools), sizeClass(size))
+  classnames<BulmaClass>(
+    "select",
+    colorClass(color),
+    boolClasslist(bools),
+    sizeClass(size)
+  )
 
 export type TextareaClassArg = SizeArg &
-  Pick<BoolClassArg, "isActive" | "isFocused" | "isHovered" | "isLoading">
+  Pick<BoolClasslistArg, "isActive" | "isFocused" | "isHovered" | "isLoading">
 
 export const textareaClass = ({ size, ...bools }: TextareaClassArg) =>
-  classnames("textarea", boolClass(bools), sizeClass(size))
+  classnames<BulmaClass>("textarea", boolClasslist(bools), sizeClass(size))

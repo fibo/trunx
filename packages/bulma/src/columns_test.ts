@@ -1,6 +1,6 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
-import BulmaClass from "./BulmaClass.js"
+import { BulmaClass } from "./bulma.js"
 import { columnClass, ColumnClassArg } from "./columns.js"
 
 test("columnClass", () => {
@@ -46,9 +46,9 @@ test("columnClass", () => {
     },
     {
       input: {
-        size: { desktop: 6, mobile: "full", tablet: "two-thirds" },
+        size: { desktop: 6, tablet: "two-thirds" },
       },
-      output: ["is-6-desktop", "is-full-mobile", "is-two-thirds-tablet"],
+      output: ["is-6-desktop", "is-two-thirds-tablet"],
     },
   ]
 

@@ -10,7 +10,6 @@ export type Fraction =
   | "half"
   | "one-third"
   | "one-quarter"
-  | "full"
   | "four-fifths"
   | "three-fifths"
   | "two-fifths"

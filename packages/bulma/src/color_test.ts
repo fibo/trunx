@@ -1,11 +1,11 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
-import { colorClass, MainColor, ShadeColor } from "./color.js"
+import { ColorClass, MainColor, ShadeColor, colorClass } from "./color.js"
 
 test("colorClass", () => {
   const testData: Array<{
     input: MainColor | ShadeColor | undefined
-    output: string | undefined
+    output: ColorClass | undefined
   }> = [
     {
       input: undefined,
