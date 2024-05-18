@@ -72,11 +72,3 @@ export type SectionClassArg = SizeArg<"medium" | "large">
 
 export const sectionClass = ({ size }: SectionClassArg) =>
   classnames("section", sizeClass(size))
-
-export type TableClassArg = Pick<
-  BoolClassArg,
-  "isBordered" | "isNarrow" | "isStriped" | "isFullwidth" | "isHoverable"
->
-
-export const tableClass = (arg: TableClassArg) =>
-  classnames("table", boolClass(arg))
