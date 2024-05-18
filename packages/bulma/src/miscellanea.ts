@@ -39,14 +39,6 @@ export type ControlClassArg = Pick<
 export const controlClass = (arg: ControlClassArg) =>
   classnames("control", boolClass(arg))
 
-export type FileClassArg = Pick<
-  BoolClassArg,
-  "isBoxed" | "isFullwidth" | "isRight"
->
-
-export const fileClass = (arg: FileClassArg) =>
-  classnames("file", boolClass(arg))
-
 export type HelpClassArg = ColorArg<MainColor>
 
 export const helpClass = ({ color }) => classnames("help", colorClass(color))
