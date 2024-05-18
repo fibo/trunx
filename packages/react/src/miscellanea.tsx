@@ -15,6 +15,7 @@ import {
   ImageClassArg,
   LabelClassArg,
   MessageClassArg,
+  NotificationClassArg,
   SectionClassArg,
   TitleClassArg,
   containerClass,
@@ -25,6 +26,7 @@ import {
   imageClass,
   labelClass,
   messageClass,
+  notificationClass,
   sectionClass,
   titleClass,
 } from "@trunx/bulma"
@@ -163,6 +165,13 @@ export const Message: FC<PropsWithChildren<MessageProps>> = ({
     <div className="message-body">{children}</div>
   </Tag>
 )
+
+export type NotificationProps = NotificationClassArg
+
+export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
+  children,
+  ...props
+}) => <div className={notificationClass(props)}>{children}</div>
 
 export type RadioProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
