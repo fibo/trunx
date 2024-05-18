@@ -49,9 +49,9 @@ export type InputProps = Omit<
   Partial<{
     type: Exclude<
       InputHTMLAttributes<HTMLInputElement>["type"],
-      // Component FileUpload handles `type="file"`
+      // Component InputFile handles `type="file"`
       | "file"
-      // Component Radio handles `type="radio"`
+      // Component InputRadio handles `type="radio"`
       | "radio"
     >
   }> &
@@ -104,6 +104,21 @@ export const InputFile: FC<InputFileProps> = ({
       {hasName ? <span className="file-name">{hasName}</span> : null}
     </label>
   </div>
+)
+
+export type InputRadioProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "type"
+>
+
+export const InputRadio: FC<PropsWithChildren<InputRadioProps>> = ({
+  children,
+  ...props
+}) => (
+  <label className="radio">
+    <input type="radio" {...props} />
+    {children}
+  </label>
 )
 
 export type SelectProps = SelectHTMLAttributes<HTMLSelectElement> & {
