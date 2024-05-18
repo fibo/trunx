@@ -61,6 +61,12 @@ export type MessageClassArg = ColorArg<MainColor | ShadeColor> & SizeArg
 export const messageClass = ({ color, size }: MessageClassArg) =>
   classnames("message", colorClass(color), sizeClass(size))
 
+export type NotificationClassArg = ColorArg<MainColor> &
+  Pick<BoolClassArg, "isLight">
+
+export const notificationClass = ({ color, isLight }: NotificationClassArg) =>
+  classnames("notification", colorClass(color), boolClass({ isLight }))
+
 export type SectionClassArg = SizeArg<"medium" | "large">
 
 export const sectionClass = ({ size }: SectionClassArg) =>
