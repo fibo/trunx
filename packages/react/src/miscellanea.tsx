@@ -16,6 +16,7 @@ import {
   LabelClassArg,
   MessageClassArg,
   SectionClassArg,
+  TitleClassArg,
   containerClass,
   contentClass,
   controlClass,
@@ -25,6 +26,7 @@ import {
   labelClass,
   messageClass,
   sectionClass,
+  titleClass,
 } from "@trunx/bulma"
 
 export type CardProps = Partial<{
@@ -96,6 +98,7 @@ export type HeroProps = HeroClassArg &
   Partial<{
     head: ReactNode
     foot: ReactNode
+    tag: "section" | "div"
   }>
 
 export const Hero: FC<PropsWithChildren<HeroProps>> = ({
@@ -105,9 +108,10 @@ export const Hero: FC<PropsWithChildren<HeroProps>> = ({
   isFullheight,
   size,
   children,
+  tag: Tag = "div",
   ...bools
 }) => (
-  <section
+  <Tag
     className={heroClass({
       color,
       size,
@@ -119,7 +123,7 @@ export const Hero: FC<PropsWithChildren<HeroProps>> = ({
     {head ? <div className="hero-head">{head}</div> : null}
     <div className="hero-body">{children}</div>
     {foot ? <div className="hero-foot">{foot}</div> : null}
-  </section>
+  </Tag>
 )
 
 export type ImageProps = Omit<
@@ -144,6 +148,7 @@ export const Label: FC<PropsWithChildren<LabelProps>> = ({
 export type MessageProps = MessageClassArg &
   Partial<{
     header: ReactNode
+    tag: "article" | "div"
   }>
 
 export const Message: FC<PropsWithChildren<MessageProps>> = ({
@@ -151,11 +156,12 @@ export const Message: FC<PropsWithChildren<MessageProps>> = ({
   header,
   size,
   children,
+  tag: Tag = "div",
 }) => (
-  <article className={messageClass({ color, size })}>
+  <Tag className={messageClass({ color, size })}>
     {header && <div className="message-header">{header}</div>}
     <div className="message-body">{children}</div>
-  </article>
+  </Tag>
 )
 
 export type RadioProps = Omit<
@@ -179,3 +185,21 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({
   children,
   size,
 }) => <section className={sectionClass({ size })}>{children}</section>
+
+export type TitleProps = Omit<TitleClassArg, "type"> &
+  Partial<{
+    tag: "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+  }>
+
+export const Title: FC<PropsWithChildren<TitleProps>> = ({
+  children,
+  tag: Tag = "p",
+  ...props
+}) => <Tag className={titleClass({ type: "title", ...props })}>{children}</Tag>
+
+export type SubtitleProps = Omit<TitleClassArg, "type">
+
+export const Subtitle: FC<PropsWithChildren<SubtitleProps>> = ({
+  children,
+  ...props
+}) => <p className={titleClass({ type: "subtitle", ...props })}>{children}</p>

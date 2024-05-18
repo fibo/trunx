@@ -1,6 +1,7 @@
 import { classnames } from "@trunx/classnames"
 import { BoolClassArg, boolClass } from "./bool.js"
 import { ColorArg, MainColor, ShadeColor, colorClass } from "./color.js"
+import { HalfDozen } from "./numbers.js"
 import { Breakpoint } from "./responsiveness.js"
 import { SizeArg, sizeClass } from "./size.js"
 import { TextAlignArg, textAlignClass } from "./typography.js"
@@ -64,3 +65,13 @@ export type SectionClassArg = SizeArg<"medium" | "large">
 
 export const sectionClass = ({ size }: SectionClassArg) =>
   classnames("section", sizeClass(size))
+
+export type TitleClassArg = Pick<BoolClassArg, "isSpaced"> &
+  Partial<{
+    h: HalfDozen
+    size: HalfDozen
+    type: "title" | "subtitle"
+  }>
+
+export const titleClass = ({ type = "title", isSpaced, size }: TitleClassArg) =>
+  classnames(type, size ? `is-${size}` : undefined, boolClass({ isSpaced }))
