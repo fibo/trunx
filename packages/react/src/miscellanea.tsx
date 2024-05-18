@@ -1,6 +1,7 @@
 import {
   FC,
   HTMLAttributes,
+  ImgHTMLAttributes,
   InputHTMLAttributes,
   PropsWithChildren,
   ReactNode,
@@ -9,18 +10,18 @@ import {
   ContainerClassArg,
   ContentClassArg,
   ControlClassArg,
-  FileClassArg,
   HelpClassArg,
   HeroClassArg,
+  ImageClassArg,
   LabelClassArg,
   MessageClassArg,
   SectionClassArg,
   containerClass,
   contentClass,
   controlClass,
-  fileClass,
   helpClass,
   heroClass,
+  imageClass,
   labelClass,
   messageClass,
   sectionClass,
@@ -44,21 +45,6 @@ export const Card: FC<PropsWithChildren<CardProps>> = ({
     <div className="card-content">{children}</div>
     {footer ? <footer className="card-footer">{footer}</footer> : null}
   </div>
-)
-
-export type CheckboxProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  "className" | "type"
->
-
-export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({
-  children,
-  ...props
-}) => (
-  <label className="checkbox">
-    <input type="checkbox" {...props} />
-    {children}
-  </label>
 )
 
 export type ContainerProps = ContainerClassArg
@@ -100,34 +86,6 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
   </div>
 )
 
-export type FileUploadProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  "type"
-> &
-  FileClassArg &
-  Partial<{
-    cta: ReactNode
-    hasName: ReactNode
-  }>
-
-export const FileUpload: FC<FileUploadProps> = ({
-  className,
-  cta,
-  hasName,
-  isBoxed,
-  isFullwidth,
-  isRight,
-  ...props
-}) => (
-  <div className={fileClass({ isBoxed, isFullwidth, isRight })}>
-    <label className="file-label">
-      <input type="file-input" {...props} />
-      {cta ? <span className="file-cta">{cta}</span> : null}
-      {hasName ? <span className="file-name">{hasName}</span> : null}
-    </label>
-  </div>
-)
-
 export type HelpProps = HelpClassArg
 
 export const Help: FC<PropsWithChildren<HelpProps>> = ({ children, color }) => (
@@ -162,6 +120,18 @@ export const Hero: FC<PropsWithChildren<HeroProps>> = ({
     <div className="hero-body">{children}</div>
     {foot ? <div className="hero-foot">{foot}</div> : null}
   </section>
+)
+
+export type ImageProps = Omit<
+  ImgHTMLAttributes<HTMLImageElement>,
+  "className"
+> &
+  ImageClassArg
+
+export const Image: FC<ImageProps> = ({ dimension, ratio, ...props }) => (
+  <figure className={imageClass({ dimension, ratio })}>
+    <img {...props} />
+  </figure>
 )
 
 export type LabelProps = LabelClassArg

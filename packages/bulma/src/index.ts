@@ -10,6 +10,7 @@ export * from "./typography.js"
 
 export * from "./buttons.js"
 export * from "./columns.js"
+export * from "./forms.js"
 export * from "./image.js"
 export * from "./tables.js"
 export * from "./miscellanea.js"
