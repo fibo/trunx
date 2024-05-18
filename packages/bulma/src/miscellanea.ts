@@ -76,8 +76,12 @@ export type TitleClassArg = Pick<BoolClassArg, "isSpaced"> &
   Partial<{
     h: HalfDozen
     size: HalfDozen
-    type: "title" | "subtitle"
+    subtitle: boolean
   }>
 
-export const titleClass = ({ type = "title", isSpaced, size }: TitleClassArg) =>
-  classnames(type, size ? `is-${size}` : undefined, boolClass({ isSpaced }))
+export const titleClass = ({ isSpaced, size, subtitle }: TitleClassArg) =>
+  classnames(
+    subtitle ? "subtitle" : "title",
+    size ? `is-${size}` : undefined,
+    boolClass({ isSpaced })
+  )

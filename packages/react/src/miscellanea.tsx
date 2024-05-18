@@ -1,33 +1,13 @@
+import { FC, ImgHTMLAttributes, PropsWithChildren, ReactNode } from "react"
 import {
-  FC,
-  HTMLAttributes,
-  ImgHTMLAttributes,
-  InputHTMLAttributes,
-  PropsWithChildren,
-  ReactNode,
-} from "react"
-import {
-  ContainerClassArg,
-  ContentClassArg,
-  ControlClassArg,
-  HelpClassArg,
   HeroClassArg,
   ImageClassArg,
   LabelClassArg,
   MessageClassArg,
-  NotificationClassArg,
-  SectionClassArg,
   TitleClassArg,
-  containerClass,
-  contentClass,
-  controlClass,
-  helpClass,
   heroClass,
   imageClass,
-  labelClass,
   messageClass,
-  notificationClass,
-  sectionClass,
   titleClass,
 } from "@trunx/bulma"
 
@@ -49,51 +29,6 @@ export const Card: FC<PropsWithChildren<CardProps>> = ({
     <div className="card-content">{children}</div>
     {footer ? <footer className="card-footer">{footer}</footer> : null}
   </div>
-)
-
-export type ContainerProps = ContainerClassArg
-
-export const Container: FC<PropsWithChildren<ContainerProps>> = ({
-  children,
-  ...props
-}) => <div className={containerClass(props)}> {children} </div>
-
-export type ContentProps = ContentClassArg
-
-export const Content: FC<PropsWithChildren<ContentProps>> = ({
-  children,
-  hasText,
-  size,
-}) => <div className={contentClass({ hasText, size })}> {children} </div>
-
-export type ControlProps = HTMLAttributes<HTMLDivElement> & ControlClassArg
-
-export const Control: FC<PropsWithChildren<ControlProps>> = ({
-  children,
-  className,
-  hasIconsLeft,
-  hasIconsRight,
-  isExpanded,
-  isLoading,
-  ...props
-}) => (
-  <div
-    className={controlClass({
-      hasIconsLeft,
-      hasIconsRight,
-      isExpanded,
-      isLoading,
-    })}
-    {...props}
-  >
-    {children}
-  </div>
-)
-
-export type HelpProps = HelpClassArg
-
-export const Help: FC<PropsWithChildren<HelpProps>> = ({ children, color }) => (
-  <p className={helpClass({ color })}>{children}</p>
 )
 
 export type HeroProps = HeroClassArg &
@@ -142,11 +77,6 @@ export const Image: FC<ImageProps> = ({ dimension, ratio, ...props }) => (
 
 export type LabelProps = LabelClassArg
 
-export const Label: FC<PropsWithChildren<LabelProps>> = ({
-  children,
-  size,
-}) => <label className={labelClass({ size })}>{children}</label>
-
 export type MessageProps = MessageClassArg &
   Partial<{
     header: ReactNode
@@ -166,35 +96,6 @@ export const Message: FC<PropsWithChildren<MessageProps>> = ({
   </Tag>
 )
 
-export type NotificationProps = NotificationClassArg
-
-export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
-  children,
-  ...props
-}) => <div className={notificationClass(props)}>{children}</div>
-
-export type RadioProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  "className" | "type"
->
-
-export const Radio: FC<PropsWithChildren<RadioProps>> = ({
-  children,
-  ...props
-}) => (
-  <label className="radio">
-    <input type="radio" {...props} />
-    {children}
-  </label>
-)
-
-export type SectionProps = SectionClassArg
-
-export const Section: FC<PropsWithChildren<SectionProps>> = ({
-  children,
-  size,
-}) => <section className={sectionClass({ size })}>{children}</section>
-
 export type TitleProps = Omit<TitleClassArg, "type"> &
   Partial<{
     tag: "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
@@ -204,11 +105,11 @@ export const Title: FC<PropsWithChildren<TitleProps>> = ({
   children,
   tag: Tag = "p",
   ...props
-}) => <Tag className={titleClass({ type: "title", ...props })}>{children}</Tag>
+}) => <Tag className={titleClass(props)}>{children}</Tag>
 
 export type SubtitleProps = Omit<TitleClassArg, "type">
 
 export const Subtitle: FC<PropsWithChildren<SubtitleProps>> = ({
   children,
   ...props
-}) => <p className={titleClass({ type: "subtitle", ...props })}>{children}</p>
+}) => <p className={titleClass({ subtitle: true, ...props })}>{children}</p>
