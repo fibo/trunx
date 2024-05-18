@@ -78,6 +78,11 @@ export const notificationClass = ({ color, isLight }: NotificationClassArg) =>
     boolClasslist({ isLight })
   )
 
+export type ProgressClassArg = ColorArg<MainColor> & SizeArg
+
+export const progressClass = ({ color, size }) =>
+  classnames("progress", colorClass(color), sizeClass(size))
+
 export type SectionClassArg = SizeArg<"medium" | "large">
 
 export const sectionClass = ({ size }: SectionClassArg) =>

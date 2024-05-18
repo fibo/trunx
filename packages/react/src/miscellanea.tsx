@@ -1,13 +1,21 @@
-import { FC, ImgHTMLAttributes, PropsWithChildren, ReactNode } from "react"
+import {
+  FC,
+  ImgHTMLAttributes,
+  ProgressHTMLAttributes,
+  PropsWithChildren,
+  ReactNode,
+} from "react"
 import {
   HeroClassArg,
   ImageClassArg,
   LabelClassArg,
   MessageClassArg,
+  ProgressClassArg,
   TitleClassArg,
   heroClass,
   imageClass,
   messageClass,
+  progressClass,
   titleClass,
 } from "@trunx/bulma"
 
@@ -94,6 +102,16 @@ export const Message: FC<PropsWithChildren<MessageProps>> = ({
     {header && <div className="message-header">{header}</div>}
     <div className="message-body">{children}</div>
   </Tag>
+)
+
+export type ProgressProps = Omit<
+  ProgressHTMLAttributes<HTMLProgressElement>,
+  "className"
+> &
+  ProgressClassArg
+
+export const Progress: FC<ProgressProps> = ({ color, size, ...props }) => (
+  <progress className={progressClass({ color, size })} {...props} />
 )
 
 export type TitleProps = Omit<TitleClassArg, "type"> &
