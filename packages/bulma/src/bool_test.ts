@@ -1,11 +1,11 @@
 import assert from "node:assert/strict"
 import { test } from "node:test"
-import { BoolClassArg, boolClass } from "./bool.js"
+import { BoolClass, BoolClasslistArg, boolClasslist } from "./bool.js"
 
 test("boolClass", () => {
   const testData: Array<{
-    input: BoolClassArg
-    output: string[]
+    input: BoolClasslistArg
+    output: Array<BoolClass>
   }> = [
     {
       input: {},
@@ -17,7 +17,7 @@ test("boolClass", () => {
     },
     {
       input: { isActive: true, isFocused: false },
-      output: ["is-active", ""],
+      output: ["is-active"],
     },
     {
       input: { hasShadow: true, isBordered: true },
@@ -26,6 +26,6 @@ test("boolClass", () => {
   ]
 
   testData.forEach(({ input, output }) => {
-    assert.deepEqual(boolClass(input), output)
+    assert.deepEqual(boolClasslist(input), output)
   })
 })

@@ -1,5 +1,6 @@
 import { classnames } from "@trunx/classnames"
-import { BoolClassArg, boolClass } from "./bool.js"
+import { BulmaClass } from "./bulma.js"
+import { BoolClasslistArg, boolClasslist } from "./bool.js"
 import { ColorArg, MainColor, ShadeColor, colorClass } from "./color.js"
 import { HalfDozen } from "./numbers.js"
 import { Breakpoint } from "./responsiveness.js"
@@ -7,72 +8,82 @@ import { SizeArg, sizeClass } from "./size.js"
 import { TextAlignArg, textAlignClass } from "./typography.js"
 
 export type ContainerClassArg = ColorArg<MainColor> &
-  Pick<BoolClassArg, "isFluid"> &
+  Pick<BoolClasslistArg, "isFluid"> &
   Partial<{
     fullWidth: Extract<Breakpoint, "fullhd" | "widescreen">
-    maxWidth: Extract<Breakpoint, "desktop" | "widescreen">
   }>
 
 export const containerClass = ({
   color,
   fullWidth,
-  maxWidth,
   isFluid,
 }: ContainerClassArg) =>
-  classnames(
+  classnames<BulmaClass>(
     "container",
     colorClass(color),
     fullWidth ? `is-${fullWidth}` : undefined,
-    maxWidth ? `is-max-${maxWidth}` : undefined,
-    boolClass({ isFluid })
+    boolClasslist({ isFluid })
   )
 
 export type ContentClassArg = SizeArg & TextAlignArg
 
 export const contentClass = ({ hasText, size }: ContentClassArg) =>
-  classnames("content", textAlignClass(hasText), sizeClass(size))
+  classnames<BulmaClass>("content", textAlignClass(hasText), sizeClass(size))
 
 export type ControlClassArg = Pick<
-  BoolClassArg,
+  BoolClasslistArg,
   "hasIconsLeft" | "hasIconsRight" | "isExpanded" | "isLoading"
 >
 
 export const controlClass = (arg: ControlClassArg) =>
-  classnames("control", boolClass(arg))
+  classnames<BulmaClass>("control", boolClasslist(arg))
 
 export type HelpClassArg = ColorArg<MainColor>
 
-export const helpClass = ({ color }) => classnames("help", colorClass(color))
+export const helpClass = ({ color }) =>
+  classnames<BulmaClass>("help", colorClass(color))
 
 export type HeroClassArg = ColorArg<MainColor> &
   SizeArg &
-  Pick<BoolClassArg, "isFullheight" | "isFullheightWithNavbar" | "isHalfheight">
+  Pick<
+    BoolClasslistArg,
+    "isFullheight" | "isFullheightWithNavbar" | "isHalfheight"
+  >
 
 export const heroClass = ({ color, size, ...bools }: HeroClassArg) =>
-  classnames("hero", colorClass(color), sizeClass(size), boolClass(bools))
+  classnames<BulmaClass>(
+    "hero",
+    colorClass(color),
+    sizeClass(size),
+    boolClasslist(bools)
+  )
 
 export type LabelClassArg = SizeArg
 
 export const labelClass = ({ size }: LabelClassArg) =>
-  classnames("label", sizeClass(size))
+  classnames<BulmaClass>("label", sizeClass(size))
 
 export type MessageClassArg = ColorArg<MainColor | ShadeColor> & SizeArg
 
 export const messageClass = ({ color, size }: MessageClassArg) =>
-  classnames("message", colorClass(color), sizeClass(size))
+  classnames<BulmaClass>("message", colorClass(color), sizeClass(size))
 
 export type NotificationClassArg = ColorArg<MainColor> &
-  Pick<BoolClassArg, "isLight">
+  Pick<BoolClasslistArg, "isLight">
 
 export const notificationClass = ({ color, isLight }: NotificationClassArg) =>
-  classnames("notification", colorClass(color), boolClass({ isLight }))
+  classnames<BulmaClass>(
+    "notification",
+    colorClass(color),
+    boolClasslist({ isLight })
+  )
 
 export type SectionClassArg = SizeArg<"medium" | "large">
 
 export const sectionClass = ({ size }: SectionClassArg) =>
-  classnames("section", sizeClass(size))
+  classnames<BulmaClass>("section", sizeClass(size))
 
-export type TitleClassArg = Pick<BoolClassArg, "isSpaced"> &
+export type TitleClassArg = Pick<BoolClasslistArg, "isSpaced"> &
   Partial<{
     h: HalfDozen
     size: HalfDozen
@@ -80,8 +91,8 @@ export type TitleClassArg = Pick<BoolClassArg, "isSpaced"> &
   }>
 
 export const titleClass = ({ isSpaced, size, subtitle }: TitleClassArg) =>
-  classnames(
+  classnames<BulmaClass>(
     subtitle ? "subtitle" : "title",
     size ? `is-${size}` : undefined,
-    boolClass({ isSpaced })
+    boolClasslist({ isSpaced })
   )

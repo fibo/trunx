@@ -19,29 +19,29 @@ export type ImageRatio =
   | "1by2"
   | "1by3"
 
+export type ImageRatioClass = Extract<
+  BulmaClass,
+  | "is-square"
+  | "is-1by1"
+  | "is-5by4"
+  | "is-4by3"
+  | "is-3by2"
+  | "is-5by3"
+  | "is-16by9"
+  | "is-2by1"
+  | "is-3by1"
+  | "is-4by5"
+  | "is-3by4"
+  | "is-2by3"
+  | "is-3by5"
+  | "is-9by16"
+  | "is-1by2"
+  | "is-1by3"
+>
+
 export const imageRatioClass = (
   ratio: ImageRatio | undefined
-):
-  | Extract<
-      BulmaClass,
-      | "is-square"
-      | "is-1by1"
-      | "is-5by4"
-      | "is-4by3"
-      | "is-3by2"
-      | "is-5by3"
-      | "is-16by9"
-      | "is-2by1"
-      | "is-3by1"
-      | "is-4by5"
-      | "is-3by4"
-      | "is-2by3"
-      | "is-3by5"
-      | "is-9by16"
-      | "is-1by2"
-      | "is-1by3"
-    >
-  | undefined => (ratio ? `is-${ratio}` : undefined)
+): ImageRatioClass | undefined => (ratio ? `is-${ratio}` : undefined)
 
 export type ImageDimension =
   | "16x16"
@@ -52,20 +52,21 @@ export type ImageDimension =
   | "96x96"
   | "128x128"
 
+export type ImageDimensionClass = Extract<
+  BulmaClass,
+  | "is-16x16"
+  | "is-24x24"
+  | "is-32x32"
+  | "is-48x48"
+  | "is-64x64"
+  | "is-96x96"
+  | "is-128x128"
+>
+
 export const imageDimensionClass = (
   dimension: ImageDimension | undefined
-):
-  | Extract<
-      BulmaClass,
-      | "is-16x16"
-      | "is-24x24"
-      | "is-32x32"
-      | "is-48x48"
-      | "is-64x64"
-      | "is-96x96"
-      | "is-128x128"
-    >
-  | undefined => (dimension ? `is-${dimension}` : undefined)
+): ImageDimensionClass | undefined =>
+  dimension ? `is-${dimension}` : undefined
 
 export type ImageClassArg = Partial<{
   dimension: ImageDimension
@@ -73,4 +74,8 @@ export type ImageClassArg = Partial<{
 }>
 
 export const imageClass = ({ dimension, ratio }: ImageClassArg) =>
-  classnames("image", imageDimensionClass(dimension), imageRatioClass(ratio))
+  classnames<BulmaClass>(
+    "image",
+    imageDimensionClass(dimension),
+    imageRatioClass(ratio)
+  )

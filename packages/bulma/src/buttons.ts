@@ -1,5 +1,6 @@
 import { classnames } from "@trunx/classnames"
-import { BoolClassArg, boolClass } from "./bool.js"
+import { BulmaClass } from "./bulma.js"
+import { BoolClasslistArg, boolClasslist } from "./bool.js"
 import {
   ColorArg,
   MainColor,
@@ -12,7 +13,7 @@ import { PluralSizeArg, SizeArg, pluralSizeClass, sizeClass } from "./size.js"
 export type ButtonClassArg = ColorArg<MainColor | ShadeColor | OtherColor> &
   SizeArg &
   Pick<
-    BoolClassArg,
+    BoolClasslistArg,
     | "isActive"
     | "isExpanded"
     | "isFocused"
@@ -39,11 +40,11 @@ export const buttonClass = ({
   isRounded,
   isStatic,
 }: ButtonClassArg) =>
-  classnames(
+  classnames<BulmaClass>(
     "button",
     colorClass(color),
     sizeClass(size),
-    boolClass({
+    boolClasslist({
       isActive,
       isExpanded,
       isFocused,
@@ -62,7 +63,8 @@ export type ButtonDeleteClassArg = SizeArg<"small" | "medium" | "large">
 export const buttonDeleteClass = ({ size }: ButtonDeleteClassArg) =>
   classnames("delete", sizeClass(size))
 
-export type ButtonsClassArg = PluralSizeArg & Pick<BoolClassArg, "isCentered">
+export type ButtonsClassArg = PluralSizeArg &
+  Pick<BoolClasslistArg, "isCentered">
 
 export const buttonsClass = ({ isCentered, size }: ButtonsClassArg) =>
-  classnames("buttons", boolClass({ isCentered }), pluralSizeClass(size))
+  classnames("buttons", boolClasslist({ isCentered }), pluralSizeClass(size))
