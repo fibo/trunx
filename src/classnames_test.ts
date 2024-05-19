@@ -33,6 +33,10 @@ describe("classNames", () => {
         input: ["", "is-primary", ""],
         output: "is-primary",
       },
+      {
+        input: [undefined, "menu", undefined],
+        output: "menu",
+      },
     ]
 
     testData.forEach(({ input, output }) => {
