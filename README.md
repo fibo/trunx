@@ -25,6 +25,21 @@ type T = "foo" | "bar" // my CSS classes
 classnames<T>("foo", "quz") // ERROR: not assignable to type ClassnamesArg<T>[]
 ```
 
+For example you can use it to compose [Bulma] classes.
+
+```tsx
+import { FC, PropsWithChildren, ButtonHTMLAttributes } from "react"
+import { Bulma, classnames } from "trunx"
+
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & Partial<{ isLoading: boolean }>
+
+export const Button: FC<PropsWithChildren<Props>> = ({ isLoading, children, ...props }) => (
+  <button className={classnames<Bulma>("button", { "is-loading": isLoading })} {...props}>
+    {children}
+  </button>
+)
+```
+
 ## Motivation
 
 I really like [Bulma] CSS framework and I am also a [Dragon Ball](https://en.wikipedia.org/wiki/Dragon_Ball) fan.

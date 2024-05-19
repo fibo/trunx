@@ -10,7 +10,7 @@ import {
   ReactNode,
 } from "react"
 import { ClassnamesArg, classnames } from "./classnames.js"
-import { ClassNames as Bulma } from "./bulma.js"
+import { ClassNames as Bulma } from "./Bulma.js"
 
 type BulmaProp = {
   bulma?: ClassnamesArg<Bulma>
@@ -27,9 +27,6 @@ export type PluralSize = Extract<Size, "small" | "medium" | "large">
 
 export type PluralSizeProp = SizeProp<PluralSize>
 
-const are = (arg: PluralSize | undefined): Extract<Bulma, `are-${typeof arg}`> | undefined =>
-  arg ? `are-${arg}` : undefined
-
 // Colors
 //////////////////////////////////////////////////////////////////////
 
@@ -45,12 +42,11 @@ export type ColorProp<C extends Color = Color> = Partial<{ color: C }>
 
 export type ColorVariant = "light" | "dark"
 
-// Other helpers
+// Helpers
 //////////////////////////////////////////////////////////////////////
 
-export type isActiveProp = Partial<{
-  isActive: boolean
-}>
+const are = (arg: PluralSize | undefined): Extract<Bulma, `are-${typeof arg}`> | undefined =>
+  arg ? `are-${arg}` : undefined
 
 export const is = (arg: Color | ColorVariant | Size | undefined): Extract<Bulma, `is-${typeof arg}`> | undefined =>
   arg ? `is-${arg}` : undefined
@@ -150,6 +146,96 @@ export const ButtonDelete: FC<ButtonDeleteProps> = ({ size, className, children,
 )
 export type ButtonDeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp<"large">
 
+export const Cell: FC<PropsWithChildren<CellProps>> = ({ bulma, className, children, ...props }) => (
+  <div className={classnames<Bulma>(className as Bulma, "cell", bulma)} {...props}>
+    {children}
+  </div>
+)
+export type CellProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+export const Column: FC<PropsWithChildren<ColumnProps>> = ({ bulma, className, children, ...props }) => (
+  <div className={classnames<Bulma>(className as Bulma, "column", bulma)} {...props}>
+    {children}
+  </div>
+)
+export type ColumnProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+export const Columns: FC<PropsWithChildren<ColumnsProps>> = ({
+  isDesktop,
+  isGapless,
+  isMobile,
+  isMultiline,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "columns",
+      {
+        "is-gapless": isGapless,
+        "is-desktop": isDesktop,
+        "is-mobile": isMobile,
+        "is-multiline": isMultiline,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type ColumnsProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp &
+  Partial<{
+    isGapless: boolean
+    isDesktop: boolean
+    isMobile: boolean
+    isMultiline: boolean
+  }>
+
+export const Container: FC<PropsWithChildren<ContainerProps>> = ({
+  isWidescreen,
+  isFluid,
+  isMaxDesktop,
+  isMaxWidescreen,
+  isFullhd,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<string>(
+      className,
+      "container",
+      {
+        "is-widescreen": isWidescreen,
+        "is-fullhd": isFullhd,
+        "is-fluid": isFluid,
+        // Bulma generated types do not contain `is-max-desktop`.
+        "is-max-desktop": isMaxDesktop,
+        "is-max-widescreen": isMaxWidescreen,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type ContainerProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp &
+  Partial<{
+    isMaxDesktop: boolean
+    isMaxWidescreen: boolean
+    isWidescreen: boolean
+    isFluid: boolean
+    isFullhd: boolean
+  }>
+
 export const Div: FC<PropsWithChildren<DivProps>> = ({ bulma, className, children, ...props }) => (
   <div className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
     {children}
@@ -164,12 +250,46 @@ export const Figure: FC<PropsWithChildren<FigureProps>> = ({ bulma, className, c
 )
 export type FigureProps = HTMLAttributes<HTMLElement> & BulmaProp
 
+export const FixedGrid: FC<PropsWithChildren<FixedGridProps>> = ({
+  hasAutoCount,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "fixed-grid",
+      {
+        "has-auto-count": hasAutoCount,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    <div className="grid">{children}</div>
+  </div>
+)
+export type FixedGridProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp &
+  Partial<{
+    hasAutoCount: boolean
+  }>
+
 export const Footer: FC<PropsWithChildren<FooterProps>> = ({ bulma, className, children, ...props }) => (
   <footer className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
     {children}
   </footer>
 )
 export type FooterProps = HTMLAttributes<HTMLElement> & BulmaProp
+
+export const Grid: FC<PropsWithChildren<GridProps>> = ({ bulma, className, children, ...props }) => (
+  <div className={classnames<Bulma>(className as Bulma, "grid", bulma)} {...props}>
+    {children}
+  </div>
+)
+export type GridProps = HTMLAttributes<HTMLDivElement> & BulmaProp
 
 /**
  * Renders h1,h2,... h6 tag.
@@ -316,6 +436,8 @@ export const Navbar: FC<PropsWithChildren<NavbarProps>> = ({
 )
 export type NavbarProps = Omit<HTMLAttributes<HTMLElement>, "color"> & BulmaProp & ColorProp<MainColor | ShadeColor>
 
+export const NavbarBrand: FC<PropsWithChildren> = ({ children }) => <div className="navbar-brand">{children}</div>
+
 export const NavbarBurger: FC<NavbarBurgerProps> = ({ isActive, ...props }) => (
   <a
     className={classnames<Bulma>("navbar-burger", { "is-active": isActive })}
@@ -329,7 +451,142 @@ export const NavbarBurger: FC<NavbarBurgerProps> = ({ isActive, ...props }) => (
     <span aria-hidden="true"></span>
   </a>
 )
-export type NavbarBurgerProps = Omit<HTMLAttributes<HTMLElement>, "aria-label" | "className" | "role"> & isActiveProp
+export type NavbarBurgerProps = Omit<HTMLAttributes<HTMLElement>, "aria-label" | "className" | "role"> &
+  Partial<{
+    isActive: boolean
+  }>
+
+export const NavbarDivider: FC = () => <hr className="navbar-divider" />
+
+export const NavbarEnd: FC<PropsWithChildren> = ({ children }) => <div className="navbar-end">{children}</div>
+
+export const NavbarDropdown: FC<PropsWithChildren<NavbarDropdownProps>> = ({
+  isBoxed,
+  isRight,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "navbar-dropdown",
+      {
+        "is-boxed": isBoxed,
+        "is-right": isRight,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type NavbarDropdownProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp &
+  Partial<{
+    isBoxed: boolean
+    isRight: boolean
+  }>
+
+export const NavbarDropdownMenu: FC<PropsWithChildren<NavbarDropdownMenuProps>> = ({
+  hasDropdownUp,
+  isActive,
+  isHoverable,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "navbar-item",
+      "has-dropdown",
+      {
+        "has-dropdown-up": hasDropdownUp,
+        "is-active": isActive,
+        "is-hoverable": isHoverable,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type NavbarDropdownMenuProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp &
+  Partial<{
+    isActive: boolean
+    hasDropdownUp: boolean
+    isHoverable: boolean
+  }>
+
+export const NavbarItem: FC<PropsWithChildren<NavbarItemProps>> = ({
+  isSelected,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <a
+    className={classnames<Bulma>(
+      className as Bulma,
+      "navbar-item",
+      {
+        "is-selected": isSelected,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </a>
+)
+export type NavbarItemProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  BulmaProp &
+  Partial<{
+    isSelected: boolean
+  }>
+
+export const NavbarLink: FC<PropsWithChildren<NavbarLinkProps>> = ({
+  isArrowless,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <a
+    className={classnames<string>(
+      className,
+      "navbar-link",
+      {
+        // Bulma generated types do not contain `is-arrowless`.
+        "is-arrowless": isArrowless,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </a>
+)
+export type NavbarLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  BulmaProp &
+  Partial<{
+    isArrowless: boolean
+  }>
+
+export const NavbarMenu: FC<PropsWithChildren<NavbarMenuProps>> = ({ isActive, children }) => (
+  <div className={classnames<Bulma>("navbar-menu", { "is-active": isActive })}>{children}</div>
+)
+export type NavbarMenuProps = Partial<{
+  isActive: boolean
+}>
+
+export const NavbarStart: FC<PropsWithChildren> = ({ children }) => <div className="navbar-start">{children}</div>
 
 export const P: FC<PropsWithChildren<PProps>> = ({ bulma, className, children, ...props }) => (
   <p className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
@@ -337,6 +594,129 @@ export const P: FC<PropsWithChildren<PProps>> = ({ bulma, className, children, .
   </p>
 )
 export type PProps = HTMLAttributes<HTMLParagraphElement> & BulmaProp
+
+export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
+  isCentered,
+  isRight,
+  size,
+  role = "navigation",
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <nav
+    className={classnames<Bulma>(
+      className as Bulma,
+      "pagination",
+      is(size),
+      {
+        "is-center": isCentered,
+        "is-right": isRight,
+      },
+      bulma,
+    )}
+    role={role}
+    {...props}
+  >
+    {children}
+  </nav>
+)
+export type PaginationProps = HTMLAttributes<HTMLElement> &
+  BulmaProp &
+  SizeProp &
+  Partial<{
+    isCentered: boolean
+    isRight: boolean
+  }>
+
+export const PaginationEllipsis: FC = () => <span className="pagination-ellipsis">&hellip;</span>
+
+export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
+  isCurrent,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <a
+    className={classnames<Bulma>(className as Bulma, "pagination-link", { "is-current": isCurrent }, bulma)}
+    {...props}
+  >
+    {children}
+  </a>
+)
+export type PaginationLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  BulmaProp &
+  Partial<{
+    isCurrent: boolean
+  }>
+
+export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <ul className={classnames<Bulma>(className as Bulma, "pagination-list", bulma)} {...props}>
+    {children}
+  </ul>
+)
+export type PaginationListProps = HTMLAttributes<HTMLUListElement> & BulmaProp
+
+export const PaginationNext: FC<PropsWithChildren<PaginationNextProps>> = ({
+  isDisabled,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <a
+    className={classnames<Bulma>(
+      className as Bulma,
+      "pagination-next",
+      {
+        "is-disabled": isDisabled,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </a>
+)
+export type PaginationNextProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  BulmaProp &
+  Partial<{
+    isDisabled: boolean
+  }>
+
+export const PaginationPrevious: FC<PropsWithChildren<PaginationPreviousProps>> = ({
+  isDisabled,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <a
+    className={classnames<Bulma>(
+      className as Bulma,
+      "pagination-previous",
+      {
+        "is-disabled": isDisabled,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </a>
+)
+export type PaginationPreviousProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  BulmaProp &
+  Partial<{
+    isDisabled: boolean
+  }>
 
 export const Progress: FC<PropsWithChildren<ProgressProps>> = ({ bulma, className, children, ...props }) => (
   <progress className={classnames<Bulma>(className as Bulma, "progress", bulma)} {...props}>
