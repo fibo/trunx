@@ -1,0 +1,12 @@
+{
+  "semi": false,
+  "plugins": ["prettier-plugin-jsdoc"],
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "options": {
+        "tsdoc": true
+      }
+    }
+  ]
+}

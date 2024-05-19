@@ -1,7 +1,5 @@
-packages/bulma/dist/
-packages/bulma/temp/
-packages/classnames/
-packages/react/dist/
-packages/trunx/
-webapps/trunx-docs/.next
-webapps/trunx-docs/.vscode
+dist/
+temp/
+
+
+packages/
