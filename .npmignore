@@ -1,0 +1,7 @@
+# Force dist/ inclusion, it is in .gitignore
+!dist/
+# Other files to be removed.
+generate_bulma_classes_types/
+src/
+temp/
+tsconfig.*

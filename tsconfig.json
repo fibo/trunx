@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": false,
+    "jsx": "react-jsx",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "sourceMap": false,
+    "target": "esnext"
+  },
+  "exclude": ["node_modules", "./src/**/*_test.ts"],
+  "include": ["./src/**/*.ts", "./src/**/*.tsx"]
+}

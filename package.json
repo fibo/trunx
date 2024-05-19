@@ -1,54 +1,65 @@
 {
-  "name": "trunx-monorepo",
-  "version": "0.0.0",
+  "name": "trunx",
+  "version": "1.0.0",
+  "description": "Super Saiyan components, son of awesome Bulma",
   "type": "module",
-  "private": true,
+  "main": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "types": "./index.d.ts"
+    }
+  },
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
-    "clean": "npm run clean --workspaces --if-present",
-    "check_types": "npm run check_types --workspaces --if-present",
-    "generate_bulma_classes_types": "npm run generate_bulma_classes_types -w packages/bulma",
+    "build": "tsc --build",
+    "check_types": "tsc --noEmit --project .",
+    "clean": "tsc --build --clean",
+    "generate_bulma_classes_types": "postcss ./node_modules/bulma/css/bulma.css --config ./generate_bulma_classes_types --output ./node_modules/bulma/css/output.css",
+    "pretest": "tsc --build tsconfig.test.json",
     "prettier": "prettier --write .",
     "prettier--check": "prettier --check .",
-    "test": "npm run test --workspaces --if-present"
+    "test": "node --test --test-reporter spec"
+  },
+  "dependencies": {
+    "bulma": "1.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.12.12",
-    "@types/react": "^18.3.2",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "react": "^18",
     "postcss": "^8",
     "postcss-cli": "^10",
     "postcss-ts-classnames": "^0.3.0",
     "pre-commit": "^1",
-    "prettier": "^2",
-    "prettier-plugin-jsdoc": "^0.4.2",
+    "prettier": "^3",
+    "prettier-plugin-jsdoc": "^1",
     "typescript": "^5"
+  },
+  "peerDependencies": {
+    "react": ">= 17"
+  },
+  "keywords": [
+    "bulma",
+    "react",
+    "typescript"
+  ],
+  "author": {
+    "name": "Gianluca Casati",
+    "url": "https://fibo.github.io"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/fibo/trunx/tree/main",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fibo/trunx.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fibo/trunx/issues"
   },
   "pre-commit": [
     "check_types",
     "test",
     "prettier--check"
-  ],
-  "prettier": {
-    "semi": false,
-    "plugins": [
-      "prettier-plugin-jsdoc"
-    ],
-    "overrides": [
-      {
-        "files": [
-          "*.ts",
-          "*.tsx"
-        ],
-        "options": {
-          "tsdoc": true
-        }
-      }
-    ]
-  },
-  "workspaces": [
-    "packages/bulma",
-    "packages/classnames",
-    "packages/react",
-    "packages/trunx"
   ]
 }
