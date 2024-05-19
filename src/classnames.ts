@@ -38,10 +38,7 @@ export const classnames = <T extends string>(...args: ClassnamesArg<T>[]) =>
       )
         return classnames(
           // Map `arg` object to an array of its keys, having a truthy value.
-          Object.entries(arg).reduce(
-            (keys, keyValue) => (keyValue[1] ? keys.concat(keyValue[0]) : keys),
-            [],
-          ),
+          Object.entries(arg).reduce((keys, keyValue) => (keyValue[1] ? keys.concat(keyValue[0]) : keys), []),
         )
 
       // Here `arg` should be a string or `undefined`.
