@@ -1,4 +1,9 @@
-import { FC, HTMLAttributes, PropsWithChildren } from "react"
+import {
+  FC,
+  PropsWithChildren,
+  HTMLAttributes,
+  ProgressHTMLAttributes,
+} from "react"
 import { ClassnamesArg, classnames } from "./classnames.js"
 import { ClassNames as Bulma } from "./bulma.js"
 
@@ -12,4 +17,15 @@ export const Div: FC<
   <div className={classnames<string>(className, bulma)} {...props}>
     {children}
   </div>
+)
+
+export const Progress: FC<
+  PropsWithChildren<ProgressHTMLAttributes<HTMLProgressElement> & BulmaProp>
+> = ({ bulma, className, children, ...props }) => (
+  <progress
+    className={classnames<string>(className, "progress", bulma)}
+    {...props}
+  >
+    {children}
+  </progress>
 )
