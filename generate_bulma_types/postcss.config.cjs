@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
     require("postcss-ts-classnames")({
-      dest: "src/bulma.ts",
+      dest: "src/Bulma.ts",
       isModule: true,
     }),
   ],
