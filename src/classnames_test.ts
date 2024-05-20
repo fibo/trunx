@@ -1,106 +1,97 @@
 import assert from "node:assert/strict"
-import { describe, it } from "node:test"
+import { test } from "node:test"
 import { classnames } from "./classnames.js"
 
-describe("classNames", () => {
-  it("accepts strings, arrays or objects", () => {
-    const testData = [
+const testData = [
+  {
+    input: [],
+    output: "",
+  },
+  {
+    input: [""],
+    output: "",
+  },
+  {
+    input: [{}],
+    output: "",
+  },
+  {
+    input: ["", [], {}],
+    output: "",
+  },
+  {
+    input: ["", "", ""],
+    output: "",
+  },
+  {
+    input: [["", "", ""]],
+    output: "",
+  },
+  {
+    input: [["", "", ""], "", ""],
+    output: "",
+  },
+  {
+    input: [
+      ["", "", ""],
+      ["", ""],
+    ],
+    output: "",
+  },
+  {
+    input: ["", { "": true }],
+    output: "",
+  },
+  {
+    input: [undefined],
+    output: "",
+  },
+  {
+    input: [[undefined, undefined]],
+    output: "",
+  },
+  {
+    input: [[undefined, "foo"]],
+    output: "foo",
+  },
+  {
+    input: ["is-primary"],
+    output: "is-primary",
+  },
+  {
+    input: ["is-primary", "is-loading"],
+    output: "is-primary is-loading",
+  },
+  {
+    input: [
       {
-        input: ["is-primary"],
-        output: "is-primary",
+        "is-primary": true,
       },
-      {
-        input: ["is-primary", "is-loading"],
-        output: "is-primary is-loading",
-      },
-      {
-        input: [
-          {
-            "is-primary": true,
-          },
-        ],
-        output: "is-primary",
-      },
-      {
-        input: [["is-primary"]],
-        output: "is-primary",
-      },
-      {
-        input: [["is-loading", "is-primary", ""]],
-        output: "is-loading is-primary",
-      },
-      {
-        input: ["", "is-primary", ""],
-        output: "is-primary",
-      },
-      {
-        input: [undefined, "menu", undefined],
-        output: "menu",
-      },
-    ]
+    ],
+    output: "is-primary",
+  },
+  {
+    input: [["is-primary"]],
+    output: "is-primary",
+  },
+  {
+    input: [["is-loading", "is-primary", ""]],
+    output: "is-loading is-primary",
+  },
+  {
+    input: ["", "is-primary", ""],
+    output: "is-primary",
+  },
+  {
+    input: [undefined, "menu", undefined],
+    output: "menu",
+  },
+  {
+    input: ["has-text-centered", { "has-text-primary": true }],
+    output: "has-text-centered has-text-primary",
+  },
+]
 
-    testData.forEach(({ input, output }) => {
-      assert.deepEqual(classnames(...input), output)
-    })
-  })
-
-  it("handles edge cases", () => {
-    const testData = [
-      {
-        input: [],
-        output: "",
-      },
-      {
-        input: [""],
-        output: "",
-      },
-      {
-        input: [{}],
-        output: "",
-      },
-      {
-        input: ["", [], {}],
-        output: "",
-      },
-      {
-        input: ["", "", ""],
-        output: "",
-      },
-      {
-        input: [["", "", ""]],
-        output: "",
-      },
-      {
-        input: [["", "", ""], "", ""],
-        output: "",
-      },
-      {
-        input: [
-          ["", "", ""],
-          ["", ""],
-        ],
-        output: "",
-      },
-      {
-        input: ["", { "": true }],
-        output: "",
-      },
-      {
-        input: [undefined],
-        output: "",
-      },
-      {
-        input: [[undefined, undefined]],
-        output: "",
-      },
-      {
-        input: [[undefined, "foo"]],
-        output: "foo",
-      },
-    ]
-
-    testData.forEach(({ input, output }) => {
-      assert.deepEqual(classnames(...input), output)
-    })
-  })
+test("classNames", () => {
+  testData.forEach(({ input, output }) => assert.deepEqual(classnames(...input), output))
 })

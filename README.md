@@ -1,14 +1,66 @@
-<img src="./media/trunx-logotype.png" width="510"/>
+<img src="./media/trunx-logotype.png" width="350"/>
 
 > Super Saiyan components, son of awesome [Bulma]
 
-<img src="./media/trunks.png" height="290"/>
+## Installation
+
+With [npm](https://www.npmjs.com/) do
+
+```sh
+npm install trunx
+```
+
+Notice that you should also have React installed, minimum version supported is 17 (the transpiled code uses `react/jsx-runtime`). However it is not listed as a peer dependency, you may also use _trunx_ without _React_.
 
 ## API
 
+### React components
+
+Almost all `trunx` components have a `bulma` prop that accepts:
+
+- a string
+- an array of bulma classes
+- an object which keys are bulma classes
+- an array of any of the previous
+
+You know, `trunx` is a Super Sayan because it is written in TypeScript. The `bulma` prop can be autocompleted and typos can be avoided thanks to type checking.
+
+Almost all `trunx` components support a `className` prop, in case you need to append you custom CSS classes.
+
+<img src="./media/trunks.png" height="290"/>
+
+Some `trunx` components render their homomnym HTML tag.
+
+```tsx
+import { Div, Span } from "trunx"
+import { FC } from "react"
+
+export const MyComponent: FC<{ isSuccess: boolean }> = ({ isSuccess }) => (
+  <Div bulma="block">
+    <Span bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}>Lorem ipsum...</Span>
+  </Div>
+)
+```
+
+There are also `trunx` React components that implement a Bulma element or a Bulma Component. They may have props related to some Bulma class (.e.g. `color`, `size`). Most of the Bulma related props start with `is`, for example `isRounded` prop corresponds to `is-rounded` Bulma class.
+
+```tsx
+<Button color="primary" size="large" isRounded>
+  Download
+</Button>
+```
+
+You can use the `bulma` prop in case you need to add more Bulma classes that has not a related prop.
+
+```tsx
+<Columns isGapless>
+  <Column bulma="is-half"></Column>
+</Columns>
+```
+
 ### `classnames`
 
-This package provides a utility for conditionally joining CSS classes together.
+The `trunx` package provides a utility for conditionally joining CSS classes together.
 
 ```js
 import { classnames } from "trunx"
@@ -31,9 +83,9 @@ For example you can use it to compose [Bulma] classes.
 import { FC, PropsWithChildren, ButtonHTMLAttributes } from "react"
 import { Bulma, classnames } from "trunx"
 
-type Props = ButtonHTMLAttributes<HTMLButtonElement> & Partial<{ isLoading: boolean }>
+type MyButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & Partial<{ isLoading: boolean }>
 
-export const Button: FC<PropsWithChildren<Props>> = ({ isLoading, children, ...props }) => (
+export const MyButton: FC<PropsWithChildren<MyButtonProps>> = ({ isLoading, children, ...props }) => (
   <button className={classnames<Bulma>("button", { "is-loading": isLoading })} {...props}>
     {children}
   </button>
