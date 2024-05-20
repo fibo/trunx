@@ -13,6 +13,7 @@ import {
   ButtonDelete,
   Cell,
   Container,
+  Content,
   Control,
   Div,
   Field,
@@ -21,6 +22,7 @@ import {
   FieldLabel,
   Figure,
   FixedGrid,
+  Footer,
   Grid,
   Heading,
   Hero,
@@ -98,6 +100,11 @@ export const Snippets: FC = () => (
       </Notification>
     </Container>
 
+    <Content size="small">
+      <h1>Hello World</h1>
+      <p>Lorem ipsum...</p>
+    </Content>
+
     <Field>
       <Label>Name</Label>
       <Control>
@@ -159,6 +166,17 @@ export const Snippets: FC = () => (
       <Cell>cell 6</Cell>
     </FixedGrid>
 
+    <Footer>
+      *{" "}
+      <Content bulma="has-text-centered">
+        <p>
+          <strong>trunx</strong> by <a href="https://fibo.github.io">fibo</a>.
+          The source code is licensed
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+        </p>
+      </Content>
+    </Footer>
+
     <Grid bulma={["is-col-min-4", "is-gap-2"]}>
       <Cell>cell 1</Cell>
       <Cell>cell 2</Cell>
@@ -187,7 +205,7 @@ export const Snippets: FC = () => (
     </Icon>
 
     <IconText>
-      <Icon>
+      <Icon bulma="has-text-primary">
         <i className="fas fa-home"></i>
       </Icon>
       <span>Home</span>

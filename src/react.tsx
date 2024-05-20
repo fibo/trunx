@@ -357,6 +357,39 @@ export type ContainerProps = HTMLAttributes<HTMLDivElement> &
     isFullhd: boolean
   }>
 
+/**
+ * A container for text.
+ *
+ * @example
+ *
+ * <Content size="small">
+ *   <h1>Hello World</h1>
+ *   <p>Lorem ipsum...</p>
+ * </Content>
+ *
+ * @see [bulma docs](https://bulma.io/documentation/elements/content/)
+ */
+export const Content: FC<PropsWithChildren<ContentProps>> = ({
+  size,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "content",
+      is(size),
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type ContentProps = HTMLAttributes<HTMLDivElement> & BulmaProp & SizeProp
+
 export const Control: FC<PropsWithChildren<ControlProps>> = ({
   hasIconsLeft,
   hasIconsRight,
@@ -720,7 +753,24 @@ export type FixedGridProps = HTMLAttributes<HTMLDivElement> &
     hasAutoCount: boolean
   }>
 
-/** Renders footer tag with footer class. */
+/** A simple responsive footer.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Footer>
+ *   <Content bulma="has-text-centered">
+ *     <p>
+ *       <strong>trunx</strong> by <a href="https://fibo.github.io">fibo</a>.
+ *       The source code is licensed
+ *       <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+ *     </p>
+ *   </Content>
+ * </Footer>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/layout/footer/)
+ */
 export const Footer: FC<PropsWithChildren<FooterProps>> = ({
   bulma,
   className,
@@ -975,7 +1025,7 @@ export type IconProps = HTMLAttributes<HTMLSpanElement> &
  *
  * ```tsx
  * <IconText>
- *   <Icon>
+ *   <Icon bulma="has-text-primary">
  *     <i className="fas fa-home"></i>
  *   </Icon>
  *   <span>Home</span>
