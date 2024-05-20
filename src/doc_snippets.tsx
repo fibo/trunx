@@ -11,10 +11,12 @@ import {
   Button,
   Buttons,
   ButtonDelete,
+  Cell,
   Container,
   Control,
   Div,
   Field,
+  FixedGrid,
   Heading,
   Input,
   Label,
@@ -29,9 +31,11 @@ import {
   P,
   Progress,
   Span,
+  Select,
   Section,
+  Textarea,
   classnames,
-} from "../dist/index.js"
+} from "./index.js"
 
 // Snippets in README.md
 //////////////////////////////////////////////////////////////////////
@@ -80,6 +84,11 @@ export const Snippets: FC = () => (
       </Control>
     </Field>
 
+    <FixedGrid hasAutoCount>
+      <Cell>cell 1</Cell>
+      <Cell>cell 2</Cell>
+    </FixedGrid>
+
     <Heading tag="h1"></Heading>
 
     <Modal noBackground>
@@ -117,5 +126,15 @@ export const Snippets: FC = () => (
     <Section size="medium">
       <Heading tag="h2">Title</Heading>
     </Section>
+
+    <Select
+      size="large"
+      options={[
+        { value: "A", label: "Apple" },
+        { value: "B", label: "Banana" },
+      ]}
+    />
+
+    <Textarea size="small" color="info" />
   </>
 )
