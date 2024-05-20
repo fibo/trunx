@@ -84,7 +84,7 @@ HTML tags related: `A`, `Div`, `P`, `Span`.
 
 Bulma related:
 
-- `Breadcrumb`
+- `Breadcrumb`, `BreadcrumbItem`
 - `Button`, `Buttons`
 - `Card`
   - `CardContent`
@@ -154,6 +154,7 @@ Bulma related:
 - `Select`
 - `Table`
 - `Tabs`, `Tab`
+- `Tags`, `Tag`
 - `Textarea`
 - `Title`, `Subtitle`
 

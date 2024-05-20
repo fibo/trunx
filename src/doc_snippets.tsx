@@ -9,6 +9,8 @@ import { FC, PropsWithChildren, ButtonHTMLAttributes } from "react"
 import type { Bulma } from "./index.js"
 import {
   A,
+  Breadcrumb,
+  BreadcrumbItem,
   Button,
   Buttons,
   Card,
@@ -105,6 +107,11 @@ export const OtherReadmeSnippets: FC = () => (
 
 export const Snippets: FC = () => (
   <>
+    <Breadcrumb isCentered aria-label="breadcrumbs">
+      <BreadcrumbItem href="https://bulma.io/">Bulma</BreadcrumbItem>
+      <BreadcrumbItem isActive>Trunx</BreadcrumbItem>
+    </Breadcrumb>
+
     <Button color="primary" variant="light" isLoading>
       Login
     </Button>

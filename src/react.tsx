@@ -86,20 +86,66 @@ export const A: FC<PropsWithChildren<AProps>> = ({
 )
 export type AProps = AnchorHTMLAttributes<HTMLAnchorElement> & BulmaProp
 
+/**
+ * A breadcrumb component to improve navigation experience.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Breadcrumb isCentered aria-label="breadcrumbs">
+ *   <BreadcrumbItem href="https://bulma.io/">Bulma</BreadcrumbItem>
+ *   <BreadcrumbItem isActive>Trunx</BreadcrumbItem>
+ * </Breadcrumb>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/components/breadcrumb/)
+ */
 export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps> & BulmaProp> = ({
+  isCentered,
+  isRight,
   bulma,
   className,
   children,
   ...props
 }) => (
   <nav
-    className={classnames<Bulma>(className as Bulma, "breadcrumb", bulma)}
+    className={classnames<Bulma>(
+      className as Bulma,
+      "breadcrumb",
+      {
+        "is-centered": isCentered,
+        "is-right": isRight,
+      },
+      bulma,
+    )}
     {...props}
   >
     {children}
   </nav>
 )
-export type BreadcrumbProps = HTMLAttributes<HTMLElement>
+export type BreadcrumbProps = HTMLAttributes<HTMLElement> &
+  Partial<{
+    isCentered: boolean
+    isRight: boolean
+  }>
+
+/** @see {@link Breadcrumb} */
+export const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
+  isActive,
+  className,
+  children,
+  ...props
+}) => (
+  <li
+    className={classnames<Bulma>(className as Bulma, { "is-active": isActive })}
+  >
+    <a {...props}>{children}</a>
+  </li>
+)
+export type BreadcrumbItemProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  Partial<{
+    isActive: boolean
+  }>
 
 /**
  * The classic button, in different colors, sizes, and states.
