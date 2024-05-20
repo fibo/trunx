@@ -1,13 +1,17 @@
 import {
   FC,
   PropsWithChildren,
-  HTMLAttributes,
-  ProgressHTMLAttributes,
-  ButtonHTMLAttributes,
-  TableHTMLAttributes,
-  AnchorHTMLAttributes,
   ReactNode,
+  // HTML related
+  AnchorHTMLAttributes,
+  ButtonHTMLAttributes,
+  HTMLAttributes,
   InputHTMLAttributes,
+  OptionHTMLAttributes,
+  ProgressHTMLAttributes,
+  SelectHTMLAttributes,
+  TableHTMLAttributes,
+  TextareaHTMLAttributes,
 } from "react"
 import { ClassnamesArg, classnames } from "./classnames.js"
 import { ClassNames as Bulma } from "./Bulma.js"
@@ -63,17 +67,17 @@ export const A: FC<PropsWithChildren<AProps>> = ({ bulma, className, children, .
 )
 export type AProps = AnchorHTMLAttributes<HTMLAnchorElement> & BulmaProp
 
-export const Breadcbrum: FC<PropsWithChildren<BreadcbrumProps> & BulmaProp> = ({
+export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps> & BulmaProp> = ({
   bulma,
   className,
   children,
   ...props
 }) => (
-  <nav className={classnames<string>(className, "breadcbrum", bulma)} {...props}>
+  <nav className={classnames<Bulma>(className as Bulma, "breadcrumb", bulma)} {...props}>
     {children}
   </nav>
 )
-export type BreadcbrumProps = HTMLAttributes<HTMLElement>
+export type BreadcrumbProps = HTMLAttributes<HTMLElement>
 
 /**
  * The classic button, in different colors, sizes, and states.
@@ -125,7 +129,7 @@ export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">
   BulmaProp &
   ColorProp &
   ColorVariantProp &
-  SizeProp &
+  SizeProp<Size> &
   Partial<{
     isLoading: boolean
     isInverted: boolean
@@ -332,6 +336,48 @@ export const Figure: FC<PropsWithChildren<FigureProps>> = ({ bulma, className, c
 )
 export type FigureProps = HTMLAttributes<HTMLElement> & BulmaProp
 
+/**
+ * A custom file upload input.
+ *
+ * @see [bulma docs](https://bulma.io/documentation/form/file/)
+ */
+export const FileUpload: FC<PropsWithChildren<FileUploadProps>> = ({
+  cta,
+  hasName,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div className={classnames<Bulma>(className as Bulma, "file", bulma)} {...props}>
+    <label className="file-label">
+      <input type="file" {...props} />
+      {cta ? <span className="file-cta">{cta}</span> : null}
+      {hasName ? <span className="file-name">{hasName}</span> : null}
+    </label>
+  </div>
+)
+export type FileUploadProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> &
+  BulmaProp &
+  Partial<{
+    cta: ReactNode
+    hasName: ReactNode
+  }>
+
+/**
+ * A customizable 2D fixed grid.
+ *
+ * @example
+ *
+ * ```tsx
+ * <FixedGrid hasAutoCount>
+ *   <Cell>cell 1</Cell>
+ *   <Cell>cell 2</Cell>
+ * </FixedGrid>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/grid/fixed-grid/)
+ */
 export const FixedGrid: FC<PropsWithChildren<FixedGridProps>> = ({
   hasAutoCount,
   bulma,
@@ -410,7 +456,21 @@ export type IconProps = HTMLAttributes<HTMLSpanElement> & BulmaProp
 export const Input: FC<InputProps> = ({ bulma, className, color, size, ...props }) => (
   <input className={classnames<Bulma>(className as Bulma, "input", is(color), is(size), bulma)} {...props} />
 )
-export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> & BulmaProp & ColorProp & SizeProp
+export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "type"> &
+  Partial<{
+    type: Exclude<
+      InputHTMLAttributes<HTMLInputElement>["type"],
+      // Component Checkbox handles `type="checkbox"`
+      | "checkbox"
+      // Component FileUpload handles `type="file"`
+      | "file"
+      // Component Radio handles `type="radio"`
+      | "radio"
+    >
+  }> &
+  BulmaProp &
+  ColorProp &
+  SizeProp
 
 /** Renders label tag with label class. */
 export const Label: FC<PropsWithChildren<LabelProps>> = ({ bulma, className, children, ...props }) => (
@@ -946,6 +1006,14 @@ export const Progress: FC<PropsWithChildren<ProgressProps>> = ({ size, bulma, cl
 )
 export type ProgressProps = ProgressHTMLAttributes<HTMLProgressElement> & BulmaProp & SizeProp
 
+export const Radio: FC<PropsWithChildren<RadioProps>> = ({ children, ...props }) => (
+  <label className="radio">
+    <input type="radio" {...props} />
+    {children}
+  </label>
+)
+export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> & BulmaProp
+
 export const Span: FC<PropsWithChildren<SpanProps>> = ({ bulma, className, children, ...props }) => (
   <span className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
     {children}
@@ -973,6 +1041,64 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({ size, bulma, clas
 )
 export type SectionProps = HTMLAttributes<HTMLElement> & BulmaProp & SizeProp<"medium" | "large">
 
+/**
+ * The browser built-in select dropdown, styled accordingly.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Select
+ *   size="large"
+ *   options={[
+ *     { value: "A", label: "Apple" },
+ *     { value: "B", label: "Banana" },
+ *   ]}
+ * />
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/form/select/)
+ */
+export const Select: FC<SelectProps> = ({ options, isLoading, isRounded, size, bulma, className, ...props }) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "select",
+      is(size),
+      { "is-loading": isLoading, "is-rounded": isRounded },
+      bulma,
+    )}
+  >
+    <select {...props}>
+      {options.map((option) => (
+        <option key={option.value?.toString()} {...option} />
+      ))}
+    </select>
+  </div>
+)
+export type SelectProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, "size"> & {
+  options: Array<OptionHTMLAttributes<HTMLOptionElement>>
+} & BulmaProp &
+  SizeProp<Size> &
+  Partial<{
+    isLoading: boolean
+    isRounded: boolean
+  }>
+
+/**
+ * The inevitable HTML table, with special case cells.
+ *
+ * It <strong>always</strong> renders a <em>scrollable table</em>, that is a table inside a table container like this markup.
+ *
+ * ```html
+ * <div class="table-container">
+ *  <table class="table">
+ *    <!-- Your table content -->
+ *  </table>
+ * </div>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/elements/table/)
+ */
 export const Table: FC<PropsWithChildren<TableProps>> = ({ bulma, className, children, ...props }) => (
   <div className="table-container">
     <table className={classnames<Bulma>(className as Bulma, "table", bulma)} {...props}>
@@ -981,3 +1107,37 @@ export const Table: FC<PropsWithChildren<TableProps>> = ({ bulma, className, chi
   </div>
 )
 export type TableProps = TableHTMLAttributes<HTMLTableElement> & BulmaProp
+
+/**
+ * The multiline textarea and its variations.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Textarea size="small" color="info" />
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/form/textarea/)
+ */
+export const Textarea: FC<TextareaProps> = ({ color, size, isLoading, bulma, className, ...props }) => (
+  <textarea
+    className={classnames<Bulma>(
+      className as Bulma,
+      "textarea",
+      is(color),
+      is(size),
+      {
+        "is-loading": isLoading,
+      },
+      bulma,
+    )}
+    {...props}
+  />
+)
+export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
+  BulmaProp &
+  ColorProp &
+  SizeProp<Size> &
+  Partial<{
+    isLoading: boolean
+  }>

@@ -58,11 +58,11 @@ You can use the `bulma` prop in case you need to add more Bulma classes that has
 </Columns>
 ```
 
-List of components
+#### Components list
 
 - HTML tags related: `A`, `Article`, `Div`, `Heading`, `P`, `Span`.
 - Bulma related:
-  - `Breadcbrum`
+  - `Breadcrumb`
   - `Button`
   - `Buttons`
   - `ButtonDelete`
@@ -73,6 +73,7 @@ List of components
   - `Container`
   - `Control`
   - `Field`
+  - `FileUpload`
   - `Figure`
   - `FixedGrid`
   - `Footer`
@@ -108,8 +109,11 @@ List of components
   - `PaginationNext`
   - `PaginationPrevious`
   - `Progress`
+  - `Radio`
   - `Section`
+  - `Select`
   - `Table`
+  - `Textarea`
 
 ### `classnames`
 
