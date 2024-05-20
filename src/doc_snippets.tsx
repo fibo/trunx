@@ -16,6 +16,10 @@ import {
   Control,
   Div,
   Field,
+  FieldBody,
+  FieldHorizontal,
+  FieldLabel,
+  Figure,
   FixedGrid,
   Grid,
   Heading,
@@ -43,14 +47,26 @@ import {
 
 export const MyComponent: FC<{ isSuccess: boolean }> = ({ isSuccess }) => (
   <Div bulma="block">
-    <Span bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}>Lorem ipsum...</Span>
+    <Span
+      bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}
+    >
+      Lorem ipsum...
+    </Span>
   </Div>
 )
 
-type MyButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & Partial<{ isLoading: boolean }>
+type MyButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  Partial<{ isLoading: boolean }>
 
-export const MyButton: FC<PropsWithChildren<MyButtonProps>> = ({ isLoading, children, ...props }) => (
-  <button className={classnames<Bulma>("button", { "is-loading": isLoading })} {...props}>
+export const MyButton: FC<PropsWithChildren<MyButtonProps>> = ({
+  isLoading,
+  children,
+  ...props
+}) => (
+  <button
+    className={classnames<Bulma>("button", { "is-loading": isLoading })}
+    {...props}
+  >
     {children}
   </button>
 )
@@ -84,6 +100,46 @@ export const Snippets: FC = () => (
         <Input placeholder="e.g Alex Smith" />
       </Control>
     </Field>
+
+    <FieldHorizontal>
+      <FieldLabel isNormal>
+        <Label>From</Label>
+      </FieldLabel>
+      <FieldBody>
+        <Field>
+          <Control>
+            <Input type="text" placeholder="Name" />
+          </Control>
+        </Field>
+        <Field>
+          <Control>
+            <Input type="email" placeholder="Email" />
+          </Control>
+        </Field>
+      </FieldBody>
+    </FieldHorizontal>
+
+    <Figure dimension="128x128">
+      <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+    </Figure>
+
+    <Figure dimension="128x128">
+      <img
+        className="is-rounded"
+        src="https://bulma.io/assets/images/placeholders/256x256.png"
+      />
+    </Figure>
+
+    <Figure ratio="16by9">
+      <iframe
+        className="has-ratio"
+        width="640"
+        height="360"
+        src="https://www.youtube.com/embed/YE7VzlLtp-4"
+        frameBorder="0"
+        allowFullScreen
+      />
+    </Figure>
 
     <FixedGrid hasAutoCount>
       <Cell>cell 1</Cell>
