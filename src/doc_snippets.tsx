@@ -6,12 +6,20 @@
 //////////////////////////////////////////////////////////////////////
 
 import { FC, PropsWithChildren, ButtonHTMLAttributes } from "react"
+import type { Bulma } from "./index.js"
 import {
-  Bulma,
+  A,
   Button,
   Buttons,
   ButtonDelete,
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardHeaderIcon,
+  CardHeaderTitle,
   Cell,
+  Checkbox,
   Container,
   Content,
   Control,
@@ -93,6 +101,24 @@ export const Snippets: FC = () => (
     <Button color="primary" variant="light" isLoading>
       Login
     </Button>
+
+    <Card>
+      <CardHeader>
+        <CardHeaderTitle>Title</CardHeaderTitle>
+        <CardHeaderIcon>
+          <Icon>
+            <i className="fas fa-angle-down" aria-hidden="true" />
+          </Icon>
+        </CardHeaderIcon>
+      </CardHeader>
+      <CardContent>Lorem ipsum...</CardContent>
+      <CardFooter>
+        <A bulma="card-footer-item">Save</A>
+        <A bulma="card-footer-item">Delete</A>
+      </CardFooter>
+    </Card>
+
+    <Checkbox disabled>Save my preferences</Checkbox>
 
     <Container isFluid>
       <Notification color="primary">

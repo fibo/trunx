@@ -18,7 +18,7 @@ Notice that you should also have React installed, minimum version supported is 1
 
 Components are documented inline with TSDocs. You can configure your editor to display documentation and examples.
 
-<img src="./media/inline-docs.png" width="350"/>
+<img src="./media/inline-docs.png"/>
 
 Almost all `trunx` components have a `bulma` prop that accepts:
 
@@ -74,6 +74,13 @@ You can use the `bulma` prop in case you need to add more Bulma classes that has
   - `Button`
   - `Buttons`
   - `ButtonDelete`
+  - `Card`
+    - `CardContent`
+    - `CardFooter`
+    - `CardHeader`
+    - `CardHeaderIcon`
+    - `CardHeaderTitle`
+    - `CardImage`
   - `Cell`
   - `Checkbox`
   - `Column`
