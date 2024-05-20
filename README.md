@@ -16,6 +16,10 @@ Notice that you should also have React installed, minimum version supported is 1
 
 ### React components
 
+Components are documented inline with TSDocs. You can configure your editor to display documentation and examples.
+
+<img src="./media/inline-docs.png" width="350"/>
+
 Almost all `trunx` components have a `bulma` prop that accepts:
 
 - a string
