@@ -2,6 +2,19 @@
 
 > Super Saiyan components, son of awesome [Bulma]
 
+**ToC**
+
+- [Installation](#installation)
+- API:
+  - [React components](#react-components)
+    - [Components list](#components-list)
+  - [classnames](#classnames)
+- Type guards:
+  - [isFloat](#isfloat)
+  - [isRational](#isrational)
+- [Motivation](#motivation)
+- [License](#license)
+
 ## Installation
 
 With [npm](https://www.npmjs.com/) do
