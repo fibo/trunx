@@ -958,31 +958,6 @@ export const Grid: FC<PropsWithChildren<GridProps>> = ({
 )
 export type GridProps = HTMLAttributes<HTMLDivElement> & BulmaProp
 
-/**
- * Renders h1,h2,... h6 tags.
- *
- * @example Create an h1 tag.
- *
- * ```ts
- * <Heading tag="h1"></Heading>
- * ```
- */
-export const Heading: FC<PropsWithChildren<HeadingProps>> = ({
-  tag: Tag,
-  bulma,
-  className,
-  children,
-  ...props
-}) => (
-  <Tag className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
-    {children}
-  </Tag>
-)
-export type HeadingProps = HTMLAttributes<HTMLHeadingElement> &
-  BulmaProp & {
-    tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
-  }
-
 export const Help: FC<PropsWithChildren<HelpProps>> = ({
   color,
   bulma,
@@ -1009,8 +984,8 @@ export type HelpProps = HTMLAttributes<HTMLParagraphElement> &
  * ```tsx
  * <Hero size="small">
  *   <HeroBody>
- *       <P bulma="title">Title</P>
- *       <P bulma="subtitle">Subtitle</P>
+ *     <Title>Title</Title>
+ *     <Subtitle>Subtitle</Subtitle>
  *   </HeroBody>
  * </Hero>
  * ```
@@ -1020,8 +995,8 @@ export type HelpProps = HTMLAttributes<HTMLParagraphElement> &
  * ```tsx
  * <Hero color="success" isHalfheight>
  *   <HeroBody>
- *       <P bulma="title">Title</P>
- *       <P bulma="subtitle">Subtitle</P>
+ *     <Title>Title</Title>
+ *     <Subtitle>Subtitle</Subtitle>
  *   </HeroBody>
  * </Hero>
  * ```
@@ -1931,7 +1906,7 @@ export type SpanProps = HTMLAttributes<HTMLSpanElement> & BulmaProp
  *
  * ```tsx
  * <Section size="medium">
- *   <Heading tag="h2">Title</Heading>
+ *   <Title tag="h2">Title</Title>
  * </Section>
  * ```
  *
@@ -2019,6 +1994,33 @@ export type SelectProps = Omit<
     isLoading: boolean
     isRounded: boolean
   }>
+
+/**
+ * @see {@link Title}
+ */
+export const Subtitle: FC<PropsWithChildren<SubtitleProps>> = ({
+  is,
+  tag: Tag = "p",
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <Tag
+    className={classnames<Bulma>(
+      className as Bulma,
+      "title",
+      is ? `is-${is}` : undefined,
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </Tag>
+)
+export type SubtitleProps = Omit<HTMLAttributes<HTMLElement>, "is"> &
+  BulmaProp &
+  Titlemodifiers
 
 /**
  * The inevitable HTML table, with special case cells.
@@ -2170,3 +2172,67 @@ export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
   Partial<{
     isLoading: boolean
   }>
+
+/**
+ * Simple headings to add depth to your page.
+ *
+ * @example There are two types of heading: Title and Subtitle.
+ *
+ * ```ts
+ * <Title tag="h1">Title</Title>
+ * <Subtitle tag="h2">Subtitle</Subtitle>
+ * ```
+ *
+ * @example Sizes
+ *
+ * ```ts
+ * <Title is={1}>Title 1</Title>
+ * <Title is={2}>Title 2</Title>
+ * <Title is={3}>Title 3 (default)</Title>
+ * <Title is={4}>Title 4</Title>
+ * <Title is={5}>Title 5</Title>
+ * <Title is={6}>Title 6</Title>
+ * ```
+ * @example Maintain the normal spacing between titles and subtitles.
+ *
+ * ```ts
+ * <Title is={1} isSpaced>Title 1</Title>
+ * <Subtitle is={3}>Subtitle 3</Subtitle>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/elements/title/)
+ */
+export const Title: FC<PropsWithChildren<TitleProps>> = ({
+  is,
+  isSpaced,
+  tag: Tag = "p",
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <Tag
+    className={classnames<Bulma>(
+      className as Bulma,
+      "title",
+      is ? `is-${is}` : undefined,
+      {
+        "is-spaced": isSpaced,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </Tag>
+)
+export type TitleProps = Omit<HTMLAttributes<HTMLElement>, "is"> &
+  BulmaProp &
+  Titlemodifiers &
+  Partial<{
+    isSpaced: boolean
+  }>
+type Titlemodifiers = Partial<{
+  tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"
+  is: 1 | 2 | 3 | 4 | 5 | 6
+}>
