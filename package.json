@@ -12,9 +12,7 @@
     }
   },
   "scripts": {
-    "build": "tsc --build",
-    "check_types": "tsc --noEmit --project .",
-    "clean": "tsc --build --clean",
+    "build": "tsc --build ./tsconfig.build.json",
     "generate_bulma_types": "postcss ./node_modules/bulma/css/bulma.css --config ./generate_bulma_types --output ./node_modules/bulma/css/output.css",
     "pretest": "tsc --build tsconfig.test.json",
     "prettier": "prettier --write .",
@@ -33,7 +31,6 @@
     "postcss-ts-classnames": "^0.3.0",
     "pre-commit": "^1",
     "prettier": "^3",
-    "prettier-plugin-jsdoc": "^1",
     "typescript": "^5"
   },
   "peerDependencies": {
@@ -57,8 +54,11 @@
   "bugs": {
     "url": "https://github.com/fibo/trunx/issues"
   },
+  "prettier": {
+    "printWidth": 117,
+    "semi": false
+  },
   "pre-commit": [
-    "check_types",
     "test",
     "prettier--check"
   ]

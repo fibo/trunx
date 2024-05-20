@@ -1,12 +1,10 @@
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "composite": true,
     "declarationMap": false,
     "outDir": "./temp",
     "resolveJsonModule": true,
-    "rootDir": ".",
-    "tsBuildInfoFile": "temp/tsconfig.test.tsbuildinfo"
+    "rootDir": "."
   },
   "extends": "./tsconfig.json",
   "exclude": ["node_modules"],
