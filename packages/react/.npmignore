@@ -1,5 +1,0 @@
-# Force dist/ inclusion, it is in .gitignore
-!dist/
-# Other files to be removed.
-src/
-tsconfig.*
