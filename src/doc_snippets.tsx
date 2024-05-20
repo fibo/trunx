@@ -32,7 +32,6 @@ import {
   FixedGrid,
   Footer,
   Grid,
-  Heading,
   Hero,
   HeroBody,
   Icon,
@@ -51,10 +50,12 @@ import {
   Progress,
   Section,
   Select,
+  Subtitle,
   Span,
   Tab,
   Tabs,
   Textarea,
+  Title,
   classnames,
 } from "./index.js"
 
@@ -210,21 +211,17 @@ export const Snippets: FC = () => (
       <Cell>cell 2</Cell>
     </Grid>
 
-    <Heading tag="h1"></Heading>
-
     <Hero size="small">
       <HeroBody>
-        <P bulma="title">Title</P>
-        <P bulma="subtitle">Subtitle</P>
+        <Title>Title</Title>
+        <Subtitle>Subtitle</Subtitle>
       </HeroBody>
     </Hero>
 
     <Hero color="success" isHalfheight>
       <HeroBody>
-        <div>
-          <P bulma="title">Title</P>
-          <P bulma="subtitle">Subtitle</P>
-        </div>
+        <Title>Title</Title>
+        <Subtitle>Subtitle</Subtitle>
       </HeroBody>
     </Hero>
 
@@ -272,7 +269,7 @@ export const Snippets: FC = () => (
     </Progress>
 
     <Section size="medium">
-      <Heading tag="h2">Title</Heading>
+      <Title tag="h2">Title</Title>
     </Section>
 
     <Select
@@ -290,5 +287,20 @@ export const Snippets: FC = () => (
     </Tabs>
 
     <Textarea size="small" color="info" />
+
+    <Title tag="h1">Title</Title>
+    <Subtitle tag="h2">Subtitle</Subtitle>
+
+    <Title is={1}>Title 1</Title>
+    <Title is={2}>Title 2</Title>
+    <Title is={3}>Title 3 (default)</Title>
+    <Title is={4}>Title 4</Title>
+    <Title is={5}>Title 5</Title>
+    <Title is={6}>Title 6</Title>
+
+    <Title is={1} isSpaced>
+      Title 1
+    </Title>
+    <Subtitle is={3}>Subtitle 3</Subtitle>
   </>
 )
