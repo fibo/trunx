@@ -23,6 +23,10 @@ import {
   FixedGrid,
   Grid,
   Heading,
+  Hero,
+  HeroBody,
+  Icon,
+  IconText,
   Input,
   Label,
   Modal,
@@ -161,6 +165,33 @@ export const Snippets: FC = () => (
     </Grid>
 
     <Heading tag="h1"></Heading>
+
+    <Hero size="small">
+      <HeroBody>
+        <P bulma="title">Title</P>
+        <P bulma="subtitle">Subtitle</P>
+      </HeroBody>
+    </Hero>
+
+    <Hero color="success" isHalfheight>
+      <HeroBody>
+        <div>
+          <P bulma="title">Title</P>
+          <P bulma="subtitle">Subtitle</P>
+        </div>
+      </HeroBody>
+    </Hero>
+
+    <Icon>
+      <i className="fas fa-home"></i>
+    </Icon>
+
+    <IconText>
+      <Icon>
+        <i className="fas fa-home"></i>
+      </Icon>
+      <span>Home</span>
+    </IconText>
 
     <Modal noBackground>
       <ModalContent>Content</ModalContent>
