@@ -2046,6 +2046,84 @@ export const Table: FC<PropsWithChildren<TableProps>> = ({
 export type TableProps = TableHTMLAttributes<HTMLTableElement> & BulmaProp
 
 /**
+ * Simple responsive horizontal navigation tabs, with different styles.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Tabs>
+ *     <Tab isActive>Pictures</Tab>
+ *     <Tab>Music</Tab>
+ *     <Tab>Videos</Tab>
+ * </Tabs>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/components/tabs/)
+ */
+export const Tabs: FC<PropsWithChildren<TabsProps>> = ({
+  isBoxed,
+  isCentered,
+  isFullwidth,
+  isRight,
+  isToggle,
+  isToggleRounded,
+  size,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "tabs",
+      is(size),
+      {
+        "is-boxed": isBoxed,
+        "is-centered": isCentered,
+        "is-fullwidth": isFullwidth,
+        "is-right": isRight,
+        "is-toggle": isToggle,
+        "is-toggle-rounded": isToggleRounded,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    <ul>{children}</ul>
+  </div>
+)
+export type TabsProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp &
+  SizeProp &
+  Partial<{
+    isBoxed: boolean
+    isCentered: boolean
+    isFullwidth: boolean
+    isRight: boolean
+    isToggle: boolean
+    isToggleRounded: boolean
+  }>
+
+/** @see {@link Tabs} */
+export const Tab: FC<PropsWithChildren<TabProps>> = ({
+  isActive,
+  className,
+  children,
+  ...props
+}) => (
+  <li
+    className={classnames<Bulma>(className as Bulma, { "is-active": isActive })}
+  >
+    <a {...props}>{children}</a>
+  </li>
+)
+export type TabProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  Partial<{
+    isActive: boolean
+  }>
+
+/**
  * The multiline textarea and its variations.
  *
  * @example

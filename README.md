@@ -71,6 +71,7 @@ Almost all `trunx` components support a `className` prop, in case you need to ap
 <img src="./media/trunks.png" height="290"/>
 
 HTML tags related: `A`, `Div`, `Heading`, `P`, `Span`.
+
 Bulma related:
 
 - `Breadcrumb`
@@ -140,6 +141,8 @@ Bulma related:
 - `Section`
 - `Select`
 - `Table`
+- `Tabs`
+  - `Tab`
 - `Textarea`
 
 ### `classnames`
