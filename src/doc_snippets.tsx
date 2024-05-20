@@ -60,6 +60,8 @@ import {
   Span,
   Tab,
   Tabs,
+  Tag,
+  Tags,
   Textarea,
   Title,
   classnames,
@@ -299,11 +301,36 @@ export const Snippets: FC = () => (
       ]}
     />
 
+    <Tag color="primary" variant="light" size="medium">
+      v1.0.0
+    </Tag>
+
+    <Tag color="warning" size="medium">
+      Hello
+      <Delete size="small" />
+    </Tag>
+
     <Tabs>
       <Tab isActive>Pictures</Tab>
       <Tab>Music</Tab>
       <Tab>Videos</Tab>
     </Tabs>
+
+    <Tags size="large">
+      <Tag>All</Tag>
+      <Tag>Medium</Tag>
+      <Tag>Size</Tag>
+    </Tags>
+
+    <Tags hasAddons>
+      <Tag>package</Tag>
+      <Tag color="primary">trunx</Tag>
+    </Tags>
+
+    <Tags hasAddons>
+      <Tag color="danger">Alex Smith</Tag>
+      <a className="tag is-delete" />
+    </Tags>
 
     <Textarea size="small" color="info" />
 
