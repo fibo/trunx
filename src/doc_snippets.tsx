@@ -52,6 +52,8 @@ import {
   Span,
   Select,
   Section,
+  Tab,
+  Tabs,
   Textarea,
   classnames,
 } from "./index.js"
@@ -280,6 +282,12 @@ export const Snippets: FC = () => (
         { value: "B", label: "Banana" },
       ]}
     />
+
+    <Tabs>
+      <Tab isActive>Pictures</Tab>
+      <Tab>Music</Tab>
+      <Tab>Videos</Tab>
+    </Tabs>
 
     <Textarea size="small" color="info" />
   </>
