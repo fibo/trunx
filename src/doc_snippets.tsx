@@ -28,7 +28,6 @@ import {
   FieldBody,
   FieldHorizontal,
   FieldLabel,
-  Figure,
   FixedGrid,
   Footer,
   Grid,
@@ -36,8 +35,13 @@ import {
   HeroBody,
   Icon,
   IconText,
+  Image,
   Input,
   Label,
+  Media,
+  MediaContent,
+  MediaLeft,
+  MediaRight,
   Modal,
   ModalCard,
   ModalClose,
@@ -159,28 +163,6 @@ export const Snippets: FC = () => (
       </FieldBody>
     </FieldHorizontal>
 
-    <Figure dimension="128x128">
-      <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
-    </Figure>
-
-    <Figure dimension="128x128">
-      <img
-        className="is-rounded"
-        src="https://bulma.io/assets/images/placeholders/256x256.png"
-      />
-    </Figure>
-
-    <Figure ratio="16by9">
-      <iframe
-        className="has-ratio"
-        width="640"
-        height="360"
-        src="https://www.youtube.com/embed/YE7VzlLtp-4"
-        frameBorder="0"
-        allowFullScreen
-      />
-    </Figure>
-
     <FixedGrid hasAutoCount>
       <Cell>cell 1</Cell>
       <Cell>cell 2</Cell>
@@ -196,7 +178,6 @@ export const Snippets: FC = () => (
     </FixedGrid>
 
     <Footer>
-      *{" "}
       <Content bulma="has-text-centered">
         <p>
           <strong>trunx</strong> by <a href="https://fibo.github.io">fibo</a>.
@@ -235,6 +216,37 @@ export const Snippets: FC = () => (
       </Icon>
       <span>Home</span>
     </IconText>
+
+    <Image dimension="128x128">
+      <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+    </Image>
+
+    <Image dimension="128x128">
+      <img
+        className="is-rounded"
+        src="https://bulma.io/assets/images/placeholders/256x256.png"
+      />
+    </Image>
+
+    <Image ratio="16by9">
+      <iframe
+        className="has-ratio"
+        width="640"
+        height="360"
+        src="https://www.youtube.com/embed/YE7VzlLtp-4"
+        allowFullScreen
+      />
+    </Image>
+
+    <Media>
+      <MediaLeft dimension="64x64">
+        <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+      </MediaLeft>
+      <MediaContent>Content</MediaContent>
+      <MediaRight>
+        <Delete />
+      </MediaRight>
+    </Media>
 
     <Modal noBackground>
       <ModalContent>Content</ModalContent>

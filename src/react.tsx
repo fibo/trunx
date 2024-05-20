@@ -731,97 +731,6 @@ export type FieldLabelProps = HTMLAttributes<HTMLDivElement> &
   }
 
 /**
- * Renders figure tag with image class.
- *
- * @example Fixed square images
- *
- * ```tsx
- * <Figure dimension="128x128">
- *   <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
- * </Figure>
- * ```
- *
- * @example Rounded images
- *
- * ```tsx
- * <Figure dimension="128x128">
- *   <img className="is-rounded" src="https://bulma.io/assets/images/placeholders/256x256.png" />
- * </Figure>
- * ```
- *
- * @example Arbitrary ratios with any element
- *
- * ```tsx
- * <Figure ratio="16by9">
- *   <iframe
- *     className="has-ratio"
- *     width="640"
- *     height="360"
- *     src="https://www.youtube.com/embed/YE7VzlLtp-4"
- *     frameBorder="0"
- *     allowFullScreen
- *   />
- * </Figure>
- * ```
- *
- * @see [bulma docs](https://bulma.io/documentation/elements/image/)
- */
-export const Figure: FC<PropsWithChildren<FigureProps>> = ({
-  dimension,
-  ratio,
-  isSquare,
-  bulma,
-  className,
-  children,
-  ...props
-}) => (
-  <figure
-    className={classnames<Bulma>(
-      className as Bulma,
-      "image",
-      dimension ? `is-${dimension}` : undefined,
-      ratio ? `is-${ratio}` : undefined,
-      {
-        "is-square": isSquare,
-      },
-      bulma,
-    )}
-    {...props}
-  >
-    {children}
-  </figure>
-)
-export type FigureProps = HTMLAttributes<HTMLElement> &
-  BulmaProp &
-  Partial<{
-    isSquare: boolean
-    dimension:
-      | "16x16"
-      | "24x24"
-      | "32x32"
-      | "48x48"
-      | "64x64"
-      | "96x96"
-      | "128x128"
-    ratio:
-      | "1by1"
-      | "5by4"
-      | "4by3"
-      | "3by2"
-      | "5by3"
-      | "16by9"
-      | "2by1"
-      | "3by1"
-      | "4by5"
-      | "3by4"
-      | "2by3"
-      | "3by5"
-      | "9by16"
-      | "1by2"
-      | "1by3"
-  }>
-
-/**
  * A custom file upload input.
  *
  * @see [bulma docs](https://bulma.io/documentation/form/file/)
@@ -1169,6 +1078,97 @@ export type IconTextProps = HTMLAttributes<HTMLSpanElement> &
   BulmaProp &
   SizeProp
 
+/**
+ * A container for responsive images.
+ *
+ * @example Fixed square images
+ *
+ * ```tsx
+ * <Image dimension="128x128">
+ *   <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+ * </Image>
+ * ```
+ *
+ * @example Rounded images
+ *
+ * ```tsx
+ * <Image dimension="128x128">
+ *   <img className="is-rounded" src="https://bulma.io/assets/images/placeholders/256x256.png" />
+ * </Image>
+ * ```
+ *
+ * @example Arbitrary ratios with any element
+ *
+ * ```tsx
+ * <Image ratio="16by9">
+ *   <iframe
+ *     className="has-ratio"
+ *     width="640"
+ *     height="360"
+ *     src="https://www.youtube.com/embed/YE7VzlLtp-4"
+ *     allowFullScreen
+ *   />
+ * </Image>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/elements/image/)
+ */
+export const Image: FC<PropsWithChildren<ImageProps>> = ({
+  dimension,
+  ratio,
+  isSquare,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <figure
+    className={classnames<Bulma>(
+      className as Bulma,
+      "image",
+      dimension ? `is-${dimension}` : undefined,
+      ratio ? `is-${ratio}` : undefined,
+      {
+        "is-square": isSquare,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </figure>
+)
+export type ImageProps = HTMLAttributes<HTMLElement> &
+  BulmaProp &
+  Partial<{
+    isSquare: boolean
+    dimension: ImageDimension
+    ratio:
+      | "1by1"
+      | "5by4"
+      | "4by3"
+      | "3by2"
+      | "5by3"
+      | "16by9"
+      | "2by1"
+      | "3by1"
+      | "4by5"
+      | "3by4"
+      | "2by3"
+      | "3by5"
+      | "9by16"
+      | "1by2"
+      | "1by3"
+  }>
+type ImageDimension =
+  | "16x16"
+  | "24x24"
+  | "32x32"
+  | "48x48"
+  | "64x64"
+  | "96x96"
+  | "128x128"
+
 export const Input: FC<InputProps> = ({
   bulma,
   className,
@@ -1221,6 +1221,101 @@ export const Label: FC<PropsWithChildren<LabelProps>> = ({
   </label>
 )
 export type LabelProps = HTMLAttributes<HTMLLabelElement> & BulmaProp
+
+/**
+ * The famous media object prevalent in social media interfaces.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Media>
+ *   <MediaLeft dimension="64x64">
+ *     <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+ *   </MediaLeft>
+ *   <MediaContent>
+ *     Content
+ *   </MediaContent>
+ *   <MediaRight>
+ *     <Delete />
+ *   </MediaRight>
+ * </Media>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/layout/media-object/)
+ */
+export const Media: FC<PropsWithChildren<MediaProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <article
+    className={classnames<Bulma>(className as Bulma, "media", bulma)}
+    {...props}
+  >
+    {children}
+  </article>
+)
+export type MediaProps = HTMLAttributes<HTMLElement> & BulmaProp
+
+/** @see {@link Media} */
+export const MediaContent: FC<PropsWithChildren<MediaContentProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "media-content", bulma)}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type MediaContentProps = HTMLAttributes<HTMLElement> & BulmaProp
+
+/** @see {@link Media} */
+export const MediaLeft: FC<PropsWithChildren<MediaLeftProps>> = ({
+  dimension,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <figure
+    className={classnames<Bulma>(className as Bulma, "media-left", bulma)}
+    {...props}
+  >
+    <p
+      className={classnames<Bulma>(
+        "image",
+        dimension ? `is-${dimension}` : undefined,
+      )}
+    >
+      {children}
+    </p>
+  </figure>
+)
+export type MediaLeftProps = HTMLAttributes<HTMLElement> &
+  BulmaProp & {
+    dimension: ImageDimension
+  }
+
+/** @see {@link Media} */
+export const MediaRight: FC<PropsWithChildren<MediaRightProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "media-right", bulma)}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type MediaRightProps = HTMLAttributes<HTMLElement> & BulmaProp
 
 /**
  * A simple menu, for any type of vertical navigation.
