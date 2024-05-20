@@ -42,7 +42,7 @@ export const MyComponent: FC<{ isSuccess: boolean }> = ({ isSuccess }) => (
 )
 ```
 
-There are also `trunx` React components that implement a Bulma element or a Bulma Component. They may have props related to some Bulma class (.e.g. `color`, `size`). Most of the Bulma related props start with `is`, for example `isRounded` prop corresponds to `is-rounded` Bulma class.
+There are also `trunx` React components that implement a Bulma element or a Bulma Component. This means that they usually add a related Bulma class. For example `Button` components renders a button tag with the Bulma `button` class. They may have props related to some Bulma class (.e.g. `color`, `size`). Most of the Bulma related props start with `is`, `has` and the prop name is just the camel-case version of its related Bulma class. For example `isRounded` prop corresponds to `is-rounded` Bulma class.
 
 ```tsx
 <Button color="primary" size="large" isRounded>
@@ -58,6 +58,59 @@ You can use the `bulma` prop in case you need to add more Bulma classes that has
 </Columns>
 ```
 
+List of components
+
+- HTML tags related: `A`, `Article`, `Div`, `Heading`, `P`, `Span`.
+- Bulma related:
+  - `Breadcbrum`
+  - `Button`
+  - `Buttons`
+  - `ButtonDelete`
+  - `Cell`
+  - `Checkbox`
+  - `Column`
+  - `Columns`
+  - `Container`
+  - `Control`
+  - `Field`
+  - `Figure`
+  - `FixedGrid`
+  - `Footer`
+  - `Grid`
+  - `Help`
+  - `Icon`
+  - `Input`
+  - `Label`
+  - `Menu`
+  - `MenuLabel`
+  - `MenuList`
+  - `Message`
+  - `Modal`
+  - `ModalCard`
+  - `ModalClose`
+  - `ModalContent`
+  - `Navbar`
+  - `NavbarBrand`
+  - `NavbarBurger`
+  - `NavbarDivider`
+  - `NavbarDropdown`
+  - `NavbarDropdownMenu`
+  - `NavbarEnd`
+  - `NavbarItem`
+  - `NavbarLink`
+  - `NavbarMenu`
+  - `NavbarStart`
+  - `Notification`
+  - `Pagination`
+  - `PaginationEllipsis`
+  - `PaginationLink`
+  - `PaginationList`
+  - `PaginationNext`
+  - `PaginationPrevious`
+  - `Progress`
+  - `Section`
+  - `Table`
+
 ### `classnames`
 
 The `trunx` package provides a utility for conditionally joining CSS classes together.
@@ -66,8 +119,8 @@ The `trunx` package provides a utility for conditionally joining CSS classes tog
 import { classnames } from "trunx"
 
 classnames("foo", "bar") // 'foo bar'
-classnames < string > ("foo", ["bar"]) // 'foo bar'
-classnames < string > ({ foo: true }, { bar: false }) // 'foo'
+classnames("foo", ["bar"]) // 'foo bar'
+classnames({ foo: true }, { bar: false }) // 'foo'
 ```
 
 It accepts a generic "class names" type.
@@ -77,7 +130,7 @@ type T = "foo" | "bar" // my CSS classes
 classnames<T>("foo", "quz") // ERROR: not assignable to type ClassnamesArg<T>[]
 ```
 
-For example you can use it to compose [Bulma] classes.
+For example you can use it to compose Bulma classes.
 
 ```tsx
 import { FC, PropsWithChildren, ButtonHTMLAttributes } from "react"

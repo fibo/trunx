@@ -6,8 +6,8 @@ import {
   ButtonHTMLAttributes,
   TableHTMLAttributes,
   AnchorHTMLAttributes,
-  LiHTMLAttributes,
   ReactNode,
+  InputHTMLAttributes,
 } from "react"
 import { ClassnamesArg, classnames } from "./classnames.js"
 import { ClassNames as Bulma } from "./Bulma.js"
@@ -42,6 +42,8 @@ export type ColorProp<C extends Color = Color> = Partial<{ color: C }>
 
 export type ColorVariant = "light" | "dark"
 
+export type ColorVariantProp<V extends ColorVariant = ColorVariant> = Partial<{ variant: V }>
+
 // Helpers
 //////////////////////////////////////////////////////////////////////
 
@@ -61,14 +63,6 @@ export const A: FC<PropsWithChildren<AProps>> = ({ bulma, className, children, .
 )
 export type AProps = AnchorHTMLAttributes<HTMLAnchorElement> & BulmaProp
 
-/** Renders article tag. */
-export const Article: FC<PropsWithChildren<ArticleProps>> = ({ bulma, className, children, ...props }) => (
-  <article className={classnames<string>(className, bulma)} {...props}>
-    {children}
-  </article>
-)
-export type ArticleProps = HTMLAttributes<HTMLElement> & BulmaProp
-
 export const Breadcbrum: FC<PropsWithChildren<BreadcbrumProps> & BulmaProp> = ({
   bulma,
   className,
@@ -83,6 +77,12 @@ export type BreadcbrumProps = HTMLAttributes<HTMLElement>
 
 /**
  * The classic button, in different colors, sizes, and states.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Button color="primary" variant="light" isLoading>Login</Button>
+ * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/button/)
  */
@@ -124,6 +124,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
 export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color"> &
   BulmaProp &
   ColorProp &
+  ColorVariantProp &
   SizeProp &
   Partial<{
     isLoading: boolean
@@ -132,7 +133,6 @@ export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">
     isOutlined: boolean
     isResponsive: boolean
     isRounded: boolean
-    variant: ColorVariant
   }>
 
 export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({ size, bulma, className, children, ...props }) => (
@@ -153,6 +153,14 @@ export const Cell: FC<PropsWithChildren<CellProps>> = ({ bulma, className, child
   </div>
 )
 export type CellProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({ children, ...props }) => (
+  <label className="checkbox">
+    <input type="checkbox" {...props} />
+    {children}
+  </label>
+)
+export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type">
 
 export const Column: FC<PropsWithChildren<ColumnProps>> = ({ bulma, className, children, ...props }) => (
   <div className={classnames<Bulma>(className as Bulma, "column", bulma)} {...props}>
@@ -202,6 +210,21 @@ export type ColumnsProps = HTMLAttributes<HTMLDivElement> &
     isMultiline: boolean
   }>
 
+/**
+ * A simple container to center your content horizontally.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Container isFluid>
+ *   <Notification color="primary">
+ *     This container is <strong>fluid</strong>
+ *   </Notification>
+ * </Container>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/layout/container/)
+ */
 export const Container: FC<PropsWithChildren<ContainerProps>> = ({
   isWidescreen,
   isFluid,
@@ -242,13 +265,65 @@ export type ContainerProps = HTMLAttributes<HTMLDivElement> &
     isFullhd: boolean
   }>
 
-/** Renders div tag. */
+export const Control: FC<PropsWithChildren<ControlProps>> = ({
+  hasIconsLeft,
+  hasIconsRight,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "control",
+      {
+        "has-icons-left": hasIconsLeft,
+        "has-icons-right": hasIconsRight,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type ControlProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp &
+  Partial<{
+    hasIconsLeft: boolean
+    hasIconsRight: boolean
+  }>
+
 export const Div: FC<PropsWithChildren<DivProps>> = ({ bulma, className, children, ...props }) => (
   <div className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
     {children}
   </div>
 )
 export type DivProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+/**
+ * Form field.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Field>
+ *   <Label>Name</Label>
+ *   <Control>
+ *     <Input placeholder="e.g Alex Smith" />
+ *   </Control>
+ * </Field>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/form/general/#form-field)
+ */
+export const Field: FC<PropsWithChildren<FieldProps>> = ({ bulma, className, children, ...props }) => (
+  <div className={classnames<Bulma>(className as Bulma, "field", bulma)} {...props}>
+    {children}
+  </div>
+)
+export type FieldProps = HTMLAttributes<HTMLDivElement> & BulmaProp
 
 export const Figure: FC<PropsWithChildren<FigureProps>> = ({ bulma, className, children, ...props }) => (
   <figure className={classnames<Bulma>(className as Bulma, "image", bulma)} {...props}>
@@ -318,13 +393,12 @@ export type HeadingProps = HTMLAttributes<HTMLHeadingElement> &
     tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
   }
 
-/** Renders header tag. */
-export const Header: FC<PropsWithChildren<HeaderProps>> = ({ bulma, className, children, ...props }) => (
-  <header className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
+export const Help: FC<PropsWithChildren<HelpProps>> = ({ color, bulma, className, children, ...props }) => (
+  <p className={classnames<Bulma>(className as Bulma, "help", is(color), bulma)} {...props}>
     {children}
-  </header>
+  </p>
 )
-export type HeaderProps = HTMLAttributes<HTMLElement> & BulmaProp
+export type HelpProps = HTMLAttributes<HTMLParagraphElement> & BulmaProp & ColorProp
 
 export const Icon: FC<PropsWithChildren<IconProps>> = ({ bulma, className, children, ...props }) => (
   <span className={classnames<Bulma>(className as Bulma, "icon", bulma)} {...props}>
@@ -333,21 +407,18 @@ export const Icon: FC<PropsWithChildren<IconProps>> = ({ bulma, className, child
 )
 export type IconProps = HTMLAttributes<HTMLSpanElement> & BulmaProp
 
+export const Input: FC<InputProps> = ({ bulma, className, color, size, ...props }) => (
+  <input className={classnames<Bulma>(className as Bulma, "input", is(color), is(size), bulma)} {...props} />
+)
+export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size"> & BulmaProp & ColorProp & SizeProp
+
 /** Renders label tag with label class. */
 export const Label: FC<PropsWithChildren<LabelProps>> = ({ bulma, className, children, ...props }) => (
-  <label className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
+  <label className={classnames<Bulma>(className as Bulma, "label", bulma)} {...props}>
     {children}
   </label>
 )
 export type LabelProps = HTMLAttributes<HTMLLabelElement> & BulmaProp
-
-/** Renders li tag. */
-export const Li: FC<PropsWithChildren<LiProps>> = ({ bulma, className, children, ...props }) => (
-  <li className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
-    {children}
-  </li>
-)
-export type LiProps = LiHTMLAttributes<HTMLLIElement> & BulmaProp
 
 /**
  * A simple menu, for any type of vertical navigation.
@@ -403,6 +474,14 @@ export type MessageProps = HTMLAttributes<HTMLElement> &
  *
  * Renders div tag with modal class.
  *
+ * ```tsx
+ * <Modal noBackground>
+ *   <ModalContent>
+ *     Content
+ *   </ModalContent>
+ *   <ModalClose />
+ * </Modal>
+ * ```
  * @see [bulma docs](https://bulma.io/documentation/components/modal/)
  */
 export const Modal: FC<PropsWithChildren<ModalProps>> = ({
@@ -456,7 +535,7 @@ export type ModalCardProps = HTMLAttributes<HTMLDivElement> & {
 }
 
 /** Renders button tag with modal-close class. */
-export const ModalClose: FC<ModalCloseProps> = ({ size, className, children, ...props }) => (
+export const ModalClose: FC<ModalCloseProps> = ({ size, className, ...props }) => (
   <button className={classnames<Bulma>(className as Bulma, "modal-close", is(size))} {...props} />
 )
 export type ModalCloseProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp<"large">
@@ -468,14 +547,6 @@ export const ModalContent: FC<PropsWithChildren<ModalContentProps>> = ({ bulma, 
   </div>
 )
 export type ModalContentProps = HTMLAttributes<HTMLDivElement> & BulmaProp
-
-/** Renders nav tag. */
-export const Nav: FC<PropsWithChildren<NavProps>> = ({ bulma, className, children, ...props }) => (
-  <nav className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
-    {children}
-  </nav>
-)
-export type NavProps = HTMLAttributes<HTMLElement> & BulmaProp
 
 /**
  * A responsive horizontal navbar that can support images, links, buttons, and dropdowns.
@@ -534,8 +605,6 @@ export type NavbarBurgerProps = Omit<HTMLAttributes<HTMLElement>, "aria-label" |
 
 /** Renders hr tag with navbar-divider class. */
 export const NavbarDivider: FC = () => <hr className="navbar-divider" />
-
-export const NavbarEnd: FC<PropsWithChildren> = ({ children }) => <div className="navbar-end">{children}</div>
 
 export const NavbarDropdown: FC<PropsWithChildren<NavbarDropdownProps>> = ({
   isBoxed,
@@ -600,6 +669,8 @@ export type NavbarDropdownMenuProps = HTMLAttributes<HTMLDivElement> &
     hasDropdownUp: boolean
     isHoverable: boolean
   }>
+
+export const NavbarEnd: FC<PropsWithChildren> = ({ children }) => <div className="navbar-end">{children}</div>
 
 export const NavbarItem: FC<PropsWithChildren<NavbarItemProps>> = ({
   isSelected,
@@ -682,6 +753,36 @@ export type NavbarMenuProps = Partial<{
 }>
 
 export const NavbarStart: FC<PropsWithChildren> = ({ children }) => <div className="navbar-start">{children}</div>
+
+/**
+ * Bold notification blocks, to alert your users of something.
+ *
+ * Renders div tag with notification class.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Notification color="info" variant="light">
+ *   <ButtonDelete />
+ *   Lorem ipsum...
+ * </Notification>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/elements/notification/)
+ */
+export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
+  color,
+  variant,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div className={classnames<Bulma>(className as Bulma, "notification", is(color), is(variant), bulma)} {...props}>
+    {children}
+  </div>
+)
+export type NotificationProps = HTMLAttributes<HTMLDivElement> & BulmaProp & ColorProp & ColorVariantProp<"light">
 
 /**
  * Renders p tag.
@@ -851,6 +952,26 @@ export const Span: FC<PropsWithChildren<SpanProps>> = ({ bulma, className, child
   </span>
 )
 export type SpanProps = HTMLAttributes<HTMLSpanElement> & BulmaProp
+
+/**
+ * A simple container to divide your page into sections.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Section size="medium">
+ *   <Heading tag="h2">Title</Heading>
+ * </Section>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/layout/section/)
+ */
+export const Section: FC<PropsWithChildren<SectionProps>> = ({ size, bulma, className, children, ...props }) => (
+  <section className={classnames<Bulma>(className as Bulma, "section", is(size), bulma)} {...props}>
+    {children}
+  </section>
+)
+export type SectionProps = HTMLAttributes<HTMLElement> & BulmaProp & SizeProp<"medium" | "large">
 
 export const Table: FC<PropsWithChildren<TableProps>> = ({ bulma, className, children, ...props }) => (
   <div className="table-container">
