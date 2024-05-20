@@ -37,7 +37,11 @@ import { FC } from "react"
 
 export const MyComponent: FC<{ isSuccess: boolean }> = ({ isSuccess }) => (
   <Div bulma="block">
-    <Span bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}>Lorem ipsum...</Span>
+    <Span
+      bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}
+    >
+      Lorem ipsum...
+    </Span>
   </Div>
 )
 ```
@@ -73,6 +77,9 @@ You can use the `bulma` prop in case you need to add more Bulma classes that has
   - `Container`
   - `Control`
   - `Field`
+  - `FieldBody`
+  - `FieldHorizontal`
+  - `FieldLabel`
   - `FileUpload`
   - `Figure`
   - `FixedGrid`
@@ -140,10 +147,18 @@ For example you can use it to compose Bulma classes.
 import { FC, PropsWithChildren, ButtonHTMLAttributes } from "react"
 import { Bulma, classnames } from "trunx"
 
-type MyButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & Partial<{ isLoading: boolean }>
+type MyButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  Partial<{ isLoading: boolean }>
 
-export const MyButton: FC<PropsWithChildren<MyButtonProps>> = ({ isLoading, children, ...props }) => (
-  <button className={classnames<Bulma>("button", { "is-loading": isLoading })} {...props}>
+export const MyButton: FC<PropsWithChildren<MyButtonProps>> = ({
+  isLoading,
+  children,
+  ...props
+}) => (
+  <button
+    className={classnames<Bulma>("button", { "is-loading": isLoading })}
+    {...props}
+  >
     {children}
   </button>
 )

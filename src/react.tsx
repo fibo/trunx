@@ -25,7 +25,9 @@ type BulmaProp = {
 
 export type Size = "small" | "medium" | "large" | "normal"
 
-export type SizeProp<S extends Size = Extract<Size, "small" | "medium" | "large">> = Partial<{ size: S }>
+export type SizeProp<
+  S extends Size = Extract<Size, "small" | "medium" | "large">,
+> = Partial<{ size: S }>
 
 export type PluralSize = Extract<Size, "small" | "medium" | "large">
 
@@ -34,7 +36,13 @@ export type PluralSizeProp = SizeProp<PluralSize>
 // Colors
 //////////////////////////////////////////////////////////////////////
 
-export type MainColor = "danger" | "link" | "info" | "primary" | "success" | "warning"
+export type MainColor =
+  | "danger"
+  | "link"
+  | "info"
+  | "primary"
+  | "success"
+  | "warning"
 
 export type ShadeColor = "black" | "dark" | "light" | "white"
 
@@ -46,21 +54,32 @@ export type ColorProp<C extends Color = Color> = Partial<{ color: C }>
 
 export type ColorVariant = "light" | "dark"
 
-export type ColorVariantProp<V extends ColorVariant = ColorVariant> = Partial<{ variant: V }>
+export type ColorVariantProp<V extends ColorVariant = ColorVariant> = Partial<{
+  variant: V
+}>
 
 // Helpers
 //////////////////////////////////////////////////////////////////////
 
-const are = (arg: PluralSize | undefined): Extract<Bulma, `are-${typeof arg}`> | undefined =>
+const are = (
+  arg: PluralSize | undefined,
+): Extract<Bulma, `are-${typeof arg}`> | undefined =>
   arg ? `are-${arg}` : undefined
 
-export const is = (arg: Color | ColorVariant | Size | undefined): Extract<Bulma, `is-${typeof arg}`> | undefined =>
+export const is = (
+  arg: Color | ColorVariant | Size | undefined,
+): Extract<Bulma, `is-${typeof arg}`> | undefined =>
   arg ? `is-${arg}` : undefined
 
 // Components
 //////////////////////////////////////////////////////////////////////
 
-export const A: FC<PropsWithChildren<AProps>> = ({ bulma, className, children, ...props }) => (
+export const A: FC<PropsWithChildren<AProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
   <a className={classnames<string>(className, bulma)} {...props}>
     {children}
   </a>
@@ -73,7 +92,10 @@ export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps> & BulmaProp> = ({
   children,
   ...props
 }) => (
-  <nav className={classnames<Bulma>(className as Bulma, "breadcrumb", bulma)} {...props}>
+  <nav
+    className={classnames<Bulma>(className as Bulma, "breadcrumb", bulma)}
+    {...props}
+  >
     {children}
   </nav>
 )
@@ -125,7 +147,10 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
     {children}
   </button>
 )
-export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color"> &
+export type ButtonProps = Omit<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  "color"
+> &
   BulmaProp &
   ColorProp &
   ColorVariantProp &
@@ -139,17 +164,42 @@ export type ButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, "color">
     isRounded: boolean
   }>
 
-export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({ size, bulma, className, children, ...props }) => (
-  <div className={classnames<Bulma>(className as Bulma, "buttons", are(size), bulma)} {...props}>
+export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({
+  size,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "buttons",
+      are(size),
+      bulma,
+    )}
+    {...props}
+  >
     {children}
   </div>
 )
-export type ButtonsProps = HTMLAttributes<HTMLDivElement> & BulmaProp & PluralSizeProp
+export type ButtonsProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp &
+  PluralSizeProp
 
-export const ButtonDelete: FC<ButtonDeleteProps> = ({ size, className, children, ...props }) => (
-  <button className={classnames<Bulma>(className as Bulma, "delete", is(size))} {...props} />
+export const ButtonDelete: FC<ButtonDeleteProps> = ({
+  size,
+  className,
+  children,
+  ...props
+}) => (
+  <button
+    className={classnames<Bulma>(className as Bulma, "delete", is(size))}
+    {...props}
+  />
 )
-export type ButtonDeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp<"large">
+export type ButtonDeleteProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  SizeProp<"large">
 
 /**
  * Grid cell.
@@ -169,14 +219,25 @@ export type ButtonDeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizePr
  *
  * @see [bulma docs](https://bulma.io/documentation/grid/grid-cells/)
  */
-export const Cell: FC<PropsWithChildren<CellProps>> = ({ bulma, className, children, ...props }) => (
-  <div className={classnames<Bulma>(className as Bulma, "cell", bulma)} {...props}>
+export const Cell: FC<PropsWithChildren<CellProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "cell", bulma)}
+    {...props}
+  >
     {children}
   </div>
 )
 export type CellProps = HTMLAttributes<HTMLDivElement> & BulmaProp
 
-export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({ children, ...props }) => (
+export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({
+  children,
+  ...props
+}) => (
   <label className="checkbox">
     <input type="checkbox" {...props} />
     {children}
@@ -184,8 +245,16 @@ export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({ children, ...pr
 )
 export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type">
 
-export const Column: FC<PropsWithChildren<ColumnProps>> = ({ bulma, className, children, ...props }) => (
-  <div className={classnames<Bulma>(className as Bulma, "column", bulma)} {...props}>
+export const Column: FC<PropsWithChildren<ColumnProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "column", bulma)}
+    {...props}
+  >
     {children}
   </div>
 )
@@ -259,14 +328,14 @@ export const Container: FC<PropsWithChildren<ContainerProps>> = ({
   ...props
 }) => (
   <div
-    className={classnames<string>(
-      className,
+    className={classnames<Bulma>(
+      className as Bulma,
       "container",
       {
         "is-widescreen": isWidescreen,
         "is-fullhd": isFullhd,
         "is-fluid": isFluid,
-        // Bulma generated types do not contain `is-max-desktop`.
+        // @ts-ignore Bulma generated types do not contain `is-max-desktop`.
         "is-max-desktop": isMaxDesktop,
         "is-max-widescreen": isMaxWidescreen,
       },
@@ -290,6 +359,7 @@ export type ContainerProps = HTMLAttributes<HTMLDivElement> &
 export const Control: FC<PropsWithChildren<ControlProps>> = ({
   hasIconsLeft,
   hasIconsRight,
+  isExpanded,
   bulma,
   className,
   children,
@@ -300,6 +370,7 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
       className as Bulma,
       "control",
       {
+        "is-expanded": isExpanded,
         "has-icons-left": hasIconsLeft,
         "has-icons-right": hasIconsRight,
       },
@@ -313,11 +384,17 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
 export type ControlProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
   Partial<{
+    isExpanded: boolean
     hasIconsLeft: boolean
     hasIconsRight: boolean
   }>
 
-export const Div: FC<PropsWithChildren<DivProps>> = ({ bulma, className, children, ...props }) => (
+export const Div: FC<PropsWithChildren<DivProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
   <div className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
     {children}
   </div>
@@ -340,19 +417,232 @@ export type DivProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  *
  * @see [bulma docs](https://bulma.io/documentation/form/general/#form-field)
  */
-export const Field: FC<PropsWithChildren<FieldProps>> = ({ bulma, className, children, ...props }) => (
-  <div className={classnames<Bulma>(className as Bulma, "field", bulma)} {...props}>
+export const Field: FC<PropsWithChildren<FieldProps>> = ({
+  hasAddons,
+  hasAddonsCentered,
+  hasAddonsRight,
+  isGrouped,
+  isGroupedCentered,
+  isGroupedMultiline,
+  isGroupedRight,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "field",
+      {
+        "has-addons": hasAddons,
+        "has-addons-centered": hasAddonsCentered,
+        "has-addons-right": hasAddonsRight,
+        "is-grouped": isGrouped,
+        "is-grouped-centered": isGroupedCentered,
+        "is-grouped-multiline": isGroupedMultiline,
+        "is-grouped-right": isGroupedRight,
+      },
+      bulma,
+    )}
+    {...props}
+  >
     {children}
   </div>
 )
-export type FieldProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+export type FieldProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp &
+  Partial<{
+    hasAddons: boolean
+    hasAddonsCentered: boolean
+    hasAddonsRight: boolean
+    isGrouped: boolean
+    isGroupedCentered: boolean
+    isGroupedMultiline: boolean
+    isGroupedRight: boolean
+    isHorizontal: boolean
+  }>
 
-export const Figure: FC<PropsWithChildren<FigureProps>> = ({ bulma, className, children, ...props }) => (
-  <figure className={classnames<Bulma>(className as Bulma, "image", bulma)} {...props}>
+/** @see {@link FieldHorizontal} */
+export const FieldBody: FC<PropsWithChildren<FieldBodyProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "field-body", bulma)}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type FieldBodyProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+/**
+ * A horizontal form control.
+ *
+ * @example
+ *
+ * ```tsx
+ * <FieldHorizontal>
+ *   <FieldLabel isNormal>
+ *     <Label>From</Label>
+ *   </FieldLabel>
+ *   <FieldBody>
+ *     <Field>
+ *       <Control>
+ *         <Input type="text" placeholder="Name" />
+ *       </Control>
+ *     </Field>
+ *     <Field>
+ *       <Control>
+ *         <Input type="email" placeholder="Email" />
+ *       </Control>
+ *     </Field>
+ *   </FieldBody>
+ * </FieldHorizontal>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/form/general/#horizontal-form)
+ */
+export const FieldHorizontal: FC<PropsWithChildren<FieldHorizontalProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "field",
+      "is-horizontal",
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type FieldHorizontalProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+/** @see {@link FieldHorizontal} */
+export const FieldLabel: FC<PropsWithChildren<FieldLabelProps>> = ({
+  isNormal,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "field-label",
+      {
+        "is-normal": isNormal,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type FieldLabelProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp & {
+    isNormal: boolean
+  }
+
+/**
+ * Renders figure tag with image class.
+ *
+ * @example Fixed square images
+ *
+ * ```tsx
+ * <Figure dimension="128x128">
+ *   <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+ * </Figure>
+ * ```
+ *
+ * @example Rounded images
+ *
+ * ```tsx
+ * <Figure dimension="128x128">
+ *   <img className="is-rounded" src="https://bulma.io/assets/images/placeholders/256x256.png" />
+ * </Figure>
+ * ```
+ *
+ * @example Arbitrary ratios with any element
+ *
+ * ```tsx
+ * <Figure ratio="16by9">
+ *   <iframe
+ *     className="has-ratio"
+ *     width="640"
+ *     height="360"
+ *     src="https://www.youtube.com/embed/YE7VzlLtp-4"
+ *     frameBorder="0"
+ *     allowFullScreen
+ *   />
+ * </Figure>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/elements/image/)
+ */
+export const Figure: FC<PropsWithChildren<FigureProps>> = ({
+  dimension,
+  ratio,
+  isSquare,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <figure
+    className={classnames<Bulma>(
+      className as Bulma,
+      "image",
+      dimension ? `is-${dimension}` : undefined,
+      ratio ? `is-${ratio}` : undefined,
+      {
+        "is-square": isSquare,
+      },
+      bulma,
+    )}
+    {...props}
+  >
     {children}
   </figure>
 )
-export type FigureProps = HTMLAttributes<HTMLElement> & BulmaProp
+export type FigureProps = HTMLAttributes<HTMLElement> &
+  BulmaProp &
+  Partial<{
+    isSquare: boolean
+    dimension:
+      | "16x16"
+      | "24x24"
+      | "32x32"
+      | "48x48"
+      | "64x64"
+      | "96x96"
+      | "128x128"
+    ratio:
+      | "1by1"
+      | "5by4"
+      | "4by3"
+      | "3by2"
+      | "5by3"
+      | "16by9"
+      | "2by1"
+      | "3by1"
+      | "4by5"
+      | "3by4"
+      | "2by3"
+      | "3by5"
+      | "9by16"
+      | "1by2"
+      | "1by3"
+  }>
 
 /**
  * A custom file upload input.
@@ -367,7 +657,10 @@ export const FileUpload: FC<PropsWithChildren<FileUploadProps>> = ({
   children,
   ...props
 }) => (
-  <div className={classnames<Bulma>(className as Bulma, "file", bulma)} {...props}>
+  <div
+    className={classnames<Bulma>(className as Bulma, "file", bulma)}
+    {...props}
+  >
     <label className="file-label">
       <input type="file" {...props} />
       {cta ? <span className="file-cta">{cta}</span> : null}
@@ -375,7 +668,10 @@ export const FileUpload: FC<PropsWithChildren<FileUploadProps>> = ({
     </label>
   </div>
 )
-export type FileUploadProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> &
+export type FileUploadProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "type"
+> &
   BulmaProp &
   Partial<{
     cta: ReactNode
@@ -424,8 +720,16 @@ export type FixedGridProps = HTMLAttributes<HTMLDivElement> &
   }>
 
 /** Renders footer tag with footer class. */
-export const Footer: FC<PropsWithChildren<FooterProps>> = ({ bulma, className, children, ...props }) => (
-  <footer className={classnames<Bulma>(className as Bulma, "footer", bulma)} {...props}>
+export const Footer: FC<PropsWithChildren<FooterProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <footer
+    className={classnames<Bulma>(className as Bulma, "footer", bulma)}
+    {...props}
+  >
     {children}
   </footer>
 )
@@ -445,8 +749,16 @@ export type FooterProps = HTMLAttributes<HTMLElement> & BulmaProp
  *
  * @see [bulma docs](https://bulma.io/documentation/grid/smart-grid/)
  */
-export const Grid: FC<PropsWithChildren<GridProps>> = ({ bulma, className, children, ...props }) => (
-  <div className={classnames<Bulma>(className as Bulma, "grid", bulma)} {...props}>
+export const Grid: FC<PropsWithChildren<GridProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "grid", bulma)}
+    {...props}
+  >
     {children}
   </div>
 )
@@ -461,7 +773,13 @@ export type GridProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  * <Heading tag="h1"></Heading>
  * ```
  */
-export const Heading: FC<PropsWithChildren<HeadingProps>> = ({ tag: Tag, bulma, className, children, ...props }) => (
+export const Heading: FC<PropsWithChildren<HeadingProps>> = ({
+  tag: Tag,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
   <Tag className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
     {children}
   </Tag>
@@ -471,24 +789,79 @@ export type HeadingProps = HTMLAttributes<HTMLHeadingElement> &
     tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
   }
 
-export const Help: FC<PropsWithChildren<HelpProps>> = ({ color, bulma, className, children, ...props }) => (
-  <p className={classnames<Bulma>(className as Bulma, "help", is(color), bulma)} {...props}>
+export const Help: FC<PropsWithChildren<HelpProps>> = ({
+  color,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <p
+    className={classnames<Bulma>(className as Bulma, "help", is(color), bulma)}
+    {...props}
+  >
     {children}
   </p>
 )
-export type HelpProps = HTMLAttributes<HTMLParagraphElement> & BulmaProp & ColorProp
+export type HelpProps = HTMLAttributes<HTMLParagraphElement> &
+  BulmaProp &
+  ColorProp
 
-export const Icon: FC<PropsWithChildren<IconProps>> = ({ bulma, className, children, ...props }) => (
-  <span className={classnames<Bulma>(className as Bulma, "icon", bulma)} {...props}>
+export const Icon: FC<PropsWithChildren<IconProps>> = ({
+  isLeft,
+  isRight,
+  size,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <span
+    className={classnames<Bulma>(
+      className as Bulma,
+      "icon",
+      is(size),
+      {
+        "is-left": isLeft,
+        "is-right": isRight,
+      },
+      bulma,
+    )}
+    {...props}
+  >
     {children}
   </span>
 )
-export type IconProps = HTMLAttributes<HTMLSpanElement> & BulmaProp
+export type IconProps = HTMLAttributes<HTMLSpanElement> &
+  BulmaProp &
+  SizeProp &
+  Partial<{
+    isLeft: boolean
+    isRight: boolean
+  }>
 
-export const Input: FC<InputProps> = ({ bulma, className, color, size, ...props }) => (
-  <input className={classnames<Bulma>(className as Bulma, "input", is(color), is(size), bulma)} {...props} />
+export const Input: FC<InputProps> = ({
+  bulma,
+  className,
+  color,
+  size,
+  ...props
+}) => (
+  <input
+    className={classnames<Bulma>(
+      className as Bulma,
+      "input",
+      is(color),
+      is(size),
+      bulma,
+    )}
+    {...props}
+  />
 )
-export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "type"> &
+export type InputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "size" | "type"
+> &
   Partial<{
     type: Exclude<
       InputHTMLAttributes<HTMLInputElement>["type"],
@@ -505,8 +878,16 @@ export type InputProps = Omit<InputHTMLAttributes<HTMLInputElement>, "size" | "t
   SizeProp
 
 /** Renders label tag with label class. */
-export const Label: FC<PropsWithChildren<LabelProps>> = ({ bulma, className, children, ...props }) => (
-  <label className={classnames<Bulma>(className as Bulma, "label", bulma)} {...props}>
+export const Label: FC<PropsWithChildren<LabelProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <label
+    className={classnames<Bulma>(className as Bulma, "label", bulma)}
+    {...props}
+  >
     {children}
   </label>
 )
@@ -519,24 +900,48 @@ export type LabelProps = HTMLAttributes<HTMLLabelElement> & BulmaProp
  *
  * @see [bulma docs](https://bulma.io/documentation/components/menu/)
  */
-export const Menu: FC<PropsWithChildren<MenuProps>> = ({ bulma, className, children, ...props }) => (
-  <aside className={classnames<Bulma>(className as Bulma, "menu", bulma)} {...props}>
+export const Menu: FC<PropsWithChildren<MenuProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <aside
+    className={classnames<Bulma>(className as Bulma, "menu", bulma)}
+    {...props}
+  >
     {children}
   </aside>
 )
 export type MenuProps = HTMLAttributes<HTMLElement> & BulmaProp
 
 /** Renders p tag with menu-label class. */
-export const MenuLabel: FC<PropsWithChildren<MenuLabelProps>> = ({ bulma, className, children, ...props }) => (
-  <p className={classnames<Bulma>(className as Bulma, "menu-label", bulma)} {...props}>
+export const MenuLabel: FC<PropsWithChildren<MenuLabelProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <p
+    className={classnames<Bulma>(className as Bulma, "menu-label", bulma)}
+    {...props}
+  >
     {children}
   </p>
 )
 export type MenuLabelProps = HTMLAttributes<HTMLParagraphElement> & BulmaProp
 
 /** Renders ul tag with menu-list class. */
-export const MenuList: FC<PropsWithChildren<MenuListProps>> = ({ bulma, className, children, ...props }) => (
-  <ul className={classnames<Bulma>(className as Bulma, "menu-list", bulma)} {...props}>
+export const MenuList: FC<PropsWithChildren<MenuListProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <ul
+    className={classnames<Bulma>(className as Bulma, "menu-list", bulma)}
+    {...props}
+  >
     {children}
   </ul>
 )
@@ -549,8 +954,17 @@ export type MenuListProps = HTMLAttributes<HTMLUListElement> & BulmaProp
  *
  * @see [bulma docs](https://bulma.io/documentation/components/message/)
  */
-export const Message: FC<PropsWithChildren<MessageProps>> = ({ header, bulma, className, children, ...props }) => (
-  <article className={classnames<Bulma>(className as Bulma, "message", bulma)} {...props}>
+export const Message: FC<PropsWithChildren<MessageProps>> = ({
+  header,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <article
+    className={classnames<Bulma>(className as Bulma, "message", bulma)}
+    {...props}
+  >
     {header ? <div className="message-header">{header}</div> : null}
     <div className="message-body">{children}</div>
   </article>
@@ -584,7 +998,10 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   children,
   ...props
 }) => (
-  <div className={classnames<Bulma>(className as Bulma, "modal", is(size), bulma)} {...props}>
+  <div
+    className={classnames<Bulma>(className as Bulma, "modal", is(size), bulma)}
+    {...props}
+  >
     {noBackground ? null : <div className="modal-background" />}
     {children}
   </div>
@@ -614,8 +1031,17 @@ export type ModalProps = HTMLAttributes<HTMLDivElement> &
  *
  * @see [bulma docs](https://bulma.io/documentation/components/modal/#modal-card)
  */
-export const ModalCard: FC<PropsWithChildren<ModalCardProps>> = ({ head, foot, className, children, ...props }) => (
-  <div className={classnames<Bulma>(className as Bulma, "modal-card")} {...props}>
+export const ModalCard: FC<PropsWithChildren<ModalCardProps>> = ({
+  head,
+  foot,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "modal-card")}
+    {...props}
+  >
     <div className="modal-card-head">{head}</div>
     {children}
     <div className="modal-card-foot"> {foot} </div>
@@ -627,14 +1053,30 @@ export type ModalCardProps = HTMLAttributes<HTMLDivElement> & {
 }
 
 /** Renders button tag with modal-close class. */
-export const ModalClose: FC<ModalCloseProps> = ({ size, className, ...props }) => (
-  <button className={classnames<Bulma>(className as Bulma, "modal-close", is(size))} {...props} />
+export const ModalClose: FC<ModalCloseProps> = ({
+  size,
+  className,
+  ...props
+}) => (
+  <button
+    className={classnames<Bulma>(className as Bulma, "modal-close", is(size))}
+    {...props}
+  />
 )
-export type ModalCloseProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp<"large">
+export type ModalCloseProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  SizeProp<"large">
 
 /** Renders div tag with modal-content class. */
-export const ModalContent: FC<PropsWithChildren<ModalContentProps>> = ({ bulma, className, children, ...props }) => (
-  <div className={classnames<Bulma>(className as Bulma, "modal-content", bulma)} {...props}>
+export const ModalContent: FC<PropsWithChildren<ModalContentProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "modal-content", bulma)}
+    {...props}
+  >
     {children}
   </div>
 )
@@ -655,11 +1097,22 @@ export const Navbar: FC<PropsWithChildren<NavbarProps>> = ({
   children,
   ...props
 }) => (
-  <nav className={classnames<Bulma>(className as Bulma, "navbar", is(color), bulma)} role={role} {...props}>
+  <nav
+    className={classnames<Bulma>(
+      className as Bulma,
+      "navbar",
+      is(color),
+      bulma,
+    )}
+    role={role}
+    {...props}
+  >
     {children}
   </nav>
 )
-export type NavbarProps = Omit<HTMLAttributes<HTMLElement>, "color"> & BulmaProp & ColorProp<MainColor | ShadeColor>
+export type NavbarProps = Omit<HTMLAttributes<HTMLElement>, "color"> &
+  BulmaProp &
+  ColorProp<MainColor | ShadeColor>
 
 /**
  * The NavbarBrand is the left side of the navbar.
@@ -668,7 +1121,9 @@ export type NavbarProps = Omit<HTMLAttributes<HTMLElement>, "color"> & BulmaProp
  *
  * @see [bulma docs](https://bulma.io/documentation/components/navbar/#navbar-brand)
  */
-export const NavbarBrand: FC<PropsWithChildren> = ({ children }) => <div className="navbar-brand">{children}</div>
+export const NavbarBrand: FC<PropsWithChildren> = ({ children }) => (
+  <div className="navbar-brand">{children}</div>
+)
 
 /**
  * The NavbarBurger is a hamburger menu that only appears on touch devices.
@@ -690,7 +1145,10 @@ export const NavbarBurger: FC<NavbarBurgerProps> = ({ isActive, ...props }) => (
     <span aria-hidden="true"></span>
   </a>
 )
-export type NavbarBurgerProps = Omit<HTMLAttributes<HTMLElement>, "aria-label" | "className" | "role"> &
+export type NavbarBurgerProps = Omit<
+  HTMLAttributes<HTMLElement>,
+  "aria-label" | "className" | "role"
+> &
   Partial<{
     isActive: boolean
   }>
@@ -728,7 +1186,9 @@ export type NavbarDropdownProps = HTMLAttributes<HTMLDivElement> &
     isRight: boolean
   }>
 
-export const NavbarDropdownMenu: FC<PropsWithChildren<NavbarDropdownMenuProps>> = ({
+export const NavbarDropdownMenu: FC<
+  PropsWithChildren<NavbarDropdownMenuProps>
+> = ({
   hasDropdownUp,
   isActive,
   isHoverable,
@@ -762,7 +1222,9 @@ export type NavbarDropdownMenuProps = HTMLAttributes<HTMLDivElement> &
     isHoverable: boolean
   }>
 
-export const NavbarEnd: FC<PropsWithChildren> = ({ children }) => <div className="navbar-end">{children}</div>
+export const NavbarEnd: FC<PropsWithChildren> = ({ children }) => (
+  <div className="navbar-end">{children}</div>
+)
 
 export const NavbarItem: FC<PropsWithChildren<NavbarItemProps>> = ({
   isSelected,
@@ -799,11 +1261,11 @@ export const NavbarLink: FC<PropsWithChildren<NavbarLinkProps>> = ({
   ...props
 }) => (
   <a
-    className={classnames<string>(
-      className,
+    className={classnames<Bulma>(
+      className as Bulma,
       "navbar-link",
       {
-        // Bulma generated types do not contain `is-arrowless`.
+        // @ts-ignore Bulma generated types do not contain `is-arrowless`.
         "is-arrowless": isArrowless,
       },
       bulma,
@@ -837,14 +1299,21 @@ export type NavbarLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
  *
  * @see [bulma docs](https://bulma.io/documentation/components/navbar/#navbar-menu)
  */
-export const NavbarMenu: FC<PropsWithChildren<NavbarMenuProps>> = ({ isActive, children }) => (
-  <div className={classnames<Bulma>("navbar-menu", { "is-active": isActive })}>{children}</div>
+export const NavbarMenu: FC<PropsWithChildren<NavbarMenuProps>> = ({
+  isActive,
+  children,
+}) => (
+  <div className={classnames<Bulma>("navbar-menu", { "is-active": isActive })}>
+    {children}
+  </div>
 )
 export type NavbarMenuProps = Partial<{
   isActive: boolean
 }>
 
-export const NavbarStart: FC<PropsWithChildren> = ({ children }) => <div className="navbar-start">{children}</div>
+export const NavbarStart: FC<PropsWithChildren> = ({ children }) => (
+  <div className="navbar-start">{children}</div>
+)
 
 /**
  * Bold notification blocks, to alert your users of something.
@@ -870,11 +1339,23 @@ export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
   children,
   ...props
 }) => (
-  <div className={classnames<Bulma>(className as Bulma, "notification", is(color), is(variant), bulma)} {...props}>
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "notification",
+      is(color),
+      is(variant),
+      bulma,
+    )}
+    {...props}
+  >
     {children}
   </div>
 )
-export type NotificationProps = HTMLAttributes<HTMLDivElement> & BulmaProp & ColorProp & ColorVariantProp<"light">
+export type NotificationProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp &
+  ColorProp &
+  ColorVariantProp<"light">
 
 /**
  * Renders p tag.
@@ -885,7 +1366,12 @@ export type NotificationProps = HTMLAttributes<HTMLDivElement> & BulmaProp & Col
  * <P bulma="has-text-grey">Lorem ipsum...</P>
  * ```
  */
-export const P: FC<PropsWithChildren<PProps>> = ({ bulma, className, children, ...props }) => (
+export const P: FC<PropsWithChildren<PProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
   <p className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
     {children}
   </p>
@@ -932,7 +1418,9 @@ export type PaginationProps = HTMLAttributes<HTMLElement> &
     isRight: boolean
   }>
 
-export const PaginationEllipsis: FC = () => <span className="pagination-ellipsis">&hellip;</span>
+export const PaginationEllipsis: FC = () => (
+  <span className="pagination-ellipsis">&hellip;</span>
+)
 
 export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
   isCurrent,
@@ -942,7 +1430,12 @@ export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
   ...props
 }) => (
   <a
-    className={classnames<Bulma>(className as Bulma, "pagination-link", { "is-current": isCurrent }, bulma)}
+    className={classnames<Bulma>(
+      className as Bulma,
+      "pagination-link",
+      { "is-current": isCurrent },
+      bulma,
+    )}
     {...props}
   >
     {children}
@@ -960,7 +1453,10 @@ export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({
   children,
   ...props
 }) => (
-  <ul className={classnames<Bulma>(className as Bulma, "pagination-list", bulma)} {...props}>
+  <ul
+    className={classnames<Bulma>(className as Bulma, "pagination-list", bulma)}
+    {...props}
+  >
     {children}
   </ul>
 )
@@ -993,13 +1489,9 @@ export type PaginationNextProps = AnchorHTMLAttributes<HTMLAnchorElement> &
     isDisabled: boolean
   }>
 
-export const PaginationPrevious: FC<PropsWithChildren<PaginationPreviousProps>> = ({
-  isDisabled,
-  bulma,
-  className,
-  children,
-  ...props
-}) => (
+export const PaginationPrevious: FC<
+  PropsWithChildren<PaginationPreviousProps>
+> = ({ isDisabled, bulma, className, children, ...props }) => (
   <a
     className={classnames<Bulma>(
       className as Bulma,
@@ -1031,22 +1523,47 @@ export type PaginationPreviousProps = AnchorHTMLAttributes<HTMLAnchorElement> &
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/progress/)
  */
-export const Progress: FC<PropsWithChildren<ProgressProps>> = ({ size, bulma, className, children, ...props }) => (
-  <progress className={classnames<Bulma>(className as Bulma, "progress", is(size), bulma)} {...props}>
+export const Progress: FC<PropsWithChildren<ProgressProps>> = ({
+  size,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <progress
+    className={classnames<Bulma>(
+      className as Bulma,
+      "progress",
+      is(size),
+      bulma,
+    )}
+    {...props}
+  >
     {children}
   </progress>
 )
-export type ProgressProps = ProgressHTMLAttributes<HTMLProgressElement> & BulmaProp & SizeProp
+export type ProgressProps = ProgressHTMLAttributes<HTMLProgressElement> &
+  BulmaProp &
+  SizeProp
 
-export const Radio: FC<PropsWithChildren<RadioProps>> = ({ children, ...props }) => (
+export const Radio: FC<PropsWithChildren<RadioProps>> = ({
+  children,
+  ...props
+}) => (
   <label className="radio">
     <input type="radio" {...props} />
     {children}
   </label>
 )
-export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> & BulmaProp
+export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> &
+  BulmaProp
 
-export const Span: FC<PropsWithChildren<SpanProps>> = ({ bulma, className, children, ...props }) => (
+export const Span: FC<PropsWithChildren<SpanProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
   <span className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
     {children}
   </span>
@@ -1066,12 +1583,28 @@ export type SpanProps = HTMLAttributes<HTMLSpanElement> & BulmaProp
  *
  * @see [bulma docs](https://bulma.io/documentation/layout/section/)
  */
-export const Section: FC<PropsWithChildren<SectionProps>> = ({ size, bulma, className, children, ...props }) => (
-  <section className={classnames<Bulma>(className as Bulma, "section", is(size), bulma)} {...props}>
+export const Section: FC<PropsWithChildren<SectionProps>> = ({
+  size,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <section
+    className={classnames<Bulma>(
+      className as Bulma,
+      "section",
+      is(size),
+      bulma,
+    )}
+    {...props}
+  >
     {children}
   </section>
 )
-export type SectionProps = HTMLAttributes<HTMLElement> & BulmaProp & SizeProp<"medium" | "large">
+export type SectionProps = HTMLAttributes<HTMLElement> &
+  BulmaProp &
+  SizeProp<"medium" | "large">
 
 /**
  * The browser built-in select dropdown, styled accordingly.
@@ -1090,13 +1623,26 @@ export type SectionProps = HTMLAttributes<HTMLElement> & BulmaProp & SizeProp<"m
  *
  * @see [bulma docs](https://bulma.io/documentation/form/select/)
  */
-export const Select: FC<SelectProps> = ({ options, isLoading, isRounded, size, bulma, className, ...props }) => (
+export const Select: FC<SelectProps> = ({
+  options,
+  isFullwidth,
+  isLoading,
+  isRounded,
+  size,
+  bulma,
+  className,
+  ...props
+}) => (
   <div
     className={classnames<Bulma>(
       className as Bulma,
       "select",
       is(size),
-      { "is-loading": isLoading, "is-rounded": isRounded },
+      {
+        "is-loading": isLoading,
+        "is-fullwidth": isFullwidth,
+        "is-rounded": isRounded,
+      },
       bulma,
     )}
   >
@@ -1107,11 +1653,15 @@ export const Select: FC<SelectProps> = ({ options, isLoading, isRounded, size, b
     </select>
   </div>
 )
-export type SelectProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, "size"> & {
+export type SelectProps = Omit<
+  SelectHTMLAttributes<HTMLSelectElement>,
+  "size"
+> & {
   options: Array<OptionHTMLAttributes<HTMLOptionElement>>
 } & BulmaProp &
   SizeProp<Size> &
   Partial<{
+    isFullwidth: boolean
     isLoading: boolean
     isRounded: boolean
   }>
@@ -1131,9 +1681,17 @@ export type SelectProps = Omit<SelectHTMLAttributes<HTMLSelectElement>, "size"> 
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/table/)
  */
-export const Table: FC<PropsWithChildren<TableProps>> = ({ bulma, className, children, ...props }) => (
+export const Table: FC<PropsWithChildren<TableProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
   <div className="table-container">
-    <table className={classnames<Bulma>(className as Bulma, "table", bulma)} {...props}>
+    <table
+      className={classnames<Bulma>(className as Bulma, "table", bulma)}
+      {...props}
+    >
       {children}
     </table>
   </div>
@@ -1151,7 +1709,14 @@ export type TableProps = TableHTMLAttributes<HTMLTableElement> & BulmaProp
  *
  * @see [bulma docs](https://bulma.io/documentation/form/textarea/)
  */
-export const Textarea: FC<TextareaProps> = ({ color, size, isLoading, bulma, className, ...props }) => (
+export const Textarea: FC<TextareaProps> = ({
+  color,
+  size,
+  isLoading,
+  bulma,
+  className,
+  ...props
+}) => (
   <textarea
     className={classnames<Bulma>(
       className as Bulma,

@@ -93,5 +93,7 @@ const testData = [
 ]
 
 test("classNames", () => {
-  testData.forEach(({ input, output }) => assert.deepEqual(classnames(...input), output))
+  testData.forEach(({ input, output }) =>
+    assert.deepEqual(classnames(...input), output),
+  )
 })
