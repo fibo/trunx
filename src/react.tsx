@@ -245,6 +245,7 @@ export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({
 )
 export type CheckboxProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type">
 
+/** @see {@link Columns} */
 export const Column: FC<PropsWithChildren<ColumnProps>> = ({
   bulma,
   className,
@@ -807,6 +808,133 @@ export type HelpProps = HTMLAttributes<HTMLParagraphElement> &
   BulmaProp &
   ColorProp
 
+/**
+ * An imposing hero banner to showcase something.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Hero size="small">
+ *   <HeroBody>
+ *       <P bulma="title">Title</P>
+ *       <P bulma="subtitle">Subtitle</P>
+ *   </HeroBody>
+ * </Hero>
+ * ```
+ *
+ * @example Half height hero
+ *
+ * ```tsx
+ * <Hero color="success" isHalfheight>
+ *   <HeroBody>
+ *       <P bulma="title">Title</P>
+ *       <P bulma="subtitle">Subtitle</P>
+ *   </HeroBody>
+ * </Hero>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/layout/hero/)
+ */
+export const Hero: FC<PropsWithChildren<HeroProps>> = ({
+  color,
+  size,
+  isHalfheight,
+  isFullheight,
+  isFullheightWithNavbar,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <section
+    className={classnames<Bulma>(
+      className as Bulma,
+      "hero",
+      is(color),
+      is(size),
+      {
+        "is-halfheight": isHalfheight,
+        "is-fullheight": isFullheight,
+        "is-fullheight-with-navbar": isFullheightWithNavbar,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </section>
+)
+export type HeroProps = HTMLAttributes<HTMLElement> &
+  BulmaProp &
+  ColorProp &
+  SizeProp &
+  Partial<{
+    isHalfheight: boolean
+    isFullheight: boolean
+    isFullheightWithNavbar: boolean
+  }>
+
+/** @see {@link Hero} */
+export const HeroBody: FC<PropsWithChildren<HeroBodyProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "hero-body", bulma)}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type HeroBodyProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+/** @see {@link Hero} */
+export const HeroFoot: FC<PropsWithChildren<HeroFootProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "hero-foot", bulma)}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type HeroFootProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+/** @see {@link Hero} */
+export const HeroHead: FC<PropsWithChildren<HeroHeadProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "hero-head", bulma)}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type HeroHeadProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+/**
+ * A container for any type of icon.
+ *
+ * @example
+ *
+ * ```tsx
+ *   <Icon>
+ *     <i className="fas fa-home"></i>
+ *   </Icon>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/elements/icon/).
+ */
 export const Icon: FC<PropsWithChildren<IconProps>> = ({
   isLeft,
   isRight,
@@ -839,6 +967,39 @@ export type IconProps = HTMLAttributes<HTMLSpanElement> &
     isLeft: boolean
     isRight: boolean
   }>
+
+/**
+ * Combine an icon with text.
+ *
+ * @example
+ *
+ * ```tsx
+ * <IconText>
+ *   <Icon>
+ *     <i className="fas fa-home"></i>
+ *   </Icon>
+ *   <span>Home</span>
+ * </IconText>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/elements/icon/#icon-text)
+ */
+export const IconText: FC<PropsWithChildren<IconTextProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <span
+    className={classnames<Bulma>(className as Bulma, "icon-text", bulma)}
+    {...props}
+  >
+    {children}
+  </span>
+)
+export type IconTextProps = HTMLAttributes<HTMLSpanElement> &
+  BulmaProp &
+  SizeProp
 
 export const Input: FC<InputProps> = ({
   bulma,

@@ -81,44 +81,49 @@ You can use the `bulma` prop in case you need to add more Bulma classes that has
   - `Container`
   - `Control`
   - `Field`
-  - `FieldBody`
   - `FieldHorizontal`
-  - `FieldLabel`
+    - `FieldBody`
+    - `FieldLabel`
   - `FileUpload`
   - `Figure`
   - `FixedGrid`
   - `Footer`
   - `Grid`
   - `Help`
+  - `Hero`
+    - `HeroBody`
+    - `HeroFoot`
+    - `HeroHead`
   - `Icon`
+    - `IconText`
   - `Input`
   - `Label`
   - `Menu`
-  - `MenuLabel`
-  - `MenuList`
+    - `MenuLabel`
+    - `MenuList`
   - `Message`
   - `Modal`
-  - `ModalCard`
-  - `ModalClose`
-  - `ModalContent`
+    - `ModalCard`
+    - `ModalClose`
+    - `ModalContent`
   - `Navbar`
-  - `NavbarBrand`
-  - `NavbarBurger`
-  - `NavbarDivider`
-  - `NavbarDropdown`
-  - `NavbarDropdownMenu`
-  - `NavbarEnd`
-  - `NavbarItem`
-  - `NavbarLink`
-  - `NavbarMenu`
-  - `NavbarStart`
+    - `NavbarBrand`
+    - `NavbarBurger`
+    - `NavbarDivider`
+    - `NavbarDropdown`
+    - `NavbarDropdownMenu`
+    - `NavbarEnd`
+    - `NavbarItem`
+    - `NavbarLink`
+    - `NavbarMenu`
+    - `NavbarStart`
   - `Notification`
   - `Pagination`
-  - `PaginationEllipsis`
-  - `PaginationLink`
-  - `PaginationList`
-  - `PaginationNext`
-  - `PaginationPrevious`
+    - `PaginationEllipsis`
+    - `PaginationLink`
+    - `PaginationList`
+    - `PaginationNext`
+    - `PaginationPrevious`
   - `Progress`
   - `Radio`
   - `Section`
