@@ -79,6 +79,7 @@ You can use the `bulma` prop in case you need to add more Bulma classes that has
   - `Column`
   - `Columns`
   - `Container`
+  - `Content`
   - `Control`
   - `Field`
   - `FieldHorizontal`
