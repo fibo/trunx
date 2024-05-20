@@ -234,6 +234,142 @@ export const Cell: FC<PropsWithChildren<CellProps>> = ({
 )
 export type CellProps = HTMLAttributes<HTMLDivElement> & BulmaProp
 
+/**
+ * An all-around flexible and composable component.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Card>
+ *   <CardHeader>
+ *     <CardHeaderTitle>Title</CardHeaderTitle>
+ *     <CardHeaderIcon>
+ *       <Icon><i className="fas fa-angle-down" aria-hidden="true" /></Icon>
+ *     </CardHeaderIcon>
+ *   </CardHeader>
+ *   <CardContent>
+ *     Lorem ipsum...
+ *   </CardContent>
+ *   <CardFooter>
+ *     <A bulma="card-footer-item">Save</A>
+ *     <A bulma="card-footer-item">Delete</A>
+ *   </CardFooter>
+ * </Card>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/components/card/)
+ */
+export const Card: FC<PropsWithChildren<CardProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "card", bulma)}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type CardProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+/** @see {@link Card} */
+export const CardContent: FC<PropsWithChildren<CardContentProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "card-content", bulma)}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type CardContentProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+/** @see {@link Card} */
+export const CardFooter: FC<PropsWithChildren<CardFooterProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <footer
+    className={classnames<Bulma>(className as Bulma, "card-footer", bulma)}
+    {...props}
+  >
+    {children}
+  </footer>
+)
+export type CardFooterProps = HTMLAttributes<HTMLElement> & BulmaProp
+
+/** @see {@link Card} */
+export const CardHeader: FC<PropsWithChildren<CardHeaderProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <footer
+    className={classnames<Bulma>(className as Bulma, "card-header", bulma)}
+    {...props}
+  >
+    {children}
+  </footer>
+)
+export type CardHeaderProps = HTMLAttributes<HTMLElement> & BulmaProp
+
+/** @see {@link Card} */
+export const CardHeaderIcon: FC<PropsWithChildren<CardHeaderIconProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <button
+    className={classnames<Bulma>(className as Bulma, "card-header-icon", bulma)}
+    {...props}
+  >
+    {children}
+  </button>
+)
+export type CardHeaderIconProps = HTMLAttributes<HTMLButtonElement> & BulmaProp
+
+/** @see {@link Card} */
+export const CardHeaderTitle: FC<PropsWithChildren<CardHeaderTitleProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <p
+    className={classnames<Bulma>(
+      className as Bulma,
+      "card-header-title",
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </p>
+)
+export type CardHeaderTitleProps = HTMLAttributes<HTMLParagraphElement> &
+  BulmaProp
+
+/**
+ * The 2-state checkbox in its native format
+ *
+ * @example
+ *
+ * ```tsx
+ * <Checkbox disabled>Save my preferences</Checkbox>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/form/checkbox/)
+ */
 export const Checkbox: FC<PropsWithChildren<CheckboxProps>> = ({
   children,
   ...props
