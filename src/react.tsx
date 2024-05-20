@@ -151,6 +151,24 @@ export const ButtonDelete: FC<ButtonDeleteProps> = ({ size, className, children,
 )
 export type ButtonDeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp<"large">
 
+/**
+ * Grid cell.
+ *
+ * @example
+ *
+ * ```tsx
+ * <FixedGrid bulma="has-4-cols">
+ *   <Cell>cell 1</Cell>
+ *   <Cell bulma="is-col-start-3">cell 2</Cell>
+ *   <Cell>cell 3</Cell>
+ *   <Cell>cell 4</Cell>
+ *   <Cell>cell 5</Cell>
+ *   <Cell>cell 6</Cell>
+ * </FixedGrid>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/grid/grid-cells/)
+ */
 export const Cell: FC<PropsWithChildren<CellProps>> = ({ bulma, className, children, ...props }) => (
   <div className={classnames<Bulma>(className as Bulma, "cell", bulma)} {...props}>
     {children}
@@ -413,6 +431,20 @@ export const Footer: FC<PropsWithChildren<FooterProps>> = ({ bulma, className, c
 )
 export type FooterProps = HTMLAttributes<HTMLElement> & BulmaProp
 
+/**
+ * A smart 2D grid with flexible columns.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Grid bulma={["is-col-min-4", "is-gap-2"]}>
+ *   <Cell>cell 1</Cell>
+ *   <Cell>cell 2</Cell>
+ * </Grid>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/grid/smart-grid/)
+ */
 export const Grid: FC<PropsWithChildren<GridProps>> = ({ bulma, className, children, ...props }) => (
   <div className={classnames<Bulma>(className as Bulma, "grid", bulma)} {...props}>
     {children}

@@ -17,6 +17,7 @@ import {
   Div,
   Field,
   FixedGrid,
+  Grid,
   Heading,
   Input,
   Label,
@@ -88,6 +89,20 @@ export const Snippets: FC = () => (
       <Cell>cell 1</Cell>
       <Cell>cell 2</Cell>
     </FixedGrid>
+
+    <FixedGrid bulma="has-4-cols">
+      <Cell>cell 1</Cell>
+      <Cell bulma="is-col-start-3">cell 2</Cell>
+      <Cell>cell 3</Cell>
+      <Cell>cell 4</Cell>
+      <Cell>cell 5</Cell>
+      <Cell>cell 6</Cell>
+    </FixedGrid>
+
+    <Grid bulma={["is-col-min-4", "is-gap-2"]}>
+      <Cell>cell 1</Cell>
+      <Cell>cell 2</Cell>
+    </Grid>
 
     <Heading tag="h1"></Heading>
 
