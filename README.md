@@ -16,10 +16,6 @@ Notice that you should also have React installed, minimum version supported is 1
 
 ### React components
 
-Components are documented inline with TSDocs. You can configure your editor to display documentation and examples.
-
-<img src="./media/inline-docs.png"/>
-
 Almost all `trunx` components have a `bulma` prop that accepts:
 
 - a string
@@ -29,9 +25,7 @@ Almost all `trunx` components have a `bulma` prop that accepts:
 
 You know, `trunx` is a Super Sayan because it is written in TypeScript. The `bulma` prop can be autocompleted and typos can be avoided thanks to type checking.
 
-Almost all `trunx` components support a `className` prop, in case you need to append you custom CSS classes.
-
-<img src="./media/trunks.png" height="290"/>
+<img src="./media/trunks-sword.png"/>
 
 Some `trunx` components render their homomnym HTML tag.
 
@@ -66,78 +60,87 @@ You can use the `bulma` prop in case you need to add more Bulma classes that has
 </Columns>
 ```
 
+Components are documented inline with TSDocs. You can configure your editor to display documentation and examples.
+
+<img src="./media/inline-docs.png"/>
+
+Almost all `trunx` components support a `className` prop, in case you need to append you custom CSS classes.
+
 #### Components list
 
-- HTML tags related: `A`, `Article`, `Div`, `Heading`, `P`, `Span`.
-- Bulma related:
-  - `Breadcrumb`
-  - `Button`
-  - `Buttons`
-  - `ButtonDelete`
-  - `Card`
-    - `CardContent`
-    - `CardFooter`
-    - `CardHeader`
-    - `CardHeaderIcon`
-    - `CardHeaderTitle`
-    - `CardImage`
-  - `Cell`
-  - `Checkbox`
-  - `Column`
-  - `Columns`
-  - `Container`
-  - `Content`
-  - `Control`
-  - `Field`
-  - `FieldHorizontal`
-    - `FieldBody`
-    - `FieldLabel`
-  - `FileUpload`
-  - `Figure`
-  - `FixedGrid`
-  - `Footer`
-  - `Grid`
-  - `Help`
-  - `Hero`
-    - `HeroBody`
-    - `HeroFoot`
-    - `HeroHead`
-  - `Icon`
-    - `IconText`
-  - `Input`
-  - `Label`
-  - `Menu`
-    - `MenuLabel`
-    - `MenuList`
-  - `Message`
-  - `Modal`
-    - `ModalCard`
-    - `ModalClose`
-    - `ModalContent`
-  - `Navbar`
-    - `NavbarBrand`
-    - `NavbarBurger`
-    - `NavbarDivider`
-    - `NavbarDropdown`
-    - `NavbarDropdownMenu`
-    - `NavbarEnd`
-    - `NavbarItem`
-    - `NavbarLink`
-    - `NavbarMenu`
-    - `NavbarStart`
-  - `Notification`
-  - `Pagination`
-    - `PaginationEllipsis`
-    - `PaginationLink`
-    - `PaginationList`
-    - `PaginationNext`
-    - `PaginationPrevious`
-  - `Progress`
-  - `Radio`
-  - `Section`
-  - `Select`
-  - `Table`
-  - `Textarea`
+<img src="./media/trunks.png" height="290"/>
+
+HTML tags related: `A`, `Div`, `Heading`, `P`, `Span`.
+Bulma related:
+
+- `Breadcrumb`
+- `Button`
+- `Buttons`
+- `ButtonDelete`
+- `Card`
+  - `CardContent`
+  - `CardFooter`
+  - `CardHeader`
+  - `CardHeaderIcon`
+  - `CardHeaderTitle`
+  - `CardImage`
+- `Cell`
+- `Checkbox`
+- `Column`
+- `Columns`
+- `Container`
+- `Content`
+- `Control`
+- `Field`
+- `FieldHorizontal`
+  - `FieldBody`
+  - `FieldLabel`
+- `FileUpload`
+- `Figure`
+- `FixedGrid`
+- `Footer`
+- `Grid`
+- `Help`
+- `Hero`
+  - `HeroBody`
+  - `HeroFoot`
+  - `HeroHead`
+- `Icon`
+  - `IconText`
+- `Input`
+- `Label`
+- `Menu`
+  - `MenuLabel`
+  - `MenuList`
+- `Message`
+- `Modal`
+  - `ModalCard`
+  - `ModalClose`
+  - `ModalContent`
+- `Navbar`
+  - `NavbarBrand`
+  - `NavbarBurger`
+  - `NavbarDivider`
+  - `NavbarDropdown`
+  - `NavbarDropdownMenu`
+  - `NavbarEnd`
+  - `NavbarItem`
+  - `NavbarLink`
+  - `NavbarMenu`
+  - `NavbarStart`
+- `Notification`
+- `Pagination`
+  - `PaginationEllipsis`
+  - `PaginationLink`
+  - `PaginationList`
+  - `PaginationNext`
+  - `PaginationPrevious`
+- `Progress`
+- `Radio`
+- `Section`
+- `Select`
+- `Table`
+- `Textarea`
 
 ### `classnames`
 
