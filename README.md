@@ -9,9 +9,6 @@
   - [React components](#react-components)
     - [Components list](#components-list)
   - [classnames](#classnames)
-- Type guards:
-  - [isFloat](#isfloat)
-  - [isRational](#isrational)
 - [Motivation](#motivation)
 - [License](#license)
 
@@ -109,7 +106,6 @@ Bulma related:
   - `FieldBody`
   - `FieldLabel`
 - `FileUpload`
-- `Figure`
 - `FixedGrid`
 - `Footer`
 - `Grid`
@@ -119,8 +115,13 @@ Bulma related:
   - `HeroFoot`
   - `HeroHead`
 - `Icon`, `IconText`
+- `Image`
 - `Input`
 - `Label`
+- `Media`
+  - `MediaContent`
+  - `MediaLeft`
+  - `MediaRight`
 - `Menu`
   - `MenuLabel`
   - `MenuList`
