@@ -1,4 +1,4 @@
-<img src="./media/trunx-logotype.png" width="350"/>
+<img src="https://fibo.github.io/trunx/media/trunx-logotype.png" width="350"/>
 
 > Super Saiyan components, son of awesome [Bulma]
 
@@ -35,7 +35,7 @@ Almost all `trunx` components have a `bulma` prop that accepts:
 
 You know, `trunx` is a Super Sayan because it is written in TypeScript. The `bulma` prop can be autocompleted and typos can be avoided thanks to type checking.
 
-<img src="./media/trunks-sword.png" height="400"/>
+<img src="https://fibo.github.io/trunx/media/trunks-sword.png" height="400"/>
 
 Some `trunx` components render their homomnym HTML tag.
 
@@ -72,13 +72,13 @@ You can use the `bulma` prop in case you need to add more Bulma classes that has
 
 Components are documented inline with TSDocs. You can configure your editor to display documentation and examples.
 
-<img src="./media/inline-docs.png"/>
+<img src="https://fibo.github.io/trunx/media/inline-docs.png"/>
 
 Almost all `trunx` components support a `className` prop, in case you need to append you custom CSS classes.
 
 #### Components list
 
-<img src="./media/trunks.png" height="290"/>
+<img src="https://fibo.github.io/trunx/media/trunks.png" height="290"/>
 
 HTML tags related: `A`, `Article`, `Div`, `Nav`, `P`, `Span`.
 

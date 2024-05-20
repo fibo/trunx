@@ -1,7 +1,8 @@
 # Force dist/ inclusion, it is in .gitignore
 !dist/
-# Other files to be removed.
-generate_bulma_classes_types/
+# Other files to be excluded
+generate_bulma_types/
+media/
 src/
 temp/
 tsconfig.*
