@@ -80,7 +80,7 @@ Almost all `trunx` components support a `className` prop, in case you need to ap
 
 <img src="./media/trunks.png" height="290"/>
 
-HTML tags related: `A`, `Div`, `P`, `Span`.
+HTML tags related: `A`, `Article`, `Div`, `Nav`, `P`, `Span`.
 
 Bulma related:
 

@@ -66,7 +66,7 @@ const are = (
 ): Extract<Bulma, `are-${typeof arg}`> | undefined =>
   arg ? `are-${arg}` : undefined
 
-export const is = (
+const is = (
   arg: Color | ColorVariant | Size | undefined,
 ): Extract<Bulma, `is-${typeof arg}`> | undefined =>
   arg ? `is-${arg}` : undefined
@@ -85,6 +85,18 @@ export const A: FC<PropsWithChildren<AProps>> = ({
   </a>
 )
 export type AProps = AnchorHTMLAttributes<HTMLAnchorElement> & BulmaProp
+
+export const Article: FC<PropsWithChildren<NavProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <article className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
+    {children}
+  </article>
+)
+export type ArticleProps = HTMLAttributes<HTMLElement> & BulmaProp
 
 /**
  * A breadcrumb component to improve navigation experience.
@@ -609,8 +621,7 @@ export const Delete: FC<DeleteProps> = ({
     {...props}
   />
 )
-export type DeleteProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  SizeProp<"large">
+export type DeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp
 
 export const Div: FC<PropsWithChildren<DivProps>> = ({
   bulma,
@@ -1051,9 +1062,9 @@ export type HeroHeadProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  * @example
  *
  * ```tsx
- *   <Icon>
- *     <i className="fas fa-home"></i>
- *   </Icon>
+ * <Icon>
+ *   <i className="fas fa-home"></i>
+ * </Icon>
  * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/icon/).
@@ -1551,6 +1562,18 @@ export const ModalContent: FC<PropsWithChildren<ModalContentProps>> = ({
   </div>
 )
 export type ModalContentProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+export const Nav: FC<PropsWithChildren<NavProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <nav className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
+    {children}
+  </nav>
+)
+export type NavProps = HTMLAttributes<HTMLElement> & BulmaProp
 
 /**
  * A responsive horizontal navbar that can support images, links, buttons, and dropdowns.
@@ -2271,6 +2294,122 @@ export const Tab: FC<PropsWithChildren<TabProps>> = ({
 export type TabProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   Partial<{
     isActive: boolean
+  }>
+
+/**
+ * Small tag labels to insert anywhere.
+ *
+ * @example
+ *
+ * ```tsx
+ * <Tag color="primary" variant="light">
+ *   v1.0.0
+ * </Tag>
+ * ```
+ *
+ * @example Append a delete button.
+ *
+ * ```tsx
+ * <Tag color="warning" size="medium">
+ *   Hello
+ *    <Delete size="small" />
+ * </Tag>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/elements/tag/).
+ */
+export const Tag: FC<PropsWithChildren<TagProps>> = ({
+  color,
+  variant,
+  isHoverable,
+  isRounded,
+  size,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <span
+    className={classnames<Bulma>(
+      className as Bulma,
+      "tag",
+      is(color),
+      is(variant),
+      is(size),
+      {
+        "is-hoverable": isHoverable,
+        "is-rounded": isRounded,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </span>
+)
+export type TagProps = HTMLAttributes<HTMLSpanElement> &
+  BulmaProp &
+  ColorProp &
+  ColorVariantProp<"light"> &
+  SizeProp<"medium" | "large"> &
+  Partial<{
+    isHoverable: boolean
+    isRounded: boolean
+  }>
+
+/**
+ * List of tags.
+ *
+ * @example Size.
+ *
+ * ```tsx
+ * <Tags size="large">
+ *   <Tag>All</Tag>
+ *   <Tag>Medium</Tag>
+ *   <Tag>Size</Tag>
+ * </Tags>
+ * ```
+ *
+ * @example Attach tags together.
+ *
+ * ```tsx
+ * <Tags hasAddons>
+ *   <Tag>package</Tag>
+ *   <Tag color="primary">trunx</Tag>
+ * </Tags>
+ * ```
+ *
+ * @example Attach a text tag with a delete tag together.
+ *
+ * ```tsx
+ * <Tags hasAddons>
+ *   <Tag color="danger">Alex Smith</Tag>
+ *   <a class="tag is-delete" />
+ * </Tags>
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/elements/tag/#list-of-tags)
+ */
+export const Tags: FC<PropsWithChildren<TagsProps>> = ({
+  hasAddons,
+  size,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "tags", are(size), {
+      "has-addons": hasAddons,
+    })}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type TagsProps = HTMLAttributes<HTMLDivElement> &
+  PluralSizeProp &
+  Partial<{
+    hasAddons: boolean
   }>
 
 /**
