@@ -25,7 +25,7 @@ Almost all `trunx` components have a `bulma` prop that accepts:
 
 You know, `trunx` is a Super Sayan because it is written in TypeScript. The `bulma` prop can be autocompleted and typos can be avoided thanks to type checking.
 
-<img src="./media/trunks-sword.png"/>
+<img src="./media/trunks-sword.png" height="400"/>
 
 Some `trunx` components render their homomnym HTML tag.
 
@@ -75,9 +75,7 @@ HTML tags related: `A`, `Div`, `Heading`, `P`, `Span`.
 Bulma related:
 
 - `Breadcrumb`
-- `Button`
-- `Buttons`
-- `ButtonDelete`
+- `Button`, `Buttons`
 - `Card`
   - `CardContent`
   - `CardFooter`
@@ -92,6 +90,7 @@ Bulma related:
 - `Container`
 - `Content`
 - `Control`
+- `Delete`
 - `Field`
 - `FieldHorizontal`
   - `FieldBody`
@@ -106,8 +105,7 @@ Bulma related:
   - `HeroBody`
   - `HeroFoot`
   - `HeroHead`
-- `Icon`
-  - `IconText`
+- `Icon`, `IconText`
 - `Input`
 - `Label`
 - `Menu`
@@ -141,8 +139,7 @@ Bulma related:
 - `Section`
 - `Select`
 - `Table`
-- `Tabs`
-  - `Tab`
+- `Tabs`, `Tab`
 - `Textarea`
 
 ### `classnames`

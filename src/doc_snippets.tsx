@@ -11,7 +11,6 @@ import {
   A,
   Button,
   Buttons,
-  ButtonDelete,
   Card,
   CardContent,
   CardFooter,
@@ -23,6 +22,7 @@ import {
   Container,
   Content,
   Control,
+  Delete,
   Div,
   Field,
   FieldBody,
@@ -43,15 +43,15 @@ import {
   ModalCard,
   ModalClose,
   ModalContent,
-  Notification,
   NavbarEnd,
   NavbarMenu,
   NavbarStart,
+  Notification,
   P,
   Progress,
-  Span,
-  Select,
   Section,
+  Select,
+  Span,
   Tab,
   Tabs,
   Textarea,
@@ -261,7 +261,7 @@ export const Snippets: FC = () => (
     </NavbarMenu>
 
     <Notification color="info" variant="light">
-      <ButtonDelete />
+      <Delete />
       Lorem ipsum...
     </Notification>
 

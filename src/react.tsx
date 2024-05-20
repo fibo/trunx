@@ -187,20 +187,6 @@ export type ButtonsProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
   PluralSizeProp
 
-export const ButtonDelete: FC<ButtonDeleteProps> = ({
-  size,
-  className,
-  children,
-  ...props
-}) => (
-  <button
-    className={classnames<Bulma>(className as Bulma, "delete", is(size))}
-    {...props}
-  />
-)
-export type ButtonDeleteProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  SizeProp<"large">
-
 /**
  * Grid cell.
  *
@@ -218,6 +204,8 @@ export type ButtonDeleteProps = ButtonHTMLAttributes<HTMLButtonElement> &
  * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/grid/grid-cells/)
+ *
+ * Nope! Not that {@link https://en.wikipedia.org/wiki/Cell_(Dragon_Ball) | Cell} 😂.
  */
 export const Cell: FC<PropsWithChildren<CellProps>> = ({
   bulma,
@@ -558,6 +546,25 @@ export type ControlProps = HTMLAttributes<HTMLDivElement> &
     hasIconsLeft: boolean
     hasIconsRight: boolean
   }>
+
+/**
+ * A versatile delete cross.
+ *
+ * @see [bulma docs](https://bulma.io/documentation/elements/delete/)
+ */
+export const Delete: FC<DeleteProps> = ({
+  size,
+  className,
+  children,
+  ...props
+}) => (
+  <button
+    className={classnames<Bulma>(className as Bulma, "delete", is(size))}
+    {...props}
+  />
+)
+export type DeleteProps = ButtonHTMLAttributes<HTMLButtonElement> &
+  SizeProp<"large">
 
 export const Div: FC<PropsWithChildren<DivProps>> = ({
   bulma,
@@ -1671,7 +1678,7 @@ export const NavbarStart: FC<PropsWithChildren> = ({ children }) => (
  *
  * ```tsx
  * <Notification color="info" variant="light">
- *   <ButtonDelete />
+ *   <Delete />
  *   Lorem ipsum...
  * </Notification>
  * ```
