@@ -5,6 +5,8 @@
 **ToC**
 
 - [Installation](#installation)
+- [How to](#how-to)
+  - [use trunx with Vite](#use-trunx-with-vite)
 - API:
   - [React components](#react-components)
     - [Components list](#components-list)
@@ -21,6 +23,38 @@ npm install trunx
 ```
 
 Notice that you should also have React installed, minimum version supported is 17 (the transpiled code uses `react/jsx-runtime`). However it is not listed as a peer dependency, you may also use _trunx_ without _React_.
+
+## How to
+
+### use trunx with Vite
+
+Assuming you have a [Vite](https://vitejs.dev/) project with React and TypeScript, of course first of all install `trunx`; it will also install latest `bulma`.
+
+Then create a `src/main.scss`, you can start with something like this:
+
+```scss
+// Load Bulma's base styles and themes (including the minireset)
+@use "bulma/sass/base";
+@use "bulma/sass/themes";
+
+// Load other Bulma components
+@use "bulma/sass/elements/button";
+@use "bulma/sass/components/message";
+```
+
+Import it in your entry file, e.g. `src/main.tsx`, with something like `import "./main.scss"` and you are done.
+
+Try it out! Import `trunx` to your `src/App.tsx`:
+
+```tsx
+import { Button } from "trunx"
+```
+
+Add a `Button` in the JSX like this:
+
+```tsx
+<Button color="primary">Hello trunx</Button>
+```
 
 ## API
 
