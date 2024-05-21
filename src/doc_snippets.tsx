@@ -44,6 +44,7 @@ import {
   MediaContent,
   MediaLeft,
   MediaRight,
+  Message,
   Modal,
   ModalCard,
   ModalClose,
@@ -101,6 +102,8 @@ export const OtherReadmeSnippets: FC = () => (
     <Button color="primary" size="large" isRounded>
       Download
     </Button>
+
+    <Message color="primary">Hello trunx</Message>
   </>
 )
 
@@ -261,6 +264,22 @@ export const Snippets: FC = () => (
       <ModalContent>Content</ModalContent>
       <ModalClose />
     </Modal>
+
+    <Message color="danger" size="large">
+      Lorem ipsum...
+    </Message>
+
+    <Message
+      color="dark"
+      header={
+        <>
+          {" "}
+          <p>Header</p> <Delete />{" "}
+        </>
+      }
+    >
+      Lorem ipsum...
+    </Message>
 
     <ModalCard
       head="Modal title"

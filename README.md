@@ -6,7 +6,8 @@
 
 - [Installation](#installation)
 - [How to](#how-to)
-  - [use trunx with Vite](#use-trunx-with-vite)
+  - [Use trunx with Vite](#use-trunx-with-vite)
+  - [Create a custom component](#create-a-custom-component)
 - API:
   - [React components](#react-components)
     - [Components list](#components-list)
@@ -26,7 +27,7 @@ Notice that you should also have React installed, minimum version supported is 1
 
 ## How to
 
-### use trunx with Vite
+### Use trunx with Vite
 
 Assuming you have a [Vite](https://vitejs.dev/) project with React and TypeScript, of course first of all install `trunx`; it will also install latest `bulma`.
 
@@ -47,13 +48,48 @@ Import it in your entry file, e.g. `src/main.tsx`, with something like `import "
 Try it out! Import `trunx` to your `src/App.tsx`:
 
 ```tsx
-import { Button } from "trunx"
+import { Message } from "trunx"
 ```
 
-Add a `Button` in the JSX like this:
+Add a `Message` like this in your JSX:
 
 ```tsx
-<Button color="primary">Hello trunx</Button>
+<Message color="primary">Hello trunx</Message>
+```
+
+### Create a custom component
+
+Suppose you want to create your custom button that is always rounded and has only `warning` and `danger` colors. You may also want to set your custom colors. To do so, your `src/main.scss` could be something like this:
+
+```scss
+@use "bulma/sass" with (
+  $success: #28a03c,
+  $warning: #f45a50
+);
+```
+
+Then your button component can import the `ButtonProps` from `trunx` and customize them, something like the following.
+
+```tsx
+import {
+  Button as _Button,
+  ButtonProps as _ButtonProps,
+  ColorProp,
+  MainColor,
+} from "trunx"
+import { FC, PropsWithChildren } from "react"
+
+type ButtonProps = Omit<_ButtonProps, "color" | "isRounded"> &
+  ColorProp<Extract<MainColor, "warning" | "success">>
+
+export const Button: FC<PropsWithChildren<ButtonProps>> = ({
+  children,
+  ...props
+}) => (
+  <_Button isRounded {...props}>
+    {children}
+  </_Button>
+)
 ```
 
 ## API
