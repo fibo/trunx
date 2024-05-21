@@ -1431,11 +1431,30 @@ export type MenuListProps = HTMLAttributes<HTMLUListElement> & BulmaProp
 /**
  * Colored message blocks, to emphasize part of your page.
  *
- * Renders article tag with message class.
+ * @example
+ *
+ * ```tsx
+ * <Message color="danger" size="large">Lorem ipsum...</Message>
+ * ```
+ *
+ * @example Optional header can hold a title and a Delete component.
+ *
+ * ```tsx
+ * <Message color="dark"
+ *   header={
+ *     <>
+ *       <p>Header</p>
+ *       <Delete />
+ *     </>
+ *   }
+ * >Lorem ipsum...</Message>
+ * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/components/message/)
  */
 export const Message: FC<PropsWithChildren<MessageProps>> = ({
+  color,
+  size,
   header,
   bulma,
   className,
@@ -1443,7 +1462,13 @@ export const Message: FC<PropsWithChildren<MessageProps>> = ({
   ...props
 }) => (
   <article
-    className={classnames<Bulma>(className as Bulma, "message", bulma)}
+    className={classnames<Bulma>(
+      className as Bulma,
+      "message",
+      is(color),
+      is(size),
+      bulma,
+    )}
     {...props}
   >
     {header ? <div className="message-header">{header}</div> : null}
@@ -1452,6 +1477,8 @@ export const Message: FC<PropsWithChildren<MessageProps>> = ({
 )
 export type MessageProps = HTMLAttributes<HTMLElement> &
   BulmaProp &
+  ColorProp &
+  SizeProp &
   Partial<{
     header: ReactNode
   }>
