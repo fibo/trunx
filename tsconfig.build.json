@@ -1,10 +1,16 @@
 {
   "compilerOptions": {
-    "declaration": true,
     "declarationMap": false,
     "outDir": "./dist",
     "rootDir": "./src",
-    "sourceMap": false
+    "sourceMap": false,
+    // To build stripped JS, but emit declarations with JSDoc preserved:
+    // disable comments and declaration, then in package.json use script
+    //
+    //     "build": "tsc --project ./tsconfig.build.json --removeComments && tsc --project ./tsconfig.build.json --declaration --emitDeclarationOnly",
+    //
+    "removeComments": false,
+    "declaration": false
   },
   "extends": "./tsconfig.json",
   "exclude": ["node_modules", "./src/**/*_test.ts", "./src/doc_snippets.tsx"],

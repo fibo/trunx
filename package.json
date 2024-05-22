@@ -12,7 +12,7 @@
     }
   },
   "scripts": {
-    "build": "tsc --build ./tsconfig.build.json",
+    "build": "tsc --project ./tsconfig.build.json --removeComments && tsc --project ./tsconfig.build.json --declaration --emitDeclarationOnly",
     "generate_bulma_types": "postcss ./node_modules/bulma/css/bulma.css --config ./generate_bulma_types --output ./node_modules/bulma/css/output.css",
     "pretest": "tsc --build tsconfig.test.json",
     "prettier": "prettier --write .",
