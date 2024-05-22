@@ -1,9 +1,14 @@
-import assert from "node:assert/strict"
+import * as assert from "node:assert/strict"
+import read from "read-file-utf8"
 import { test } from "node:test"
-import pkg from "../package.json" assert { type: "json" }
 
-test("trunx version", () => {
-  const { dependencies, version } = pkg
+test("trunx version", async () => {
+  const { dependencies, version } = await read<{
+    dependencies: {
+      bulma: string
+    }
+    version: string
+  }>("package.json")
 
   const trunxMajorVersion = version.split(".")[0]
   const bulmaMajorVersion = dependencies.bulma.split(".")[0]
