@@ -30,6 +30,9 @@ import {
   FieldBody,
   FieldHorizontal,
   FieldLabel,
+  FileUpload,
+  FileIcon,
+  FileLabel,
   FixedGrid,
   Footer,
   Grid,
@@ -121,6 +124,11 @@ export const Snippets: FC = () => (
       Login
     </Button>
 
+    <Buttons size="small">
+      <Button color="success">Save</Button>
+      <Button>Cancel</Button>
+    </Buttons>
+
     <Card>
       <CardHeader>
         <CardHeaderTitle>Title</CardHeaderTitle>
@@ -174,6 +182,21 @@ export const Snippets: FC = () => (
         </Field>
       </FieldBody>
     </FieldHorizontal>
+
+    <FileUpload
+      color="info"
+      cta={
+        <>
+          <FileIcon>
+            <i className="fas fa-upload"></i>
+          </FileIcon>
+          <FileLabel>Choose a file...</FileLabel>
+        </>
+      }
+      // Any prop accepted by input type="file"
+      accept="image/png, image/jpeg"
+      name="avatar"
+    />
 
     <FixedGrid hasAutoCount>
       <Cell>cell 1</Cell>
