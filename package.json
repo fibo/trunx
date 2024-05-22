@@ -13,6 +13,7 @@
   },
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json --removeComments && tsc --project ./tsconfig.build.json --declaration --emitDeclarationOnly",
+    "tsc": "tsc --project ./tsconfig.json --noEmit",
     "generate_bulma_types": "postcss ./node_modules/bulma/css/bulma.css --config ./generate_bulma_types --output ./node_modules/bulma/css/output.css",
     "pretest": "tsc --build tsconfig.test.json",
     "prettier": "prettier --write .",
@@ -25,12 +26,13 @@
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
-    "react": "^18",
     "postcss": "^8",
     "postcss-cli": "^10",
     "postcss-ts-classnames": "^0.3.0",
     "pre-commit": "^1",
     "prettier": "^3",
+    "react": "^18",
+    "read-file-utf8": "^3.0.0",
     "typescript": "^5"
   },
   "peerDependencies": {
@@ -58,6 +60,7 @@
     "semi": false
   },
   "pre-commit": [
+    "tsc",
     "test",
     "prettier--check"
   ]
