@@ -228,16 +228,10 @@ export const MyButton: FC<PropsWithChildren<MyButtonProps>> = ({
 
 Assuming you have a [Vite](https://vitejs.dev/) project with React and TypeScript, of course first of all install `trunx` and `bulma`.
 
-Then create a `src/main.scss`, you can start with something like this:
+Then create a `src/main.scss`, you can import all Bulma to get started.
 
 ```scss
-// Load Bulma's base styles and themes (including the minireset)
-@use "bulma/sass/base";
-@use "bulma/sass/themes";
-
-// Load other Bulma components
-@use "bulma/sass/elements/button";
-@use "bulma/sass/components/message";
+@use "bulma/sass";
 ```
 
 Import it in your entry file, e.g. `src/main.tsx`, with something like `import "./main.scss"` and you are done.
