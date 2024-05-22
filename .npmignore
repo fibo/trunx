@@ -1,6 +1,7 @@
 # Force dist/ inclusion, it is in .gitignore
 !dist/
 # Other files to be excluded
+.prettierignore
 generate_bulma_types/
 src/
 temp/
