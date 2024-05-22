@@ -51,7 +51,7 @@ import { Div, Span } from "trunx"
 import { FC } from "react"
 
 export const MyComponent: FC<{ isSuccess: boolean }> = ({ isSuccess }) => (
-  <Div bulma="block">
+  <Div bulma="box">
     <Span
       bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}
     >
@@ -93,7 +93,7 @@ Almost all trunx components support a `className` prop, in case you need to appe
 
 <img src="https://fibo.github.io/trunx/media/trunks.png" height="290"/>
 
-HTML tags related: `A`, `Article`, `Div`, `Nav`, `P`, `Span`.
+HTML tags related: `A`, `Div`, `P`, `Span`.
 
 Bulma related:
 

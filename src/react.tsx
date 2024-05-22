@@ -16,22 +16,16 @@ import {
 import { ClassnamesArg, classnames } from "./classnames.js"
 import { ClassNames as Bulma } from "./Bulma.js"
 
-type BulmaProp = {
+export type BulmaProp = {
   bulma?: ClassnamesArg<Bulma>
 }
 
-// Size
+// Alignment
 //////////////////////////////////////////////////////////////////////
 
-export type Size = "small" | "medium" | "large" | "normal"
+export type Alignment = "left" | "center" | "right"
 
-export type SizeProp<
-  S extends Size = Extract<Size, "small" | "medium" | "large">,
-> = Partial<{ size: S }>
-
-export type PluralSize = Extract<Size, "small" | "medium" | "large">
-
-export type PluralSizeProp = SizeProp<PluralSize>
+export type AlignProp<A extends Alignment> = Partial<{ align: A }>
 
 // Colors
 //////////////////////////////////////////////////////////////////////
@@ -58,8 +52,26 @@ export type ColorVariantProp<V extends ColorVariant = ColorVariant> = Partial<{
   variant: V
 }>
 
+// Size
+//////////////////////////////////////////////////////////////////////
+
+export type Size = "small" | "medium" | "large" | "normal"
+
+export type SizeProp<
+  S extends Size = Extract<Size, "small" | "medium" | "large">,
+> = Partial<{ size: S }>
+
+export type PluralSize = Extract<Size, "small" | "medium" | "large">
+
+export type PluralSizeProp = SizeProp<PluralSize>
+
 // Helpers
 //////////////////////////////////////////////////////////////////////
+
+const alignment = (
+  arg: Alignment | undefined,
+): Extract<Bulma, "is-centered" | "is-right" | "is-left"> | undefined =>
+  arg ? (arg === "center" ? "is-centered" : `is-${arg}`) : undefined
 
 const are = (
   arg: PluralSize | undefined,
@@ -71,49 +83,121 @@ const is = (
 ): Extract<Bulma, `is-${typeof arg}`> | undefined =>
   arg ? `is-${arg}` : undefined
 
-// Components
+export type IsActiveProp = Partial<{ isActive: boolean }>
+
+export type TagProp<T extends keyof JSX.IntrinsicElements> = Partial<{
+  tag: T
+}>
+
+// HTML tag related components
 //////////////////////////////////////////////////////////////////////
 
+/**
+ * Renders anchor tag, has `bulma` prop.
+ *
+ * @example
+ * ```tsx
+ * <A href="https://example.com" bulma="is-underlined">Website</A>
+ * ```
+ */
 export const A: FC<PropsWithChildren<AProps>> = ({
   bulma,
   className,
   children,
   ...props
 }) => (
-  <a className={classnames<string>(className, bulma)} {...props}>
+  <a className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
     {children}
   </a>
 )
 export type AProps = AnchorHTMLAttributes<HTMLAnchorElement> & BulmaProp
 
-export const Article: FC<PropsWithChildren<NavProps>> = ({
+/**
+ * Renders div tag, has `bulma` prop.
+ *
+ * @example
+ * ```tsx
+ * <Div bulma="block"></Div>
+ * ```
+ */
+export const Div: FC<PropsWithChildren<DivProps>> = ({
   bulma,
   className,
   children,
   ...props
 }) => (
-  <article className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
+  <div className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
     {children}
-  </article>
+  </div>
 )
-export type ArticleProps = HTMLAttributes<HTMLElement> & BulmaProp
+export type DivProps = HTMLAttributes<HTMLDivElement> & BulmaProp
+
+/**
+ * Renders p tag, has `bulma` prop.
+ *
+ * @example
+ * ```tsx
+ * <P bulma="has-text-grey">Lorem ipsum...</P>
+ * ```
+ */
+export const P: FC<PropsWithChildren<PProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <p className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
+    {children}
+  </p>
+)
+export type PProps = HTMLAttributes<HTMLParagraphElement> & BulmaProp
+
+/**
+ * Renders span tag, has `bulma` prop.
+ *
+ * @example
+ * ```tsx
+ * <Span bulma={["has-text-grey", "is-capitalized"]}>hello</Span>
+ * ```
+ */
+export const Span: FC<PropsWithChildren<SpanProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <span className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
+    {children}
+  </span>
+)
+export type SpanProps = HTMLAttributes<HTMLSpanElement> & BulmaProp
+
+// Bulma related components
+//////////////////////////////////////////////////////////////////////
 
 /**
  * A breadcrumb component to improve navigation experience.
  *
  * @example
  * ```tsx
- * <Breadcrumb isCentered aria-label="breadcrumbs">
+ * <Breadcrumb align="center" aria-label="breadcrumbs">
  *   <BreadcrumbItem href="https://bulma.io/">Bulma</BreadcrumbItem>
  *   <BreadcrumbItem isActive>Trunx</BreadcrumbItem>
+ * </Breadcrumb>
+ * ```
+ *
+ * @example Alternative separator and size
+ * ```tsx
+ * <Breadcrumb separator="dot" size="small">
  * </Breadcrumb>
  * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/components/breadcrumb/)
  */
 export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps> & BulmaProp> = ({
-  isCentered,
-  isRight,
+  align,
+  separator,
+  size,
   bulma,
   className,
   children,
@@ -123,10 +207,9 @@ export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps> & BulmaProp> = ({
     className={classnames<Bulma>(
       className as Bulma,
       "breadcrumb",
-      {
-        "is-centered": isCentered,
-        "is-right": isRight,
-      },
+      alignment(align),
+      separator ? `has-${separator}-separator` : undefined,
+      is(size),
       bulma,
     )}
     {...props}
@@ -135,9 +218,11 @@ export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps> & BulmaProp> = ({
   </nav>
 )
 export type BreadcrumbProps = HTMLAttributes<HTMLElement> &
+  BulmaProp &
+  AlignProp<"center" | "right"> &
+  SizeProp &
   Partial<{
-    isCentered: boolean
-    isRight: boolean
+    separator: "arrow" | "bullet" | "dot" | "succeeds"
   }>
 
 /** @see {@link Breadcrumb} */
@@ -154,9 +239,7 @@ export const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   </li>
 )
 export type BreadcrumbItemProps = AnchorHTMLAttributes<HTMLAnchorElement> &
-  Partial<{
-    isActive: boolean
-  }>
+  IsActiveProp
 
 /**
  * The classic button, in different colors, sizes, and states.
@@ -627,18 +710,6 @@ export const Delete: FC<DeleteProps> = ({
 )
 export type DeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp
 
-export const Div: FC<PropsWithChildren<DivProps>> = ({
-  bulma,
-  className,
-  children,
-  ...props
-}) => (
-  <div className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
-    {children}
-  </div>
-)
-export type DivProps = HTMLAttributes<HTMLDivElement> & BulmaProp
-
 /**
  * Form field.
  *
@@ -808,14 +879,13 @@ export type FieldLabelProps = HTMLAttributes<HTMLDivElement> &
  * @see [bulma docs](https://bulma.io/documentation/form/file/)
  */
 export const FileUpload: FC<FileUploadProps> = ({
+  align,
   color,
-  size,
   cta,
   hasName,
-  isRight,
-  isFullwidth,
   isBoxed,
-  isCentered,
+  isFullwidth,
+  size,
   bulma,
   className,
   ...props
@@ -826,11 +896,10 @@ export const FileUpload: FC<FileUploadProps> = ({
       "file",
       is(color),
       is(size),
+      alignment(align),
       {
         "has-name": hasName,
         "is-boxed": isBoxed,
-        "is-centered": isCentered,
-        "is-right": isRight,
         "is-fullwidth": isFullwidth,
       },
       bulma,
@@ -849,14 +918,13 @@ export type FileUploadProps = Omit<
   "size" | "type"
 > &
   BulmaProp &
+  AlignProp<"center" | "right"> &
   ColorProp &
   SizeProp &
   Partial<{
     cta: ReactNode
     hasName: ReactNode
-    isCentered: boolean
     isBoxed: boolean
-    isRight: boolean
     isFullwidth: boolean
   }>
 
@@ -1135,8 +1203,7 @@ export type HeroHeadProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  * @see [bulma docs](https://bulma.io/documentation/elements/icon/).
  */
 export const Icon: FC<PropsWithChildren<IconProps>> = ({
-  isLeft,
-  isRight,
+  align,
   size,
   bulma,
   className,
@@ -1147,11 +1214,8 @@ export const Icon: FC<PropsWithChildren<IconProps>> = ({
     className={classnames<Bulma>(
       className as Bulma,
       "icon",
+      alignment(align),
       is(size),
-      {
-        "is-left": isLeft,
-        "is-right": isRight,
-      },
       bulma,
     )}
     {...props}
@@ -1161,11 +1225,8 @@ export const Icon: FC<PropsWithChildren<IconProps>> = ({
 )
 export type IconProps = HTMLAttributes<HTMLSpanElement> &
   BulmaProp &
-  SizeProp &
-  Partial<{
-    isLeft: boolean
-    isRight: boolean
-  }>
+  AlignProp<"left" | "right"> &
+  SizeProp
 
 /**
  * Combine an icon with text.
@@ -1278,7 +1339,7 @@ export type ImageProps = HTMLAttributes<HTMLElement> &
       | "1by2"
       | "1by3"
   }>
-type ImageDimension =
+export type ImageDimension =
   | "16x16"
   | "24x24"
   | "32x32"
@@ -1647,18 +1708,6 @@ export const ModalContent: FC<PropsWithChildren<ModalContentProps>> = ({
 )
 export type ModalContentProps = HTMLAttributes<HTMLDivElement> & BulmaProp
 
-export const Nav: FC<PropsWithChildren<NavProps>> = ({
-  bulma,
-  className,
-  children,
-  ...props
-}) => (
-  <nav className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
-    {children}
-  </nav>
-)
-export type NavProps = HTMLAttributes<HTMLElement> & BulmaProp
-
 /**
  * A responsive horizontal navbar that can support images, links, buttons, and dropdowns.
  *
@@ -1726,16 +1775,14 @@ export type NavbarBurgerProps = Omit<
   HTMLAttributes<HTMLElement>,
   "aria-label" | "className" | "role"
 > &
-  Partial<{
-    isActive: boolean
-  }>
+  IsActiveProp
 
 /** Renders hr tag with navbar-divider class. */
 export const NavbarDivider: FC = () => <hr className="navbar-divider" />
 
 export const NavbarDropdown: FC<PropsWithChildren<NavbarDropdownProps>> = ({
+  align,
   isBoxed,
-  isRight,
   bulma,
   className,
   children,
@@ -1745,9 +1792,9 @@ export const NavbarDropdown: FC<PropsWithChildren<NavbarDropdownProps>> = ({
     className={classnames<Bulma>(
       className as Bulma,
       "navbar-dropdown",
+      alignment(align),
       {
         "is-boxed": isBoxed,
-        "is-right": isRight,
       },
       bulma,
     )}
@@ -1758,6 +1805,7 @@ export const NavbarDropdown: FC<PropsWithChildren<NavbarDropdownProps>> = ({
 )
 export type NavbarDropdownProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
+  AlignProp<"right"> &
   Partial<{
     isBoxed: boolean
     isRight: boolean
@@ -1793,8 +1841,8 @@ export const NavbarDropdownMenu: FC<
 )
 export type NavbarDropdownMenuProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
+  IsActiveProp &
   Partial<{
-    isActive: boolean
     hasDropdownUp: boolean
     isHoverable: boolean
   }>
@@ -1883,9 +1931,7 @@ export const NavbarMenu: FC<PropsWithChildren<NavbarMenuProps>> = ({
     {children}
   </div>
 )
-export type NavbarMenuProps = Partial<{
-  isActive: boolean
-}>
+export type NavbarMenuProps = IsActiveProp
 
 export const NavbarStart: FC<PropsWithChildren> = ({ children }) => (
   <div className="navbar-start">{children}</div>
@@ -1933,33 +1979,12 @@ export type NotificationProps = HTMLAttributes<HTMLDivElement> &
   ColorVariantProp<"light">
 
 /**
- * Renders p tag.
- *
- * @example
- * ```tsx
- * <P bulma="has-text-grey">Lorem ipsum...</P>
- * ```
- */
-export const P: FC<PropsWithChildren<PProps>> = ({
-  bulma,
-  className,
-  children,
-  ...props
-}) => (
-  <p className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
-    {children}
-  </p>
-)
-export type PProps = HTMLAttributes<HTMLParagraphElement> & BulmaProp
-
-/**
  * A responsive, usable, and flexible pagination.
  *
  * @see [bulma docs](https://bulma.io/documentation/components/pagination/)
  */
 export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
-  isCentered,
-  isRight,
+  align,
   size,
   role = "navigation",
   bulma,
@@ -1972,10 +1997,7 @@ export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
       className as Bulma,
       "pagination",
       is(size),
-      {
-        "is-centered": isCentered,
-        "is-right": isRight,
-      },
+      alignment(align),
       bulma,
     )}
     role={role}
@@ -1986,11 +2008,8 @@ export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
 )
 export type PaginationProps = HTMLAttributes<HTMLElement> &
   BulmaProp &
-  SizeProp &
-  Partial<{
-    isCentered: boolean
-    isRight: boolean
-  }>
+  AlignProp<"center" | "right"> &
+  SizeProp
 
 export const PaginationEllipsis: FC = () => (
   <span className="pagination-ellipsis">&hellip;</span>
@@ -2130,18 +2149,6 @@ export const Radio: FC<PropsWithChildren<RadioProps>> = ({
 )
 export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> &
   BulmaProp
-
-export const Span: FC<PropsWithChildren<SpanProps>> = ({
-  bulma,
-  className,
-  children,
-  ...props
-}) => (
-  <span className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
-    {children}
-  </span>
-)
-export type SpanProps = HTMLAttributes<HTMLSpanElement> & BulmaProp
 
 /**
  * A simple container to divide your page into sections.
@@ -2311,10 +2318,9 @@ export type TableProps = TableHTMLAttributes<HTMLTableElement> & BulmaProp
  * @see [bulma docs](https://bulma.io/documentation/components/tabs/)
  */
 export const Tabs: FC<PropsWithChildren<TabsProps>> = ({
+  align,
   isBoxed,
-  isCentered,
   isFullwidth,
-  isRight,
   isToggle,
   isToggleRounded,
   size,
@@ -2328,11 +2334,10 @@ export const Tabs: FC<PropsWithChildren<TabsProps>> = ({
       className as Bulma,
       "tabs",
       is(size),
+      alignment(align),
       {
         "is-boxed": isBoxed,
-        "is-centered": isCentered,
         "is-fullwidth": isFullwidth,
-        "is-right": isRight,
         "is-toggle": isToggle,
         "is-toggle-rounded": isToggleRounded,
       },
@@ -2345,12 +2350,11 @@ export const Tabs: FC<PropsWithChildren<TabsProps>> = ({
 )
 export type TabsProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
+  AlignProp<"center" | "right"> &
   SizeProp &
   Partial<{
     isBoxed: boolean
-    isCentered: boolean
     isFullwidth: boolean
-    isRight: boolean
     isToggle: boolean
     isToggleRounded: boolean
   }>
@@ -2368,10 +2372,7 @@ export const Tab: FC<PropsWithChildren<TabProps>> = ({
     <a {...props}>{children}</a>
   </li>
 )
-export type TabProps = AnchorHTMLAttributes<HTMLAnchorElement> &
-  Partial<{
-    isActive: boolean
-  }>
+export type TabProps = AnchorHTMLAttributes<HTMLAnchorElement> & IsActiveProp
 
 /**
  * Small tag labels to insert anywhere.
@@ -2580,7 +2581,7 @@ export type TitleProps = Omit<HTMLAttributes<HTMLElement>, "is"> &
   Partial<{
     isSpaced: boolean
   }>
-type Titlemodifiers = Partial<{
-  tag: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"
-  is: 1 | 2 | 3 | 4 | 5 | 6
-}>
+type Titlemodifiers = TagProp<"h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"> &
+  Partial<{
+    is: 1 | 2 | 3 | 4 | 5 | 6
+  }>

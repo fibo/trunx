@@ -75,7 +75,7 @@ import {
 //////////////////////////////////////////////////////////////////////
 
 export const MyComponent: FC<{ isSuccess: boolean }> = ({ isSuccess }) => (
-  <Div bulma="block">
+  <Div bulma="box">
     <Span
       bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}
     >
@@ -115,10 +115,18 @@ export const OtherReadmeSnippets: FC = () => (
 
 export const Snippets: FC = () => (
   <>
-    <Breadcrumb isCentered aria-label="breadcrumbs">
+    <A href="https://example.com" bulma="is-underlined">
+      Website
+    </A>
+
+    <Div bulma="block"></Div>
+
+    <Breadcrumb align="center" aria-label="breadcrumbs">
       <BreadcrumbItem href="https://bulma.io/">Bulma</BreadcrumbItem>
       <BreadcrumbItem isActive>Trunx</BreadcrumbItem>
     </Breadcrumb>
+
+    <Breadcrumb separator="dot" size="small"></Breadcrumb>
 
     <Button color="primary" variant="light" isLoading>
       Login
@@ -325,11 +333,13 @@ export const Snippets: FC = () => (
       Lorem ipsum...
     </Notification>
 
-    <P bulma="has-text-grey">Lorem ipsum...</P>
+    <P bulma="has-text-centered">Lorem ipsum...</P>
 
     <Progress color="primary" size="small" value="42" max="100">
       42%
     </Progress>
+
+    <Span bulma={["has-text-grey", "is-capitalized"]}>hello</Span>
 
     <Section size="medium">
       <Title tag="h2">Title</Title>
