@@ -2,7 +2,8 @@
 !dist/
 # Other files to be excluded
 generate_bulma_types/
-media/
 src/
 temp/
 tsconfig.*
+# Images are hosted on GitHub Pages
+media/

@@ -8,39 +8,43 @@
 - API:
   - [React components](#react-components)
     - [Components list](#components-list)
+    - [Inline documentation](#inline-documentation)
+    - [className prop](#classname-prop)
   - [classnames](#classnames)
 - [How to](#how-to)
-  - [Use trunx with Vite](#use-trunx-with-vite)
+  - [Use Trunx with Vite](#use-trunx-with-vite)
   - [Create a custom component](#create-a-custom-component)
 - [Motivation](#motivation)
 - [License](#license)
 
 ## Installation
 
-With [npm](https://www.npmjs.com/) do
+You need latest `bulma` (v1) so you may want to do something like
 
 ```sh
-npm install trunx
+npm install bulma trunx
 ```
 
-Notice that you should also have React installed, minimum version supported is 17 (the transpiled code uses `react/jsx-runtime`). However it is not listed as a peer dependency, you may also use _trunx_ without _React_.
+Notice that you should also have React installed, minimum version supported is 17 (the Trunx transpiled code uses `react/jsx-runtime`). However it is not listed as a peer dependency, you may also use _trunx_ without _React_.
+
+Finally I recommend using TypeScript to get the best _developer experience_ with Trunx.
 
 ## API
 
 ### React components
 
-Almost all `trunx` components have a `bulma` prop that accepts:
+Almost all Trunx components have a `bulma` prop that accepts:
 
 - a string
 - an array of bulma classes
 - an object which keys are bulma classes
 - an array of any of the previous
 
-You know, `trunx` is a Super Sayan because it is written in TypeScript. The `bulma` prop can be autocompleted and typos can be avoided thanks to type checking.
+You know, Trunx is a Super Sayan because it is written in TypeScript. The `bulma` prop can be autocompleted and typos can be avoided thanks to type checking.
 
 <img src="https://fibo.github.io/trunx/media/trunks-sword.png" height="400"/>
 
-Some `trunx` components render their homomnym HTML tag.
+Some Trunx components render their homomnym HTML tag.
 
 ```tsx
 import { Div, Span } from "trunx"
@@ -57,7 +61,7 @@ export const MyComponent: FC<{ isSuccess: boolean }> = ({ isSuccess }) => (
 )
 ```
 
-There are also `trunx` React components that implement a Bulma element or a Bulma Component. This means that they usually add a related Bulma class. For example `Button` components renders a button tag with the Bulma `button` class. They may have props related to some Bulma class (.e.g. `color`, `size`). Most of the Bulma related props start with `is`, `has` and the prop name is just the camel-case version of its related Bulma class. For example `isRounded` prop corresponds to `is-rounded` Bulma class.
+Trunx provides other React components that implement a Bulma element or a Bulma Component. This means that they usually add a related Bulma class. For example `Button` components renders a button tag with the Bulma `button` class. They may have props related to some Bulma class (.e.g. `color`, `size`). Most of the Bulma related props start with `is`, `has` and the prop name is just the camel-case version of its related Bulma class. For example `isRounded` prop corresponds to `is-rounded` Bulma class.
 
 ```tsx
 <Button color="primary" size="large" isRounded>
@@ -73,11 +77,17 @@ You can use the `bulma` prop in case you need to add more Bulma classes that has
 </Columns>
 ```
 
+#### Inline documentation
+
 Components are documented inline with TSDocs. You can configure your editor to display documentation and examples.
 
 <img src="https://fibo.github.io/trunx/media/inline-docs.png"/>
 
-Almost all `trunx` components support a `className` prop, in case you need to append you custom CSS classes.
+Some code snippets use a FontAwesome class, for example `<i className="fas fa-home"></i>`. The icon set is up to you, Trunx do not provide icons.
+
+#### `className` prop
+
+Almost all trunx components support a `className` prop, in case you need to append you custom CSS classes.
 
 #### Components list
 
@@ -109,6 +119,8 @@ Bulma related:
   - `FieldBody`
   - `FieldLabel`
 - `FileUpload`
+  - `FileIcon`
+  - `FileLabel`
 - `FixedGrid`
 - `Footer`
 - `Grid`
@@ -163,7 +175,7 @@ Bulma related:
 
 ### `classnames`
 
-The `trunx` package provides a utility for conditionally joining CSS classes together.
+Trunx package provides a utility for conditionally joining CSS classes together.
 
 ```js
 import { classnames } from "trunx"
@@ -205,9 +217,9 @@ export const MyButton: FC<PropsWithChildren<MyButtonProps>> = ({
 
 ## How to
 
-### Use trunx with Vite
+### Use Trunx with Vite
 
-Assuming you have a [Vite](https://vitejs.dev/) project with React and TypeScript, of course first of all install `trunx`; it will also install latest `bulma`.
+Assuming you have a [Vite](https://vitejs.dev/) project with React and TypeScript, of course first of all install `trunx` and `bulma`.
 
 Then create a `src/main.scss`, you can start with something like this:
 
@@ -223,7 +235,7 @@ Then create a `src/main.scss`, you can start with something like this:
 
 Import it in your entry file, e.g. `src/main.tsx`, with something like `import "./main.scss"` and you are done.
 
-Try it out! Import `trunx` to your `src/App.tsx`:
+Try it out! Import `trunx` in your `src/App.tsx`:
 
 ```tsx
 import { Message } from "trunx"
@@ -232,7 +244,7 @@ import { Message } from "trunx"
 Add a `Message` like this in your JSX:
 
 ```tsx
-<Message color="primary">Hello trunx</Message>
+<Message color="primary">Hello Trunx</Message>
 ```
 
 ### Create a custom component
