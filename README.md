@@ -21,13 +21,15 @@
 
 ## Installation
 
-You need latest `bulma` (v1) so you may want to do something like
+With [npm](https://www.npmjs.com/) do
 
 ```sh
-npm install bulma trunx
+npm install trunx
 ```
 
-Notice that you should also have React installed, minimum version supported is 17 (the Trunx transpiled code uses `react/jsx-runtime`). However it is not listed as a peer dependency, you may also use _trunx_ without _React_.
+Of course you also need Bulma (v1) but it is up to you if you want to install it via `bulma` npm package. See [how to install Bulma](https://bulma.io/documentation/start/installation/).
+
+You may also have React installed, minimum version supported is 17 (the Trunx transpiled code uses `react/jsx-runtime`). However it is not listed as a peer dependency, you may also use Trunx without React.
 
 Finally I recommend using TypeScript to get the best _developer experience_ with Trunx.
 

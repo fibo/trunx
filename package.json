@@ -1,6 +1,6 @@
 {
   "name": "trunx",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Super Saiyan components, son of awesome Bulma",
   "type": "module",
   "main": "dist/index.js",
@@ -32,9 +32,6 @@
     "react": "^18",
     "read-file-utf8": "^3.0.0",
     "typescript": "^5"
-  },
-  "peerDependencies": {
-    "bulma": "^1"
   },
   "keywords": [
     "bulma",
