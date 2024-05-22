@@ -16,17 +16,6 @@ import {
 import { ClassnamesArg, classnames } from "./classnames.js"
 import { ClassNames as Bulma } from "./Bulma.js"
 
-export type BulmaProp = {
-  bulma?: ClassnamesArg<Bulma>
-}
-
-// Alignment
-//////////////////////////////////////////////////////////////////////
-
-export type Alignment = "left" | "center" | "right"
-
-export type AlignProp<A extends Alignment> = Partial<{ align: A }>
-
 // Colors
 //////////////////////////////////////////////////////////////////////
 
@@ -44,24 +33,45 @@ export type OtherColor = "text" | "ghost"
 
 export type Color = MainColor | ShadeColor | OtherColor
 
-export type ColorProp<C extends Color = Color> = Partial<{ color: C }>
-
 export type ColorVariant = "light" | "dark"
+
+// Other types
+//////////////////////////////////////////////////////////////////////
+
+export type Alignment = "left" | "center" | "right"
+
+export type Size = "small" | "medium" | "large" | "normal"
+
+export type PluralSize = Extract<Size, "small" | "medium" | "large">
+
+// Common props
+//////////////////////////////////////////////////////////////////////
+
+// Trunx mother	🤩,
+// see https://en.wikipedia.org/wiki/Bulma
+export type BulmaProp = {
+  bulma?: ClassnamesArg<Bulma>
+}
+
+export type AlignProp<A extends Alignment> = Partial<{ align: A }>
+
+export type ColorProp<C extends Color = Color> = Partial<{ color: C }>
 
 export type ColorVariantProp<V extends ColorVariant = ColorVariant> = Partial<{
   variant: V
 }>
 
-// Size
-//////////////////////////////////////////////////////////////////////
+export type IsActiveProp = Partial<{ isActive: boolean }>
 
-export type Size = "small" | "medium" | "large" | "normal"
+export type IsSkeletonProp = Partial<{ isSkeleton: boolean }>
 
 export type SizeProp<
   S extends Size = Extract<Size, "small" | "medium" | "large">,
 > = Partial<{ size: S }>
 
-export type PluralSize = Extract<Size, "small" | "medium" | "large">
+export type TagProp<T extends keyof JSX.IntrinsicElements> = Partial<{
+  tag: T
+}>
 
 export type PluralSizeProp = SizeProp<PluralSize>
 
@@ -83,13 +93,7 @@ const is = (
 ): Extract<Bulma, `is-${typeof arg}`> | undefined =>
   arg ? `is-${arg}` : undefined
 
-export type IsActiveProp = Partial<{ isActive: boolean }>
-
-export type TagProp<T extends keyof JSX.IntrinsicElements> = Partial<{
-  tag: T
-}>
-
-// HTML tag related components
+// HTML tag components
 //////////////////////////////////////////////////////////////////////
 
 /**
@@ -115,9 +119,16 @@ export type AProps = AnchorHTMLAttributes<HTMLAnchorElement> & BulmaProp
 /**
  * Renders div tag, has `bulma` prop.
  *
- * @example
+ * @example Block
  * ```tsx
  * <Div bulma="block"></Div>
+ * ```
+ *
+ * @example Skeleton block
+ * ```tsx
+ * <Div bulma={{"skeleton-block": true}}>
+ *   Lorem ipsum
+ * </Div>
  * ```
  */
 export const Div: FC<PropsWithChildren<DivProps>> = ({
@@ -255,6 +266,7 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   isLoading,
   isFullwidth,
   isOutlined,
+  isSkeleton,
   color,
   isInverted,
   isRounded,
@@ -274,10 +286,11 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
       is(size),
       {
         "is-fullwidth": isFullwidth,
-        "is-loading": isLoading,
         "is-inverted": isInverted,
+        "is-loading": isLoading,
         "is-outlined": isOutlined,
         "is-rounded": isRounded,
+        "is-skeleton": isSkeleton,
       },
       bulma,
     )}
@@ -293,6 +306,7 @@ export type ButtonProps = Omit<
   BulmaProp &
   ColorProp &
   ColorVariantProp &
+  IsSkeletonProp &
   SizeProp<Size> &
   Partial<{
     isLoading: boolean
@@ -500,7 +514,9 @@ export type CardHeaderTitleProps = HTMLAttributes<HTMLParagraphElement> &
  *
  * @example
  * ```tsx
- * <Checkbox disabled>Save my preferences</Checkbox>
+ * <Checkbox disabled>
+ *   <Span bulma="ml-2">Save my preferences</Span>
+ * </Checkbox>
  * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/form/checkbox/)
@@ -588,11 +604,10 @@ export type ColumnsProps = HTMLAttributes<HTMLDivElement> &
  * @see [bulma docs](https://bulma.io/documentation/layout/container/)
  */
 export const Container: FC<PropsWithChildren<ContainerProps>> = ({
-  isWidescreen,
   isFluid,
-  isMaxDesktop,
-  isMaxWidescreen,
   isFullhd,
+  isMax,
+  isWidescreen,
   bulma,
   className,
   children,
@@ -603,12 +618,12 @@ export const Container: FC<PropsWithChildren<ContainerProps>> = ({
       className as Bulma,
       "container",
       {
-        "is-widescreen": isWidescreen,
-        "is-fullhd": isFullhd,
         "is-fluid": isFluid,
+        "is-fullhd": isFullhd,
         // @ts-ignore Bulma generated types do not contain `is-max-desktop`.
-        "is-max-desktop": isMaxDesktop,
-        "is-max-widescreen": isMaxWidescreen,
+        "is-max-desktop": isMax === "desktop",
+        "is-max-widescreen": isMax === "widescreen",
+        "is-widescreen": isWidescreen,
       },
       bulma,
     )}
@@ -620,8 +635,7 @@ export const Container: FC<PropsWithChildren<ContainerProps>> = ({
 export type ContainerProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
   Partial<{
-    isMaxDesktop: boolean
-    isMaxWidescreen: boolean
+    isMax: "desktop" | "widescreen"
     isWidescreen: boolean
     isFluid: boolean
     isFullhd: boolean
@@ -640,6 +654,7 @@ export type ContainerProps = HTMLAttributes<HTMLDivElement> &
  */
 export const Content: FC<PropsWithChildren<ContentProps>> = ({
   size,
+  isSkeleton,
   bulma,
   className,
   children,
@@ -650,6 +665,7 @@ export const Content: FC<PropsWithChildren<ContentProps>> = ({
       className as Bulma,
       "content",
       is(size),
+      { "is-skeleton": isSkeleton },
       bulma,
     )}
     {...props}
@@ -657,7 +673,10 @@ export const Content: FC<PropsWithChildren<ContentProps>> = ({
     {children}
   </div>
 )
-export type ContentProps = HTMLAttributes<HTMLDivElement> & BulmaProp & SizeProp
+export type ContentProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp &
+  IsSkeletonProp &
+  SizeProp
 
 export const Control: FC<PropsWithChildren<ControlProps>> = ({
   hasIconsLeft,
@@ -727,12 +746,7 @@ export type DeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp
  */
 export const Field: FC<PropsWithChildren<FieldProps>> = ({
   hasAddons,
-  hasAddonsCentered,
-  hasAddonsRight,
   isGrouped,
-  isGroupedCentered,
-  isGroupedMultiline,
-  isGroupedRight,
   bulma,
   className,
   children,
@@ -744,12 +758,12 @@ export const Field: FC<PropsWithChildren<FieldProps>> = ({
       "field",
       {
         "has-addons": hasAddons,
-        "has-addons-centered": hasAddonsCentered,
-        "has-addons-right": hasAddonsRight,
+        "has-addons-centered": hasAddons === "centered",
+        "has-addons-right": hasAddons === "right",
         "is-grouped": isGrouped,
-        "is-grouped-centered": isGroupedCentered,
-        "is-grouped-multiline": isGroupedMultiline,
-        "is-grouped-right": isGroupedRight,
+        "is-grouped-centered": isGrouped === "centered",
+        "is-grouped-multiline": isGrouped === "multiline",
+        "is-grouped-right": isGrouped === "right",
       },
       bulma,
     )}
@@ -761,13 +775,10 @@ export const Field: FC<PropsWithChildren<FieldProps>> = ({
 export type FieldProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
   Partial<{
-    hasAddons: boolean
+    hasAddons: boolean | "centered" | "right"
     hasAddonsCentered: boolean
     hasAddonsRight: boolean
-    isGrouped: boolean
-    isGroupedCentered: boolean
-    isGroupedMultiline: boolean
-    isGroupedRight: boolean
+    isGrouped: boolean | "centered" | "multiline" | "right"
     isHorizontal: boolean
   }>
 
@@ -904,7 +915,6 @@ export const FileUpload: FC<FileUploadProps> = ({
       },
       bulma,
     )}
-    {...props}
   >
     <label className="file-label">
       <input type="file" {...props} />
@@ -1204,6 +1214,7 @@ export type HeroHeadProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  */
 export const Icon: FC<PropsWithChildren<IconProps>> = ({
   align,
+  isSkeleton,
   size,
   bulma,
   className,
@@ -1216,6 +1227,9 @@ export const Icon: FC<PropsWithChildren<IconProps>> = ({
       "icon",
       alignment(align),
       is(size),
+      {
+        "is-skeleton": isSkeleton,
+      },
       bulma,
     )}
     {...props}
@@ -1226,6 +1240,7 @@ export const Icon: FC<PropsWithChildren<IconProps>> = ({
 export type IconProps = HTMLAttributes<HTMLSpanElement> &
   BulmaProp &
   AlignProp<"left" | "right"> &
+  IsSkeletonProp &
   SizeProp
 
 /**
@@ -1294,8 +1309,9 @@ export type IconTextProps = HTMLAttributes<HTMLSpanElement> &
  */
 export const Image: FC<PropsWithChildren<ImageProps>> = ({
   dimension,
-  ratio,
+  isSkeleton,
   isSquare,
+  ratio,
   bulma,
   className,
   children,
@@ -1308,6 +1324,7 @@ export const Image: FC<PropsWithChildren<ImageProps>> = ({
       dimension ? `is-${dimension}` : undefined,
       ratio ? `is-${ratio}` : undefined,
       {
+        "is-skeleton": isSkeleton,
         "is-square": isSquare,
       },
       bulma,
@@ -1319,6 +1336,7 @@ export const Image: FC<PropsWithChildren<ImageProps>> = ({
 )
 export type ImageProps = HTMLAttributes<HTMLElement> &
   BulmaProp &
+  IsSkeletonProp &
   Partial<{
     isSquare: boolean
     dimension: ImageDimension
@@ -1352,6 +1370,7 @@ export const Input: FC<InputProps> = ({
   bulma,
   className,
   color,
+  isSkeleton,
   size,
   ...props
 }) => (
@@ -1361,6 +1380,9 @@ export const Input: FC<InputProps> = ({
       "input",
       is(color),
       is(size),
+      {
+        "is-skeleton": isSkeleton,
+      },
       bulma,
     )}
     {...props}
@@ -1371,18 +1393,17 @@ export type InputProps = Omit<
   "size" | "type"
 > &
   Partial<{
+    // Checkbox handles type checkbox
+    // FileUpload handles type file
+    // Radio handles type radio
     type: Exclude<
       InputHTMLAttributes<HTMLInputElement>["type"],
-      // Component Checkbox handles `type="checkbox"`
-      | "checkbox"
-      // Component FileUpload handles `type="file"`
-      | "file"
-      // Component Radio handles `type="radio"`
-      | "radio"
+      "checkbox" | "file" | "radio"
     >
   }> &
   BulmaProp &
   ColorProp &
+  IsSkeletonProp &
   SizeProp
 
 /** Renders label tag with label class. */
@@ -1954,6 +1975,7 @@ export const NavbarStart: FC<PropsWithChildren> = ({ children }) => (
  */
 export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
   color,
+  isSkeleton,
   variant,
   bulma,
   className,
@@ -1966,6 +1988,9 @@ export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
       "notification",
       is(color),
       is(variant),
+      {
+        "is-skeleton": isSkeleton,
+      },
       bulma,
     )}
     {...props}
@@ -1976,7 +2001,8 @@ export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
 export type NotificationProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
   ColorProp &
-  ColorVariantProp<"light">
+  ColorVariantProp<"light"> &
+  IsSkeletonProp
 
 /**
  * A responsive, usable, and flexible pagination.
@@ -2245,10 +2271,31 @@ export type SelectProps = Omit<
   }>
 
 /**
+ * Is a loading element which resembles a paragraph.
+ *
+ * @example
+ * ```tsx
+ * <SkeletonLines num={5} />
+ * ```
+ *
+ * @see [bulma docs](https://bulma.io/documentation/features/skeletons/#skeleton-lines)
+ */
+export const SkeletonLines: FC<SkeletonLinesProps> = ({ num }) => (
+  <div className={"skeleton-lines" satisfies Bulma}>
+    {Array.from({ length: num }, (_, i) => (
+      <div key={i} />
+    ))}
+  </div>
+)
+export type SkeletonLinesProps = { num: number }
+
+/**
  * @see {@link Title}
  */
 export const Subtitle: FC<PropsWithChildren<SubtitleProps>> = ({
+  hasSkeleton,
   is,
+  isSkeleton,
   tag: Tag = "p",
   bulma,
   className,
@@ -2260,6 +2307,10 @@ export const Subtitle: FC<PropsWithChildren<SubtitleProps>> = ({
       className as Bulma,
       "title",
       is ? `is-${is}` : undefined,
+      {
+        "has-skeleton": hasSkeleton,
+        "is-skeleton": isSkeleton,
+      },
       bulma,
     )}
     {...props}
@@ -2269,6 +2320,7 @@ export const Subtitle: FC<PropsWithChildren<SubtitleProps>> = ({
 )
 export type SubtitleProps = Omit<HTMLAttributes<HTMLElement>, "is"> &
   BulmaProp &
+  IsSkeletonProp &
   Titlemodifiers
 
 /**
@@ -2396,10 +2448,11 @@ export type TabProps = AnchorHTMLAttributes<HTMLAnchorElement> & IsActiveProp
  */
 export const Tag: FC<PropsWithChildren<TagProps>> = ({
   color,
-  variant,
   isHoverable,
   isRounded,
+  isSkeleton,
   size,
+  variant,
   bulma,
   className,
   children,
@@ -2415,6 +2468,7 @@ export const Tag: FC<PropsWithChildren<TagProps>> = ({
       {
         "is-hoverable": isHoverable,
         "is-rounded": isRounded,
+        "is-skeleton": isSkeleton,
       },
       bulma,
     )}
@@ -2427,6 +2481,7 @@ export type TagProps = HTMLAttributes<HTMLSpanElement> &
   BulmaProp &
   ColorProp &
   ColorVariantProp<"light"> &
+  IsSkeletonProp &
   SizeProp<"medium" | "large"> &
   Partial<{
     isHoverable: boolean
@@ -2497,8 +2552,9 @@ export type TagsProps = HTMLAttributes<HTMLDivElement> &
  */
 export const Textarea: FC<TextareaProps> = ({
   color,
-  size,
   isLoading,
+  isSkeleton,
+  size,
   bulma,
   className,
   ...props
@@ -2511,6 +2567,7 @@ export const Textarea: FC<TextareaProps> = ({
       is(size),
       {
         "is-loading": isLoading,
+        "is-skeleton": isSkeleton,
       },
       bulma,
     )}
@@ -2520,6 +2577,7 @@ export const Textarea: FC<TextareaProps> = ({
 export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
   BulmaProp &
   ColorProp &
+  IsSkeletonProp &
   SizeProp<Size> &
   Partial<{
     isLoading: boolean
@@ -2549,11 +2607,18 @@ export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
  * <Subtitle is={3}>Subtitle 3</Subtitle>
  * ```
  *
+ * @example Skeleton
+ * ```ts
+ * <Title hasSkeleton>Title</Title>
+ * ```
+ *
  * @see [bulma docs](https://bulma.io/documentation/elements/title/)
  */
 export const Title: FC<PropsWithChildren<TitleProps>> = ({
+  hasSkeleton,
   is,
   isSpaced,
+  isSkeleton,
   tag: Tag = "p",
   bulma,
   className,
@@ -2566,6 +2631,8 @@ export const Title: FC<PropsWithChildren<TitleProps>> = ({
       "title",
       is ? `is-${is}` : undefined,
       {
+        "has-skeleton": hasSkeleton,
+        "is-skeleton": isSkeleton,
         "is-spaced": isSpaced,
       },
       bulma,
@@ -2577,11 +2644,13 @@ export const Title: FC<PropsWithChildren<TitleProps>> = ({
 )
 export type TitleProps = Omit<HTMLAttributes<HTMLElement>, "is"> &
   BulmaProp &
+  IsSkeletonProp &
   Titlemodifiers &
   Partial<{
     isSpaced: boolean
   }>
 type Titlemodifiers = TagProp<"h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"> &
   Partial<{
+    hasSkeleton: boolean
     is: 1 | 2 | 3 | 4 | 5 | 6
   }>

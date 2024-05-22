@@ -7,6 +7,8 @@
 - [Installation](#installation)
 - API:
   - [React components](#react-components)
+    - [HTML tag components](#html-tag-components)
+    - [Bulma related components](#bulma-related-components)
     - [Components list](#components-list)
     - [Inline documentation](#inline-documentation)
     - [className prop](#classname-prop)
@@ -44,6 +46,8 @@ You know, Trunx is a Super Sayan because it is written in TypeScript. The `bulma
 
 <img src="https://fibo.github.io/trunx/media/trunks-sword.png" height="400"/>
 
+#### HTML tag components
+
 Some Trunx components render their homomnym HTML tag.
 
 ```tsx
@@ -60,6 +64,8 @@ export const MyComponent: FC<{ isSuccess: boolean }> = ({ isSuccess }) => (
   </Div>
 )
 ```
+
+#### Bulma related components
 
 Trunx provides other React components that implement a Bulma element or a Bulma Component. This means that they usually add a related Bulma class. For example `Button` components renders a button tag with the Bulma `button` class. They may have props related to some Bulma class (.e.g. `color`, `size`). Most of the Bulma related props start with `is`, `has` and the prop name is just the camel-case version of its related Bulma class. For example `isRounded` prop corresponds to `is-rounded` Bulma class.
 
@@ -93,7 +99,7 @@ Almost all trunx components support a `className` prop, in case you need to appe
 
 <img src="https://fibo.github.io/trunx/media/trunks.png" height="290"/>
 
-HTML tags related: `A`, `Div`, `P`, `Span`.
+HTML tags: `A`, `Div`, `P`, `Span`.
 
 Bulma related:
 
@@ -166,6 +172,7 @@ Bulma related:
 - `Progress`
 - `Radio`
 - `Section`
+- `SkeletonLines`
 - `Select`
 - `Table`
 - `Tabs`, `Tab`
