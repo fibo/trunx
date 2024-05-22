@@ -60,6 +60,7 @@ import {
   Progress,
   Section,
   Select,
+  SkeletonLines,
   Subtitle,
   Span,
   Tab,
@@ -115,11 +116,21 @@ export const OtherReadmeSnippets: FC = () => (
 
 export const Snippets: FC = () => (
   <>
+    {/* HTML related components */}
+
     <A href="https://example.com" bulma="is-underlined">
       Website
     </A>
 
     <Div bulma="block"></Div>
+
+    <Div bulma={{ "skeleton-block": true }}>Lorem ipsum</Div>
+
+    <P bulma="has-text-centered">Lorem ipsum...</P>
+
+    <Span bulma={["has-text-grey", "is-capitalized"]}>hello</Span>
+
+    {/* Bulma related components */}
 
     <Breadcrumb align="center" aria-label="breadcrumbs">
       <BreadcrumbItem href="https://bulma.io/">Bulma</BreadcrumbItem>
@@ -153,7 +164,9 @@ export const Snippets: FC = () => (
       </CardFooter>
     </Card>
 
-    <Checkbox disabled>Save my preferences</Checkbox>
+    <Checkbox disabled>
+      <Span bulma="ml-2">Save my preferences</Span>
+    </Checkbox>
 
     <Container isFluid>
       <Notification color="primary">
@@ -333,17 +346,15 @@ export const Snippets: FC = () => (
       Lorem ipsum...
     </Notification>
 
-    <P bulma="has-text-centered">Lorem ipsum...</P>
-
     <Progress color="primary" size="small" value="42" max="100">
       42%
     </Progress>
 
-    <Span bulma={["has-text-grey", "is-capitalized"]}>hello</Span>
-
     <Section size="medium">
       <Title tag="h2">Title</Title>
     </Section>
+
+    <SkeletonLines num={5} />
 
     <Select
       size="large"
@@ -352,6 +363,8 @@ export const Snippets: FC = () => (
         { value: "B", label: "Banana" },
       ]}
     />
+
+    <Subtitle is={3}>Subtitle 3</Subtitle>
 
     <Tag color="primary" variant="light" size="medium">
       v1.0.0
@@ -399,6 +412,7 @@ export const Snippets: FC = () => (
     <Title is={1} isSpaced>
       Title 1
     </Title>
-    <Subtitle is={3}>Subtitle 3</Subtitle>
+
+    <Title hasSkeleton>Title</Title>
   </>
 )
