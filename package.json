@@ -20,12 +20,10 @@
     "prettier--check": "prettier --check .",
     "test": "node --test --test-reporter spec"
   },
-  "dependencies": {
-    "bulma": "1.0.0"
-  },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
+    "bulma": "^1",
     "postcss": "^8",
     "postcss-cli": "^10",
     "postcss-ts-classnames": "^0.3.0",
@@ -36,7 +34,7 @@
     "typescript": "^5"
   },
   "peerDependencies": {
-    "react": ">= 17"
+    "bulma": "^1"
   },
   "keywords": [
     "bulma",
