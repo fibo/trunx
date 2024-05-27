@@ -16,6 +16,18 @@ const testData = [
     output: "",
   },
   {
+    input: [null],
+    output: "",
+  },
+  {
+    input: [undefined],
+    output: "",
+  },
+  {
+    input: [[]],
+    output: "",
+  },
+  {
     input: ["", [], {}],
     output: "",
   },
@@ -51,44 +63,88 @@ const testData = [
     output: "",
   },
   {
-    input: [[undefined, "foo"]],
-    output: "foo",
+    input: [[undefined, "a"]],
+    output: "a",
   },
   {
-    input: ["is-primary"],
-    output: "is-primary",
+    input: ["a", null, undefined, "b"],
+    output: "a b",
   },
   {
-    input: ["is-primary", "is-loading"],
-    output: "is-primary is-loading",
+    input: ["a"],
+    output: "a",
   },
   {
-    input: [
-      {
-        "is-primary": true,
-      },
-    ],
-    output: "is-primary",
+    input: ["a", "b"],
+    output: "a b",
   },
   {
-    input: [["is-primary"]],
-    output: "is-primary",
+    input: ["a", null, undefined, "b"],
+    output: "a b",
   },
   {
-    input: [["is-loading", "is-primary", ""]],
-    output: "is-loading is-primary",
+    input: [{ a: true }],
+    output: "a",
   },
   {
-    input: ["", "is-primary", ""],
-    output: "is-primary",
+    input: ["", "b", {}, ""],
+    output: "b",
   },
   {
-    input: [undefined, "menu", undefined],
-    output: "menu",
+    input: [{ a: 1 }],
+    output: "a",
   },
   {
-    input: ["has-text-centered", { "has-text-primary": true }],
-    output: "has-text-centered has-text-primary",
+    input: [{ a: 0 }],
+    output: "",
+  },
+  {
+    input: [{ a: true, b: false, c: 0, d: null, e: undefined, f: 1 }],
+    output: "a f",
+  },
+  {
+    input: [{ a: "x", b: undefined, c: 1 }],
+    output: "a c",
+  },
+  {
+    input: [["a"]],
+    output: "a",
+  },
+  {
+    input: [["a", "b", ""]],
+    output: "a b",
+  },
+  {
+    input: [["a", "b"], "c"],
+    output: "a b c",
+  },
+  {
+    input: ["a", ["b", "c"]],
+    output: "a b c",
+  },
+  {
+    input: ["", "a", ""],
+    output: "a",
+  },
+  {
+    input: [undefined, "a", undefined],
+    output: "a",
+  },
+  {
+    input: ["a", { b: true }],
+    output: "a b",
+  },
+  {
+    input: ["a", { b: true, c: false }],
+    output: "a b",
+  },
+  {
+    input: ["a", { b: true, c: false }, { c: true, d: false }],
+    output: "a b c",
+  },
+  {
+    input: ["a", ["b", ["c", { d: true }]]],
+    output: "a b c d",
   },
 ]
 
