@@ -3,6 +3,7 @@ export type ClassnamesArg<Classname extends string> =
   | { [key in Classname]?: unknown }
   | ClassnamesArg<Classname>[]
   | undefined
+  | null
 
 /**
  * Utility for conditionally joining CSS classes together.
