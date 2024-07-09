@@ -1,6 +1,6 @@
 <img src="https://fibo.github.io/trunx/media/trunx-logotype.png" width="350"/>
 
-> Super Saiyan components, son of awesome [Bulma]
+> Super Saiyan React components, son of awesome [Bulma]
 
 **ToC**
 
