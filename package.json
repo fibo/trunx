@@ -43,7 +43,6 @@
     "url": "https://fibo.github.io"
   },
   "license": "MIT",
-  "homepage": "https://github.com/fibo/trunx/tree/main",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/fibo/trunx.git"
