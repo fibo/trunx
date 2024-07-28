@@ -2245,6 +2245,7 @@ export type SectionProps = HTMLAttributes<HTMLElement> &
  * @see [bulma docs](https://bulma.io/documentation/form/select/)
  */
 export const Select: FC<SelectProps> = ({
+  color,
   options,
   isFullwidth,
   isLoading,
@@ -2259,6 +2260,7 @@ export const Select: FC<SelectProps> = ({
       className as Bulma,
       "select",
       is(size),
+      is(color),
       {
         "is-loading": isLoading,
         "is-fullwidth": isFullwidth,
@@ -2280,6 +2282,7 @@ export type SelectProps = Omit<
 > & {
   options: Array<OptionHTMLAttributes<HTMLOptionElement>>
 } & BulmaProp &
+  ColorProp &
   SizeProp<Size> &
   Partial<{
     isFullwidth: boolean
