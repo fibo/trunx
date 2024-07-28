@@ -678,6 +678,11 @@ export type ContentProps = HTMLAttributes<HTMLDivElement> &
   IsSkeletonProp &
   SizeProp
 
+/**
+ * A block container meant to enhance single form controls.
+ *
+ * @see [bulma docs](https://bulma.io/documentation/form/general/#form-control)
+ */
 export const Control: FC<PropsWithChildren<ControlProps>> = ({
   hasIconsLeft,
   hasIconsRight,
