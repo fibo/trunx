@@ -1774,9 +1774,20 @@ export type NavbarProps = Omit<HTMLAttributes<HTMLElement>, "color"> &
  *
  * @see [bulma docs](https://bulma.io/documentation/components/navbar/#navbar-brand)
  */
-export const NavbarBrand: FC<PropsWithChildren> = ({ children }) => (
-  <div className="navbar-brand">{children}</div>
+export const NavbarBrand: FC<PropsWithChildren<NavbarBrandProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "navbar-brand", bulma)}
+    {...props}
+  >
+    {children}
+  </div>
 )
+export type NavbarBrandProps = HTMLAttributes<HTMLDivElement> & BulmaProp
 
 /**
  * The NavbarBurger is a hamburger menu that only appears on touch devices.
