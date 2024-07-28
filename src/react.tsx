@@ -7,6 +7,7 @@ import {
   ButtonHTMLAttributes,
   HTMLAttributes,
   InputHTMLAttributes,
+  LabelHTMLAttributes,
   OptionHTMLAttributes,
   ProgressHTMLAttributes,
   SelectHTMLAttributes,
@@ -1425,7 +1426,7 @@ export const Label: FC<PropsWithChildren<LabelProps>> = ({
     {children}
   </label>
 )
-export type LabelProps = HTMLAttributes<HTMLLabelElement> & BulmaProp
+export type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & BulmaProp
 
 /**
  * The famous media object prevalent in social media interfaces.
