@@ -54,17 +54,22 @@ Some Trunx components render their homomnym HTML tag.
 
 ```tsx
 import { Div, Span } from "trunx"
-import { FC } from "react"
 
-export const MyComponent: FC<{ isSuccess: boolean }> = ({ isSuccess }) => (
-  <Div bulma="box">
-    <Span
-      bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}
-    >
-      Lorem ipsum...
-    </Span>
-  </Div>
-)
+type Props = {
+  isSuccess: boolean
+}
+
+export function MyComponent({ isSuccess }: Props) {
+  return (
+    <Div bulma="box">
+      <Span
+        bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}
+      >
+        Lorem ipsum...
+      </Span>
+    </Div>
+  )
+}
 ```
 
 #### Bulma related components
@@ -204,24 +209,26 @@ classnames<T>("foo", "quz") // ERROR: not assignable to type ClassnamesArg<T>[]
 For example you can use it to compose Bulma classes.
 
 ```tsx
-import { FC, PropsWithChildren, ButtonHTMLAttributes } from "react"
+import { PropsWithChildren, ButtonHTMLAttributes } from "react"
 import { Bulma, classnames } from "trunx"
 
 type MyButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   Partial<{ isLoading: boolean }>
 
-export const MyButton: FC<PropsWithChildren<MyButtonProps>> = ({
+export function MyButton({
   isLoading,
   children,
   ...props
-}) => (
-  <button
-    className={classnames<Bulma>("button", { "is-loading": isLoading })}
-    {...props}
-  >
-    {children}
-  </button>
-)
+}: PropsWithChildren<MyButtonProps>) {
+  return (
+    <button
+      className={classnames<Bulma>("button", { "is-loading": isLoading })}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
 ```
 
 ## How to
@@ -264,25 +271,24 @@ Suppose you want to create your custom button that is always rounded and has onl
 Then your button component can import the `ButtonProps` from `trunx` and customize them, something like the following.
 
 ```tsx
+import { PropsWithChildren } from "react"
 import {
   Button as _Button,
   ButtonProps as _ButtonProps,
   ColorProp,
   MainColor,
 } from "trunx"
-import { FC, PropsWithChildren } from "react"
 
 type ButtonProps = Omit<_ButtonProps, "color" | "isRounded"> &
   ColorProp<Extract<MainColor, "warning" | "success">>
 
-export const Button: FC<PropsWithChildren<ButtonProps>> = ({
-  children,
-  ...props
-}) => (
-  <_Button isRounded {...props}>
-    {children}
-  </_Button>
-)
+export function Button({ children, ...props }: PropsWithChildren<ButtonProps>) {
+  return (
+    <_Button isRounded {...props}>
+      {children}
+    </_Button>
+  )
+}
 ```
 
 ## Motivation
