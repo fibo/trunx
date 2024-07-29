@@ -2340,8 +2340,12 @@ export const Subtitle: FC<PropsWithChildren<SubtitleProps>> = ({
 )
 export type SubtitleProps = Omit<HTMLAttributes<HTMLElement>, "is"> &
   BulmaProp &
+  TagProp<"h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"> &
   IsSkeletonProp &
-  Titlemodifiers
+  Partial<{
+    hasSkeleton: boolean
+    is: 1 | 2 | 3 | 4 | 5 | 6
+  }>
 
 /**
  * The inevitable HTML table, with special case cells.
@@ -2664,13 +2668,10 @@ export const Title: FC<PropsWithChildren<TitleProps>> = ({
 )
 export type TitleProps = Omit<HTMLAttributes<HTMLElement>, "is"> &
   BulmaProp &
+  TagProp<"h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"> &
   IsSkeletonProp &
-  Titlemodifiers &
-  Partial<{
-    isSpaced: boolean
-  }>
-type Titlemodifiers = TagProp<"h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"> &
   Partial<{
     hasSkeleton: boolean
     is: 1 | 2 | 3 | 4 | 5 | 6
+    isSpaced: boolean
   }>
