@@ -187,7 +187,7 @@ export const Snippets: FC = () => (
     </Field>
 
     <FieldHorizontal>
-      <FieldLabel isNormal>
+      <FieldLabel size="normal">
         <Label>From</Label>
       </FieldLabel>
       <FieldBody>
