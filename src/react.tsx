@@ -810,7 +810,7 @@ export type FieldBodyProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  * @example
  * ```tsx
  * <FieldHorizontal>
- *   <FieldLabel isNormal>
+ *   <FieldLabel size="normal">
  *     <Label>From</Label>
  *   </FieldLabel>
  *   <FieldBody>
@@ -852,7 +852,7 @@ export type FieldHorizontalProps = HTMLAttributes<HTMLDivElement> & BulmaProp
 
 /** @see {@link FieldHorizontal} */
 export const FieldLabel: FC<PropsWithChildren<FieldLabelProps>> = ({
-  isNormal,
+  size,
   bulma,
   className,
   children,
@@ -862,9 +862,7 @@ export const FieldLabel: FC<PropsWithChildren<FieldLabelProps>> = ({
     className={classnames<Bulma>(
       className as Bulma,
       "field-label",
-      {
-        "is-normal": isNormal,
-      },
+      is(size),
       bulma,
     )}
     {...props}
@@ -873,9 +871,8 @@ export const FieldLabel: FC<PropsWithChildren<FieldLabelProps>> = ({
   </div>
 )
 export type FieldLabelProps = HTMLAttributes<HTMLDivElement> &
-  BulmaProp & {
-    isNormal: boolean
-  }
+  BulmaProp &
+  SizeProp<Size>
 
 /**
  * A custom file upload input.
