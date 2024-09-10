@@ -5,7 +5,13 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-import { FC, PropsWithChildren, ButtonHTMLAttributes } from "react"
+import {
+  FC,
+  PropsWithChildren,
+  ButtonHTMLAttributes,
+  useCallback,
+  useState,
+} from "react"
 import type { Bulma } from "./index.js"
 import {
   A,
@@ -54,6 +60,7 @@ import {
   MediaRight,
   Message,
   Modal,
+  ModalBackground,
   ModalCard,
   ModalClose,
   ModalContent,
@@ -123,325 +130,333 @@ export const OtherReadmeSnippets: FC = () => (
 // Snippets in components TSDocs.
 //////////////////////////////////////////////////////////////////////
 
-export const Snippets: FC = () => (
-  <>
-    {/* HTML related components */}
+export function Snippets() {
+  const [modalIsActive, setModalIsActive] = useState(false)
+  const closeModal = useCallback(() => {
+    setModalIsActive(false)
+  }, [])
 
-    <A href="https://example.com" bulma="is-underlined">
-      Website
-    </A>
+  return (
+    <>
+      {/* HTML related components */}
 
-    <Div bulma="block"></Div>
+      <A href="https://example.com" bulma="is-underlined">
+        Website
+      </A>
 
-    <Div bulma={{ "skeleton-block": true }}>Lorem ipsum</Div>
+      <Div bulma="block"></Div>
 
-    <P bulma="has-text-centered">Lorem ipsum...</P>
+      <Div bulma={{ "skeleton-block": true }}>Lorem ipsum</Div>
 
-    <Span bulma={["has-text-grey", "is-capitalized"]}>hello</Span>
+      <P bulma="has-text-centered">Lorem ipsum...</P>
 
-    {/* Bulma related components */}
+      <Span bulma={["has-text-grey", "is-capitalized"]}>hello</Span>
 
-    <Breadcrumb align="center" aria-label="breadcrumbs">
-      <BreadcrumbItem href="https://bulma.io/">Bulma</BreadcrumbItem>
-      <BreadcrumbItem isActive>Trunx</BreadcrumbItem>
-    </Breadcrumb>
+      {/* Bulma related components */}
 
-    <Breadcrumb separator="dot" size="small"></Breadcrumb>
+      <Breadcrumb align="center" aria-label="breadcrumbs">
+        <BreadcrumbItem href="https://bulma.io/">Bulma</BreadcrumbItem>
+        <BreadcrumbItem isActive>Trunx</BreadcrumbItem>
+      </Breadcrumb>
 
-    <Button color="primary" variant="light" isLoading>
-      Login
-    </Button>
+      <Breadcrumb separator="dot" size="small"></Breadcrumb>
 
-    <Buttons size="small">
-      <Button color="success">Save</Button>
-      <Button>Cancel</Button>
-    </Buttons>
+      <Button color="primary" variant="light" isLoading>
+        Login
+      </Button>
 
-    <Card>
-      <CardHeader>
-        <CardHeaderTitle>Title</CardHeaderTitle>
-        <CardHeaderIcon>
-          <Icon>
-            <i className="fas fa-angle-down" aria-hidden="true" />
-          </Icon>
-        </CardHeaderIcon>
-      </CardHeader>
-      <CardContent>Lorem ipsum...</CardContent>
-      <CardFooter>
-        <A bulma="card-footer-item">Save</A>
-        <A bulma="card-footer-item">Delete</A>
-      </CardFooter>
-    </Card>
+      <Buttons size="small">
+        <Button color="success">Save</Button>
+        <Button>Cancel</Button>
+      </Buttons>
 
-    <Checkbox disabled>
-      <Span bulma="ml-2">Save my preferences</Span>
-    </Checkbox>
+      <Card>
+        <CardHeader>
+          <CardHeaderTitle>Title</CardHeaderTitle>
+          <CardHeaderIcon>
+            <Icon>
+              <i className="fas fa-angle-down" aria-hidden="true" />
+            </Icon>
+          </CardHeaderIcon>
+        </CardHeader>
+        <CardContent>Lorem ipsum...</CardContent>
+        <CardFooter>
+          <A bulma="card-footer-item">Save</A>
+          <A bulma="card-footer-item">Delete</A>
+        </CardFooter>
+      </Card>
 
-    <Container isFluid>
-      <Notification color="primary">
-        This container is <strong>fluid</strong>
-      </Notification>
-    </Container>
+      <Checkbox disabled>
+        <Span bulma="ml-2">Save my preferences</Span>
+      </Checkbox>
 
-    <Content size="small">
-      <h1>Hello World</h1>
-      <p>Lorem ipsum...</p>
-    </Content>
+      <Container isFluid>
+        <Notification color="primary">
+          This container is <strong>fluid</strong>
+        </Notification>
+      </Container>
 
-    <Dropdown isActive>
-      <DropdownTrigger>
-        <Button aria-haspopup="true" aria-controls="dropdown-menu">
-          Dropdown button
-        </Button>
-      </DropdownTrigger>
-      <DropdownMenu id="dropdown-menu" role="menu">
-        <DropdownItem href="#">Dropdown item</DropdownItem>
-        <DropdownItem href="#">Other Dropdown item</DropdownItem>
-        <DropdownItem isActive href="#">
-          Active Dropdown item
-        </DropdownItem>
-        <DropdownDivider />
-      </DropdownMenu>
-    </Dropdown>
-
-    <Div bulma="dropdown-item">
-      <p>You can insert content here.</p>
-    </Div>
-
-    <Field>
-      <Label>Name</Label>
-      <Control>
-        <Input placeholder="e.g Alex Smith" />
-      </Control>
-    </Field>
-
-    <FieldHorizontal>
-      <FieldLabel size="normal">
-        <Label>From</Label>
-      </FieldLabel>
-      <FieldBody>
-        <Field>
-          <Control>
-            <Input type="text" placeholder="Name" />
-          </Control>
-        </Field>
-        <Field>
-          <Control>
-            <Input type="email" placeholder="Email" />
-          </Control>
-        </Field>
-      </FieldBody>
-    </FieldHorizontal>
-
-    <FileUpload
-      color="info"
-      cta={
-        <>
-          <FileIcon>
-            <i className="fas fa-upload"></i>
-          </FileIcon>
-          <FileLabel>Choose a file...</FileLabel>
-        </>
-      }
-      // Any prop accepted by input type="file"
-      accept="image/png, image/jpeg"
-      name="avatar"
-    />
-
-    <FixedGrid hasAutoCount>
-      <Cell>cell 1</Cell>
-      <Cell>cell 2</Cell>
-    </FixedGrid>
-
-    <FixedGrid bulma="has-4-cols">
-      <Cell>cell 1</Cell>
-      <Cell bulma="is-col-start-3">cell 2</Cell>
-      <Cell>cell 3</Cell>
-      <Cell>cell 4</Cell>
-      <Cell>cell 5</Cell>
-      <Cell>cell 6</Cell>
-    </FixedGrid>
-
-    <Footer>
-      <Content bulma="has-text-centered">
-        <p>
-          <strong>trunx</strong> by <a href="https://fibo.github.io">fibo</a>.
-          The source code is licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
-        </p>
+      <Content size="small">
+        <h1>Hello World</h1>
+        <p>Lorem ipsum...</p>
       </Content>
-    </Footer>
 
-    <Grid bulma={["is-col-min-4", "is-gap-2"]}>
-      <Cell>cell 1</Cell>
-      <Cell>cell 2</Cell>
-    </Grid>
+      <Dropdown isActive>
+        <DropdownTrigger>
+          <Button aria-haspopup="true" aria-controls="dropdown-menu">
+            Dropdown button
+          </Button>
+        </DropdownTrigger>
+        <DropdownMenu id="dropdown-menu" role="menu">
+          <DropdownItem href="#">Dropdown item</DropdownItem>
+          <DropdownItem href="#">Other Dropdown item</DropdownItem>
+          <DropdownItem isActive href="#">
+            Active Dropdown item
+          </DropdownItem>
+          <DropdownDivider />
+        </DropdownMenu>
+      </Dropdown>
 
-    <Hero size="small">
-      <HeroBody>
-        <Title>Title</Title>
-        <Subtitle>Subtitle</Subtitle>
-      </HeroBody>
-    </Hero>
+      <Div bulma="dropdown-item">
+        <p>You can insert content here.</p>
+      </Div>
 
-    <Hero color="success" isHalfheight>
-      <HeroBody>
-        <Title>Title</Title>
-        <Subtitle>Subtitle</Subtitle>
-      </HeroBody>
-    </Hero>
+      <Field>
+        <Label>Name</Label>
+        <Control>
+          <Input placeholder="e.g Alex Smith" />
+        </Control>
+      </Field>
 
-    <Icon>
-      <i className="fas fa-home"></i>
-    </Icon>
+      <FieldHorizontal>
+        <FieldLabel size="normal">
+          <Label>From</Label>
+        </FieldLabel>
+        <FieldBody>
+          <Field>
+            <Control>
+              <Input type="text" placeholder="Name" />
+            </Control>
+          </Field>
+          <Field>
+            <Control>
+              <Input type="email" placeholder="Email" />
+            </Control>
+          </Field>
+        </FieldBody>
+      </FieldHorizontal>
 
-    <IconText>
-      <Icon bulma="has-text-primary">
+      <FileUpload
+        color="info"
+        cta={
+          <>
+            <FileIcon>
+              <i className="fas fa-upload"></i>
+            </FileIcon>
+            <FileLabel>Choose a file...</FileLabel>
+          </>
+        }
+        // Any prop accepted by input type="file"
+        accept="image/png, image/jpeg"
+        name="avatar"
+      />
+
+      <FixedGrid hasAutoCount>
+        <Cell>cell 1</Cell>
+        <Cell>cell 2</Cell>
+      </FixedGrid>
+
+      <FixedGrid bulma="has-4-cols">
+        <Cell>cell 1</Cell>
+        <Cell bulma="is-col-start-3">cell 2</Cell>
+        <Cell>cell 3</Cell>
+        <Cell>cell 4</Cell>
+        <Cell>cell 5</Cell>
+        <Cell>cell 6</Cell>
+      </FixedGrid>
+
+      <Footer>
+        <Content bulma="has-text-centered">
+          <p>
+            <strong>trunx</strong> by <a href="https://fibo.github.io">fibo</a>.
+            The source code is licensed
+            <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+          </p>
+        </Content>
+      </Footer>
+
+      <Grid bulma={["is-col-min-4", "is-gap-2"]}>
+        <Cell>cell 1</Cell>
+        <Cell>cell 2</Cell>
+      </Grid>
+
+      <Hero size="small">
+        <HeroBody>
+          <Title>Title</Title>
+          <Subtitle>Subtitle</Subtitle>
+        </HeroBody>
+      </Hero>
+
+      <Hero color="success" isHalfheight>
+        <HeroBody>
+          <Title>Title</Title>
+          <Subtitle>Subtitle</Subtitle>
+        </HeroBody>
+      </Hero>
+
+      <Icon>
         <i className="fas fa-home"></i>
       </Icon>
-      <span>Home</span>
-    </IconText>
 
-    <Image dimension="128x128">
-      <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
-    </Image>
+      <IconText>
+        <Icon bulma="has-text-primary">
+          <i className="fas fa-home"></i>
+        </Icon>
+        <span>Home</span>
+      </IconText>
 
-    <Image dimension="128x128">
-      <img
-        className="is-rounded"
-        src="https://bulma.io/assets/images/placeholders/256x256.png"
-      />
-    </Image>
-
-    <Image ratio="16by9">
-      <iframe
-        className="has-ratio"
-        width="640"
-        height="360"
-        src="https://www.youtube.com/embed/YE7VzlLtp-4"
-        allowFullScreen
-      />
-    </Image>
-
-    <Media>
-      <MediaLeft dimension="64x64">
+      <Image dimension="128x128">
         <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
-      </MediaLeft>
-      <MediaContent>Content</MediaContent>
-      <MediaRight>
+      </Image>
+
+      <Image dimension="128x128">
+        <img
+          className="is-rounded"
+          src="https://bulma.io/assets/images/placeholders/256x256.png"
+        />
+      </Image>
+
+      <Image ratio="16by9">
+        <iframe
+          className="has-ratio"
+          width="640"
+          height="360"
+          src="https://www.youtube.com/embed/YE7VzlLtp-4"
+          allowFullScreen
+        />
+      </Image>
+
+      <Media>
+        <MediaLeft dimension="64x64">
+          <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
+        </MediaLeft>
+        <MediaContent>Content</MediaContent>
+        <MediaRight>
+          <Delete />
+        </MediaRight>
+      </Media>
+
+      <Modal isActive={modalIsActive}>
+        <ModalBackground onClick={closeModal} />
+        <ModalContent>Modal content here</ModalContent>
+        <ModalClose />
+      </Modal>
+
+      <Message color="danger" size="large">
+        Lorem ipsum...
+      </Message>
+
+      <Message
+        color="dark"
+        header={
+          <>
+            {" "}
+            <p>Header</p> <Delete />{" "}
+          </>
+        }
+      >
+        Lorem ipsum...
+      </Message>
+
+      <ModalCard
+        head="Modal title"
+        foot={
+          <Buttons>
+            <Button>Ok</Button>
+          </Buttons>
+        }
+      >
+        Content ...
+      </ModalCard>
+
+      <NavbarMenu>
+        <NavbarStart>// Navbar items</NavbarStart>
+        <NavbarEnd>// Navbar items</NavbarEnd>
+      </NavbarMenu>
+
+      <Notification color="info" variant="light">
         <Delete />
-      </MediaRight>
-    </Media>
+        Lorem ipsum...
+      </Notification>
 
-    <Modal noBackground>
-      <ModalContent>Content</ModalContent>
-      <ModalClose />
-    </Modal>
+      <Progress color="primary" size="small" value="42" max="100">
+        42%
+      </Progress>
 
-    <Message color="danger" size="large">
-      Lorem ipsum...
-    </Message>
+      <Section size="medium">
+        <Title tag="h2">Title</Title>
+      </Section>
 
-    <Message
-      color="dark"
-      header={
-        <>
-          {" "}
-          <p>Header</p> <Delete />{" "}
-        </>
-      }
-    >
-      Lorem ipsum...
-    </Message>
+      <SkeletonLines num={5} />
 
-    <ModalCard
-      head="Modal title"
-      foot={
-        <Buttons>
-          <Button>Ok</Button>
-        </Buttons>
-      }
-    >
-      Content ...
-    </ModalCard>
+      <Select
+        size="large"
+        options={[
+          { value: "A", label: "Apple" },
+          { value: "B", label: "Banana" },
+        ]}
+      />
 
-    <NavbarMenu>
-      <NavbarStart>// Navbar items</NavbarStart>
-      <NavbarEnd>// Navbar items</NavbarEnd>
-    </NavbarMenu>
+      <Subtitle is={3}>Subtitle 3</Subtitle>
 
-    <Notification color="info" variant="light">
-      <Delete />
-      Lorem ipsum...
-    </Notification>
+      <Tag color="primary" variant="light" size="medium">
+        v1.0.0
+      </Tag>
 
-    <Progress color="primary" size="small" value="42" max="100">
-      42%
-    </Progress>
+      <Tag color="warning" size="medium">
+        Hello
+        <Delete size="small" />
+      </Tag>
 
-    <Section size="medium">
-      <Title tag="h2">Title</Title>
-    </Section>
+      <Tabs>
+        <Tab isActive>Pictures</Tab>
+        <Tab>Music</Tab>
+        <Tab>Videos</Tab>
+      </Tabs>
 
-    <SkeletonLines num={5} />
+      <Tags size="large">
+        <Tag>All</Tag>
+        <Tag>Medium</Tag>
+        <Tag>Size</Tag>
+      </Tags>
 
-    <Select
-      size="large"
-      options={[
-        { value: "A", label: "Apple" },
-        { value: "B", label: "Banana" },
-      ]}
-    />
+      <Tags hasAddons>
+        <Tag>package</Tag>
+        <Tag color="primary">trunx</Tag>
+      </Tags>
 
-    <Subtitle is={3}>Subtitle 3</Subtitle>
+      <Tags hasAddons>
+        <Tag color="danger">Alex Smith</Tag>
+        <a className="tag is-delete" />
+      </Tags>
 
-    <Tag color="primary" variant="light" size="medium">
-      v1.0.0
-    </Tag>
+      <Textarea size="small" color="info" />
 
-    <Tag color="warning" size="medium">
-      Hello
-      <Delete size="small" />
-    </Tag>
+      <Title tag="h1">Title</Title>
+      <Subtitle tag="h2">Subtitle</Subtitle>
 
-    <Tabs>
-      <Tab isActive>Pictures</Tab>
-      <Tab>Music</Tab>
-      <Tab>Videos</Tab>
-    </Tabs>
+      <Title is={1}>Title 1</Title>
+      <Title is={2}>Title 2</Title>
+      <Title is={3}>Title 3 (default)</Title>
+      <Title is={4}>Title 4</Title>
+      <Title is={5}>Title 5</Title>
+      <Title is={6}>Title 6</Title>
 
-    <Tags size="large">
-      <Tag>All</Tag>
-      <Tag>Medium</Tag>
-      <Tag>Size</Tag>
-    </Tags>
+      <Title is={1} isSpaced>
+        Title 1
+      </Title>
 
-    <Tags hasAddons>
-      <Tag>package</Tag>
-      <Tag color="primary">trunx</Tag>
-    </Tags>
-
-    <Tags hasAddons>
-      <Tag color="danger">Alex Smith</Tag>
-      <a className="tag is-delete" />
-    </Tags>
-
-    <Textarea size="small" color="info" />
-
-    <Title tag="h1">Title</Title>
-    <Subtitle tag="h2">Subtitle</Subtitle>
-
-    <Title is={1}>Title 1</Title>
-    <Title is={2}>Title 2</Title>
-    <Title is={3}>Title 3 (default)</Title>
-    <Title is={4}>Title 4</Title>
-    <Title is={5}>Title 5</Title>
-    <Title is={6}>Title 6</Title>
-
-    <Title is={1} isSpaced>
-      Title 1
-    </Title>
-
-    <Title hasSkeleton>Title</Title>
-  </>
-)
+      <Title hasSkeleton>Title</Title>
+    </>
+  )
+}
