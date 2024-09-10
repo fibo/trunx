@@ -55,11 +55,7 @@ Some Trunx components render their homomnym HTML tag.
 ```tsx
 import { Div, Span } from "trunx"
 
-type Props = {
-  isSuccess: boolean
-}
-
-export function MyComponent({ isSuccess }: Props) {
+export function MyComponent({ isSuccess }: { isSuccess: boolean }) {
   return (
     <Div bulma="box">
       <Span
@@ -127,6 +123,11 @@ Bulma related:
 - `Content`
 - `Control`
 - `Delete`
+- `Dropdown`
+  - `DropdownDivider`
+  - `DropdownItem`
+  - `DropdownMenu`
+  - `DropdownTrigger`
 - `Field`
 - `FieldHorizontal`
   - `FieldBody`
@@ -259,7 +260,8 @@ Add a `Message` like this in your JSX:
 
 ### Create a custom component
 
-Suppose you want to create your custom button that is always rounded and has only `warning` and `danger` colors. You may also want to set your custom colors. To do so, your `src/main.scss` could be something like this:
+Suppose you want to create your custom button that is always rounded and has only `success` and `warning` colors. You may also want to set your custom colors.
+To do so, your `src/main.scss` could be something like this:
 
 ```scss
 @use "bulma/sass" with (
@@ -268,7 +270,8 @@ Suppose you want to create your custom button that is always rounded and has onl
 );
 ```
 
-Then your button component can import the `ButtonProps` from `trunx` and customize them, something like the following.
+Then your button component can import the `ButtonProps` from `trunx` and customize them,
+something like the following.
 
 ```tsx
 import { PropsWithChildren } from "react"
