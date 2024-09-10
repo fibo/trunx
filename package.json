@@ -21,11 +21,11 @@
     "test": "node --test --no-warnings=ExperimentalWarning --experimental-strip-types src/classnames_test.ts src/package_test.ts"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^22",
     "@types/react": "^18",
     "bulma": "^1",
     "postcss": "^8",
-    "postcss-cli": "^10",
+    "postcss-cli": "^11",
     "postcss-ts-classnames": "^0.3.0",
     "pre-commit": "^1",
     "prettier": "^3",
