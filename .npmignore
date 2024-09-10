@@ -4,7 +4,6 @@
 .prettierignore
 generate_bulma_types/
 src/
-temp/
 tsconfig.*
 # Images are hosted on GitHub Pages
 media/

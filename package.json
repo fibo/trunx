@@ -15,10 +15,10 @@
     "build": "tsc --project ./tsconfig.build.json --removeComments && tsc --project ./tsconfig.build.json --declaration --emitDeclarationOnly",
     "tsc": "tsc --project ./tsconfig.json --noEmit",
     "generate_bulma_types": "postcss ./node_modules/bulma/css/bulma.css --config ./generate_bulma_types --output ./node_modules/bulma/css/output.css",
-    "pretest": "tsc --build tsconfig.test.json",
     "prettier": "prettier --write .",
     "prettier--check": "prettier --check .",
-    "test": "node --test --test-reporter spec"
+    "pretest": "npm run build",
+    "test": "node --test --no-warnings=ExperimentalWarning --experimental-strip-types src/classnames_test.ts src/package_test.ts"
   },
   "devDependencies": {
     "@types/node": "^20",

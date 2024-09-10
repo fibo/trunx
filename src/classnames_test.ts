@@ -1,6 +1,6 @@
 import * as assert from "node:assert/strict"
 import { test } from "node:test"
-import { classnames } from "./classnames.js"
+import { classnames } from "../dist/classnames.js"
 
 const testData = [
   {
