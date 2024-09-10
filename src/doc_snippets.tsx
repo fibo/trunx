@@ -26,6 +26,11 @@ import {
   Control,
   Delete,
   Div,
+  Dropdown,
+  DropdownDivider,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
   Field,
   FieldBody,
   FieldHorizontal,
@@ -75,31 +80,35 @@ import {
 // Snippets in README.md
 //////////////////////////////////////////////////////////////////////
 
-export const MyComponent: FC<{ isSuccess: boolean }> = ({ isSuccess }) => (
-  <Div bulma="box">
-    <Span
-      bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}
-    >
-      Lorem ipsum...
-    </Span>
-  </Div>
-)
+export function MyComponent({ isSuccess }: { isSuccess: boolean }) {
+  return (
+    <Div bulma="box">
+      <Span
+        bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}
+      >
+        Lorem ipsum...
+      </Span>
+    </Div>
+  )
+}
 
 type MyButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
   Partial<{ isLoading: boolean }>
 
-export const MyButton: FC<PropsWithChildren<MyButtonProps>> = ({
+export function MyButton({
   isLoading,
   children,
   ...props
-}) => (
-  <button
-    className={classnames<Bulma>("button", { "is-loading": isLoading })}
-    {...props}
-  >
-    {children}
-  </button>
-)
+}: PropsWithChildren<MyButtonProps>) {
+  return (
+    <button
+      className={classnames<Bulma>("button", { "is-loading": isLoading })}
+      {...props}
+    >
+      {children}
+    </button>
+  )
+}
 
 export const OtherReadmeSnippets: FC = () => (
   <>
@@ -178,6 +187,26 @@ export const Snippets: FC = () => (
       <h1>Hello World</h1>
       <p>Lorem ipsum...</p>
     </Content>
+
+    <Dropdown isActive>
+      <DropdownTrigger>
+        <Button aria-haspopup="true" aria-controls="dropdown-menu">
+          Dropdown button
+        </Button>
+      </DropdownTrigger>
+      <DropdownMenu id="dropdown-menu" role="menu">
+        <DropdownItem href="#">Dropdown item</DropdownItem>
+        <DropdownItem href="#">Other Dropdown item</DropdownItem>
+        <DropdownItem isActive href="#">
+          Active Dropdown item
+        </DropdownItem>
+        <DropdownDivider />
+      </DropdownMenu>
+    </Dropdown>
+
+    <Div bulma="dropdown-item">
+      <p>You can insert content here.</p>
+    </Div>
 
     <Field>
       <Label>Name</Label>

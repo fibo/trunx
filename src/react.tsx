@@ -736,6 +736,143 @@ export const Delete: FC<DeleteProps> = ({
 export type DeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp
 
 /**
+ * An interactive dropdown menu for discoverable content.
+ *
+ * @see [bulma docs](https://bulma.io/documentation/components/dropdown/)
+ *
+ * @example
+ * ```tsx
+ * <Dropdown isActive>
+ *   <DropdownTrigger>
+ *     <Button aria-haspopup="true" aria-controls="dropdown-menu">
+ *       Dropdown button
+ *     </Button>
+ *   </DropdownTrigger>
+ *   <DropdownMenu id="dropdown-menu" role="menu">
+ *      <DropdownItem href="#">Dropdown item</DropdownItem>
+ *      <DropdownItem href="#">Other Dropdown item</DropdownItem>
+ *      <DropdownItem isActive href="#">Active Dropdown item</DropdownItem>
+ *      <DropdownDivider />
+ *      <DropdownItem href="#">With a divider</DropdownItem>
+ *   </DropdownMenu>
+ * </Dropdown>
+ * ```
+ */
+export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
+  isActive,
+  isHoverable,
+  isRight,
+  isUp,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "dropdown",
+      {
+        "is-active": isActive,
+        "is-hoverable": isHoverable,
+        "is-right": isRight,
+        "is-up": isUp,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type DropdownProps = HTMLAttributes<HTMLDivElement> &
+  BulmaProp &
+  Partial<{
+    isActive: boolean
+    isHoverable: boolean
+    isRight: boolean
+    isUp: boolean
+  }>
+
+/** Renders hr tag with dropdown-divider class. */
+export const DropdownDivider: FC = () => <hr className="dropdown-divider" />
+
+/**
+ * It is used inside a dropdown menu as an anchor link.
+ *
+ * @example
+ * ```tsx
+ * <DropdownItem isActive href="#">Dropdown item</DropdownItem>
+ * ```
+ *
+ * @example Use a div to insert almost any type of content
+ * ```tsx
+ * <Div bulma="dropdown-item">
+ *   <p>You can insert content here.</p>
+ * </Div>
+ * ```
+ */
+export const DropdownItem: FC<PropsWithChildren<DropdownItemProps>> = ({
+  isActive,
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <a
+    className={classnames<Bulma>(
+      className as Bulma,
+      "dropdown-item",
+      {
+        "is-active": isActive,
+      },
+      bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </a>
+)
+export type DropdownItemProps = AnchorHTMLAttributes<HTMLAnchorElement> &
+  BulmaProp &
+  Partial<{
+    isActive: boolean
+  }>
+
+/** @see {@link Dropdown} */
+export const DropdownMenu: FC<PropsWithChildren<DropdownMenuProps>> = ({
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(className as Bulma, "dropdown-menu")}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type DropdownMenuProps = HTMLAttributes<HTMLDivElement>
+
+/** @see {@link Dropdown} */
+export const DropdownTrigger: FC<PropsWithChildren<DropdownTriggerProps>> = ({
+  className,
+  children,
+  ...props
+}) => (
+  <div
+    className={classnames<Bulma>(
+      className as Bulma,
+      "dropdown-trigger" as Bulma,
+    )}
+    {...props}
+  >
+    {children}
+  </div>
+)
+export type DropdownTriggerProps = HTMLAttributes<HTMLDivElement>
+
+/**
  * Form field.
  *
  * @example
