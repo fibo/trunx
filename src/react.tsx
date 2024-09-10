@@ -860,18 +860,13 @@ export const DropdownTrigger: FC<PropsWithChildren<DropdownTriggerProps>> = ({
   children,
   ...props
 }) => (
-  <div
-    className={classnames<Bulma>(
-      className as Bulma,
-      // @ts-ignore Bulma generated types do not contain `dropdown-trigger`.
-      "dropdown-trigger",
-    )}
-    {...props}
-  >
-    {children}
+  <div className="dropdown-trigger">
+    <button className={classnames("button")} {...props}>
+      {children}
+    </button>
   </div>
 )
-export type DropdownTriggerProps = HTMLAttributes<HTMLDivElement>
+export type DropdownTriggerProps = ButtonHTMLAttributes<HTMLButtonElement>
 
 /**
  * Form field.
