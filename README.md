@@ -156,6 +156,7 @@ Bulma related:
   - `MenuList`
 - `Message`
 - `Modal`
+  - `ModalBackground`
   - `ModalCard`
   - `ModalClose`
   - `ModalContent`

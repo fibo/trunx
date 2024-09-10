@@ -863,7 +863,8 @@ export const DropdownTrigger: FC<PropsWithChildren<DropdownTriggerProps>> = ({
   <div
     className={classnames<Bulma>(
       className as Bulma,
-      "dropdown-trigger" as Bulma,
+      // @ts-ignore Bulma generated types do not contain `dropdown-trigger`.
+      "dropdown-trigger",
     )}
     {...props}
   >
@@ -1769,17 +1770,19 @@ export type MessageProps = Omit<HTMLAttributes<HTMLElement>, "color"> &
  * Renders div tag with modal class.
  *
  * ```tsx
- * <Modal noBackground>
+ * <Modal isActive={modalIsActive}>
+ *   <ModalBackground onClick={closeModal} />
  *   <ModalContent>
- *     Content
+ *     Modal content here
  *   </ModalContent>
  *   <ModalClose />
  * </Modal>
  * ```
+ *
  * @see [bulma docs](https://bulma.io/documentation/components/modal/)
  */
 export const Modal: FC<PropsWithChildren<ModalProps>> = ({
-  noBackground,
+  isActive,
   size,
   bulma,
   className,
@@ -1787,10 +1790,17 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   ...props
 }) => (
   <div
-    className={classnames<Bulma>(className as Bulma, "modal", is(size), bulma)}
+    className={classnames<Bulma>(
+      className as Bulma,
+      "modal",
+      is(size),
+      {
+        "is-active": isActive,
+      },
+      bulma,
+    )}
     {...props}
   >
-    {noBackground ? null : <div className="modal-background" />}
     {children}
   </div>
 )
@@ -1798,8 +1808,20 @@ export type ModalProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
   SizeProp &
   Partial<{
+    isActive: boolean
     noBackground: boolean
   }>
+
+/** @see {@link Modal} */
+export const ModalBackground: FC<PropsWithChildren<ModalBackgroundProps>> = ({
+  children,
+  ...props
+}) => (
+  <div className="modal-background" {...props}>
+    {children}
+  </div>
+)
+export type ModalBackgroundProps = HTMLAttributes<HTMLDivElement>
 
 /**
  * A modal with a head, a body and a foot.
