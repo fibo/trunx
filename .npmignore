@@ -3,6 +3,7 @@
 # Other files to be excluded
 .prettierignore
 generate_bulma_types/
+minify.js
 src/
 tsconfig.*
 # Images are hosted on GitHub Pages
