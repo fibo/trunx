@@ -96,7 +96,7 @@ Some code snippets use a FontAwesome class, for example `<i className="fas fa-ho
 
 #### `className` prop
 
-Almost all trunx components support a `className` prop, in case you need to append you custom CSS classes.
+Almost all trunx components support a `className` prop, in case you need to append your custom CSS classes.
 
 #### Components list
 
