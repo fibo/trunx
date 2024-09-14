@@ -41,7 +41,7 @@ Almost all Trunx components have a `bulma` prop that accepts:
 
 - a string
 - an array of bulma classes
-- an object which keys are bulma classes
+- an object which keys are bulma classes, when value is truthy then the class is added
 - an array of any of the previous
 
 You know, Trunx is a Super Sayan because it is written in TypeScript. The `bulma` prop can be autocompleted and typos can be avoided thanks to type checking.
@@ -70,7 +70,7 @@ export function MyComponent({ isSuccess }: { isSuccess: boolean }) {
 
 #### Bulma related components
 
-Trunx provides other React components that implement a Bulma element or a Bulma Component. This means that they usually add a related Bulma class. For example `Button` components renders a button tag with the Bulma `button` class. They may have props related to some Bulma class (.e.g. `color`, `size`). Most of the Bulma related props start with `is`, `has` and the prop name is just the camel-case version of its related Bulma class. For example `isRounded` prop corresponds to `is-rounded` Bulma class.
+Trunx provides React components that implement a Bulma element or a Bulma component. This means that they usually add a related Bulma class. For example `Button` component renders a button HTML tag with the Bulma `button` class. They may have props related to some Bulma class (.e.g. `color`, `size`). Most of the Bulma related props start with `is`, `has` and the prop name is just the camel-case version of its related Bulma class. For example `isRounded` prop corresponds to `is-rounded` Bulma class.
 
 ```tsx
 <Button color="primary" size="large" isRounded>
@@ -193,6 +193,8 @@ Bulma related:
 
 Trunx package provides a utility for conditionally joining CSS classes together.
 
+Syntax is similar to [classnames npm package](https://www.npmjs.com/package/classnames).
+
 ```js
 import { classnames } from "trunx"
 
@@ -232,6 +234,15 @@ export function MyButton({
   )
 }
 ```
+
+Notice that you can use Trunx without React! It can be used with any framework as well as with _Web Components_.
+The _classnames.js_ is only 299 bytes and can be imported directly with
+
+```js
+import classnames from "trunx/classnames"
+```
+
+The snippet above will avoid importing the React stuff.
 
 ## How to
 

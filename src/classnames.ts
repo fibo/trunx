@@ -33,7 +33,7 @@ export const classnames = <T extends string>(...args: ClassnamesArg<T>[]) =>
         // Make sure `arg` is not null,
         arg &&
         // and `arg` is a proper object.
-        typeof arg === "object"
+        typeof arg == "object"
       )
         return classnames(
           // Map `arg` object to an array of its keys, having a truthy value.
