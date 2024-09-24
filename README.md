@@ -40,9 +40,9 @@ Finally I recommend using TypeScript to get the best _developer experience_ with
 Almost all Trunx components have a `bulma` prop that accepts:
 
 - a string
-- an array of bulma classes
-- an object which keys are bulma classes, when value is truthy then the class is added
-- an array of any of the previous
+- an array of bulma classes: `["button", "is-primary"]`
+- an object which keys are bulma classes, when value is truthy then the class is added: `{ "is-primary": true }`
+- an array of any of the previous: `["button", { "is-primary": true }]`
 
 You know, Trunx is a Super Sayan because it is written in TypeScript. The `bulma` prop can be autocompleted and typos can be avoided thanks to type checking.
 
