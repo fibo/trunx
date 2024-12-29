@@ -13,6 +13,7 @@
     - [Inline documentation](#inline-documentation)
     - [className prop](#classname-prop)
   - [classnames](#classnames)
+  - [Bulma type](#bulma-type)
 - [How to](#how-to)
   - [Use Trunx with Vite](#use-trunx-with-vite)
   - [Create a custom component](#create-a-custom-component)
@@ -211,39 +212,28 @@ type T = "foo" | "bar" // my CSS classes
 classnames<T>("foo", "quz") // ERROR: not assignable to type ClassnamesArg<T>[]
 ```
 
-For example you can use it to compose Bulma classes.
-
-```tsx
-import { PropsWithChildren, ButtonHTMLAttributes } from "react"
-import { Bulma, classnames } from "trunx"
-
-type MyButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  Partial<{ isLoading: boolean }>
-
-export function MyButton({
-  isLoading,
-  children,
-  ...props
-}: PropsWithChildren<MyButtonProps>) {
-  return (
-    <button
-      className={classnames<Bulma>("button", { "is-loading": isLoading })}
-      {...props}
-    >
-      {children}
-    </button>
-  )
-}
-```
-
 Notice that you can use Trunx without React! It can be used with any framework as well as with _Web Components_.
 The _classnames.js_ is only 299 bytes and can be imported directly with
 
 ```js
-import classnames from "trunx/classnames"
+import { classnames } from "trunx/classnames"
 ```
 
 The snippet above will avoid importing the React stuff.
+
+### `Bulma` type
+
+Trunx exports also a `Bulma` type which is a literal type containing (almost) all the Bulma classes.
+
+For example, you can use it to make sure a `className` is a bulma class:
+
+```tsx
+import { Bulma } from "trunx"
+
+export function SuccessText({ text }: { text: string }) {
+  return <span className={"has-text-success" satisfies Bulma}>{text}</span>
+}
+```
 
 ## How to
 

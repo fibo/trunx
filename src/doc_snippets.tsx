@@ -5,12 +5,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-import {
-  PropsWithChildren,
-  ButtonHTMLAttributes,
-  useCallback,
-  useState,
-} from "react"
+import { useCallback, useState } from "react"
 import type { Bulma } from "./index.js"
 import {
   A,
@@ -84,6 +79,7 @@ import {
   Ul,
   classnames,
 } from "./index.js"
+import { classnames as classnames2 } from "./classnames.js"
 
 // Snippets in README.md
 //////////////////////////////////////////////////////////////////////
@@ -100,22 +96,16 @@ export function MyComponent({ isSuccess }: { isSuccess: boolean }) {
   )
 }
 
-type MyButtonProps = ButtonHTMLAttributes<HTMLButtonElement> &
-  Partial<{ isLoading: boolean }>
+classnames("foo", "bar") // 'foo bar'
+classnames("foo", ["bar"]) // 'foo bar'
+classnames({ foo: true }, { bar: false }) // 'foo'
 
-export function MyButton({
-  isLoading,
-  children,
-  ...props
-}: PropsWithChildren<MyButtonProps>) {
-  return (
-    <button
-      className={classnames<Bulma>("button", { "is-loading": isLoading })}
-      {...props}
-    >
-      {children}
-    </button>
-  )
+type T = "foo" | "bar" // my CSS classes
+// @ts-expect-error
+classnames2<T>("foo", "quz") // ERROR: not assignable to type ClassnamesArg<T>[]
+
+export function SuccessText({ text }: { text: string }) {
+  return <span className={"has-text-success" satisfies Bulma}>{text}</span>
 }
 
 export function OtherReadmeSnippets() {
