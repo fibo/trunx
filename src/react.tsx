@@ -184,6 +184,31 @@ export const Span: FC<PropsWithChildren<SpanProps>> = ({
 )
 export type SpanProps = HTMLAttributes<HTMLSpanElement> & BulmaProp
 
+/**
+ * Renders ul tag, has `bulma` prop.
+ *
+ * @example
+ * ```tsx
+ * <Menu>
+ *   <Ul bulma="menu-list">
+ *     <li><a>Dashboard</a></li>
+ *     <li><a>Customers</a></li>
+ *   </Ul>
+ * </Menu>
+ * ```
+ */
+export const Ul: FC<PropsWithChildren<UlProps>> = ({
+  bulma,
+  className,
+  children,
+  ...props
+}) => (
+  <ul className={classnames<Bulma>(className as Bulma, bulma)} {...props}>
+    {children}
+  </ul>
+)
+export type UlProps = HTMLAttributes<HTMLUListElement> & BulmaProp
+
 // Bulma related components
 //////////////////////////////////////////////////////////////////////
 

@@ -6,7 +6,6 @@
 //////////////////////////////////////////////////////////////////////
 
 import {
-  FC,
   PropsWithChildren,
   ButtonHTMLAttributes,
   useCallback,
@@ -58,6 +57,7 @@ import {
   MediaContent,
   MediaLeft,
   MediaRight,
+  Menu,
   Message,
   Modal,
   ModalBackground,
@@ -81,6 +81,7 @@ import {
   Tags,
   Textarea,
   Title,
+  Ul,
   classnames,
 } from "./index.js"
 
@@ -117,15 +118,17 @@ export function MyButton({
   )
 }
 
-export const OtherReadmeSnippets: FC = () => (
-  <>
-    <Button color="primary" size="large" isRounded>
-      Download
-    </Button>
+export function OtherReadmeSnippets() {
+  return (
+    <>
+      <Button color="primary" size="large" isRounded>
+        Download
+      </Button>
 
-    <Message color="primary">Hello trunx</Message>
-  </>
-)
+      <Message color="primary">Hello trunx</Message>
+    </>
+  )
+}
 
 // Snippets in components TSDocs.
 //////////////////////////////////////////////////////////////////////
@@ -151,6 +154,17 @@ export function Snippets() {
       <P bulma="has-text-centered">Lorem ipsum...</P>
 
       <Span bulma={["has-text-grey", "is-capitalized"]}>hello</Span>
+
+      <Menu>
+        <Ul bulma="menu-list">
+          <li>
+            <a>Dashboard</a>
+          </li>
+          <li>
+            <a>Customers</a>
+          </li>
+        </Ul>
+      </Menu>
 
       {/* Bulma related components */}
 

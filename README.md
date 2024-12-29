@@ -102,7 +102,7 @@ Almost all trunx components support a `className` prop, in case you need to appe
 
 <img src="https://fibo.github.io/trunx/media/trunks.png" height="290"/>
 
-HTML tags: `A`, `Div`, `P`, `Span`.
+HTML tags: `A`, `Div`, `P`, `Span`, `Ul`.
 
 Bulma related:
 
