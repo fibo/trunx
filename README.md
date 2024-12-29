@@ -16,6 +16,7 @@
 - [How to](#how-to)
   - [Use Trunx with Vite](#use-trunx-with-vite)
   - [Create a custom component](#create-a-custom-component)
+  - [Use Trunx with Preact](#use-trunx-with-preact)
 - [Motivation](#motivation)
 - [License](#license)
 
@@ -29,7 +30,7 @@ npm install trunx
 
 Of course you also need Bulma (v1) but it is up to you if you want to install it via `bulma` npm package. See [how to install Bulma](https://bulma.io/documentation/start/installation/).
 
-You may also have React installed, minimum version supported is 17 (the Trunx transpiled code uses `react/jsx-runtime`). However it is not listed as a peer dependency, you may also use Trunx without React.
+You may also have React installed, minimum version supported is 17 (the Trunx transpiled code uses `react/jsx-runtime`). However it is not listed as a peer dependency, you may also use Trunx without React (see for example [how to use Trunx with Preact](#use-trunx-with-preact)).
 
 Finally I recommend using TypeScript to get the best _developer experience_ with Trunx.
 
@@ -305,6 +306,21 @@ export function Button({ children, ...props }: PropsWithChildren<ButtonProps>) {
   )
 }
 ```
+
+### Use Trunx with Preact
+
+Trunx is compatible with [Preact](https://preactjs.com/). It is possible to alias `react/jsx-runtime` to Preact equivalent and Trunx will work out of the box. For instance if you are using esbuild, add these aliases to your `build` options
+
+```
+alias: {
+  'react': 'preact/compat',
+  'react-dom/test-utils': 'preact/test-utils',
+  'react-dom': 'preact/compat',
+  'react/jsx-runtime': 'preact/jsx-runtime',
+}
+```
+
+See also on official Preact documentation [how to alias React to Preact](https://preactjs.com/guide/v10/getting-started#aliasing-react-to-preact).
 
 ## Motivation
 
