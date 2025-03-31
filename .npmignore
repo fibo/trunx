@@ -4,6 +4,7 @@
 generate_bulma_types/
 minify.js
 src/
+tests/
 tsconfig.*
 # Images are hosted on GitHub Pages
 media/

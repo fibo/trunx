@@ -1,12 +1,11 @@
 //////////////////////////////////////////////////////////////////////
 //
 // This file contains all snippets used in trunx documentation.
-// It is not included in the dist/ folder but it is checked by `npm test`.
 //
 //////////////////////////////////////////////////////////////////////
 
 import { useCallback, useState } from "react"
-import type { Bulma } from "./index.js"
+import type { Bulma } from "../src/index.js"
 import {
   A,
   Breadcrumb,
@@ -78,8 +77,8 @@ import {
   Title,
   Ul,
   classnames,
-} from "./index.js"
-import { classnames as classnames2 } from "./classnames.js"
+} from "../src/index.js"
+import { classnames as classnames2 } from "../src/classnames.js"
 
 // Snippets in README.md
 //////////////////////////////////////////////////////////////////////

@@ -24,7 +24,7 @@
     "pretest": "npm run build",
     "prettier": "prettier --write .",
     "prettier--check": "prettier --check .",
-    "test": "node --test --no-warnings=ExperimentalWarning --experimental-strip-types src/classnames_test.ts src/package_test.ts"
+    "test": "node --test --no-warnings=ExperimentalWarning --experimental-strip-types tests/*.test.ts"
   },
   "devDependencies": {
     "@types/node": "^22",

@@ -13,6 +13,6 @@
     "declaration": false
   },
   "extends": "./tsconfig.json",
-  "exclude": ["node_modules", "./src/**/*_test.ts", "./src/doc_snippets.tsx"],
+  "exclude": ["node_modules", "./tests"],
   "include": ["./src"]
 }
