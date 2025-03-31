@@ -82,7 +82,7 @@ export type PluralSizeProp = SizeProp<PluralSize>
 const alignment = (
   arg: Alignment | undefined,
 ): Extract<Bulma, "is-centered" | "is-right" | "is-left"> | undefined =>
-  arg ? (arg === "center" ? "is-centered" : `is-${arg}`) : undefined
+  arg ? (arg == "center" ? "is-centered" : `is-${arg}`) : undefined
 
 const are = (
   arg: PluralSize | undefined,
@@ -627,8 +627,8 @@ export const Container: FC<PropsWithChildren<ContainerProps>> = ({
         "is-fluid": isFluid,
         "is-fullhd": isFullhd,
         // @ts-ignore Bulma generated types do not contain `is-max-desktop`.
-        "is-max-desktop": isMax === "desktop",
-        "is-max-widescreen": isMax === "widescreen",
+        "is-max-desktop": isMax == "desktop",
+        "is-max-widescreen": isMax == "widescreen",
         "is-widescreen": isWidescreen,
       },
       bulma,
@@ -899,12 +899,12 @@ export const Field: FC<PropsWithChildren<FieldProps>> = ({
       "field",
       {
         "has-addons": hasAddons,
-        "has-addons-centered": hasAddons === "centered",
-        "has-addons-right": hasAddons === "right",
+        "has-addons-centered": hasAddons == "centered",
+        "has-addons-right": hasAddons == "right",
         "is-grouped": isGrouped,
-        "is-grouped-centered": isGrouped === "centered",
-        "is-grouped-multiline": isGrouped === "multiline",
-        "is-grouped-right": isGrouped === "right",
+        "is-grouped-centered": isGrouped == "centered",
+        "is-grouped-multiline": isGrouped == "multiline",
+        "is-grouped-right": isGrouped == "right",
       },
       bulma,
     )}
