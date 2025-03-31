@@ -2,6 +2,7 @@
   "compilerOptions": {
     "declarationMap": false,
     "outDir": "./dist",
+    "erasableSyntaxOnly": true,
     "rootDir": "./src",
     "sourceMap": false,
     // To build stripped JS, but emit declarations with JSDoc preserved:
