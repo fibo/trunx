@@ -1,8 +1,7 @@
 # Force dist/ inclusion, it is in .gitignore
 !dist/
 # Other files to be excluded
-generate_bulma_types/
-minify.js
+scripts/
 src/
 tests/
 tsconfig.*

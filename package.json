@@ -18,8 +18,8 @@
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json --removeComments && tsc --project ./tsconfig.build.json --declaration --emitDeclarationOnly",
     "check_types": "tsc --project ./tsconfig.json --noEmit",
-    "generate_bulma_types": "postcss ./node_modules/bulma/css/bulma.css --config ./generate_bulma_types --output ./node_modules/bulma/css/output.css",
-    "minify": "node minify.js",
+    "generate_bulma_types": "postcss ./node_modules/bulma/css/bulma.css --config ./scripts/generate_bulma_types --output ./node_modules/bulma/css/output.css",
+    "minify": "node scripts/minify.js",
     "postbuild": "npm run minify",
     "pretest": "npm run build",
     "prettier": "prettier --write .",
