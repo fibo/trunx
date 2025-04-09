@@ -4,7 +4,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-import { useCallback, useState } from "react"
+import { PropsWithChildren, useCallback, useState } from "react"
 import type { Bulma } from "../src/index.js"
 import {
   A,
@@ -78,6 +78,11 @@ import {
   Ul,
   classnames,
 } from "../src/index.js"
+import {
+  Button as _Button,
+  ButtonProps as _ButtonProps,
+  ColorProp,
+} from "../src/index.js"
 import { classnames as classnames2 } from "../src/classnames.js"
 
 // Snippets in README.md
@@ -86,11 +91,7 @@ import { classnames as classnames2 } from "../src/classnames.js"
 export function MyComponent({ isSuccess }: { isSuccess: boolean }) {
   return (
     <Div bulma="box">
-      <Span
-        bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}
-      >
-        Lorem ipsum...
-      </Span>
+      <Span bulma={{ "has-text-primary": isSuccess }}>Lorem ipsum...</Span>
     </Div>
   )
 }
@@ -116,6 +117,20 @@ export function OtherReadmeSnippets() {
 
       <Message color="primary">Hello trunx</Message>
     </>
+  )
+}
+
+type MyButtonProps = Omit<_ButtonProps, "color" | "isRounded"> &
+  ColorProp<"warning" | "success">
+
+export function MyButton({
+  children,
+  ...props
+}: PropsWithChildren<MyButtonProps>) {
+  return (
+    <_Button isRounded {...props}>
+      {children}
+    </_Button>
   )
 }
 

@@ -11,8 +11,8 @@ export type ClassnamesArg<Classname extends string> =
  * @example
  * ```ts
  * classnames("foo", "bar") // 'foo bar'
- * classnames<string>("foo", ["bar"]) // 'foo bar'
- * classnames<string>({ foo: true }, { bar: false }) // 'foo'
+ * classnames("foo", ["bar"]) // 'foo bar'
+ * classnames({ foo: true }, { bar: false }) // 'foo'
  * ```
  *
  * @example It accepts a generic "class names" type.

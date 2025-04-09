@@ -2,14 +2,13 @@
 
 > Super Saiyan React components, son of awesome [Bulma]
 
-**ToC**
+## Table of contents
 
 - [Installation](#installation)
 - API:
   - [React components](#react-components)
     - [HTML tag components](#html-tag-components)
     - [Bulma related components](#bulma-related-components)
-    - [Components list](#components-list)
     - [Inline documentation](#inline-documentation)
     - [className prop](#classname-prop)
   - [classnames](#classnames)
@@ -53,6 +52,7 @@ You know, Trunx is a Super Sayan because it is written in TypeScript. The `bulma
 #### HTML tag components
 
 Some Trunx components render their homomnym HTML tag.
+You can use the `bulma` prop to style them with Bulma classes.
 
 ```tsx
 import { Div, Span } from "trunx"
@@ -60,19 +60,27 @@ import { Div, Span } from "trunx"
 export function MyComponent({ isSuccess }: { isSuccess: boolean }) {
   return (
     <Div bulma="box">
-      <Span
-        bulma={["has-text-weight-semibold", { "has-text-primary": isSuccess }]}
-      >
-        Lorem ipsum...
-      </Span>
+      <Span bulma={{ "has-text-primary": isSuccess }}>Lorem ipsum...</Span>
     </Div>
   )
 }
 ```
 
+List of HTML tags related components:
+
+- `A`
+- `Div`
+- `P`
+- `Span`
+- `Ul`
+
 #### Bulma related components
 
-Trunx provides React components that implement a Bulma element or a Bulma component. This means that they usually add a related Bulma class. For example `Button` component renders a button HTML tag with the Bulma `button` class. They may have props related to some Bulma class (.e.g. `color`, `size`). Most of the Bulma related props start with `is`, `has` and the prop name is just the camel-case version of its related Bulma class. For example `isRounded` prop corresponds to `is-rounded` Bulma class.
+Trunx provides React components that implement a Bulma element or a Bulma component. This means that they usually add a related Bulma class.
+For example `Button` component renders a button HTML tag with the Bulma `button` class.
+They may have props related to some Bulma class (.e.g. `color`, `size`).
+Most of the Bulma related props start with `is`, `has` and the prop name is just the camel-case version of its related Bulma class.
+For example `isRounded` prop corresponds to `is-rounded` Bulma class.
 
 ```tsx
 <Button color="primary" size="large" isRounded>
@@ -80,7 +88,7 @@ Trunx provides React components that implement a Bulma element or a Bulma compon
 </Button>
 ```
 
-You can use the `bulma` prop in case you need to add more Bulma classes that has not a related prop.
+You can use the `bulma` prop in case you need to add more Bulma classes that are not related to a prop.
 
 ```tsx
 <Columns isGapless>
@@ -88,25 +96,7 @@ You can use the `bulma` prop in case you need to add more Bulma classes that has
 </Columns>
 ```
 
-#### Inline documentation
-
-Components are documented inline with TSDocs. You can configure your editor to display documentation and examples.
-
-<img src="https://fibo.github.io/trunx/media/inline-docs.png"/>
-
-Some code snippets use a FontAwesome class, for example `<i className="fas fa-home"></i>`. The icon set is up to you, Trunx do not provide icons.
-
-#### `className` prop
-
-Almost all trunx components support a `className` prop, in case you need to append your custom CSS classes.
-
-#### Components list
-
-<img src="https://fibo.github.io/trunx/media/trunks.png" height="290"/>
-
-HTML tags: `A`, `Div`, `P`, `Span`, `Ul`.
-
-Bulma related:
+List of Bulma related components:
 
 - `Breadcrumb`, `BreadcrumbItem`
 - `Button`, `Buttons`
@@ -191,6 +181,18 @@ Bulma related:
 - `Textarea`
 - `Title`, `Subtitle`
 
+#### Inline documentation
+
+Components are documented inline with TSDocs. You can configure your editor to display documentation and examples.
+
+<img src="https://fibo.github.io/trunx/media/inline-docs.png"/>
+
+Some code snippets use a FontAwesome class, for example `<i className="fas fa-home"></i>`. The icon set is up to you, Trunx do not provide icons.
+
+#### `className` prop
+
+Almost all trunx components support a `className` prop, in case you need to append your custom CSS classes.
+
 ### `classnames`
 
 Trunx package provides a utility for conditionally joining CSS classes together.
@@ -220,6 +222,8 @@ import { classnames } from "trunx/classnames"
 ```
 
 The snippet above will avoid importing the React stuff.
+
+<img src="https://fibo.github.io/trunx/media/trunks.png" height="290"/>
 
 ### `Bulma` type
 
@@ -274,7 +278,7 @@ To do so, your `src/main.scss` could be something like this:
 ```
 
 Then your button component can import the `ButtonProps` from `trunx` and customize them,
-something like the following.
+omitting `isRounded` and narrowing the `color` prop to only accept `success` and `warning` colors. Your component can look like this:
 
 ```tsx
 import { PropsWithChildren } from "react"
@@ -282,11 +286,10 @@ import {
   Button as _Button,
   ButtonProps as _ButtonProps,
   ColorProp,
-  MainColor,
 } from "trunx"
 
 type ButtonProps = Omit<_ButtonProps, "color" | "isRounded"> &
-  ColorProp<Extract<MainColor, "warning" | "success">>
+  ColorProp<"warning" | "success">
 
 export function Button({ children, ...props }: PropsWithChildren<ButtonProps>) {
   return (
