@@ -57,7 +57,8 @@
     "url": "https://github.com/fibo/trunx/issues"
   },
   "prettier": {
-    "semi": false
+    "semi": false,
+    "trailingComma": "none"
   },
   "pre-commit": [
     "check_types",

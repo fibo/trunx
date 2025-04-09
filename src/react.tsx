@@ -12,7 +12,7 @@ import {
   ProgressHTMLAttributes,
   SelectHTMLAttributes,
   TableHTMLAttributes,
-  TextareaHTMLAttributes,
+  TextareaHTMLAttributes
 } from "react"
 import { ClassnamesArg, classnames as cls } from "./classnames.js"
 import { ClassNames as Bulma } from "./Bulma.js"
@@ -59,9 +59,7 @@ export type ImageDimension =
 
 // Trunx mother	🤩,
 // see https://en.wikipedia.org/wiki/Bulma
-export type BulmaProp = {
-  bulma?: ClassnamesArg<Bulma>
-}
+export type BulmaProp = { bulma?: ClassnamesArg<Bulma> }
 
 export type AlignProp<A extends Alignment> = Partial<{ align: A }>
 
@@ -76,12 +74,10 @@ export type IsActiveProp = Partial<{ isActive: boolean }>
 export type IsSkeletonProp = Partial<{ isSkeleton: boolean }>
 
 export type SizeProp<
-  S extends Size = Extract<Size, "small" | "medium" | "large">,
+  S extends Size = Extract<Size, "small" | "medium" | "large">
 > = Partial<{ size: S }>
 
-export type TagProp<T extends keyof JSX.IntrinsicElements> = Partial<{
-  tag: T
-}>
+export type TagProp<T extends keyof JSX.IntrinsicElements> = Partial<{ tag: T }>
 
 export type PluralSizeProp = SizeProp<PluralSize>
 
@@ -89,17 +85,17 @@ export type PluralSizeProp = SizeProp<PluralSize>
 //////////////////////////////////////////////////////////////////////
 
 const alignment = (
-  arg: Alignment | undefined,
+  arg: Alignment | undefined
 ): Extract<Bulma, "is-centered" | "is-right" | "is-left"> | undefined =>
   arg ? (arg == "center" ? "is-centered" : `is-${arg}`) : undefined
 
 const are = (
-  arg: PluralSize | undefined,
+  arg: PluralSize | undefined
 ): Extract<Bulma, `are-${typeof arg}`> | undefined =>
   arg ? `are-${arg}` : undefined
 
 const is = (
-  arg: Color | ColorVariant | ImageDimension | Size | undefined,
+  arg: Color | ColorVariant | ImageDimension | Size | undefined
 ): Extract<Bulma, `is-${typeof arg}`> | undefined =>
   arg ? `is-${arg}` : undefined
 
@@ -256,7 +252,7 @@ export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps> & BulmaProp> = ({
       alignment(align),
       separator ? `has-${separator}-separator` : undefined,
       is(size),
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -267,9 +263,7 @@ export type BreadcrumbProps = HTMLAttributes<HTMLElement> &
   BulmaProp &
   AlignProp<"center" | "right"> &
   SizeProp &
-  Partial<{
-    separator: "arrow" | "bullet" | "dot" | "succeeds"
-  }>
+  Partial<{ separator: "arrow" | "bullet" | "dot" | "succeeds" }>
 
 /** @see {@link Breadcrumb} */
 export const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
@@ -323,9 +317,9 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
         "is-loading": isLoading,
         "is-outlined": isOutlined,
         "is-rounded": isRounded,
-        "is-skeleton": isSkeleton,
+        "is-skeleton": isSkeleton
       },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -586,9 +580,9 @@ export const Columns: FC<PropsWithChildren<ColumnsProps>> = ({
         "is-gapless": isGapless,
         "is-desktop": isDesktop,
         "is-mobile": isMobile,
-        "is-multiline": isMultiline,
+        "is-multiline": isMultiline
       },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -638,9 +632,9 @@ export const Container: FC<PropsWithChildren<ContainerProps>> = ({
         // @ts-ignore Bulma generated types do not contain `is-max-desktop`.
         "is-max-desktop": isMax == "desktop",
         "is-max-widescreen": isMax == "widescreen",
-        "is-widescreen": isWidescreen,
+        "is-widescreen": isWidescreen
       },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -681,7 +675,7 @@ export const Content: FC<PropsWithChildren<ContentProps>> = ({
       "content",
       is(size),
       { "is-skeleton": isSkeleton },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -714,9 +708,9 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
       {
         "is-expanded": isExpanded,
         "has-icons-left": hasIconsLeft,
-        "has-icons-right": hasIconsRight,
+        "has-icons-right": hasIconsRight
       },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -790,9 +784,9 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
         "is-active": isActive,
         "is-hoverable": isHoverable,
         "is-right": isRight,
-        "is-up": isUp,
+        "is-up": isUp
       },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -837,10 +831,8 @@ export const DropdownItem: FC<PropsWithChildren<DropdownItemProps>> = ({
     className={cls<Bulma>(
       className as Bulma,
       "dropdown-item",
-      {
-        "is-active": isActive,
-      },
-      bulma,
+      { "is-active": isActive },
+      bulma
     )}
     {...props}
   >
@@ -849,9 +841,7 @@ export const DropdownItem: FC<PropsWithChildren<DropdownItemProps>> = ({
 )
 export type DropdownItemProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   BulmaProp &
-  Partial<{
-    isActive: boolean
-  }>
+  Partial<{ isActive: boolean }>
 
 /** @see {@link Dropdown} */
 export const DropdownMenu: FC<PropsWithChildren<DropdownMenuProps>> = ({
@@ -913,9 +903,9 @@ export const Field: FC<PropsWithChildren<FieldProps>> = ({
         "is-grouped": isGrouped,
         "is-grouped-centered": isGrouped == "centered",
         "is-grouped-multiline": isGrouped == "multiline",
-        "is-grouped-right": isGrouped == "right",
+        "is-grouped-right": isGrouped == "right"
       },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -1048,9 +1038,9 @@ export const FileUpload: FC<FileUploadProps> = ({
       {
         "has-name": hasName,
         "is-boxed": isBoxed,
-        "is-fullwidth": isFullwidth,
+        "is-fullwidth": isFullwidth
       },
-      bulma,
+      bulma
     )}
   >
     <label className="file-label">
@@ -1131,10 +1121,8 @@ export const FixedGrid: FC<PropsWithChildren<FixedGridProps>> = ({
     className={cls<Bulma>(
       className as Bulma,
       "fixed-grid",
-      {
-        "has-auto-count": hasAutoCount,
-      },
-      bulma,
+      { "has-auto-count": hasAutoCount },
+      bulma
     )}
     {...props}
   >
@@ -1143,9 +1131,7 @@ export const FixedGrid: FC<PropsWithChildren<FixedGridProps>> = ({
 )
 export type FixedGridProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
-  Partial<{
-    hasAutoCount: boolean
-  }>
+  Partial<{ hasAutoCount: boolean }>
 
 /** A simple responsive footer.
  *
@@ -1267,9 +1253,9 @@ export const Hero: FC<PropsWithChildren<HeroProps>> = ({
       {
         "is-halfheight": isHalfheight,
         "is-fullheight": isFullheight,
-        "is-fullheight-with-navbar": isFullheightWithNavbar,
+        "is-fullheight-with-navbar": isFullheightWithNavbar
       },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -1361,10 +1347,8 @@ export const Icon: FC<PropsWithChildren<IconProps>> = ({
       "icon",
       alignment(align),
       is(size),
-      {
-        "is-skeleton": isSkeleton,
-      },
-      bulma,
+      { "is-skeleton": isSkeleton },
+      bulma
     )}
     {...props}
   >
@@ -1459,9 +1443,9 @@ export const Image: FC<PropsWithChildren<ImageProps>> = ({
       ratio ? `is-${ratio}` : undefined,
       {
         "is-skeleton": isSkeleton,
-        "is-square": isSquare,
+        "is-square": isSquare
       },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -1506,10 +1490,8 @@ export const Input: FC<InputProps> = ({
       "input",
       is(color),
       is(size),
-      {
-        "is-skeleton": isSkeleton,
-      },
-      bulma,
+      { "is-skeleton": isSkeleton },
+      bulma
     )}
     {...props}
   />
@@ -1612,9 +1594,7 @@ export const MediaLeft: FC<PropsWithChildren<MediaLeftProps>> = ({
   </figure>
 )
 export type MediaLeftProps = HTMLAttributes<HTMLElement> &
-  BulmaProp & {
-    dimension: ImageDimension
-  }
+  BulmaProp & { dimension: ImageDimension }
 
 /** @see {@link Media} */
 export const MediaRight: FC<PropsWithChildren<MediaRightProps>> = ({
@@ -1714,7 +1694,7 @@ export const Message: FC<PropsWithChildren<MessageProps>> = ({
       "message",
       is(color),
       is(size),
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -1726,9 +1706,7 @@ export type MessageProps = Omit<HTMLAttributes<HTMLElement>, "color"> &
   BulmaProp &
   ColorProp &
   SizeProp &
-  Partial<{
-    header: ReactNode
-  }>
+  Partial<{ header: ReactNode }>
 
 /**
  * A classic modal overlay, in which you can include any content you want.
@@ -1760,10 +1738,8 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
       className as Bulma,
       "modal",
       is(size),
-      {
-        "is-active": isActive,
-      },
-      bulma,
+      { "is-active": isActive },
+      bulma
     )}
     {...props}
   >
@@ -1773,10 +1749,7 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
 export type ModalProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
   SizeProp &
-  Partial<{
-    isActive: boolean
-    noBackground: boolean
-  }>
+  Partial<{ isActive: boolean; noBackground: boolean }>
 
 /** @see {@link Modal} */
 export const ModalBackground: FC<PropsWithChildren<ModalBackgroundProps>> = ({
@@ -1945,10 +1918,8 @@ export const NavbarDropdown: FC<PropsWithChildren<NavbarDropdownProps>> = ({
       className as Bulma,
       "navbar-dropdown",
       alignment(align),
-      {
-        "is-boxed": isBoxed,
-      },
-      bulma,
+      { "is-boxed": isBoxed },
+      bulma
     )}
     {...props}
   >
@@ -1958,10 +1929,7 @@ export const NavbarDropdown: FC<PropsWithChildren<NavbarDropdownProps>> = ({
 export type NavbarDropdownProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
   AlignProp<"right"> &
-  Partial<{
-    isBoxed: boolean
-    isRight: boolean
-  }>
+  Partial<{ isBoxed: boolean; isRight: boolean }>
 
 export const NavbarDropdownMenu: FC<
   PropsWithChildren<NavbarDropdownMenuProps>
@@ -1982,9 +1950,9 @@ export const NavbarDropdownMenu: FC<
       {
         "has-dropdown-up": hasDropdownUp,
         "is-active": isActive,
-        "is-hoverable": isHoverable,
+        "is-hoverable": isHoverable
       },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -1994,10 +1962,7 @@ export const NavbarDropdownMenu: FC<
 export type NavbarDropdownMenuProps = HTMLAttributes<HTMLDivElement> &
   BulmaProp &
   IsActiveProp &
-  Partial<{
-    hasDropdownUp: boolean
-    isHoverable: boolean
-  }>
+  Partial<{ hasDropdownUp: boolean; isHoverable: boolean }>
 
 export const NavbarEnd: FC<PropsWithChildren> = ({ children }) => (
   <div className="navbar-end">{children}</div>
@@ -2014,10 +1979,8 @@ export const NavbarItem: FC<PropsWithChildren<NavbarItemProps>> = ({
     className={cls<Bulma>(
       className as Bulma,
       "navbar-item",
-      {
-        "is-selected": isSelected,
-      },
-      bulma,
+      { "is-selected": isSelected },
+      bulma
     )}
     {...props}
   >
@@ -2026,9 +1989,7 @@ export const NavbarItem: FC<PropsWithChildren<NavbarItemProps>> = ({
 )
 export type NavbarItemProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   BulmaProp &
-  Partial<{
-    isSelected: boolean
-  }>
+  Partial<{ isSelected: boolean }>
 
 export const NavbarLink: FC<PropsWithChildren<NavbarLinkProps>> = ({
   isArrowless,
@@ -2043,9 +2004,9 @@ export const NavbarLink: FC<PropsWithChildren<NavbarLinkProps>> = ({
       "navbar-link",
       {
         // @ts-ignore Bulma generated types do not contain `is-arrowless`.
-        "is-arrowless": isArrowless,
+        "is-arrowless": isArrowless
       },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -2054,9 +2015,7 @@ export const NavbarLink: FC<PropsWithChildren<NavbarLinkProps>> = ({
 )
 export type NavbarLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   BulmaProp &
-  Partial<{
-    isArrowless: boolean
-  }>
+  Partial<{ isArrowless: boolean }>
 
 /**
  * The NavbarMenu is the counterpart of the NavbarBrand. As such, it must appear as a direct child of Navbar, as a sibling of NavbarBrand.
@@ -2077,7 +2036,7 @@ export type NavbarLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
  */
 export const NavbarMenu: FC<PropsWithChildren<NavbarMenuProps>> = ({
   isActive,
-  children,
+  children
 }) => (
   <div className={cls<Bulma>("navbar-menu", { "is-active": isActive })}>
     {children}
@@ -2119,10 +2078,8 @@ export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
       "notification",
       is(color),
       is(variant),
-      {
-        "is-skeleton": isSkeleton,
-      },
-      bulma,
+      { "is-skeleton": isSkeleton },
+      bulma
     )}
     {...props}
   >
@@ -2155,7 +2112,7 @@ export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
       "pagination",
       is(size),
       alignment(align),
-      bulma,
+      bulma
     )}
     role={role}
     {...props}
@@ -2184,7 +2141,7 @@ export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
       className as Bulma,
       "pagination-link",
       { "is-current": isCurrent },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -2193,9 +2150,7 @@ export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
 )
 export type PaginationLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   BulmaProp &
-  Partial<{
-    isCurrent: boolean
-  }>
+  Partial<{ isCurrent: boolean }>
 
 export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({
   bulma,
@@ -2223,10 +2178,8 @@ export const PaginationNext: FC<PropsWithChildren<PaginationNextProps>> = ({
     className={cls<Bulma>(
       className as Bulma,
       "pagination-next",
-      {
-        "is-disabled": isDisabled,
-      },
-      bulma,
+      { "is-disabled": isDisabled },
+      bulma
     )}
     {...props}
   >
@@ -2235,9 +2188,7 @@ export const PaginationNext: FC<PropsWithChildren<PaginationNextProps>> = ({
 )
 export type PaginationNextProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   BulmaProp &
-  Partial<{
-    isDisabled: boolean
-  }>
+  Partial<{ isDisabled: boolean }>
 
 export const PaginationPrevious: FC<
   PropsWithChildren<PaginationPreviousProps>
@@ -2246,10 +2197,8 @@ export const PaginationPrevious: FC<
     className={cls<Bulma>(
       className as Bulma,
       "pagination-previous",
-      {
-        "is-disabled": isDisabled,
-      },
-      bulma,
+      { "is-disabled": isDisabled },
+      bulma
     )}
     {...props}
   >
@@ -2258,9 +2207,7 @@ export const PaginationPrevious: FC<
 )
 export type PaginationPreviousProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   BulmaProp &
-  Partial<{
-    isDisabled: boolean
-  }>
+  Partial<{ isDisabled: boolean }>
 
 /**
  * Native HTML progress bars.
@@ -2368,9 +2315,9 @@ export const Select: FC<SelectProps> = ({
       {
         "is-loading": isLoading,
         "is-fullwidth": isFullwidth,
-        "is-rounded": isRounded,
+        "is-rounded": isRounded
       },
-      bulma,
+      bulma
     )}
   >
     <select {...props}>
@@ -2383,16 +2330,10 @@ export const Select: FC<SelectProps> = ({
 export type SelectProps = Omit<
   SelectHTMLAttributes<HTMLSelectElement>,
   "size"
-> & {
-  options: Array<OptionHTMLAttributes<HTMLOptionElement>>
-} & BulmaProp &
+> & { options: Array<OptionHTMLAttributes<HTMLOptionElement>> } & BulmaProp &
   ColorProp &
   SizeProp<Size> &
-  Partial<{
-    isFullwidth: boolean
-    isLoading: boolean
-    isRounded: boolean
-  }>
+  Partial<{ isFullwidth: boolean; isLoading: boolean; isRounded: boolean }>
 
 /**
  * Is a loading element which resembles a paragraph.
@@ -2431,11 +2372,8 @@ export const Subtitle: FC<PropsWithChildren<SubtitleProps>> = ({
       className as Bulma,
       "title",
       is ? `is-${is}` : undefined,
-      {
-        "has-skeleton": hasSkeleton,
-        "is-skeleton": isSkeleton,
-      },
-      bulma,
+      { "has-skeleton": hasSkeleton, "is-skeleton": isSkeleton },
+      bulma
     )}
     {...props}
   >
@@ -2446,10 +2384,7 @@ export type SubtitleProps = Omit<HTMLAttributes<HTMLElement>, "is"> &
   BulmaProp &
   TagProp<"h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p"> &
   IsSkeletonProp &
-  Partial<{
-    hasSkeleton: boolean
-    is: 1 | 2 | 3 | 4 | 5 | 6
-  }>
+  Partial<{ hasSkeleton: boolean; is: 1 | 2 | 3 | 4 | 5 | 6 }>
 
 /**
  * The inevitable HTML table, with special case cells.
@@ -2519,9 +2454,9 @@ export const Tabs: FC<PropsWithChildren<TabsProps>> = ({
         "is-boxed": isBoxed,
         "is-fullwidth": isFullwidth,
         "is-toggle": isToggle,
-        "is-toggle-rounded": isToggleRounded,
+        "is-toggle-rounded": isToggleRounded
       },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -2594,9 +2529,9 @@ export const Tag: FC<PropsWithChildren<TagProps>> = ({
       {
         "is-hoverable": isHoverable,
         "is-rounded": isRounded,
-        "is-skeleton": isSkeleton,
+        "is-skeleton": isSkeleton
       },
-      bulma,
+      bulma
     )}
     {...props}
   >
@@ -2609,10 +2544,7 @@ export type TagProps = HTMLAttributes<HTMLSpanElement> &
   ColorVariantProp<"light"> &
   IsSkeletonProp &
   SizeProp<"medium" | "large"> &
-  Partial<{
-    isHoverable: boolean
-    isRounded: boolean
-  }>
+  Partial<{ isHoverable: boolean; isRounded: boolean }>
 
 /**
  * List of tags.
@@ -2653,7 +2585,7 @@ export const Tags: FC<PropsWithChildren<TagsProps>> = ({
 }) => (
   <div
     className={cls<Bulma>(className as Bulma, "tags", are(size), {
-      "has-addons": hasAddons,
+      "has-addons": hasAddons
     })}
     {...props}
   >
@@ -2662,9 +2594,7 @@ export const Tags: FC<PropsWithChildren<TagsProps>> = ({
 )
 export type TagsProps = HTMLAttributes<HTMLDivElement> &
   PluralSizeProp &
-  Partial<{
-    hasAddons: boolean
-  }>
+  Partial<{ hasAddons: boolean }>
 
 /**
  * The multiline textarea and its variations.
@@ -2691,11 +2621,8 @@ export const Textarea: FC<TextareaProps> = ({
       "textarea",
       is(color),
       is(size),
-      {
-        "is-loading": isLoading,
-        "is-skeleton": isSkeleton,
-      },
-      bulma,
+      { "is-loading": isLoading, "is-skeleton": isSkeleton },
+      bulma
     )}
     {...props}
   />
@@ -2705,9 +2632,7 @@ export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
   ColorProp &
   IsSkeletonProp &
   SizeProp<Size> &
-  Partial<{
-    isLoading: boolean
-  }>
+  Partial<{ isLoading: boolean }>
 
 /**
  * Simple headings to add depth to your page.
@@ -2759,9 +2684,9 @@ export const Title: FC<PropsWithChildren<TitleProps>> = ({
       {
         "has-skeleton": hasSkeleton,
         "is-skeleton": isSkeleton,
-        "is-spaced": isSpaced,
+        "is-spaced": isSpaced
       },
-      bulma,
+      bulma
     )}
     {...props}
   >

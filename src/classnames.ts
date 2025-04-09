@@ -39,8 +39,8 @@ export const classnames = <T extends string>(...args: ClassnamesArg<T>[]) =>
           // Map `arg` object to an array of its keys, having a truthy value.
           Object.entries(arg).reduce(
             (keys, keyValue) => (keyValue[1] ? keys.concat(keyValue[0]) : keys),
-            [],
-          ),
+            []
+          )
         )
 
       // Here `arg` should be a string or `undefined`.
@@ -48,6 +48,6 @@ export const classnames = <T extends string>(...args: ClassnamesArg<T>[]) =>
     })
     .filter(
       // Avoid more than one white space in the join below, by filtering falsy values.
-      (str) => !!str,
+      (str) => !!str
     )
     .join(" ")

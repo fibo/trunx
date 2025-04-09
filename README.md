@@ -285,7 +285,7 @@ import { PropsWithChildren } from "react"
 import {
   Button as _Button,
   ButtonProps as _ButtonProps,
-  ColorProp,
+  ColorProp
 } from "trunx"
 
 type ButtonProps = Omit<_ButtonProps, "color" | "isRounded"> &

@@ -4,9 +4,7 @@ import { test } from "node:test"
 
 test("package.json", async () => {
   const pkg = await read<{
-    devDependencies: {
-      bulma: string
-    }
+    devDependencies: { bulma: string }
     version: string
   }>("package.json")
 
@@ -16,6 +14,6 @@ test("package.json", async () => {
   assert.equal(
     bulmaMajorVersion,
     trunxMajorVersion,
-    "trunx major version must equal bulma major version",
+    "trunx major version must equal bulma major version"
   )
 })

@@ -76,12 +76,12 @@ import {
   Textarea,
   Title,
   Ul,
-  classnames,
+  classnames
 } from "../src/index.js"
 import {
   Button as _Button,
   ButtonProps as _ButtonProps,
-  ColorProp,
+  ColorProp
 } from "../src/index.js"
 import { classnames as classnames2 } from "../src/classnames.js"
 
@@ -421,7 +421,7 @@ export function Snippets() {
         size="large"
         options={[
           { value: "A", label: "Apple" },
-          { value: "B", label: "Banana" },
+          { value: "B", label: "Banana" }
         ]}
       />
 
