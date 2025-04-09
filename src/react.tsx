@@ -45,6 +45,15 @@ export type Size = "small" | "medium" | "large" | "normal"
 
 export type PluralSize = Extract<Size, "small" | "medium" | "large">
 
+export type ImageDimension =
+  | "16x16"
+  | "24x24"
+  | "32x32"
+  | "48x48"
+  | "64x64"
+  | "96x96"
+  | "128x128"
+
 // Common props
 //////////////////////////////////////////////////////////////////////
 
@@ -90,7 +99,7 @@ const are = (
   arg ? `are-${arg}` : undefined
 
 const is = (
-  arg: Color | ColorVariant | Size | undefined,
+  arg: Color | ColorVariant | ImageDimension | Size | undefined,
 ): Extract<Bulma, `is-${typeof arg}`> | undefined =>
   arg ? `is-${arg}` : undefined
 
@@ -1446,7 +1455,7 @@ export const Image: FC<PropsWithChildren<ImageProps>> = ({
     className={cls<Bulma>(
       className as Bulma,
       "image",
-      dimension ? `is-${dimension}` : undefined,
+      is(dimension),
       ratio ? `is-${ratio}` : undefined,
       {
         "is-skeleton": isSkeleton,
@@ -1482,14 +1491,6 @@ export type ImageProps = HTMLAttributes<HTMLElement> &
       | "1by2"
       | "1by3"
   }>
-export type ImageDimension =
-  | "16x16"
-  | "24x24"
-  | "32x32"
-  | "48x48"
-  | "64x64"
-  | "96x96"
-  | "128x128"
 
 export const Input: FC<InputProps> = ({
   bulma,
@@ -1607,11 +1608,7 @@ export const MediaLeft: FC<PropsWithChildren<MediaLeftProps>> = ({
     className={cls<Bulma>(className as Bulma, "media-left", bulma)}
     {...props}
   >
-    <p
-      className={cls<Bulma>("image", dimension ? `is-${dimension}` : undefined)}
-    >
-      {children}
-    </p>
+    <p className={cls<Bulma>("image", is(dimension))}>{children}</p>
   </figure>
 )
 export type MediaLeftProps = HTMLAttributes<HTMLElement> &
