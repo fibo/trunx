@@ -99,6 +99,11 @@ const is = (
 ): Extract<Bulma, `is-${typeof arg}`> | undefined =>
   arg ? `is-${arg}` : undefined
 
+const skel = (
+  arg: boolean | undefined
+): Extract<Bulma, "is-skeleton"> | undefined =>
+  arg ? "is-skeleton" : undefined
+
 // HTML tag components
 //////////////////////////////////////////////////////////////////////
 
@@ -316,9 +321,9 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
         "is-inverted": isInverted,
         "is-loading": isLoading,
         "is-outlined": isOutlined,
-        "is-rounded": isRounded,
-        "is-skeleton": isSkeleton
+        "is-rounded": isRounded
       },
+      skel(isSkeleton),
       bulma
     )}
     {...props}
@@ -674,7 +679,7 @@ export const Content: FC<PropsWithChildren<ContentProps>> = ({
       className as Bulma,
       "content",
       is(size),
-      { "is-skeleton": isSkeleton },
+      skel(isSkeleton),
       bulma
     )}
     {...props}
@@ -1347,7 +1352,7 @@ export const Icon: FC<PropsWithChildren<IconProps>> = ({
       "icon",
       alignment(align),
       is(size),
-      { "is-skeleton": isSkeleton },
+      skel(isSkeleton),
       bulma
     )}
     {...props}
@@ -1441,10 +1446,8 @@ export const Image: FC<PropsWithChildren<ImageProps>> = ({
       "image",
       is(dimension),
       ratio ? `is-${ratio}` : undefined,
-      {
-        "is-skeleton": isSkeleton,
-        "is-square": isSquare
-      },
+      { "is-square": isSquare },
+      skel(isSkeleton),
       bulma
     )}
     {...props}
@@ -1490,7 +1493,7 @@ export const Input: FC<InputProps> = ({
       "input",
       is(color),
       is(size),
-      { "is-skeleton": isSkeleton },
+      skel(isSkeleton),
       bulma
     )}
     {...props}
@@ -2078,7 +2081,7 @@ export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
       "notification",
       is(color),
       is(variant),
-      { "is-skeleton": isSkeleton },
+      skel(isSkeleton),
       bulma
     )}
     {...props}
@@ -2372,7 +2375,8 @@ export const Subtitle: FC<PropsWithChildren<SubtitleProps>> = ({
       className as Bulma,
       "title",
       is ? `is-${is}` : undefined,
-      { "has-skeleton": hasSkeleton, "is-skeleton": isSkeleton },
+      { "has-skeleton": hasSkeleton },
+      skel(isSkeleton),
       bulma
     )}
     {...props}
@@ -2528,9 +2532,9 @@ export const Tag: FC<PropsWithChildren<TagProps>> = ({
       is(size),
       {
         "is-hoverable": isHoverable,
-        "is-rounded": isRounded,
-        "is-skeleton": isSkeleton
+        "is-rounded": isRounded
       },
+      skel(isSkeleton),
       bulma
     )}
     {...props}
@@ -2621,7 +2625,8 @@ export const Textarea: FC<TextareaProps> = ({
       "textarea",
       is(color),
       is(size),
-      { "is-loading": isLoading, "is-skeleton": isSkeleton },
+      { "is-loading": isLoading },
+      skel(isSkeleton),
       bulma
     )}
     {...props}
@@ -2683,9 +2688,9 @@ export const Title: FC<PropsWithChildren<TitleProps>> = ({
       is ? `is-${is}` : undefined,
       {
         "has-skeleton": hasSkeleton,
-        "is-skeleton": isSkeleton,
         "is-spaced": isSpaced
       },
+      skel(isSkeleton),
       bulma
     )}
     {...props}
