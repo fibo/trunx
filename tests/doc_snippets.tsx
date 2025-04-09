@@ -455,7 +455,7 @@ export function Snippets() {
 
       <Tags hasAddons>
         <Tag color="danger">Alex Smith</Tag>
-        <a className="tag is-delete" />
+        <A bulma={["tag", "is-delete"]} />
       </Tags>
 
       <Textarea size="small" color="info" />

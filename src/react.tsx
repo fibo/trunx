@@ -2570,7 +2570,7 @@ export type TagProps = HTMLAttributes<HTMLSpanElement> &
  * ```tsx
  * <Tags hasAddons>
  *   <Tag color="danger">Alex Smith</Tag>
- *   <a class="tag is-delete" />
+ *   <A bulma={["tag", "is-delete"]} />
  * </Tags>
  * ```
  *
