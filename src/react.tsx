@@ -15,7 +15,7 @@ import {
   TextareaHTMLAttributes
 } from "react"
 import { ClassnamesArg, classnames as cls } from "./classnames.js"
-import { ClassNames as Bulma } from "./Bulma.js"
+import { Bulma } from "./Bulma.js"
 
 // Colors
 //////////////////////////////////////////////////////////////////////

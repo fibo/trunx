@@ -1,6 +1,6 @@
 // This file is auto-generated with postcss-ts-classnames.
 
-export type ClassNames =
+export type Bulma =
   | "are-large"
   | "are-medium"
   | "are-small"

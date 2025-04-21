@@ -5,7 +5,7 @@
 //////////////////////////////////////////////////////////////////////
 
 import { PropsWithChildren, useCallback, useState } from "react"
-import type { Bulma } from "../src/index.js"
+import type { Bulma } from "../dist/index.js"
 import {
   A,
   Breadcrumb,
@@ -77,13 +77,13 @@ import {
   Title,
   Ul,
   classnames
-} from "../src/index.js"
+} from "../dist/index.js"
 import {
   Button as _Button,
   ButtonProps as _ButtonProps,
   ColorProp
-} from "../src/index.js"
-import { classnames as classnames2 } from "../src/classnames.js"
+} from "../dist/index.js"
+import { classnames as classnames2 } from "../dist/classnames.js"
 
 // Snippets in README.md
 //////////////////////////////////////////////////////////////////////
