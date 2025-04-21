@@ -741,12 +741,13 @@ export type DeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp
  * @example
  * ```tsx
  * <Dropdown isActive>
- *   <DropdownTrigger>
- *     <Button aria-haspopup="true" aria-controls="dropdown-menu">
- *       Dropdown button
- *     </Button>
+ *   <DropdownTrigger aria-haspopup="true" aria-controls="my-dropdown-menu">
+ *     <span>Dropdown button</span>
+ *     <Icon size="small">
+ *       <i className="fas fa-angle-down" aria-hidden="true" />
+ *     </Icon>
  *   </DropdownTrigger>
- *   <DropdownMenu id="dropdown-menu" role="menu">
+ *   <DropdownMenu id="my-dropdown-menu" role="menu">
  *      <DropdownItem href="#">Dropdown item</DropdownItem>
  *      <DropdownItem href="#">Other Dropdown item</DropdownItem>
  *      <DropdownItem isActive href="#">Active Dropdown item</DropdownItem>
@@ -852,7 +853,7 @@ export const DropdownTrigger: FC<PropsWithChildren<DropdownTriggerProps>> = ({
   ...props
 }) => (
   <div className="dropdown-trigger">
-    <button className={cls("button")} {...props}>
+    <button className={cls(className, "button")} {...props}>
       {children}
     </button>
   </div>
