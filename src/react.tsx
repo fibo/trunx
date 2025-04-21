@@ -121,7 +121,7 @@ export const A: FC<PropsWithChildren<AProps>> = ({
   children,
   ...props
 }) => (
-  <a className={cls<Bulma>(className as Bulma, bulma)} {...props}>
+  <a className={cls<string>(className, bulma)} {...props}>
     {children}
   </a>
 )
@@ -148,7 +148,7 @@ export const Div: FC<PropsWithChildren<DivProps>> = ({
   children,
   ...props
 }) => (
-  <div className={cls<Bulma>(className as Bulma, bulma)} {...props}>
+  <div className={cls<string>(className, bulma)} {...props}>
     {children}
   </div>
 )
@@ -168,7 +168,7 @@ export const P: FC<PropsWithChildren<PProps>> = ({
   children,
   ...props
 }) => (
-  <p className={cls<Bulma>(className as Bulma, bulma)} {...props}>
+  <p className={cls<string>(className, bulma)} {...props}>
     {children}
   </p>
 )
@@ -188,7 +188,7 @@ export const Span: FC<PropsWithChildren<SpanProps>> = ({
   children,
   ...props
 }) => (
-  <span className={cls<Bulma>(className as Bulma, bulma)} {...props}>
+  <span className={cls<string>(className, bulma)} {...props}>
     {children}
   </span>
 )
@@ -213,7 +213,7 @@ export const Ul: FC<PropsWithChildren<UlProps>> = ({
   children,
   ...props
 }) => (
-  <ul className={cls<Bulma>(className as Bulma, bulma)} {...props}>
+  <ul className={cls<string>(className, bulma)} {...props}>
     {children}
   </ul>
 )
@@ -251,8 +251,8 @@ export const Breadcrumb: FC<PropsWithChildren<BreadcrumbProps> & BulmaProp> = ({
   ...props
 }) => (
   <nav
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "breadcrumb",
       alignment(align),
       separator ? `has-${separator}-separator` : undefined,
@@ -277,7 +277,7 @@ export const BreadcrumbItem: FC<PropsWithChildren<BreadcrumbItemProps>> = ({
   children,
   ...props
 }) => (
-  <li className={cls<Bulma>(className as Bulma, { "is-active": isActive })}>
+  <li className={cls<string>(className, { "is-active": isActive })}>
     <a {...props}>{children}</a>
   </li>
 )
@@ -310,8 +310,8 @@ export const Button: FC<PropsWithChildren<ButtonProps>> = ({
   ...props
 }) => (
   <button
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "button",
       is(color),
       is(variant),
@@ -368,7 +368,7 @@ export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(className as Bulma, "buttons", are(size), bulma)}
+    className={cls<string>(className, "buttons", are(size), bulma)}
     {...props}
   >
     {children}
@@ -403,7 +403,7 @@ export const Cell: FC<PropsWithChildren<CellProps>> = ({
   children,
   ...props
 }) => (
-  <div className={cls<Bulma>(className as Bulma, "cell", bulma)} {...props}>
+  <div className={cls<string>(className, "cell", bulma)} {...props}>
     {children}
   </div>
 )
@@ -439,7 +439,7 @@ export const Card: FC<PropsWithChildren<CardProps>> = ({
   children,
   ...props
 }) => (
-  <div className={cls<Bulma>(className as Bulma, "card", bulma)} {...props}>
+  <div className={cls<string>(className, "card", bulma)} {...props}>
     {children}
   </div>
 )
@@ -452,10 +452,7 @@ export const CardContent: FC<PropsWithChildren<CardContentProps>> = ({
   children,
   ...props
 }) => (
-  <div
-    className={cls<Bulma>(className as Bulma, "card-content", bulma)}
-    {...props}
-  >
+  <div className={cls<string>(className, "card-content", bulma)} {...props}>
     {children}
   </div>
 )
@@ -468,10 +465,7 @@ export const CardFooter: FC<PropsWithChildren<CardFooterProps>> = ({
   children,
   ...props
 }) => (
-  <footer
-    className={cls<Bulma>(className as Bulma, "card-footer", bulma)}
-    {...props}
-  >
+  <footer className={cls<string>(className, "card-footer", bulma)} {...props}>
     {children}
   </footer>
 )
@@ -484,10 +478,7 @@ export const CardHeader: FC<PropsWithChildren<CardHeaderProps>> = ({
   children,
   ...props
 }) => (
-  <footer
-    className={cls<Bulma>(className as Bulma, "card-header", bulma)}
-    {...props}
-  >
+  <footer className={cls<string>(className, "card-header", bulma)} {...props}>
     {children}
   </footer>
 )
@@ -501,7 +492,7 @@ export const CardHeaderIcon: FC<PropsWithChildren<CardHeaderIconProps>> = ({
   ...props
 }) => (
   <button
-    className={cls<Bulma>(className as Bulma, "card-header-icon", bulma)}
+    className={cls<string>(className, "card-header-icon", bulma)}
     {...props}
   >
     {children}
@@ -516,10 +507,7 @@ export const CardHeaderTitle: FC<PropsWithChildren<CardHeaderTitleProps>> = ({
   children,
   ...props
 }) => (
-  <p
-    className={cls<Bulma>(className as Bulma, "card-header-title", bulma)}
-    {...props}
-  >
+  <p className={cls<string>(className, "card-header-title", bulma)} {...props}>
     {children}
   </p>
 )
@@ -556,7 +544,7 @@ export const Column: FC<PropsWithChildren<ColumnProps>> = ({
   children,
   ...props
 }) => (
-  <div className={cls<Bulma>(className as Bulma, "column", bulma)} {...props}>
+  <div className={cls<string>(className, "column", bulma)} {...props}>
     {children}
   </div>
 )
@@ -578,8 +566,8 @@ export const Columns: FC<PropsWithChildren<ColumnsProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "columns",
       {
         "is-gapless": isGapless,
@@ -628,8 +616,8 @@ export const Container: FC<PropsWithChildren<ContainerProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "container",
       {
         "is-fluid": isFluid,
@@ -675,8 +663,8 @@ export const Content: FC<PropsWithChildren<ContentProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "content",
       is(size),
       skel(isSkeleton),
@@ -707,8 +695,8 @@ export const Control: FC<PropsWithChildren<ControlProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "control",
       {
         "is-expanded": isExpanded,
@@ -741,10 +729,7 @@ export const Delete: FC<DeleteProps> = ({
   children,
   ...props
 }) => (
-  <button
-    className={cls<Bulma>(className as Bulma, "delete", is(size))}
-    {...props}
-  />
+  <button className={cls<string>(className, "delete", is(size))} {...props} />
 )
 export type DeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp
 
@@ -782,8 +767,8 @@ export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "dropdown",
       {
         "is-active": isActive,
@@ -833,8 +818,8 @@ export const DropdownItem: FC<PropsWithChildren<DropdownItemProps>> = ({
   ...props
 }) => (
   <a
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "dropdown-item",
       { "is-active": isActive },
       bulma
@@ -854,7 +839,7 @@ export const DropdownMenu: FC<PropsWithChildren<DropdownMenuProps>> = ({
   children,
   ...props
 }) => (
-  <div className={cls<Bulma>(className as Bulma, "dropdown-menu")} {...props}>
+  <div className={cls<string>(className, "dropdown-menu")} {...props}>
     {children}
   </div>
 )
@@ -898,8 +883,8 @@ export const Field: FC<PropsWithChildren<FieldProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "field",
       {
         "has-addons": hasAddons,
@@ -934,10 +919,7 @@ export const FieldBody: FC<PropsWithChildren<FieldBodyProps>> = ({
   children,
   ...props
 }) => (
-  <div
-    className={cls<Bulma>(className as Bulma, "field-body", bulma)}
-    {...props}
-  >
+  <div className={cls<string>(className, "field-body", bulma)} {...props}>
     {children}
   </div>
 )
@@ -976,7 +958,7 @@ export const FieldHorizontal: FC<PropsWithChildren<FieldHorizontalProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(className as Bulma, "field", "is-horizontal", bulma)}
+    className={cls<string>(className, "field", "is-horizontal", bulma)}
     {...props}
   >
     {children}
@@ -993,7 +975,7 @@ export const FieldLabel: FC<PropsWithChildren<FieldLabelProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(className as Bulma, "field-label", is(size), bulma)}
+    className={cls<string>(className, "field-label", is(size), bulma)}
     {...props}
   >
     {children}
@@ -1034,8 +1016,8 @@ export const FileUpload: FC<FileUploadProps> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "file",
       is(color),
       is(size),
@@ -1077,10 +1059,7 @@ export const FileIcon: FC<PropsWithChildren<FileIconProps>> = ({
   children,
   ...props
 }) => (
-  <span
-    className={cls<Bulma>(className as Bulma, "file-icon", bulma)}
-    {...props}
-  >
+  <span className={cls<string>(className, "file-icon", bulma)} {...props}>
     {children}
   </span>
 )
@@ -1093,10 +1072,7 @@ export const FileLabel: FC<PropsWithChildren<FileLabelProps>> = ({
   children,
   ...props
 }) => (
-  <span
-    className={cls<Bulma>(className as Bulma, "file-label", bulma)}
-    {...props}
-  >
+  <span className={cls<string>(className, "file-label", bulma)} {...props}>
     {children}
   </span>
 )
@@ -1123,8 +1099,8 @@ export const FixedGrid: FC<PropsWithChildren<FixedGridProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "fixed-grid",
       { "has-auto-count": hasAutoCount },
       bulma
@@ -1161,10 +1137,7 @@ export const Footer: FC<PropsWithChildren<FooterProps>> = ({
   children,
   ...props
 }) => (
-  <footer
-    className={cls<Bulma>(className as Bulma, "footer", bulma)}
-    {...props}
-  >
+  <footer className={cls<string>(className, "footer", bulma)} {...props}>
     {children}
   </footer>
 )
@@ -1189,7 +1162,7 @@ export const Grid: FC<PropsWithChildren<GridProps>> = ({
   children,
   ...props
 }) => (
-  <div className={cls<Bulma>(className as Bulma, "grid", bulma)} {...props}>
+  <div className={cls<string>(className, "grid", bulma)} {...props}>
     {children}
   </div>
 )
@@ -1202,10 +1175,7 @@ export const Help: FC<PropsWithChildren<HelpProps>> = ({
   children,
   ...props
 }) => (
-  <p
-    className={cls<Bulma>(className as Bulma, "help", is(color), bulma)}
-    {...props}
-  >
+  <p className={cls<string>(className, "help", is(color), bulma)} {...props}>
     {children}
   </p>
 )
@@ -1250,8 +1220,8 @@ export const Hero: FC<PropsWithChildren<HeroProps>> = ({
   ...props
 }) => (
   <section
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "hero",
       is(color),
       is(size),
@@ -1284,10 +1254,7 @@ export const HeroBody: FC<PropsWithChildren<HeroBodyProps>> = ({
   children,
   ...props
 }) => (
-  <div
-    className={cls<Bulma>(className as Bulma, "hero-body", bulma)}
-    {...props}
-  >
+  <div className={cls<string>(className, "hero-body", bulma)} {...props}>
     {children}
   </div>
 )
@@ -1300,10 +1267,7 @@ export const HeroFoot: FC<PropsWithChildren<HeroFootProps>> = ({
   children,
   ...props
 }) => (
-  <div
-    className={cls<Bulma>(className as Bulma, "hero-foot", bulma)}
-    {...props}
-  >
+  <div className={cls<string>(className, "hero-foot", bulma)} {...props}>
     {children}
   </div>
 )
@@ -1316,10 +1280,7 @@ export const HeroHead: FC<PropsWithChildren<HeroHeadProps>> = ({
   children,
   ...props
 }) => (
-  <div
-    className={cls<Bulma>(className as Bulma, "hero-head", bulma)}
-    {...props}
-  >
+  <div className={cls<string>(className, "hero-head", bulma)} {...props}>
     {children}
   </div>
 )
@@ -1347,8 +1308,8 @@ export const Icon: FC<PropsWithChildren<IconProps>> = ({
   ...props
 }) => (
   <span
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "icon",
       alignment(align),
       is(size),
@@ -1387,10 +1348,7 @@ export const IconText: FC<PropsWithChildren<IconTextProps>> = ({
   children,
   ...props
 }) => (
-  <span
-    className={cls<Bulma>(className as Bulma, "icon-text", bulma)}
-    {...props}
-  >
+  <span className={cls<string>(className, "icon-text", bulma)} {...props}>
     {children}
   </span>
 )
@@ -1441,8 +1399,8 @@ export const Image: FC<PropsWithChildren<ImageProps>> = ({
   ...props
 }) => (
   <figure
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "image",
       is(dimension),
       ratio ? `is-${ratio}` : undefined,
@@ -1488,8 +1446,8 @@ export const Input: FC<InputProps> = ({
   ...props
 }) => (
   <input
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "input",
       is(color),
       is(size),
@@ -1524,7 +1482,7 @@ export const Label: FC<PropsWithChildren<LabelProps>> = ({
   children,
   ...props
 }) => (
-  <label className={cls<Bulma>(className as Bulma, "label", bulma)} {...props}>
+  <label className={cls<string>(className, "label", bulma)} {...props}>
     {children}
   </label>
 )
@@ -1556,10 +1514,7 @@ export const Media: FC<PropsWithChildren<MediaProps>> = ({
   children,
   ...props
 }) => (
-  <article
-    className={cls<Bulma>(className as Bulma, "media", bulma)}
-    {...props}
-  >
+  <article className={cls<string>(className, "media", bulma)} {...props}>
     {children}
   </article>
 )
@@ -1572,10 +1527,7 @@ export const MediaContent: FC<PropsWithChildren<MediaContentProps>> = ({
   children,
   ...props
 }) => (
-  <div
-    className={cls<Bulma>(className as Bulma, "media-content", bulma)}
-    {...props}
-  >
+  <div className={cls<string>(className, "media-content", bulma)} {...props}>
     {children}
   </div>
 )
@@ -1589,11 +1541,8 @@ export const MediaLeft: FC<PropsWithChildren<MediaLeftProps>> = ({
   children,
   ...props
 }) => (
-  <figure
-    className={cls<Bulma>(className as Bulma, "media-left", bulma)}
-    {...props}
-  >
-    <p className={cls<Bulma>("image", is(dimension))}>{children}</p>
+  <figure className={cls<string>(className, "media-left", bulma)} {...props}>
+    <p className={cls<string>("image", is(dimension))}>{children}</p>
   </figure>
 )
 export type MediaLeftProps = HTMLAttributes<HTMLElement> &
@@ -1606,10 +1555,7 @@ export const MediaRight: FC<PropsWithChildren<MediaRightProps>> = ({
   children,
   ...props
 }) => (
-  <div
-    className={cls<Bulma>(className as Bulma, "media-right", bulma)}
-    {...props}
-  >
+  <div className={cls<string>(className, "media-right", bulma)} {...props}>
     {children}
   </div>
 )
@@ -1628,7 +1574,7 @@ export const Menu: FC<PropsWithChildren<MenuProps>> = ({
   children,
   ...props
 }) => (
-  <aside className={cls<Bulma>(className as Bulma, "menu", bulma)} {...props}>
+  <aside className={cls<string>(className, "menu", bulma)} {...props}>
     {children}
   </aside>
 )
@@ -1641,7 +1587,7 @@ export const MenuLabel: FC<PropsWithChildren<MenuLabelProps>> = ({
   children,
   ...props
 }) => (
-  <p className={cls<Bulma>(className as Bulma, "menu-label", bulma)} {...props}>
+  <p className={cls<string>(className, "menu-label", bulma)} {...props}>
     {children}
   </p>
 )
@@ -1654,7 +1600,7 @@ export const MenuList: FC<PropsWithChildren<MenuListProps>> = ({
   children,
   ...props
 }) => (
-  <ul className={cls<Bulma>(className as Bulma, "menu-list", bulma)} {...props}>
+  <ul className={cls<string>(className, "menu-list", bulma)} {...props}>
     {children}
   </ul>
 )
@@ -1692,13 +1638,7 @@ export const Message: FC<PropsWithChildren<MessageProps>> = ({
   ...props
 }) => (
   <article
-    className={cls<Bulma>(
-      className as Bulma,
-      "message",
-      is(color),
-      is(size),
-      bulma
-    )}
+    className={cls<string>(className, "message", is(color), is(size), bulma)}
     {...props}
   >
     {header ? <div className="message-header">{header}</div> : null}
@@ -1737,8 +1677,8 @@ export const Modal: FC<PropsWithChildren<ModalProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "modal",
       is(size),
       { "is-active": isActive },
@@ -1789,7 +1729,7 @@ export const ModalCard: FC<PropsWithChildren<ModalCardProps>> = ({
   children,
   ...props
 }) => (
-  <div className={cls<Bulma>(className as Bulma, "modal-card")} {...props}>
+  <div className={cls<string>(className, "modal-card")} {...props}>
     <div className="modal-card-head">{head}</div>
     {children}
     <div className="modal-card-foot"> {foot} </div>
@@ -1807,7 +1747,7 @@ export const ModalClose: FC<ModalCloseProps> = ({
   ...props
 }) => (
   <button
-    className={cls<Bulma>(className as Bulma, "modal-close", is(size))}
+    className={cls<string>(className, "modal-close", is(size))}
     {...props}
   />
 )
@@ -1821,10 +1761,7 @@ export const ModalContent: FC<PropsWithChildren<ModalContentProps>> = ({
   children,
   ...props
 }) => (
-  <div
-    className={cls<Bulma>(className as Bulma, "modal-content", bulma)}
-    {...props}
-  >
+  <div className={cls<string>(className, "modal-content", bulma)} {...props}>
     {children}
   </div>
 )
@@ -1846,7 +1783,7 @@ export const Navbar: FC<PropsWithChildren<NavbarProps>> = ({
   ...props
 }) => (
   <nav
-    className={cls<Bulma>(className as Bulma, "navbar", is(color), bulma)}
+    className={cls<string>(className, "navbar", is(color), bulma)}
     role={role}
     {...props}
   >
@@ -1870,10 +1807,7 @@ export const NavbarBrand: FC<PropsWithChildren<NavbarBrandProps>> = ({
   children,
   ...props
 }) => (
-  <div
-    className={cls<Bulma>(className as Bulma, "navbar-brand", bulma)}
-    {...props}
-  >
+  <div className={cls<string>(className, "navbar-brand", bulma)} {...props}>
     {children}
   </div>
 )
@@ -1888,7 +1822,7 @@ export type NavbarBrandProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  */
 export const NavbarBurger: FC<NavbarBurgerProps> = ({ isActive, ...props }) => (
   <a
-    className={cls<Bulma>("navbar-burger", { "is-active": isActive })}
+    className={cls<string>("navbar-burger", { "is-active": isActive })}
     role="button"
     aria-expanded={isActive ? "true" : "false"}
     {...props}
@@ -1917,8 +1851,8 @@ export const NavbarDropdown: FC<PropsWithChildren<NavbarDropdownProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "navbar-dropdown",
       alignment(align),
       { "is-boxed": isBoxed },
@@ -1946,8 +1880,8 @@ export const NavbarDropdownMenu: FC<
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "navbar-item",
       "has-dropdown",
       {
@@ -1979,8 +1913,8 @@ export const NavbarItem: FC<PropsWithChildren<NavbarItemProps>> = ({
   ...props
 }) => (
   <a
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "navbar-item",
       { "is-selected": isSelected },
       bulma
@@ -2002,8 +1936,8 @@ export const NavbarLink: FC<PropsWithChildren<NavbarLinkProps>> = ({
   ...props
 }) => (
   <a
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "navbar-link",
       {
         // @ts-ignore Bulma generated types do not contain `is-arrowless`.
@@ -2041,7 +1975,7 @@ export const NavbarMenu: FC<PropsWithChildren<NavbarMenuProps>> = ({
   isActive,
   children
 }) => (
-  <div className={cls<Bulma>("navbar-menu", { "is-active": isActive })}>
+  <div className={cls<string>("navbar-menu", { "is-active": isActive })}>
     {children}
   </div>
 )
@@ -2076,8 +2010,8 @@ export const Notification: FC<PropsWithChildren<NotificationProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "notification",
       is(color),
       is(variant),
@@ -2110,8 +2044,8 @@ export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
   ...props
 }) => (
   <nav
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "pagination",
       is(size),
       alignment(align),
@@ -2140,8 +2074,8 @@ export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
   ...props
 }) => (
   <a
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "pagination-link",
       { "is-current": isCurrent },
       bulma
@@ -2161,10 +2095,7 @@ export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({
   children,
   ...props
 }) => (
-  <ul
-    className={cls<Bulma>(className as Bulma, "pagination-list", bulma)}
-    {...props}
-  >
+  <ul className={cls<string>(className, "pagination-list", bulma)} {...props}>
     {children}
   </ul>
 )
@@ -2178,8 +2109,8 @@ export const PaginationNext: FC<PropsWithChildren<PaginationNextProps>> = ({
   ...props
 }) => (
   <a
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "pagination-next",
       { "is-disabled": isDisabled },
       bulma
@@ -2197,8 +2128,8 @@ export const PaginationPrevious: FC<
   PropsWithChildren<PaginationPreviousProps>
 > = ({ isDisabled, bulma, className, children, ...props }) => (
   <a
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "pagination-previous",
       { "is-disabled": isDisabled },
       bulma
@@ -2230,7 +2161,7 @@ export const Progress: FC<PropsWithChildren<ProgressProps>> = ({
   ...props
 }) => (
   <progress
-    className={cls<Bulma>(className as Bulma, "progress", is(size), bulma)}
+    className={cls<string>(className, "progress", is(size), bulma)}
     {...props}
   >
     {children}
@@ -2272,7 +2203,7 @@ export const Section: FC<PropsWithChildren<SectionProps>> = ({
   ...props
 }) => (
   <section
-    className={cls<Bulma>(className as Bulma, "section", is(size), bulma)}
+    className={cls<string>(className, "section", is(size), bulma)}
     {...props}
   >
     {children}
@@ -2310,8 +2241,8 @@ export const Select: FC<SelectProps> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "select",
       is(size),
       is(color),
@@ -2371,8 +2302,8 @@ export const Subtitle: FC<PropsWithChildren<SubtitleProps>> = ({
   ...props
 }) => (
   <Tag
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "title",
       is ? `is-${is}` : undefined,
       { "has-skeleton": hasSkeleton },
@@ -2412,10 +2343,7 @@ export const Table: FC<PropsWithChildren<TableProps>> = ({
   ...props
 }) => (
   <div className="table-container">
-    <table
-      className={cls<Bulma>(className as Bulma, "table", bulma)}
-      {...props}
-    >
+    <table className={cls<string>(className, "table", bulma)} {...props}>
       {children}
     </table>
   </div>
@@ -2449,8 +2377,8 @@ export const Tabs: FC<PropsWithChildren<TabsProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "tabs",
       is(size),
       alignment(align),
@@ -2485,7 +2413,7 @@ export const Tab: FC<PropsWithChildren<TabProps>> = ({
   children,
   ...props
 }) => (
-  <li className={cls<Bulma>(className as Bulma, { "is-active": isActive })}>
+  <li className={cls<string>(className, { "is-active": isActive })}>
     <a {...props}>{children}</a>
   </li>
 )
@@ -2524,8 +2452,8 @@ export const Tag: FC<PropsWithChildren<TagProps>> = ({
   ...props
 }) => (
   <span
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "tag",
       is(color),
       is(variant),
@@ -2588,7 +2516,7 @@ export const Tags: FC<PropsWithChildren<TagsProps>> = ({
   ...props
 }) => (
   <div
-    className={cls<Bulma>(className as Bulma, "tags", are(size), {
+    className={cls<string>(className, "tags", are(size), {
       "has-addons": hasAddons
     })}
     {...props}
@@ -2620,8 +2548,8 @@ export const Textarea: FC<TextareaProps> = ({
   ...props
 }) => (
   <textarea
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "textarea",
       is(color),
       is(size),
@@ -2682,8 +2610,8 @@ export const Title: FC<PropsWithChildren<TitleProps>> = ({
   ...props
 }) => (
   <Tag
-    className={cls<Bulma>(
-      className as Bulma,
+    className={cls<string>(
+      className,
       "title",
       is ? `is-${is}` : undefined,
       {
