@@ -622,7 +622,6 @@ export const Container: FC<PropsWithChildren<ContainerProps>> = ({
       {
         "is-fluid": isFluid,
         "is-fullhd": isFullhd,
-        // @ts-ignore Bulma generated types do not contain `is-max-desktop`.
         "is-max-desktop": isMax == "desktop",
         "is-max-widescreen": isMax == "widescreen",
         "is-widescreen": isWidescreen
@@ -1940,10 +1939,7 @@ export const NavbarLink: FC<PropsWithChildren<NavbarLinkProps>> = ({
     className={cls<string>(
       className,
       "navbar-link",
-      {
-        // @ts-ignore Bulma generated types do not contain `is-arrowless`.
-        "is-arrowless": isArrowless
-      },
+      { "is-arrowless": isArrowless },
       bulma
     )}
     {...props}

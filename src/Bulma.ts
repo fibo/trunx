@@ -1,5 +1,4 @@
-// This file is auto-generated with postcss-ts-classnames.
-
+// This file is auto-generated
 export type Bulma =
   | "are-large"
   | "are-medium"
@@ -1321,6 +1320,7 @@ export type Bulma =
   | "has-text-warning-soft"
   | "has-text-warning-soft-invert"
   | "has-text-weight-bold"
+  | "has-text-weight-extrabold"
   | "has-text-weight-light"
   | "has-text-weight-medium"
   | "has-text-weight-normal"
