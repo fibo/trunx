@@ -20,8 +20,7 @@ const minifiedClassnames = originalClassnames
   .replace(/; /g, ";")
   .replace(/ &&/g, "&&")
   .replace(/&& /g, "&&")
-  .replace(/if \(/g, "if(")
-  .replace(/\) return/g, ")return")
+  .replace(/ \+ /g, "+")
 
 const minifiedComponents = originalComponents
   .replace(/\{\n/g, "{")

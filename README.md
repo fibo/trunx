@@ -215,7 +215,7 @@ classnames<T>("foo", "quz") // ERROR: not assignable to type ClassnamesArg<T>[]
 ```
 
 Notice that you can use Trunx without React! It can be used with any framework as well as with _Web Components_.
-The _classnames.js_ is only 299 bytes and can be imported directly with
+The _classnames.js_ is only 207 bytes and can be imported directly with
 
 ```js
 import { classnames } from "trunx/classnames"
@@ -304,7 +304,7 @@ export function Button({ children, ...props }: PropsWithChildren<ButtonProps>) {
 
 Trunx is compatible with [Preact](https://preactjs.com/). It is possible to alias `react/jsx-runtime` to Preact equivalent and Trunx will work out of the box. For instance if you are using esbuild, add these aliases to your `build` options
 
-```
+```js
 alias: {
   'react': 'preact/compat',
   'react-dom/test-utils': 'preact/test-utils',
