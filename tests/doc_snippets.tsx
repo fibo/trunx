@@ -71,6 +71,7 @@ import {
   Span,
   Tab,
   Tabs,
+  Table,
   Tag,
   Tags,
   Textarea,
@@ -427,6 +428,14 @@ export function Snippets() {
 
       <Subtitle is={3}>Subtitle 3</Subtitle>
 
+      <Table bulma={["is-striped", "is-hoverable"]}></Table>
+
+      <Tabs>
+        <Tab isActive>Pictures</Tab>
+        <Tab>Music</Tab>
+        <Tab>Videos</Tab>
+      </Tabs>
+
       <Tag color="primary" variant="light" size="medium">
         v1.0.0
       </Tag>
@@ -435,12 +444,6 @@ export function Snippets() {
         Hello
         <Delete size="small" />
       </Tag>
-
-      <Tabs>
-        <Tab isActive>Pictures</Tab>
-        <Tab>Music</Tab>
-        <Tab>Videos</Tab>
-      </Tabs>
 
       <Tags size="large">
         <Tag>All</Tag>

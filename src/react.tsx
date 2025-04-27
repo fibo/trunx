@@ -111,9 +111,7 @@ const skel = (
  * Renders anchor tag, has `bulma` prop.
  *
  * @example
- * ```tsx
  * <A href="https://example.com" bulma="is-underlined">Website</A>
- * ```
  */
 export const A: FC<PropsWithChildren<AProps>> = ({
   bulma,
@@ -130,17 +128,13 @@ export type AProps = AnchorHTMLAttributes<HTMLAnchorElement> & BulmaProp
 /**
  * Renders div tag, has `bulma` prop.
  *
- * @example Block
- * ```tsx
+ * @example Block.
  * <Div bulma="block"></Div>
- * ```
  *
- * @example Skeleton block
- * ```tsx
+ * @example Skeleton block.
  * <Div bulma={{"skeleton-block": true}}>
  *   Lorem ipsum
  * </Div>
- * ```
  */
 export const Div: FC<PropsWithChildren<DivProps>> = ({
   bulma,
@@ -158,9 +152,7 @@ export type DivProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  * Renders p tag, has `bulma` prop.
  *
  * @example
- * ```tsx
  * <P bulma="has-text-grey">Lorem ipsum...</P>
- * ```
  */
 export const P: FC<PropsWithChildren<PProps>> = ({
   bulma,
@@ -178,9 +170,7 @@ export type PProps = HTMLAttributes<HTMLParagraphElement> & BulmaProp
  * Renders span tag, has `bulma` prop.
  *
  * @example
- * ```tsx
  * <Span bulma={["has-text-grey", "is-capitalized"]}>hello</Span>
- * ```
  */
 export const Span: FC<PropsWithChildren<SpanProps>> = ({
   bulma,
@@ -198,14 +188,12 @@ export type SpanProps = HTMLAttributes<HTMLSpanElement> & BulmaProp
  * Renders ul tag, has `bulma` prop.
  *
  * @example
- * ```tsx
  * <Menu>
  *   <Ul bulma="menu-list">
  *     <li><a>Dashboard</a></li>
  *     <li><a>Customers</a></li>
  *   </Ul>
  * </Menu>
- * ```
  */
 export const Ul: FC<PropsWithChildren<UlProps>> = ({
   bulma,
@@ -226,18 +214,15 @@ export type UlProps = HTMLAttributes<HTMLUListElement> & BulmaProp
  * A breadcrumb component to improve navigation experience.
  *
  * @example
- * ```tsx
  * <Breadcrumb align="center" aria-label="breadcrumbs">
  *   <BreadcrumbItem href="https://bulma.io/">Bulma</BreadcrumbItem>
  *   <BreadcrumbItem isActive>Trunx</BreadcrumbItem>
  * </Breadcrumb>
- * ```
  *
- * @example Alternative separator and size
- * ```tsx
+ * @example Alternative separator and size.
  * <Breadcrumb separator="dot" size="small">
+ *   <BreadcrumbItem >foo</BreadcrumbItem>
  * </Breadcrumb>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/components/breadcrumb/)
  */
@@ -287,10 +272,11 @@ export type BreadcrumbItemProps = AnchorHTMLAttributes<HTMLAnchorElement> &
 /**
  * The classic button, in different colors, sizes, and states.
  *
- * @example
- * ```tsx
- * <Button color="primary" variant="light" isLoading>Login</Button>
- * ```
+ * @example A primary button.
+ * <Button color="primary" variant="light">Save</Button>
+ *
+ * @example A loading button.
+ * <Button isLoading={loginIsPending}>Login</Button>
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/button/)
  */
@@ -352,13 +338,11 @@ export type ButtonProps = Omit<
 /**
  * Can create a list of buttons.
  *
- * @example
- * ```tsx
+ * @example Small buttons.
  * <Buttons size="small">
  *   <Button color="success">Save</Button>
  *   <Button>Cancel</Button>
  * </Buttons>
- * ```
  */
 export const Buttons: FC<PropsWithChildren<ButtonsProps>> = ({
   size,
@@ -382,7 +366,6 @@ export type ButtonsProps = HTMLAttributes<HTMLDivElement> &
  * Grid cell.
  *
  * @example
- * ```tsx
  * <FixedGrid bulma="has-4-cols">
  *   <Cell>cell 1</Cell>
  *   <Cell bulma="is-col-start-3">cell 2</Cell>
@@ -391,7 +374,6 @@ export type ButtonsProps = HTMLAttributes<HTMLDivElement> &
  *   <Cell>cell 5</Cell>
  *   <Cell>cell 6</Cell>
  * </FixedGrid>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/grid/grid-cells/)
  *
@@ -413,12 +395,13 @@ export type CellProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  * An all-around flexible and composable component.
  *
  * @example
- * ```tsx
  * <Card>
  *   <CardHeader>
  *     <CardHeaderTitle>Title</CardHeaderTitle>
  *     <CardHeaderIcon>
- *       <Icon><i className="fas fa-angle-down" aria-hidden="true" /></Icon>
+ *       <Icon>
+ *         <i className="fas fa-angle-down" aria-hidden="true" />
+ *       </Icon>
  *     </CardHeaderIcon>
  *   </CardHeader>
  *   <CardContent>
@@ -429,7 +412,6 @@ export type CellProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  *     <A bulma="card-footer-item">Delete</A>
  *   </CardFooter>
  * </Card>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/components/card/)
  */
@@ -518,11 +500,9 @@ export type CardHeaderTitleProps = HTMLAttributes<HTMLParagraphElement> &
  * The 2-state checkbox in its native format
  *
  * @example
- * ```tsx
  * <Checkbox disabled>
  *   <Span bulma="ml-2">Save my preferences</Span>
  * </Checkbox>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/form/checkbox/)
  */
@@ -595,13 +575,11 @@ export type ColumnsProps = HTMLAttributes<HTMLDivElement> &
  * A simple container to center your content horizontally.
  *
  * @example
- * ```tsx
  * <Container isFluid>
  *   <Notification color="primary">
  *     This container is <strong>fluid</strong>
  *   </Notification>
  * </Container>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/layout/container/)
  */
@@ -738,7 +716,6 @@ export type DeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp
  * @see [bulma docs](https://bulma.io/documentation/components/dropdown/)
  *
  * @example
- * ```tsx
  * <Dropdown isActive>
  *   <DropdownTrigger aria-haspopup="true" aria-controls="my-dropdown-menu">
  *     <span>Dropdown button</span>
@@ -754,7 +731,6 @@ export type DeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp
  *      <DropdownItem href="#">With a divider</DropdownItem>
  *   </DropdownMenu>
  * </Dropdown>
- * ```
  */
 export const Dropdown: FC<PropsWithChildren<DropdownProps>> = ({
   isActive,
@@ -798,17 +774,13 @@ export const DropdownDivider: FC = () => <hr className="dropdown-divider" />
 /**
  * It is used inside a dropdown menu as an anchor link.
  *
- * @example
- * ```tsx
+ * @example A common dropdown item is an anchor link.
  * <DropdownItem isActive href="#">Dropdown item</DropdownItem>
- * ```
  *
- * @example Use a div to insert almost any type of content
- * ```tsx
+ * @example Use a div to insert almost any type of content.
  * <Div bulma="dropdown-item">
  *   <p>You can insert content here.</p>
  * </Div>
- * ```
  */
 export const DropdownItem: FC<PropsWithChildren<DropdownItemProps>> = ({
   isActive,
@@ -862,17 +834,15 @@ export type DropdownTriggerProps = ButtonHTMLAttributes<HTMLButtonElement>
 /**
  * Form field.
  *
+ * @see [bulma docs](https://bulma.io/documentation/form/general/#form-field)
+ *
  * @example
- * ```tsx
  * <Field>
  *   <Label>Name</Label>
  *   <Control>
  *     <Input placeholder="e.g Alex Smith" />
  *   </Control>
  * </Field>
- * ```
- *
- * @see [bulma docs](https://bulma.io/documentation/form/general/#form-field)
  */
 export const Field: FC<PropsWithChildren<FieldProps>> = ({
   hasAddons,
@@ -928,8 +898,9 @@ export type FieldBodyProps = HTMLAttributes<HTMLDivElement> & BulmaProp
 /**
  * A horizontal form control.
  *
+ * @see [bulma docs](https://bulma.io/documentation/form/general/#horizontal-form)
+ *
  * @example
- * ```tsx
  * <FieldHorizontal>
  *   <FieldLabel size="normal">
  *     <Label>From</Label>
@@ -947,9 +918,6 @@ export type FieldBodyProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  *     </Field>
  *   </FieldBody>
  * </FieldHorizontal>
- * ```
- *
- * @see [bulma docs](https://bulma.io/documentation/form/general/#horizontal-form)
  */
 export const FieldHorizontal: FC<PropsWithChildren<FieldHorizontalProps>> = ({
   bulma,
@@ -989,7 +957,6 @@ export type FieldLabelProps = HTMLAttributes<HTMLDivElement> &
  * A custom file upload input.
  *
  * @example
- * ```tsx
  * <FileUpload
  *   cta={<>
  *     <FileIcon><i className="fas fa-upload"></i></FileIcon>
@@ -999,7 +966,6 @@ export type FieldLabelProps = HTMLAttributes<HTMLDivElement> &
  *   accept="image/png, image/jpeg"
  *   name="avatar"
  * />
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/form/file/)
  */
@@ -1082,12 +1048,10 @@ export type FileLabelProps = HTMLAttributes<HTMLSpanElement> & BulmaProp
  * A customizable 2D fixed grid.
  *
  * @example
- * ```tsx
  * <FixedGrid hasAutoCount>
  *   <Cell>cell 1</Cell>
  *   <Cell>cell 2</Cell>
  * </FixedGrid>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/grid/fixed-grid/)
  */
@@ -1117,7 +1081,6 @@ export type FixedGridProps = HTMLAttributes<HTMLDivElement> &
 /** A simple responsive footer.
  *
  * @example
- * ```tsx
  * <Footer>
  *   <Content bulma="has-text-centered">
  *     <p>
@@ -1127,7 +1090,6 @@ export type FixedGridProps = HTMLAttributes<HTMLDivElement> &
  *     </p>
  *   </Content>
  * </Footer>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/layout/footer/)
  */
@@ -1147,12 +1109,10 @@ export type FooterProps = HTMLAttributes<HTMLElement> & BulmaProp
  * A smart 2D grid with flexible columns.
  *
  * @example
- * ```tsx
  * <Grid bulma={["is-col-min-4", "is-gap-2"]}>
  *   <Cell>cell 1</Cell>
  *   <Cell>cell 2</Cell>
  * </Grid>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/grid/smart-grid/)
  */
@@ -1186,25 +1146,21 @@ export type HelpProps = HTMLAttributes<HTMLParagraphElement> &
 /**
  * An imposing hero banner to showcase something.
  *
- * @example
- * ```tsx
+ * @example A small hero.
  * <Hero size="small">
  *   <HeroBody>
  *     <Title>Title</Title>
  *     <Subtitle>Subtitle</Subtitle>
  *   </HeroBody>
  * </Hero>
- * ```
  *
- * @example Half height hero
- * ```tsx
+ * @example Half height hero.
  * <Hero color="success" isHalfheight>
  *   <HeroBody>
  *     <Title>Title</Title>
  *     <Subtitle>Subtitle</Subtitle>
  *   </HeroBody>
  * </Hero>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/layout/hero/)
  */
@@ -1290,11 +1246,9 @@ export type HeroHeadProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  * A container for any type of icon.
  *
  * @example
- * ```tsx
  * <Icon>
  *   <i className="fas fa-home"></i>
  * </Icon>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/icon/).
  */
@@ -1331,14 +1285,12 @@ export type IconProps = HTMLAttributes<HTMLSpanElement> &
  * Combine an icon with text.
  *
  * @example
- * ```tsx
  * <IconText>
  *   <Icon bulma="has-text-primary">
  *     <i className="fas fa-home"></i>
  *   </Icon>
  *   <span>Home</span>
  * </IconText>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/icon/#icon-text)
  */
@@ -1359,22 +1311,17 @@ export type IconTextProps = HTMLAttributes<HTMLSpanElement> &
 /**
  * A container for responsive images.
  *
- * @example Fixed square images
- * ```tsx
+ * @example Fixed square images.
  * <Image dimension="128x128">
  *   <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
  * </Image>
- * ```
  *
- * @example Rounded images
- * ```tsx
+ * @example Rounded images.
  * <Image dimension="128x128">
  *   <img className="is-rounded" src="https://bulma.io/assets/images/placeholders/256x256.png" />
  * </Image>
- * ```
  *
- * @example Arbitrary ratios with any element
- * ```tsx
+ * @example Arbitrary ratios with any element.
  * <Image ratio="16by9">
  *   <iframe
  *     className="has-ratio"
@@ -1384,7 +1331,6 @@ export type IconTextProps = HTMLAttributes<HTMLSpanElement> &
  *     allowFullScreen
  *   />
  * </Image>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/image/)
  */
@@ -1492,7 +1438,6 @@ export type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & BulmaProp
  * The famous media object prevalent in social media interfaces.
  *
  * @example
- * ```tsx
  * <Media>
  *   <MediaLeft dimension="64x64">
  *     <img src="https://bulma.io/assets/images/placeholders/128x128.png" />
@@ -1504,7 +1449,6 @@ export type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & BulmaProp
  *     <Delete />
  *   </MediaRight>
  * </Media>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/layout/media-object/)
  */
@@ -1610,12 +1554,9 @@ export type MenuListProps = HTMLAttributes<HTMLUListElement> & BulmaProp
  * Colored message blocks, to emphasize part of your page.
  *
  * @example
- * ```tsx
  * <Message color="danger" size="large">Lorem ipsum...</Message>
- * ```
  *
  * @example Optional header can hold a title and a Delete component.
- * ```tsx
  * <Message color="dark"
  *   header={
  *     <>
@@ -1624,7 +1565,6 @@ export type MenuListProps = HTMLAttributes<HTMLUListElement> & BulmaProp
  *     </>
  *   }
  * >Lorem ipsum...</Message>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/components/message/)
  */
@@ -1656,7 +1596,7 @@ export type MessageProps = Omit<HTMLAttributes<HTMLElement>, "color"> &
  *
  * Renders div tag with modal class.
  *
- * ```tsx
+ * @example
  * <Modal isActive={modalIsActive}>
  *   <ModalBackground onClick={closeModal} />
  *   <ModalContent>
@@ -1664,7 +1604,6 @@ export type MessageProps = Omit<HTMLAttributes<HTMLElement>, "color"> &
  *   </ModalContent>
  *   <ModalClose />
  * </Modal>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/components/modal/)
  */
@@ -1711,14 +1650,12 @@ export type ModalBackgroundProps = HTMLAttributes<HTMLDivElement>
  * Renders div tag with modal-card class.
  *
  * @example
- * ```tsx
  * <ModalCard
  *   head="Modal title"
  *   foot={<Buttons><Button>Ok</Button></Buttons>}
  * >
  *   Content ...
  * </ModalCard>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/components/modal/#modal-card)
  */
@@ -1955,7 +1892,6 @@ export type NavbarLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
  * The NavbarMenu is the counterpart of the NavbarBrand. As such, it must appear as a direct child of Navbar, as a sibling of NavbarBrand.
  *
  * @example
- * ```tsx
  * <NavbarMenu>
  *   <NavbarStart>
  *     // Navbar items
@@ -1964,7 +1900,6 @@ export type NavbarLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
  *     // Navbar items
  *   </NavbarEnd>
  * </NavbarMenu>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/components/navbar/#navbar-menu)
  */
@@ -1988,12 +1923,10 @@ export const NavbarStart: FC<PropsWithChildren> = ({ children }) => (
  * Renders div tag with notification class.
  *
  * @example
- * ```tsx
  * <Notification color="info" variant="light">
  *   <Delete />
  *   Lorem ipsum...
  * </Notification>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/notification/)
  */
@@ -2144,9 +2077,7 @@ export type PaginationPreviousProps = AnchorHTMLAttributes<HTMLAnchorElement> &
  * Native HTML progress bars.
  *
  * @example
- * ```tsx
  * <Progress color="primary" size="small" value="42" max="100">42%</Progress>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/progress/)
  */
@@ -2184,11 +2115,9 @@ export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> &
  * A simple container to divide your page into sections.
  *
  * @example
- * ```tsx
  * <Section size="medium">
  *   <Title tag="h2">Title</Title>
  * </Section>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/layout/section/)
  */
@@ -2214,7 +2143,6 @@ export type SectionProps = HTMLAttributes<HTMLElement> &
  * The browser built-in select dropdown, styled accordingly.
  *
  * @example
- * ```tsx
  * <Select
  *   size="large"
  *   options={[
@@ -2222,7 +2150,6 @@ export type SectionProps = HTMLAttributes<HTMLElement> &
  *     { value: "B", label: "Banana" },
  *   ]}
  * />
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/form/select/)
  */
@@ -2270,9 +2197,7 @@ export type SelectProps = Omit<
  * Is a loading element which resembles a paragraph.
  *
  * @example
- * ```tsx
  * <SkeletonLines num={5} />
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/features/skeletons/#skeleton-lines)
  */
@@ -2321,15 +2246,12 @@ export type SubtitleProps = Omit<HTMLAttributes<HTMLElement>, "is"> &
 /**
  * The inevitable HTML table, with special case cells.
  *
- * It <strong>always</strong> renders a <em>scrollable table</em>, that is a table inside a table container like this markup.
+ * @example
+ * <Table bulma={["is-striped", "is-hoverable"]}>
+ * </Table>
  *
- * ```html
- * <div class="table-container">
- *  <table class="table">
- *    <!-- Your table content -->
- *  </table>
- * </div>
- * ```
+ * It <strong>always</strong> renders a <em>scrollable table</em>,
+ * by wrapping a <code>table</code> in a <code>table-container</code> element.
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/table/)
  */
@@ -2351,13 +2273,11 @@ export type TableProps = TableHTMLAttributes<HTMLTableElement> & BulmaProp
  * Simple responsive horizontal navigation tabs, with different styles.
  *
  * @example
- * ```tsx
  * <Tabs>
- *     <Tab isActive>Pictures</Tab>
- *     <Tab>Music</Tab>
- *     <Tab>Videos</Tab>
+ *   <Tab isActive>Pictures</Tab>
+ *   <Tab>Music</Tab>
+ *   <Tab>Videos</Tab>
  * </Tabs>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/components/tabs/)
  */
@@ -2420,19 +2340,15 @@ export type TabProps = AnchorHTMLAttributes<HTMLAnchorElement> & IsActiveProp
  * Small tag labels to insert anywhere.
  *
  * @example
- * ```tsx
  * <Tag color="primary" variant="light">
  *   v1.0.0
  * </Tag>
- * ```
  *
  * @example Append a delete button.
- * ```tsx
  * <Tag color="warning" size="medium">
  *   Hello
- *    <Delete size="small" />
+ *   <Delete size="small" />
  * </Tag>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/tag/).
  */
@@ -2478,30 +2394,24 @@ export type TagProps = HTMLAttributes<HTMLSpanElement> &
 /**
  * List of tags.
  *
- * @example Size.
- * ```tsx
+ * @example Large size tags.
  * <Tags size="large">
  *   <Tag>All</Tag>
  *   <Tag>Medium</Tag>
  *   <Tag>Size</Tag>
  * </Tags>
- * ```
  *
  * @example Attach tags together.
- * ```tsx
  * <Tags hasAddons>
  *   <Tag>package</Tag>
  *   <Tag color="primary">trunx</Tag>
  * </Tags>
- * ```
  *
  * @example Attach a text tag with a delete tag together.
- * ```tsx
  * <Tags hasAddons>
  *   <Tag color="danger">Alex Smith</Tag>
  *   <A bulma={["tag", "is-delete"]} />
  * </Tags>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/tag/#list-of-tags)
  */
@@ -2529,9 +2439,7 @@ export type TagsProps = HTMLAttributes<HTMLDivElement> &
  * The multiline textarea and its variations.
  *
  * @example
- * ```tsx
  * <Textarea size="small" color="info" />
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/form/textarea/)
  */
@@ -2568,30 +2476,23 @@ export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
  * Simple headings to add depth to your page.
  *
  * @example There are two types of heading: Title and Subtitle.
- * ```ts
  * <Title tag="h1">Title</Title>
  * <Subtitle tag="h2">Subtitle</Subtitle>
- * ```
  *
- * @example Sizes
- * ```ts
+ * @example All title sizes.
  * <Title is={1}>Title 1</Title>
  * <Title is={2}>Title 2</Title>
  * <Title is={3}>Title 3 (default)</Title>
  * <Title is={4}>Title 4</Title>
  * <Title is={5}>Title 5</Title>
  * <Title is={6}>Title 6</Title>
- * ```
+ *
  * @example Maintain the normal spacing between titles and subtitles.
- * ```ts
  * <Title is={1} isSpaced>Title 1</Title>
  * <Subtitle is={3}>Subtitle 3</Subtitle>
- * ```
  *
- * @example Skeleton
- * ```ts
+ * @example Title that has skeleton.
  * <Title hasSkeleton>Title</Title>
- * ```
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/title/)
  */
