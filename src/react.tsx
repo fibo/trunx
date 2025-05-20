@@ -1,5 +1,6 @@
 import {
   FC,
+  JSX,
   PropsWithChildren,
   ReactNode,
   // HTML related

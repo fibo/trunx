@@ -28,13 +28,13 @@
   },
   "devDependencies": {
     "@types/node": "^22",
-    "@types/react": "^18",
+    "@types/react": "^19",
     "bulma": "^1",
     "postcss": "^8",
     "postcss-selector-parser": "^7",
     "pre-commit": "^1",
     "prettier": "^3",
-    "react": "^18",
+    "react": "^19",
     "read-file-utf8": "^3",
     "typescript": "^5"
   },
