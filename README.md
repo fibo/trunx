@@ -15,7 +15,6 @@
   - [Bulma type](#bulma-type)
 - [How to](#how-to)
   - [Use Trunx with Vite](#use-trunx-with-vite)
-  - [Create a custom component](#create-a-custom-component)
   - [Use Trunx with Preact](#use-trunx-with-preact)
 - [Motivation](#motivation)
 - [License](#license)
@@ -263,41 +262,6 @@ Add a `Message` like this in your JSX:
 
 ```tsx
 <Message color="primary">Hello Trunx</Message>
-```
-
-### Create a custom component
-
-Suppose you want to create your custom button that is always rounded and has only `success` and `warning` colors. You may also want to set your custom colors.
-To do so, your `src/main.scss` could be something like this:
-
-```scss
-@use "bulma/sass" with (
-  $success: #28a03c,
-  $warning: #f45a50
-);
-```
-
-Then your button component can import the `ButtonProps` from `trunx` and customize them,
-omitting `isRounded` and narrowing the `color` prop to only accept `success` and `warning` colors. Your component can look like this:
-
-```tsx
-import { PropsWithChildren } from "react"
-import {
-  Button as _Button,
-  ButtonProps as _ButtonProps,
-  ColorProp
-} from "trunx"
-
-type ButtonProps = Omit<_ButtonProps, "color" | "isRounded"> &
-  ColorProp<"warning" | "success">
-
-export function Button({ children, ...props }: PropsWithChildren<ButtonProps>) {
-  return (
-    <_Button isRounded {...props}>
-      {children}
-    </_Button>
-  )
-}
 ```
 
 ### Use Trunx with Preact

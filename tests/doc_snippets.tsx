@@ -4,7 +4,7 @@
 //
 //////////////////////////////////////////////////////////////////////
 
-import { PropsWithChildren, useCallback, useState } from "react"
+import { useCallback, useState } from "react"
 import type { Bulma } from "../dist/index.js"
 import {
   A,
@@ -81,8 +81,7 @@ import {
 } from "../dist/index.js"
 import {
   Button as _Button,
-  ButtonProps as _ButtonProps,
-  ColorProp
+  ButtonProps as _ButtonProps
 } from "../dist/index.js"
 import { classnames as classnames2 } from "../dist/classnames.js"
 
@@ -118,20 +117,6 @@ export function OtherReadmeSnippets() {
 
       <Message color="primary">Hello trunx</Message>
     </>
-  )
-}
-
-type MyButtonProps = Omit<_ButtonProps, "color" | "isRounded"> &
-  ColorProp<"warning" | "success">
-
-export function MyButton({
-  children,
-  ...props
-}: PropsWithChildren<MyButtonProps>) {
-  return (
-    <_Button isRounded {...props}>
-      {children}
-    </_Button>
   )
 }
 
