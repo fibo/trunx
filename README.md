@@ -15,6 +15,8 @@
   - [Bulma type](#bulma-type)
 - [How to](#how-to)
   - [Use Trunx with Vite](#use-trunx-with-vite)
+  - [Bulma customization](#bulma-customization)
+  - [Bulma modularity](#bulma-modularity)
   - [Use Trunx with Preact](#use-trunx-with-preact)
 - [Motivation](#motivation)
 - [License](#license)
@@ -244,13 +246,23 @@ export function SuccessText({ text }: { text: string }) {
 
 Assuming you have a [Vite](https://vitejs.dev/) project with React and TypeScript, of course first of all install `trunx` and `bulma`.
 
-Then create a `src/main.scss`, you can import all Bulma to get started.
+```sh
+npm install trunx bulma
+```
+
+You also need to install Sass, currenty Vite is suggesting to do it with
+
+```sh
+npm install sass-embedded --save-dev
+```
+
+Then create a `src/main.scss` and import it in your entry file, e.g. `src/main.tsx`, with something like `import "./main.scss"`
+
+In the _main.scss_ file you can import all Bulma to get started.
 
 ```scss
 @use "bulma/sass";
 ```
-
-Import it in your entry file, e.g. `src/main.tsx`, with something like `import "./main.scss"` and you are done.
 
 Try it out! Import `trunx` in your `src/App.tsx`:
 
@@ -264,20 +276,39 @@ Add a `Message` like this in your JSX:
 <Message color="primary">Hello Trunx</Message>
 ```
 
-### Use Trunx with Preact
+### Bulma customization
 
-Trunx is compatible with [Preact](https://preactjs.com/). It is possible to alias `react/jsx-runtime` to Preact equivalent and Trunx will work out of the box. For instance if you are using esbuild, add these aliases to your `build` options
+Of course you want to customize Bulma variables, it is recommended to use the official Bulma _Customizer_: go on Bulma website and click on _Open Customizer_ button (at bottom right of the page). Once you are done with you settings, click on _Export_ and copy the variables in your `src/main.scss` file, after the `@use "bulma/sass"` line. For example
 
-```js
-alias: {
-  'react': 'preact/compat',
-  'react-dom/test-utils': 'preact/test-utils',
-  'react-dom': 'preact/compat',
-  'react/jsx-runtime': 'preact/jsx-runtime',
+```scss
+@use "bulma/sass";
+
+:root {
+  --bulma-primary-h: 200deg;
 }
 ```
 
-See also on official Preact documentation [how to alias React to Preact](https://preactjs.com/guide/v10/getting-started#aliasing-react-to-preact).
+### Bulma modularity
+
+In case you want to import only the Bulma modules you yse, instead of `@use "bulma/sass"` you can use something like this:
+
+```scss
+// Load Bulma's base styles and themes (including the minireset)
+@use "bulma/sass/base";
+@use "bulma/sass/themes";
+
+// Load other Bulma components
+@use "bulma/sass/elements/button";
+@use "bulma/sass/elements/message";
+// etc.
+```
+
+Check out the [Modularity in Bulma](https://bulma.io/documentation/start/modular/) official documentation for details.
+
+### Use Trunx with Preact
+
+Trunx is compatible with [Preact](https://preactjs.com/).
+In the Vite example above, just choose the preact template when you create the Vite app. Everything will work out of the box!
 
 ## Motivation
 
