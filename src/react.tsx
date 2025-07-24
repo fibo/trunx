@@ -1963,6 +1963,19 @@ export type NotificationProps = HTMLAttributes<HTMLDivElement> &
 /**
  * A responsive, usable, and flexible pagination.
  *
+ * @example
+ * <Pagination>
+ *   <PaginationPrevious>Previous</PaginationPrevious>
+ *   <PaginationNext>Next Page</PaginationNext>
+ *   <PaginationList>
+ *     <PaginationLink aria-label="Goto page 1">1</PaginationLink>
+ *     <PaginationEllipsis />
+ *     <PaginationLink aria-label="Goto page 45">45</PaginationLink>
+ *     <PaginationLink isCurrent aria-current="page" aria-label="Goto page 46">46</PaginationLink>
+ *     <PaginationLink aria-label="Goto page 47">47</PaginationLink>
+ *   </PaginationList>
+ * </Pagination>
+ *
  * @see [bulma docs](https://bulma.io/documentation/components/pagination/)
  */
 export const Pagination: FC<PropsWithChildren<PaginationProps>> = ({
@@ -1993,10 +2006,14 @@ export type PaginationProps = HTMLAttributes<HTMLElement> &
   AlignProp<"center" | "right"> &
   SizeProp
 
+/** @see {@link Pagination} */
 export const PaginationEllipsis: FC = () => (
-  <span className="pagination-ellipsis">&hellip;</span>
+  <li>
+    <span className="pagination-ellipsis">&hellip;</span>
+  </li>
 )
 
+/** @see {@link Pagination} */
 export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
   isCurrent,
   bulma,
@@ -2004,22 +2021,25 @@ export const PaginationLink: FC<PropsWithChildren<PaginationLinkProps>> = ({
   children,
   ...props
 }) => (
-  <a
-    className={cls<string>(
-      className,
-      "pagination-link",
-      { "is-current": isCurrent },
-      bulma
-    )}
-    {...props}
-  >
-    {children}
-  </a>
+  <li>
+    <a
+      className={cls<string>(
+        className,
+        "pagination-link",
+        { "is-current": isCurrent },
+        bulma
+      )}
+      {...props}
+    >
+      {children}
+    </a>
+  </li>
 )
 export type PaginationLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   BulmaProp &
   Partial<{ isCurrent: boolean }>
 
+/** @see {@link Pagination} */
 export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({
   bulma,
   className,
@@ -2032,6 +2052,7 @@ export const PaginationList: FC<PropsWithChildren<PaginationListProps>> = ({
 )
 export type PaginationListProps = HTMLAttributes<HTMLUListElement> & BulmaProp
 
+/** @see {@link Pagination} */
 export const PaginationNext: FC<PropsWithChildren<PaginationNextProps>> = ({
   isDisabled,
   bulma,
@@ -2055,6 +2076,7 @@ export type PaginationNextProps = AnchorHTMLAttributes<HTMLAnchorElement> &
   BulmaProp &
   Partial<{ isDisabled: boolean }>
 
+/** @see {@link Pagination} */
 export const PaginationPrevious: FC<
   PropsWithChildren<PaginationPreviousProps>
 > = ({ isDisabled, bulma, className, children, ...props }) => (
