@@ -19,9 +19,10 @@
     "build": "tsc --project ./tsconfig.build.json --removeComments && tsc --project ./tsconfig.build.json --declaration --emitDeclarationOnly",
     "check_types": "tsc --project ./tsconfig.json --noEmit",
     "generate_bulma_types": "node --env-file .typescript.env scripts/generate_bulma_types.ts",
+    "generate_tsdoc_examples_test": "node scripts/generate_tsdoc_examples_test.js",
     "minify": "node scripts/minify.js",
     "postbuild": "npm run minify",
-    "pretest": "npm run build",
+    "pretest": "npm run build && npm run generate_tsdoc_examples_test",
     "prettier": "prettier --write .",
     "prettier--check": "prettier --check .",
     "test": "node --test --env-file .typescript.env tests/*_test.ts"

@@ -277,7 +277,7 @@ export type BreadcrumbItemProps = AnchorHTMLAttributes<HTMLAnchorElement> &
  * <Button color="primary" variant="light">Save</Button>
  *
  * @example A loading button.
- * <Button isLoading={loginIsPending}>Login</Button>
+ * <Button isLoading>Login</Button>
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/button/)
  */
@@ -1598,8 +1598,8 @@ export type MessageProps = Omit<HTMLAttributes<HTMLElement>, "color"> &
  * Renders div tag with modal class.
  *
  * @example
- * <Modal isActive={modalIsActive}>
- *   <ModalBackground onClick={closeModal} />
+ * <Modal>
+ *   <ModalBackground />
  *   <ModalContent>
  *     Modal content here
  *   </ModalContent>
@@ -2273,6 +2273,7 @@ export type SubtitleProps = Omit<HTMLAttributes<HTMLElement>, "is"> &
  * <Table bulma={["is-striped", "is-hoverable"]}>
  * </Table>
  *
+ * @remarks
  * It <strong>always</strong> renders a <em>scrollable table</em>,
  * by wrapping a <code>table</code> in a <code>table-container</code> element.
  *
@@ -2461,7 +2462,7 @@ export type TagsProps = HTMLAttributes<HTMLDivElement> &
 /**
  * The multiline textarea and its variations.
  *
- * @example
+ * @example Small textarea with color.
  * <Textarea size="small" color="info" />
  *
  * @see [bulma docs](https://bulma.io/documentation/form/textarea/)
@@ -2499,20 +2500,26 @@ export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
  * Simple headings to add depth to your page.
  *
  * @example There are two types of heading: Title and Subtitle.
- * <Title tag="h1">Title</Title>
- * <Subtitle tag="h2">Subtitle</Subtitle>
+ * <>
+ *   <Title tag="h1">Title</Title>
+ *   <Subtitle tag="h2">Subtitle</Subtitle>
+ * </>
  *
  * @example All title sizes.
- * <Title is={1}>Title 1</Title>
- * <Title is={2}>Title 2</Title>
- * <Title is={3}>Title 3 (default)</Title>
- * <Title is={4}>Title 4</Title>
- * <Title is={5}>Title 5</Title>
- * <Title is={6}>Title 6</Title>
+ * <>
+ *   <Title is={1}>Title 1</Title>
+ *   <Title is={2}>Title 2</Title>
+ *   <Title is={3}>Title 3 (default)</Title>
+ *   <Title is={4}>Title 4</Title>
+ *   <Title is={5}>Title 5</Title>
+ *   <Title is={6}>Title 6</Title>
+ * </>
  *
  * @example Maintain the normal spacing between titles and subtitles.
- * <Title is={1} isSpaced>Title 1</Title>
- * <Subtitle is={3}>Subtitle 3</Subtitle>
+ * <>
+ *   <Title is={1} isSpaced>Title 1</Title>
+ *   <Subtitle is={3}>Subtitle 3</Subtitle>
+ * </>
  *
  * @example Title that has skeleton.
  * <Title hasSkeleton>Title</Title>
