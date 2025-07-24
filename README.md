@@ -46,13 +46,13 @@ Almost all Trunx components have a `bulma` prop that accepts:
 - an object which keys are bulma classes, when value is truthy then the class is added: `{ "is-primary": true }`
 - an array of any of the previous: `["button", { "is-primary": true }]`
 
-You know, Trunx is a Super Sayan because it is written in TypeScript. The `bulma` prop can be autocompleted and typos can be avoided thanks to type checking.
+You know, Trunx is a Super Saiyan because it is written in TypeScript. The `bulma` prop can be autocompleted and typos can be avoided thanks to type checking.
 
 <img src="https://fibo.github.io/trunx/media/trunks-sword.png" height="400"/>
 
 #### HTML tag components
 
-Some Trunx components render their homomnym HTML tag.
+Some Trunx components render their homonymous HTML tag.
 You can use the `bulma` prop to style them with Bulma classes.
 
 ```tsx
@@ -79,7 +79,7 @@ List of HTML tags related components:
 
 Trunx provides React components that implement a Bulma element or a Bulma component. This means that they usually add a related Bulma class.
 For example `Button` component renders a button HTML tag with the Bulma `button` class.
-They may have props related to some Bulma class (.e.g. `color`, `size`).
+They may have props related to some Bulma class (e.g. `color`, `size`).
 Most of the Bulma related props start with `is`, `has` and the prop name is just the camel-case version of its related Bulma class.
 For example `isRounded` prop corresponds to `is-rounded` Bulma class.
 
@@ -188,11 +188,11 @@ Components are documented inline with TSDocs. You can configure your editor to d
 
 <img src="https://fibo.github.io/trunx/media/inline-docs.png"/>
 
-Some code snippets use a FontAwesome class, for example `<i className="fas fa-home"></i>`. The icon set is up to you, Trunx do not provide icons.
+Some code snippets use a FontAwesome class, for example `<i className="fas fa-home"></i>`. The icon set is up to you, Trunx does not provide icons.
 
 #### `className` prop
 
-Almost all trunx components support a `className` prop, in case you need to append your custom CSS classes.
+Almost all Trunx components support a `className` prop, in case you need to append your custom CSS classes.
 
 ### `classnames`
 
@@ -250,7 +250,7 @@ Assuming you have a [Vite](https://vitejs.dev/) project with React and TypeScrip
 npm install trunx bulma
 ```
 
-You also need to install Sass, currenty Vite is suggesting to do it with
+You also need to install Sass, currently Vite is suggesting to do it with
 
 ```sh
 npm install sass-embedded --save-dev
@@ -278,7 +278,7 @@ Add a `Message` like this in your JSX:
 
 ### Bulma customization
 
-Of course you want to customize Bulma variables, it is recommended to use the official Bulma _Customizer_: go on Bulma website and click on _Open Customizer_ button (at bottom right of the page). Once you are done with you settings, click on _Export_ and copy the variables in your `src/main.scss` file, after the `@use "bulma/sass"` line. For example
+Of course you want to customize Bulma variables, it is recommended to use the official Bulma _Customizer_: go on the Bulma website and click on the _Open Customizer_ button (at the bottom right of the page). Once you are done with your settings, click on _Export_ and copy the variables to your `src/main.scss` file, after the `@use "bulma/sass"` line. For example
 
 ```scss
 @use "bulma/sass";
@@ -290,7 +290,7 @@ Of course you want to customize Bulma variables, it is recommended to use the of
 
 ### Bulma modularity
 
-In case you want to import only the Bulma modules you yse, instead of `@use "bulma/sass"` you can use something like this:
+In case you want to import only the Bulma modules you use, instead of `@use "bulma/sass"` you can use something like this:
 
 ```scss
 // Load Bulma's base styles and themes (including the minireset)
@@ -317,7 +317,7 @@ That is why I am creating this component library. I hope you enjoy it!
 
 > Trunks (Japanese: トランクス Hepburn: Torankusu) is a fictional character in the Dragon Ball manga series created by Akira Toriyama.
 
-I remember when I was reading the comics and Trunks arrived from the future. He was really powerful and could defeat Frieza in few seconds. One of the best twists of the entire series, in my opinion.
+I remember when I was reading the comics and Trunks arrived from the future. He was really powerful and could defeat Frieza in a few seconds. One of the best twists of the entire series, in my opinion.
 
 ## License
 
