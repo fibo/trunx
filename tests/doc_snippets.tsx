@@ -63,6 +63,12 @@ import {
   NavbarStart,
   Notification,
   P,
+  Pagination,
+  PaginationEllipsis,
+  PaginationLink,
+  PaginationList,
+  PaginationNext,
+  PaginationPrevious,
   Progress,
   Section,
   Select,
@@ -364,8 +370,7 @@ export function Snippets() {
         color="dark"
         header={
           <>
-            {" "}
-            <p>Header</p> <Delete />{" "}
+            <p>Header</p> <Delete />
           </>
         }
       >
@@ -392,6 +397,31 @@ export function Snippets() {
         <Delete />
         Lorem ipsum...
       </Notification>
+
+      <Pagination>
+        <PaginationPrevious>Previous</PaginationPrevious>
+        <PaginationNext>Next Page</PaginationNext>
+        <PaginationList>
+          <PaginationLink href="#" aria-label="Goto page 1">
+            1
+          </PaginationLink>
+          <PaginationEllipsis />
+          <PaginationLink href="#" aria-label="Goto page 45">
+            45
+          </PaginationLink>
+          <PaginationLink
+            href="#"
+            isCurrent
+            aria-current="page"
+            aria-label="Goto page 46"
+          >
+            46
+          </PaginationLink>
+          <PaginationLink href="#" aria-label="Goto page 47">
+            47
+          </PaginationLink>
+        </PaginationList>
+      </Pagination>
 
       <Progress color="primary" size="small" value="42" max="100">
         42%
