@@ -29,9 +29,9 @@ With [npm](https://www.npmjs.com/) do
 npm install trunx
 ```
 
-Of course you also need Bulma (v1) but it is up to you if you want to install it via `bulma` npm package. See [how to install Bulma](https://bulma.io/documentation/start/installation/).
+Of course you need Bulma (v1) but it is up to you if you want to install it via `bulma` npm package. See [how to install Bulma](https://bulma.io/documentation/start/installation/).
 
-You may also have React installed, minimum version supported is 17 (the Trunx transpiled code uses `react/jsx-runtime`). However it is not listed as a peer dependency, you may also use Trunx without React (see for example [how to use Trunx with Preact](#use-trunx-with-preact)).
+You may have React installed, minimum version supported is 17 (the Trunx transpiled code uses `react/jsx-runtime`). However it is not listed as a peer dependency, you can [use Trunx with Preact](#use-trunx-with-preact)).
 
 Finally I recommend using TypeScript to get the best _developer experience_ with Trunx.
 
@@ -228,7 +228,7 @@ The snippet above will avoid importing the React stuff.
 
 ### `Bulma` type
 
-Trunx exports also a `Bulma` type which is a literal type containing (almost) all the Bulma classes.
+Trunx exports a `Bulma` type which is a literal type containing (almost) all the Bulma classes.
 
 For example, you can use it to make sure a `className` is a bulma class:
 
@@ -244,13 +244,14 @@ export function SuccessText({ text }: { text: string }) {
 
 ### Use Trunx with Vite
 
-Assuming you have a [Vite](https://vitejs.dev/) project with React and TypeScript, of course first of all install `trunx` and `bulma`.
+Assuming you have a [Vite](https://vitejs.dev/) project with React and TypeScript,
+first of all install `trunx` and `bulma`.
 
 ```sh
 npm install trunx bulma
 ```
 
-You also need to install Sass, currently Vite is suggesting to do it with
+You need to install Sass, currently Vite is suggesting to do it with
 
 ```sh
 npm install sass-embedded --save-dev
@@ -308,11 +309,25 @@ Check out the [Modularity in Bulma](https://bulma.io/documentation/start/modular
 ### Use Trunx with Preact
 
 Trunx is compatible with [Preact](https://preactjs.com/).
-In the Vite example above, just choose the preact template when you create the Vite app. Everything will work out of the box!
+
+In the Vite example above, just choose the preact template when you create the Vite app.
+Everything will work out of the box!
+
+In general you need to [alias React to Preact](https://preactjs.com/guide/v10/getting-started/#aliasing-react-to-preact).
+For example if you are using _esbuild_ you can add this to the build options
+
+```js
+alias: {
+	react: 'preact/compat',
+	'react-dom/test-utils': 'preact/test-utils',
+	'react-dom': 'preact/compat',
+	'react/jsx-runtime': 'preact/jsx-runtime',
+},
+```
 
 ## Motivation
 
-I really like [Bulma] CSS framework and I am also a [Dragon Ball](https://en.wikipedia.org/wiki/Dragon_Ball) fan.
+I really like [Bulma] CSS framework and I am a [Dragon Ball](https://en.wikipedia.org/wiki/Dragon_Ball) fan.
 That is why I am creating this component library. I hope you enjoy it!
 
 > Trunks (Japanese: トランクス Hepburn: Torankusu) is a fictional character in the Dragon Ball manga series created by Akira Toriyama.
