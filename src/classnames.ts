@@ -35,22 +35,22 @@ export const classnames = <T extends string>(
         Array.isArray(a)
           ? classnames(...a)
           : // Here we know that argument is not an array.
-            // Make sure argument is not null and that is an object.
-            a && typeof a == "object"
+        // Make sure argument is not null and that is an object.
+          a && typeof a == "object"
             ? classnames(
-                // Map argument object to a list of its keys, having a truthy value.
-                Object.entries(a).reduce(
-                  (
-                    // list of keys.
-                    l,
-                    // k(ey), v(value)
-                    [k, v]
-                  ) => (v ? [...l, k] : l),
-                  []
-                )
+              // Map argument object to a list of its keys, having a truthy value.
+              Object.entries(a).reduce(
+                (
+                  // list of keys.
+                  l,
+                  // k(ey), v(value)
+                  [k, v]
+                ) => (v ? [...l, k] : l),
+                []
               )
+            )
             : // Here argument should be a string or falsy.
-              (a as string | undefined | null)
+            (a as string | undefined | null)
     )
     .reduce(
       // Join the array of classes into a string.

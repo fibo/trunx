@@ -82,13 +82,11 @@ export const testAExample1 = () => (
 )
 // Block.
 export const testDivExample1 = () => (
-  <Div bulma="block"></Div>
+  <Div bulma="block" />
 )
 // Skeleton block.
 export const testDivExample2 = () => (
-  <Div bulma={{"skeleton-block": true}}>
-  Lorem ipsum
-  </Div>
+  <Div bulma={{ "skeleton-block": true }}>Lorem ipsum</Div>
 )
 export const testPExample1 = () => (
   <P bulma="has-text-grey">Lorem ipsum...</P>
@@ -235,7 +233,7 @@ export const testFieldHorizontalExample1 = () => (
 export const testFileUploadExample1 = () => (
   <FileUpload
     cta={<>
-      <FileIcon><i className="fas fa-upload"></i></FileIcon>
+      <FileIcon><i className="fas fa-upload" /></FileIcon>
       <FileLabel>Choose a file...</FileLabel>
     </>}
     // Any prop accepted by input type="file"
@@ -286,13 +284,13 @@ export const testHeroExample2 = () => (
 )
 export const testIconExample1 = () => (
   <Icon>
-    <i className="fas fa-home"></i>
+    <i className="fas fa-home" />
   </Icon>
 )
 export const testIconTextExample1 = () => (
   <IconText>
     <Icon bulma="has-text-primary">
-      <i className="fas fa-home"></i>
+      <i className="fas fa-home" />
     </Icon>
     <span>Home</span>
   </IconText>
@@ -416,6 +414,9 @@ export const testSkeletonLinesExample1 = () => (
 )
 export const testTableExample1 = () => (
   <Table bulma={["is-striped", "is-hoverable"]}>
+    <tbody>
+      <tr><td>Cell 1</td><td>Cell 2</td></tr>
+    </tbody>
   </Table>
 )
 export const testTabsExample1 = () => (

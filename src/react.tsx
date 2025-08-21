@@ -57,7 +57,7 @@ export type ImageDimension =
 // Common props
 //////////////////////////////////////////////////////////////////////
 
-// Trunx mother	🤩,
+// Trunx mother 🤩,
 // see https://en.wikipedia.org/wiki/Bulma
 export type BulmaProp = { bulma?: ClassnamesArg<Bulma> }
 
@@ -124,12 +124,10 @@ export type AProps = AnchorHTMLAttributes<HTMLAnchorElement> & BulmaProp
  * Renders div tag, has `bulma` prop.
  *
  * @example Block.
- * <Div bulma="block"></Div>
+ * <Div bulma="block" />
  *
  * @example Skeleton block.
- * <Div bulma={{"skeleton-block": true}}>
- *   Lorem ipsum
- * </Div>
+ * <Div bulma={{ "skeleton-block": true }}>Lorem ipsum</Div>
  */
 export const Div: FC<DivProps> = ({ bulma, className, children, ...props }) => (
   <div className={cls<string>(className, bulma)} {...props}>
@@ -936,7 +934,7 @@ export type FieldLabelProps = HTMLAttributes<HTMLDivElement> &
  * @example
  * <FileUpload
  *   cta={<>
- *     <FileIcon><i className="fas fa-upload"></i></FileIcon>
+ *     <FileIcon><i className="fas fa-upload" /></FileIcon>
  *     <FileLabel>Choose a file...</FileLabel>
  *   </>}
  *   // Any prop accepted by input type="file"
@@ -1224,7 +1222,7 @@ export type HeroHeadProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  *
  * @example
  * <Icon>
- *   <i className="fas fa-home"></i>
+ *   <i className="fas fa-home" />
  * </Icon>
  *
  * @see [bulma docs](https://bulma.io/documentation/elements/icon/).
@@ -1264,7 +1262,7 @@ export type IconProps = HTMLAttributes<HTMLSpanElement> &
  * @example
  * <IconText>
  *   <Icon bulma="has-text-primary">
- *     <i className="fas fa-home"></i>
+ *     <i className="fas fa-home" />
  *   </Icon>
  *   <span>Home</span>
  * </IconText>
@@ -1741,10 +1739,10 @@ export const NavbarBurger: FC<NavbarBurgerProps> = ({ isActive, ...props }) => (
     aria-expanded={isActive ? "true" : "false"}
     {...props}
   >
-    <span aria-hidden="true"></span>
-    <span aria-hidden="true"></span>
-    <span aria-hidden="true"></span>
-    <span aria-hidden="true"></span>
+    <span aria-hidden="true" />
+    <span aria-hidden="true" />
+    <span aria-hidden="true" />
+    <span aria-hidden="true" />
   </a>
 )
 export type NavbarBurgerProps = Omit<
@@ -2256,6 +2254,9 @@ export type SubtitleProps = Omit<HTMLAttributes<HTMLElement>, "is"> &
  *
  * @example
  * <Table bulma={["is-striped", "is-hoverable"]}>
+ *   <tbody>
+ *     <tr><td>Cell 1</td><td>Cell 2</td></tr>
+ *   </tbody>
  * </Table>
  *
  * @remarks
