@@ -1,7 +1,7 @@
+import { writeFileSync } from "node:fs"
+import { dirname, resolve } from "node:path"
+import { fileURLToPath } from "node:url"
 import ts from "typescript"
-import { dirname, resolve } from "path"
-import { writeFileSync } from "fs"
-import { fileURLToPath } from "url"
 
 const outputFile = ["// This file is generated"]
 

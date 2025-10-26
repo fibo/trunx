@@ -318,10 +318,10 @@ For example if you are using _esbuild_ you can add this to the build options
 
 ```js
 alias: {
-	react: 'preact/compat',
-	'react-dom/test-utils': 'preact/test-utils',
-	'react-dom': 'preact/compat',
-	'react/jsx-runtime': 'preact/jsx-runtime',
+  react: 'preact/compat',
+  'react-dom/test-utils': 'preact/test-utils',
+  'react-dom': 'preact/compat',
+  'react/jsx-runtime': 'preact/jsx-runtime',
 },
 ```
 

@@ -1,6 +1,6 @@
-import * as assert from "node:assert/strict"
-import read from "read-file-utf8"
+import { strict as assert } from "node:assert"
 import { test } from "node:test"
+import read from "read-file-utf8"
 
 test("package.json", async () => {
   const pkg = await read<{

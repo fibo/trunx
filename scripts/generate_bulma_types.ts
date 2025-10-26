@@ -44,7 +44,7 @@ const classList = Array.from(classSet).sort((a, b) => a.localeCompare(b))
 
 await writeFile(
   outputPath,
-  `// This file is auto-generated
+  `// This file is generated
 export type Bulma =
 ${classList.map((c) => `  | "${c}"`).join("\n")}
 `

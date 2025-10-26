@@ -1,6 +1,6 @@
 {
   "name": "trunx",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Super Saiyan React components, son of awesome Bulma",
   "type": "module",
   "main": "dist/index.js",
@@ -21,6 +21,7 @@
     "eslint": "eslint --ext .js,.ts,.tsx .",
     "generate_bulma_types": "node --env-file .typescript.env scripts/generate_bulma_types.ts",
     "generate_tsdoc_examples_test": "node scripts/generate_tsdoc_examples_test.js",
+    "install_precommit_hook": "echo '#!/bin/sh\nnpm run check_types && npm run test && npm run eslint\n' > .git/hooks/pre-commit; chmod +x .git/hooks/pre-commit",
     "minify": "node scripts/minify.js",
     "postbuild": "npm run minify",
     "pretest": "npm run build && npm run generate_tsdoc_examples_test",
@@ -28,14 +29,13 @@
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^5",
-    "@types/node": "^22",
+    "@types/node": "^24",
     "@types/react": "^19",
     "@typescript-eslint/parser": "^8",
     "bulma": "^1",
     "eslint": "^9",
     "postcss": "^8",
     "postcss-selector-parser": "^7",
-    "pre-commit": "^1",
     "react": "^19",
     "read-file-utf8": "^3",
     "typescript": "^5"
@@ -56,10 +56,5 @@
   },
   "bugs": {
     "url": "https://github.com/fibo/trunx/issues"
-  },
-  "pre-commit": [
-    "check_types",
-    "test",
-    "eslint"
-  ]
+  }
 }

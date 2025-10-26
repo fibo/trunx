@@ -28,7 +28,11 @@ export type MainColor =
   | "success"
   | "warning"
 
-export type ShadeColor = "black" | "dark" | "light" | "white"
+export type ShadeColor =
+  | "black"
+  | "dark"
+  | "light"
+  | "white"
 
 export type OtherColor = "text" | "ghost"
 
@@ -41,7 +45,11 @@ export type ColorVariant = "light" | "dark"
 
 export type Alignment = "left" | "center" | "right"
 
-export type Size = "small" | "medium" | "large" | "normal"
+export type Size =
+  | "small"
+  | "medium"
+  | "large"
+  | "normal"
 
 export type PluralSize = Extract<Size, "small" | "medium" | "large">
 
@@ -65,9 +73,7 @@ export type AlignProp<A extends Alignment> = Partial<{ align: A }>
 
 export type ColorProp<C extends Color = Color> = Partial<{ color: C }>
 
-export type ColorVariantProp<V extends ColorVariant = ColorVariant> = Partial<{
-  variant: V
-}>
+export type ColorVariantProp<V extends ColorVariant = ColorVariant> = Partial<{ variant: V }>
 
 export type IsActiveProp = Partial<{ isActive: boolean }>
 
@@ -202,7 +208,7 @@ export type UlProps = HTMLAttributes<HTMLUListElement> & BulmaProp
  *   <BreadcrumbItem >foo</BreadcrumbItem>
  * </Breadcrumb>
  *
- * @see [bulma docs](https://bulma.io/documentation/components/breadcrumb/)
+ * @see {@link https://bulma.io/documentation/components/breadcrumb/}
  */
 export const Breadcrumb: FC<BreadcrumbProps> = ({
   align,
@@ -227,6 +233,7 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({
     {children}
   </nav>
 )
+
 export type BreadcrumbProps = HTMLAttributes<HTMLElement> &
   BulmaProp &
   AlignProp<"center" | "right"> &
@@ -244,8 +251,7 @@ export const BreadcrumbItem: FC<BreadcrumbItemProps> = ({
     <a {...props}>{children}</a>
   </li>
 )
-export type BreadcrumbItemProps = AnchorHTMLAttributes<HTMLAnchorElement> &
-  IsActiveProp
+export type BreadcrumbItemProps = AnchorHTMLAttributes<HTMLAnchorElement> & IsActiveProp
 
 /**
  * The classic button, in different colors, sizes, and states.
@@ -256,7 +262,7 @@ export type BreadcrumbItemProps = AnchorHTMLAttributes<HTMLAnchorElement> &
  * @example A loading button.
  * <Button isLoading>Login</Button>
  *
- * @see [bulma docs](https://bulma.io/documentation/elements/button/)
+ * @see {@link https://bulma.io/documentation/elements/button/}
  */
 export const Button: FC<ButtonProps> = ({
   isLoading,
@@ -343,6 +349,8 @@ export type ButtonsProps = HTMLAttributes<HTMLDivElement> &
 /**
  * Grid cell.
  *
+ * Nope! 😂 Not that {@link https://en.wikipedia.org/wiki/Cell_(Dragon_Ball) | Cell}
+ *
  * @example
  * <FixedGrid bulma="has-4-cols">
  *   <Cell>cell 1</Cell>
@@ -353,9 +361,7 @@ export type ButtonsProps = HTMLAttributes<HTMLDivElement> &
  *   <Cell>cell 6</Cell>
  * </FixedGrid>
  *
- * @see [bulma docs](https://bulma.io/documentation/grid/grid-cells/)
- *
- * Nope! 😂 Not that {@link https://en.wikipedia.org/wiki/Cell_(Dragon_Ball) | Cell}
+ * @see {@link https://bulma.io/documentation/grid/grid-cells/}
  */
 export const Cell: FC<CellProps> = ({
   bulma,
@@ -391,7 +397,7 @@ export type CellProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  *   </CardFooter>
  * </Card>
  *
- * @see [bulma docs](https://bulma.io/documentation/components/card/)
+ * @see {@link https://bulma.io/documentation/components/card/}
  */
 export const Card: FC<CardProps> = ({
   bulma,
@@ -438,9 +444,9 @@ export const CardHeader: FC<CardHeaderProps> = ({
   children,
   ...props
 }) => (
-  <footer className={cls<string>(className, "card-header", bulma)} {...props}>
+  <header className={cls<string>(className, "card-header", bulma)} {...props}>
     {children}
-  </footer>
+  </header>
 )
 export type CardHeaderProps = HTMLAttributes<HTMLElement> & BulmaProp
 
@@ -451,10 +457,7 @@ export const CardHeaderIcon: FC<CardHeaderIconProps> = ({
   children,
   ...props
 }) => (
-  <button
-    className={cls<string>(className, "card-header-icon", bulma)}
-    {...props}
-  >
+  <button className={cls<string>(className, "card-header-icon", bulma)} {...props}>
     {children}
   </button>
 )
@@ -475,14 +478,14 @@ export type CardHeaderTitleProps = HTMLAttributes<HTMLParagraphElement> &
   BulmaProp
 
 /**
- * The 2-state checkbox in its native format
+ * The 2-state checkbox in its native format.
  *
  * @example
  * <Checkbox disabled>
  *   <Span bulma="ml-2">Save my preferences</Span>
  * </Checkbox>
  *
- * @see [bulma docs](https://bulma.io/documentation/form/checkbox/)
+ * @see {@link https://bulma.io/documentation/form/checkbox/}
  */
 export const Checkbox: FC<CheckboxProps> = ({ children, ...props }) => (
   <label className="checkbox">
@@ -508,7 +511,7 @@ export type ColumnProps = HTMLAttributes<HTMLDivElement> & BulmaProp
 /**
  * The power of Flexbox in a simple interface.
  *
- * @see [bulma docs](https://bulma.io/documentation/columns/)
+ * @see {@link https://bulma.io/documentation/columns/}
  */
 export const Columns: FC<ColumnsProps> = ({
   isDesktop,
@@ -556,7 +559,7 @@ export type ColumnsProps = HTMLAttributes<HTMLDivElement> &
  *   </Notification>
  * </Container>
  *
- * @see [bulma docs](https://bulma.io/documentation/layout/container/)
+ * @see {@link https://bulma.io/documentation/layout/container/}
  */
 export const Container: FC<ContainerProps> = ({
   isFluid,
@@ -604,7 +607,7 @@ export type ContainerProps = HTMLAttributes<HTMLDivElement> &
  *   <p>Lorem ipsum...</p>
  * </Content>
  *
- * @see [bulma docs](https://bulma.io/documentation/elements/content/)
+ * @see {@link https://bulma.io/documentation/elements/content/}
  */
 export const Content: FC<ContentProps> = ({
   size,
@@ -635,7 +638,7 @@ export type ContentProps = HTMLAttributes<HTMLDivElement> &
 /**
  * A block container meant to enhance single form controls.
  *
- * @see [bulma docs](https://bulma.io/documentation/form/general/#form-control)
+ * @see {@link https://bulma.io/documentation/form/general/#form-control}
  */
 export const Control: FC<ControlProps> = ({
   hasIconsLeft,
@@ -673,7 +676,7 @@ export type ControlProps = HTMLAttributes<HTMLDivElement> &
 /**
  * A versatile delete cross.
  *
- * @see [bulma docs](https://bulma.io/documentation/elements/delete/)
+ * @see {@link https://bulma.io/documentation/elements/delete/}
  */
 export const Delete: FC<DeleteProps> = ({
   size,
@@ -688,7 +691,7 @@ export type DeleteProps = ButtonHTMLAttributes<HTMLButtonElement> & SizeProp
 /**
  * An interactive dropdown menu for discoverable content.
  *
- * @see [bulma docs](https://bulma.io/documentation/components/dropdown/)
+ * @see {@link https://bulma.io/documentation/components/dropdown/}
  *
  * @example
  * <Dropdown isActive>
@@ -744,7 +747,10 @@ export type DropdownProps = HTMLAttributes<HTMLDivElement> &
   }>
 
 /** Renders hr tag with dropdown-divider class. */
-export const DropdownDivider: FC = () => <hr className="dropdown-divider" />
+export const DropdownDivider: FC<DropdownDividerProps> = ({ className, ...props }) => (
+  <hr className={cls<string>(className, "dropdown-divider")} {...props} />
+)
+export type DropdownDividerProps = HTMLAttributes<HTMLHRElement>
 
 /**
  * It is used inside a dropdown menu as an anchor link.
@@ -809,7 +815,7 @@ export type DropdownTriggerProps = ButtonHTMLAttributes<HTMLButtonElement>
 /**
  * Form field.
  *
- * @see [bulma docs](https://bulma.io/documentation/form/general/#form-field)
+ * @see {@link https://bulma.io/documentation/form/general/#form-field}
  *
  * @example
  * <Field>
@@ -873,7 +879,7 @@ export type FieldBodyProps = HTMLAttributes<HTMLDivElement> & BulmaProp
 /**
  * A horizontal form control.
  *
- * @see [bulma docs](https://bulma.io/documentation/form/general/#horizontal-form)
+ * @see {@link https://bulma.io/documentation/form/general/#horizontal-form}
  *
  * @example
  * <FieldHorizontal>
@@ -942,7 +948,7 @@ export type FieldLabelProps = HTMLAttributes<HTMLDivElement> &
  *   name="avatar"
  * />
  *
- * @see [bulma docs](https://bulma.io/documentation/form/file/)
+ * @see {@link https://bulma.io/documentation/form/file/}
  */
 export const FileUpload: FC<FileUploadProps> = ({
   align,
@@ -1028,7 +1034,7 @@ export type FileLabelProps = HTMLAttributes<HTMLSpanElement> & BulmaProp
  *   <Cell>cell 2</Cell>
  * </FixedGrid>
  *
- * @see [bulma docs](https://bulma.io/documentation/grid/fixed-grid/)
+ * @see {@link https://bulma.io/documentation/grid/fixed-grid/}
  */
 export const FixedGrid: FC<FixedGridProps> = ({
   hasAutoCount,
@@ -1066,7 +1072,7 @@ export type FixedGridProps = HTMLAttributes<HTMLDivElement> &
  *   </Content>
  * </Footer>
  *
- * @see [bulma docs](https://bulma.io/documentation/layout/footer/)
+ * @see {@link https://bulma.io/documentation/layout/footer/}
  */
 export const Footer: FC<FooterProps> = ({
   bulma,
@@ -1089,7 +1095,7 @@ export type FooterProps = HTMLAttributes<HTMLElement> & BulmaProp
  *   <Cell>cell 2</Cell>
  * </Grid>
  *
- * @see [bulma docs](https://bulma.io/documentation/grid/smart-grid/)
+ * @see {@link https://bulma.io/documentation/grid/smart-grid/}
  */
 export const Grid: FC<GridProps> = ({
   bulma,
@@ -1137,7 +1143,7 @@ export type HelpProps = HTMLAttributes<HTMLParagraphElement> &
  *   </HeroBody>
  * </Hero>
  *
- * @see [bulma docs](https://bulma.io/documentation/layout/hero/)
+ * @see {@link https://bulma.io/documentation/layout/hero/}
  */
 export const Hero: FC<HeroProps> = ({
   color,
@@ -1225,7 +1231,7 @@ export type HeroHeadProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  *   <i className="fas fa-home" />
  * </Icon>
  *
- * @see [bulma docs](https://bulma.io/documentation/elements/icon/).
+ * @see {@link https://bulma.io/documentation/elements/icon/}.
  */
 export const Icon: FC<IconProps> = ({
   align,
@@ -1267,7 +1273,7 @@ export type IconProps = HTMLAttributes<HTMLSpanElement> &
  *   <span>Home</span>
  * </IconText>
  *
- * @see [bulma docs](https://bulma.io/documentation/elements/icon/#icon-text)
+ * @see {@link https://bulma.io/documentation/elements/icon/#icon-text}
  */
 export const IconText: FC<IconTextProps> = ({
   bulma,
@@ -1307,7 +1313,7 @@ export type IconTextProps = HTMLAttributes<HTMLSpanElement> &
  *   />
  * </Image>
  *
- * @see [bulma docs](https://bulma.io/documentation/elements/image/)
+ * @see {@link https://bulma.io/documentation/elements/image/}
  */
 export const Image: FC<ImageProps> = ({
   dimension,
@@ -1425,7 +1431,7 @@ export type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & BulmaProp
  *   </MediaRight>
  * </Media>
  *
- * @see [bulma docs](https://bulma.io/documentation/layout/media-object/)
+ * @see {@link https://bulma.io/documentation/layout/media-object/}
  */
 export const Media: FC<MediaProps> = ({
   bulma,
@@ -1485,7 +1491,7 @@ export type MediaRightProps = HTMLAttributes<HTMLElement> & BulmaProp
  *
  * Renders aside tag with menu class.
  *
- * @see [bulma docs](https://bulma.io/documentation/components/menu/)
+ * @see {@link https://bulma.io/documentation/components/menu/}
  */
 export const Menu: FC<MenuProps> = ({
   bulma,
@@ -1541,7 +1547,7 @@ export type MenuListProps = HTMLAttributes<HTMLUListElement> & BulmaProp
  *   }
  * >Lorem ipsum...</Message>
  *
- * @see [bulma docs](https://bulma.io/documentation/components/message/)
+ * @see {@link https://bulma.io/documentation/components/message/}
  */
 export const Message: FC<MessageProps> = ({
   color,
@@ -1580,7 +1586,7 @@ export type MessageProps = Omit<HTMLAttributes<HTMLElement>, "color"> &
  *   <ModalClose />
  * </Modal>
  *
- * @see [bulma docs](https://bulma.io/documentation/components/modal/)
+ * @see {@link https://bulma.io/documentation/components/modal/}
  */
 export const Modal: FC<ModalProps> = ({
   isActive,
@@ -1632,7 +1638,7 @@ export type ModalBackgroundProps = HTMLAttributes<HTMLDivElement>
  *   Content ...
  * </ModalCard>
  *
- * @see [bulma docs](https://bulma.io/documentation/components/modal/#modal-card)
+ * @see {@link https://bulma.io/documentation/components/modal/#modal-card}
  */
 export const ModalCard: FC<ModalCardProps> = ({
   head,
@@ -1684,7 +1690,7 @@ export type ModalContentProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  *
  * Renders nav tag with navbar class.
  *
- * @see [bulma docs](https://bulma.io/documentation/components/navbar/)
+ * @see {@link https://bulma.io/documentation/components/navbar/}
  */
 export const Navbar: FC<NavbarProps> = ({
   color,
@@ -1711,7 +1717,7 @@ export type NavbarProps = Omit<HTMLAttributes<HTMLElement>, "color"> &
  *
  * Renders div tag with navbar-brand class.
  *
- * @see [bulma docs](https://bulma.io/documentation/components/navbar/#navbar-brand)
+ * @see {@link https://bulma.io/documentation/components/navbar/#navbar-brand}
  */
 export const NavbarBrand: FC<NavbarBrandProps> = ({
   bulma,
@@ -1730,7 +1736,7 @@ export type NavbarBrandProps = HTMLAttributes<HTMLDivElement> & BulmaProp
  *
  * Renders a tag with navbar-burger class.
  *
- * @see [bulma docs](https://bulma.io/documentation/components/navbar/#navbar-burger)
+ * @see {@link https://bulma.io/documentation/components/navbar/#navbar-burger}
  */
 export const NavbarBurger: FC<NavbarBurgerProps> = ({ isActive, ...props }) => (
   <a
@@ -1745,14 +1751,18 @@ export const NavbarBurger: FC<NavbarBurgerProps> = ({ isActive, ...props }) => (
     <span aria-hidden="true" />
   </a>
 )
-export type NavbarBurgerProps = Omit<
-  HTMLAttributes<HTMLElement>,
-  "aria-label" | "className" | "role"
+export type NavbarBurgerProps = Omit<HTMLAttributes<HTMLElement>,
+  | "aria-label"
+  | "className"
+  | "role"
 > &
   IsActiveProp
 
 /** Renders hr tag with navbar-divider class. */
-export const NavbarDivider: FC = () => <hr className="navbar-divider" />
+export const NavbarDivider: FC<NavbarDividerProps> = ({ className, ...props }) => (
+  <hr className={cls<string>(className, "navbar-divider")} {...props} />
+)
+export type NavbarDividerProps = HTMLAttributes<HTMLHRElement>
 
 export const NavbarDropdown: FC<NavbarDropdownProps> = ({
   align,
@@ -1877,7 +1887,7 @@ export type NavbarLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> &
  *   </NavbarEnd>
  * </NavbarMenu>
  *
- * @see [bulma docs](https://bulma.io/documentation/components/navbar/#navbar-menu)
+ * @see {@link https://bulma.io/documentation/components/navbar/#navbar-menu}
  */
 export const NavbarMenu: FC<NavbarMenuProps> = ({
   isActive,
@@ -1911,7 +1921,7 @@ export type NavbarStartProps = HTMLAttributes<HTMLDivElement>
  *   Lorem ipsum...
  * </Notification>
  *
- * @see [bulma docs](https://bulma.io/documentation/elements/notification/)
+ * @see {@link https://bulma.io/documentation/elements/notification/}
  */
 export const Notification: FC<NotificationProps> = ({
   color,
@@ -1958,7 +1968,7 @@ export type NotificationProps = HTMLAttributes<HTMLDivElement> &
  *   </PaginationList>
  * </Pagination>
  *
- * @see [bulma docs](https://bulma.io/documentation/components/pagination/)
+ * @see {@link https://bulma.io/documentation/components/pagination/}
  */
 export const Pagination: FC<PaginationProps> = ({
   align,
@@ -1989,11 +1999,12 @@ export type PaginationProps = HTMLAttributes<HTMLElement> &
   SizeProp
 
 /** @see {@link Pagination} */
-export const PaginationEllipsis: FC = () => (
-  <li>
+export const PaginationEllipsis: FC<PaginationEllipsisProps> = ({ className, ...props }) => (
+  <li className={className} {...props}>
     <span className="pagination-ellipsis">&hellip;</span>
   </li>
 )
+export type PaginationEllipsisProps = HTMLAttributes<HTMLLIElement>
 
 /** @see {@link Pagination} */
 export const PaginationLink: FC<PaginationLinkProps> = ({
@@ -2088,7 +2099,7 @@ export type PaginationPreviousProps = AnchorHTMLAttributes<HTMLAnchorElement> &
  * @example
  * <Progress color="primary" size="small" value="42" max="100">42%</Progress>
  *
- * @see [bulma docs](https://bulma.io/documentation/elements/progress/)
+ * @see {@link https://bulma.io/documentation/elements/progress/}
  */
 export const Progress: FC<ProgressProps> = ({
   size,
@@ -2125,7 +2136,7 @@ export type RadioProps = Omit<InputHTMLAttributes<HTMLInputElement>, "type"> &
  *   <Title tag="h2">Title</Title>
  * </Section>
  *
- * @see [bulma docs](https://bulma.io/documentation/layout/section/)
+ * @see {@link https://bulma.io/documentation/layout/section/}
  */
 export const Section: FC<SectionProps> = ({
   size,
@@ -2157,7 +2168,7 @@ export type SectionProps = HTMLAttributes<HTMLElement> &
  *   ]}
  * />
  *
- * @see [bulma docs](https://bulma.io/documentation/form/select/)
+ * @see {@link https://bulma.io/documentation/form/select/}
  */
 export const Select: FC<SelectProps> = ({
   color,
@@ -2205,7 +2216,7 @@ export type SelectProps = Omit<
  * @example
  * <SkeletonLines num={5} />
  *
- * @see [bulma docs](https://bulma.io/documentation/features/skeletons/#skeleton-lines)
+ * @see {@link https://bulma.io/documentation/features/skeletons/#skeleton-lines}
  */
 export const SkeletonLines: FC<SkeletonLinesProps> = ({ num }) => (
   <div className={"skeleton-lines" satisfies Bulma}>
@@ -2217,6 +2228,8 @@ export const SkeletonLines: FC<SkeletonLinesProps> = ({ num }) => (
 export type SkeletonLinesProps = { num: number }
 
 /**
+ * The subtitle heading to complement a Title.
+ *
  * @see {@link Title}
  */
 export const Subtitle: FC<SubtitleProps> = ({
@@ -2232,7 +2245,7 @@ export const Subtitle: FC<SubtitleProps> = ({
   <Tag
     className={cls<string>(
       className,
-      "title",
+      "subtitle",
       is ? `is-${is}` : undefined,
       { "has-skeleton": hasSkeleton },
       skel(isSkeleton),
@@ -2263,7 +2276,7 @@ export type SubtitleProps = Omit<HTMLAttributes<HTMLElement>, "is"> &
  * It <strong>always</strong> renders a <em>scrollable table</em>,
  * by wrapping a <code>table</code> in a <code>table-container</code> element.
  *
- * @see [bulma docs](https://bulma.io/documentation/elements/table/)
+ * @see {@link https://bulma.io/documentation/elements/table/}
  */
 export const Table: FC<TableProps> = ({
   bulma,
@@ -2289,7 +2302,7 @@ export type TableProps = TableHTMLAttributes<HTMLTableElement> & BulmaProp
  *   <Tab>Videos</Tab>
  * </Tabs>
  *
- * @see [bulma docs](https://bulma.io/documentation/components/tabs/)
+ * @see {@link https://bulma.io/documentation/components/tabs/}
  */
 export const Tabs: FC<TabsProps> = ({
   align,
@@ -2360,7 +2373,7 @@ export type TabProps = AnchorHTMLAttributes<HTMLAnchorElement> & IsActiveProp
  *   <Delete size="small" />
  * </Tag>
  *
- * @see [bulma docs](https://bulma.io/documentation/elements/tag/).
+ * @see {@link https://bulma.io/documentation/elements/tag/}
  */
 export const Tag: FC<TagProps> = ({
   color,
@@ -2423,7 +2436,7 @@ export type TagProps = HTMLAttributes<HTMLSpanElement> &
  *   <A bulma={["tag", "is-delete"]} />
  * </Tags>
  *
- * @see [bulma docs](https://bulma.io/documentation/elements/tag/#list-of-tags)
+ * @see {@link https://bulma.io/documentation/elements/tag/#list-of-tags}
  */
 export const Tags: FC<TagsProps> = ({
   hasAddons,
@@ -2451,7 +2464,7 @@ export type TagsProps = HTMLAttributes<HTMLDivElement> &
  * @example Small textarea with color.
  * <Textarea size="small" color="info" />
  *
- * @see [bulma docs](https://bulma.io/documentation/form/textarea/)
+ * @see {@link https://bulma.io/documentation/form/textarea/}
  */
 export const Textarea: FC<TextareaProps> = ({
   color,
@@ -2510,7 +2523,7 @@ export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
  * @example Title that has skeleton.
  * <Title hasSkeleton>Title</Title>
  *
- * @see [bulma docs](https://bulma.io/documentation/elements/title/)
+ * @see {@link https://bulma.io/documentation/elements/title/}
  */
 export const Title: FC<TitleProps> = ({
   hasSkeleton,
