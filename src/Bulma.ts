@@ -1,4 +1,4 @@
-// This file is auto-generated
+// This file is generated
 export type Bulma =
   | "are-large"
   | "are-medium"
@@ -1557,6 +1557,7 @@ export type Bulma =
   | "is-align-self-flex-end"
   | "is-align-self-flex-start"
   | "is-align-self-stretch"
+  | "is-arrowless"
   | "is-aspect-ratio-16by9"
   | "is-aspect-ratio-1by1"
   | "is-aspect-ratio-1by2"
@@ -2336,6 +2337,7 @@ export type Bulma =
   | "is-lower-alpha"
   | "is-lower-roman"
   | "is-lowercase"
+  | "is-max-desktop"
   | "is-max-tablet"
   | "is-medium"
   | "is-mobile"
