@@ -1,7 +1,6 @@
 # Force dist/ inclusion, it is in .gitignore
 !dist/
 # Other files to be excluded
-.typescript.env
 eslint.config.js
 scripts/
 src/
