@@ -1,8 +1,7 @@
-<img src="https://fibo.github.io/trunx/media/trunx-logotype.png" width="350"/>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://fibo.github.io/trunx/media/trunx-logotype-white.png">
-    <img width="350" src="https://fibo.github.io/trunx/media/trunx-logotype.png" alt="Trunx">
-  </picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://fibo.github.io/trunx/media/trunx-logotype-white.png">
+  <img width="350" src="https://fibo.github.io/trunx/media/trunx-logotype.png" alt="Trunx">
+</picture>
 
 > Super Saiyan React components, son of awesome [Bulma]
 
