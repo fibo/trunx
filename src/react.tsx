@@ -1,4 +1,4 @@
-import {
+import type {
   FC,
   JSX,
   ReactNode,
@@ -14,8 +14,9 @@ import {
   TableHTMLAttributes,
   TextareaHTMLAttributes
 } from "react"
-import { ClassnamesArg, classnames as cls } from "./classnames.js"
-import { Bulma } from "./Bulma.js"
+import type { ClassnamesArg } from "./classnames.js"
+import { classnames as cls } from "./classnames.js"
+import type { Bulma } from "./Bulma.js"
 
 // Improves readability of component prop types.
 //

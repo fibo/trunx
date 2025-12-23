@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
+    "erasableSyntaxOnly": true,
     "jsx": "react-jsx",
     "module": "esnext",
     "moduleResolution": "node",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "target": "esnext"
+    "target": "esnext",
+    "verbatimModuleSyntax": true
   },
   "exclude": ["node_modules"],
   "include": ["./src", "./tests"]
