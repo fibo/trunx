@@ -18,10 +18,10 @@
   "scripts": {
     "build": "tsc --project ./tsconfig.build.json --removeComments && tsc --project ./tsconfig.build.json --declaration --emitDeclarationOnly",
     "check_types": "tsc --project ./tsconfig.json --noEmit",
-    "eslint": "eslint --ext .js,.ts,.tsx .",
+    "eslint": "eslint --fix --ext .js,.ts,.tsx .",
     "generate_bulma_types": "node scripts/generate_bulma_types.ts",
-    "generate_tsdoc_examples_test": "node scripts/generate_tsdoc_examples_test.js",
-    "install_precommit_hook": "echo '#!/bin/sh\nnpm run check_types && npm run test && npm run eslint\n' > .git/hooks/pre-commit; chmod +x .git/hooks/pre-commit",
+    "generate_tsdoc_examples_test": "node scripts/generate_tsdoc_examples_test.ts",
+    "prepare": "node scripts/install_precommit_hook.ts",
     "minify": "node scripts/minify.js",
     "postbuild": "npm run minify",
     "pretest": "npm run build && npm run generate_tsdoc_examples_test",
