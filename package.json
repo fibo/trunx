@@ -22,8 +22,6 @@
     "generate_bulma_types": "node scripts/generate_bulma_types.ts",
     "generate_tsdoc_examples_test": "node scripts/generate_tsdoc_examples_test.ts",
     "prepare": "node scripts/install_precommit_hook.ts",
-    "minify": "node scripts/minify.js",
-    "postbuild": "npm run minify",
     "pretest": "npm run build && npm run generate_tsdoc_examples_test",
     "test": "node --test tests/*_test.ts"
   },
