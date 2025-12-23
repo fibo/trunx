@@ -34,13 +34,13 @@ const rules ={
       asyncArrow: "always",
       named: "never"
     }],
+    "no-multi-spaces": "error",
   },
 
   stylisticJsx: {
     "@stylistic/jsx-closing-bracket-location": ["error"],
     "@stylistic/jsx-curly-spacing": ["error", "never"],
     "@stylistic/jsx-equals-spacing": ["error", "never"],
-    "@stylistic/jsx-props-no-multi-spaces": "error",
     "@stylistic/jsx-quotes": ["error", "prefer-double"],
     "@stylistic/jsx-self-closing-comp": ["error", { component: true, html: true }],
     "@stylistic/jsx-tag-spacing": ["error", {
