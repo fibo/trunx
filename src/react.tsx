@@ -77,6 +77,8 @@ export type ColorVariantProp<V extends ColorVariant = ColorVariant> = Partial<{ 
 
 export type IsActiveProp = Partial<{ isActive: boolean }>
 
+export type IsLoadingProp = Partial<{ isLoading: boolean }>
+
 export type IsSkeletonProp = Partial<{ isSkeleton: boolean }>
 
 export type SizeProp<
@@ -104,6 +106,11 @@ const is = (
   arg: Color | ColorVariant | ImageDimension | Size | undefined
 ): Extract<Bulma, `is-${typeof arg}`> | undefined =>
   arg ? `is-${arg}` : undefined
+
+const load = (
+  arg: boolean | undefined
+): Extract<Bulma, "is-loading"> | undefined =>
+  arg ? "is-loading" : undefined
 
 const skel = (
   arg: boolean | undefined
@@ -289,10 +296,10 @@ export const Button: FC<ButtonProps> = ({
       {
         "is-fullwidth": isFullwidth,
         "is-inverted": isInverted,
-        "is-loading": isLoading,
         "is-outlined": isOutlined,
         "is-rounded": isRounded
       },
+      load(isLoading),
       skel(isSkeleton),
       bulma
     )}
@@ -308,10 +315,10 @@ export type ButtonProps = Omit<
   BulmaProp &
   ColorProp &
   ColorVariantProp &
+  IsLoadingProp &
   IsSkeletonProp &
   SizeProp<Size> &
   Partial<{
-    isLoading: boolean
     isInverted: boolean
     isFullwidth: boolean
     isOutlined: boolean
@@ -2188,10 +2195,10 @@ export const Select: FC<SelectProps> = ({
       is(size),
       is(color),
       {
-        "is-loading": isLoading,
         "is-fullwidth": isFullwidth,
         "is-rounded": isRounded
       },
+      load(isLoading),
       bulma
     )}
   >
@@ -2207,8 +2214,9 @@ export type SelectProps = Omit<
   "size"
 > & { options: Array<OptionHTMLAttributes<HTMLOptionElement>> } & BulmaProp &
   ColorProp &
+  IsLoadingProp &
   SizeProp<Size> &
-  Partial<{ isFullwidth: boolean; isLoading: boolean; isRounded: boolean }>
+  Partial<{ isFullwidth: boolean; isRounded: boolean }>
 
 /**
  * Is a loading element which resembles a paragraph.
@@ -2481,7 +2489,7 @@ export const Textarea: FC<TextareaProps> = ({
       "textarea",
       is(color),
       is(size),
-      { "is-loading": isLoading },
+      load(isLoading),
       skel(isSkeleton),
       bulma
     )}
@@ -2491,9 +2499,9 @@ export const Textarea: FC<TextareaProps> = ({
 export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> &
   BulmaProp &
   ColorProp &
+  IsLoadingProp &
   IsSkeletonProp &
-  SizeProp<Size> &
-  Partial<{ isLoading: boolean }>
+  SizeProp<Size>
 
 /**
  * Simple headings to add depth to your page.
