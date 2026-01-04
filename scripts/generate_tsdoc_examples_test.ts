@@ -47,7 +47,7 @@ for (const component of [
 
 const rootDir = dirname(dirname(fileURLToPath(import.meta.url)))
 
-const sourceFilePath = resolve(rootDir, "src/react.tsx")
+const sourceFilePath = resolve(rootDir, "src/trunx.tsx")
 
 const program = ts.createProgram([sourceFilePath], {})
 const sourceFile = program.getSourceFile(sourceFilePath)
