@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://fibo.github.io/trunx/media/trunx-logotype-white.png">
-  <img width="350" src="https://fibo.github.io/trunx/media/trunx-logotype.png" alt="Trunx">
+  <source media="(prefers-color-scheme: dark)" srcset="https://fibo.github.io/trunx/images/trunx-logotype-white.png">
+  <img width="350" src="https://fibo.github.io/trunx/images/trunx-logotype.png" alt="Trunx">
 </picture>
 
 > Super Saiyan React components, son of awesome [Bulma]
@@ -51,7 +51,7 @@ Almost all Trunx components have a `bulma` prop that accepts:
 
 You know, Trunx is a Super Saiyan because it is written in TypeScript. The `bulma` prop can be autocompleted and typos can be avoided thanks to type checking.
 
-<img src="https://fibo.github.io/trunx/media/trunks-sword.png" height="400"/>
+<img src="https://fibo.github.io/trunx/images/trunks-sword.png" height="400"/>
 
 #### HTML tag components
 
@@ -189,7 +189,7 @@ List of Bulma related components:
 
 Components are documented inline with TSDocs. You can configure your editor to display documentation and examples.
 
-<img src="https://fibo.github.io/trunx/media/inline-docs.png"/>
+<img src="https://fibo.github.io/trunx/images/inline-docs.png"/>
 
 Some code snippets use a FontAwesome class, for example `<i className="fas fa-home"></i>`. The icon set is up to you, Trunx does not provide icons.
 
@@ -227,7 +227,7 @@ import { classnames } from "trunx/classnames"
 
 The snippet above will avoid importing the React stuff.
 
-<img src="https://fibo.github.io/trunx/media/trunks.png" height="290"/>
+<img src="https://fibo.github.io/trunx/images/trunks.png" height="290"/>
 
 ### `Bulma` type
 

@@ -1,10 +1,10 @@
-# Force dist/ inclusion, it is in .gitignore
+# Force dist/ inclusion, it is [git ignored](./.gitignore).
 !dist/
-# Other files to be excluded
+# Other files to be excluded.
 eslint.config.js
 scripts/
 src/
 tests/
 tsconfig.*
-# Images are hosted on GitHub Pages
-media/
+# Documentation and images, hosted on GitHub Pages.
+docs/
