@@ -255,7 +255,6 @@ export const Breadcrumb: FC<BreadcrumbProps> = ({
     {children}
   </nav>
 )
-
 export type BreadcrumbProps = HTMLAttributes<HTMLElement> & Prettify<
   AlignProp<"center" | "right"> &
   SizeProp &
@@ -1328,6 +1327,41 @@ export const Label: FC<LabelProps> = ({ bulma, className, children, ...props }) 
   </label>
 )
 export type LabelProps = LabelHTMLAttributes<HTMLLabelElement> & Prettify<BulmaProp>
+
+/**
+  A multi-purpose horizontal level, which can contain almost any other element.
+
+  @see {@link https://bulma.io/documentation/layout/level/}
+  */
+export const Level: FC<LevelProps> = ({
+  bulma,
+  className,
+  isMobile,
+  left,
+  right,
+  children,
+  ...props
+}) => (
+  <div className={cls<string>(className, 'level', { 'is-mobile': isMobile }, bulma)} {...props}>
+    {left ? <div className="level-left">{left}</div> : null}
+    {children}
+    {right ? <div className="level-right">{right}</div> : null}
+  </div>
+)
+type LevelProps = HTMLAttributes<HTMLDivElement> & Prettify<
+  Partial<{
+    left: ReactNode
+    right: ReactNode
+    isMobile: boolean
+  }> &
+  BulmaProp
+>
+
+/** @see {@link Level} */
+export const LevelItem: FC<LevelItemProps> = ({ bulma, className, children, ...props }) => (
+  <div className={cls<string>(className, 'level-item', bulma)} {...props}>{children}</div>
+)
+type LevelItemProps = HTMLAttributes<HTMLDivElement> & BulmaProp
 
 /**
   The famous media object prevalent in social media interfaces.

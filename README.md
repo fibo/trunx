@@ -144,6 +144,7 @@ You can use the `bulma` prop in case you need to add more Bulma classes that are
 - `Image`
 - `Input`
 - `Label`
+- `Level`, `LevelItem`
 - `Media`
   - `MediaContent`
   - `MediaLeft`
