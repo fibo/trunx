@@ -100,7 +100,8 @@ You can use the `bulma` prop in case you need to add more Bulma classes that are
 </Columns>
 ```
 
-List of Bulma related components:
+<details>
+<summary>List of Bulma related components</summary>
 
 - `Breadcrumb`, `BreadcrumbItem`
 - `Button`, `Buttons`
@@ -184,6 +185,8 @@ List of Bulma related components:
 - `Tags`, `Tag`
 - `Textarea`
 - `Title`, `Subtitle`
+
+</details>
 
 #### Inline documentation
 
