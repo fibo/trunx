@@ -1,7 +1,7 @@
 import typeScriptParser from "@typescript-eslint/parser"
 import stylistic from "@stylistic/eslint-plugin"
 
-const rules ={
+const rules = {
   stylistic: {
     "@stylistic/array-bracket-spacing": ["error", "never"],
     "@stylistic/arrow-spacing": ["error", { after: true, before: true }],
@@ -34,6 +34,7 @@ const rules ={
       asyncArrow: "always",
       named: "never"
     }],
+    "@stylistic/space-infix-ops": "error",
     "no-multi-spaces": "error",
   },
 
